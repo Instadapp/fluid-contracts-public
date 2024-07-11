@@ -1,0 +1,141 @@
+{
+  "address": "0xadE0948e2431DEFB87e75760e94f190cbF35E95b",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IWstETH",
+          "name": "wstETH_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidOracleError",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "getExchangeRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "exchangeRate_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getExchangeRateLiquidate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "exchangeRate_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getExchangeRateOperate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "exchangeRate_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "wstETHOracleData",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "wstETHExchangeRate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IWstETH",
+          "name": "wstETH_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x2932d2b80cd9a7ba463e5553c1e73652082297850de3b81e3f96bf4107aa5084",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 100,
+    "gasUsed": "185540",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x00efa4f2609fc66ebd43d681082e8395732a519ea095fdd91f2da6ba82471990",
+    "transactionHash": "0x2932d2b80cd9a7ba463e5553c1e73652082297850de3b81e3f96bf4107aa5084",
+    "logs": [],
+    "blockNumber": 20018263,
+    "cumulativeGasUsed": "9503968",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "1989963ad64c4704dbe1170530c79d20",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IWstETH\",\"name\":\"wstETH_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidOracleError\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"getExchangeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"exchangeRate_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getExchangeRateLiquidate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"exchangeRate_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getExchangeRateOperate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"exchangeRate_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"wstETHOracleData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"wstETHExchangeRate_\",\"type\":\"uint256\"},{\"internalType\":\"contract IWstETH\",\"name\":\"wstETH_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getExchangeRate()\":{\"details\":\"Deprecated. Use `getExchangeRateOperate()` and `getExchangeRateLiquidate()` instead. Only implemented for      backwards compatibility.\"}},\"title\":\"WstETHOracle\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"constructor sets the wstETH `wstETH_` token address.\"},\"getExchangeRateLiquidate()\":{\"notice\":\"Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for liquidations\"},\"getExchangeRateOperate()\":{\"notice\":\"Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for operates\"},\"wstETHOracleData()\":{\"notice\":\"returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method\"}},\"notice\":\"Gets the exchange rate between wstETH and stETH directly from the wstETH contract.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/oracle/oracles/wstETHOracle.sol\":\"WstETHOracle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/oracle/error.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract Error {\\n    error FluidOracleError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0xc7b7e945238168d216c480e9dd4fbaaf8780645d58c47f9abdaa4f29910568fe\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |     UniV3CheckCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the delta between main price source and check rate source is exceeding the allowed delta\\n    uint256 internal constant UniV3CheckCLRSOracle__InvalidPrice = 60001;\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant UniV3CheckCLRSOracle__InvalidParams = 60002;\\n\\n    /// @notice thrown when the exchange rate is zero, even after all possible fallbacks depending on config\\n    uint256 internal constant UniV3CheckCLRSOracle__ExchangeRateZero = 60003;\\n\\n    /***********************************|\\n    |            sUSDe Oracle           | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant SUSDeOracle__InvalidParams = 60102;\\n\\n    /***********************************|\\n    |          Chainlink Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant ChainlinkOracle__InvalidParams = 61001;\\n\\n    /***********************************|\\n    |          UniswapV3 Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant UniV3Oracle__InvalidParams = 62001;\\n\\n    /// @notice thrown when constructor is called with invalid ordered seconds agos values\\n    uint256 internal constant UniV3Oracle__InvalidSecondsAgos = 62002;\\n\\n    /// @notice thrown when constructor is called with invalid delta values > 100%\\n    uint256 internal constant UniV3Oracle__InvalidDeltas = 62003;\\n\\n    /***********************************|\\n    |            WstETh Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant WstETHOracle__InvalidParams = 63001;\\n\\n    /***********************************|\\n    |           Redstone Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant RedstoneOracle__InvalidParams = 64001;\\n\\n    /***********************************|\\n    |          Fallback Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant FallbackOracle__InvalidParams = 65001;\\n\\n    /***********************************|\\n    |       FallbackCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the fallback oracle source (if enabled)\\n    uint256 internal constant FallbackCLRSOracle__ExchangeRateZero = 66001;\\n\\n    /***********************************|\\n    |         WstETHCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the fallback oracle source (if enabled)\\n    uint256 internal constant WstETHCLRSOracle__ExchangeRateZero = 67001;\\n\\n    /***********************************|\\n    |        CLFallbackUniV3Oracle      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the uniV3 rate\\n    uint256 internal constant CLFallbackUniV3Oracle__ExchangeRateZero = 68001;\\n\\n    /***********************************|\\n    |  WstETHCLRS2UniV3CheckCLRSOracle  | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the uniV3 rate\\n    uint256 internal constant WstETHCLRS2UniV3CheckCLRSOracle__ExchangeRateZero = 69001;\\n\\n    /***********************************|\\n    |             WeETh Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant WeETHOracle__InvalidParams = 70001;\\n}\\n\",\"keccak256\":\"0x8c742fefdf4acbdb11e4ca21572969d58e513a805a61e19e6d90a8a0bf094c4c\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/fluidOracle.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidOracle } from \\\"./interfaces/iFluidOracle.sol\\\";\\n\\n/// @title   FluidOracle\\n/// @notice  Base contract that any Fluid Oracle must implement\\nabstract contract FluidOracle is IFluidOracle {\\n    /// @inheritdoc IFluidOracle\\n    function getExchangeRate() external view virtual returns (uint256 exchangeRate_);\\n\\n    /// @inheritdoc IFluidOracle\\n    function getExchangeRateOperate() external view virtual returns (uint256 exchangeRate_);\\n\\n    /// @inheritdoc IFluidOracle\\n    function getExchangeRateLiquidate() external view virtual returns (uint256 exchangeRate_);\\n}\\n\",\"keccak256\":\"0xd275b5b0ada86c81a4dc6c79a24b1cb8bcfc374f4856e08917bf1bae83574b37\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/implementations/wstETHOracleImpl.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IWstETH } from \\\"../interfaces/external/IWstETH.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { Error as OracleError } from \\\"../error.sol\\\";\\nimport { OracleUtils } from \\\"../libraries/oracleUtils.sol\\\";\\n\\n/// @title   wstETH Oracle Implementation\\n/// @notice  This contract is used to get the exchange rate between wstETH and stETH\\nabstract contract WstETHOracleImpl is OracleError {\\n    /// @notice constant value for price scaling to reduce gas usage\\n    uint256 internal immutable _WSTETH_PRICE_SCALER_MULTIPLIER;\\n\\n    /// @notice WSTETH contract, e.g. on mainnet 0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0\\n    IWstETH internal immutable _WSTETH;\\n\\n    /// @notice constructor sets the wstETH `wstETH_` token address.\\n    constructor(IWstETH wstETH_) {\\n        if (address(wstETH_) == address(0)) {\\n            revert FluidOracleError(ErrorTypes.WstETHOracle__InvalidParams);\\n        }\\n\\n        _WSTETH = wstETH_;\\n\\n        _WSTETH_PRICE_SCALER_MULTIPLIER = 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS - 18); // e.g. 1e9\\n    }\\n\\n    /// @notice         Get the exchange rate from wstETH contract\\n    /// @return rate_   The exchange rate in `OracleUtils.RATE_OUTPUT_DECIMALS`\\n    function _getWstETHExchangeRate() internal view returns (uint256 rate_) {\\n        return _WSTETH.stEthPerToken() * _WSTETH_PRICE_SCALER_MULTIPLIER;\\n    }\\n\\n    /// @notice returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method\\n    function wstETHOracleData() public view returns (uint256 wstETHExchangeRate_, IWstETH wstETH_) {\\n        return (_getWstETHExchangeRate(), _WSTETH);\\n    }\\n}\\n\",\"keccak256\":\"0x2c923e9fc9107a469e55dfa9a6a1d02f44be696cfafdb078d76fc6d3ef5695bc\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/interfaces/external/IWstETH.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IWstETH {\\n    /**\\n     * @notice Get amount of stETH for 1 wstETH\\n     * @return Amount of stETH for 1 wstETH\\n     */\\n    function stEthPerToken() external view returns (uint256);\\n\\n    /**\\n     * @notice Get amount of wstETH for 1 stETH\\n     * @return Amount of wstETH for 1 stETH\\n     */\\n    function tokensPerStEth() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0xfe6c8477bea4b01e693d5a8ca635e795e203fe53ddee0fb30f3dcf9a0e5f4f61\",\"license\":\"MIT\"},\"contracts/oracle/interfaces/iFluidOracle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidOracle {\\n    /// @dev Deprecated. Use `getExchangeRateOperate()` and `getExchangeRateLiquidate()` instead. Only implemented for\\n    ///      backwards compatibility.\\n    function getExchangeRate() external view returns (uint256 exchangeRate_);\\n\\n    /// @notice Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for operates\\n    function getExchangeRateOperate() external view returns (uint256 exchangeRate_);\\n\\n    /// @notice Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for liquidations\\n    function getExchangeRateLiquidate() external view returns (uint256 exchangeRate_);\\n}\\n\",\"keccak256\":\"0x410b5f85b64414df35131bbf322261e2a11956d58af3800d8b71b5befb9907d4\",\"license\":\"MIT\"},\"contracts/oracle/libraries/oracleUtils.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @title Oracle utils library\\n/// @notice implements common utility methods for Fluid Oracles\\nlibrary OracleUtils {\\n    /// @dev The scaler for max delta point math (100%)\\n    uint256 internal constant HUNDRED_PERCENT_DELTA_SCALER = 10_000;\\n    /// @dev output precision of rates\\n    uint256 internal constant RATE_OUTPUT_DECIMALS = 27;\\n\\n    /// @dev checks if `mainSourceRate_` is within a `maxDeltaPercent_` of `checkSourceRate_`. Returns true if so.\\n    function isRateOutsideDelta(\\n        uint256 mainSourceRate_,\\n        uint256 checkSourceRate_,\\n        uint256 maxDeltaPercent_\\n    ) internal pure returns (bool) {\\n        uint256 offset_ = (checkSourceRate_ * maxDeltaPercent_) / HUNDRED_PERCENT_DELTA_SCALER;\\n        return (mainSourceRate_ > (checkSourceRate_ + offset_) || mainSourceRate_ < (checkSourceRate_ - offset_));\\n    }\\n}\\n\",\"keccak256\":\"0x968b1a0606875abd523895c5075cf6c34c296919e77b0da7dd952374398e2a4c\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/oracles/wstETHOracle.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { FluidOracle } from \\\"../fluidOracle.sol\\\";\\nimport { WstETHOracleImpl } from \\\"../implementations/wstETHOracleImpl.sol\\\";\\nimport { IWstETH } from \\\"../interfaces/external/IWstETH.sol\\\";\\n\\n/// @title   WstETHOracle\\n/// @notice  Gets the exchange rate between wstETH and stETH directly from the wstETH contract.\\ncontract WstETHOracle is FluidOracle, WstETHOracleImpl {\\n    /// @notice constructor sets the wstETH `wstETH_` token address.\\n    constructor(IWstETH wstETH_) WstETHOracleImpl(wstETH_) {}\\n\\n    /// @inheritdoc FluidOracle\\n    function getExchangeRateOperate() public view override returns (uint256 exchangeRate_) {\\n        return _getWstETHExchangeRate();\\n    }\\n\\n    /// @inheritdoc FluidOracle\\n    function getExchangeRateLiquidate() external view override returns (uint256 exchangeRate_) {\\n        return getExchangeRateOperate();\\n    }\\n\\n    /// @inheritdoc FluidOracle\\n    function getExchangeRate() external view override returns (uint256 exchangeRate_) {\\n        return getExchangeRateOperate();\\n    }\\n}\\n\",\"keccak256\":\"0x6224c64734dfefac1114a72d35417c077a4f52ad287d14b7d356f643ca0c1837\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x60c060405234801561001057600080fd5b5060405161044838038061044883398101604081905261002f9161008e565b806001600160a01b03811661005f5760405163c82fc46560e01b815261f619600482015260240160405180910390fd5b6001600160a01b03811660a0526100786012601b6100d4565b61008390600a6101d1565b608052506101dd9050565b6000602082840312156100a057600080fd5b81516001600160a01b03811681146100b757600080fd5b9392505050565b634e487b7160e01b600052601160045260246000fd5b818103818111156100e7576100e76100be565b92915050565b600181815b8085111561012857816000190482111561010e5761010e6100be565b8085161561011b57918102915b93841c93908002906100f2565b509250929050565b60008261013f575060016100e7565b8161014c575060006100e7565b8160018114610162576002811461016c57610188565b60019150506100e7565b60ff84111561017d5761017d6100be565b50506001821b6100e7565b5060208310610133831016604e8410600b84101617156101ab575081810a6100e7565b6101b583836100ed565b80600019048211156101c9576101c96100be565b029392505050565b60006100b78383610130565b60805160a0516102416102076000396000818160c301526101170152600060f601526102416000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80638e7bfbc014610051578063dfaba9b51461006c578063e6aa216c1461009e578063f3190c891461009e575b600080fd5b6100596100a6565b6040519081526020015b60405180910390f35b6100746100b5565b6040805192835273ffffffffffffffffffffffffffffffffffffffff909116602083015201610063565b6100596100e8565b60006100b06100f2565b905090565b6000806100c06100f2565b927f000000000000000000000000000000000000000000000000000000000000000092509050565b60006100b06100a6565b60007f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663035faf826040518163ffffffff1660e01b8152600401602060405180830381865afa158015610180573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101a491906101ae565b6100b091906101c7565b6000602082840312156101c057600080fd5b5051919050565b8082028115828204841417610205577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b9291505056fea2646970667358221220261f04ca68b7102209a8ef0b4010728f9fd7ecf7a682430dbb5de94c72d4dedd64736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80638e7bfbc014610051578063dfaba9b51461006c578063e6aa216c1461009e578063f3190c891461009e575b600080fd5b6100596100a6565b6040519081526020015b60405180910390f35b6100746100b5565b6040805192835273ffffffffffffffffffffffffffffffffffffffff909116602083015201610063565b6100596100e8565b60006100b06100f2565b905090565b6000806100c06100f2565b927f000000000000000000000000000000000000000000000000000000000000000092509050565b60006100b06100a6565b60007f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663035faf826040518163ffffffff1660e01b8152600401602060405180830381865afa158015610180573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101a491906101ae565b6100b091906101c7565b6000602082840312156101c057600080fd5b5051919050565b8082028115828204841417610205577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b9291505056fea2646970667358221220261f04ca68b7102209a8ef0b4010728f9fd7ecf7a682430dbb5de94c72d4dedd64736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getExchangeRate()": {
+        "details": "Deprecated. Use `getExchangeRateOperate()` and `getExchangeRateLiquidate()` instead. Only implemented for      backwards compatibility."
+      }
+    },
+    "title": "WstETHOracle",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "constructor sets the wstETH `wstETH_` token address."
+      },
+      "getExchangeRateLiquidate()": {
+        "notice": "Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for liquidations"
+      },
+      "getExchangeRateOperate()": {
+        "notice": "Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for operates"
+      },
+      "wstETHOracleData()": {
+        "notice": "returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method"
+      }
+    },
+    "notice": "Gets the exchange rate between wstETH and stETH directly from the wstETH contract.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

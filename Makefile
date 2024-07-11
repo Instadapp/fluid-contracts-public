@@ -1,0 +1,1 @@
+gas-report :; forge test --gas-report > .gas-report
