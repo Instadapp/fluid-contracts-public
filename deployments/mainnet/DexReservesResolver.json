@@ -1,0 +1,1558 @@
+{
+  "address": "0xE8a07a32489BD9d5a00f01A55749Cf5cB854Fd13",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "factory_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "FACTORY",
+      "outputs": [
+        {
+          "internalType": "contract IFluidDexFactory",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "swap0to1_",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountIn_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountOutMin_",
+          "type": "uint256"
+        }
+      ],
+      "name": "estimateSwapIn",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountOut_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "swap0to1_",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountOut_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountInMax_",
+          "type": "uint256"
+        }
+      ],
+      "name": "estimateSwapOut",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountIn_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllPoolAddresses",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "pools_",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllPools",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.Pool[]",
+          "name": "pools_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllPoolsReserves",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.CollateralReserves",
+              "name": "collateralReserves",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.DebtReserves",
+              "name": "debtReserves",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.PoolWithReserves[]",
+          "name": "poolsReserves_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllPoolsReservesAdjusted",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.CollateralReserves",
+              "name": "collateralReserves",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.DebtReserves",
+              "name": "debtReserves",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.PoolWithReserves[]",
+          "name": "poolsReserves_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "name": "getDexCollateralReserves",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "token0RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0ImaginaryReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1ImaginaryReserves",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFluidDexT1.CollateralReserves",
+          "name": "reserves_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "name": "getDexCollateralReservesAdjusted",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "token0RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0ImaginaryReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1ImaginaryReserves",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFluidDexT1.CollateralReserves",
+          "name": "reserves_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "name": "getDexDebtReserves",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "token0Debt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1Debt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0ImaginaryReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1ImaginaryReserves",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFluidDexT1.DebtReserves",
+          "name": "reserves_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "name": "getDexDebtReservesAdjusted",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "token0Debt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1Debt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0ImaginaryReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1ImaginaryReserves",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFluidDexT1.DebtReserves",
+          "name": "reserves_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "name": "getDexPricesAndExchangePrices",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "lastStoredPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "centerPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperRange",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerRange",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "geometricMean",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyToken0ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "borrowToken0ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyToken1ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "borrowToken1ExchangePrice",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFluidDexT1.PricesAndExchangePrice",
+          "name": "pex_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "poolId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPool",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.Pool",
+          "name": "pool_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "poolId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPoolAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "pool_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool_",
+          "type": "address"
+        }
+      ],
+      "name": "getPoolConstantsView",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "dexId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "liquidity",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "factory",
+              "type": "address"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "shift",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "admin",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "colOperations",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "debtOperations",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "perfectOperationsAndOracle",
+                  "type": "address"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.Implementations",
+              "name": "implementations",
+              "type": "tuple"
+            },
+            {
+              "internalType": "address",
+              "name": "deployerContract",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "supplyToken0Slot",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "borrowToken0Slot",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "supplyToken1Slot",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "borrowToken1Slot",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "exchangePriceToken0Slot",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "exchangePriceToken1Slot",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "oracleMapping",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFluidDexT1.ConstantViews",
+          "name": "constantsView_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool_",
+          "type": "address"
+        }
+      ],
+      "name": "getPoolConstantsView2",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "token0NumeratorPrecision",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0DenominatorPrecision",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1NumeratorPrecision",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1DenominatorPrecision",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFluidDexT1.ConstantViews2",
+          "name": "constantsView2_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool_",
+          "type": "address"
+        }
+      ],
+      "name": "getPoolFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool_",
+          "type": "address"
+        }
+      ],
+      "name": "getPoolReserves",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.CollateralReserves",
+              "name": "collateralReserves",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.DebtReserves",
+              "name": "debtReserves",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.PoolWithReserves",
+          "name": "poolReserves_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool_",
+          "type": "address"
+        }
+      ],
+      "name": "getPoolReservesAdjusted",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.CollateralReserves",
+              "name": "collateralReserves",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.DebtReserves",
+              "name": "debtReserves",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.PoolWithReserves",
+          "name": "poolReserves_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pool_",
+          "type": "address"
+        }
+      ],
+      "name": "getPoolTokens",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "token0_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token1_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "pools_",
+          "type": "address[]"
+        }
+      ],
+      "name": "getPoolsReserves",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.CollateralReserves",
+              "name": "collateralReserves",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.DebtReserves",
+              "name": "debtReserves",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.PoolWithReserves[]",
+          "name": "poolsReserves_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "pools_",
+          "type": "address[]"
+        }
+      ],
+      "name": "getPoolsReservesAdjusted",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.CollateralReserves",
+              "name": "collateralReserves",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1Debt",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IFluidDexT1.DebtReserves",
+              "name": "debtReserves",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.PoolWithReserves[]",
+          "name": "poolsReserves_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getTotalPools",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd210e8de9812cd31d44dc275bcceeff521673334d6cb81d211f9490f1bb27092",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 9,
+    "gasUsed": "2442326",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x3ff5c2fb6dad47f857921ffb2cc138e96e3380554ce789792baed5af3bc8f048",
+    "transactionHash": "0xd210e8de9812cd31d44dc275bcceeff521673334d6cb81d211f9490f1bb27092",
+    "logs": [],
+    "blockNumber": 21051738,
+    "cumulativeGasUsed": "4081844",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x91716C4EDA1Fb55e84Bf8b4c7085f84285c19085"
+  ],
+  "numDeployments": 4,
+  "solcInputHash": "7b85aee7339d43cbfc75afd48879ae15",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"factory_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"FACTORY\",\"outputs\":[{\"internalType\":\"contract IFluidDexFactory\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"swap0to1_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"amountIn_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin_\",\"type\":\"uint256\"}],\"name\":\"estimateSwapIn\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountOut_\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"swap0to1_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"amountOut_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountInMax_\",\"type\":\"uint256\"}],\"name\":\"estimateSwapOut\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountIn_\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllPoolAddresses\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"pools_\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllPools\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.Pool[]\",\"name\":\"pools_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllPoolsReserves\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.CollateralReserves\",\"name\":\"collateralReserves\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.DebtReserves\",\"name\":\"debtReserves\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.PoolWithReserves[]\",\"name\":\"poolsReserves_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllPoolsReservesAdjusted\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.CollateralReserves\",\"name\":\"collateralReserves\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.DebtReserves\",\"name\":\"debtReserves\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.PoolWithReserves[]\",\"name\":\"poolsReserves_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"name\":\"getDexCollateralReserves\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.CollateralReserves\",\"name\":\"reserves_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"name\":\"getDexCollateralReservesAdjusted\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.CollateralReserves\",\"name\":\"reserves_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"name\":\"getDexDebtReserves\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.DebtReserves\",\"name\":\"reserves_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"name\":\"getDexDebtReservesAdjusted\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.DebtReserves\",\"name\":\"reserves_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"name\":\"getDexPricesAndExchangePrices\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"lastStoredPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperRange\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRange\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"geometricMean\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyToken0ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"borrowToken0ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyToken1ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"borrowToken1ExchangePrice\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.PricesAndExchangePrice\",\"name\":\"pex_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"poolId_\",\"type\":\"uint256\"}],\"name\":\"getPool\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.Pool\",\"name\":\"pool_\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"poolId_\",\"type\":\"uint256\"}],\"name\":\"getPoolAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"pool_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool_\",\"type\":\"address\"}],\"name\":\"getPoolConstantsView\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"dexId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"liquidity\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"factory\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"shift\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"colOperations\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"debtOperations\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"perfectOperationsAndOracle\",\"type\":\"address\"}],\"internalType\":\"struct IFluidDexT1.Implementations\",\"name\":\"implementations\",\"type\":\"tuple\"},{\"internalType\":\"address\",\"name\":\"deployerContract\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"supplyToken0Slot\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"borrowToken0Slot\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"supplyToken1Slot\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"borrowToken1Slot\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"exchangePriceToken0Slot\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"exchangePriceToken1Slot\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"oracleMapping\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.ConstantViews\",\"name\":\"constantsView_\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool_\",\"type\":\"address\"}],\"name\":\"getPoolConstantsView2\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0NumeratorPrecision\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0DenominatorPrecision\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1NumeratorPrecision\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1DenominatorPrecision\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.ConstantViews2\",\"name\":\"constantsView2_\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool_\",\"type\":\"address\"}],\"name\":\"getPoolFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"fee_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool_\",\"type\":\"address\"}],\"name\":\"getPoolReserves\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.CollateralReserves\",\"name\":\"collateralReserves\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.DebtReserves\",\"name\":\"debtReserves\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.PoolWithReserves\",\"name\":\"poolReserves_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool_\",\"type\":\"address\"}],\"name\":\"getPoolReservesAdjusted\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.CollateralReserves\",\"name\":\"collateralReserves\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.DebtReserves\",\"name\":\"debtReserves\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.PoolWithReserves\",\"name\":\"poolReserves_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pool_\",\"type\":\"address\"}],\"name\":\"getPoolTokens\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"token0_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"pools_\",\"type\":\"address[]\"}],\"name\":\"getPoolsReserves\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.CollateralReserves\",\"name\":\"collateralReserves\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.DebtReserves\",\"name\":\"debtReserves\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.PoolWithReserves[]\",\"name\":\"poolsReserves_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"pools_\",\"type\":\"address[]\"}],\"name\":\"getPoolsReservesAdjusted\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.CollateralReserves\",\"name\":\"collateralReserves\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Debt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct IFluidDexT1.DebtReserves\",\"name\":\"debtReserves\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.PoolWithReserves[]\",\"name\":\"poolsReserves_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTotalPools\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"estimateSwapIn(address,bool,uint256,uint256)\":{\"params\":{\"amountIn_\":\"The exact amount of input tokens to swap\",\"amountOutMin_\":\"The minimum amount of output tokens the user is willing to accept\",\"dex_\":\"Dex pool\",\"swap0to1_\":\"Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\"},\"returns\":{\"amountOut_\":\"The amount of output tokens received from the swap\"}},\"estimateSwapOut(address,bool,uint256,uint256)\":{\"params\":{\"amountInMax_\":\"Maximum amount of tokens to swap in\",\"amountOut_\":\"The exact amount of tokens to receive after swap\",\"dex_\":\"Dex pool\",\"swap0to1_\":\"Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\"},\"returns\":{\"amountIn_\":\"The amount of input tokens used for the swap\"}},\"getAllPoolAddresses()\":{\"returns\":{\"pools_\":\"An array containing all Pool addresses\"}},\"getAllPools()\":{\"returns\":{\"pools_\":\"An array containing all Pool data\"}},\"getAllPoolsReserves()\":{\"details\":\"expected to be called via callStatic\",\"returns\":{\"poolsReserves_\":\"An array containing all Pool data with reserves\"}},\"getAllPoolsReservesAdjusted()\":{\"details\":\"expected to be called via callStatic\",\"returns\":{\"poolsReserves_\":\"An array containing all Pool data with adjusted reserves scaled to 1e12\"}},\"getDexCollateralReserves(address)\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"dex_\":\"The address of the DEX\"},\"returns\":{\"reserves_\":\"A struct containing collateral reserve information\"}},\"getDexCollateralReservesAdjusted(address)\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"dex_\":\"The address of the DEX\"},\"returns\":{\"reserves_\":\"A struct containing collateral reserve information\"}},\"getDexDebtReserves(address)\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"dex_\":\"The address of the DEX\"},\"returns\":{\"reserves_\":\"A struct containing debt reserve information\"}},\"getDexDebtReservesAdjusted(address)\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"dex_\":\"The address of the DEX\"},\"returns\":{\"reserves_\":\"A struct containing debt reserve information\"}},\"getDexPricesAndExchangePrices(address)\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"dex_\":\"The address of the DEX\"},\"returns\":{\"pex_\":\"A struct containing prices and exchange prices\"}},\"getPool(uint256)\":{\"params\":{\"poolId_\":\"The ID of the Pool\"},\"returns\":{\"pool_\":\"The Pool data\"}},\"getPoolAddress(uint256)\":{\"params\":{\"poolId_\":\"The ID of the Pool\"},\"returns\":{\"pool_\":\"The address of the Pool\"}},\"getPoolFee(address)\":{\"params\":{\"pool_\":\"The Pool address\"},\"returns\":{\"fee_\":\"The Pool fee as 1% = 10000\"}},\"getPoolReserves(address)\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"pool_\":\"The Pool address\"},\"returns\":{\"poolReserves_\":\"The Pool data with reserves\"}},\"getPoolReservesAdjusted(address)\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"pool_\":\"The Pool address\"},\"returns\":{\"poolReserves_\":\"The Pool data with adjusted reserves scaled to 1e12\"}},\"getPoolTokens(address)\":{\"params\":{\"pool_\":\"The address of the Pool\"},\"returns\":{\"token0_\":\"The address of token0 in the Pool\",\"token1_\":\"The address of token1 in the Pool\"}},\"getPoolsReserves(address[])\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"pools_\":\"The array of Pool addresses\"},\"returns\":{\"poolsReserves_\":\"An array containing all Pool data with reserves\"}},\"getPoolsReservesAdjusted(address[])\":{\"details\":\"expected to be called via callStatic\",\"params\":{\"pools_\":\"The array of Pool addresses\"},\"returns\":{\"poolsReserves_\":\"An array containing all Pool data with adjusted reserves scaled to 1e12\"}},\"getTotalPools()\":{\"returns\":{\"_0\":\"The total number of Pools\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"estimateSwapIn(address,bool,uint256,uint256)\":{\"notice\":\"estimates swap IN tokens execution\"},\"estimateSwapOut(address,bool,uint256,uint256)\":{\"notice\":\"estimates swap OUT tokens execution\"},\"getAllPoolAddresses()\":{\"notice\":\"Get an array of all Pool addresses\"},\"getAllPools()\":{\"notice\":\"Get an array of all Pool addresses and their token addresses\"},\"getAllPoolsReserves()\":{\"notice\":\"Get an array of all Pool addresses, their token addresses, collateral reserves, and debt reserves\"},\"getAllPoolsReservesAdjusted()\":{\"notice\":\"Get an array of all Pool addresses, their token addresses, adjusted collateral reserves, and adjusted debt reserves\"},\"getDexCollateralReserves(address)\":{\"notice\":\"Get the collateral reserves for a DEX in token decimals amounts\"},\"getDexCollateralReservesAdjusted(address)\":{\"notice\":\"Get the collateral reserves for a DEX scaled to 1e12\"},\"getDexDebtReserves(address)\":{\"notice\":\"Get the debt reserves for a DEX in token decimals amounts\"},\"getDexDebtReservesAdjusted(address)\":{\"notice\":\"Get the debt reserves for a DEX scaled to 1e12\"},\"getDexPricesAndExchangePrices(address)\":{\"notice\":\"Get the prices and exchange prices for a DEX\"},\"getPool(uint256)\":{\"notice\":\"Get a Pool's address and its token addresses\"},\"getPoolAddress(uint256)\":{\"notice\":\"Get the address of a Pool given its ID\"},\"getPoolConstantsView(address)\":{\"notice\":\"returns all Pool constants\"},\"getPoolConstantsView2(address)\":{\"notice\":\"returns all Pool constants 2\"},\"getPoolFee(address)\":{\"notice\":\"Get a Pool's fee\"},\"getPoolReserves(address)\":{\"notice\":\"Get the token addresses, collateral reserves, and debt reserves for a given Pool address\"},\"getPoolReservesAdjusted(address)\":{\"notice\":\"Get the token addresses, adjusted collateral reserves, and adjusted debt reserves for a given Pool address\"},\"getPoolTokens(address)\":{\"notice\":\"Get the addresses of the tokens in a Pool\"},\"getPoolsReserves(address[])\":{\"notice\":\"Get an array of Pool addresses, their token addresses, collateral reserves, and debt reserves for a given array of Pool addresses\"},\"getPoolsReservesAdjusted(address[])\":{\"notice\":\"Get an array of Pool addresses, their token addresses, adjusted collateral reserves, and adjusted debt reserves for a given array of Pool addresses\"},\"getTotalPools()\":{\"notice\":\"Get the total number of Pools\"}},\"notice\":\"Fluid Dex Reserves resolver Implements various view-only methods to give easy access to Dex protocol reserves data.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/periphery/resolvers/dexReserves/main.sol\":\"FluidDexReservesResolver\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/libraries/addressCalcs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @notice implements calculation of address for contracts deployed through CREATE.\\n/// Accepts contract deployed from which address & nonce\\nlibrary AddressCalcs {\\n\\n    /// @notice                         Computes the address of a contract based\\n    /// @param deployedFrom_            Address from which the contract was deployed\\n    /// @param nonce_                   Nonce at which the contract was deployed\\n    /// @return contract_               Address of deployed contract\\n    function addressCalc(address deployedFrom_, uint nonce_) internal pure returns (address contract_) {\\n        // @dev based on https://ethereum.stackexchange.com/a/61413\\n\\n        // nonce of smart contract always starts with 1. so, with nonce 0 there won't be any deployment\\n        // hence, nonce of vault deployment starts with 1.\\n        bytes memory data;\\n        if (nonce_ == 0x00) {\\n            return address(0);\\n        } else if (nonce_ <= 0x7f) {\\n            data = abi.encodePacked(bytes1(0xd6), bytes1(0x94), deployedFrom_, uint8(nonce_));\\n        } else if (nonce_ <= 0xff) {\\n            data = abi.encodePacked(bytes1(0xd7), bytes1(0x94), deployedFrom_, bytes1(0x81), uint8(nonce_));\\n        } else if (nonce_ <= 0xffff) {\\n            data = abi.encodePacked(bytes1(0xd8), bytes1(0x94), deployedFrom_, bytes1(0x82), uint16(nonce_));\\n        } else if (nonce_ <= 0xffffff) {\\n            data = abi.encodePacked(bytes1(0xd9), bytes1(0x94), deployedFrom_, bytes1(0x83), uint24(nonce_));\\n        } else {\\n            data = abi.encodePacked(bytes1(0xda), bytes1(0x94), deployedFrom_, bytes1(0x84), uint32(nonce_));\\n        }\\n\\n        return address(uint160(uint256(keccak256(data))));\\n    }\\n\\n}\",\"keccak256\":\"0xca389bcfef035463ff43939ac5eccab07ab74cbb053e201541f9bcd846b3105a\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/bytesSliceAndConcat.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary BytesSliceAndConcat {\\n    // @dev taken from https://github.com/GNSPS/solidity-bytes-utils/blob/master/contracts/BytesLib.sol\\n    function bytesConcat(\\n        bytes memory _preBytes,\\n        bytes memory _postBytes\\n    ) internal pure returns (bytes memory tempBytes) {\\n        assembly {\\n            // Get a location of some free memory and store it in tempBytes as\\n            // Solidity does for memory variables.\\n            tempBytes := mload(0x40)\\n\\n            // Store the length of the first bytes array at the beginning of\\n            // the memory for tempBytes.\\n            let length := mload(_preBytes)\\n            mstore(tempBytes, length)\\n\\n            // Maintain a memory counter for the current write location in the\\n            // temp bytes array by adding the 32 bytes for the array length to\\n            // the starting location.\\n            let mc := add(tempBytes, 0x20)\\n            // Stop copying when the memory counter reaches the length of the\\n            // first bytes array.\\n            let end := add(mc, length)\\n\\n            for {\\n                // Initialize a copy counter to the start of the _preBytes data,\\n                // 32 bytes into its memory.\\n                let cc := add(_preBytes, 0x20)\\n            } lt(mc, end) {\\n                // Increase both counters by 32 bytes each iteration.\\n                mc := add(mc, 0x20)\\n                cc := add(cc, 0x20)\\n            } {\\n                // Write the _preBytes data into the tempBytes memory 32 bytes\\n                // at a time.\\n                mstore(mc, mload(cc))\\n            }\\n\\n            // Add the length of _postBytes to the current length of tempBytes\\n            // and store it as the new length in the first 32 bytes of the\\n            // tempBytes memory.\\n            length := mload(_postBytes)\\n            mstore(tempBytes, add(length, mload(tempBytes)))\\n\\n            // Move the memory counter back from a multiple of 0x20 to the\\n            // actual end of the _preBytes data.\\n            mc := end\\n            // Stop copying when the memory counter reaches the new combined\\n            // length of the arrays.\\n            end := add(mc, length)\\n\\n            for {\\n                let cc := add(_postBytes, 0x20)\\n            } lt(mc, end) {\\n                mc := add(mc, 0x20)\\n                cc := add(cc, 0x20)\\n            } {\\n                mstore(mc, mload(cc))\\n            }\\n\\n            // Update the free-memory pointer by padding our last write location\\n            // to 32 bytes: add 31 bytes to the end of tempBytes to move to the\\n            // next 32 byte block, then round down to the nearest multiple of\\n            // 32. If the sum of the length of the two arrays is zero then add\\n            // one before rounding down to leave a blank 32 bytes (the length block with 0).\\n            mstore(\\n                0x40,\\n                and(\\n                    add(add(end, iszero(add(length, mload(_preBytes)))), 31),\\n                    not(31) // Round down to the nearest 32 bytes.\\n                )\\n            )\\n        }\\n\\n        return tempBytes;\\n    }\\n\\n    // @dev taken from https://github.com/GNSPS/solidity-bytes-utils/blob/master/contracts/BytesLib.sol\\n    function bytesSlice(\\n        bytes memory _bytes,\\n        uint256 _start,\\n        uint256 _length\\n    ) internal pure returns (bytes memory tempBytes) {\\n        require(_length + 31 >= _length, \\\"slice_overflow\\\");\\n        require(_bytes.length >= _start + _length, \\\"slice_outOfBounds\\\");\\n\\n        assembly {\\n            switch iszero(_length)\\n            case 0 {\\n                // Get a location of some free memory and store it in tempBytes as\\n                // Solidity does for memory variables.\\n                tempBytes := mload(0x40)\\n\\n                // The first word of the slice result is potentially a partial\\n                // word read from the original array. To read it, we calculate\\n                // the length of that partial word and start copying that many\\n                // bytes into the array. The first word we copy will start with\\n                // data we don't care about, but the last `lengthmod` bytes will\\n                // land at the beginning of the contents of the new array. When\\n                // we're done copying, we overwrite the full first word with\\n                // the actual length of the slice.\\n                let lengthmod := and(_length, 31)\\n\\n                // The multiplication in the next line is necessary\\n                // because when slicing multiples of 32 bytes (lengthmod == 0)\\n                // the following copy loop was copying the origin's length\\n                // and then ending prematurely not copying everything it should.\\n                let mc := add(add(tempBytes, lengthmod), mul(0x20, iszero(lengthmod)))\\n                let end := add(mc, _length)\\n\\n                for {\\n                    // The multiplication in the next line has the same exact purpose\\n                    // as the one above.\\n                    let cc := add(add(add(_bytes, lengthmod), mul(0x20, iszero(lengthmod))), _start)\\n                } lt(mc, end) {\\n                    mc := add(mc, 0x20)\\n                    cc := add(cc, 0x20)\\n                } {\\n                    mstore(mc, mload(cc))\\n                }\\n\\n                mstore(tempBytes, _length)\\n\\n                //update free-memory pointer\\n                //allocating the array padded to 32 bytes like the compiler does now\\n                mstore(0x40, and(add(mc, 31), not(31)))\\n            }\\n            //if we want a zero-length slice let's just return a zero-length array\\n            default {\\n                tempBytes := mload(0x40)\\n                //zero out the 32 bytes slice we are about to return\\n                //we need to do it because Solidity does not garbage collect\\n                mstore(tempBytes, 0)\\n\\n                mstore(0x40, add(tempBytes, 0x20))\\n            }\\n        }\\n\\n        return tempBytes;\\n    }\\n}\\n\",\"keccak256\":\"0x42966896926a24dc7645ebf4679e6d701cb991144ef4d710d87738165d4024c7\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/dexSlotsLink.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @notice library that helps in reading / working with storage slot data of Fluid Dex.\\n/// @dev as all data for Fluid Dex is internal, any data must be fetched directly through manual\\n/// slot reading through this library or, if gas usage is less important, through the FluidDexResolver.\\nlibrary DexSlotsLink {\\n    /// @dev storage slot for variables at Dex\\n    uint256 internal constant DEX_VARIABLES_SLOT = 0;\\n    /// @dev storage slot for variables2 at Dex\\n    uint256 internal constant DEX_VARIABLES2_SLOT = 1;\\n    /// @dev storage slot for total supply shares at Dex\\n    uint256 internal constant DEX_TOTAL_SUPPLY_SHARES_SLOT = 2;\\n    /// @dev storage slot for user supply mapping at Dex\\n    uint256 internal constant DEX_USER_SUPPLY_MAPPING_SLOT = 3;\\n    /// @dev storage slot for total borrow shares at Dex\\n    uint256 internal constant DEX_TOTAL_BORROW_SHARES_SLOT = 4;\\n    /// @dev storage slot for user borrow mapping at Dex\\n    uint256 internal constant DEX_USER_BORROW_MAPPING_SLOT = 5;\\n    /// @dev storage slot for oracle mapping at Dex\\n    uint256 internal constant DEX_ORACLE_MAPPING_SLOT = 6;\\n    /// @dev storage slot for range and threshold shifts at Dex\\n    uint256 internal constant DEX_RANGE_THRESHOLD_SHIFTS_SLOT = 7;\\n    /// @dev storage slot for center price shift at Dex\\n    uint256 internal constant DEX_CENTER_PRICE_SHIFT_SLOT = 8;\\n\\n    // --------------------------------\\n    // @dev stacked uint256 storage slots bits position data for each:\\n\\n    // UserSupplyData\\n    uint256 internal constant BITS_USER_SUPPLY_ALLOWED = 0;\\n    uint256 internal constant BITS_USER_SUPPLY_AMOUNT = 1;\\n    uint256 internal constant BITS_USER_SUPPLY_PREVIOUS_WITHDRAWAL_LIMIT = 65;\\n    uint256 internal constant BITS_USER_SUPPLY_LAST_UPDATE_TIMESTAMP = 129;\\n    uint256 internal constant BITS_USER_SUPPLY_EXPAND_PERCENT = 162;\\n    uint256 internal constant BITS_USER_SUPPLY_EXPAND_DURATION = 176;\\n    uint256 internal constant BITS_USER_SUPPLY_BASE_WITHDRAWAL_LIMIT = 200;\\n\\n    // UserBorrowData\\n    uint256 internal constant BITS_USER_BORROW_ALLOWED = 0;\\n    uint256 internal constant BITS_USER_BORROW_AMOUNT = 1;\\n    uint256 internal constant BITS_USER_BORROW_PREVIOUS_BORROW_LIMIT = 65;\\n    uint256 internal constant BITS_USER_BORROW_LAST_UPDATE_TIMESTAMP = 129;\\n    uint256 internal constant BITS_USER_BORROW_EXPAND_PERCENT = 162;\\n    uint256 internal constant BITS_USER_BORROW_EXPAND_DURATION = 176;\\n    uint256 internal constant BITS_USER_BORROW_BASE_BORROW_LIMIT = 200;\\n    uint256 internal constant BITS_USER_BORROW_MAX_BORROW_LIMIT = 218;\\n\\n    // --------------------------------\\n\\n    /// @notice Calculating the slot ID for Dex contract for single mapping at `slot_` for `key_`\\n    function calculateMappingStorageSlot(uint256 slot_, address key_) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(key_, slot_));\\n    }\\n\\n    /// @notice Calculating the slot ID for Dex contract for double mapping at `slot_` for `key1_` and `key2_`\\n    function calculateDoubleMappingStorageSlot(\\n        uint256 slot_,\\n        address key1_,\\n        address key2_\\n    ) internal pure returns (bytes32) {\\n        bytes32 intermediateSlot_ = keccak256(abi.encode(key1_, slot_));\\n        return keccak256(abi.encode(key2_, intermediateSlot_));\\n    }\\n}\\n\",\"keccak256\":\"0xf1d6550d83fb0155a26655234922c9bdf4a1bbcf7a3ca767e9123d367a795307\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/dexReserves/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { AddressCalcs } from \\\"../../../libraries/addressCalcs.sol\\\";\\nimport { DexSlotsLink } from \\\"../../../libraries/dexSlotsLink.sol\\\";\\nimport { BytesSliceAndConcat } from \\\"../../../libraries/bytesSliceAndConcat.sol\\\";\\nimport { IFluidDexT1 } from \\\"../../../protocols/dex/interfaces/iDexT1.sol\\\";\\nimport { Variables } from \\\"./variables.sol\\\";\\nimport { Structs } from \\\"./structs.sol\\\";\\n\\n/// @title DexFactoryViews\\n/// @notice Abstract contract providing view functions for DEX factory-related operations\\nabstract contract DexFactoryViews is Variables {\\n    /// @notice Get the address of a Pool given its ID\\n    /// @param poolId_ The ID of the Pool\\n    /// @return pool_ The address of the Pool\\n    function getPoolAddress(uint256 poolId_) public view returns (address pool_) {\\n        return AddressCalcs.addressCalc(address(FACTORY), poolId_);\\n    }\\n\\n    /// @notice Get the total number of Pools\\n    /// @return The total number of Pools\\n    function getTotalPools() public view returns (uint) {\\n        return FACTORY.totalDexes();\\n    }\\n\\n    /// @notice Get an array of all Pool addresses\\n    /// @return pools_ An array containing all Pool addresses\\n    function getAllPoolAddresses() public view returns (address[] memory pools_) {\\n        uint totalPools_ = getTotalPools();\\n        pools_ = new address[](totalPools_);\\n        for (uint i = 0; i < totalPools_; i++) {\\n            pools_[i] = getPoolAddress((i + 1));\\n        }\\n    }\\n}\\n\\n/// @title DexPublicViews\\n/// @notice Abstract contract providing view functions for DEX public data\\nabstract contract DexPublicViews {\\n    /// @notice Get the prices and exchange prices for a DEX\\n    /// @param dex_ The address of the DEX\\n    /// @return pex_ A struct containing prices and exchange prices\\n    /// @dev expected to be called via callStatic\\n    function getDexPricesAndExchangePrices(\\n        address dex_\\n    ) public returns (IFluidDexT1.PricesAndExchangePrice memory pex_) {\\n        try IFluidDexT1(dex_).getPricesAndExchangePrices() {} catch (bytes memory lowLevelData_) {\\n            bytes4 errorSelector_;\\n            assembly {\\n                // Extract the selector from the error data\\n                errorSelector_ := mload(add(lowLevelData_, 0x20))\\n            }\\n            if (errorSelector_ == IFluidDexT1.FluidDexPricesAndExchangeRates.selector) {\\n                pex_ = abi.decode(\\n                    BytesSliceAndConcat.bytesSlice(lowLevelData_, 4, lowLevelData_.length - 4),\\n                    (IFluidDexT1.PricesAndExchangePrice)\\n                );\\n            }\\n        }\\n    }\\n\\n    /// @notice Get the collateral reserves for a DEX in token decimals amounts\\n    /// @param dex_ The address of the DEX\\n    /// @return reserves_ A struct containing collateral reserve information\\n    /// @dev expected to be called via callStatic\\n    function getDexCollateralReserves(address dex_) public returns (IFluidDexT1.CollateralReserves memory reserves_) {\\n        reserves_ = getDexCollateralReservesAdjusted(dex_);\\n\\n        IFluidDexT1.ConstantViews2 memory constantsView2_ = IFluidDexT1(dex_).constantsView2();\\n\\n        // returned reserves are in 1e12 decimals -> normalize to token decimals\\n        reserves_.token0RealReserves =\\n            (reserves_.token0RealReserves * constantsView2_.token0DenominatorPrecision) /\\n            constantsView2_.token0NumeratorPrecision;\\n        reserves_.token0ImaginaryReserves =\\n            (reserves_.token0ImaginaryReserves * constantsView2_.token0DenominatorPrecision) /\\n            constantsView2_.token0NumeratorPrecision;\\n        reserves_.token1RealReserves =\\n            (reserves_.token1RealReserves * constantsView2_.token1DenominatorPrecision) /\\n            constantsView2_.token1NumeratorPrecision;\\n        reserves_.token1ImaginaryReserves =\\n            (reserves_.token1ImaginaryReserves * constantsView2_.token1DenominatorPrecision) /\\n            constantsView2_.token1NumeratorPrecision;\\n    }\\n\\n    /// @notice Get the collateral reserves for a DEX scaled to 1e12\\n    /// @param dex_ The address of the DEX\\n    /// @return reserves_ A struct containing collateral reserve information\\n    /// @dev expected to be called via callStatic\\n    function getDexCollateralReservesAdjusted(\\n        address dex_\\n    ) public returns (IFluidDexT1.CollateralReserves memory reserves_) {\\n        uint256 dexVariables2_ = IFluidDexT1(dex_).readFromStorage(bytes32(DexSlotsLink.DEX_VARIABLES2_SLOT));\\n        if ((dexVariables2_ & 1) != 1) {\\n            // smart col not enabled\\n            return IFluidDexT1.CollateralReserves(0, 0, 0, 0);\\n        }\\n\\n        try this.getDexPricesAndExchangePrices(dex_) returns (IFluidDexT1.PricesAndExchangePrice memory pex_) {\\n            try\\n                IFluidDexT1(dex_).getCollateralReserves(\\n                    pex_.geometricMean,\\n                    pex_.upperRange,\\n                    pex_.lowerRange,\\n                    pex_.supplyToken0ExchangePrice,\\n                    pex_.supplyToken1ExchangePrice\\n                )\\n            returns (IFluidDexT1.CollateralReserves memory colReserves_) {\\n                // returned reserves are in 1e12 decimals -> normalize to token decimals\\n                reserves_ = colReserves_;\\n            } catch {\\n                reserves_ = IFluidDexT1.CollateralReserves(0, 0, 0, 0);\\n            }\\n        } catch {\\n            reserves_ = IFluidDexT1.CollateralReserves(0, 0, 0, 0);\\n        }\\n    }\\n\\n    /// @notice Get the debt reserves for a DEX in token decimals amounts\\n    /// @param dex_ The address of the DEX\\n    /// @return reserves_ A struct containing debt reserve information\\n    /// @dev expected to be called via callStatic\\n    function getDexDebtReserves(address dex_) public returns (IFluidDexT1.DebtReserves memory reserves_) {\\n        reserves_ = getDexDebtReservesAdjusted(dex_);\\n\\n        IFluidDexT1.ConstantViews2 memory constantsView2_ = IFluidDexT1(dex_).constantsView2();\\n\\n        // returned reserves are in 1e12 decimals -> normalize to token decimals\\n        reserves_.token0Debt =\\n            (reserves_.token0Debt * constantsView2_.token0DenominatorPrecision) /\\n            constantsView2_.token0NumeratorPrecision;\\n        reserves_.token0RealReserves =\\n            (reserves_.token0RealReserves * constantsView2_.token0DenominatorPrecision) /\\n            constantsView2_.token0NumeratorPrecision;\\n        reserves_.token0ImaginaryReserves =\\n            (reserves_.token0ImaginaryReserves * constantsView2_.token0DenominatorPrecision) /\\n            constantsView2_.token0NumeratorPrecision;\\n        reserves_.token1Debt =\\n            (reserves_.token1Debt * constantsView2_.token1DenominatorPrecision) /\\n            constantsView2_.token1NumeratorPrecision;\\n        reserves_.token1RealReserves =\\n            (reserves_.token1RealReserves * constantsView2_.token1DenominatorPrecision) /\\n            constantsView2_.token1NumeratorPrecision;\\n        reserves_.token1ImaginaryReserves =\\n            (reserves_.token1ImaginaryReserves * constantsView2_.token1DenominatorPrecision) /\\n            constantsView2_.token1NumeratorPrecision;\\n    }\\n\\n    /// @notice Get the debt reserves for a DEX scaled to 1e12\\n    /// @param dex_ The address of the DEX\\n    /// @return reserves_ A struct containing debt reserve information\\n    /// @dev expected to be called via callStatic\\n    function getDexDebtReservesAdjusted(address dex_) public returns (IFluidDexT1.DebtReserves memory reserves_) {\\n        uint256 dexVariables2_ = IFluidDexT1(dex_).readFromStorage(bytes32(DexSlotsLink.DEX_VARIABLES2_SLOT));\\n        if ((dexVariables2_ & 2) != 2) {\\n            // smart debt not enabled\\n            return IFluidDexT1.DebtReserves(0, 0, 0, 0, 0, 0);\\n        }\\n\\n        try this.getDexPricesAndExchangePrices(dex_) returns (IFluidDexT1.PricesAndExchangePrice memory pex_) {\\n            try\\n                IFluidDexT1(dex_).getDebtReserves(\\n                    pex_.geometricMean,\\n                    pex_.upperRange,\\n                    pex_.lowerRange,\\n                    pex_.borrowToken0ExchangePrice,\\n                    pex_.borrowToken1ExchangePrice\\n                )\\n            returns (IFluidDexT1.DebtReserves memory debtReserves_) {\\n                // returned reserves are in 1e12 decimals -> normalize to token decimals\\n                reserves_ = debtReserves_;\\n            } catch {\\n                reserves_ = IFluidDexT1.DebtReserves(0, 0, 0, 0, 0, 0);\\n            }\\n        } catch {\\n            reserves_ = IFluidDexT1.DebtReserves(0, 0, 0, 0, 0, 0);\\n        }\\n    }\\n}\\n\\n/// @title DexConstantsViews\\n/// @notice Abstract contract providing view functions for DEX constants\\nabstract contract DexConstantsViews {\\n    /// @notice returns all Pool constants\\n    function getPoolConstantsView(address pool_) public view returns (IFluidDexT1.ConstantViews memory constantsView_) {\\n        return IFluidDexT1(pool_).constantsView();\\n    }\\n\\n    /// @notice returns all Pool constants 2\\n    function getPoolConstantsView2(\\n        address pool_\\n    ) public view returns (IFluidDexT1.ConstantViews2 memory constantsView2_) {\\n        return IFluidDexT1(pool_).constantsView2();\\n    }\\n\\n    /// @notice Get the addresses of the tokens in a Pool\\n    /// @param pool_ The address of the Pool\\n    /// @return token0_ The address of token0 in the Pool\\n    /// @return token1_ The address of token1 in the Pool\\n    function getPoolTokens(address pool_) public view returns (address token0_, address token1_) {\\n        IFluidDexT1.ConstantViews memory constantsView_ = IFluidDexT1(pool_).constantsView();\\n        return (constantsView_.token0, constantsView_.token1);\\n    }\\n}\\n\\nabstract contract DexActionEstimates {\\n    address private constant ADDRESS_DEAD = 0x000000000000000000000000000000000000dEaD;\\n\\n    /// @notice estimates swap IN tokens execution\\n    /// @param dex_ Dex pool\\n    /// @param swap0to1_ Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\\n    /// @param amountIn_ The exact amount of input tokens to swap\\n    /// @param amountOutMin_ The minimum amount of output tokens the user is willing to accept\\n    /// @return amountOut_ The amount of output tokens received from the swap\\n    function estimateSwapIn(\\n        address dex_,\\n        bool swap0to1_,\\n        uint256 amountIn_,\\n        uint256 amountOutMin_\\n    ) public payable returns (uint256 amountOut_) {\\n        try IFluidDexT1(dex_).swapIn{ value: msg.value }(swap0to1_, amountIn_, amountOutMin_, ADDRESS_DEAD) {} catch (\\n            bytes memory lowLevelData_\\n        ) {\\n            (amountOut_) = _decodeLowLevelUint1x(lowLevelData_, IFluidDexT1.FluidDexSwapResult.selector);\\n        }\\n    }\\n\\n    /// @notice estimates swap OUT tokens execution\\n    /// @param dex_ Dex pool\\n    /// @param swap0to1_ Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\\n    /// @param amountOut_ The exact amount of tokens to receive after swap\\n    /// @param amountInMax_ Maximum amount of tokens to swap in\\n    /// @return amountIn_ The amount of input tokens used for the swap\\n    function estimateSwapOut(\\n        address dex_,\\n        bool swap0to1_,\\n        uint256 amountOut_,\\n        uint256 amountInMax_\\n    ) public payable returns (uint256 amountIn_) {\\n        try IFluidDexT1(dex_).swapOut{ value: msg.value }(swap0to1_, amountOut_, amountInMax_, ADDRESS_DEAD) {} catch (\\n            bytes memory lowLevelData_\\n        ) {\\n            (amountIn_) = _decodeLowLevelUint1x(lowLevelData_, IFluidDexT1.FluidDexSwapResult.selector);\\n        }\\n    }\\n\\n    function _decodeLowLevelUint1x(\\n        bytes memory lowLevelData_,\\n        bytes4 targetErrorSelector_\\n    ) internal pure returns (uint value1_) {\\n        if (lowLevelData_.length < 36) {\\n            return 0;\\n        }\\n\\n        bytes4 errorSelector_;\\n        assembly {\\n            // Extract the selector from the error data\\n            errorSelector_ := mload(add(lowLevelData_, 0x20))\\n        }\\n        if (errorSelector_ == targetErrorSelector_) {\\n            assembly {\\n                value1_ := mload(add(lowLevelData_, 36))\\n            }\\n        }\\n        // else => values remain 0\\n    }\\n}\\n\\n/// @notice Fluid Dex Reserves resolver\\n/// Implements various view-only methods to give easy access to Dex protocol reserves data.\\ncontract FluidDexReservesResolver is\\n    Variables,\\n    Structs,\\n    DexFactoryViews,\\n    DexConstantsViews,\\n    DexPublicViews,\\n    DexActionEstimates\\n{\\n    constructor(address factory_) Variables(factory_) {}\\n\\n    /// @notice Get a Pool's address and its token addresses\\n    /// @param poolId_ The ID of the Pool\\n    /// @return pool_ The Pool data\\n    function getPool(uint256 poolId_) public view returns (Pool memory pool_) {\\n        address poolAddress_ = getPoolAddress(poolId_);\\n        (address token0_, address token1_) = getPoolTokens(poolAddress_);\\n        return Pool(poolAddress_, token0_, token1_, getPoolFee(poolAddress_));\\n    }\\n\\n    /// @notice Get a Pool's fee\\n    /// @param pool_ The Pool address\\n    /// @return fee_ The Pool fee as 1% = 10000\\n    function getPoolFee(address pool_) public view returns (uint256 fee_) {\\n        uint256 dexVariables2_ = IFluidDexT1(pool_).readFromStorage(bytes32(DexSlotsLink.DEX_VARIABLES2_SLOT));\\n        return (dexVariables2_ >> 2) & X17;\\n    }\\n\\n    /// @notice Get an array of all Pool addresses and their token addresses\\n    /// @return pools_ An array containing all Pool data\\n    function getAllPools() public view returns (Pool[] memory pools_) {\\n        uint256 totalPools_ = getTotalPools();\\n        pools_ = new Pool[](totalPools_);\\n        for (uint256 i; i < totalPools_; i++) {\\n            pools_[i] = getPool(i + 1);\\n        }\\n    }\\n\\n    /// @notice Get the token addresses, collateral reserves, and debt reserves for a given Pool address\\n    /// @param pool_ The Pool address\\n    /// @return poolReserves_ The Pool data with reserves\\n    /// @dev expected to be called via callStatic\\n    function getPoolReserves(address pool_) public returns (PoolWithReserves memory poolReserves_) {\\n        (address token0_, address token1_) = getPoolTokens(pool_);\\n        IFluidDexT1.CollateralReserves memory collateralReserves_ = getDexCollateralReserves(pool_);\\n        IFluidDexT1.DebtReserves memory debtReserves_ = getDexDebtReserves(pool_);\\n        return PoolWithReserves(pool_, token0_, token1_, getPoolFee(pool_), collateralReserves_, debtReserves_);\\n    }\\n\\n    /// @notice Get an array of Pool addresses, their token addresses, collateral reserves, and debt reserves for a given array of Pool addresses\\n    /// @param pools_ The array of Pool addresses\\n    /// @return poolsReserves_ An array containing all Pool data with reserves\\n    /// @dev expected to be called via callStatic\\n    function getPoolsReserves(address[] memory pools_) public returns (PoolWithReserves[] memory poolsReserves_) {\\n        poolsReserves_ = new PoolWithReserves[](pools_.length);\\n        for (uint256 i; i < pools_.length; i++) {\\n            poolsReserves_[i] = getPoolReserves(pools_[i]);\\n        }\\n    }\\n\\n    /// @notice Get an array of all Pool addresses, their token addresses, collateral reserves, and debt reserves\\n    /// @return poolsReserves_ An array containing all Pool data with reserves\\n    /// @dev expected to be called via callStatic\\n    function getAllPoolsReserves() public returns (PoolWithReserves[] memory poolsReserves_) {\\n        return getPoolsReserves(getAllPoolAddresses());\\n    }\\n\\n    /// @notice Get the token addresses, adjusted collateral reserves, and adjusted debt reserves for a given Pool address\\n    /// @param pool_ The Pool address\\n    /// @return poolReserves_ The Pool data with adjusted reserves scaled to 1e12\\n    /// @dev expected to be called via callStatic\\n    function getPoolReservesAdjusted(address pool_) public returns (PoolWithReserves memory poolReserves_) {\\n        (address token0_, address token1_) = getPoolTokens(pool_);\\n        IFluidDexT1.CollateralReserves memory collateralReserves_ = getDexCollateralReservesAdjusted(pool_);\\n        IFluidDexT1.DebtReserves memory debtReserves_ = getDexDebtReservesAdjusted(pool_);\\n        return PoolWithReserves(pool_, token0_, token1_, getPoolFee(pool_), collateralReserves_, debtReserves_);\\n    }\\n\\n    /// @notice Get an array of Pool addresses, their token addresses, adjusted collateral reserves, and adjusted debt reserves for a given array of Pool addresses\\n    /// @param pools_ The array of Pool addresses\\n    /// @return poolsReserves_ An array containing all Pool data with adjusted reserves scaled to 1e12\\n    /// @dev expected to be called via callStatic\\n    function getPoolsReservesAdjusted(address[] memory pools_) public returns (PoolWithReserves[] memory poolsReserves_) {\\n        poolsReserves_ = new PoolWithReserves[](pools_.length);\\n        for (uint256 i; i < pools_.length; i++) {\\n            poolsReserves_[i] = getPoolReservesAdjusted(pools_[i]);\\n        }\\n    }\\n\\n    /// @notice Get an array of all Pool addresses, their token addresses, adjusted collateral reserves, and adjusted debt reserves\\n    /// @return poolsReserves_ An array containing all Pool data with adjusted reserves scaled to 1e12\\n    /// @dev expected to be called via callStatic\\n    function getAllPoolsReservesAdjusted() public returns (PoolWithReserves[] memory poolsReserves_) {\\n        return getPoolsReservesAdjusted(getAllPoolAddresses());\\n    }\\n}\\n\",\"keccak256\":\"0xd52e0b8bd3b47d215281cdcdcc7b66be875e2620fb168fbc807d2d4944455e25\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/dexReserves/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidDexT1 } from \\\"../../../protocols/dex/interfaces/iDexT1.sol\\\";\\n\\nabstract contract Structs {\\n    struct Pool {\\n        address pool;\\n        address token0;\\n        address token1;\\n        uint256 fee;\\n    }\\n\\n    struct PoolWithReserves {\\n        address pool;\\n        address token0;\\n        address token1;\\n        uint256 fee;\\n        IFluidDexT1.CollateralReserves collateralReserves;\\n        IFluidDexT1.DebtReserves debtReserves;\\n    }\\n}\\n\",\"keccak256\":\"0x5cefc8c9a5797fda4513fbd3a0b5cef1488a8cf3b3ccba64fa637d6da597e401\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/dexReserves/variables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidDexFactory } from \\\"../../../protocols/dex/interfaces/iDexFactory.sol\\\";\\n\\nabstract contract Variables {\\n    uint256 internal constant X17 = 0x1ffff;\\n\\n    IFluidDexFactory public immutable FACTORY;\\n\\n    constructor(address factory_) {\\n        FACTORY = IFluidDexFactory(factory_);\\n    }\\n}\\n\",\"keccak256\":\"0xc0b55ed8fd4601dac9b1b40c969a31e137bc6f1a34b432fdcb192b80fb99cfe8\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/interfaces/iDexFactory.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidDexFactory {\\n    /// @notice Global auth is auth for all dexes\\n    function isGlobalAuth(address auth_) external view returns (bool);\\n\\n    /// @notice Dex auth is auth for a specific dex\\n    function isDexAuth(address vault_, address auth_) external view returns (bool);\\n\\n    /// @notice Total dexes deployed.\\n    function totalDexes() external view returns (uint256);\\n\\n    /// @notice Compute dexAddress\\n    function getDexAddress(uint256 dexId_) external view returns (address);\\n\\n    /// @notice read uint256 `result_` for a storage `slot_` key\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n}\\n\",\"keccak256\":\"0xfc81e2f8de72dcf84022b69495996f59fe560cac430767f504de1064c32f550e\",\"license\":\"MIT\"},\"contracts/protocols/dex/interfaces/iDexT1.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidDexT1 {\\n    error FluidDexError(uint256 errorId);\\n\\n    /// @notice used to simulate swap to find the output amount\\n    error FluidDexSwapResult(uint256 amountOut);\\n\\n    error FluidDexPerfectLiquidityOutput(uint256 token0Amt, uint token1Amt);\\n\\n    error FluidDexSingleTokenOutput(uint256 tokenAmt);\\n\\n    error FluidDexLiquidityOutput(uint256 shares);\\n\\n    error FluidDexPricesAndExchangeRates(PricesAndExchangePrice pex_);\\n\\n    /// @notice returns the dex id\\n    function DEX_ID() external view returns (uint256);\\n\\n    /// @notice reads uint256 data `result_` from storage at a bytes32 storage `slot_` key.\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n\\n    struct Implementations {\\n        address shift;\\n        address admin;\\n        address colOperations;\\n        address debtOperations;\\n        address perfectOperationsAndOracle;\\n    }\\n\\n    struct ConstantViews {\\n        uint256 dexId;\\n        address liquidity;\\n        address factory;\\n        Implementations implementations;\\n        address deployerContract;\\n        address token0;\\n        address token1;\\n        bytes32 supplyToken0Slot;\\n        bytes32 borrowToken0Slot;\\n        bytes32 supplyToken1Slot;\\n        bytes32 borrowToken1Slot;\\n        bytes32 exchangePriceToken0Slot;\\n        bytes32 exchangePriceToken1Slot;\\n        uint256 oracleMapping;\\n    }\\n\\n    struct ConstantViews2 {\\n        uint token0NumeratorPrecision;\\n        uint token0DenominatorPrecision;\\n        uint token1NumeratorPrecision;\\n        uint token1DenominatorPrecision;\\n    }\\n\\n    struct PricesAndExchangePrice {\\n        uint lastStoredPrice; // last stored price in 1e27 decimals\\n        uint centerPrice; // last stored price in 1e27 decimals\\n        uint upperRange; // price at upper range in 1e27 decimals\\n        uint lowerRange; // price at lower range in 1e27 decimals\\n        uint geometricMean; // geometric mean of upper range & lower range in 1e27 decimals\\n        uint supplyToken0ExchangePrice;\\n        uint borrowToken0ExchangePrice;\\n        uint supplyToken1ExchangePrice;\\n        uint borrowToken1ExchangePrice;\\n    }\\n\\n    struct CollateralReserves {\\n        uint token0RealReserves;\\n        uint token1RealReserves;\\n        uint token0ImaginaryReserves;\\n        uint token1ImaginaryReserves;\\n    }\\n\\n    struct DebtReserves {\\n        uint token0Debt;\\n        uint token1Debt;\\n        uint token0RealReserves;\\n        uint token1RealReserves;\\n        uint token0ImaginaryReserves;\\n        uint token1ImaginaryReserves;\\n    }\\n\\n    function getCollateralReserves(\\n        uint geometricMean_,\\n        uint upperRange_,\\n        uint lowerRange_,\\n        uint token0SupplyExchangePrice_,\\n        uint token1SupplyExchangePrice_\\n    ) external view returns (CollateralReserves memory c_);\\n\\n    function getDebtReserves(\\n        uint geometricMean_,\\n        uint upperRange_,\\n        uint lowerRange_,\\n        uint token0BorrowExchangePrice_,\\n        uint token1BorrowExchangePrice_\\n    ) external view returns (DebtReserves memory d_);\\n\\n    // reverts with FluidDexPricesAndExchangeRates(pex_);\\n    function getPricesAndExchangePrices() external;\\n\\n    function constantsView() external view returns (ConstantViews memory constantsView_);\\n\\n    function constantsView2() external view returns (ConstantViews2 memory constantsView2_);\\n\\n    struct Oracle {\\n        uint twap1by0; // TWAP price\\n        uint lowestPrice1by0; // lowest price point\\n        uint highestPrice1by0; // highest price point\\n        uint twap0by1; // TWAP price\\n        uint lowestPrice0by1; // lowest price point\\n        uint highestPrice0by1; // highest price point\\n    }\\n\\n    /// @dev This function allows users to swap a specific amount of input tokens for output tokens\\n    /// @param swap0to1_ Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\\n    /// @param amountIn_ The exact amount of input tokens to swap\\n    /// @param amountOutMin_ The minimum amount of output tokens the user is willing to accept\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with amountOut_\\n    /// @return amountOut_ The amount of output tokens received from the swap\\n    function swapIn(\\n        bool swap0to1_,\\n        uint256 amountIn_,\\n        uint256 amountOutMin_,\\n        address to_\\n    ) external payable returns (uint256 amountOut_);\\n\\n    /// @dev Swap tokens with perfect amount out\\n    /// @param swap0to1_ Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\\n    /// @param amountOut_ The exact amount of tokens to receive after swap\\n    /// @param amountInMax_ Maximum amount of tokens to swap in\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with amountIn_\\n    /// @return amountIn_ The amount of input tokens used for the swap\\n    function swapOut(\\n        bool swap0to1_,\\n        uint256 amountOut_,\\n        uint256 amountInMax_,\\n        address to_\\n    ) external payable returns (uint256 amountIn_);\\n\\n    /// @dev Deposit tokens in equal proportion to the current pool ratio\\n    /// @param shares_ The number of shares to mint\\n    /// @param maxToken0Deposit_ Maximum amount of token0 to deposit\\n    /// @param maxToken1Deposit_ Maximum amount of token1 to deposit\\n    /// @param estimate_ If true, function will revert with estimated deposit amounts without executing the deposit\\n    /// @return token0Amt_ Amount of token0 deposited\\n    /// @return token1Amt_ Amount of token1 deposited\\n    function depositPerfect(\\n        uint shares_,\\n        uint maxToken0Deposit_,\\n        uint maxToken1Deposit_,\\n        bool estimate_\\n    ) external payable returns (uint token0Amt_, uint token1Amt_);\\n\\n    /// @dev This function allows users to withdraw a perfect amount of collateral liquidity\\n    /// @param shares_ The number of shares to withdraw\\n    /// @param minToken0Withdraw_ The minimum amount of token0 the user is willing to accept\\n    /// @param minToken1Withdraw_ The minimum amount of token1 the user is willing to accept\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with token0Amt_ & token1Amt_\\n    /// @return token0Amt_ The amount of token0 withdrawn\\n    /// @return token1Amt_ The amount of token1 withdrawn\\n    function withdrawPerfect(\\n        uint shares_,\\n        uint minToken0Withdraw_,\\n        uint minToken1Withdraw_,\\n        address to_\\n    ) external returns (uint token0Amt_, uint token1Amt_);\\n\\n    /// @dev This function allows users to borrow tokens in equal proportion to the current debt pool ratio\\n    /// @param shares_ The number of shares to borrow\\n    /// @param minToken0Borrow_ Minimum amount of token0 to borrow\\n    /// @param minToken1Borrow_ Minimum amount of token1 to borrow\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with token0Amt_ & token1Amt_\\n    /// @return token0Amt_ Amount of token0 borrowed\\n    /// @return token1Amt_ Amount of token1 borrowed\\n    function borrowPerfect(\\n        uint shares_,\\n        uint minToken0Borrow_,\\n        uint minToken1Borrow_,\\n        address to_\\n    ) external returns (uint token0Amt_, uint token1Amt_);\\n\\n    /// @dev This function allows users to pay back borrowed tokens in equal proportion to the current debt pool ratio\\n    /// @param shares_ The number of shares to pay back\\n    /// @param maxToken0Payback_ Maximum amount of token0 to pay back\\n    /// @param maxToken1Payback_ Maximum amount of token1 to pay back\\n    /// @param estimate_ If true, function will revert with estimated payback amounts without executing the payback\\n    /// @return token0Amt_ Amount of token0 paid back\\n    /// @return token1Amt_ Amount of token1 paid back\\n    function paybackPerfect(\\n        uint shares_,\\n        uint maxToken0Payback_,\\n        uint maxToken1Payback_,\\n        bool estimate_\\n    ) external payable returns (uint token0Amt_, uint token1Amt_);\\n\\n    /// @dev This function allows users to deposit tokens in any proportion into the col pool\\n    /// @param token0Amt_ The amount of token0 to deposit\\n    /// @param token1Amt_ The amount of token1 to deposit\\n    /// @param minSharesAmt_ The minimum amount of shares the user expects to receive\\n    /// @param estimate_ If true, function will revert with estimated shares without executing the deposit\\n    /// @return shares_ The amount of shares minted for the deposit\\n    function deposit(\\n        uint token0Amt_,\\n        uint token1Amt_,\\n        uint minSharesAmt_,\\n        bool estimate_\\n    ) external payable returns (uint shares_);\\n\\n    /// @dev This function allows users to withdraw tokens in any proportion from the col pool\\n    /// @param token0Amt_ The amount of token0 to withdraw\\n    /// @param token1Amt_ The amount of token1 to withdraw\\n    /// @param maxSharesAmt_ The maximum number of shares the user is willing to burn\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with shares_\\n    /// @return shares_ The number of shares burned for the withdrawal\\n    function withdraw(\\n        uint token0Amt_,\\n        uint token1Amt_,\\n        uint maxSharesAmt_,\\n        address to_\\n    ) external returns (uint shares_);\\n\\n    /// @dev This function allows users to borrow tokens in any proportion from the debt pool\\n    /// @param token0Amt_ The amount of token0 to borrow\\n    /// @param token1Amt_ The amount of token1 to borrow\\n    /// @param maxSharesAmt_ The maximum amount of shares the user is willing to receive\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with shares_\\n    /// @return shares_ The amount of borrow shares minted to represent the borrowed amount\\n    function borrow(\\n        uint token0Amt_,\\n        uint token1Amt_,\\n        uint maxSharesAmt_,\\n        address to_\\n    ) external returns (uint shares_);\\n\\n    /// @dev This function allows users to payback tokens in any proportion to the debt pool\\n    /// @param token0Amt_ The amount of token0 to payback\\n    /// @param token1Amt_ The amount of token1 to payback\\n    /// @param minSharesAmt_ The minimum amount of shares the user expects to burn\\n    /// @param estimate_ If true, function will revert with estimated shares without executing the payback\\n    /// @return shares_ The amount of borrow shares burned for the payback\\n    function payback(\\n        uint token0Amt_,\\n        uint token1Amt_,\\n        uint minSharesAmt_,\\n        bool estimate_\\n    ) external payable returns (uint shares_);\\n\\n    /// @dev This function allows users to withdraw their collateral with perfect shares in one token\\n    /// @param shares_ The number of shares to burn for withdrawal\\n    /// @param minToken0_ The minimum amount of token0 the user expects to receive (set to 0 if withdrawing in token1)\\n    /// @param minToken1_ The minimum amount of token1 the user expects to receive (set to 0 if withdrawing in token0)\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with withdrawAmt_\\n    /// @return withdrawAmt_ The amount of tokens withdrawn in the chosen token\\n    function withdrawPerfectInOneToken(\\n        uint shares_,\\n        uint minToken0_,\\n        uint minToken1_,\\n        address to_\\n    ) external returns (\\n        uint withdrawAmt_\\n    );\\n\\n    /// @dev This function allows users to payback their debt with perfect shares in one token\\n    /// @param shares_ The number of shares to burn for payback\\n    /// @param maxToken0_ The maximum amount of token0 the user is willing to pay (set to 0 if paying back in token1)\\n    /// @param maxToken1_ The maximum amount of token1 the user is willing to pay (set to 0 if paying back in token0)\\n    /// @param estimate_ If true, the function will revert with the estimated payback amount without executing the payback\\n    /// @return paybackAmt_ The amount of tokens paid back in the chosen token\\n    function paybackPerfectInOneToken(\\n        uint shares_,\\n        uint maxToken0_,\\n        uint maxToken1_,\\n        bool estimate_\\n    ) external payable returns (\\n        uint paybackAmt_\\n    );\\n\\n    /// @dev the oracle assumes last set price of pool till the next swap happens.\\n    /// There's a possibility that during that time some interest is generated hence the last stored price is not the 100% correct price for the whole duration\\n    /// but the difference due to interest will be super low so this difference is ignored\\n    /// For example 2 swaps happened 10min (600 seconds) apart and 1 token has 10% higher interest than other.\\n    /// then that token will accrue about 10% * 600 / secondsInAYear = ~0.0002%\\n    /// @param secondsAgos_ array of seconds ago for which TWAP is needed. If user sends [10, 30, 60] then twaps_ will return [10-0, 30-10, 60-30]\\n    /// @return twaps_ twap price, lowest price (aka minima) & highest price (aka maxima) between secondsAgo checkpoints\\n    /// @return currentPrice_ price of pool after the most recent swap\\n    function oraclePrice(\\n        uint[] memory secondsAgos_\\n    ) external view returns (\\n        Oracle[] memory twaps_,\\n        uint currentPrice_\\n    );\\n}\\n\",\"keccak256\":\"0xa405007cdd45409412ce0fe02a991cadbae17760bc15402c839375505f69d7b2\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a06040523480156200001157600080fd5b5060405162002bfb38038062002bfb833981016040819052620000349162000046565b6001600160a01b031660805262000078565b6000602082840312156200005957600080fd5b81516001600160a01b03811681146200007157600080fd5b9392505050565b608051612b59620000a26000396000818161029a0152818161056801526114590152612b596000f3fe60806040526004361061017f5760003560e01c80636e38c023116100d6578063c56f1b441161007f578063d88ff1f411610059578063d88ff1f4146104ff578063dde0470614610521578063fccca03c1461054157600080fd5b8063c56f1b441461047b578063ca4f28031461049d578063d3ffe67a146104ea57600080fd5b8063bb39e3a1116100b0578063bb39e3a114610428578063bd964d381461043b578063c0eec0e81461045b57600080fd5b80636e38c023146103d3578063957755e6146103e8578063a59737631461040857600080fd5b80633973a11b1161013857806342fcc6fb1161011257806342fcc6fb146103595780634bee93951461037957806355181f11146103a657600080fd5b80633973a11b146102de5780633ec841e41461030b578063425711371461033857600080fd5b8063068bcd8d11610169578063068bcd8d1461025b5780632dd3100014610288578063333d01a9146102bc57600080fd5b8062a5ae2114610184578063015f6cfa146101ce575b600080fd5b34801561019057600080fd5b506101a461019f36600461209d565b610561565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b3480156101da57600080fd5b506101ee6101e93660046120db565b610593565b6040516101c59190600061012082019050825182526020830151602083015260408301516040830152606083015160608301526080830151608083015260a083015160a083015260c083015160c083015260e083015160e083015261010080840151818401525092915050565b34801561026757600080fd5b5061027b61027636600461209d565b6106f3565b6040516101c591906120ff565b34801561029457600080fd5b506101a47f000000000000000000000000000000000000000000000000000000000000000081565b3480156102c857600080fd5b506102d16107a5565b6040516101c59190612201565b3480156102ea57600080fd5b506102fe6102f93660046120db565b6107b7565b6040516101c59190612250565b34801561031757600080fd5b5061032b6103263660046120db565b6108c4565b6040516101c591906123e2565b61034b61034636600461240d565b61095e565b6040519081526020016101c5565b34801561036557600080fd5b5061034b6103743660046120db565b610a92565b34801561038557600080fd5b506103996103943660046120db565b610b35565b6040516101c59190612458565b3480156103b257600080fd5b506103c66103c13660046120db565b610be7565b6040516101c59190612467565b3480156103df57600080fd5b506102d1610d8c565b3480156103f457600080fd5b5061032b6104033660046120db565b610d99565b34801561041457600080fd5b506102d1610423366004612576565b610ee1565b61034b61043636600461240d565b610f9d565b34801561044757600080fd5b506103996104563660046120db565b61100c565b34801561046757600080fd5b5061032b6104763660046120db565b61103c565b34801561048757600080fd5b50610490611310565b6040516101c59190612628565b3480156104a957600080fd5b506104bd6104b83660046120db565b6113ca565b6040805173ffffffffffffffffffffffffffffffffffffffff9384168152929091166020830152016101c5565b3480156104f657600080fd5b5061034b611455565b34801561050b57600080fd5b506105146114e6565b6040516101c59190612676565b34801561052d57600080fd5b506103c661053c3660046120db565b6115c9565b34801561054d57600080fd5b506102d161055c366004612576565b6118d6565b600061058d7f00000000000000000000000000000000000000000000000000000000000000008361198c565b92915050565b6105e26040518061012001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b8173ffffffffffffffffffffffffffffffffffffffff1663916cef4e6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561062a57600080fd5b505af192505050801561063b575060015b6106ee573d808015610669576040519150601f19603f3d011682016040523d82523d6000602084013e61066e565b606091505b5060208101517fdc4022c5000000000000000000000000000000000000000000000000000000007fffffffff000000000000000000000000000000000000000000000000000000008216016106eb576106d58260048085516106d09190612724565b611df6565b8060200190518101906106e89190612737565b92505b50505b919050565b60408051608081018252600080825260208201819052918101829052606081018290529061072083610561565b905060008061072e836113ca565b9150915060405180608001604052808473ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff16815260200161079a85610a92565b905295945050505050565b60606107b261055c611310565b905090565b610854604080516101c08101825260008082526020808301829052828401829052835160a08101855282815290810182905292830181905260608381018290526080840191909152909190820190815260006020820181905260408201819052606082018190526080820181905260a0820181905260c0820181905260e08201819052610100820181905261012082018190526101409091015290565b8173ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b815260040161024060405180830381865afa1580156108a0573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061058d919061285b565b6108ef6040518060800160405280600081526020016000815260200160008152602001600081525090565b8173ffffffffffffffffffffffffffffffffffffffff16631595cbd36040518163ffffffff1660e01b8152600401608060405180830381865afa15801561093a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061058d91906129a8565b6040517f286f0e610000000000000000000000000000000000000000000000000000000081528315156004820152602481018390526044810182905261dead606482015260009073ffffffffffffffffffffffffffffffffffffffff86169063286f0e619034906084015b60206040518083038185885af193505050508015610a22575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201909252610a1f918101906129c4565b60015b610a88573d808015610a50576040519150601f19603f3d011682016040523d82523d6000602084013e610a55565b606091505b50610a80817fb3bfda9900000000000000000000000000000000000000000000000000000000611f72565b915050610a8a565b505b949350505050565b6040517fb5c736e400000000000000000000000000000000000000000000000000000000815260016004820152600090819073ffffffffffffffffffffffffffffffffffffffff84169063b5c736e490602401602060405180830381865afa158015610b02573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b2691906129c4565b60021c6201ffff169392505050565b610b3d611fc6565b600080610b49846113ca565b915091506000610b5885610d99565b90506000610b6586610be7565b90506040518060c001604052808773ffffffffffffffffffffffffffffffffffffffff1681526020018573ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff168152602001610bcf88610a92565b81526020810193909352604090920152949350505050565b610c206040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b610c29826115c9565b905060008273ffffffffffffffffffffffffffffffffffffffff16631595cbd36040518163ffffffff1660e01b8152600401608060405180830381865afa158015610c78573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c9c91906129a8565b8051602082015184519293509091610cb491906129dd565b610cbe91906129f4565b8252805160208201516040840151610cd691906129dd565b610ce091906129f4565b6040830152805160208201516080840151610cfb91906129dd565b610d0591906129f4565b6080830152604081015160608201516020840151610d2391906129dd565b610d2d91906129f4565b6020830152604081015160608083015190840151610d4b91906129dd565b610d5591906129f4565b826060018181525050806040015181606001518360a00151610d7791906129dd565b610d8191906129f4565b60a083015250919050565b60606107b2610423611310565b610dc46040518060800160405280600081526020016000815260200160008152602001600081525090565b610dcd8261103c565b905060008273ffffffffffffffffffffffffffffffffffffffff16631595cbd36040518163ffffffff1660e01b8152600401608060405180830381865afa158015610e1c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e4091906129a8565b8051602082015184519293509091610e5891906129dd565b610e6291906129f4565b8252805160208201516040840151610e7a91906129dd565b610e8491906129f4565b60408084019190915281015160608201516020840151610ea491906129dd565b610eae91906129f4565b6020830152604081015160608083015190840151610ecc91906129dd565b610ed691906129f4565b606083015250919050565b6060815167ffffffffffffffff811115610efd57610efd6124aa565b604051908082528060200260200182016040528015610f3657816020015b610f23611fc6565b815260200190600190039081610f1b5790505b50905060005b8251811015610f9757610f67838281518110610f5a57610f5a612a2f565b6020026020010151610b35565b828281518110610f7957610f79612a2f565b60200260200101819052508080610f8f90612a5e565b915050610f3c565b50919050565b6040517f2668dfaa0000000000000000000000000000000000000000000000000000000081528315156004820152602481018390526044810182905261dead606482015260009073ffffffffffffffffffffffffffffffffffffffff861690632668dfaa9034906084016109c9565b611014611fc6565b600080611020846113ca565b91509150600061102f8561103c565b90506000610b65866115c9565b6110676040518060800160405280600081526020016000815260200160008152602001600081525090565b6040517fb5c736e40000000000000000000000000000000000000000000000000000000081526001600482015260009073ffffffffffffffffffffffffffffffffffffffff84169063b5c736e490602401602060405180830381865afa1580156110d5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906110f991906129c4565b9050806001166001146111335760405180608001604052806000815260200160008152602001600081526020016000815250915050919050565b6040517f015f6cfa00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84166004820152309063015f6cfa90602401610120604051808303816000875af19250505080156111da575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01682019092526111d791810190612737565b60015b61120a57604051806080016040528060008152602001600081526020016000815260200160008152509150610f97565b6080810151604080830151606084015160a085015160e086015193517f6560abaa0000000000000000000000000000000000000000000000000000000081526004810195909552602485019290925260448401526064830152608482015273ffffffffffffffffffffffffffffffffffffffff851690636560abaa9060a401608060405180830381865afa9250505080156112e0575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01682019092526112dd918101906129a8565b60015b6106e8576040518060800160405280600081526020016000815260200160008152602001600081525092506106eb565b6060600061131c611455565b90508067ffffffffffffffff811115611337576113376124aa565b604051908082528060200260200182016040528015611360578160200160208202803683370190505b50915060005b818110156113c55761137c61019f826001612a96565b83828151811061138e5761138e612a2f565b73ffffffffffffffffffffffffffffffffffffffff90921660209283029190910190910152806113bd81612a5e565b915050611366565b505090565b60008060008373ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b815260040161024060405180830381865afa15801561141b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061143f919061285b565b90508060a001518160c001519250925050915091565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166393656c176040518163ffffffff1660e01b8152600401602060405180830381865afa1580156114c2573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107b291906129c4565b606060006114f2611455565b90508067ffffffffffffffff81111561150d5761150d6124aa565b60405190808252806020026020018201604052801561157d57816020015b6040805160808101825260008082526020808301829052928201819052606082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff90920191018161152b5790505b50915060005b818110156113c557611599610276826001612a96565b8382815181106115ab576115ab612a2f565b602002602001018190525080806115c190612a5e565b915050611583565b6116026040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040517fb5c736e40000000000000000000000000000000000000000000000000000000081526001600482015260009073ffffffffffffffffffffffffffffffffffffffff84169063b5c736e490602401602060405180830381865afa158015611670573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061169491906129c4565b9050806002166002146116dc576040518060c0016040528060008152602001600081526020016000815260200160008152602001600081526020016000815250915050919050565b6040517f015f6cfa00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84166004820152309063015f6cfa90602401610120604051808303816000875af1925050508015611783575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261178091810190612737565b60015b6117c1576040518060c00160405280600081526020016000815260200160008152602001600081526020016000815260200160008152509150610f97565b6080810151604080830151606084015160c085015161010086015193517f05d455a90000000000000000000000000000000000000000000000000000000081526004810195909552602485019290925260448401526064830152608482015273ffffffffffffffffffffffffffffffffffffffff8516906305d455a99060a40160c060405180830381865afa925050508015611898575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261189591810190612aa9565b60015b6106e8576040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525092506106eb565b6060815167ffffffffffffffff8111156118f2576118f26124aa565b60405190808252806020026020018201604052801561192b57816020015b611918611fc6565b8152602001906001900390816119105790505b50905060005b8251811015610f975761195c83828151811061194f5761194f612a2f565b602002602001015161100c565b82828151811061196e5761196e612a2f565b6020026020010181905250808061198490612a5e565b915050611931565b60006060826000036119a257600091505061058d565b607f8311611a6b576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b6040516020818303038152906040529050611de7565b60ff8311611b48576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801611a55565b61ffff8311611c26576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901611a55565b62ffffff8311611d05576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01611a55565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b80516020909101209392505050565b606081611e0481601f612a96565b1015611e71576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f736c6963655f6f766572666c6f7700000000000000000000000000000000000060448201526064015b60405180910390fd5b611e7b8284612a96565b84511015611ee5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f736c6963655f6f75744f66426f756e64730000000000000000000000000000006044820152606401611e68565b81158015611f025760405191506000825260208201604052611f6a565b6040519150601f8316801560200281840101848101868315602002848a0101015b81831015611f3b578051835260209283019201611f23565b5050848452601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016604052505b509392505050565b6000602483511015611f865750600061058d565b60208301517fffffffff0000000000000000000000000000000000000000000000000000000080841690821603611fbf57602484015191505b5092915050565b6040518060c00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681526020016000815260200161205a6040518060800160405280600081526020016000815260200160008152602001600081525090565b81526020016120986040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b905290565b6000602082840312156120af57600080fd5b5035919050565b73ffffffffffffffffffffffffffffffffffffffff811681146120d857600080fd5b50565b6000602082840312156120ed57600080fd5b81356120f8816120b6565b9392505050565b6080810161058d828473ffffffffffffffffffffffffffffffffffffffff80825116835280602083015116602084015280604083015116604084015250606081015160608301525050565b73ffffffffffffffffffffffffffffffffffffffff808251168352806020830151166020840152806040830151166040840152506060810151606083015260808101516121bb6080840182805182526020810151602083015260408101516040830152606081015160608301525050565b5060a0908101518051610100840152602081015161012084015260408101516101408401526060810151610160840152608081015161018084015201516101a090910152565b6020808252825182820181905260009190848201906040850190845b818110156122445761223083855161214a565b928401926101c0929092019160010161221d565b50909695505050505050565b815181526020808301516102408301916122819084018273ffffffffffffffffffffffffffffffffffffffff169052565b5060408301516122a9604084018273ffffffffffffffffffffffffffffffffffffffff169052565b506060830151612307606084018273ffffffffffffffffffffffffffffffffffffffff808251168352806020830151166020840152806040830151166040840152806060830151166060840152806080830151166080840152505050565b5060808301516101006123318185018373ffffffffffffffffffffffffffffffffffffffff169052565b60a0850151915061012061235c8186018473ffffffffffffffffffffffffffffffffffffffff169052565b60c086015192506101406123878187018573ffffffffffffffffffffffffffffffffffffffff169052565b60e0870151610160878101919091529287015161018080880191909152918701516101a080880191909152908701516101c0870152918601516101e08601528501516102008501529093015161022090920191909152919050565b815181526020808301519082015260408083015190820152606080830151908201526080810161058d565b6000806000806080858703121561242357600080fd5b843561242e816120b6565b93506020850135801515811461244357600080fd5b93969395505050506040820135916060013590565b6101c0810161058d828461214a565b60c0810161058d8284805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a08301525050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051610120810167ffffffffffffffff811182821017156124fd576124fd6124aa565b60405290565b6040516101c0810167ffffffffffffffff811182821017156124fd576124fd6124aa565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561256e5761256e6124aa565b604052919050565b6000602080838503121561258957600080fd5b823567ffffffffffffffff808211156125a157600080fd5b818501915085601f8301126125b557600080fd5b8135818111156125c7576125c76124aa565b8060051b91506125d8848301612527565b81815291830184019184810190888411156125f257600080fd5b938501935b8385101561261c578435925061260c836120b6565b82825293850193908501906125f7565b98975050505050505050565b6020808252825182820181905260009190848201906040850190845b8181101561224457835173ffffffffffffffffffffffffffffffffffffffff1683529284019291840191600101612644565b6020808252825182820181905260009190848201906040850190845b81811015612244576126e283855173ffffffffffffffffffffffffffffffffffffffff80825116835280602083015116602084015280604083015116604084015250606081015160608301525050565b9284019260809290920191600101612692565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b8181038181111561058d5761058d6126f5565b6000610120828403121561274a57600080fd5b6127526124d9565b825181526020830151602082015260408301516040820152606083015160608201526080830151608082015260a083015160a082015260c083015160c082015260e083015160e08201526101008084015181830152508091505092915050565b80516106ee816120b6565b600060a082840312156127cf57600080fd5b60405160a0810181811067ffffffffffffffff821117156127f2576127f26124aa565b80604052508091508251612805816120b6565b81526020830151612815816120b6565b60208201526040830151612828816120b6565b6040820152606083015161283b816120b6565b6060820152608083015161284e816120b6565b6080919091015292915050565b6000610240828403121561286e57600080fd5b612876612503565b82518152612886602084016127b2565b6020820152612897604084016127b2565b60408201526128a984606085016127bd565b60608201526101006128bc8185016127b2565b60808301526101206128cf8186016127b2565b60a08401526101406128e28187016127b2565b60c08501526101608087015160e086015261018080880151858701526101a0945084880151848701526101c0880151838701526101e088015182870152610200880151818701525050505061022084015181830152508091505092915050565b60006080828403121561295457600080fd5b6040516080810181811067ffffffffffffffff82111715612977576129776124aa565b8060405250809150825181526020830151602082015260408301516040820152606083015160608201525092915050565b6000608082840312156129ba57600080fd5b6120f88383612942565b6000602082840312156129d657600080fd5b5051919050565b808202811582820484141761058d5761058d6126f5565b600082612a2a577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203612a8f57612a8f6126f5565b5060010190565b8082018082111561058d5761058d6126f5565b600060c08284031215612abb57600080fd5b60405160c0810181811067ffffffffffffffff82111715612ade57612ade6124aa565b8060405250825181526020830151602082015260408301516040820152606083015160608201526080830151608082015260a083015160a0820152809150509291505056fea2646970667358221220f8f8e47362b57a7775cfb7fe9fe0c2df1d015baadb2e68e34f82a57cf57c29f764736f6c63430008150033",
+  "deployedBytecode": "0x60806040526004361061017f5760003560e01c80636e38c023116100d6578063c56f1b441161007f578063d88ff1f411610059578063d88ff1f4146104ff578063dde0470614610521578063fccca03c1461054157600080fd5b8063c56f1b441461047b578063ca4f28031461049d578063d3ffe67a146104ea57600080fd5b8063bb39e3a1116100b0578063bb39e3a114610428578063bd964d381461043b578063c0eec0e81461045b57600080fd5b80636e38c023146103d3578063957755e6146103e8578063a59737631461040857600080fd5b80633973a11b1161013857806342fcc6fb1161011257806342fcc6fb146103595780634bee93951461037957806355181f11146103a657600080fd5b80633973a11b146102de5780633ec841e41461030b578063425711371461033857600080fd5b8063068bcd8d11610169578063068bcd8d1461025b5780632dd3100014610288578063333d01a9146102bc57600080fd5b8062a5ae2114610184578063015f6cfa146101ce575b600080fd5b34801561019057600080fd5b506101a461019f36600461209d565b610561565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b3480156101da57600080fd5b506101ee6101e93660046120db565b610593565b6040516101c59190600061012082019050825182526020830151602083015260408301516040830152606083015160608301526080830151608083015260a083015160a083015260c083015160c083015260e083015160e083015261010080840151818401525092915050565b34801561026757600080fd5b5061027b61027636600461209d565b6106f3565b6040516101c591906120ff565b34801561029457600080fd5b506101a47f000000000000000000000000000000000000000000000000000000000000000081565b3480156102c857600080fd5b506102d16107a5565b6040516101c59190612201565b3480156102ea57600080fd5b506102fe6102f93660046120db565b6107b7565b6040516101c59190612250565b34801561031757600080fd5b5061032b6103263660046120db565b6108c4565b6040516101c591906123e2565b61034b61034636600461240d565b61095e565b6040519081526020016101c5565b34801561036557600080fd5b5061034b6103743660046120db565b610a92565b34801561038557600080fd5b506103996103943660046120db565b610b35565b6040516101c59190612458565b3480156103b257600080fd5b506103c66103c13660046120db565b610be7565b6040516101c59190612467565b3480156103df57600080fd5b506102d1610d8c565b3480156103f457600080fd5b5061032b6104033660046120db565b610d99565b34801561041457600080fd5b506102d1610423366004612576565b610ee1565b61034b61043636600461240d565b610f9d565b34801561044757600080fd5b506103996104563660046120db565b61100c565b34801561046757600080fd5b5061032b6104763660046120db565b61103c565b34801561048757600080fd5b50610490611310565b6040516101c59190612628565b3480156104a957600080fd5b506104bd6104b83660046120db565b6113ca565b6040805173ffffffffffffffffffffffffffffffffffffffff9384168152929091166020830152016101c5565b3480156104f657600080fd5b5061034b611455565b34801561050b57600080fd5b506105146114e6565b6040516101c59190612676565b34801561052d57600080fd5b506103c661053c3660046120db565b6115c9565b34801561054d57600080fd5b506102d161055c366004612576565b6118d6565b600061058d7f00000000000000000000000000000000000000000000000000000000000000008361198c565b92915050565b6105e26040518061012001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b8173ffffffffffffffffffffffffffffffffffffffff1663916cef4e6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561062a57600080fd5b505af192505050801561063b575060015b6106ee573d808015610669576040519150601f19603f3d011682016040523d82523d6000602084013e61066e565b606091505b5060208101517fdc4022c5000000000000000000000000000000000000000000000000000000007fffffffff000000000000000000000000000000000000000000000000000000008216016106eb576106d58260048085516106d09190612724565b611df6565b8060200190518101906106e89190612737565b92505b50505b919050565b60408051608081018252600080825260208201819052918101829052606081018290529061072083610561565b905060008061072e836113ca565b9150915060405180608001604052808473ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff16815260200161079a85610a92565b905295945050505050565b60606107b261055c611310565b905090565b610854604080516101c08101825260008082526020808301829052828401829052835160a08101855282815290810182905292830181905260608381018290526080840191909152909190820190815260006020820181905260408201819052606082018190526080820181905260a0820181905260c0820181905260e08201819052610100820181905261012082018190526101409091015290565b8173ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b815260040161024060405180830381865afa1580156108a0573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061058d919061285b565b6108ef6040518060800160405280600081526020016000815260200160008152602001600081525090565b8173ffffffffffffffffffffffffffffffffffffffff16631595cbd36040518163ffffffff1660e01b8152600401608060405180830381865afa15801561093a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061058d91906129a8565b6040517f286f0e610000000000000000000000000000000000000000000000000000000081528315156004820152602481018390526044810182905261dead606482015260009073ffffffffffffffffffffffffffffffffffffffff86169063286f0e619034906084015b60206040518083038185885af193505050508015610a22575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201909252610a1f918101906129c4565b60015b610a88573d808015610a50576040519150601f19603f3d011682016040523d82523d6000602084013e610a55565b606091505b50610a80817fb3bfda9900000000000000000000000000000000000000000000000000000000611f72565b915050610a8a565b505b949350505050565b6040517fb5c736e400000000000000000000000000000000000000000000000000000000815260016004820152600090819073ffffffffffffffffffffffffffffffffffffffff84169063b5c736e490602401602060405180830381865afa158015610b02573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b2691906129c4565b60021c6201ffff169392505050565b610b3d611fc6565b600080610b49846113ca565b915091506000610b5885610d99565b90506000610b6586610be7565b90506040518060c001604052808773ffffffffffffffffffffffffffffffffffffffff1681526020018573ffffffffffffffffffffffffffffffffffffffff1681526020018473ffffffffffffffffffffffffffffffffffffffff168152602001610bcf88610a92565b81526020810193909352604090920152949350505050565b610c206040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b610c29826115c9565b905060008273ffffffffffffffffffffffffffffffffffffffff16631595cbd36040518163ffffffff1660e01b8152600401608060405180830381865afa158015610c78573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c9c91906129a8565b8051602082015184519293509091610cb491906129dd565b610cbe91906129f4565b8252805160208201516040840151610cd691906129dd565b610ce091906129f4565b6040830152805160208201516080840151610cfb91906129dd565b610d0591906129f4565b6080830152604081015160608201516020840151610d2391906129dd565b610d2d91906129f4565b6020830152604081015160608083015190840151610d4b91906129dd565b610d5591906129f4565b826060018181525050806040015181606001518360a00151610d7791906129dd565b610d8191906129f4565b60a083015250919050565b60606107b2610423611310565b610dc46040518060800160405280600081526020016000815260200160008152602001600081525090565b610dcd8261103c565b905060008273ffffffffffffffffffffffffffffffffffffffff16631595cbd36040518163ffffffff1660e01b8152600401608060405180830381865afa158015610e1c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e4091906129a8565b8051602082015184519293509091610e5891906129dd565b610e6291906129f4565b8252805160208201516040840151610e7a91906129dd565b610e8491906129f4565b60408084019190915281015160608201516020840151610ea491906129dd565b610eae91906129f4565b6020830152604081015160608083015190840151610ecc91906129dd565b610ed691906129f4565b606083015250919050565b6060815167ffffffffffffffff811115610efd57610efd6124aa565b604051908082528060200260200182016040528015610f3657816020015b610f23611fc6565b815260200190600190039081610f1b5790505b50905060005b8251811015610f9757610f67838281518110610f5a57610f5a612a2f565b6020026020010151610b35565b828281518110610f7957610f79612a2f565b60200260200101819052508080610f8f90612a5e565b915050610f3c565b50919050565b6040517f2668dfaa0000000000000000000000000000000000000000000000000000000081528315156004820152602481018390526044810182905261dead606482015260009073ffffffffffffffffffffffffffffffffffffffff861690632668dfaa9034906084016109c9565b611014611fc6565b600080611020846113ca565b91509150600061102f8561103c565b90506000610b65866115c9565b6110676040518060800160405280600081526020016000815260200160008152602001600081525090565b6040517fb5c736e40000000000000000000000000000000000000000000000000000000081526001600482015260009073ffffffffffffffffffffffffffffffffffffffff84169063b5c736e490602401602060405180830381865afa1580156110d5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906110f991906129c4565b9050806001166001146111335760405180608001604052806000815260200160008152602001600081526020016000815250915050919050565b6040517f015f6cfa00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84166004820152309063015f6cfa90602401610120604051808303816000875af19250505080156111da575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01682019092526111d791810190612737565b60015b61120a57604051806080016040528060008152602001600081526020016000815260200160008152509150610f97565b6080810151604080830151606084015160a085015160e086015193517f6560abaa0000000000000000000000000000000000000000000000000000000081526004810195909552602485019290925260448401526064830152608482015273ffffffffffffffffffffffffffffffffffffffff851690636560abaa9060a401608060405180830381865afa9250505080156112e0575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01682019092526112dd918101906129a8565b60015b6106e8576040518060800160405280600081526020016000815260200160008152602001600081525092506106eb565b6060600061131c611455565b90508067ffffffffffffffff811115611337576113376124aa565b604051908082528060200260200182016040528015611360578160200160208202803683370190505b50915060005b818110156113c55761137c61019f826001612a96565b83828151811061138e5761138e612a2f565b73ffffffffffffffffffffffffffffffffffffffff90921660209283029190910190910152806113bd81612a5e565b915050611366565b505090565b60008060008373ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b815260040161024060405180830381865afa15801561141b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061143f919061285b565b90508060a001518160c001519250925050915091565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166393656c176040518163ffffffff1660e01b8152600401602060405180830381865afa1580156114c2573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107b291906129c4565b606060006114f2611455565b90508067ffffffffffffffff81111561150d5761150d6124aa565b60405190808252806020026020018201604052801561157d57816020015b6040805160808101825260008082526020808301829052928201819052606082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff90920191018161152b5790505b50915060005b818110156113c557611599610276826001612a96565b8382815181106115ab576115ab612a2f565b602002602001018190525080806115c190612a5e565b915050611583565b6116026040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040517fb5c736e40000000000000000000000000000000000000000000000000000000081526001600482015260009073ffffffffffffffffffffffffffffffffffffffff84169063b5c736e490602401602060405180830381865afa158015611670573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061169491906129c4565b9050806002166002146116dc576040518060c0016040528060008152602001600081526020016000815260200160008152602001600081526020016000815250915050919050565b6040517f015f6cfa00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84166004820152309063015f6cfa90602401610120604051808303816000875af1925050508015611783575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261178091810190612737565b60015b6117c1576040518060c00160405280600081526020016000815260200160008152602001600081526020016000815260200160008152509150610f97565b6080810151604080830151606084015160c085015161010086015193517f05d455a90000000000000000000000000000000000000000000000000000000081526004810195909552602485019290925260448401526064830152608482015273ffffffffffffffffffffffffffffffffffffffff8516906305d455a99060a40160c060405180830381865afa925050508015611898575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261189591810190612aa9565b60015b6106e8576040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525092506106eb565b6060815167ffffffffffffffff8111156118f2576118f26124aa565b60405190808252806020026020018201604052801561192b57816020015b611918611fc6565b8152602001906001900390816119105790505b50905060005b8251811015610f975761195c83828151811061194f5761194f612a2f565b602002602001015161100c565b82828151811061196e5761196e612a2f565b6020026020010181905250808061198490612a5e565b915050611931565b60006060826000036119a257600091505061058d565b607f8311611a6b576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b6040516020818303038152906040529050611de7565b60ff8311611b48576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801611a55565b61ffff8311611c26576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901611a55565b62ffffff8311611d05576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01611a55565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b80516020909101209392505050565b606081611e0481601f612a96565b1015611e71576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f736c6963655f6f766572666c6f7700000000000000000000000000000000000060448201526064015b60405180910390fd5b611e7b8284612a96565b84511015611ee5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f736c6963655f6f75744f66426f756e64730000000000000000000000000000006044820152606401611e68565b81158015611f025760405191506000825260208201604052611f6a565b6040519150601f8316801560200281840101848101868315602002848a0101015b81831015611f3b578051835260209283019201611f23565b5050848452601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016604052505b509392505050565b6000602483511015611f865750600061058d565b60208301517fffffffff0000000000000000000000000000000000000000000000000000000080841690821603611fbf57602484015191505b5092915050565b6040518060c00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681526020016000815260200161205a6040518060800160405280600081526020016000815260200160008152602001600081525090565b81526020016120986040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b905290565b6000602082840312156120af57600080fd5b5035919050565b73ffffffffffffffffffffffffffffffffffffffff811681146120d857600080fd5b50565b6000602082840312156120ed57600080fd5b81356120f8816120b6565b9392505050565b6080810161058d828473ffffffffffffffffffffffffffffffffffffffff80825116835280602083015116602084015280604083015116604084015250606081015160608301525050565b73ffffffffffffffffffffffffffffffffffffffff808251168352806020830151166020840152806040830151166040840152506060810151606083015260808101516121bb6080840182805182526020810151602083015260408101516040830152606081015160608301525050565b5060a0908101518051610100840152602081015161012084015260408101516101408401526060810151610160840152608081015161018084015201516101a090910152565b6020808252825182820181905260009190848201906040850190845b818110156122445761223083855161214a565b928401926101c0929092019160010161221d565b50909695505050505050565b815181526020808301516102408301916122819084018273ffffffffffffffffffffffffffffffffffffffff169052565b5060408301516122a9604084018273ffffffffffffffffffffffffffffffffffffffff169052565b506060830151612307606084018273ffffffffffffffffffffffffffffffffffffffff808251168352806020830151166020840152806040830151166040840152806060830151166060840152806080830151166080840152505050565b5060808301516101006123318185018373ffffffffffffffffffffffffffffffffffffffff169052565b60a0850151915061012061235c8186018473ffffffffffffffffffffffffffffffffffffffff169052565b60c086015192506101406123878187018573ffffffffffffffffffffffffffffffffffffffff169052565b60e0870151610160878101919091529287015161018080880191909152918701516101a080880191909152908701516101c0870152918601516101e08601528501516102008501529093015161022090920191909152919050565b815181526020808301519082015260408083015190820152606080830151908201526080810161058d565b6000806000806080858703121561242357600080fd5b843561242e816120b6565b93506020850135801515811461244357600080fd5b93969395505050506040820135916060013590565b6101c0810161058d828461214a565b60c0810161058d8284805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a08301525050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051610120810167ffffffffffffffff811182821017156124fd576124fd6124aa565b60405290565b6040516101c0810167ffffffffffffffff811182821017156124fd576124fd6124aa565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561256e5761256e6124aa565b604052919050565b6000602080838503121561258957600080fd5b823567ffffffffffffffff808211156125a157600080fd5b818501915085601f8301126125b557600080fd5b8135818111156125c7576125c76124aa565b8060051b91506125d8848301612527565b81815291830184019184810190888411156125f257600080fd5b938501935b8385101561261c578435925061260c836120b6565b82825293850193908501906125f7565b98975050505050505050565b6020808252825182820181905260009190848201906040850190845b8181101561224457835173ffffffffffffffffffffffffffffffffffffffff1683529284019291840191600101612644565b6020808252825182820181905260009190848201906040850190845b81811015612244576126e283855173ffffffffffffffffffffffffffffffffffffffff80825116835280602083015116602084015280604083015116604084015250606081015160608301525050565b9284019260809290920191600101612692565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b8181038181111561058d5761058d6126f5565b6000610120828403121561274a57600080fd5b6127526124d9565b825181526020830151602082015260408301516040820152606083015160608201526080830151608082015260a083015160a082015260c083015160c082015260e083015160e08201526101008084015181830152508091505092915050565b80516106ee816120b6565b600060a082840312156127cf57600080fd5b60405160a0810181811067ffffffffffffffff821117156127f2576127f26124aa565b80604052508091508251612805816120b6565b81526020830151612815816120b6565b60208201526040830151612828816120b6565b6040820152606083015161283b816120b6565b6060820152608083015161284e816120b6565b6080919091015292915050565b6000610240828403121561286e57600080fd5b612876612503565b82518152612886602084016127b2565b6020820152612897604084016127b2565b60408201526128a984606085016127bd565b60608201526101006128bc8185016127b2565b60808301526101206128cf8186016127b2565b60a08401526101406128e28187016127b2565b60c08501526101608087015160e086015261018080880151858701526101a0945084880151848701526101c0880151838701526101e088015182870152610200880151818701525050505061022084015181830152508091505092915050565b60006080828403121561295457600080fd5b6040516080810181811067ffffffffffffffff82111715612977576129776124aa565b8060405250809150825181526020830151602082015260408301516040820152606083015160608201525092915050565b6000608082840312156129ba57600080fd5b6120f88383612942565b6000602082840312156129d657600080fd5b5051919050565b808202811582820484141761058d5761058d6126f5565b600082612a2a577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203612a8f57612a8f6126f5565b5060010190565b8082018082111561058d5761058d6126f5565b600060c08284031215612abb57600080fd5b60405160c0810181811067ffffffffffffffff82111715612ade57612ade6124aa565b8060405250825181526020830151602082015260408301516040820152606083015160608201526080830151608082015260a083015160a0820152809150509291505056fea2646970667358221220f8f8e47362b57a7775cfb7fe9fe0c2df1d015baadb2e68e34f82a57cf57c29f764736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "estimateSwapIn(address,bool,uint256,uint256)": {
+        "params": {
+          "amountIn_": "The exact amount of input tokens to swap",
+          "amountOutMin_": "The minimum amount of output tokens the user is willing to accept",
+          "dex_": "Dex pool",
+          "swap0to1_": "Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0"
+        },
+        "returns": {
+          "amountOut_": "The amount of output tokens received from the swap"
+        }
+      },
+      "estimateSwapOut(address,bool,uint256,uint256)": {
+        "params": {
+          "amountInMax_": "Maximum amount of tokens to swap in",
+          "amountOut_": "The exact amount of tokens to receive after swap",
+          "dex_": "Dex pool",
+          "swap0to1_": "Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0"
+        },
+        "returns": {
+          "amountIn_": "The amount of input tokens used for the swap"
+        }
+      },
+      "getAllPoolAddresses()": {
+        "returns": {
+          "pools_": "An array containing all Pool addresses"
+        }
+      },
+      "getAllPools()": {
+        "returns": {
+          "pools_": "An array containing all Pool data"
+        }
+      },
+      "getAllPoolsReserves()": {
+        "details": "expected to be called via callStatic",
+        "returns": {
+          "poolsReserves_": "An array containing all Pool data with reserves"
+        }
+      },
+      "getAllPoolsReservesAdjusted()": {
+        "details": "expected to be called via callStatic",
+        "returns": {
+          "poolsReserves_": "An array containing all Pool data with adjusted reserves scaled to 1e12"
+        }
+      },
+      "getDexCollateralReserves(address)": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "dex_": "The address of the DEX"
+        },
+        "returns": {
+          "reserves_": "A struct containing collateral reserve information"
+        }
+      },
+      "getDexCollateralReservesAdjusted(address)": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "dex_": "The address of the DEX"
+        },
+        "returns": {
+          "reserves_": "A struct containing collateral reserve information"
+        }
+      },
+      "getDexDebtReserves(address)": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "dex_": "The address of the DEX"
+        },
+        "returns": {
+          "reserves_": "A struct containing debt reserve information"
+        }
+      },
+      "getDexDebtReservesAdjusted(address)": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "dex_": "The address of the DEX"
+        },
+        "returns": {
+          "reserves_": "A struct containing debt reserve information"
+        }
+      },
+      "getDexPricesAndExchangePrices(address)": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "dex_": "The address of the DEX"
+        },
+        "returns": {
+          "pex_": "A struct containing prices and exchange prices"
+        }
+      },
+      "getPool(uint256)": {
+        "params": {
+          "poolId_": "The ID of the Pool"
+        },
+        "returns": {
+          "pool_": "The Pool data"
+        }
+      },
+      "getPoolAddress(uint256)": {
+        "params": {
+          "poolId_": "The ID of the Pool"
+        },
+        "returns": {
+          "pool_": "The address of the Pool"
+        }
+      },
+      "getPoolFee(address)": {
+        "params": {
+          "pool_": "The Pool address"
+        },
+        "returns": {
+          "fee_": "The Pool fee as 1% = 10000"
+        }
+      },
+      "getPoolReserves(address)": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "pool_": "The Pool address"
+        },
+        "returns": {
+          "poolReserves_": "The Pool data with reserves"
+        }
+      },
+      "getPoolReservesAdjusted(address)": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "pool_": "The Pool address"
+        },
+        "returns": {
+          "poolReserves_": "The Pool data with adjusted reserves scaled to 1e12"
+        }
+      },
+      "getPoolTokens(address)": {
+        "params": {
+          "pool_": "The address of the Pool"
+        },
+        "returns": {
+          "token0_": "The address of token0 in the Pool",
+          "token1_": "The address of token1 in the Pool"
+        }
+      },
+      "getPoolsReserves(address[])": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "pools_": "The array of Pool addresses"
+        },
+        "returns": {
+          "poolsReserves_": "An array containing all Pool data with reserves"
+        }
+      },
+      "getPoolsReservesAdjusted(address[])": {
+        "details": "expected to be called via callStatic",
+        "params": {
+          "pools_": "The array of Pool addresses"
+        },
+        "returns": {
+          "poolsReserves_": "An array containing all Pool data with adjusted reserves scaled to 1e12"
+        }
+      },
+      "getTotalPools()": {
+        "returns": {
+          "_0": "The total number of Pools"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "estimateSwapIn(address,bool,uint256,uint256)": {
+        "notice": "estimates swap IN tokens execution"
+      },
+      "estimateSwapOut(address,bool,uint256,uint256)": {
+        "notice": "estimates swap OUT tokens execution"
+      },
+      "getAllPoolAddresses()": {
+        "notice": "Get an array of all Pool addresses"
+      },
+      "getAllPools()": {
+        "notice": "Get an array of all Pool addresses and their token addresses"
+      },
+      "getAllPoolsReserves()": {
+        "notice": "Get an array of all Pool addresses, their token addresses, collateral reserves, and debt reserves"
+      },
+      "getAllPoolsReservesAdjusted()": {
+        "notice": "Get an array of all Pool addresses, their token addresses, adjusted collateral reserves, and adjusted debt reserves"
+      },
+      "getDexCollateralReserves(address)": {
+        "notice": "Get the collateral reserves for a DEX in token decimals amounts"
+      },
+      "getDexCollateralReservesAdjusted(address)": {
+        "notice": "Get the collateral reserves for a DEX scaled to 1e12"
+      },
+      "getDexDebtReserves(address)": {
+        "notice": "Get the debt reserves for a DEX in token decimals amounts"
+      },
+      "getDexDebtReservesAdjusted(address)": {
+        "notice": "Get the debt reserves for a DEX scaled to 1e12"
+      },
+      "getDexPricesAndExchangePrices(address)": {
+        "notice": "Get the prices and exchange prices for a DEX"
+      },
+      "getPool(uint256)": {
+        "notice": "Get a Pool's address and its token addresses"
+      },
+      "getPoolAddress(uint256)": {
+        "notice": "Get the address of a Pool given its ID"
+      },
+      "getPoolConstantsView(address)": {
+        "notice": "returns all Pool constants"
+      },
+      "getPoolConstantsView2(address)": {
+        "notice": "returns all Pool constants 2"
+      },
+      "getPoolFee(address)": {
+        "notice": "Get a Pool's fee"
+      },
+      "getPoolReserves(address)": {
+        "notice": "Get the token addresses, collateral reserves, and debt reserves for a given Pool address"
+      },
+      "getPoolReservesAdjusted(address)": {
+        "notice": "Get the token addresses, adjusted collateral reserves, and adjusted debt reserves for a given Pool address"
+      },
+      "getPoolTokens(address)": {
+        "notice": "Get the addresses of the tokens in a Pool"
+      },
+      "getPoolsReserves(address[])": {
+        "notice": "Get an array of Pool addresses, their token addresses, collateral reserves, and debt reserves for a given array of Pool addresses"
+      },
+      "getPoolsReservesAdjusted(address[])": {
+        "notice": "Get an array of Pool addresses, their token addresses, adjusted collateral reserves, and adjusted debt reserves for a given array of Pool addresses"
+      },
+      "getTotalPools()": {
+        "notice": "Get the total number of Pools"
+      }
+    },
+    "notice": "Fluid Dex Reserves resolver Implements various view-only methods to give easy access to Dex protocol reserves data.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
