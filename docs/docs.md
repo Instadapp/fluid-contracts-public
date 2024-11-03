@@ -4,7 +4,7 @@ Instadapp Fluid is a combination of DeFi protocols with a Liquidity layer at the
 
 ### Architecture overview
 
-"Liquidity" is at the center of Fluid. It's the core contract that holds all funds and only interats with protocols built on top of it, not end users.
+"Liquidity" is at the center of Fluid. It's the core contract that holds all funds and only interacts with protocols built on top of it, not end users.
 The first protocols built on top of it are the Lending protocol (fToken) and Vault protocol. The Lending protocol implements an easy way to supply to Liquidity via ERC4626 compliant fTokens. The Vault protocol implements a way to supply and borrow funds, a typical borrow / lending functionality based on collateral value fetched through an Oracle.
 
 fTokens are created by the `LendingFactory`, Vaults are created by the `VaultFactory`.
@@ -60,7 +60,7 @@ Errors are implemented throughout the whole codebase in the way as described in 
 
 - There are checks in place that would revert on very high token amounts, e.g. Liquidity `operate()` does not accept values higher than max int 128. Very high token amounts could lead to unexpected overflows so no such taken should be listed. Amounts of up until ~1e70 are safe, currently no such (legit) token exists that would require operations with such high amounts.
 
-- process to list a token at Liquidity is: 1. Set rate config for token 2. Set token config (set max utilization to 1e4 for gas-optimized default max utilization of 100%!) 3. allow any user (protoocl). If done in any other order, an error is thrown.
+- process to list a token at Liquidity is: 1. Set rate config for token 2. Set token config (set max utilization to 1e4 for gas-optimized default max utilization of 100%!) 3. allow any user (protocol). If done in any other order, an error is thrown.
 - For ensuring vault protocol works smoothly, we must avoid listing tokens where the following would be true:
 
   - high collateral token decimals
