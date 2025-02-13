@@ -1,0 +1,269 @@
+{
+  "address": "0x2005617238a8E1C153D19A33fd32fB168f3626e7",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "duration_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startTvl_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rewardAmount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "initiator_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidLendingError",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "endTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogRewardsStarted",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "getConfig",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "duration_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startTime_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "endTime_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startTvl_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxRate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rewardAmount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "initiator_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalAssets_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "rate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "ended_",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startTime_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "start",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa5d32b11f900a1ac84e7834f06d95c959ef9f0bd19742f59792350771273b997",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 40,
+    "gasUsed": "369069",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x110df052701f31b89160b1a50177cffb7d0dc3384ddf709c0435f835da8e49ad",
+    "transactionHash": "0xa5d32b11f900a1ac84e7834f06d95c959ef9f0bd19742f59792350771273b997",
+    "logs": [],
+    "blockNumber": 19851874,
+    "cumulativeGasUsed": "3504364",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    3490560,
+    "1000000000",
+    "222200000000",
+    "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "98f8e49e6b0ff74dde4176f150c6c4e8",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"duration_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTvl_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardAmount_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"initiator_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidLendingError\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"startTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"endTime\",\"type\":\"uint256\"}],\"name\":\"LogRewardsStarted\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getConfig\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"duration_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTime_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"endTime_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTvl_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxRate_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardAmount_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"initiator_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalAssets_\",\"type\":\"uint256\"}],\"name\":\"getRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"rate_\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"ended_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"startTime_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"start\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"duration_\":\"for how long rewards should run\",\"initiator_\":\"address which has access to kickstart the rewards\",\"rewardAmount_\":\"total amount of underlying asset to be distributed as rewards\",\"startTvl_\":\"tvl below which rate is 0\"}},\"getRate(uint256)\":{\"params\":{\"totalAssets_\":\"amount of assets in the lending\"},\"returns\":{\"ended_\":\"flag to signal that rewards have ended (always 0 going forward)\",\"rate_\":\"rewards rate percentage per year with 1e12 RATE_PRECISION, e.g. 1e12 = 1%, 1e14 = 100%\",\"startTime_\":\"start time of rewards to compare against last update timestamp\"}}},\"stateVariables\":{\"DURATION\":{\"details\":\"for how long rewards should run\"},\"INITIATOR\":{\"details\":\"address which has access to call start() which kickstarts the rewards\"},\"MAX_RATE\":{\"details\":\"maximum rewards rate is 50%. no config higher than this should be possible.\"},\"RATE_PRECISION\":{\"details\":\"precision decimals for rewards rate\"},\"REWARD_AMOUNT\":{\"details\":\"total amounts to be distributed. not needed but stored for easier tracking via `getConfig`\"},\"START_TVL\":{\"details\":\"tvl below which rewards rate is 0\"},\"YEARLY_REWARD\":{\"details\":\"annualized reward based on constructor input params (duration, rewardAmount)\"},\"endTime\":{\"details\":\"when rewards will get over\"},\"startTime\":{\"details\":\"when rewards got started\"}},\"title\":\"LendingRewardsRateModel\",\"version\":1},\"userdoc\":{\"events\":{\"LogRewardsStarted(uint256,uint256)\":{\"notice\":\"Emitted when rewards are started\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"sets immutable vars for rewards rate config based on input params.\"},\"getConfig()\":{\"notice\":\"Returns config constants for rewards rate model\"},\"getRate(uint256)\":{\"notice\":\"Calculates the current rewards rate (APR)\"}},\"notice\":\"Calculates rewards rate used for an fToken based on a rewardAmount over a given duration.  Rewards start once the allowed initiator address triggers `start()` and only accrue above a certain startTVL. Max rate cap is at 50%.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/protocols/lending/lendingRewardsRateModel/main.sol\":\"FluidLendingRewardsRateModel\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/protocols/lending/error.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nabstract contract Error {\\n    error FluidLendingError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0x8bbab41073bf694d12cc3ce8581ce657ae0eb3ded19677bcce438d2299835a98\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/lending/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |               fToken              | \\n    |__________________________________*/\\n\\n    /// @notice thrown when a deposit amount is too small to increase BigMath stored balance in Liquidity.\\n    /// precision of BigMath is 1e12, so if token holds 120_000_000_000 USDC, min amount to make a difference would be 0.1 USDC.\\n    /// i.e. user would send a very small deposit which mints no shares -> revert\\n    uint256 internal constant fToken__DepositInsignificant = 20001;\\n\\n    /// @notice thrown when minimum output amount is not reached, e.g. for minimum shares minted (deposit) or\\n    ///         minimum assets received (redeem)\\n    uint256 internal constant fToken__MinAmountOut = 20002;\\n\\n    /// @notice thrown when maximum amount is surpassed, e.g. for maximum shares burned (withdraw) or\\n    ///         maximum assets input (mint)\\n    uint256 internal constant fToken__MaxAmount = 20003;\\n\\n    /// @notice thrown when invalid params are sent to a method, e.g. zero address\\n    uint256 internal constant fToken__InvalidParams = 20004;\\n\\n    /// @notice thrown when an unauthorized caller is trying to execute an auth-protected method\\n    uint256 internal constant fToken__Unauthorized = 20005;\\n\\n    /// @notice thrown when a with permit / signature method is called from msg.sender that is the owner.\\n    /// Should call the method without permit instead if msg.sender is the owner.\\n    uint256 internal constant fToken__PermitFromOwnerCall = 20006;\\n\\n    /// @notice thrown when a reentrancy is detected.\\n    uint256 internal constant fToken__Reentrancy = 20007;\\n\\n    /// @notice thrown when _tokenExchangePrice overflows type(uint64).max\\n    uint256 internal constant fToken__ExchangePriceOverflow = 20008;\\n\\n    /// @notice thrown when msg.sender is not rebalancer\\n    uint256 internal constant fToken__NotRebalancer = 20009;\\n\\n    /// @notice thrown when rebalance is called with msg.value > 0 for non NativeUnderlying fToken\\n    uint256 internal constant fToken__NotNativeUnderlying = 20010;\\n\\n    /// @notice thrown when the received new liquidity exchange price is of unexpected value (< than the old one)\\n    uint256 internal constant fToken__LiquidityExchangePriceUnexpected = 20011;\\n\\n    /***********************************|\\n    |     fToken Native Underlying      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when native deposit is called but sent along `msg.value` does not cover the deposit amount\\n    uint256 internal constant fTokenNativeUnderlying__TransferInsufficient = 21001;\\n\\n    /// @notice thrown when a liquidity callback is called for a native token operation\\n    uint256 internal constant fTokenNativeUnderlying__UnexpectedLiquidityCallback = 21002;\\n\\n    /***********************************|\\n    |         Lending Factory         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when a method is called with invalid params\\n    uint256 internal constant LendingFactory__InvalidParams = 22001;\\n\\n    /// @notice thrown when the provided input param address is zero\\n    uint256 internal constant LendingFactory__ZeroAddress = 22002;\\n\\n    /// @notice thrown when the token already exists\\n    uint256 internal constant LendingFactory__TokenExists = 22003;\\n\\n    /// @notice thrown when the fToken has not yet been configured at Liquidity\\n    uint256 internal constant LendingFactory__LiquidityNotConfigured = 22004;\\n\\n    /// @notice thrown when an unauthorized caller is trying to execute an auth-protected method\\n    uint256 internal constant LendingFactory__Unauthorized = 22005;\\n\\n    /***********************************|\\n    |   Lending Rewards Rate Model      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when invalid params are given as input\\n    uint256 internal constant LendingRewardsRateModel__InvalidParams = 23001;\\n\\n    /// @notice thrown when calculated rewards rate is exceeding the maximum rate\\n    uint256 internal constant LendingRewardsRateModel__MaxRate = 23002;\\n\\n    /// @notice thrown when start is called by any other address other than initiator\\n    uint256 internal constant LendingRewardsRateModel__NotTheInitiator = 23003;\\n\\n    /// @notice thrown when start is called after the rewards are already started\\n    uint256 internal constant LendingRewardsRateModel__AlreadyStarted = 23004;\\n\\n    /// @notice thrown when the provided input param address is zero\\n    uint256 internal constant LendingRewardsRateModel__ZeroAddress = 23005;\\n}\\n\",\"keccak256\":\"0x433407a36dd63694d7b18185e5c5508f39c98599975b98ede0077aab9f69b952\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/lending/interfaces/iLendingRewardsRateModel.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidLendingRewardsRateModel {\\n    /// @notice Calculates the current rewards rate (APR)\\n    /// @param totalAssets_ amount of assets in the lending\\n    /// @return rate_ rewards rate percentage per year with 1e12 RATE_PRECISION, e.g. 1e12 = 1%, 1e14 = 100%\\n    /// @return ended_ flag to signal that rewards have ended (always 0 going forward)\\n    /// @return startTime_ start time of rewards to compare against last update timestamp\\n    function getRate(uint256 totalAssets_) external view returns (uint256 rate_, bool ended_, uint256 startTime_);\\n\\n    /// @notice Returns config constants for rewards rate model\\n    function getConfig()\\n        external\\n        view\\n        returns (\\n            uint256 duration_,\\n            uint256 startTime_,\\n            uint256 endTime_,\\n            uint256 startTvl_,\\n            uint256 maxRate_,\\n            uint256 rewardAmount_,\\n            address initiator_\\n        );\\n}\\n\",\"keccak256\":\"0x04a6f1df74f55ba643f27ff08cd5bb9722c31d16b4782d1b090335845359196d\",\"license\":\"MIT\"},\"contracts/protocols/lending/lendingRewardsRateModel/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidLendingRewardsRateModel } from \\\"../interfaces/iLendingRewardsRateModel.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { Error } from \\\"../error.sol\\\";\\n\\n/// @title LendingRewardsRateModel\\n/// @notice Calculates rewards rate used for an fToken based on a rewardAmount over a given duration. \\n/// Rewards start once the allowed initiator address triggers `start()` and only accrue above a certain startTVL.\\n/// Max rate cap is at 50%.\\ncontract FluidLendingRewardsRateModel is IFluidLendingRewardsRateModel, Error {\\n    /// @notice Emitted when rewards are started\\n    event LogRewardsStarted(uint256 startTime, uint256 endTime);\\n\\n    /// @dev precision decimals for rewards rate\\n    uint256 internal constant RATE_PRECISION = 1e12;\\n\\n    uint256 internal constant SECONDS_PER_YEAR = 365 days;\\n\\n    /// @dev maximum rewards rate is 50%. no config higher than this should be possible.\\n    uint256 internal constant MAX_RATE = 50 * RATE_PRECISION; // 1e12 = 1%, this is 50%.\\n\\n    /// @dev tvl below which rewards rate is 0\\n    uint256 internal immutable START_TVL;\\n\\n    /// @dev for how long rewards should run\\n    uint256 internal immutable DURATION;\\n\\n    /// @dev annualized reward based on constructor input params (duration, rewardAmount)\\n    uint256 internal immutable YEARLY_REWARD;\\n\\n    /// @dev total amounts to be distributed. not needed but stored for easier tracking via `getConfig`\\n    uint256 internal immutable REWARD_AMOUNT;\\n\\n    /// @dev address which has access to call start() which kickstarts the rewards\\n    address internal immutable INITIATOR;\\n\\n    /// @dev when rewards got started\\n    uint96 internal startTime;\\n    /// @dev when rewards will get over\\n    uint96 internal endTime;\\n\\n    /// @dev Validates that an address is not the zero address\\n    modifier validAddress(address value_) {\\n        if (value_ == address(0)) {\\n            revert FluidLendingError(ErrorTypes.LendingRewardsRateModel__ZeroAddress);\\n        }\\n        _;\\n    }\\n\\n    /// @notice sets immutable vars for rewards rate config based on input params.\\n    /// @param duration_ for how long rewards should run\\n    /// @param startTvl_  tvl below which rate is 0\\n    /// @param rewardAmount_  total amount of underlying asset to be distributed as rewards\\n    /// @param initiator_  address which has access to kickstart the rewards\\n    constructor(uint256 duration_, uint256 startTvl_, uint256 rewardAmount_, address initiator_) validAddress(initiator_) {\\n        // sanity checks\\n        if (duration_ == 0 || rewardAmount_ == 0 || startTvl_ == 0) {\\n            revert FluidLendingError(ErrorTypes.LendingRewardsRateModel__InvalidParams);\\n        }\\n\\n        START_TVL = startTvl_;\\n        DURATION = duration_;\\n        REWARD_AMOUNT = rewardAmount_;\\n        INITIATOR = initiator_;\\n\\n        YEARLY_REWARD = (rewardAmount_ * SECONDS_PER_YEAR) / DURATION;\\n    }\\n\\n    /// @inheritdoc IFluidLendingRewardsRateModel\\n    function getConfig()\\n        external\\n        view\\n        returns (\\n            uint256 duration_,\\n            uint256 startTime_,\\n            uint256 endTime_,\\n            uint256 startTvl_,\\n            uint256 maxRate_,\\n            uint256 rewardAmount_,\\n            address initiator_\\n        )\\n    {\\n        return (DURATION, startTime, endTime, START_TVL, MAX_RATE, REWARD_AMOUNT, INITIATOR);\\n    }\\n\\n    /// @inheritdoc IFluidLendingRewardsRateModel\\n    function getRate(uint256 totalAssets_) public view returns (uint256 rate_, bool ended_, uint256 startTime_) {\\n        startTime_ = startTime;\\n        uint endTime_ = endTime;\\n        if (startTime_ == 0 || endTime_ == 0) {\\n            return (0, false, startTime_);\\n        }\\n        if (block.timestamp > endTime_) {\\n            return (0, true, startTime_);\\n        }\\n        if (totalAssets_ < START_TVL) {\\n            return (0, false, startTime_);\\n        }\\n\\n        rate_ = (YEARLY_REWARD * 1e14) / totalAssets_;\\n\\n        return (rate_ > MAX_RATE ? MAX_RATE : rate_, false, startTime_);\\n    }\\n\\n    function start() external {\\n        if (msg.sender != INITIATOR) {\\n            revert FluidLendingError(ErrorTypes.LendingRewardsRateModel__NotTheInitiator);\\n        }\\n        if (startTime > 0 || endTime > 0) {\\n            revert FluidLendingError(ErrorTypes.LendingRewardsRateModel__AlreadyStarted);\\n        }\\n        startTime = uint96(block.timestamp);\\n        endTime = uint96(block.timestamp + DURATION);\\n\\n        emit LogRewardsStarted(startTime, endTime);\\n    }\\n\\n}\\n\",\"keccak256\":\"0x485bf3b991157a9480739339654c2709c49243a5c9158989c86475e8cf66f283\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x61012060405234801561001157600080fd5b50604051610773380380610773833981016040819052610030916100db565b806001600160a01b0381166100615760405163694bda1d60e01b81526159dd60048201526024015b60405180910390fd5b84158061006c575082155b80610075575083155b156100975760405163694bda1d60e01b81526159d96004820152602401610058565b608084905260a085905260e08390526001600160a01b03821661010052846100c36301e133808561012a565b6100cd9190610155565b60c052506101779350505050565b600080600080608085870312156100f157600080fd5b845160208601516040870151606088015192965090945092506001600160a01b038116811461011f57600080fd5b939692955090935050565b808202811582820484141761014f57634e487b7160e01b600052601160045260246000fd5b92915050565b60008261017257634e487b7160e01b600052601260045260246000fd5b500490565b60805160a05160c05160e051610100516105a36101d0600039600081816101f60152610495015260006104720152600061016c01526000818161031101526103dd015260008181610133015261042101526105a36000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80635776409414610046578063be9a655514610079578063c3f909d414610083575b600080fd5b6100596100543660046104ba565b6100d6565b604080519384529115156020840152908201526060015b60405180910390f35b6100816101de565b005b61008b6103cb565b604080519788526020880196909652948601939093526060850191909152608084015260a083015273ffffffffffffffffffffffffffffffffffffffff1660c082015260e001610070565b6000805481906bffffffffffffffffffffffff808216916c01000000000000000000000000900416811580610109575080155b1561011b5760008093509350506101d7565b80421115610131576000600193509350506101d7565b7f00000000000000000000000000000000000000000000000000000000000000008510156101665760008093509350506101d7565b846101977f0000000000000000000000000000000000000000000000000000000000000000655af3107a4000610502565b6101a1919061051f565b93506101b364e8d4a510006032610502565b84116101bf57836101cf565b6101cf64e8d4a510006032610502565b600093509350505b9193909250565b3373ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001614610256576040517f694bda1d0000000000000000000000000000000000000000000000000000000081526159db60048201526024015b60405180910390fd5b6000546bffffffffffffffffffffffff1615158061029357506000546c0100000000000000000000000090046bffffffffffffffffffffffff1615155b156102ce576040517f694bda1d0000000000000000000000000000000000000000000000000000000081526159dc600482015260240161024d565b600080547fffffffffffffffffffffffffffffffffffffffff00000000000000000000000016426bffffffffffffffffffffffff811691909117909155610336907f00000000000000000000000000000000000000000000000000000000000000009061055a565b600080546bffffffffffffffffffffffff9283166c010000000000000000000000009081027fffffffffffffffff000000000000000000000000ffffffffffffffffffffffff831681179384905560408051918616938616939093178152920490921660208201527fc46a00a5f8de6e404178aaf0795f118716058fca1012ad21f1e0253a05188c44910160405180910390a1565b600080548190819081908190819081907f0000000000000000000000000000000000000000000000000000000000000000906bffffffffffffffffffffffff808216916c010000000000000000000000009004167f000000000000000000000000000000000000000000000000000000000000000061045064e8d4a510006032610502565b939b6bffffffffffffffffffffffff9384169b509190921698509096509094507f000000000000000000000000000000000000000000000000000000000000000093507f000000000000000000000000000000000000000000000000000000000000000092509050565b6000602082840312156104cc57600080fd5b5035919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b8082028115828204841417610519576105196104d3565b92915050565b600082610555577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b80820180821115610519576105196104d356fea2646970667358221220958e66ab697460b9a3e2ad3e13d6490382bfe5f44440228ddc8638e26d633b0564736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80635776409414610046578063be9a655514610079578063c3f909d414610083575b600080fd5b6100596100543660046104ba565b6100d6565b604080519384529115156020840152908201526060015b60405180910390f35b6100816101de565b005b61008b6103cb565b604080519788526020880196909652948601939093526060850191909152608084015260a083015273ffffffffffffffffffffffffffffffffffffffff1660c082015260e001610070565b6000805481906bffffffffffffffffffffffff808216916c01000000000000000000000000900416811580610109575080155b1561011b5760008093509350506101d7565b80421115610131576000600193509350506101d7565b7f00000000000000000000000000000000000000000000000000000000000000008510156101665760008093509350506101d7565b846101977f0000000000000000000000000000000000000000000000000000000000000000655af3107a4000610502565b6101a1919061051f565b93506101b364e8d4a510006032610502565b84116101bf57836101cf565b6101cf64e8d4a510006032610502565b600093509350505b9193909250565b3373ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001614610256576040517f694bda1d0000000000000000000000000000000000000000000000000000000081526159db60048201526024015b60405180910390fd5b6000546bffffffffffffffffffffffff1615158061029357506000546c0100000000000000000000000090046bffffffffffffffffffffffff1615155b156102ce576040517f694bda1d0000000000000000000000000000000000000000000000000000000081526159dc600482015260240161024d565b600080547fffffffffffffffffffffffffffffffffffffffff00000000000000000000000016426bffffffffffffffffffffffff811691909117909155610336907f00000000000000000000000000000000000000000000000000000000000000009061055a565b600080546bffffffffffffffffffffffff9283166c010000000000000000000000009081027fffffffffffffffff000000000000000000000000ffffffffffffffffffffffff831681179384905560408051918616938616939093178152920490921660208201527fc46a00a5f8de6e404178aaf0795f118716058fca1012ad21f1e0253a05188c44910160405180910390a1565b600080548190819081908190819081907f0000000000000000000000000000000000000000000000000000000000000000906bffffffffffffffffffffffff808216916c010000000000000000000000009004167f000000000000000000000000000000000000000000000000000000000000000061045064e8d4a510006032610502565b939b6bffffffffffffffffffffffff9384169b509190921698509096509094507f000000000000000000000000000000000000000000000000000000000000000093507f000000000000000000000000000000000000000000000000000000000000000092509050565b6000602082840312156104cc57600080fd5b5035919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b8082028115828204841417610519576105196104d3565b92915050565b600082610555577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b80820180821115610519576105196104d356fea2646970667358221220958e66ab697460b9a3e2ad3e13d6490382bfe5f44440228ddc8638e26d633b0564736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "duration_": "for how long rewards should run",
+          "initiator_": "address which has access to kickstart the rewards",
+          "rewardAmount_": "total amount of underlying asset to be distributed as rewards",
+          "startTvl_": "tvl below which rate is 0"
+        }
+      },
+      "getRate(uint256)": {
+        "params": {
+          "totalAssets_": "amount of assets in the lending"
+        },
+        "returns": {
+          "ended_": "flag to signal that rewards have ended (always 0 going forward)",
+          "rate_": "rewards rate percentage per year with 1e12 RATE_PRECISION, e.g. 1e12 = 1%, 1e14 = 100%",
+          "startTime_": "start time of rewards to compare against last update timestamp"
+        }
+      }
+    },
+    "stateVariables": {
+      "DURATION": {
+        "details": "for how long rewards should run"
+      },
+      "INITIATOR": {
+        "details": "address which has access to call start() which kickstarts the rewards"
+      },
+      "MAX_RATE": {
+        "details": "maximum rewards rate is 50%. no config higher than this should be possible."
+      },
+      "RATE_PRECISION": {
+        "details": "precision decimals for rewards rate"
+      },
+      "REWARD_AMOUNT": {
+        "details": "total amounts to be distributed. not needed but stored for easier tracking via `getConfig`"
+      },
+      "START_TVL": {
+        "details": "tvl below which rewards rate is 0"
+      },
+      "YEARLY_REWARD": {
+        "details": "annualized reward based on constructor input params (duration, rewardAmount)"
+      },
+      "endTime": {
+        "details": "when rewards will get over"
+      },
+      "startTime": {
+        "details": "when rewards got started"
+      }
+    },
+    "title": "LendingRewardsRateModel",
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "LogRewardsStarted(uint256,uint256)": {
+        "notice": "Emitted when rewards are started"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "sets immutable vars for rewards rate config based on input params."
+      },
+      "getConfig()": {
+        "notice": "Returns config constants for rewards rate model"
+      },
+      "getRate(uint256)": {
+        "notice": "Calculates the current rewards rate (APR)"
+      }
+    },
+    "notice": "Calculates rewards rate used for an fToken based on a rewardAmount over a given duration.  Rewards start once the allowed initiator address triggers `start()` and only accrue above a certain startTVL. Max rate cap is at 50%.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 43168,
+        "contract": "contracts/protocols/lending/lendingRewardsRateModel/main.sol:FluidLendingRewardsRateModel",
+        "label": "startTime",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint96"
+      },
+      {
+        "astId": 43171,
+        "contract": "contracts/protocols/lending/lendingRewardsRateModel/main.sol:FluidLendingRewardsRateModel",
+        "label": "endTime",
+        "offset": 12,
+        "slot": "0",
+        "type": "t_uint96"
+      }
+    ],
+    "types": {
+      "t_uint96": {
+        "encoding": "inplace",
+        "label": "uint96",
+        "numberOfBytes": "12"
+      }
+    }
+  }
+}
