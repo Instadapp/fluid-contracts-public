@@ -9,6 +9,7 @@ import { Structs } from "./structs.sol";
 import { Error } from "../../error.sol";
 import { ErrorTypes } from "../../errorTypes.sol";
 import { FluidProtocolTypes } from "../../../../libraries/fluidProtocolTypes.sol";
+import { IKeyringChecker } from "../../../interfaces/IKeyringChecker.sol";
 
 interface TokenInterface {
     function decimals() external view returns (uint8);
@@ -44,6 +45,12 @@ abstract contract ConstantVariables is StorageRead, Structs, Error {
 
     /// @dev Vault OperateModule implemenation address
     address internal immutable OPERATE_IMPLEMENTATION;
+
+    /// @dev Vault KeyringChecker address
+    IKeyringChecker internal immutable KEYRING_CHECKER;
+
+    /// @dev Vault KeyringPolicyId
+    uint256 internal immutable KEYRING_POLICY_ID;
 
     /// @dev Vault AdminModule implemenation address
     address internal immutable ADMIN_IMPLEMENTATION;

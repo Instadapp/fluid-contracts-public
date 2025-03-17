@@ -97,6 +97,8 @@ abstract contract Structs {
         address liquidity;
         address factory;
         address operateImplementation;
+        address keyringChecker;
+        uint256 keyringPolicyId;
         address adminImplementation;
         address secondaryImplementation;
         address deployer; // address which deploys oracle

@@ -132,6 +132,9 @@ library ErrorTypes {
     /// @notice thrown when an invalid min / max amounts config is passed to rebalance()
     uint256 internal constant Vault__InvalidMinMaxInRebalance = 31038;
 
+    /// @notice thrown when a user is not whitelisted by Keyring Network
+    uint256 internal constant Vault__UserNotWhitelisted = 31039;
+
     /***********************************|
     |              ERC721               | 
     |__________________________________*/
