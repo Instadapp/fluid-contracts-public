@@ -45,6 +45,12 @@ abstract contract ConstantVariables is StorageRead, Structs, Error {
     /// @dev Vault OperateModule implemenation address
     address internal immutable OPERATE_IMPLEMENTATION;
 
+    /// @dev Vault KeyringChecker address
+    IKeyringChecker internal immutable KEYRING_CHECKER;
+
+    /// @dev Vault KeyringPolicyId
+    uint256 internal immutable KEYRING_POLICY_ID;
+
     /// @dev Vault AdminModule implemenation address
     address internal immutable ADMIN_IMPLEMENTATION;
 
