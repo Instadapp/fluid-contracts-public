@@ -50,7 +50,7 @@ abstract contract FluidVaultOperate is HelpersOperate {
             uint256 // vaultVariables_
         )
     {
-        if (keyringChecker != address(0)) {
+        if (address(KEYRING_CHECKER) != address(0)) {
             if (!KEYRING_CHECKER.checkCredential(KEYRING_POLICY_ID, to_ == address(0) ? msg.sender : to_)) {
                 revert FluidVaultError(ErrorTypes.Vault__UserNotWhitelisted);
             }

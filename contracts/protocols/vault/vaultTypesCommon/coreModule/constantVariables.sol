@@ -9,6 +9,7 @@ import { Structs } from "./structs.sol";
 import { Error } from "../../error.sol";
 import { ErrorTypes } from "../../errorTypes.sol";
 import { FluidProtocolTypes } from "../../../../libraries/fluidProtocolTypes.sol";
+import { IKeyringChecker } from "../../../interfaces/IKeyringChecker.sol";
 
 interface TokenInterface {
     function decimals() external view returns (uint8);
