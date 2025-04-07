@@ -1,0 +1,56 @@
+{
+  "address": "0xCA5E9219e1007931FD5d938C1815a90ef08f1584",
+  "abi": [],
+  "transactionHash": "0x6f151bc9caa892d7a0e10357b70983d15cbc485940df8f83dc65733ba7f4a616",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 63,
+    "gasUsed": "67329",
+    "logsBloom": "0x00000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000010000008000000000000000000000000000000000000000000000000000000000800000000000000000000100000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000001000000000000000000000000000000004000000000000000040001000000000000000000000000040000100000000000000000000000000000000800000000000000000000000000000000000000100000",
+    "blockHash": "0x744f0709438a1cbce5bba87dd0fb699be341f2c286977faea2fc0093d13ad030",
+    "transactionHash": "0x6f151bc9caa892d7a0e10357b70983d15cbc485940df8f83dc65733ba7f4a616",
+    "logs": [
+      {
+        "transactionIndex": 63,
+        "blockNumber": 68510602,
+        "transactionHash": "0x6f151bc9caa892d7a0e10357b70983d15cbc485940df8f83dc65733ba7f4a616",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000ed35b1609ec45c7079e80d11149a52717e4859a",
+          "0x0000000000000000000000000e94b9b3fabd95338b8b23c36caae1d640e1339f"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000072066b83cc3f5000000000000000000000000000000000000000000000000ca618d5a8b58d0cb000000000000000000000000000000000000000000000ff002cde6fe6ca162cb000000000000000000000000000000000000000000000000ca5a6cf3d31c0cd6000000000000000000000000000000000000000000000ff002d5076524de26c0",
+        "logIndex": 331,
+        "blockHash": "0x744f0709438a1cbce5bba87dd0fb699be341f2c286977faea2fc0093d13ad030"
+      }
+    ],
+    "blockNumber": 68510602,
+    "cumulativeGasUsed": "10706716",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "7ded33794b695102c601d6aba03eb026",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/mocks/emptyImplementation.sol\":\"EmptyImplementation\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/mocks/emptyImplementation.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract EmptyImplementation {}\\n\",\"keccak256\":\"0x832b4eea5d5c68bf231ad90fcac25e6a316489bc08dfc4df7f608a6022ddb642\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220997e73d0f2f77253474857287f09815421ce93a70cb1da2d1c1a5fce997a1af564736f6c63430008150033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220997e73d0f2f77253474857287f09815421ce93a70cb1da2d1c1a5fce997a1af564736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
