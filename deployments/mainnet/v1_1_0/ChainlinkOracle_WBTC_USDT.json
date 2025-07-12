@@ -1,0 +1,353 @@
+{
+  "address": "0xFF272430E88B3f804d9E30886677A36021864Cc4",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "mainSource_",
+          "type": "uint8"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "hops",
+              "type": "uint8"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "contract IChainlinkAggregatorV3",
+                  "name": "feed",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "invertRate",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0Decimals",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct ChainlinkStructs.ChainlinkFeedData",
+              "name": "feed1",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "contract IChainlinkAggregatorV3",
+                  "name": "feed",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "invertRate",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0Decimals",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct ChainlinkStructs.ChainlinkFeedData",
+              "name": "feed2",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "contract IChainlinkAggregatorV3",
+                  "name": "feed",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "invertRate",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0Decimals",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct ChainlinkStructs.ChainlinkFeedData",
+              "name": "feed3",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct ChainlinkStructs.ChainlinkConstructorParams",
+          "name": "chainlinkParams_",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "contract IRedstoneOracle",
+              "name": "oracle",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "invertRate",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0Decimals",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct RedstoneStructs.RedstoneOracleData",
+          "name": "redstoneOracle_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidOracleError",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "FALLBACK_ORACLE_MAIN_SOURCE",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "chainlinkOracleData",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "chainlinkExchangeRate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IChainlinkAggregatorV3",
+          "name": "chainlinkFeed1_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "chainlinkInvertRate1_",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "chainlinkExchangeRate1_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IChainlinkAggregatorV3",
+          "name": "chainlinkFeed2_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "chainlinkInvertRate2_",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "chainlinkExchangeRate2_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IChainlinkAggregatorV3",
+          "name": "chainlinkFeed3_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "chainlinkInvertRate3_",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "chainlinkExchangeRate3_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getExchangeRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "exchangeRate_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getExchangeRateLiquidate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "exchangeRate_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getExchangeRateOperate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "exchangeRate_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "redstoneOracleData",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "redstoneExchangeRate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IRedstoneOracle",
+          "name": "redstoneOracle_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "redstoneInvertRate_",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x97bf837da685d5def9aefe4b721b610ea053249df0e491ec3f9950213acb8a8d",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 10,
+    "gasUsed": "807146",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x827fc18f3698a0a14e7bda4fd01028281657dd65faab4df9b526cd7fe933a73d",
+    "transactionHash": "0x97bf837da685d5def9aefe4b721b610ea053249df0e491ec3f9950213acb8a8d",
+    "logs": [],
+    "blockNumber": 20219222,
+    "cumulativeGasUsed": "4903794",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    1,
+    {
+      "hops": 3,
+      "feed1": {
+        "feed": "0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
+        "invertRate": false,
+        "token0Decimals": 8
+      },
+      "feed2": {
+        "feed": "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+        "invertRate": false,
+        "token0Decimals": 8
+      },
+      "feed3": {
+        "feed": "0x3E7d1eAB13ad0104d2750B8863b489D65364e32D",
+        "invertRate": true,
+        "token0Decimals": 6
+      }
+    },
+    {
+      "oracle": "0x0000000000000000000000000000000000000000",
+      "invertRate": false,
+      "token0Decimals": 0
+    }
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "7ea6a03437971b2bd8979b983d3f0850",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"mainSource_\",\"type\":\"uint8\"},{\"components\":[{\"internalType\":\"uint8\",\"name\":\"hops\",\"type\":\"uint8\"},{\"components\":[{\"internalType\":\"contract IChainlinkAggregatorV3\",\"name\":\"feed\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"invertRate\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"token0Decimals\",\"type\":\"uint256\"}],\"internalType\":\"struct ChainlinkStructs.ChainlinkFeedData\",\"name\":\"feed1\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"contract IChainlinkAggregatorV3\",\"name\":\"feed\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"invertRate\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"token0Decimals\",\"type\":\"uint256\"}],\"internalType\":\"struct ChainlinkStructs.ChainlinkFeedData\",\"name\":\"feed2\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"contract IChainlinkAggregatorV3\",\"name\":\"feed\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"invertRate\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"token0Decimals\",\"type\":\"uint256\"}],\"internalType\":\"struct ChainlinkStructs.ChainlinkFeedData\",\"name\":\"feed3\",\"type\":\"tuple\"}],\"internalType\":\"struct ChainlinkStructs.ChainlinkConstructorParams\",\"name\":\"chainlinkParams_\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"contract IRedstoneOracle\",\"name\":\"oracle\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"invertRate\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"token0Decimals\",\"type\":\"uint256\"}],\"internalType\":\"struct RedstoneStructs.RedstoneOracleData\",\"name\":\"redstoneOracle_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidOracleError\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FALLBACK_ORACLE_MAIN_SOURCE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"chainlinkOracleData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"chainlinkExchangeRate_\",\"type\":\"uint256\"},{\"internalType\":\"contract IChainlinkAggregatorV3\",\"name\":\"chainlinkFeed1_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"chainlinkInvertRate1_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"chainlinkExchangeRate1_\",\"type\":\"uint256\"},{\"internalType\":\"contract IChainlinkAggregatorV3\",\"name\":\"chainlinkFeed2_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"chainlinkInvertRate2_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"chainlinkExchangeRate2_\",\"type\":\"uint256\"},{\"internalType\":\"contract IChainlinkAggregatorV3\",\"name\":\"chainlinkFeed3_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"chainlinkInvertRate3_\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"chainlinkExchangeRate3_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getExchangeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"exchangeRate_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getExchangeRateLiquidate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"exchangeRate_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getExchangeRateOperate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"exchangeRate_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"redstoneOracleData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"redstoneExchangeRate_\",\"type\":\"uint256\"},{\"internalType\":\"contract IRedstoneOracle\",\"name\":\"redstoneOracle_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"redstoneInvertRate_\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"chainlinkParams_\":\"chainlink Oracle constructor params struct.\",\"mainSource_\":\"which oracle to use as main source: 1 = Chainlink, 2 = Redstone (other one is fallback).\",\"redstoneOracle_\":\"Redstone Oracle data. (address can be set to zero address if using Chainlink only)\"}},\"getExchangeRate()\":{\"details\":\"Deprecated. Use `getExchangeRateOperate()` and `getExchangeRateLiquidate()` instead. Only implemented for      backwards compatibility.\"}},\"title\":\"Chainlink / Redstone Oracle (with fallback)\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"FALLBACK_ORACLE_MAIN_SOURCE()\":{\"notice\":\"which oracle to use as main source:          - 1 = Chainlink ONLY (no fallback)          - 2 = Chainlink with Redstone Fallback          - 3 = Redstone with Chainlink Fallback\"},\"chainlinkOracleData()\":{\"notice\":\"returns all Chainlink oracle related data as utility for easy off-chain use / block explorer in a single view method\"},\"constructor\":{\"notice\":\"sets the main source, Chainlink Oracle and Redstone Oracle data.\"},\"getExchangeRateLiquidate()\":{\"notice\":\"Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for liquidations\"},\"getExchangeRateOperate()\":{\"notice\":\"Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for operates\"},\"redstoneOracleData()\":{\"notice\":\"returns all Redstone oracle related data as utility for easy off-chain use / block explorer in a single view method\"}},\"notice\":\"Gets the exchange rate between the underlying asset and the peg asset by using:          the price from a Chainlink price feed or a Redstone Oracle with one of them being used as main source and          the other one acting as a fallback if the main source fails for any reason. Reverts if fetched rate is 0.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/oracle/oracles/fallbackCLRSOracle.sol\":\"FallbackCLRSOracle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/oracle/error.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract Error {\\n    error FluidOracleError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0xc7b7e945238168d216c480e9dd4fbaaf8780645d58c47f9abdaa4f29910568fe\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |           FluidOracleL2           | \\n    |__________________________________*/\\n\\n    /// @notice thrown when sequencer on a L2 has an outage and grace period has not yet passed.\\n    uint256 internal constant FluidOracleL2__SequencerOutage = 60000;\\n\\n    /***********************************|\\n    |     UniV3CheckCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the delta between main price source and check rate source is exceeding the allowed delta\\n    uint256 internal constant UniV3CheckCLRSOracle__InvalidPrice = 60001;\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant UniV3CheckCLRSOracle__InvalidParams = 60002;\\n\\n    /// @notice thrown when the exchange rate is zero, even after all possible fallbacks depending on config\\n    uint256 internal constant UniV3CheckCLRSOracle__ExchangeRateZero = 60003;\\n\\n    /***********************************|\\n    |            sUSDe Oracle           | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant SUSDeOracle__InvalidParams = 60102;\\n\\n    /***********************************|\\n    |           Pendle Oracle           | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant PendleOracle__InvalidParams = 60201;\\n\\n    /// @notice thrown when the Pendle market Oracle has not been initialized yet\\n    uint256 internal constant PendleOracle__MarketNotInitialized = 60202;\\n\\n    /// @notice thrown when the Pendle market does not have 18 decimals\\n    uint256 internal constant PendleOracle__MarketInvalidDecimals = 60203;\\n\\n    /// @notice thrown when the Pendle market returns an unexpected price\\n    uint256 internal constant PendleOracle__InvalidPrice = 60204;\\n\\n    /***********************************|\\n    |          Chainlink Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant ChainlinkOracle__InvalidParams = 61001;\\n\\n    /***********************************|\\n    |          UniswapV3 Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant UniV3Oracle__InvalidParams = 62001;\\n\\n    /// @notice thrown when constructor is called with invalid ordered seconds agos values\\n    uint256 internal constant UniV3Oracle__InvalidSecondsAgos = 62002;\\n\\n    /// @notice thrown when constructor is called with invalid delta values > 100%\\n    uint256 internal constant UniV3Oracle__InvalidDeltas = 62003;\\n\\n    /***********************************|\\n    |            WstETh Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant WstETHOracle__InvalidParams = 63001;\\n\\n    /***********************************|\\n    |           Redstone Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant RedstoneOracle__InvalidParams = 64001;\\n\\n    /***********************************|\\n    |          Fallback Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant FallbackOracle__InvalidParams = 65001;\\n\\n    /***********************************|\\n    |       FallbackCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the fallback oracle source (if enabled)\\n    uint256 internal constant FallbackCLRSOracle__ExchangeRateZero = 66001;\\n\\n    /***********************************|\\n    |         WstETHCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the fallback oracle source (if enabled)\\n    uint256 internal constant WstETHCLRSOracle__ExchangeRateZero = 67001;\\n\\n    /***********************************|\\n    |        CLFallbackUniV3Oracle      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the uniV3 rate\\n    uint256 internal constant CLFallbackUniV3Oracle__ExchangeRateZero = 68001;\\n\\n    /***********************************|\\n    |  WstETHCLRS2UniV3CheckCLRSOracle  | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the uniV3 rate\\n    uint256 internal constant WstETHCLRS2UniV3CheckCLRSOracle__ExchangeRateZero = 69001;\\n\\n    /***********************************|\\n    |             WeETh Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant WeETHOracle__InvalidParams = 70001;\\n}\\n\",\"keccak256\":\"0x19bda5991266fb27840c4ad35f108b5b0c8435e3fd27976f915a044756caffa6\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/fluidOracle.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidOracle } from \\\"./interfaces/iFluidOracle.sol\\\";\\n\\n/// @title   FluidOracle\\n/// @notice  Base contract that any Fluid Oracle must implement\\nabstract contract FluidOracle is IFluidOracle {\\n    /// @inheritdoc IFluidOracle\\n    function getExchangeRate() external view virtual returns (uint256 exchangeRate_);\\n\\n    /// @inheritdoc IFluidOracle\\n    function getExchangeRateOperate() external view virtual returns (uint256 exchangeRate_);\\n\\n    /// @inheritdoc IFluidOracle\\n    function getExchangeRateLiquidate() external view virtual returns (uint256 exchangeRate_);\\n}\\n\",\"keccak256\":\"0xd275b5b0ada86c81a4dc6c79a24b1cb8bcfc374f4856e08917bf1bae83574b37\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/implementations/chainlinkOracleImpl.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { IChainlinkAggregatorV3 } from \\\"../interfaces/external/IChainlinkAggregatorV3.sol\\\";\\nimport { Error as OracleError } from \\\"../error.sol\\\";\\nimport { OracleUtils } from \\\"../libraries/oracleUtils.sol\\\";\\nimport { ChainlinkStructs } from \\\"./structs.sol\\\";\\n\\n/// @title   Chainlink Oracle implementation\\n/// @notice  This contract is used to get the exchange rate via up to 3 hops at Chainlink price feeds.\\n///          The rate is multiplied with the previous rate at each hop.\\n///          E.g. to go from wBTC to USDC (assuming rates for example):\\n///          1. wBTC -> BTC https://data.chain.link/ethereum/mainnet/crypto-other/wbtc-btc, rate: 0.92.\\n///          2. BTC -> USD https://data.chain.link/ethereum/mainnet/crypto-usd/btc-usd rate: 30,000.\\n///          3. USD -> USDC https://data.chain.link/ethereum/mainnet/stablecoins/usdc-usd rate: 0.98. Must invert feed: 1.02\\n///          finale rate would be: 0.92 * 30,000 * 1.02 = 28,152\\nabstract contract ChainlinkOracleImpl is OracleError, ChainlinkStructs {\\n    /// @notice Chainlink price feed 1 to check for the exchange rate\\n    IChainlinkAggregatorV3 internal immutable _CHAINLINK_FEED1;\\n    /// @notice Chainlink price feed 2 to check for the exchange rate\\n    IChainlinkAggregatorV3 internal immutable _CHAINLINK_FEED2;\\n    /// @notice Chainlink price feed 3 to check for the exchange rate\\n    IChainlinkAggregatorV3 internal immutable _CHAINLINK_FEED3;\\n\\n    /// @notice Flag to invert the price or not for feed 1 (to e.g. for WETH/USDC pool return prive of USDC per 1 WETH)\\n    bool internal immutable _CHAINLINK_INVERT_RATE1;\\n    /// @notice Flag to invert the price or not for feed 2 (to e.g. for WETH/USDC pool return prive of USDC per 1 WETH)\\n    bool internal immutable _CHAINLINK_INVERT_RATE2;\\n    /// @notice Flag to invert the price or not for feed 3 (to e.g. for WETH/USDC pool return prive of USDC per 1 WETH)\\n    bool internal immutable _CHAINLINK_INVERT_RATE3;\\n\\n    /// @notice constant value for price scaling to reduce gas usage for feed 1\\n    uint256 internal immutable _CHAINLINK_PRICE_SCALER_MULTIPLIER1;\\n    /// @notice constant value for inverting price to reduce gas usage for feed 1\\n    uint256 internal immutable _CHAINLINK_INVERT_PRICE_DIVIDEND1;\\n\\n    /// @notice constant value for price scaling to reduce gas usage for feed 2\\n    uint256 internal immutable _CHAINLINK_PRICE_SCALER_MULTIPLIER2;\\n    /// @notice constant value for inverting price to reduce gas usage for feed 2\\n    uint256 internal immutable _CHAINLINK_INVERT_PRICE_DIVIDEND2;\\n\\n    /// @notice constant value for price scaling to reduce gas usage for feed 3\\n    uint256 internal immutable _CHAINLINK_PRICE_SCALER_MULTIPLIER3;\\n    /// @notice constant value for inverting price to reduce gas usage for feed 3\\n    uint256 internal immutable _CHAINLINK_INVERT_PRICE_DIVIDEND3;\\n\\n    /// @notice constructor sets the Chainlink price feed and invertRate flag for each hop.\\n    /// E.g. `invertRate_` should be true if for the USDC/ETH pool it's expected that the oracle returns USDC per 1 ETH\\n    constructor(ChainlinkConstructorParams memory params_) {\\n        if (\\n            (params_.hops < 1 || params_.hops > 3) || // hops must be 1, 2 or 3\\n            (address(params_.feed1.feed) == address(0) || params_.feed1.token0Decimals == 0) || // first feed must always be defined\\n            (params_.hops > 1 && (address(params_.feed2.feed) == address(0) || params_.feed2.token0Decimals == 0)) || // if hops > 1, feed 2 must be defined\\n            (params_.hops > 2 && (address(params_.feed3.feed) == address(0) || params_.feed3.token0Decimals == 0)) // if hops > 2, feed 3 must be defined\\n        ) {\\n            revert FluidOracleError(ErrorTypes.ChainlinkOracle__InvalidParams);\\n        }\\n\\n        _CHAINLINK_FEED1 = params_.feed1.feed;\\n        _CHAINLINK_FEED2 = params_.feed2.feed;\\n        _CHAINLINK_FEED3 = params_.feed3.feed;\\n\\n        _CHAINLINK_INVERT_RATE1 = params_.feed1.invertRate;\\n        _CHAINLINK_INVERT_RATE2 = params_.feed2.invertRate;\\n        _CHAINLINK_INVERT_RATE3 = params_.feed3.invertRate;\\n\\n        // Actual desired output rate example USDC/ETH (6 decimals / 18 decimals).\\n        // Note ETH has 12 decimals more than USDC.\\n        //    0.000515525322211842331991619857165357691 // 39 decimals.  ETH for 1 USDC\\n        // 1954.190000000000433             // 15 decimals. USDC for 1 ETH\\n\\n        // to get to PRICE_SCLAER_MULTIPLIER and INVERT_PRICE_DIVIDEND:\\n        // fetched Chainlink price is in token1Decimals per 1 token0Decimals.\\n        // E.g. for an USDC/ETH price feed it's in ETH 18 decimals.\\n        //      for an  BTC/USD price feed it's in USD  8 decimals.\\n        // So to scale to 1e27 we need to multiply by 1e27 - token0Decimals.\\n        // E.g. for USDC/ETH it would be: fetchedPrice * 1e21\\n        //\\n        // or for inverted (x token0 per 1 token1), formula would be:\\n        //    = 1e27 * 10**token0Decimals / fetchedPrice\\n        // E.g. for USDC/ETH it would be: 1e33 / fetchedPrice\\n\\n        // no support for token1Decimals with more than OracleUtils.RATE_OUTPUT_DECIMALS decimals for now as extremely unlikely case\\n        _CHAINLINK_PRICE_SCALER_MULTIPLIER1 = 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS - params_.feed1.token0Decimals);\\n        _CHAINLINK_INVERT_PRICE_DIVIDEND1 = 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS + params_.feed1.token0Decimals);\\n\\n        _CHAINLINK_PRICE_SCALER_MULTIPLIER2 = params_.hops > 1\\n            ? 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS - params_.feed2.token0Decimals)\\n            : 1;\\n        _CHAINLINK_INVERT_PRICE_DIVIDEND2 = params_.hops > 1\\n            ? 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS + params_.feed2.token0Decimals)\\n            : 1;\\n\\n        _CHAINLINK_PRICE_SCALER_MULTIPLIER3 = params_.hops > 2\\n            ? 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS - params_.feed3.token0Decimals)\\n            : 1;\\n        _CHAINLINK_INVERT_PRICE_DIVIDEND3 = params_.hops > 2\\n            ? 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS + params_.feed3.token0Decimals)\\n            : 1;\\n    }\\n\\n    /// @dev            Get the exchange rate from Chainlike oracle price feed(s)\\n    /// @return rate_   The exchange rate in `OracleUtils.RATE_OUTPUT_DECIMALS`\\n    function _getChainlinkExchangeRate() internal view returns (uint256 rate_) {\\n        rate_ = _readFeedRate(\\n            _CHAINLINK_FEED1,\\n            _CHAINLINK_INVERT_RATE1,\\n            _CHAINLINK_PRICE_SCALER_MULTIPLIER1,\\n            _CHAINLINK_INVERT_PRICE_DIVIDEND1\\n        );\\n        if (rate_ == 0 || address(_CHAINLINK_FEED2) == address(0)) {\\n            // rate 0 or only 1 hop -> return rate of price feed 1\\n            return rate_;\\n        }\\n        rate_ =\\n            (rate_ *\\n                _readFeedRate(\\n                    _CHAINLINK_FEED2,\\n                    _CHAINLINK_INVERT_RATE2,\\n                    _CHAINLINK_PRICE_SCALER_MULTIPLIER2,\\n                    _CHAINLINK_INVERT_PRICE_DIVIDEND2\\n                )) /\\n            (10 ** OracleUtils.RATE_OUTPUT_DECIMALS);\\n\\n        if (rate_ == 0 || address(_CHAINLINK_FEED3) == address(0)) {\\n            // rate 0 or 2 hops -> return rate of feed 1 combined with feed 2\\n            return rate_;\\n        }\\n\\n        // 3 hops -> return rate of feed 1 combined with feed 2 & feed 3\\n        rate_ =\\n            (rate_ *\\n                _readFeedRate(\\n                    _CHAINLINK_FEED3,\\n                    _CHAINLINK_INVERT_RATE3,\\n                    _CHAINLINK_PRICE_SCALER_MULTIPLIER3,\\n                    _CHAINLINK_INVERT_PRICE_DIVIDEND3\\n                )) /\\n            (10 ** OracleUtils.RATE_OUTPUT_DECIMALS);\\n    }\\n\\n    /// @dev reads the exchange `rate_` from a Chainlink price `feed_` taking into account scaling and `invertRate_`\\n    function _readFeedRate(\\n        IChainlinkAggregatorV3 feed_,\\n        bool invertRate_,\\n        uint256 priceMultiplier_,\\n        uint256 invertDividend_\\n    ) private view returns (uint256 rate_) {\\n        try feed_.latestRoundData() returns (uint80, int256 exchangeRate_, uint256, uint256, uint80) {\\n            // Return the price in `OracleUtils.RATE_OUTPUT_DECIMALS`\\n            if (invertRate_) {\\n                return invertDividend_ / uint256(exchangeRate_);\\n            } else {\\n                return uint256(exchangeRate_) * priceMultiplier_;\\n            }\\n        } catch {\\n            return 0;\\n        }\\n    }\\n\\n    /// @notice returns all Chainlink oracle related data as utility for easy off-chain use / block explorer in a single view method\\n    function chainlinkOracleData()\\n        public\\n        view\\n        returns (\\n            uint256 chainlinkExchangeRate_,\\n            IChainlinkAggregatorV3 chainlinkFeed1_,\\n            bool chainlinkInvertRate1_,\\n            uint256 chainlinkExchangeRate1_,\\n            IChainlinkAggregatorV3 chainlinkFeed2_,\\n            bool chainlinkInvertRate2_,\\n            uint256 chainlinkExchangeRate2_,\\n            IChainlinkAggregatorV3 chainlinkFeed3_,\\n            bool chainlinkInvertRate3_,\\n            uint256 chainlinkExchangeRate3_\\n        )\\n    {\\n        return (\\n            _getChainlinkExchangeRate(),\\n            _CHAINLINK_FEED1,\\n            _CHAINLINK_INVERT_RATE1,\\n            _readFeedRate(\\n                _CHAINLINK_FEED1,\\n                _CHAINLINK_INVERT_RATE1,\\n                _CHAINLINK_PRICE_SCALER_MULTIPLIER1,\\n                _CHAINLINK_INVERT_PRICE_DIVIDEND1\\n            ),\\n            _CHAINLINK_FEED2,\\n            _CHAINLINK_INVERT_RATE2,\\n            address(_CHAINLINK_FEED2) == address(0)\\n                ? 0\\n                : _readFeedRate(\\n                    _CHAINLINK_FEED2,\\n                    _CHAINLINK_INVERT_RATE2,\\n                    _CHAINLINK_PRICE_SCALER_MULTIPLIER2,\\n                    _CHAINLINK_INVERT_PRICE_DIVIDEND2\\n                ),\\n            _CHAINLINK_FEED3,\\n            _CHAINLINK_INVERT_RATE3,\\n            address(_CHAINLINK_FEED3) == address(0)\\n                ? 0\\n                : _readFeedRate(\\n                    _CHAINLINK_FEED3,\\n                    _CHAINLINK_INVERT_RATE3,\\n                    _CHAINLINK_PRICE_SCALER_MULTIPLIER3,\\n                    _CHAINLINK_INVERT_PRICE_DIVIDEND3\\n                )\\n        );\\n    }\\n}\\n\",\"keccak256\":\"0xe7656c6a48277513acca3c891d53960682f949e1913a6377b2f4a7b1a6132772\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/implementations/fallbackOracleImpl.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { IRedstoneOracle } from \\\"../interfaces/external/IRedstoneOracle.sol\\\";\\nimport { Error as OracleError } from \\\"../error.sol\\\";\\nimport { ChainlinkOracleImpl } from \\\"./chainlinkOracleImpl.sol\\\";\\nimport { RedstoneOracleImpl } from \\\"./redstoneOracleImpl.sol\\\";\\n\\n/// @title   Fallback Oracle implementation\\n/// @notice  This contract is used to get the exchange rate from a main oracle feed and a fallback oracle feed.\\n//\\n// @dev     inheriting contracts should implement a view method to expose `_FALLBACK_ORACLE_MAIN_SOURCE`\\nabstract contract FallbackOracleImpl is OracleError, RedstoneOracleImpl, ChainlinkOracleImpl {\\n    /// @dev which oracle to use as main source:\\n    /// - 1 = Chainlink ONLY (no fallback)\\n    /// - 2 = Chainlink with Redstone Fallback\\n    /// - 3 = Redstone with Chainlink Fallback\\n    uint8 internal immutable _FALLBACK_ORACLE_MAIN_SOURCE;\\n\\n    /// @notice                     sets the main source, Chainlink Oracle and Redstone Oracle data.\\n    /// @param mainSource_          which oracle to use as main source:\\n    ///                                  - 1 = Chainlink ONLY (no fallback)\\n    ///                                  - 2 = Chainlink with Redstone Fallback\\n    ///                                  - 3 = Redstone with Chainlink Fallback\\n    /// @param chainlinkParams_     chainlink Oracle constructor params struct.\\n    /// @param redstoneOracle_      Redstone Oracle data. (address can be set to zero address if using Chainlink only)\\n    constructor(\\n        uint8 mainSource_,\\n        ChainlinkConstructorParams memory chainlinkParams_,\\n        RedstoneOracleData memory redstoneOracle_\\n    )\\n        ChainlinkOracleImpl(chainlinkParams_)\\n        RedstoneOracleImpl(\\n            address(redstoneOracle_.oracle) == address(0)\\n                ? RedstoneOracleData(IRedstoneOracle(_REDSTONE_ORACLE_NOT_SET_ADDRESS), false, 1)\\n                : redstoneOracle_\\n        )\\n    {\\n        if (mainSource_ < 1 || mainSource_ > 3) {\\n            revert FluidOracleError(ErrorTypes.FallbackOracle__InvalidParams);\\n        }\\n        _FALLBACK_ORACLE_MAIN_SOURCE = mainSource_;\\n    }\\n\\n    /// @dev returns the exchange rate for the main oracle source, or the fallback source (if configured) if the main exchange rate\\n    /// fails to be fetched. If returned rate is 0, fetching rate failed or something went wrong.\\n    /// @return exchangeRate_ exchange rate\\n    /// @return fallback_ whether fallback was necessary or not\\n    function _getRateWithFallback() internal view returns (uint256 exchangeRate_, bool fallback_) {\\n        if (_FALLBACK_ORACLE_MAIN_SOURCE == 1) {\\n            // 1 = Chainlink ONLY (no fallback)\\n            exchangeRate_ = _getChainlinkExchangeRate();\\n        } else if (_FALLBACK_ORACLE_MAIN_SOURCE == 2) {\\n            // 2 = Chainlink with Redstone Fallback\\n            exchangeRate_ = _getChainlinkExchangeRate();\\n            if (exchangeRate_ == 0) {\\n                fallback_ = true;\\n                exchangeRate_ = _getRedstoneExchangeRate();\\n            }\\n        } else {\\n            // 3 = Redstone with Chainlink Fallback\\n            exchangeRate_ = _getRedstoneExchangeRate();\\n            if (exchangeRate_ == 0) {\\n                fallback_ = true;\\n                exchangeRate_ = _getChainlinkExchangeRate();\\n            }\\n        }\\n    }\\n\\n    /// @dev returns the exchange rate for Chainlink, or Redstone if configured & Chainlink fails.\\n    function _getChainlinkOrRedstoneAsFallback() internal view returns (uint256 exchangeRate_) {\\n        exchangeRate_ = _getChainlinkExchangeRate();\\n\\n        if (exchangeRate_ == 0 && _FALLBACK_ORACLE_MAIN_SOURCE != 1) {\\n            // Chainlink failed but Redstone is configured too -> try Redstone\\n            exchangeRate_ = _getRedstoneExchangeRate();\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xff1e1ab767ff250777dcb7fb70dc5a0392bb666bf4f65d27d338aaceb76554bc\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/implementations/redstoneOracleImpl.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { IRedstoneOracle } from \\\"../interfaces/external/IRedstoneOracle.sol\\\";\\nimport { Error as OracleError } from \\\"../error.sol\\\";\\nimport { OracleUtils } from \\\"../libraries/oracleUtils.sol\\\";\\nimport { RedstoneStructs } from \\\"./structs.sol\\\";\\n\\n/// @title   Redstone Oracle implementation\\n/// @notice  This contract is used to get the exchange rate from a Redstone Oracle\\nabstract contract RedstoneOracleImpl is OracleError, RedstoneStructs {\\n    /// @notice Redstone price oracle to check for the exchange rate\\n    IRedstoneOracle internal immutable _REDSTONE_ORACLE;\\n    /// @notice Flag to invert the price or not (to e.g. for WETH/USDC pool return prive of USDC per 1 WETH)\\n    bool internal immutable _REDSTONE_INVERT_RATE;\\n\\n    /// @notice constant value for price scaling to reduce gas usage\\n    uint256 internal immutable _REDSTONE_PRICE_SCALER_MULTIPLIER;\\n    /// @notice constant value for inverting price to reduce gas usage\\n    uint256 internal immutable _REDSTONE_INVERT_PRICE_DIVIDEND;\\n\\n    address internal immutable _REDSTONE_ORACLE_NOT_SET_ADDRESS = 0x000000000000000000000000000000000000dEaD;\\n\\n    /// @notice constructor sets the Redstone oracle data\\n    constructor(RedstoneOracleData memory oracleData_) {\\n        if (address(oracleData_.oracle) == address(0) || oracleData_.token0Decimals == 0) {\\n            revert FluidOracleError(ErrorTypes.RedstoneOracle__InvalidParams);\\n        }\\n\\n        _REDSTONE_ORACLE = oracleData_.oracle;\\n        _REDSTONE_INVERT_RATE = oracleData_.invertRate;\\n\\n        // for explanation on how to get to scaler multiplier and dividend see `chainlinkOracleImpl.sol`.\\n        // no support for token1Decimals with more than OracleUtils.RATE_OUTPUT_DECIMALS decimals for now as extremely unlikely case\\n        _REDSTONE_PRICE_SCALER_MULTIPLIER = address(oracleData_.oracle) == _REDSTONE_ORACLE_NOT_SET_ADDRESS\\n            ? 1\\n            : 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS - oracleData_.token0Decimals);\\n        _REDSTONE_INVERT_PRICE_DIVIDEND = address(oracleData_.oracle) == _REDSTONE_ORACLE_NOT_SET_ADDRESS\\n            ? 1\\n            : 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS + oracleData_.token0Decimals);\\n    }\\n\\n    /// @dev           Get the exchange rate from Redstone oracle\\n    /// @param rate_   The exchange rate in `OracleUtils.RATE_OUTPUT_DECIMALS`\\n    function _getRedstoneExchangeRate() internal view returns (uint256 rate_) {\\n        try _REDSTONE_ORACLE.getExchangeRate() returns (uint256 exchangeRate_) {\\n            if (_REDSTONE_INVERT_RATE) {\\n                // invert the price\\n                return _REDSTONE_INVERT_PRICE_DIVIDEND / exchangeRate_;\\n            } else {\\n                return exchangeRate_ * _REDSTONE_PRICE_SCALER_MULTIPLIER;\\n            }\\n        } catch {\\n            return 0;\\n        }\\n    }\\n\\n    /// @notice returns all Redstone oracle related data as utility for easy off-chain use / block explorer in a single view method\\n    function redstoneOracleData()\\n        public\\n        view\\n        returns (uint256 redstoneExchangeRate_, IRedstoneOracle redstoneOracle_, bool redstoneInvertRate_)\\n    {\\n        return (\\n            address(_REDSTONE_ORACLE) == _REDSTONE_ORACLE_NOT_SET_ADDRESS ? 0 : _getRedstoneExchangeRate(),\\n            _REDSTONE_ORACLE,\\n            _REDSTONE_INVERT_RATE\\n        );\\n    }\\n}\\n\",\"keccak256\":\"0x49082d966015853f5fa8074a5ab209df61e8ec8353f3f08ced5dc77f8b578b4b\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/implementations/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IChainlinkAggregatorV3 } from \\\"../interfaces/external/IChainlinkAggregatorV3.sol\\\";\\nimport { IRedstoneOracle } from \\\"../interfaces/external/IRedstoneOracle.sol\\\";\\n\\nabstract contract ChainlinkStructs {\\n    struct ChainlinkFeedData {\\n        /// @param feed           address of Chainlink feed.\\n        IChainlinkAggregatorV3 feed;\\n        /// @param invertRate     true if rate read from price feed must be inverted.\\n        bool invertRate;\\n        /// @param token0Decimals decimals of asset 0. E.g. for a USDC/ETH feed, USDC is token0 and has 6 decimals.\\n        ///                       (token1Decimals are available directly via Chainlink `FEED.decimals()`)\\n        uint256 token0Decimals;\\n    }\\n\\n    struct ChainlinkConstructorParams {\\n        /// @param param        hops count of hops, used for sanity checks. Must be 1, 2 or 3.\\n        uint8 hops;\\n        /// @param feed1        Chainlink feed 1 data. Required.\\n        ChainlinkFeedData feed1;\\n        /// @param feed2        Chainlink feed 2 data. Required if hops > 1.\\n        ChainlinkFeedData feed2;\\n        /// @param feed3        Chainlink feed 3 data. Required if hops > 2.\\n        ChainlinkFeedData feed3;\\n    }\\n}\\n\\nabstract contract RedstoneStructs {\\n    struct RedstoneOracleData {\\n        /// @param oracle         address of Redstone oracle.\\n        IRedstoneOracle oracle;\\n        /// @param invertRate     true if rate read from price feed must be inverted.\\n        bool invertRate;\\n        /// @param token0Decimals decimals of asset 0. E.g. for a USDC/ETH feed, USDC is token0 and has 6 decimals.\\n        ///                       (token1Decimals are available directly via Redstone `Oracle.decimals()`)\\n        uint256 token0Decimals;\\n    }\\n}\\n\",\"keccak256\":\"0x90d026dc5f1762c704f30eaaf485c0e8eb6314832a311db3ec73759e81dbde33\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/interfaces/external/IChainlinkAggregatorV3.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\n/// from https://github.com/smartcontractkit/chainlink/blob/master/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\\n/// Copyright (c) 2018 SmartContract ChainLink, Ltd.\\n\\ninterface IChainlinkAggregatorV3 {\\n    /// @notice represents the number of decimals the aggregator responses represent.\\n    function decimals() external view returns (uint8);\\n\\n    function description() external view returns (string memory);\\n\\n    function version() external view returns (uint256);\\n\\n    function getRoundData(\\n        uint80 _roundId\\n    )\\n        external\\n        view\\n        returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\\n\\n    function latestRoundData()\\n        external\\n        view\\n        returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\\n}\\n\",\"keccak256\":\"0xaeea1f12d1c381bde8418eab05206d6472b246158584190fce0d09913912a7ef\",\"license\":\"MIT\"},\"contracts/oracle/interfaces/external/IRedstoneOracle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IRedstoneOracle {\\n    /// @notice Get the `exchangeRate_` between the underlying asset and the peg asset\\n    // @dev custom Redstone adapter for Instadapp implementation\\n    function getExchangeRate() external view returns (uint256 exchangeRate_);\\n\\n    /**\\n     * @notice Returns the number of decimals for the price feed\\n     * @dev By default, RedStone uses 8 decimals for data feeds\\n     * @return decimals The number of decimals in the price feed values\\n     */\\n    // see https://github.com/redstone-finance/redstone-oracles-monorepo/blob/main/packages/on-chain-relayer/contracts/price-feeds/PriceFeedBase.sol#L51C12-L51C20\\n    function decimals() external view returns (uint8);\\n}\\n\",\"keccak256\":\"0xd9a844e86035a935fe06c5937d2fb8796fd150771716246b77c6226e32c9d129\",\"license\":\"MIT\"},\"contracts/oracle/interfaces/iFluidOracle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidOracle {\\n    /// @dev Deprecated. Use `getExchangeRateOperate()` and `getExchangeRateLiquidate()` instead. Only implemented for\\n    ///      backwards compatibility.\\n    function getExchangeRate() external view returns (uint256 exchangeRate_);\\n\\n    /// @notice Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for operates\\n    function getExchangeRateOperate() external view returns (uint256 exchangeRate_);\\n\\n    /// @notice Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for liquidations\\n    function getExchangeRateLiquidate() external view returns (uint256 exchangeRate_);\\n}\\n\",\"keccak256\":\"0x410b5f85b64414df35131bbf322261e2a11956d58af3800d8b71b5befb9907d4\",\"license\":\"MIT\"},\"contracts/oracle/libraries/oracleUtils.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @title Oracle utils library\\n/// @notice implements common utility methods for Fluid Oracles\\nlibrary OracleUtils {\\n    /// @dev The scaler for max delta point math (100%)\\n    uint256 internal constant HUNDRED_PERCENT_DELTA_SCALER = 10_000;\\n    /// @dev output precision of rates\\n    uint256 internal constant RATE_OUTPUT_DECIMALS = 27;\\n\\n    /// @dev checks if `mainSourceRate_` is within a `maxDeltaPercent_` of `checkSourceRate_`. Returns true if so.\\n    function isRateOutsideDelta(\\n        uint256 mainSourceRate_,\\n        uint256 checkSourceRate_,\\n        uint256 maxDeltaPercent_\\n    ) internal pure returns (bool) {\\n        uint256 offset_ = (checkSourceRate_ * maxDeltaPercent_) / HUNDRED_PERCENT_DELTA_SCALER;\\n        return (mainSourceRate_ > (checkSourceRate_ + offset_) || mainSourceRate_ < (checkSourceRate_ - offset_));\\n    }\\n}\\n\",\"keccak256\":\"0x968b1a0606875abd523895c5075cf6c34c296919e77b0da7dd952374398e2a4c\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/oracles/fallbackCLRSOracle.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { FluidOracle } from \\\"../fluidOracle.sol\\\";\\nimport { FallbackOracleImpl } from \\\"../implementations/fallbackOracleImpl.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\n\\n/// @title   Chainlink / Redstone Oracle (with fallback)\\n/// @notice  Gets the exchange rate between the underlying asset and the peg asset by using:\\n///          the price from a Chainlink price feed or a Redstone Oracle with one of them being used as main source and\\n///          the other one acting as a fallback if the main source fails for any reason. Reverts if fetched rate is 0.\\ncontract FallbackCLRSOracle is FluidOracle, FallbackOracleImpl {\\n    /// @notice                     sets the main source, Chainlink Oracle and Redstone Oracle data.\\n    /// @param mainSource_          which oracle to use as main source: 1 = Chainlink, 2 = Redstone (other one is fallback).\\n    /// @param chainlinkParams_     chainlink Oracle constructor params struct.\\n    /// @param redstoneOracle_      Redstone Oracle data. (address can be set to zero address if using Chainlink only)\\n    constructor(\\n        uint8 mainSource_,\\n        ChainlinkConstructorParams memory chainlinkParams_,\\n        RedstoneOracleData memory redstoneOracle_\\n    ) FallbackOracleImpl(mainSource_, chainlinkParams_, redstoneOracle_) {}\\n\\n    /// @inheritdoc FluidOracle\\n    function getExchangeRateOperate() public view virtual override returns (uint256 exchangeRate_) {\\n        (exchangeRate_, ) = _getRateWithFallback();\\n\\n        if (exchangeRate_ == 0) {\\n            revert FluidOracleError(ErrorTypes.FallbackCLRSOracle__ExchangeRateZero);\\n        }\\n    }\\n\\n    /// @inheritdoc FluidOracle\\n    function getExchangeRateLiquidate() public view virtual override returns (uint256 exchangeRate_) {\\n        return getExchangeRateOperate();\\n    }\\n\\n    /// @inheritdoc FluidOracle\\n    function getExchangeRate() public view virtual override returns (uint256 exchangeRate_) {\\n        return getExchangeRateOperate();\\n    }\\n\\n    /// @notice which oracle to use as main source:\\n    ///          - 1 = Chainlink ONLY (no fallback)\\n    ///          - 2 = Chainlink with Redstone Fallback\\n    ///          - 3 = Redstone with Chainlink Fallback\\n    function FALLBACK_ORACLE_MAIN_SOURCE() public view returns (uint8) {\\n        return _FALLBACK_ORACLE_MAIN_SOURCE;\\n    }\\n}\\n\",\"keccak256\":\"0x4e8e4433dcbff13d4bc28cbdd5c4f7e587e66819f404234befccb7317dfa6332\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x6102c060405261dead610100523480156200001957600080fd5b5060405162001608380380620016088339810160408190526200003c916200051f565b805183908390839082906001600160a01b0316156200005c578162000088565b6040518060600160405280610100516001600160a01b0316815260200160001515815260200160018152505b80516001600160a01b03161580620000a257506040810151155b15620000ca5760405163c82fc46560e01b815261fa0160048201526024015b60405180910390fd5b80516001600160a01b039081166080526020820151151560a0526101005182518216911614620001195760408101516200010690601b62000624565b6200011390600a6200073d565b6200011c565b60015b60c0526101005181516001600160a01b039081169116146200015d5760408101516200014a90601b62000752565b6200015790600a6200073d565b62000160565b60015b60e052508051600160ff90911610806200018157506003816000015160ff16115b80620001aa57506020810151516001600160a01b03161580620001aa5750602081015160400151155b80620001e557506001816000015160ff16118015620001e557506040810151516001600160a01b03161580620001e557506040808201510151155b806200022157506002816000015160ff161180156200022157506060810151516001600160a01b03161580620002215750606081015160400151155b15620002455760405163c82fc46560e01b815261ee496004820152602401620000c1565b60208082018051516001600160a01b03908116610120526040808501805151831661014052606086018051519093166101605283518501511515610180525184015115156101a05290519092015115156101c052510151620002a990601b62000624565b620002b690600a6200073d565b6101e052602081015160400151620002d090601b62000752565b620002dd90600a6200073d565b610200528051600160ff90911611620002f85760016200031a565b60408082015101516200030d90601b62000624565b6200031a90600a6200073d565b610220528051600160ff909116116200033557600162000357565b60408082015101516200034a90601b62000752565b6200035790600a6200073d565b610240528051600260ff909116116200037257600162000395565b6060810151604001516200038890601b62000624565b6200039590600a6200073d565b610260528051600260ff90911611620003b0576001620003d3565b606081015160400151620003c690601b62000752565b620003d390600a6200073d565b6102805250600160ff84161080620003ee575060038360ff16115b15620004125760405163c82fc46560e01b815261fde96004820152602401620000c1565b505060ff166102a0525062000768915050565b805160ff811681146200043757600080fd5b919050565b604051606081016001600160401b03811182821017156200046d57634e487b7160e01b600052604160045260246000fd5b60405290565b604051608081016001600160401b03811182821017156200046d57634e487b7160e01b600052604160045260246000fd5b6001600160a01b0381168114620004ba57600080fd5b50565b805180151581146200043757600080fd5b600060608284031215620004e157600080fd5b620004eb6200043c565b90508151620004fa81620004a4565b81526200050a60208301620004bd565b60208201526040820151604082015292915050565b60008060008385036101c08112156200053757600080fd5b620005428562000425565b9350610140601f19820112156200055857600080fd5b6200056262000473565b620005706020870162000425565b8152620005818760408801620004ce565b6020820152620005958760a08801620004ce565b6040820152620005aa876101008801620004ce565b606082015280935050606061015f1982011215620005c757600080fd5b50620005d26200043c565b610160850151620005e381620004a4565b8152620005f46101808601620004bd565b60208201526101a094909401516040850152509093909250565b634e487b7160e01b600052601160045260246000fd5b818103818111156200063a576200063a6200060e565b92915050565b600181815b80851115620006815781600019048211156200066557620006656200060e565b808516156200067357918102915b93841c939080029062000645565b509250929050565b6000826200069a575060016200063a565b81620006a9575060006200063a565b8160018114620006c25760028114620006cd57620006ed565b60019150506200063a565b60ff841115620006e157620006e16200060e565b50506001821b6200063a565b5060208310610133831016604e8410600b841016171562000712575081810a6200063a565b6200071e838362000640565b80600019048211156200073557620007356200060e565b029392505050565b60006200074b838362000689565b9392505050565b808201808211156200063a576200063a6200060e565b60805160a05160c05160e05161010051610120516101405161016051610180516101a0516101c0516101e05161020051610220516102405161026051610280516102a051610d1e620008ea60003960008181607e01528181610a0a0152610a4301526000818161041501526107db0152600081816103f401526107ba01526000818161032301526106e401526000818161030201526106c3015260008181610239015261060101526000818161021801526105e0015260008181610372015281816103d30152610799015260008181610280015281816102e101526106a20152600081816101b2015281816101f701526105bf015260008181610351015281816103b201528181610728015261077801526000818161025f015281816102c0015281816106310152610681015260008181610191015281816101d6015261059e01526000610468015260006109b1015260006109e001526000818161050f015261098701526000818161049f015281816104ec01526108d80152610d1e6000f3fe608060405234801561001057600080fd5b50600436106100725760003560e01c80638e7bfbc0116100505780638e7bfbc01461015a578063e6aa216c14610170578063f3190c891461017057600080fd5b80633437eac4146100775780637557ca41146100ad57806388c3520914610120575b600080fd5b60405160ff7f00000000000000000000000000000000000000000000000000000000000000001681526020015b60405180910390f35b6100b5610178565b604080519a8b5273ffffffffffffffffffffffffffffffffffffffff998a1660208c0152971515978a01979097526060890195909552928616608088015290151560a087015260c086015290921660e0840152901515610100830152610120820152610140016100a4565b610128610461565b6040805193845273ffffffffffffffffffffffffffffffffffffffff90921660208401521515908201526060016100a4565b610162610534565b6040519081526020016100a4565b610162610588565b60008060008060008060008060008061018f610597565b7f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000061025d7f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b7f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff82161561034c576103477f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b61034f565b60005b7f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff82161561043e576104397f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b610441565b60005b995099509950995099509950995099509950995090919293949596979899565b60008060007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff167f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16146104e6576104e16108d4565b6104e9565b60005b937f000000000000000000000000000000000000000000000000000000000000000093507f000000000000000000000000000000000000000000000000000000000000000092509050565b600061053e610a05565b5090506000819003610585576040517fc82fc465000000000000000000000000000000000000000000000000000000008152620101d1600482015260240160405180910390fd5b90565b6000610592610534565b905090565b60006106257f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b905080158061066857507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16155b156106705790565b61067c601b600a610bfb565b6107087f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b6107129083610c0e565b61071c9190610c25565b905080158061075f57507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16155b156107675790565b610773601b600a610bfb565b6107ff7f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b6108099083610c0e565b6105929190610c25565b60008473ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa92505050801561089a575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261089791810190610c7f565b60015b6108a6575060006108cc565b88156108c2576108b68488610c25565b955050505050506108cc565b6108b68885610c0e565b949350505050565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663e6aa216c6040518163ffffffff1660e01b8152600401602060405180830381865afa92505050801561097b575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261097891810190610ccf565b60015b6109855750600090565b7f0000000000000000000000000000000000000000000000000000000000000000156109db576109d5817f0000000000000000000000000000000000000000000000000000000000000000610c25565b91505090565b6109d57f000000000000000000000000000000000000000000000000000000000000000082610c0e565b6000807f000000000000000000000000000000000000000000000000000000000000000060ff16600103610a4157610a3b610597565b91509091565b7f000000000000000000000000000000000000000000000000000000000000000060ff16600203610a8d57610a74610597565b915081600003610a8957506001610a3b6108d4565b9091565b610a956108d4565b915081600003610a8957506001610a3b610597565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b600181815b80851115610b3257817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115610b1857610b18610aaa565b80851615610b2557918102915b93841c9390800290610ade565b509250929050565b600082610b4957506001610bf5565b81610b5657506000610bf5565b8160018114610b6c5760028114610b7657610b92565b6001915050610bf5565b60ff841115610b8757610b87610aaa565b50506001821b610bf5565b5060208310610133831016604e8410600b8410161715610bb5575081810a610bf5565b610bbf8383610ad9565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115610bf157610bf1610aaa565b0290505b92915050565b6000610c078383610b3a565b9392505050565b8082028115828204841417610bf557610bf5610aaa565b600082610c5b577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b805169ffffffffffffffffffff81168114610c7a57600080fd5b919050565b600080600080600060a08688031215610c9757600080fd5b610ca086610c60565b9450602086015193506040860151925060608601519150610cc360808701610c60565b90509295509295909350565b600060208284031215610ce157600080fd5b505191905056fea2646970667358221220df4f61c2f3cd2c38026ffacfa6a4c345e7e4aa719b40753c847527f1b22253d364736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100725760003560e01c80638e7bfbc0116100505780638e7bfbc01461015a578063e6aa216c14610170578063f3190c891461017057600080fd5b80633437eac4146100775780637557ca41146100ad57806388c3520914610120575b600080fd5b60405160ff7f00000000000000000000000000000000000000000000000000000000000000001681526020015b60405180910390f35b6100b5610178565b604080519a8b5273ffffffffffffffffffffffffffffffffffffffff998a1660208c0152971515978a01979097526060890195909552928616608088015290151560a087015260c086015290921660e0840152901515610100830152610120820152610140016100a4565b610128610461565b6040805193845273ffffffffffffffffffffffffffffffffffffffff90921660208401521515908201526060016100a4565b610162610534565b6040519081526020016100a4565b610162610588565b60008060008060008060008060008061018f610597565b7f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000061025d7f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b7f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff82161561034c576103477f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b61034f565b60005b7f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff82161561043e576104397f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b610441565b60005b995099509950995099509950995099509950995090919293949596979899565b60008060007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff167f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16146104e6576104e16108d4565b6104e9565b60005b937f000000000000000000000000000000000000000000000000000000000000000093507f000000000000000000000000000000000000000000000000000000000000000092509050565b600061053e610a05565b5090506000819003610585576040517fc82fc465000000000000000000000000000000000000000000000000000000008152620101d1600482015260240160405180910390fd5b90565b6000610592610534565b905090565b60006106257f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b905080158061066857507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16155b156106705790565b61067c601b600a610bfb565b6107087f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b6107129083610c0e565b61071c9190610c25565b905080158061075f57507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16155b156107675790565b610773601b600a610bfb565b6107ff7f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f00000000000000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000000000000000610813565b6108099083610c0e565b6105929190610c25565b60008473ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa92505050801561089a575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261089791810190610c7f565b60015b6108a6575060006108cc565b88156108c2576108b68488610c25565b955050505050506108cc565b6108b68885610c0e565b949350505050565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663e6aa216c6040518163ffffffff1660e01b8152600401602060405180830381865afa92505050801561097b575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261097891810190610ccf565b60015b6109855750600090565b7f0000000000000000000000000000000000000000000000000000000000000000156109db576109d5817f0000000000000000000000000000000000000000000000000000000000000000610c25565b91505090565b6109d57f000000000000000000000000000000000000000000000000000000000000000082610c0e565b6000807f000000000000000000000000000000000000000000000000000000000000000060ff16600103610a4157610a3b610597565b91509091565b7f000000000000000000000000000000000000000000000000000000000000000060ff16600203610a8d57610a74610597565b915081600003610a8957506001610a3b6108d4565b9091565b610a956108d4565b915081600003610a8957506001610a3b610597565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b600181815b80851115610b3257817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115610b1857610b18610aaa565b80851615610b2557918102915b93841c9390800290610ade565b509250929050565b600082610b4957506001610bf5565b81610b5657506000610bf5565b8160018114610b6c5760028114610b7657610b92565b6001915050610bf5565b60ff841115610b8757610b87610aaa565b50506001821b610bf5565b5060208310610133831016604e8410600b8410161715610bb5575081810a610bf5565b610bbf8383610ad9565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115610bf157610bf1610aaa565b0290505b92915050565b6000610c078383610b3a565b9392505050565b8082028115828204841417610bf557610bf5610aaa565b600082610c5b577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b805169ffffffffffffffffffff81168114610c7a57600080fd5b919050565b600080600080600060a08688031215610c9757600080fd5b610ca086610c60565b9450602086015193506040860151925060608601519150610cc360808701610c60565b90509295509295909350565b600060208284031215610ce157600080fd5b505191905056fea2646970667358221220df4f61c2f3cd2c38026ffacfa6a4c345e7e4aa719b40753c847527f1b22253d364736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "chainlinkParams_": "chainlink Oracle constructor params struct.",
+          "mainSource_": "which oracle to use as main source: 1 = Chainlink, 2 = Redstone (other one is fallback).",
+          "redstoneOracle_": "Redstone Oracle data. (address can be set to zero address if using Chainlink only)"
+        }
+      },
+      "getExchangeRate()": {
+        "details": "Deprecated. Use `getExchangeRateOperate()` and `getExchangeRateLiquidate()` instead. Only implemented for      backwards compatibility."
+      }
+    },
+    "title": "Chainlink / Redstone Oracle (with fallback)",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "FALLBACK_ORACLE_MAIN_SOURCE()": {
+        "notice": "which oracle to use as main source:          - 1 = Chainlink ONLY (no fallback)          - 2 = Chainlink with Redstone Fallback          - 3 = Redstone with Chainlink Fallback"
+      },
+      "chainlinkOracleData()": {
+        "notice": "returns all Chainlink oracle related data as utility for easy off-chain use / block explorer in a single view method"
+      },
+      "constructor": {
+        "notice": "sets the main source, Chainlink Oracle and Redstone Oracle data."
+      },
+      "getExchangeRateLiquidate()": {
+        "notice": "Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for liquidations"
+      },
+      "getExchangeRateOperate()": {
+        "notice": "Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27 for operates"
+      },
+      "redstoneOracleData()": {
+        "notice": "returns all Redstone oracle related data as utility for easy off-chain use / block explorer in a single view method"
+      }
+    },
+    "notice": "Gets the exchange rate between the underlying asset and the peg asset by using:          the price from a Chainlink price feed or a Redstone Oracle with one of them being used as main source and          the other one acting as a fallback if the main source fails for any reason. Reverts if fetched rate is 0.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

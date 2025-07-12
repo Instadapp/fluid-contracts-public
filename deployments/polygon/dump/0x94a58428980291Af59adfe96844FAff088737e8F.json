@@ -1,0 +1,217 @@
+{
+  "address": "0x94a58428980291Af59adfe96844FAff088737e8F",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "pointer_",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "codeHash_",
+          "type": "bytes32"
+        }
+      ],
+      "name": "LogCodeDeployed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "pointer1_",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "pointer2_",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "codeHash_",
+          "type": "bytes32"
+        }
+      ],
+      "name": "LogCodeDeployedSplit",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "code_",
+          "type": "bytes"
+        }
+      ],
+      "name": "deployCode",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "pointer_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "code_",
+          "type": "bytes"
+        }
+      ],
+      "name": "deployCodeSplit",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "pointer1_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "pointer2_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pointer_",
+          "type": "address"
+        }
+      ],
+      "name": "readCode",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "code_",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pointer1_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "pointer2_",
+          "type": "address"
+        }
+      ],
+      "name": "readCodeSplit",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "code_",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x8b8f8401893ee08cd705635580cf3b8bdaa07ae40eef44f4215cfc649a19893a",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 50,
+    "gasUsed": "538537",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000008000000000000000000000000000000000000000000000000000000000800000000000000000000100000000000000000000000000000000000000000000000000000000000080000000000000000040000000040000000000000000000000000000000000000000000000000000200000000000000000000000000001000000000000000000000000000000004000000000000000040001000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0x89f6c34e4b9707b4811a8f3481047e79e610d4ad635f4733eddc0d289d02bbb5",
+    "transactionHash": "0x8b8f8401893ee08cd705635580cf3b8bdaa07ae40eef44f4215cfc649a19893a",
+    "logs": [
+      {
+        "transactionIndex": 50,
+        "blockNumber": 68633140,
+        "transactionHash": "0x8b8f8401893ee08cd705635580cf3b8bdaa07ae40eef44f4215cfc649a19893a",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000ed35b1609ec45c7079e80d11149a52717e4859a",
+          "0x0000000000000000000000009ead03f7136fc6b4bdb0780b00a1c14ae5a8b6d0"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000382d05509fc96d000000000000000000000000000000000000000000000000a3097ed98e622dd00000000000000000000000000000000000000000000005a0d465e4ffcc7049d7000000000000000000000000000000000000000000000000a2d151d43dc264630000000000000000000000000000000000000000000005a0d49e12051d101344",
+        "logIndex": 185,
+        "blockHash": "0x89f6c34e4b9707b4811a8f3481047e79e610d4ad635f4733eddc0d289d02bbb5"
+      }
+    ],
+    "blockNumber": 68633140,
+    "cumulativeGasUsed": "4960680",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "4f63da12d66a256eeca1b26617ce10fe",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"pointer_\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"codeHash_\",\"type\":\"bytes32\"}],\"name\":\"LogCodeDeployed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"pointer1_\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"pointer2_\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"codeHash_\",\"type\":\"bytes32\"}],\"name\":\"LogCodeDeployedSplit\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"code_\",\"type\":\"bytes\"}],\"name\":\"deployCode\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"pointer_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"code_\",\"type\":\"bytes\"}],\"name\":\"deployCodeSplit\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"pointer1_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"pointer2_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pointer_\",\"type\":\"address\"}],\"name\":\"readCode\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"code_\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pointer1_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"pointer2_\",\"type\":\"address\"}],\"name\":\"readCodeSplit\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"code_\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"deployCode(bytes)\":{\"details\":\"deploys code and emits an event with the pointer and code hash\",\"params\":{\"code_\":\"code to deploy\"},\"returns\":{\"pointer_\":\"pointer to the deployed code\"}},\"deployCodeSplit(bytes)\":{\"details\":\"deploys code and emits an event with the pointer and code hash\",\"params\":{\"code_\":\"code to deploy\"},\"returns\":{\"pointer1_\":\"pointer to the first part of the deployed code\",\"pointer2_\":\"pointer to the second part of the deployed code\"}},\"readCode(address)\":{\"details\":\"reads code from a pointer\",\"params\":{\"pointer_\":\"pointer to the code\"},\"returns\":{\"code_\":\"code\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"This contract is open and can be called by any address. It provides functionality to deploy and read code using SSTORE2.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/protocols/dex/factory/deploymentHelpers/SSTORE2Deployer.sol\":\"SStore2Deployer\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/libraries/bytesSliceAndConcat.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary BytesSliceAndConcat {\\n    // @dev taken from https://github.com/GNSPS/solidity-bytes-utils/blob/master/contracts/BytesLib.sol\\n    function bytesConcat(\\n        bytes memory _preBytes,\\n        bytes memory _postBytes\\n    ) internal pure returns (bytes memory tempBytes) {\\n        assembly {\\n            // Get a location of some free memory and store it in tempBytes as\\n            // Solidity does for memory variables.\\n            tempBytes := mload(0x40)\\n\\n            // Store the length of the first bytes array at the beginning of\\n            // the memory for tempBytes.\\n            let length := mload(_preBytes)\\n            mstore(tempBytes, length)\\n\\n            // Maintain a memory counter for the current write location in the\\n            // temp bytes array by adding the 32 bytes for the array length to\\n            // the starting location.\\n            let mc := add(tempBytes, 0x20)\\n            // Stop copying when the memory counter reaches the length of the\\n            // first bytes array.\\n            let end := add(mc, length)\\n\\n            for {\\n                // Initialize a copy counter to the start of the _preBytes data,\\n                // 32 bytes into its memory.\\n                let cc := add(_preBytes, 0x20)\\n            } lt(mc, end) {\\n                // Increase both counters by 32 bytes each iteration.\\n                mc := add(mc, 0x20)\\n                cc := add(cc, 0x20)\\n            } {\\n                // Write the _preBytes data into the tempBytes memory 32 bytes\\n                // at a time.\\n                mstore(mc, mload(cc))\\n            }\\n\\n            // Add the length of _postBytes to the current length of tempBytes\\n            // and store it as the new length in the first 32 bytes of the\\n            // tempBytes memory.\\n            length := mload(_postBytes)\\n            mstore(tempBytes, add(length, mload(tempBytes)))\\n\\n            // Move the memory counter back from a multiple of 0x20 to the\\n            // actual end of the _preBytes data.\\n            mc := end\\n            // Stop copying when the memory counter reaches the new combined\\n            // length of the arrays.\\n            end := add(mc, length)\\n\\n            for {\\n                let cc := add(_postBytes, 0x20)\\n            } lt(mc, end) {\\n                mc := add(mc, 0x20)\\n                cc := add(cc, 0x20)\\n            } {\\n                mstore(mc, mload(cc))\\n            }\\n\\n            // Update the free-memory pointer by padding our last write location\\n            // to 32 bytes: add 31 bytes to the end of tempBytes to move to the\\n            // next 32 byte block, then round down to the nearest multiple of\\n            // 32. If the sum of the length of the two arrays is zero then add\\n            // one before rounding down to leave a blank 32 bytes (the length block with 0).\\n            mstore(\\n                0x40,\\n                and(\\n                    add(add(end, iszero(add(length, mload(_preBytes)))), 31),\\n                    not(31) // Round down to the nearest 32 bytes.\\n                )\\n            )\\n        }\\n\\n        return tempBytes;\\n    }\\n\\n    // @dev taken from https://github.com/GNSPS/solidity-bytes-utils/blob/master/contracts/BytesLib.sol\\n    function bytesSlice(\\n        bytes memory _bytes,\\n        uint256 _start,\\n        uint256 _length\\n    ) internal pure returns (bytes memory tempBytes) {\\n        require(_length + 31 >= _length, \\\"slice_overflow\\\");\\n        require(_bytes.length >= _start + _length, \\\"slice_outOfBounds\\\");\\n\\n        assembly {\\n            switch iszero(_length)\\n            case 0 {\\n                // Get a location of some free memory and store it in tempBytes as\\n                // Solidity does for memory variables.\\n                tempBytes := mload(0x40)\\n\\n                // The first word of the slice result is potentially a partial\\n                // word read from the original array. To read it, we calculate\\n                // the length of that partial word and start copying that many\\n                // bytes into the array. The first word we copy will start with\\n                // data we don't care about, but the last `lengthmod` bytes will\\n                // land at the beginning of the contents of the new array. When\\n                // we're done copying, we overwrite the full first word with\\n                // the actual length of the slice.\\n                let lengthmod := and(_length, 31)\\n\\n                // The multiplication in the next line is necessary\\n                // because when slicing multiples of 32 bytes (lengthmod == 0)\\n                // the following copy loop was copying the origin's length\\n                // and then ending prematurely not copying everything it should.\\n                let mc := add(add(tempBytes, lengthmod), mul(0x20, iszero(lengthmod)))\\n                let end := add(mc, _length)\\n\\n                for {\\n                    // The multiplication in the next line has the same exact purpose\\n                    // as the one above.\\n                    let cc := add(add(add(_bytes, lengthmod), mul(0x20, iszero(lengthmod))), _start)\\n                } lt(mc, end) {\\n                    mc := add(mc, 0x20)\\n                    cc := add(cc, 0x20)\\n                } {\\n                    mstore(mc, mload(cc))\\n                }\\n\\n                mstore(tempBytes, _length)\\n\\n                //update free-memory pointer\\n                //allocating the array padded to 32 bytes like the compiler does now\\n                mstore(0x40, and(add(mc, 31), not(31)))\\n            }\\n            //if we want a zero-length slice let's just return a zero-length array\\n            default {\\n                tempBytes := mload(0x40)\\n                //zero out the 32 bytes slice we are about to return\\n                //we need to do it because Solidity does not garbage collect\\n                mstore(tempBytes, 0)\\n\\n                mstore(0x40, add(tempBytes, 0x20))\\n            }\\n        }\\n\\n        return tempBytes;\\n    }\\n}\\n\",\"keccak256\":\"0x42966896926a24dc7645ebf4679e6d701cb991144ef4d710d87738165d4024c7\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/factory/deploymentHelpers/SSTORE2Deployer.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { SSTORE2 } from \\\"solmate/src/utils/SSTORE2.sol\\\";\\nimport { BytesSliceAndConcat } from \\\"../../../../libraries/bytesSliceAndConcat.sol\\\";\\n\\n/// @notice This contract is open and can be called by any address.\\n/// It provides functionality to deploy and read code using SSTORE2.\\ncontract SStore2Deployer {\\n    /// @dev deploys code and emits an event with the pointer and code hash\\n    /// @param code_ code to deploy\\n    /// @return pointer_ pointer to the deployed code\\n    function deployCode(bytes memory code_) external returns (address pointer_) {\\n        pointer_ = SSTORE2.write(code_);\\n        emit LogCodeDeployed(pointer_, keccak256(code_));\\n    }\\n\\n    /// @dev deploys code and emits an event with the pointer and code hash\\n    /// @param code_ code to deploy\\n    /// @return pointer1_ pointer to the first part of the deployed code\\n    /// @return pointer2_ pointer to the second part of the deployed code\\n    function deployCodeSplit(bytes memory code_) external returns (address pointer1_, address pointer2_) {\\n        // split storing creation code into two SSTORE2 pointers, because:\\n        // due to contract code limits 24576 bytes is the maximum amount of data that can be written in a single pointer / key.\\n        // Attempting to write more will result in failure.\\n        // So by splitting in two parts we can make sure that the contract bytecode size can use up the full limit of 24576 bytes.\\n        bytes memory code1_ = BytesSliceAndConcat.bytesSlice(code_, 0, code_.length / 2);\\n        // slice lengths:\\n        // when even length, e.g. 250:\\n        //      part 1 = 0 -> 250 / 2, so 0 until 125 length, so 0 -> 125\\n        //      part 2 = 250 / 2 -> 250 - 250 / 2, so 125 until 125 length, so 125 -> 250\\n        // when odd length: e.g. 251:\\n        //      part 1 = 0 -> 251 / 2, so 0 until 125 length, so 0 -> 125\\n        //      part 2 = 251 / 2 -> 251 - 251 / 2, so 125 until 126 length, so 125 -> 251\\n        bytes memory code2_ = BytesSliceAndConcat.bytesSlice(code_, code_.length / 2, code_.length - code_.length / 2);\\n        pointer1_ = SSTORE2.write(code1_);\\n        pointer2_ = SSTORE2.write(code2_);\\n        emit LogCodeDeployedSplit(pointer1_, pointer2_, keccak256(code_));\\n    }\\n\\n    /// @dev reads code from a pointer\\n    /// @param pointer_ pointer to the code\\n    /// @return code_ code\\n    function readCode(address pointer_) external view returns (bytes memory code_) {\\n        code_ = SSTORE2.read(pointer_);\\n    }\\n\\n    function readCodeSplit(address pointer1_, address pointer2_) external view returns (bytes memory code_) {\\n        code_ = BytesSliceAndConcat.bytesConcat(SSTORE2.read(pointer1_), SSTORE2.read(pointer2_));\\n    }\\n\\n    event LogCodeDeployed(address pointer_, bytes32 codeHash_);\\n    event LogCodeDeployedSplit(address pointer1_, address pointer2_, bytes32 codeHash_);\\n}\\n\",\"keccak256\":\"0x1084252e462925e84ba2442642287a3187d268d2749dcd6c554e4c148d528034\",\"license\":\"BUSL-1.1\"},\"solmate/src/utils/SSTORE2.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\npragma solidity >=0.8.0;\\n\\n/// @notice Read and write to persistent storage at a fraction of the cost.\\n/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SSTORE2.sol)\\n/// @author Modified from 0xSequence (https://github.com/0xSequence/sstore2/blob/master/contracts/SSTORE2.sol)\\nlibrary SSTORE2 {\\n    uint256 internal constant DATA_OFFSET = 1; // We skip the first byte as it's a STOP opcode to ensure the contract can't be called.\\n\\n    /*//////////////////////////////////////////////////////////////\\n                               WRITE LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function write(bytes memory data) internal returns (address pointer) {\\n        // Prefix the bytecode with a STOP opcode to ensure it cannot be called.\\n        bytes memory runtimeCode = abi.encodePacked(hex\\\"00\\\", data);\\n\\n        bytes memory creationCode = abi.encodePacked(\\n            //---------------------------------------------------------------------------------------------------------------//\\n            // Opcode  | Opcode + Arguments  | Description  | Stack View                                                     //\\n            //---------------------------------------------------------------------------------------------------------------//\\n            // 0x60    |  0x600B             | PUSH1 11     | codeOffset                                                     //\\n            // 0x59    |  0x59               | MSIZE        | 0 codeOffset                                                   //\\n            // 0x81    |  0x81               | DUP2         | codeOffset 0 codeOffset                                        //\\n            // 0x38    |  0x38               | CODESIZE     | codeSize codeOffset 0 codeOffset                               //\\n            // 0x03    |  0x03               | SUB          | (codeSize - codeOffset) 0 codeOffset                           //\\n            // 0x80    |  0x80               | DUP          | (codeSize - codeOffset) (codeSize - codeOffset) 0 codeOffset   //\\n            // 0x92    |  0x92               | SWAP3        | codeOffset (codeSize - codeOffset) 0 (codeSize - codeOffset)   //\\n            // 0x59    |  0x59               | MSIZE        | 0 codeOffset (codeSize - codeOffset) 0 (codeSize - codeOffset) //\\n            // 0x39    |  0x39               | CODECOPY     | 0 (codeSize - codeOffset)                                      //\\n            // 0xf3    |  0xf3               | RETURN       |                                                                //\\n            //---------------------------------------------------------------------------------------------------------------//\\n            hex\\\"60_0B_59_81_38_03_80_92_59_39_F3\\\", // Returns all code in the contract except for the first 11 (0B in hex) bytes.\\n            runtimeCode // The bytecode we want the contract to have after deployment. Capped at 1 byte less than the code size limit.\\n        );\\n\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Deploy a new contract with the generated creation code.\\n            // We start 32 bytes into the code to avoid copying the byte length.\\n            pointer := create(0, add(creationCode, 32), mload(creationCode))\\n        }\\n\\n        require(pointer != address(0), \\\"DEPLOYMENT_FAILED\\\");\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                               READ LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function read(address pointer) internal view returns (bytes memory) {\\n        return readBytecode(pointer, DATA_OFFSET, pointer.code.length - DATA_OFFSET);\\n    }\\n\\n    function read(address pointer, uint256 start) internal view returns (bytes memory) {\\n        start += DATA_OFFSET;\\n\\n        return readBytecode(pointer, start, pointer.code.length - start);\\n    }\\n\\n    function read(\\n        address pointer,\\n        uint256 start,\\n        uint256 end\\n    ) internal view returns (bytes memory) {\\n        start += DATA_OFFSET;\\n        end += DATA_OFFSET;\\n\\n        require(pointer.code.length >= end, \\\"OUT_OF_BOUNDS\\\");\\n\\n        return readBytecode(pointer, start, end - start);\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                          INTERNAL HELPER LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function readBytecode(\\n        address pointer,\\n        uint256 start,\\n        uint256 size\\n    ) private view returns (bytes memory data) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Get a pointer to some free memory.\\n            data := mload(0x40)\\n\\n            // Update the free memory pointer to prevent overriding our data.\\n            // We use and(x, not(31)) as a cheaper equivalent to sub(x, mod(x, 32)).\\n            // Adding 31 to size and running the result through the logic above ensures\\n            // the memory pointer remains word-aligned, following the Solidity convention.\\n            mstore(0x40, add(data, and(add(add(size, 32), 31), not(31))))\\n\\n            // Store the size of the data in the first 32 byte chunk of free memory.\\n            mstore(data, size)\\n\\n            // Copy the code into memory right after the 32 bytes we used to store the size.\\n            extcodecopy(pointer, add(data, 32), start, size)\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xc5359c92365c550c418725fc534a538426ea8f6e7f6c06c0a9d66647d864469d\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506108ce806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806318b3c7d114610051578063b8c1a3d614610096578063d4616967146100b6578063f7f3ba29146100ee575b600080fd5b61006461005f3660046105e2565b610101565b6040805173ffffffffffffffffffffffffffffffffffffffff9384168152929091166020830152015b60405180910390f35b6100a96100a43660046106da565b6101d1565b60405161008d9190610731565b6100c96100c43660046105e2565b6101f4565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161008d565b6100a96100fc366004610782565b610267565b600080600061011f8460006002875161011a91906107cc565b610278565b9050600061014f856002875161013591906107cc565b6002885161014391906107cc565b885161011a9190610807565b905061015a826103f4565b9350610165816103f4565b85516020808801919091206040805173ffffffffffffffffffffffffffffffffffffffff808a1682528516938101939093528201529093507f6542bf48c0a5d51402bd5415bb65455c8584b3b133c7d863c88a2db7a27100d59060600160405180910390a15050915091565b60606101ed6101df846104cc565b6101e8846104cc565b6104fa565b9392505050565b60006101ff826103f4565b90507f63dd0238e20dfbaad6cc5d2d1decb2f29d9bed3e6ace5a9c367734e2884b59a481838051906020012060405161025a92919073ffffffffffffffffffffffffffffffffffffffff929092168252602082015260400190565b60405180910390a1919050565b6060610272826104cc565b92915050565b60608161028681601f61081a565b10156102f3576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f736c6963655f6f766572666c6f7700000000000000000000000000000000000060448201526064015b60405180910390fd5b6102fd828461081a565b84511015610367576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f736c6963655f6f75744f66426f756e647300000000000000000000000000000060448201526064016102ea565b8115801561038457604051915060008252602082016040526103ec565b6040519150601f8316801560200281840101848101868315602002848a0101015b818310156103bd5780518352602092830192016103a5565b5050848452601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016604052505b509392505050565b60008082604051602001610408919061082d565b604051602081830303815290604052905060008160405160200161042c9190610853565b60405160208183030381529060405290508051602082016000f0925073ffffffffffffffffffffffffffffffffffffffff83166104c5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f4445504c4f594d454e545f4641494c454400000000000000000000000000000060448201526064016102ea565b5050919050565b60606102728260016104f58173ffffffffffffffffffffffffffffffffffffffff84163b610807565b610572565b60606040519050825180825260208201818101602086015b8183101561052a578051835260209283019201610512565b50845184518101855292509050808201602085015b8183101561055757805183526020928301920161053f565b50601f19601f87518501158301011660405250505092915050565b60408051603f83017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168101909152818152818360208301863c9392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6000602082840312156105f457600080fd5b813567ffffffffffffffff8082111561060c57600080fd5b818401915084601f83011261062057600080fd5b813581811115610632576106326105b3565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0908116603f01168101908382118183101715610678576106786105b3565b8160405282815287602084870101111561069157600080fd5b826020860160208301376000928101602001929092525095945050505050565b803573ffffffffffffffffffffffffffffffffffffffff811681146106d557600080fd5b919050565b600080604083850312156106ed57600080fd5b6106f6836106b1565b9150610704602084016106b1565b90509250929050565b60005b83811015610728578181015183820152602001610710565b50506000910152565b602081526000825180602084015261075081604085016020870161070d565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169190910160400192915050565b60006020828403121561079457600080fd5b6101ed826106b1565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b600082610802577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b818103818111156102725761027261079d565b808201808211156102725761027261079d565b600081526000825161084681600185016020870161070d565b9190910160010192915050565b7f600b5981380380925939f300000000000000000000000000000000000000000081526000825161088b81600b85016020870161070d565b91909101600b019291505056fea264697066735822122044373cb8e4b0f996ade6565222e795cd4fe28af9f9255626f045616bdda1e1c264736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806318b3c7d114610051578063b8c1a3d614610096578063d4616967146100b6578063f7f3ba29146100ee575b600080fd5b61006461005f3660046105e2565b610101565b6040805173ffffffffffffffffffffffffffffffffffffffff9384168152929091166020830152015b60405180910390f35b6100a96100a43660046106da565b6101d1565b60405161008d9190610731565b6100c96100c43660046105e2565b6101f4565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161008d565b6100a96100fc366004610782565b610267565b600080600061011f8460006002875161011a91906107cc565b610278565b9050600061014f856002875161013591906107cc565b6002885161014391906107cc565b885161011a9190610807565b905061015a826103f4565b9350610165816103f4565b85516020808801919091206040805173ffffffffffffffffffffffffffffffffffffffff808a1682528516938101939093528201529093507f6542bf48c0a5d51402bd5415bb65455c8584b3b133c7d863c88a2db7a27100d59060600160405180910390a15050915091565b60606101ed6101df846104cc565b6101e8846104cc565b6104fa565b9392505050565b60006101ff826103f4565b90507f63dd0238e20dfbaad6cc5d2d1decb2f29d9bed3e6ace5a9c367734e2884b59a481838051906020012060405161025a92919073ffffffffffffffffffffffffffffffffffffffff929092168252602082015260400190565b60405180910390a1919050565b6060610272826104cc565b92915050565b60608161028681601f61081a565b10156102f3576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f736c6963655f6f766572666c6f7700000000000000000000000000000000000060448201526064015b60405180910390fd5b6102fd828461081a565b84511015610367576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f736c6963655f6f75744f66426f756e647300000000000000000000000000000060448201526064016102ea565b8115801561038457604051915060008252602082016040526103ec565b6040519150601f8316801560200281840101848101868315602002848a0101015b818310156103bd5780518352602092830192016103a5565b5050848452601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016604052505b509392505050565b60008082604051602001610408919061082d565b604051602081830303815290604052905060008160405160200161042c9190610853565b60405160208183030381529060405290508051602082016000f0925073ffffffffffffffffffffffffffffffffffffffff83166104c5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f4445504c4f594d454e545f4641494c454400000000000000000000000000000060448201526064016102ea565b5050919050565b60606102728260016104f58173ffffffffffffffffffffffffffffffffffffffff84163b610807565b610572565b60606040519050825180825260208201818101602086015b8183101561052a578051835260209283019201610512565b50845184518101855292509050808201602085015b8183101561055757805183526020928301920161053f565b50601f19601f87518501158301011660405250505092915050565b60408051603f83017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168101909152818152818360208301863c9392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6000602082840312156105f457600080fd5b813567ffffffffffffffff8082111561060c57600080fd5b818401915084601f83011261062057600080fd5b813581811115610632576106326105b3565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0908116603f01168101908382118183101715610678576106786105b3565b8160405282815287602084870101111561069157600080fd5b826020860160208301376000928101602001929092525095945050505050565b803573ffffffffffffffffffffffffffffffffffffffff811681146106d557600080fd5b919050565b600080604083850312156106ed57600080fd5b6106f6836106b1565b9150610704602084016106b1565b90509250929050565b60005b83811015610728578181015183820152602001610710565b50506000910152565b602081526000825180602084015261075081604085016020870161070d565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169190910160400192915050565b60006020828403121561079457600080fd5b6101ed826106b1565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b600082610802577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b818103818111156102725761027261079d565b808201808211156102725761027261079d565b600081526000825161084681600185016020870161070d565b9190910160010192915050565b7f600b5981380380925939f300000000000000000000000000000000000000000081526000825161088b81600b85016020870161070d565b91909101600b019291505056fea264697066735822122044373cb8e4b0f996ade6565222e795cd4fe28af9f9255626f045616bdda1e1c264736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "deployCode(bytes)": {
+        "details": "deploys code and emits an event with the pointer and code hash",
+        "params": {
+          "code_": "code to deploy"
+        },
+        "returns": {
+          "pointer_": "pointer to the deployed code"
+        }
+      },
+      "deployCodeSplit(bytes)": {
+        "details": "deploys code and emits an event with the pointer and code hash",
+        "params": {
+          "code_": "code to deploy"
+        },
+        "returns": {
+          "pointer1_": "pointer to the first part of the deployed code",
+          "pointer2_": "pointer to the second part of the deployed code"
+        }
+      },
+      "readCode(address)": {
+        "details": "reads code from a pointer",
+        "params": {
+          "pointer_": "pointer to the code"
+        },
+        "returns": {
+          "code_": "code"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "This contract is open and can be called by any address. It provides functionality to deploy and read code using SSTORE2.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
