@@ -1,0 +1,1153 @@
+{
+  "address": "0x12a47cEB96A952E8D4A6eA9FE3b40b79bbaeb4e9",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dexLite_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "liquidity_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "deployerContract_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "path_",
+          "type": "address[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey[]",
+          "name": "dexKeys_",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "int256",
+          "name": "amountSpecified_",
+          "type": "int256"
+        }
+      ],
+      "name": "estimateSwapHop",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountUnspecified_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bool",
+          "name": "swap0To1_",
+          "type": "bool"
+        },
+        {
+          "internalType": "int256",
+          "name": "amountSpecified_",
+          "type": "int256"
+        }
+      ],
+      "name": "estimateSwapSingle",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountUnspecified_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllDexes",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllDexesEntireData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes8",
+              "name": "dexId",
+              "type": "bytes8"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "token0",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "token1",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "salt",
+                  "type": "bytes32"
+                }
+              ],
+              "internalType": "struct DexKey",
+              "name": "dexKey",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "liquidity",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "deployer",
+                  "type": "address"
+                }
+              ],
+              "internalType": "struct ConstantViews",
+              "name": "constantViews",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "poolPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "centerPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "upperRangePrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lowerRangePrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "upperThresholdPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lowerThresholdPrice",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Prices",
+              "name": "prices",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Reserves",
+              "name": "reserves",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "fee",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "revenueCut",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "rebalancingStatus",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isCenterPriceShiftActive",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "centerPrice",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "centerPriceAddress",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isRangePercentShiftActive",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "upperRangePercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "lowerRangePercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isThresholdPercentShiftActive",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "upperShiftThresholdPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "lowerShiftThresholdPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "token0Decimals",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "token1Decimals",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "totalToken0AdjustedAmount",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "totalToken1AdjustedAmount",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct DexVariables",
+                  "name": "dexVariables",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "lastInteractionTimestamp",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "rebalancingShiftingTime",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxCenterPrice",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "minCenterPrice",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "shiftPercentage",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "centerPriceShiftingTime",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "startTimestamp",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct CenterPriceShift",
+                  "name": "centerPriceShift",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "oldUpperRangePercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "oldLowerRangePercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "shiftingTime",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "startTimestamp",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct RangeShift",
+                  "name": "rangeShift",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "oldUpperThresholdPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "oldLowerThresholdPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "shiftingTime",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "startTimestamp",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct ThresholdShift",
+                  "name": "thresholdShift",
+                  "type": "tuple"
+                }
+              ],
+              "internalType": "struct DexState",
+              "name": "dexState",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct DexEntireData[]",
+          "name": "allDexesEntireData_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        }
+      ],
+      "name": "getDexEntireData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes8",
+              "name": "dexId",
+              "type": "bytes8"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "token0",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "token1",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "salt",
+                  "type": "bytes32"
+                }
+              ],
+              "internalType": "struct DexKey",
+              "name": "dexKey",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "liquidity",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "deployer",
+                  "type": "address"
+                }
+              ],
+              "internalType": "struct ConstantViews",
+              "name": "constantViews",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "poolPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "centerPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "upperRangePrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lowerRangePrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "upperThresholdPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lowerThresholdPrice",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Prices",
+              "name": "prices",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "token0RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1RealReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0ImaginaryReserves",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1ImaginaryReserves",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Reserves",
+              "name": "reserves",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "fee",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "revenueCut",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "rebalancingStatus",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isCenterPriceShiftActive",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "centerPrice",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "centerPriceAddress",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isRangePercentShiftActive",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "upperRangePercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "lowerRangePercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isThresholdPercentShiftActive",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "upperShiftThresholdPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "lowerShiftThresholdPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "token0Decimals",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "token1Decimals",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "totalToken0AdjustedAmount",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "totalToken1AdjustedAmount",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct DexVariables",
+                  "name": "dexVariables",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "lastInteractionTimestamp",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "rebalancingShiftingTime",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxCenterPrice",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "minCenterPrice",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "shiftPercentage",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "centerPriceShiftingTime",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "startTimestamp",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct CenterPriceShift",
+                  "name": "centerPriceShift",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "oldUpperRangePercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "oldLowerRangePercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "shiftingTime",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "startTimestamp",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct RangeShift",
+                  "name": "rangeShift",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "oldUpperThresholdPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "oldLowerThresholdPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "shiftingTime",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "startTimestamp",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct ThresholdShift",
+                  "name": "thresholdShift",
+                  "type": "tuple"
+                }
+              ],
+              "internalType": "struct DexState",
+              "name": "dexState",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct DexEntireData",
+          "name": "entireData_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        }
+      ],
+      "name": "getDexState",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "fee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "revenueCut",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "rebalancingStatus",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isCenterPriceShiftActive",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "centerPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "centerPriceAddress",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isRangePercentShiftActive",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "upperRangePercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lowerRangePercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isThresholdPercentShiftActive",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "upperShiftThresholdPercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lowerShiftThresholdPercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token0Decimals",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "token1Decimals",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "totalToken0AdjustedAmount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "totalToken1AdjustedAmount",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct DexVariables",
+              "name": "dexVariables",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "lastInteractionTimestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "rebalancingShiftingTime",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxCenterPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "minCenterPrice",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "shiftPercentage",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "centerPriceShiftingTime",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "startTimestamp",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct CenterPriceShift",
+              "name": "centerPriceShift",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "oldUpperRangePercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "oldLowerRangePercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "shiftingTime",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "startTimestamp",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct RangeShift",
+              "name": "rangeShift",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "oldUpperThresholdPercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "oldLowerThresholdPercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "shiftingTime",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "startTimestamp",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct ThresholdShift",
+              "name": "thresholdShift",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct DexState",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        }
+      ],
+      "name": "getPricesAndReserves",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "poolPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "centerPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperRangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerRangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperThresholdPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerThresholdPrice",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Prices",
+          "name": "prices_",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "token0RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1RealReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0ImaginaryReserves",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1ImaginaryReserves",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Reserves",
+          "name": "reserves_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x3c124321f38eaadf0de7a94e45a9219b3415d0779e1e5f55527cedd87ce65a1b",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x8a5B57d047D284A2A6ec774A8BCA2BeaB2A6C955",
+    "contractAddress": null,
+    "transactionIndex": 132,
+    "gasUsed": "2750661",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x23152587ac79e29246e30df5bab8023e59516ee7dcf36c93ec61b048c0df4dc2",
+    "transactionHash": "0x3c124321f38eaadf0de7a94e45a9219b3415d0779e1e5f55527cedd87ce65a1b",
+    "logs": [],
+    "blockNumber": 23085336,
+    "cumulativeGasUsed": "20125968",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xBbcb91440523216e2b87052A99F69c604A7b6e00",
+    "0x52Aa899454998Be5b000Ad077a46Bbe360F4e497",
+    "0x4EC7b668BAF70d4A4b0FC7941a7708A07b6d45Be"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "a9c69e1a2a242139f92244711e58aca8",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.29+commit.ab55807c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dexLite_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"liquidity_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"deployerContract_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"path_\",\"type\":\"address[]\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey[]\",\"name\":\"dexKeys_\",\"type\":\"tuple[]\"},{\"internalType\":\"int256\",\"name\":\"amountSpecified_\",\"type\":\"int256\"}],\"name\":\"estimateSwapHop\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountUnspecified_\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"bool\",\"name\":\"swap0To1_\",\"type\":\"bool\"},{\"internalType\":\"int256\",\"name\":\"amountSpecified_\",\"type\":\"int256\"}],\"name\":\"estimateSwapSingle\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountUnspecified_\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllDexes\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllDexesEntireData\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes8\",\"name\":\"dexId\",\"type\":\"bytes8\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"liquidity\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"deployer\",\"type\":\"address\"}],\"internalType\":\"struct ConstantViews\",\"name\":\"constantViews\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"poolPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperRangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperThresholdPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerThresholdPrice\",\"type\":\"uint256\"}],\"internalType\":\"struct Prices\",\"name\":\"prices\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct Reserves\",\"name\":\"reserves\",\"type\":\"tuple\"},{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revenueCut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rebalancingStatus\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isCenterPriceShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"centerPriceAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isRangePercentShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"upperRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isThresholdPercentShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"upperShiftThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerShiftThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0Decimals\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Decimals\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalToken0AdjustedAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalToken1AdjustedAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct DexVariables\",\"name\":\"dexVariables\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"lastInteractionTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rebalancingShiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftPercentage\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPriceShiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct CenterPriceShift\",\"name\":\"centerPriceShift\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"oldUpperRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldLowerRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct RangeShift\",\"name\":\"rangeShift\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"oldUpperThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldLowerThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct ThresholdShift\",\"name\":\"thresholdShift\",\"type\":\"tuple\"}],\"internalType\":\"struct DexState\",\"name\":\"dexState\",\"type\":\"tuple\"}],\"internalType\":\"struct DexEntireData[]\",\"name\":\"allDexesEntireData_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"}],\"name\":\"getDexEntireData\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes8\",\"name\":\"dexId\",\"type\":\"bytes8\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"liquidity\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"deployer\",\"type\":\"address\"}],\"internalType\":\"struct ConstantViews\",\"name\":\"constantViews\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"poolPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperRangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperThresholdPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerThresholdPrice\",\"type\":\"uint256\"}],\"internalType\":\"struct Prices\",\"name\":\"prices\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct Reserves\",\"name\":\"reserves\",\"type\":\"tuple\"},{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revenueCut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rebalancingStatus\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isCenterPriceShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"centerPriceAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isRangePercentShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"upperRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isThresholdPercentShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"upperShiftThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerShiftThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0Decimals\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Decimals\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalToken0AdjustedAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalToken1AdjustedAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct DexVariables\",\"name\":\"dexVariables\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"lastInteractionTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rebalancingShiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftPercentage\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPriceShiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct CenterPriceShift\",\"name\":\"centerPriceShift\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"oldUpperRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldLowerRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct RangeShift\",\"name\":\"rangeShift\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"oldUpperThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldLowerThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct ThresholdShift\",\"name\":\"thresholdShift\",\"type\":\"tuple\"}],\"internalType\":\"struct DexState\",\"name\":\"dexState\",\"type\":\"tuple\"}],\"internalType\":\"struct DexEntireData\",\"name\":\"entireData_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"}],\"name\":\"getDexState\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revenueCut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rebalancingStatus\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isCenterPriceShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"centerPriceAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isRangePercentShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"upperRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isThresholdPercentShiftActive\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"upperShiftThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerShiftThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0Decimals\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Decimals\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalToken0AdjustedAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalToken1AdjustedAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct DexVariables\",\"name\":\"dexVariables\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"lastInteractionTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rebalancingShiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftPercentage\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPriceShiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct CenterPriceShift\",\"name\":\"centerPriceShift\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"oldUpperRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldLowerRangePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct RangeShift\",\"name\":\"rangeShift\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"oldUpperThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oldLowerThresholdPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftingTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startTimestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct ThresholdShift\",\"name\":\"thresholdShift\",\"type\":\"tuple\"}],\"internalType\":\"struct DexState\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"}],\"name\":\"getPricesAndReserves\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"poolPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperRangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperThresholdPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerThresholdPrice\",\"type\":\"uint256\"}],\"internalType\":\"struct Prices\",\"name\":\"prices_\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token0RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1RealReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0ImaginaryReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1ImaginaryReserves\",\"type\":\"uint256\"}],\"internalType\":\"struct Reserves\",\"name\":\"reserves_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/periphery/resolvers/dexLite/main.sol\":\"FluidDexLiteResolver\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/infiniteProxy/interfaces/iProxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity >=0.8.21 <=0.8.29;\\n\\ninterface IProxy {\\n    function setAdmin(address newAdmin_) external;\\n\\n    function setDummyImplementation(address newDummyImplementation_) external;\\n\\n    function addImplementation(address implementation_, bytes4[] calldata sigs_) external;\\n\\n    function removeImplementation(address implementation_) external;\\n\\n    function getAdmin() external view returns (address);\\n\\n    function getDummyImplementation() external view returns (address);\\n\\n    function getImplementationSigs(address impl_) external view returns (bytes4[] memory);\\n\\n    function getSigsImplementation(bytes4 sig_) external view returns (address);\\n\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n}\\n\",\"keccak256\":\"0x30d8b90d077a4ab2b116788f4b47ec7009dc49e11ef76f1d7bf07bd0cc65b406\",\"license\":\"MIT\"},\"contracts/libraries/addressCalcs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\n/// @notice implements calculation of address for contracts deployed through CREATE.\\n/// Accepts contract deployed from which address & nonce\\nlibrary AddressCalcs {\\n\\n    /// @notice                         Computes the address of a contract based\\n    /// @param deployedFrom_            Address from which the contract was deployed\\n    /// @param nonce_                   Nonce at which the contract was deployed\\n    /// @return contract_               Address of deployed contract\\n    function addressCalc(address deployedFrom_, uint nonce_) internal pure returns (address contract_) {\\n        // @dev based on https://ethereum.stackexchange.com/a/61413\\n\\n        // nonce of smart contract always starts with 1. so, with nonce 0 there won't be any deployment\\n        // hence, nonce of vault deployment starts with 1.\\n        bytes memory data;\\n        if (nonce_ == 0x00) {\\n            return address(0);\\n        } else if (nonce_ <= 0x7f) {\\n            data = abi.encodePacked(bytes1(0xd6), bytes1(0x94), deployedFrom_, uint8(nonce_));\\n        } else if (nonce_ <= 0xff) {\\n            data = abi.encodePacked(bytes1(0xd7), bytes1(0x94), deployedFrom_, bytes1(0x81), uint8(nonce_));\\n        } else if (nonce_ <= 0xffff) {\\n            data = abi.encodePacked(bytes1(0xd8), bytes1(0x94), deployedFrom_, bytes1(0x82), uint16(nonce_));\\n        } else if (nonce_ <= 0xffffff) {\\n            data = abi.encodePacked(bytes1(0xd9), bytes1(0x94), deployedFrom_, bytes1(0x83), uint24(nonce_));\\n        } else {\\n            data = abi.encodePacked(bytes1(0xda), bytes1(0x94), deployedFrom_, bytes1(0x84), uint32(nonce_));\\n        }\\n\\n        return address(uint160(uint256(keccak256(data))));\\n    }\\n\\n}\",\"keccak256\":\"0xed8e77dcf54703084c26a53b45d8139e5417488bc8f22a988c91b7813d132961\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/dexLiteSlotsLink.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\n/// @notice library that helps in reading / working with storage slot data of Fluid Dex Lite.\\nlibrary DexLiteSlotsLink {\\n    /// @dev storage slot for is auth mapping\\n    uint256 internal constant DEX_LITE_IS_AUTH_SLOT = 0;\\n    /// @dev storage slot for dexes list\\n    uint256 internal constant DEX_LITE_DEXES_LIST_SLOT = 1;\\n    /// @dev storage slot for is dex variables\\n    uint256 internal constant DEX_LITE_DEX_VARIABLES_SLOT = 2;\\n    /// @dev storage slot for center price shift\\n    uint256 internal constant DEX_LITE_CENTER_PRICE_SHIFT_SLOT = 3;\\n    /// @dev storage slot for range shift\\n    uint256 internal constant DEX_LITE_RANGE_SHIFT_SLOT = 4;\\n    /// @dev storage slot for threshold shift\\n    uint256 internal constant DEX_LITE_THRESHOLD_SHIFT_SLOT = 5;\\n\\n    // --------------------------------\\n    // @dev stacked uint256 storage slots bits position data for each:\\n\\n    // DexVariables\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_FEE = 0;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_REVENUE_CUT = 13;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_REBALANCING_STATUS = 20;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_SHIFT_ACTIVE = 22;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE = 23;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS = 63;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_RANGE_PERCENT_SHIFT_ACTIVE = 82;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_UPPER_PERCENT = 83;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_LOWER_PERCENT = 97;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_THRESHOLD_PERCENT_SHIFT_ACTIVE = 111;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_UPPER_SHIFT_THRESHOLD_PERCENT = 112;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_LOWER_SHIFT_THRESHOLD_PERCENT = 119;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_DECIMALS = 126;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_DECIMALS = 131;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED = 136;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED = 196;\\n\\n    // CenterPriceShift\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_LAST_INTERACTION_TIMESTAMP = 0;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_SHIFTING_TIME = 33;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_MAX_CENTER_PRICE = 57;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_MIN_CENTER_PRICE = 85;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT = 113;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIME_TO_SHIFT = 133;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIMESTAMP = 153;\\n\\n    // RangeShift\\n    uint256 internal constant BITS_DEX_LITE_RANGE_SHIFT_OLD_UPPER_RANGE_PERCENT = 0;\\n    uint256 internal constant BITS_DEX_LITE_RANGE_SHIFT_OLD_LOWER_RANGE_PERCENT = 14;\\n    uint256 internal constant BITS_DEX_LITE_RANGE_SHIFT_TIME_TO_SHIFT = 28;\\n    uint256 internal constant BITS_DEX_LITE_RANGE_SHIFT_TIMESTAMP = 48;\\n\\n    // ThresholdShift\\n    uint256 internal constant BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_UPPER_THRESHOLD_PERCENT = 0;\\n    uint256 internal constant BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_LOWER_THRESHOLD_PERCENT = 7;\\n    uint256 internal constant BITS_DEX_LITE_THRESHOLD_SHIFT_TIME_TO_SHIFT = 14;\\n    uint256 internal constant BITS_DEX_LITE_THRESHOLD_SHIFT_TIMESTAMP = 34;\\n\\n    // --------------------------------\\n    // @dev stacked uint256 swapData for LogSwap event\\n    uint256 internal constant BITS_DEX_LITE_SWAP_DATA_DEX_ID = 0;\\n    uint256 internal constant BITS_DEX_LITE_SWAP_DATA_SWAP_0_TO_1 = 64;\\n    uint256 internal constant BITS_DEX_LITE_SWAP_DATA_AMOUNT_IN = 65;\\n    uint256 internal constant BITS_DEX_LITE_SWAP_DATA_AMOUNT_OUT = 125;\\n\\n    /// @notice Calculating the slot ID for Dex contract for single mapping at `slot_` for `key_`\\n    function calculateMappingStorageSlot(uint256 slot_, bytes32 key_) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(key_, slot_));\\n    }\\n}\\n\",\"keccak256\":\"0xca9936bf5de4a75b10a8625ee68f12552b4fa837106a345e60122b2c07e48352\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/adminModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nabstract contract Structs {\\n    struct AddressBool {\\n        address addr;\\n        bool value;\\n    }\\n\\n    struct AddressUint256 {\\n        address addr;\\n        uint256 value;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 1\\n    struct RateDataV1Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink usually means slow increase in rate, once utilization is above kink borrow rate increases fast\\n        uint256 kink;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink borrow rate when utilization is at kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink;\\n        ///\\n        /// @param rateAtUtilizationMax borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 2\\n    struct RateDataV2Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink1 first kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 1 usually means slow increase in rate, once utilization is above kink 1 borrow rate increases faster\\n        uint256 kink1;\\n        ///\\n        /// @param kink2 second kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 2 usually means slow / medium increase in rate, once utilization is above kink 2 borrow rate increases fast\\n        uint256 kink2;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink1 desired borrow rate when utilization is at first kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at first kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink1;\\n        ///\\n        /// @param rateAtUtilizationKink2 desired borrow rate when utilization is at second kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at second kink then rateAtUtilizationKink would be 1_200\\n        uint256 rateAtUtilizationKink2;\\n        ///\\n        /// @param rateAtUtilizationMax desired borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set token config\\n    struct TokenConfig {\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param fee charges on borrower's interest. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 fee;\\n        ///\\n        /// @param threshold on when to update the storage slot. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 threshold;\\n        ///\\n        /// @param maxUtilization maximum allowed utilization. in 1e2: 100% = 10_000; 1% = 100\\n        ///                       set to 100% to disable and have default limit of 100% (avoiding SLOAD).\\n        uint256 maxUtilization;\\n    }\\n\\n    /// @notice struct to set user supply & withdrawal config\\n    struct UserSupplyConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent withdrawal limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which withdrawal limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration withdrawal limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseWithdrawalLimit base limit, below this, user can withdraw the entire amount.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseWithdrawalLimit;\\n    }\\n\\n    /// @notice struct to set user borrow & payback config\\n    struct UserBorrowConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent debt limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which debt limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration debt limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseDebtCeiling base borrow limit. until here, borrow limit remains as baseDebtCeiling\\n        /// (user can borrow until this point at once without stepped expansion). Above this, automated limit comes in place.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseDebtCeiling;\\n        ///\\n        /// @param maxDebtCeiling max borrow ceiling, maximum amount the user can borrow.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 maxDebtCeiling;\\n    }\\n}\\n\",\"keccak256\":\"0xfa7cbe07b97f45acd0460deaff1ef54de9473164249e5527ee4da6efb6bf7e65\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/interfaces/iLiquidity.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nimport { IProxy } from \\\"../../infiniteProxy/interfaces/iProxy.sol\\\";\\nimport { Structs as AdminModuleStructs } from \\\"../adminModule/structs.sol\\\";\\n\\ninterface IFluidLiquidityAdmin {\\n    /// @notice adds/removes auths. Auths generally could be contracts which can have restricted actions defined on contract.\\n    ///         auths can be helpful in reducing governance overhead where it's not needed.\\n    /// @param authsStatus_ array of structs setting allowed status for an address.\\n    ///                     status true => add auth, false => remove auth\\n    function updateAuths(AdminModuleStructs.AddressBool[] calldata authsStatus_) external;\\n\\n    /// @notice adds/removes guardians. Only callable by Governance.\\n    /// @param guardiansStatus_ array of structs setting allowed status for an address.\\n    ///                         status true => add guardian, false => remove guardian\\n    function updateGuardians(AdminModuleStructs.AddressBool[] calldata guardiansStatus_) external;\\n\\n    /// @notice changes the revenue collector address (contract that is sent revenue). Only callable by Governance.\\n    /// @param revenueCollector_  new revenue collector address\\n    function updateRevenueCollector(address revenueCollector_) external;\\n\\n    /// @notice changes current status, e.g. for pausing or unpausing all user operations. Only callable by Auths.\\n    /// @param newStatus_ new status\\n    ///        status = 2 -> pause, status = 1 -> resume.\\n    function changeStatus(uint256 newStatus_) external;\\n\\n    /// @notice                  update tokens rate data version 1. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV1Params with rate data to set for each token\\n    function updateRateDataV1s(AdminModuleStructs.RateDataV1Params[] calldata tokensRateData_) external;\\n\\n    /// @notice                  update tokens rate data version 2. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV2Params with rate data to set for each token\\n    function updateRateDataV2s(AdminModuleStructs.RateDataV2Params[] calldata tokensRateData_) external;\\n\\n    /// @notice updates token configs: fee charge on borrowers interest & storage update utilization threshold.\\n    ///         Only callable by Auths.\\n    /// @param tokenConfigs_ contains token address, fee & utilization threshold\\n    function updateTokenConfigs(AdminModuleStructs.TokenConfig[] calldata tokenConfigs_) external;\\n\\n    /// @notice updates user classes: 0 is for new protocols, 1 is for established protocols.\\n    ///         Only callable by Auths.\\n    /// @param userClasses_ struct array of uint256 value to assign for each user address\\n    function updateUserClasses(AdminModuleStructs.AddressUint256[] calldata userClasses_) external;\\n\\n    /// @notice sets user supply configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userSupplyConfigs_ struct array containing user supply config, see `UserSupplyConfig` struct for more info\\n    function updateUserSupplyConfigs(AdminModuleStructs.UserSupplyConfig[] memory userSupplyConfigs_) external;\\n\\n    /// @notice sets a new withdrawal limit as the current limit for a certain user\\n    /// @param user_ user address for which to update the withdrawal limit\\n    /// @param token_ token address for which to update the withdrawal limit\\n    /// @param newLimit_ new limit until which user supply can decrease to.\\n    ///                  Important: input in raw. Must account for exchange price in input param calculation.\\n    ///                  Note any limit that is < max expansion or > current user supply will set max expansion limit or\\n    ///                  current user supply as limit respectively.\\n    ///                  - set 0 to make maximum possible withdrawable: instant full expansion, and if that goes\\n    ///                  below base limit then fully down to 0.\\n    ///                  - set type(uint256).max to make current withdrawable 0 (sets current user supply as limit).\\n    function updateUserWithdrawalLimit(address user_, address token_, uint256 newLimit_) external;\\n\\n    /// @notice setting user borrow configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userBorrowConfigs_ struct array containing user borrow config, see `UserBorrowConfig` struct for more info\\n    function updateUserBorrowConfigs(AdminModuleStructs.UserBorrowConfig[] memory userBorrowConfigs_) external;\\n\\n    /// @notice pause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to pause operations for\\n    /// @param supplyTokens_  token addresses to pause withdrawals for\\n    /// @param borrowTokens_  token addresses to pause borrowings for\\n    function pauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice unpause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to unpause operations for\\n    /// @param supplyTokens_  token addresses to unpause withdrawals for\\n    /// @param borrowTokens_  token addresses to unpause borrowings for\\n    function unpauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice         collects revenue for tokens to configured revenueCollector address.\\n    /// @param tokens_  array of tokens to collect revenue for\\n    /// @dev            Note that this can revert if token balance is < revenueAmount (utilization > 100%)\\n    function collectRevenue(address[] calldata tokens_) external;\\n\\n    /// @notice gets the current updated exchange prices for n tokens and updates all prices, rates related data in storage.\\n    /// @param tokens_ tokens to update exchange prices for\\n    /// @return supplyExchangePrices_ new supply rates of overall system for each token\\n    /// @return borrowExchangePrices_ new borrow rates of overall system for each token\\n    function updateExchangePrices(\\n        address[] calldata tokens_\\n    ) external returns (uint256[] memory supplyExchangePrices_, uint256[] memory borrowExchangePrices_);\\n}\\n\\ninterface IFluidLiquidityLogic is IFluidLiquidityAdmin {\\n    /// @notice Single function which handles supply, withdraw, borrow & payback\\n    /// @param token_ address of token (0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE for native)\\n    /// @param supplyAmount_ if +ve then supply, if -ve then withdraw, if 0 then nothing\\n    /// @param borrowAmount_ if +ve then borrow, if -ve then payback, if 0 then nothing\\n    /// @param withdrawTo_ if withdrawal then to which address\\n    /// @param borrowTo_ if borrow then to which address\\n    /// @param callbackData_ callback data passed to `liquidityCallback` method of protocol\\n    /// @return memVar3_ updated supplyExchangePrice\\n    /// @return memVar4_ updated borrowExchangePrice\\n    /// @dev to trigger skipping in / out transfers (gas optimization):\\n    /// -  ` callbackData_` MUST be encoded so that \\\"from\\\" address is the last 20 bytes in the last 32 bytes slot,\\n    ///     also for native token operations where liquidityCallback is not triggered!\\n    ///     from address must come at last position if there is more data. I.e. encode like:\\n    ///     abi.encode(otherVar1, otherVar2, FROM_ADDRESS). Note dynamic types used with abi.encode come at the end\\n    ///     so if dynamic types are needed, you must use abi.encodePacked to ensure the from address is at the end.\\n    /// -   this \\\"from\\\" address must match withdrawTo_ or borrowTo_ and must be == `msg.sender`\\n    /// -   `callbackData_` must in addition to the from address as described above include bytes32 SKIP_TRANSFERS\\n    ///     in the slot before (bytes 32 to 63)\\n    /// -   `msg.value` must be 0.\\n    /// -   Amounts must be either:\\n    ///     -  supply(+) == borrow(+), withdraw(-) == payback(-).\\n    ///     -  Liquidity must be on the winning side (deposit < borrow OR payback < withdraw).\\n    function operate(\\n        address token_,\\n        int256 supplyAmount_,\\n        int256 borrowAmount_,\\n        address withdrawTo_,\\n        address borrowTo_,\\n        bytes calldata callbackData_\\n    ) external payable returns (uint256 memVar3_, uint256 memVar4_);\\n}\\n\\ninterface IFluidLiquidity is IProxy, IFluidLiquidityLogic {}\\n\",\"keccak256\":\"0x0663d7d5d615bebc45eed1c986edff7d86e15ef15e75d2c1ce45fbf4502aaf03\",\"license\":\"MIT\"},\"contracts/periphery/resolvers/dexLite/constantVariables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./interfaces.sol\\\";\\n\\nabstract contract ConstantVariables {\\n    /*//////////////////////////////////////////////////////////////\\n                                CONSTANTS\\n    //////////////////////////////////////////////////////////////*/\\n\\n    /// bytes32(uint256(keccak256(\\\"FLUID_DEX_LITE_EXTRA_DATA\\\")) - 1)\\n    bytes32 internal constant EXTRA_DATA_SLOT = 0x7e8134afb5ed35d36cb65e24b9a4712a52bb77d952806c1acf50970d2107797f;\\n\\n    /// This is the keccak-256 hash of \\\"eip1967.proxy.admin\\\" subtracted by 1\\n    /// The exact slot which stored the admin address in infinite proxy of liquidity contracts\\n    bytes32 internal constant LIQUIDITY_GOVERNANCE_SLOT = 0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103;\\n\\n    bool internal constant SWAP_SINGLE = true;\\n    bool internal constant SWAP_HOP = false;\\n\\n    address internal constant NATIVE_TOKEN = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;\\n    uint256 internal constant NATIVE_TOKEN_DECIMALS = 18;\\n    uint256 internal constant TOKENS_DECIMALS_PRECISION = 9;\\n\\n    uint8 internal constant MIN_TOKEN_DECIMALS = 6;\\n    uint8 internal constant MAX_TOKEN_DECIMALS = 18;\\n\\n    uint256 internal constant SMALL_COEFFICIENT_SIZE = 20;\\n    uint256 internal constant BIG_COEFFICIENT_SIZE = 32;\\n\\n    uint256 internal constant DEFAULT_EXPONENT_SIZE = 8;\\n    uint256 internal constant DEFAULT_EXPONENT_MASK = 0xFF;\\n\\n    uint256 internal constant X1 = 0x1;\\n    uint256 internal constant X2 = 0x3;\\n    uint256 internal constant X5 = 0x1f;\\n    uint256 internal constant X7 = 0x7f;\\n    uint256 internal constant X13 = 0x1fff;\\n    uint256 internal constant X14 = 0x3fff;\\n    uint256 internal constant X19 = 0x7ffff;\\n    uint256 internal constant X20 = 0xfffff;\\n    uint256 internal constant X24 = 0xffffff;\\n    uint256 internal constant X28 = 0xfffffff;\\n    uint256 internal constant X33 = 0x1ffffffff;\\n    uint256 internal constant X40 = 0xffffffffff;\\n    uint256 internal constant X56 = 0xffffffffffffff;\\n    uint256 internal constant X60 = 0xfffffffffffffff;\\n    uint256 internal constant X73 = 0x1ffffffffffffffffff;\\n    uint256 internal constant X120 = 0xffffffffffffffffffffffffffffff;\\n    uint256 internal constant X128 = 0xffffffffffffffffffffffffffffffff;\\n   \\n    uint256 internal constant TWO_DECIMALS = 1e2;\\n    uint256 internal constant FOUR_DECIMALS = 1e4;\\n    uint256 internal constant SIX_DECIMALS = 1e6;\\n\\n    uint256 internal constant PRICE_PRECISION = 1e27;\\n\\n    /// after swap token0 reserves should not be less than token1InToken0 / MINIMUM_LIQUIDITY_SWAP\\n    /// after swap token1 reserves should not be less than token0InToken1 / MINIMUM_LIQUIDITY_SWAP\\n    uint256 internal constant MINIMUM_LIQUIDITY_SWAP = 1e4;\\n\\n    bytes32 internal constant ESTIMATE_SWAP = keccak256(bytes(\\\"ESTIMATE_SWAP\\\"));\\n}\\n\",\"keccak256\":\"0xccb142554cd290ee939de38497ee0741abfb54ef62e911a867da3353102519c2\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/dexLite/helpers.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./immutableVariables.sol\\\";\\nimport { DexLiteSlotsLink as DSL } from \\\"../../../libraries/dexLiteSlotsLink.sol\\\";\\nimport { AddressCalcs as AC } from \\\"../../../libraries/addressCalcs.sol\\\";\\nimport { FixedPointMathLib as FPM } from \\\"solmate/src/utils/FixedPointMathLib.sol\\\";\\n\\nabstract contract Helpers is ImmutableVariables {\\n    function _readDexKeyAtIndex(uint256 index) internal view returns (DexKey memory) {\\n        bytes32 baseSlot = keccak256(abi.encode(DSL.DEX_LITE_DEXES_LIST_SLOT));\\n\\n        // Each DexKey takes 3 storage slots (token0, token1, salt)\\n        address token0 = address(uint160(uint256(DEX_LITE.readFromStorage(bytes32(uint256(baseSlot) + index * 3)))));\\n        address token1 = address(\\n            uint160(uint256(DEX_LITE.readFromStorage(bytes32(uint256(baseSlot) + index * 3 + 1))))\\n        );\\n        bytes32 salt = DEX_LITE.readFromStorage(bytes32(uint256(baseSlot) + index * 3 + 2));\\n\\n        return DexKey(token0, token1, salt);\\n    }\\n\\n    function _calculateDexId(DexKey memory dexKey_) internal pure returns (bytes8) {\\n        return bytes8(keccak256(abi.encode(dexKey_)));\\n    }\\n\\n    function _calculatePoolStateSlot(bytes8 dexId, uint256 baseSlot) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(bytes32(dexId), baseSlot));\\n    }\\n\\n    function _readPoolState(\\n        bytes8 dexId_\\n    )\\n        internal\\n        view\\n        returns (uint256 dexVariables_, uint256 centerPriceShift_, uint256 rangeShift_, uint256 thresholdShift_)\\n    {\\n        dexVariables_ = uint256(\\n            DEX_LITE.readFromStorage(_calculatePoolStateSlot(dexId_, DSL.DEX_LITE_DEX_VARIABLES_SLOT))\\n        );\\n        centerPriceShift_ = uint256(\\n            DEX_LITE.readFromStorage(_calculatePoolStateSlot(dexId_, DSL.DEX_LITE_CENTER_PRICE_SHIFT_SLOT))\\n        );\\n        rangeShift_ = uint256(DEX_LITE.readFromStorage(_calculatePoolStateSlot(dexId_, DSL.DEX_LITE_RANGE_SHIFT_SLOT)));\\n        thresholdShift_ = uint256(\\n            DEX_LITE.readFromStorage(_calculatePoolStateSlot(dexId_, DSL.DEX_LITE_THRESHOLD_SHIFT_SLOT))\\n        );\\n    }\\n\\n    function _unpackDexVariables(uint256 dexVariables_) internal view returns (DexVariables memory) {\\n        bool isCenterPriceShiftActive_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_SHIFT_ACTIVE) &\\n            X1 ==\\n            1;\\n\\n        uint256 centerPrice_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE) & X40;\\n        centerPrice_ = (centerPrice_ >> DEFAULT_EXPONENT_SIZE) << (centerPrice_ & DEFAULT_EXPONENT_MASK);\\n\\n        address centerPriceContractAddress_ = AC.addressCalc(\\n            DEPLOYER_CONTRACT,\\n            (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS) & X19\\n        );\\n        bool isRangePercentShiftActive_ = (dexVariables_ >>\\n            DSL.BITS_DEX_LITE_DEX_VARIABLES_RANGE_PERCENT_SHIFT_ACTIVE) &\\n            X1 ==\\n            1;\\n        bool isThresholdPercentShiftActive_ = (dexVariables_ >>\\n            DSL.BITS_DEX_LITE_DEX_VARIABLES_THRESHOLD_PERCENT_SHIFT_ACTIVE) &\\n            X1 ==\\n            1;\\n\\n        return\\n            DexVariables(\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_FEE) & X13,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_REVENUE_CUT) & X7,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_REBALANCING_STATUS) & X2,\\n                isCenterPriceShiftActive_,\\n                centerPrice_,\\n                centerPriceContractAddress_,\\n                isRangePercentShiftActive_,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_PERCENT) & X14,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_PERCENT) & X14,\\n                isThresholdPercentShiftActive_,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_SHIFT_THRESHOLD_PERCENT) & X7,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_SHIFT_THRESHOLD_PERCENT) & X7,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_DECIMALS) & X5,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_DECIMALS) & X5,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED) & X60,\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED) & X60\\n            );\\n    }\\n\\n    function _unpackCenterPriceShift(uint256 centerPriceShift_) internal pure returns (CenterPriceShift memory) {\\n        uint256 maxCenterPrice_ = (centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MAX_CENTER_PRICE) & X28;\\n        maxCenterPrice_ = (maxCenterPrice_ >> DEFAULT_EXPONENT_SIZE) << (maxCenterPrice_ & DEFAULT_EXPONENT_MASK);\\n\\n        uint256 minCenterPrice_ = (centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MIN_CENTER_PRICE) & X28;\\n        minCenterPrice_ = (minCenterPrice_ >> DEFAULT_EXPONENT_SIZE) << (minCenterPrice_ & DEFAULT_EXPONENT_MASK);\\n\\n        return\\n            CenterPriceShift(\\n                (centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_LAST_INTERACTION_TIMESTAMP) & X33,\\n                (centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_SHIFTING_TIME) & X24,\\n                maxCenterPrice_,\\n                minCenterPrice_,\\n                (centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT) & X20,\\n                (centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIME_TO_SHIFT) & X20,\\n                (centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIMESTAMP) & X33\\n            );\\n    }\\n\\n    function _unpackRangeShift(uint256 rangeShift_) internal pure returns (RangeShift memory) {\\n        return\\n            RangeShift(\\n                (rangeShift_ >> DSL.BITS_DEX_LITE_RANGE_SHIFT_OLD_UPPER_RANGE_PERCENT) & X14,\\n                (rangeShift_ >> DSL.BITS_DEX_LITE_RANGE_SHIFT_OLD_LOWER_RANGE_PERCENT) & X14,\\n                (rangeShift_ >> DSL.BITS_DEX_LITE_RANGE_SHIFT_TIME_TO_SHIFT) & X20,\\n                (rangeShift_ >> DSL.BITS_DEX_LITE_RANGE_SHIFT_TIMESTAMP) & X33\\n            );\\n    }\\n\\n    function _unpackThresholdShift(uint256 thresholdShift_) internal pure returns (ThresholdShift memory) {\\n        return\\n            ThresholdShift(\\n                (thresholdShift_ >> DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_UPPER_THRESHOLD_PERCENT) & X7,\\n                (thresholdShift_ >> DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_LOWER_THRESHOLD_PERCENT) & X7,\\n                (thresholdShift_ >> DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_TIME_TO_SHIFT) & X20,\\n                (thresholdShift_ >> DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_TIMESTAMP) & X33\\n            );\\n    }\\n\\n    /// @dev getting reserves outside range.\\n    /// @param gp_ is geometric mean pricing of upper percent & lower percent\\n    /// @param pa_ price of upper range or lower range\\n    /// @param rx_ real reserves of token0 or token1\\n    /// @param ry_ whatever is rx_ the other will be ry_\\n    function _calculateReservesOutsideRange(\\n        uint256 gp_,\\n        uint256 pa_,\\n        uint256 rx_,\\n        uint256 ry_\\n    ) internal pure returns (uint256 xa_, uint256 yb_) {\\n        // equations we have:\\n        // 1. x*y = k\\n        // 2. xa*ya = k\\n        // 3. xb*yb = k\\n        // 4. Pa = ya / xa = upperRange_ (known)\\n        // 5. Pb = yb / xb = lowerRange_ (known)\\n        // 6. x - xa = rx = real reserve of x (known)\\n        // 7. y - yb = ry = real reserve of y (known)\\n        // With solving we get:\\n        // ((Pa*Pb)^(1/2) - Pa)*xa^2 + (rx * (Pa*Pb)^(1/2) + ry)*xa + rx*ry = 0\\n        // yb = yb = xa * (Pa * Pb)^(1/2)\\n\\n        // xa = (GP\\u22c5rx + ry + (-rx\\u22c5ry\\u22c54\\u22c5(GP - Pa) + (GP\\u22c5rx + ry)^2)^0.5) / (2Pa - 2GP)\\n        // multiply entire equation by 1e27 to remove the price decimals precision of 1e27\\n        // xa = (GP\\u22c5rx + ry\\u22c51e27 + (rx\\u22c5ry\\u22c54\\u22c5(Pa - GP)\\u22c51e27 + (GP\\u22c5rx + ry\\u22c51e27)^2)^0.5) / 2*(Pa - GP)\\n        // dividing the equation with 2*(Pa - GP). Pa is always > GP so answer will be positive.\\n        // xa = (((GP\\u22c5rx + ry\\u22c51e27) / 2*(Pa - GP)) + (((rx\\u22c5ry\\u22c54\\u22c5(Pa - GP)\\u22c51e27) / 4*(Pa - GP)^2) + ((GP\\u22c5rx + ry\\u22c51e27) / 2*(Pa - GP))^2)^0.5)\\n        // xa = (((GP\\u22c5rx + ry\\u22c51e27) / 2*(Pa - GP)) + (((rx\\u22c5ry\\u22c51e27) / (Pa - GP)) + ((GP\\u22c5rx + ry\\u22c51e27) / 2*(Pa - GP))^2)^0.5)\\n\\n        // dividing in 3 parts for simplification:\\n        // part1 = (Pa - GP)\\n        // part2 = (GP\\u22c5rx + ry\\u22c51e27) / (2*part1)\\n        // part3 = rx\\u22c5ry\\n        // note: part1 will almost always be < 1e28 but in case it goes above 1e27 then it's extremely unlikely it'll go above > 1e29\\n        unchecked {\\n            uint256 p1_ = pa_ - gp_;\\n            uint256 p2_ = ((gp_ * rx_) + (ry_ * PRICE_PRECISION)) / (2 * p1_);\\n\\n            // removed <1e50 check becuase rx_ * ry_ will never be greater than 1e50\\n            // Directly used p3_ below instead of using a variable for it\\n            // uint256 p3_ = (rx_ * ry_ * PRICE_PRECISION) / p1_;\\n\\n            // xa = part2 + (part3 + (part2 * part2))^(1/2)\\n            // yb = xa_ * gp_\\n            xa_ = p2_ + FPM.sqrt((((rx_ * ry_ * PRICE_PRECISION) / p1_) + (p2_ * p2_)));\\n            yb_ = (xa_ * gp_) / PRICE_PRECISION;\\n        }\\n    }\\n\\n    function _calcShiftingDone(\\n        uint256 current_,\\n        uint256 old_,\\n        uint256 timePassed_,\\n        uint256 shiftDuration_\\n    ) internal pure returns (uint256) {\\n        unchecked {\\n            if (current_ > old_) {\\n                return (old_ + (((current_ - old_) * timePassed_) / shiftDuration_));\\n            } else {\\n                return (old_ - (((old_ - current_) * timePassed_) / shiftDuration_));\\n            }\\n        }\\n    }\\n\\n    function _calcRangeShifting(\\n        uint256 upperRange_,\\n        uint256 lowerRange_,\\n        uint256 rangeShift_\\n    ) internal returns (uint256, uint256) {\\n        // rangeShift_ = _rangeShift[dexId_];\\n        uint256 shiftDuration_ = (rangeShift_ >> DSL.BITS_DEX_LITE_RANGE_SHIFT_TIME_TO_SHIFT) & X20;\\n        uint256 startTimeStamp_ = (rangeShift_ >> DSL.BITS_DEX_LITE_RANGE_SHIFT_TIMESTAMP) & X33;\\n\\n        uint256 timePassed_;\\n        unchecked {\\n            if ((startTimeStamp_ + shiftDuration_) < block.timestamp) {\\n                // shifting fully done\\n                // delete _rangeShift[dexId_];\\n                // making active shift as 0 because shift is over\\n                // fetching from storage and storing in storage, aside from admin module dexVariables only updates from this function and _calcThresholdShifting.\\n                // _dexVariables[dexId_] = _dexVariables[dexId_] & ~uint256(1 << DSL.BITS_DEX_LITE_DEX_VARIABLES_RANGE_PERCENT_SHIFT_ACTIVE);\\n                return (upperRange_, lowerRange_);\\n            }\\n            timePassed_ = block.timestamp - startTimeStamp_;\\n        }\\n        return (\\n            _calcShiftingDone(\\n                upperRange_,\\n                (rangeShift_ >> DSL.BITS_DEX_LITE_RANGE_SHIFT_OLD_UPPER_RANGE_PERCENT) & X14,\\n                timePassed_,\\n                shiftDuration_\\n            ),\\n            _calcShiftingDone(\\n                lowerRange_,\\n                (rangeShift_ >> DSL.BITS_DEX_LITE_RANGE_SHIFT_OLD_LOWER_RANGE_PERCENT) & X14,\\n                timePassed_,\\n                shiftDuration_\\n            )\\n        );\\n    }\\n\\n    function _calcThresholdShifting(\\n        uint256 upperThreshold_,\\n        uint256 lowerThreshold_,\\n        uint256 thresholdShift_\\n    ) internal returns (uint256, uint256) {\\n        // uint256 thresholdShift_ = _thresholdShift[dexId_];\\n        uint256 shiftDuration_ = (thresholdShift_ >> DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_TIME_TO_SHIFT) & X20;\\n        uint256 startTimeStamp_ = (thresholdShift_ >> DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_TIMESTAMP) & X33;\\n\\n        uint256 timePassed_;\\n        unchecked {\\n            if ((startTimeStamp_ + shiftDuration_) < block.timestamp) {\\n                // shifting fully done\\n                // delete _thresholdShift[dexId_];\\n                // making active shift as 0 because shift is over\\n                // fetching from storage and storing in storage, aside from admin module dexVariables2 only updates from this function and _calcRangeShifting.\\n                // _dexVariables[dexId_] = _dexVariables[dexId_] & ~uint256(1 << DSL.BITS_DEX_LITE_DEX_VARIABLES_THRESHOLD_PERCENT_SHIFT_ACTIVE);\\n                return (upperThreshold_, lowerThreshold_);\\n            }\\n            timePassed_ = block.timestamp - startTimeStamp_;\\n        }\\n        return (\\n            _calcShiftingDone(\\n                upperThreshold_,\\n                (thresholdShift_ >> DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_UPPER_THRESHOLD_PERCENT) & X7,\\n                timePassed_,\\n                shiftDuration_\\n            ),\\n            _calcShiftingDone(\\n                lowerThreshold_,\\n                (thresholdShift_ >> DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_LOWER_THRESHOLD_PERCENT) & X7,\\n                timePassed_,\\n                shiftDuration_\\n            )\\n        );\\n    }\\n\\n    function _calcCenterPrice(\\n        DexKey memory dexKey_,\\n        uint256 dexVariables_,\\n        uint256 centerPriceShift_\\n    ) internal returns (uint256 newCenterPrice_) {\\n        uint256 oldCenterPrice_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE) & X40;\\n        oldCenterPrice_ = (oldCenterPrice_ >> DEFAULT_EXPONENT_SIZE) << (oldCenterPrice_ & DEFAULT_EXPONENT_MASK);\\n        // uint256 centerPriceShift_ = _centerPriceShift[dexId_];\\n        uint256 startTimeStamp_ = (centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIMESTAMP) & X33;\\n\\n        uint256 fromTimeStamp_ = (centerPriceShift_ >>\\n            DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_LAST_INTERACTION_TIMESTAMP) & X33;\\n        fromTimeStamp_ = fromTimeStamp_ > startTimeStamp_ ? fromTimeStamp_ : startTimeStamp_;\\n\\n        newCenterPrice_ = ICenterPrice(\\n            AC.addressCalc(\\n                DEPLOYER_CONTRACT,\\n                ((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS) & X19)\\n            )\\n        ).centerPrice(dexKey_.token0, dexKey_.token1);\\n\\n        unchecked {\\n            uint256 priceShift_ = (oldCenterPrice_ *\\n                ((centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT) & X20) *\\n                (block.timestamp - fromTimeStamp_)) /\\n                (((centerPriceShift_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIME_TO_SHIFT) & X20) * SIX_DECIMALS);\\n\\n            if (newCenterPrice_ > oldCenterPrice_) {\\n                // shift on positive side\\n                oldCenterPrice_ += priceShift_;\\n                if (newCenterPrice_ > oldCenterPrice_) {\\n                    newCenterPrice_ = oldCenterPrice_;\\n                } else {\\n                    // shifting fully done\\n                    // _centerPriceShift[dexId_] = _centerPriceShift[dexId_] & ~(X73 << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT);\\n                    // making active shift as 0 because shift is over\\n                    // fetching from storage and storing in storage, aside from admin module dexVariables2 only updates these shift function.\\n                    // _dexVariables[dexId_] = _dexVariables[dexId_] & ~uint256(1 << DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_SHIFT_ACTIVE);\\n                }\\n            } else {\\n                oldCenterPrice_ = oldCenterPrice_ > priceShift_ ? oldCenterPrice_ - priceShift_ : 0;\\n                // In case of oldCenterPrice_ ending up 0, which could happen when a lot of time has passed (pool has no swaps for many days or weeks)\\n                // then below we get into the else logic which will fully conclude shifting and return newCenterPrice_\\n                // as it was fetched from the external center price source.\\n                // not ideal that this would ever happen unless the pool is not in use and all/most users have left leaving not enough liquidity to trade on\\n                if (newCenterPrice_ < oldCenterPrice_) {\\n                    newCenterPrice_ = oldCenterPrice_;\\n                } else {\\n                    // shifting fully done\\n                    // _centerPriceShift[dexId_] = _centerPriceShift[dexId_] & ~(X73 << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT);\\n                    // making active shift as 0 because shift is over\\n                    // fetching from storage and storing in storage, aside from admin module dexVariables2 only updates these shift function.\\n                    // _dexVariables[dexId_] = _dexVariables[dexId_] & ~uint256(1 << DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_SHIFT_ACTIVE);\\n                }\\n            }\\n        }\\n    }\\n\\n    /// @notice Calculates and returns the current prices and exchange prices for the pool\\n    /// @param dexVariables_ The first set of DEX variables containing various pool parameters\\n    function _getPricesAndReserves(\\n        DexKey memory dexKey_,\\n        uint256 dexVariables_,\\n        uint256 centerPriceShift_,\\n        uint256 rangeShift_,\\n        uint256 thresholdShift_,\\n        uint256 token0Supply_,\\n        uint256 token1Supply_\\n    ) internal returns (Prices memory prices_, Reserves memory reserves_) {\\n        // Fetch center price\\n        if (((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_SHIFT_ACTIVE) & X1) == 0) {\\n            // prices_.centerPrice => center price nonce\\n            prices_.centerPrice =\\n                (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS) &\\n                X19;\\n            if (prices_.centerPrice == 0) {\\n                prices_.centerPrice = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE) & X40;\\n                prices_.centerPrice =\\n                    (prices_.centerPrice >> DEFAULT_EXPONENT_SIZE) <<\\n                    (prices_.centerPrice & DEFAULT_EXPONENT_MASK);\\n            } else {\\n                // center price should be fetched from external source. For exmaple, in case of wstETH <> ETH pool,\\n                // we would want the center price to be pegged to wstETH exchange rate into ETH\\n                prices_.centerPrice = ICenterPrice(AC.addressCalc(DEPLOYER_CONTRACT, prices_.centerPrice))\\n                    .centerPrice(dexKey_.token0, dexKey_.token1);\\n            }\\n        } else {\\n            // an active prices_.centerPrice shift is going on\\n            prices_.centerPrice = _calcCenterPrice(dexKey_, dexVariables_, centerPriceShift_);\\n        }\\n\\n        uint256 upperRangePercent_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_PERCENT) & X14;\\n        uint256 lowerRangePercent_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_PERCENT) & X14;\\n        if (((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_RANGE_PERCENT_SHIFT_ACTIVE) & X1) == 1) {\\n            // an active range shift is going on\\n            (upperRangePercent_, lowerRangePercent_) = _calcRangeShifting(\\n                upperRangePercent_,\\n                lowerRangePercent_,\\n                rangeShift_\\n            );\\n        }\\n\\n        unchecked {\\n            // 1% = 1e2, 100% = 1e4\\n            prices_.upperRangePrice = (prices_.centerPrice * FOUR_DECIMALS) / (FOUR_DECIMALS - upperRangePercent_);\\n            // 1% = 1e2, 100% = 1e4\\n            prices_.lowerRangePrice = (prices_.centerPrice * (FOUR_DECIMALS - lowerRangePercent_)) / FOUR_DECIMALS;\\n        }\\n\\n        // Rebalance center price if rebalancing is on\\n        // temp_ => rebalancingStatus_\\n        uint256 temp_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_REBALANCING_STATUS) & X2;\\n        uint256 temp2_;\\n        if (temp_ > 1) {\\n            unchecked {\\n                // temp2_ => centerPriceShift_\\n                if (temp_ == 2) {\\n                    temp2_ = centerPriceShift_;\\n                    uint256 shiftingTime_ = (temp2_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_SHIFTING_TIME) & X24;\\n                    uint256 timeElapsed_ = block.timestamp -\\n                        ((temp2_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_LAST_INTERACTION_TIMESTAMP) & X33);\\n                    // price shifting towards upper range\\n                    if (timeElapsed_ < shiftingTime_) {\\n                        prices_.centerPrice =\\n                            prices_.centerPrice +\\n                            (((prices_.upperRangePrice - prices_.centerPrice) * timeElapsed_) / shiftingTime_);\\n                    } else {\\n                        // 100% price shifted\\n                        prices_.centerPrice = prices_.upperRangePrice;\\n                    }\\n                } else if (temp_ == 3) {\\n                    temp2_ = centerPriceShift_;\\n                    uint256 shiftingTime_ = (temp2_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_SHIFTING_TIME) & X24;\\n                    uint256 timeElapsed_ = block.timestamp -\\n                        ((temp2_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_LAST_INTERACTION_TIMESTAMP) & X33);\\n                    // price shifting towards lower range\\n                    if (timeElapsed_ < shiftingTime_) {\\n                        prices_.centerPrice =\\n                            prices_.centerPrice -\\n                            (((prices_.centerPrice - prices_.lowerRangePrice) * timeElapsed_) / shiftingTime_);\\n                    } else {\\n                        // 100% price shifted\\n                        prices_.centerPrice = prices_.lowerRangePrice;\\n                    }\\n                }\\n\\n                // If rebalancing actually happened then make sure price is within min and max bounds, and update range prices\\n                if (temp2_ > 0) {\\n                    // Make sure center price is within min and max bounds\\n                    // temp_ => max center price\\n                    temp_ = (temp2_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MAX_CENTER_PRICE) & X28;\\n                    temp_ = (temp_ >> DEFAULT_EXPONENT_SIZE) << (temp_ & DEFAULT_EXPONENT_MASK);\\n                    if (prices_.centerPrice > temp_) {\\n                        // if center price is greater than max center price\\n                        prices_.centerPrice = temp_;\\n                    } else {\\n                        // check if center price is less than min center price\\n                        // temp_ => min center price\\n                        temp_ = (temp2_ >> DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MIN_CENTER_PRICE) & X28;\\n                        temp_ = (temp_ >> DEFAULT_EXPONENT_SIZE) << (temp_ & DEFAULT_EXPONENT_MASK);\\n                        if (prices_.centerPrice < temp_) prices_.centerPrice = temp_;\\n                    }\\n\\n                    // Update range prices as center price moved\\n                    prices_.upperRangePrice =\\n                        (prices_.centerPrice * FOUR_DECIMALS) /\\n                        (FOUR_DECIMALS - upperRangePercent_);\\n                    prices_.lowerRangePrice =\\n                        (prices_.centerPrice * (FOUR_DECIMALS - lowerRangePercent_)) /\\n                        FOUR_DECIMALS;\\n                }\\n            }\\n        }\\n\\n        // Calculate threshold prices\\n        uint256 upperThresholdPercent_ = (dexVariables_ >>\\n            DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_SHIFT_THRESHOLD_PERCENT) & X7;\\n        uint256 lowerThresholdPercent_ = (dexVariables_ >>\\n            DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_SHIFT_THRESHOLD_PERCENT) & X7;\\n        if (((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_THRESHOLD_PERCENT_SHIFT_ACTIVE) & X1) == 1) {\\n            // if active shift is going on for threshold then calculate threshold real time\\n            (upperThresholdPercent_, lowerThresholdPercent_) = _calcThresholdShifting(\\n                upperThresholdPercent_,\\n                lowerThresholdPercent_,\\n                thresholdShift_\\n            );\\n        }\\n\\n        unchecked {\\n            prices_.upperThresholdPrice = (prices_.centerPrice +\\n                ((prices_.upperRangePrice - prices_.centerPrice) * (TWO_DECIMALS - upperThresholdPercent_)) /\\n                TWO_DECIMALS);\\n            prices_.lowerThresholdPrice = (prices_.centerPrice -\\n                ((prices_.centerPrice - prices_.lowerRangePrice) * (TWO_DECIMALS - lowerThresholdPercent_)) /\\n                TWO_DECIMALS);\\n        }\\n\\n        // temp_ => geometricMeanPrice_\\n        unchecked {\\n            if (prices_.upperRangePrice < 1e38) {\\n                // 1e38 * 1e38 = 1e76 which is less than max uint limit\\n                temp_ = FPM.sqrt(prices_.upperRangePrice * prices_.lowerRangePrice);\\n            } else {\\n                // upperRange_ price is pretty large hence lowerRange_ will also be pretty large\\n                temp_ =\\n                    FPM.sqrt((prices_.upperRangePrice / 1e18) * (prices_.lowerRangePrice / 1e18)) *\\n                    1e18;\\n            }\\n        }\\n\\n        if (temp_ < 1e27) {\\n            (reserves_.token0ImaginaryReserves, reserves_.token1ImaginaryReserves) = _calculateReservesOutsideRange(\\n                temp_,\\n                prices_.upperRangePrice,\\n                token0Supply_,\\n                token1Supply_\\n            );\\n        } else {\\n            // inversing, something like `xy = k` so for calculation we are making everything related to x into y & y into x\\n            // 1 / geometricMean for new geometricMean\\n            // 1 / lowerRange will become upper range\\n            // 1 / upperRange will become lower range\\n            unchecked {\\n                (reserves_.token1ImaginaryReserves, reserves_.token0ImaginaryReserves) = _calculateReservesOutsideRange(\\n                    (1e54 / temp_),\\n                    (1e54 / prices_.lowerRangePrice),\\n                    token1Supply_,\\n                    token0Supply_\\n                );\\n            }\\n        }\\n\\n        unchecked {\\n            reserves_.token0ImaginaryReserves += token0Supply_;\\n            reserves_.token1ImaginaryReserves += token1Supply_;\\n            reserves_.token0RealReserves = token0Supply_;\\n            reserves_.token1RealReserves = token1Supply_;\\n        }\\n\\n        prices_.poolPrice = (reserves_.token1ImaginaryReserves * PRICE_PRECISION) / reserves_.token0ImaginaryReserves;\\n    }\\n}\\n\",\"keccak256\":\"0x45e5e053537fdd78ac8fe7e183b0ce17b3670a93352baa92abab5f92d32d5459\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/dexLite/immutableVariables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./constantVariables.sol\\\";\\n\\nabstract contract ImmutableVariables is ConstantVariables {\\n    // IMMUTABLE VARIABLES\\n    IDexLite internal immutable DEX_LITE;\\n    address internal immutable LIQUIDITY;\\n    address internal immutable DEPLOYER_CONTRACT;\\n}\",\"keccak256\":\"0xb6fff98a4603f37ee9bf169f432fc4b7eb5674938ac669aa9cceffa9be15dd16\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/dexLite/interfaces.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./structs.sol\\\";\\nimport { ICenterPrice } from \\\"../../../protocols/dexLite/other/interfaces.sol\\\";\\n\\ninterface IDexLite {\\n    function swapSingle(\\n        DexKey calldata dexKey_, \\n        bool swap0To1_, \\n        int256 amountSpecified_,\\n        uint256 amountLimit_,\\n        address to_,\\n        bool isCallback_,\\n        bytes calldata callbackData_,\\n        bytes calldata extraData_\\n    ) external payable returns (uint256 amountUnspecified_);\\n\\n    function swapHop(\\n        address[] calldata path_,\\n        DexKey[] calldata dexKeys_,\\n        int256 amountSpecified_,\\n        uint256[] calldata amountLimits_,\\n        TransferParams calldata transferParams_\\n    ) external payable returns (uint256 amountUnspecified_);\\n\\n    function readFromStorage(bytes32 slot) external view returns (bytes32);\\n}\",\"keccak256\":\"0x9625a64c0e8befd570b8b99ade85e8cc832563a44df8c69a60e03c2260a34e15\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/dexLite/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./helpers.sol\\\";\\n\\ncontract FluidDexLiteResolver is Helpers {\\n    constructor(address dexLite_, address liquidity_, address deployerContract_) {\\n        DEX_LITE = IDexLite(dexLite_);\\n        LIQUIDITY = liquidity_;\\n        DEPLOYER_CONTRACT = deployerContract_;\\n    }\\n\\n    function getAllDexes() public view returns (DexKey[] memory) {\\n        uint256 totalDexes = uint256(DEX_LITE.readFromStorage(bytes32(DSL.DEX_LITE_DEXES_LIST_SLOT)));\\n        DexKey[] memory dexes = new DexKey[](totalDexes);\\n        for (uint256 i = 0; i < totalDexes; i++) {\\n            dexes[i] = _readDexKeyAtIndex(i);\\n        }\\n        return dexes;\\n    }\\n\\n    function getDexState(DexKey memory dexKey) public view returns (DexState memory) {\\n        bytes8 dexId_ = _calculateDexId(dexKey);\\n        (\\n            uint256 dexVariables_,\\n            uint256 centerPriceShift_,\\n            uint256 rangeShift_,\\n            uint256 thresholdShift_\\n        ) = _readPoolState(dexId_);\\n\\n        return\\n            DexState(\\n                _unpackDexVariables(dexVariables_),\\n                _unpackCenterPriceShift(centerPriceShift_),\\n                _unpackRangeShift(rangeShift_),\\n                _unpackThresholdShift(thresholdShift_)\\n            );\\n    }\\n\\n    function getPricesAndReserves(\\n        DexKey memory dexKey\\n    ) public returns (Prices memory prices_, Reserves memory reserves_) {\\n        bytes8 dexId_ = _calculateDexId(dexKey);\\n        (\\n            uint256 dexVariables_,\\n            uint256 centerPriceShift_,\\n            uint256 rangeShift_,\\n            uint256 thresholdShift_\\n        ) = _readPoolState(dexId_);\\n\\n        uint256 token0Decimals_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_DECIMALS) & X5;\\n        uint256 token1Decimals_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_DECIMALS) & X5;\\n\\n        uint256 token0Supply_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED) & X60;\\n        uint256 token1Supply_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED) & X60;\\n\\n        if (token0Decimals_ > TOKENS_DECIMALS_PRECISION)\\n            token0Supply_ /= 10 ** (token0Decimals_ - TOKENS_DECIMALS_PRECISION);\\n        else token0Supply_ *= 10 ** (TOKENS_DECIMALS_PRECISION - token0Decimals_);\\n\\n        if (token1Decimals_ > TOKENS_DECIMALS_PRECISION)\\n            token1Supply_ /= 10 ** (token1Decimals_ - TOKENS_DECIMALS_PRECISION);\\n        else token1Supply_ *= 10 ** (TOKENS_DECIMALS_PRECISION - token1Decimals_);\\n\\n        return\\n            _getPricesAndReserves(\\n                dexKey,\\n                dexVariables_,\\n                centerPriceShift_,\\n                rangeShift_,\\n                thresholdShift_,\\n                token0Supply_,\\n                token1Supply_\\n            );\\n    }\\n\\n    function getDexEntireData(DexKey memory dexKey_) public returns (DexEntireData memory entireData_) {\\n        entireData_.dexKey = dexKey_;\\n        entireData_.constantViews = ConstantViews(\\n            LIQUIDITY,\\n            DEPLOYER_CONTRACT\\n        );\\n        entireData_.dexId = _calculateDexId(dexKey_);\\n        entireData_.dexState = getDexState(dexKey_);\\n        (entireData_.prices, entireData_.reserves) = getPricesAndReserves(dexKey_);\\n    }\\n\\n    function getAllDexesEntireData() public returns (DexEntireData[] memory allDexesEntireData_) {\\n        DexKey[] memory dexes_ = getAllDexes();\\n        allDexesEntireData_ = new DexEntireData[](dexes_.length);\\n        for (uint256 i = 0; i < dexes_.length; i++) {\\n            allDexesEntireData_[i] = getDexEntireData(dexes_[i]);\\n        }\\n        return allDexesEntireData_;\\n    }\\n\\n    function estimateSwapSingle(\\n        DexKey calldata dexKey_,\\n        bool swap0To1_,\\n        int256 amountSpecified_\\n    ) public returns (uint256 amountUnspecified_) {\\n        try\\n            DEX_LITE.swapSingle(\\n                dexKey_,\\n                swap0To1_,\\n                amountSpecified_,\\n                amountSpecified_ > 0 ? 0 : type(uint256).max,\\n                address(0),\\n                false,\\n                \\\"\\\",\\n                abi.encode(ESTIMATE_SWAP)\\n            )\\n        {\\n            // Should not reach here\\n            revert(\\\"Estimation Failed\\\");\\n        } catch (bytes memory reason) {\\n            // Check if this is the EstimateSwap error\\n            if (reason.length >= 36) {\\n                bytes4 errorSelector = bytes4(reason);\\n                // EstimateSwap error selector should match\\n                if (errorSelector == bytes4(keccak256(\\\"EstimateSwap(uint256)\\\"))) {\\n                    // Skip the 4-byte selector and decode the uint256 parameter\\n                    assembly {\\n                        amountUnspecified_ := mload(add(reason, 36))\\n                    }\\n                } else {\\n                    revert(\\\"Estimation Failed - Wrong Error\\\");\\n                }\\n            } else {\\n                revert(\\\"Estimation Failed - Invalid Reason\\\");\\n            }\\n        }\\n    }\\n\\n    function estimateSwapHop(\\n        address[] calldata path_,\\n        DexKey[] calldata dexKeys_,\\n        int256 amountSpecified_\\n    ) public returns (uint256 amountUnspecified_) {\\n        uint256[] memory amountLimits_ = new uint256[](dexKeys_.length);\\n        if (amountSpecified_ < 0) {\\n            for (uint256 i = 0; i < dexKeys_.length; i++) {\\n                amountLimits_[i] = type(uint256).max;\\n            }\\n        }\\n\\n        try\\n            DEX_LITE.swapHop(\\n                path_,\\n                dexKeys_,\\n                amountSpecified_,\\n                amountLimits_,\\n                TransferParams(address(0), false, \\\"\\\", abi.encode(ESTIMATE_SWAP))\\n            )\\n        {\\n            // Should not reach here\\n            revert(\\\"Estimation Failed\\\");\\n        } catch (bytes memory reason) {\\n            // Check if this is the EstimateSwap error\\n            if (reason.length >= 36) {\\n                bytes4 errorSelector = bytes4(reason);\\n                // EstimateSwap error selector should match\\n                if (errorSelector == bytes4(keccak256(\\\"EstimateSwap(uint256)\\\"))) {\\n                    // Skip the 4-byte selector and decode the uint256 parameter\\n                    assembly {\\n                        amountUnspecified_ := mload(add(reason, 36))\\n                    }\\n                } else {\\n                    revert(\\\"Estimation Failed - Wrong Error\\\");\\n                }\\n            } else {\\n                revert(\\\"Estimation Failed - Invalid Reason\\\");\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x046fbc6b5e91b265fe8e6e0ae077738bb6e6ed529127b38a4ec1d1f32ef7e0f2\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/dexLite/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport { DexKey, TransferParams } from \\\"../../../protocols/dexLite/other/structs.sol\\\";\\n\\nstruct ConstantViews {\\n    address liquidity;\\n    address deployer;\\n}\\n\\nstruct Prices {\\n    uint256 poolPrice;\\n    uint256 centerPrice;\\n    uint256 upperRangePrice;\\n    uint256 lowerRangePrice;\\n    uint256 upperThresholdPrice;\\n    uint256 lowerThresholdPrice;\\n}\\n\\nstruct Reserves {\\n    uint256 token0RealReserves;\\n    uint256 token1RealReserves;\\n    uint256 token0ImaginaryReserves;\\n    uint256 token1ImaginaryReserves;\\n}\\n\\nstruct DexVariables {\\n    uint256 fee;\\n    uint256 revenueCut;\\n    uint256 rebalancingStatus;\\n    bool isCenterPriceShiftActive;\\n    uint256 centerPrice;\\n    address centerPriceAddress;\\n    bool isRangePercentShiftActive;\\n    uint256 upperRangePercent;\\n    uint256 lowerRangePercent;\\n    bool isThresholdPercentShiftActive;\\n    uint256 upperShiftThresholdPercent;\\n    uint256 lowerShiftThresholdPercent;\\n    uint256 token0Decimals;\\n    uint256 token1Decimals;\\n    uint256 totalToken0AdjustedAmount;\\n    uint256 totalToken1AdjustedAmount;\\n}\\n\\nstruct CenterPriceShift {\\n    uint256 lastInteractionTimestamp;\\n    // REBALANCING RELATED THINGS\\n    uint256 rebalancingShiftingTime;\\n    uint256 maxCenterPrice;\\n    uint256 minCenterPrice;\\n    // CENTER PRICE SHIFT RELATED THINGS\\n    uint256 shiftPercentage;\\n    uint256 centerPriceShiftingTime;\\n    uint256 startTimestamp;\\n}\\n\\nstruct RangeShift {\\n    uint256 oldUpperRangePercent;\\n    uint256 oldLowerRangePercent;\\n    uint256 shiftingTime;\\n    uint256 startTimestamp;\\n}\\n\\nstruct ThresholdShift {\\n    uint256 oldUpperThresholdPercent;\\n    uint256 oldLowerThresholdPercent;\\n    uint256 shiftingTime;\\n    uint256 startTimestamp;\\n}\\n\\nstruct DexState {\\n    DexVariables dexVariables;\\n    CenterPriceShift centerPriceShift;\\n    RangeShift rangeShift;\\n    ThresholdShift thresholdShift;\\n}\\n\\nstruct DexEntireData {\\n    bytes8 dexId;\\n    DexKey dexKey;\\n    ConstantViews constantViews;\\n    Prices prices;\\n    Reserves reserves;\\n    DexState dexState;\\n}\",\"keccak256\":\"0x3470656c1ce8d5db5439902ef7a67f7b60bd184a46fcdc1896dfb54e7146c938\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/events.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./interfaces.sol\\\";\\n\\nevent LogSwap(uint256 swapData, uint256 dexVariables);\\n// swapData\\n// First 64 bits => 0   - 63  => dexId\\n// Next  1  bit  => 64        => swap 0 to 1 (1 => true, 0 => false)\\n// Next  60 bits => 65  - 124 => amount in adjusted\\n// Next  60 bits => 125 - 184 => amount out adjusted\\n\\n// dexVariables\\n// Same as variables.sol\",\"keccak256\":\"0x78606c7864fd0a42a90097565e142cf3e66babb4992ff444768a4f8d331c367c\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/interfaces.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\nimport { IERC20 } from \\\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\\\";\\nimport { IFluidLiquidity } from \\\"../../../liquidity/interfaces/iLiquidity.sol\\\";\\nimport \\\"./structs.sol\\\";\\n\\ninterface IERC20WithDecimals is IERC20 {\\n    function decimals() external view returns (uint8);\\n}\\n\\ninterface IDexLiteCallback {\\n    function dexCallback(address token_, uint256 amount_, bytes calldata data_) external;\\n}\\n\\ninterface ICenterPrice {\\n    /// @notice Retrieves the center price for the pool\\n    /// @dev This function is marked as non-constant (potentially state-changing) to allow flexibility in price fetching mechanisms.\\n    ///      While typically used as a read-only operation, this design permits write operations if needed for certain token pairs\\n    ///      (e.g., fetching up-to-date exchange rates that may require state changes).\\n    /// @return price The current price of token0 in terms of token1, expressed with 27 decimal places\\n    function centerPrice(address token0_, address token1_) external returns (uint256);\\n}\",\"keccak256\":\"0x75ce676834a3872107e04e6b2dfa0cd9666dbb91c980bb443625a7e9964f2dca\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./events.sol\\\";\\n\\nstruct DexKey {\\n    address token0;\\n    address token1;\\n    bytes32 salt;\\n}\\n\\nstruct TransferParams {\\n    address to;\\n    bool isCallback;\\n    bytes callbackData;\\n    bytes extraData;\\n}\\n\",\"keccak256\":\"0x6756d29de101d6eff10f036aec79214cab6aecd7cfb49ac6ad998ee3f9924294\",\"license\":\"BUSL-1.1\"},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) external returns (bool);\\n}\\n\",\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\"},\"solmate/src/utils/FixedPointMathLib.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\npragma solidity >=0.8.0;\\n\\n/// @notice Arithmetic library with operations for fixed-point numbers.\\n/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)\\n/// @author Inspired by USM (https://github.com/usmfum/USM/blob/master/contracts/WadMath.sol)\\nlibrary FixedPointMathLib {\\n    /*//////////////////////////////////////////////////////////////\\n                    SIMPLIFIED FIXED POINT OPERATIONS\\n    //////////////////////////////////////////////////////////////*/\\n\\n    uint256 internal constant MAX_UINT256 = 2**256 - 1;\\n\\n    uint256 internal constant WAD = 1e18; // The scalar of ETH and most ERC20s.\\n\\n    function mulWadDown(uint256 x, uint256 y) internal pure returns (uint256) {\\n        return mulDivDown(x, y, WAD); // Equivalent to (x * y) / WAD rounded down.\\n    }\\n\\n    function mulWadUp(uint256 x, uint256 y) internal pure returns (uint256) {\\n        return mulDivUp(x, y, WAD); // Equivalent to (x * y) / WAD rounded up.\\n    }\\n\\n    function divWadDown(uint256 x, uint256 y) internal pure returns (uint256) {\\n        return mulDivDown(x, WAD, y); // Equivalent to (x * WAD) / y rounded down.\\n    }\\n\\n    function divWadUp(uint256 x, uint256 y) internal pure returns (uint256) {\\n        return mulDivUp(x, WAD, y); // Equivalent to (x * WAD) / y rounded up.\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                    LOW LEVEL FIXED POINT OPERATIONS\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function mulDivDown(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator\\n    ) internal pure returns (uint256 z) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Equivalent to require(denominator != 0 && (y == 0 || x <= type(uint256).max / y))\\n            if iszero(mul(denominator, iszero(mul(y, gt(x, div(MAX_UINT256, y)))))) {\\n                revert(0, 0)\\n            }\\n\\n            // Divide x * y by the denominator.\\n            z := div(mul(x, y), denominator)\\n        }\\n    }\\n\\n    function mulDivUp(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator\\n    ) internal pure returns (uint256 z) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Equivalent to require(denominator != 0 && (y == 0 || x <= type(uint256).max / y))\\n            if iszero(mul(denominator, iszero(mul(y, gt(x, div(MAX_UINT256, y)))))) {\\n                revert(0, 0)\\n            }\\n\\n            // If x * y modulo the denominator is strictly greater than 0,\\n            // 1 is added to round up the division of x * y by the denominator.\\n            z := add(gt(mod(mul(x, y), denominator), 0), div(mul(x, y), denominator))\\n        }\\n    }\\n\\n    function rpow(\\n        uint256 x,\\n        uint256 n,\\n        uint256 scalar\\n    ) internal pure returns (uint256 z) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            switch x\\n            case 0 {\\n                switch n\\n                case 0 {\\n                    // 0 ** 0 = 1\\n                    z := scalar\\n                }\\n                default {\\n                    // 0 ** n = 0\\n                    z := 0\\n                }\\n            }\\n            default {\\n                switch mod(n, 2)\\n                case 0 {\\n                    // If n is even, store scalar in z for now.\\n                    z := scalar\\n                }\\n                default {\\n                    // If n is odd, store x in z for now.\\n                    z := x\\n                }\\n\\n                // Shifting right by 1 is like dividing by 2.\\n                let half := shr(1, scalar)\\n\\n                for {\\n                    // Shift n right by 1 before looping to halve it.\\n                    n := shr(1, n)\\n                } n {\\n                    // Shift n right by 1 each iteration to halve it.\\n                    n := shr(1, n)\\n                } {\\n                    // Revert immediately if x ** 2 would overflow.\\n                    // Equivalent to iszero(eq(div(xx, x), x)) here.\\n                    if shr(128, x) {\\n                        revert(0, 0)\\n                    }\\n\\n                    // Store x squared.\\n                    let xx := mul(x, x)\\n\\n                    // Round to the nearest number.\\n                    let xxRound := add(xx, half)\\n\\n                    // Revert if xx + half overflowed.\\n                    if lt(xxRound, xx) {\\n                        revert(0, 0)\\n                    }\\n\\n                    // Set x to scaled xxRound.\\n                    x := div(xxRound, scalar)\\n\\n                    // If n is even:\\n                    if mod(n, 2) {\\n                        // Compute z * x.\\n                        let zx := mul(z, x)\\n\\n                        // If z * x overflowed:\\n                        if iszero(eq(div(zx, x), z)) {\\n                            // Revert if x is non-zero.\\n                            if iszero(iszero(x)) {\\n                                revert(0, 0)\\n                            }\\n                        }\\n\\n                        // Round to the nearest number.\\n                        let zxRound := add(zx, half)\\n\\n                        // Revert if zx + half overflowed.\\n                        if lt(zxRound, zx) {\\n                            revert(0, 0)\\n                        }\\n\\n                        // Return properly scaled zxRound.\\n                        z := div(zxRound, scalar)\\n                    }\\n                }\\n            }\\n        }\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                        GENERAL NUMBER UTILITIES\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function sqrt(uint256 x) internal pure returns (uint256 z) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            let y := x // We start y at x, which will help us make our initial estimate.\\n\\n            z := 181 // The \\\"correct\\\" value is 1, but this saves a multiplication later.\\n\\n            // This segment is to get a reasonable initial estimate for the Babylonian method. With a bad\\n            // start, the correct # of bits increases ~linearly each iteration instead of ~quadratically.\\n\\n            // We check y >= 2^(k + 8) but shift right by k bits\\n            // each branch to ensure that if x >= 256, then y >= 256.\\n            if iszero(lt(y, 0x10000000000000000000000000000000000)) {\\n                y := shr(128, y)\\n                z := shl(64, z)\\n            }\\n            if iszero(lt(y, 0x1000000000000000000)) {\\n                y := shr(64, y)\\n                z := shl(32, z)\\n            }\\n            if iszero(lt(y, 0x10000000000)) {\\n                y := shr(32, y)\\n                z := shl(16, z)\\n            }\\n            if iszero(lt(y, 0x1000000)) {\\n                y := shr(16, y)\\n                z := shl(8, z)\\n            }\\n\\n            // Goal was to get z*z*y within a small factor of x. More iterations could\\n            // get y in a tighter range. Currently, we will have y in [256, 256*2^16).\\n            // We ensured y >= 256 so that the relative difference between y and y+1 is small.\\n            // That's not possible if x < 256 but we can just verify those cases exhaustively.\\n\\n            // Now, z*z*y <= x < z*z*(y+1), and y <= 2^(16+8), and either y >= 256, or x < 256.\\n            // Correctness can be checked exhaustively for x < 256, so we assume y >= 256.\\n            // Then z*sqrt(y) is within sqrt(257)/sqrt(256) of sqrt(x), or about 20bps.\\n\\n            // For s in the range [1/256, 256], the estimate f(s) = (181/1024) * (s+1) is in the range\\n            // (1/2.84 * sqrt(s), 2.84 * sqrt(s)), with largest error when s = 1 and when s = 256 or 1/256.\\n\\n            // Since y is in [256, 256*2^16), let a = y/65536, so that a is in [1/256, 256). Then we can estimate\\n            // sqrt(y) using sqrt(65536) * 181/1024 * (a + 1) = 181/4 * (y + 65536)/65536 = 181 * (y + 65536)/2^18.\\n\\n            // There is no overflow risk here since y < 2^136 after the first branch above.\\n            z := shr(18, mul(z, add(y, 65536))) // A mul() is saved from starting z at 181.\\n\\n            // Given the worst case multiplicative error of 2.84 above, 7 iterations should be enough.\\n            z := shr(1, add(z, div(x, z)))\\n            z := shr(1, add(z, div(x, z)))\\n            z := shr(1, add(z, div(x, z)))\\n            z := shr(1, add(z, div(x, z)))\\n            z := shr(1, add(z, div(x, z)))\\n            z := shr(1, add(z, div(x, z)))\\n            z := shr(1, add(z, div(x, z)))\\n\\n            // If x+1 is a perfect square, the Babylonian method cycles between\\n            // floor(sqrt(x)) and ceil(sqrt(x)). This statement ensures we return floor.\\n            // See: https://en.wikipedia.org/wiki/Integer_square_root#Using_only_integer_division\\n            // Since the ceil is rare, we save gas on the assignment and repeat division in the rare case.\\n            // If you don't care whether the floor or ceil square root is returned, you can remove this statement.\\n            z := sub(z, lt(div(x, z), z))\\n        }\\n    }\\n\\n    function unsafeMod(uint256 x, uint256 y) internal pure returns (uint256 z) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Mod x by y. Note this will return\\n            // 0 instead of reverting if y is zero.\\n            z := mod(x, y)\\n        }\\n    }\\n\\n    function unsafeDiv(uint256 x, uint256 y) internal pure returns (uint256 r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Divide x by y. Note this will return\\n            // 0 instead of reverting if y is zero.\\n            r := div(x, y)\\n        }\\n    }\\n\\n    function unsafeDivUp(uint256 x, uint256 y) internal pure returns (uint256 z) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Add 1 to x * y if x % y > 0. Note this will\\n            // return 0 instead of reverting if y is zero.\\n            z := add(gt(mod(x, y), 0), div(x, y))\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x1b62af9baf5b8e991ed7531bc87f45550ba9d61e8dbff5caf237ccaf3a3fd843\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x60e060405234801561000f575f5ffd5b5060405161321638038061321683398101604081905261002e91610066565b6001600160a01b0392831660805290821660a0521660c0526100a6565b80516001600160a01b0381168114610061575f5ffd5b919050565b5f5f5f60608486031215610078575f5ffd5b6100818461004b565b925061008f6020850161004b565b915061009d6040850161004b565b90509250925092565b60805160a05160c0516130f26101245f395f818161037701528181610fb1015281816115030152611f9201525f61035201525f81816104b1015281816108c401528181610af701528181610c7001528181610d2b01528181610dd101528181610e7701528181611804015281816118ce01526119a301526130f25ff3fe608060405234801561000f575f5ffd5b506004361061007a575f3560e01c8063b20b0dbc11610058578063b20b0dbc146100e8578063b7ce6036146100fd578063cfd5fd3b1461011e578063f315742b14610131575f5ffd5b806369c815541461007e57806386606501146100a85780639f78a96a146100c8575b5f5ffd5b61009161008c36600461254b565b610146565b60405161009f9291906125d7565b60405180910390f35b6100bb6100b636600461254b565b6102ae565b60405161009f91906127e6565b6100db6100d636600461254b565b610322565b60405161009f919061293c565b6100f06103f4565b60405161009f919061294b565b61011061010b366004612999565b6104ae565b60405190815260200161009f565b61011061012c366004612a28565b610821565b610139610ac3565b60405161009f9190612aca565b6101796040518060c001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b6101a060405180608001604052805f81526020015f81526020015f81526020015f81525090565b5f6101aa84610c3b565b90505f5f5f5f6101b985610c6a565b92965090945092509050601f607e85901c811690608386901c16670fffffffffffffff608887901c1660c487901c6009841115610217576101fb600985612b7c565b61020690600a612ca8565b6102109083612ce0565b915061023a565b610222846009612b7c565b61022d90600a612ca8565b6102379083612d18565b91505b600983111561026a5761024e600984612b7c565b61025990600a612ca8565b6102639082612ce0565b905061028d565b610275836009612b7c565b61028090600a612ca8565b61028a9082612d18565b90505b61029c8c898989898787610f0f565b9a509a50505050505050505050915091565b6102b661230f565b5f6102c083610c3b565b90505f5f5f5f6102cf85610c6a565b935093509350935060405180608001604052806102eb86611453565b81526020016102f98561161e565b8152602001610307846116db565b815260200161031583611746565b9052979650505050505050565b61032a612441565b602080820183905260408051808201825273ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000811682527f000000000000000000000000000000000000000000000000000000000000000016928101929092528201526103aa82610c3b565b7fffffffffffffffff0000000000000000000000000000000000000000000000001681526103d7826102ae565b60a08201526103e582610146565b60808301526060820152919050565b60605f6103ff610ac3565b9050805167ffffffffffffffff81111561041b5761041b6124f6565b60405190808252806020026020018201604052801561045457816020015b610441612441565b8152602001906001900390816104395790505b5091505f5b81518110156104a95761048482828151811061047757610477612d2f565b6020026020010151610322565b83828151811061049657610496612d2f565b6020908102919091010152600101610459565b505090565b5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16637fc9d4ad8585855f871361051b577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff61051d565b5f5b604080518082018252600d81527f455354494d4154455f535741500000000000000000000000000000000000000060209182015281517f9fbe8fb0ae8f68c4e90aaac8dee895c5ba9596470c68a601101c9d65a103a9438183015282518082039092018252808301928390527fffffffff0000000000000000000000000000000000000000000000000000000060e089901b169092526105c795949392915f918291604401612dfb565b6020604051808303815f875af192505050801561061f575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261061c91810190612e72565b60015b6107b7573d80801561064c576040519150601f19603f3d011682016040523d82523d5f602084013e610651565b606091505b506024815110610729575f61066582612e89565b90507fa015fc37000000000000000000000000000000000000000000000000000000007fffffffff000000000000000000000000000000000000000000000000000000008216016106bc5760248201519250610723565b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f457374696d6174696f6e204661696c6564202d2057726f6e67204572726f720060448201526064015b60405180910390fd5b506107b1565b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602260248201527f457374696d6174696f6e204661696c6564202d20496e76616c6964205265617360448201527f6f6e000000000000000000000000000000000000000000000000000000000000606482015260840161071a565b5061081a565b506040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f457374696d6174696f6e204661696c6564000000000000000000000000000000604482015260640161071a565b9392505050565b5f808367ffffffffffffffff81111561083c5761083c6124f6565b604051908082528060200260200182016040528015610865578160200160208202803683370190505b5090505f8312156108c2575f5b848110156108c0577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8282815181106108ad576108ad612d2f565b6020908102919091010152600101610872565b505b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a3c779fd88888888888760405180608001604052805f73ffffffffffffffffffffffffffffffffffffffff1681526020015f1515815260200160405180602001604052805f81525081526020016040518060400160405280600d81526020017f455354494d4154455f53574150000000000000000000000000000000000000008152508051906020012060405160200161099691815260200190565b6040516020818303038152906040528152506040518863ffffffff1660e01b81526004016109ca9796959493929190612f91565b6020604051808303815f875af1925050508015610a22575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201909252610a1f91810190612e72565b60015b6107b7573d808015610a4f576040519150601f19603f3d011682016040523d82523d5f602084013e610a54565b606091505b506024815110610729575f610a6882612e89565b90507fa015fc37000000000000000000000000000000000000000000000000000000007fffffffff000000000000000000000000000000000000000000000000000000008216016106bc575060240151979650505050505050565b6040517fb5c736e4000000000000000000000000000000000000000000000000000000008152600160048201526060905f907f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff169063b5c736e490602401602060405180830381865afa158015610b51573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610b759190612e72565b90505f8167ffffffffffffffff811115610b9157610b916124f6565b604051908082528060200260200182016040528015610bf957816020015b604080516060810182525f80825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff909201910181610baf5790505b5090505f5b82811015610c3457610c0f816117b0565b828281518110610c2157610c21612d2f565b6020908102919091010152600101610bfe565b5092915050565b5f81604051602001610c4d9190613058565b604051602081830303815290604052805190602001209050919050565b5f5f5f5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663b5c736e4610cb5876002611a9a565b6040518263ffffffff1660e01b8152600401610cd391815260200190565b602060405180830381865afa158015610cee573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610d129190612e72565b935073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e4610d5b876003611a9a565b6040518263ffffffff1660e01b8152600401610d7991815260200190565b602060405180830381865afa158015610d94573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610db89190612e72565b925073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e4610e01876004611a9a565b6040518263ffffffff1660e01b8152600401610e1f91815260200190565b602060405180830381865afa158015610e3a573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610e5e9190612e72565b915073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e4610ea7876005611a9a565b6040518263ffffffff1660e01b8152600401610ec591815260200190565b602060405180830381865afa158015610ee0573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610f049190612e72565b5f1c90509193509193565b610f426040518060c001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b610f6960405180608001604052805f81526020015f81526020015f81526020015f81525090565b6001601689901c165f0361108257603f88901c6207ffff16602083018190525f03610fac5763ffffffff601f89901c1660ff60178a901c161b6020830152611093565b610fda7f00000000000000000000000000000000000000000000000000000000000000008360200151611af0565b895160208b01516040517f02c59a6800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff928316600482015290821660248201529116906302c59a68906044016020604051808303815f875af1158015611054573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906110789190612e72565b6020830152611093565b61108d898989611f57565b60208301525b613fff605389901c81169060618a901c16600160528b901c811690036110c4576110be82828a6120db565b90925090505b8161271003612710856020015102816110df576110df612cb3565b0460408501526020840151612710908282030204606085015260148a901c6003165f60018211156112675781600203611172575089602181901c62ffffff166401ffffffff821642038181101561116057818189602001518a6040015103028161114b5761114b612cb3565b0488602001510188602001818152505061116b565b604088015160208901525b50506111d6565b816003036111d6575089602181901c62ffffff166401ffffffff82164203818110156111c857818189606001518a602001510302816111b3576111b3612cb3565b048860200151038860200181815250506111d3565b606088015160208901525b50505b8015611267576020860151620fffff604183901c1660ff603984901c161b92508210156112095760208601829052611232565b6020860151620fffff605d83901c1660ff605584901c161b925082111561123257602086018290525b83612710036127108760200151028161124d5761124d612cb3565b046040870152602086015161271090848203020460608701525b607f60708d901c81169060778e901c166001606f8f901c811690036112975761129182828d612145565b90925090505b60648260640389602001518a604001510302816112b6576112b6612cb3565b60208a0151919004810160808a0152606089015160649082038382030204900360a089015260408801516f4b3b4ca85a86c47a098a22400000000011156113115761130a886060015189604001510261219d565b935061135f565b611352670de0b6b3a764000089606001518161132f5761132f612cb3565b04670de0b6b3a76400008a604001518161134b5761134b612cb3565b040261219d565b670de0b6b3a76400000293505b6b033b2e3c9fd0803ce8000000841015611392576113838489604001518c8c61224f565b606089015260408801526113f9565b6113ee84760a70c3c40a64e6c51999090b65f67d9240000000000000816113bb576113bb612cb3565b048960600151760a70c3c40a64e6c51999090b65f67d9240000000000000816113e6576113e6612cb3565b048b8d61224f565b604089015260608801525b6040870180518b01908190526060880180518b01908190528b8952602089018b9052611432906b033b2e3c9fd0803ce800000090612d18565b61143c9190612ce0565b885250959d949c50939a5050505050505050505050565b6114df6040518061020001604052805f81526020015f81526020015f81526020015f151581526020015f81526020015f73ffffffffffffffffffffffffffffffffffffffff1681526020015f151581526020015f81526020015f81526020015f151581526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b6001601683901c811614601f83901c63ffffffff16601784901c60ff161b5f6115317f00000000000000000000000000000000000000000000000000000000000000006207ffff603f88901c16611af0565b6040805161020081018252611fff88168152607f600d89901c81166020830152600360148a901c16928201929092529415156060860152608085019390935273ffffffffffffffffffffffffffffffffffffffff1660a0840152506001605285901c8116811460c0840152613fff605386901c811660e0850152606186901c16610100840152606f85901c811614610120830152607084901c8116610140830152607784901c16610160820152601f607e84901c8116610180830152608384901c166101a0820152670fffffffffffffff608884901c166101c082015260c49290921c6101e08301525090565b6116576040518060e001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b506040805160e0810182526401ffffffff8084168252602184901c62ffffff166020830152620fffff604185901c811660ff603987901c81169190911b94840194909452605d85901c8116605586901c9094169390931b6060830152607184901c83166080830152608584901c90921660a082015260999290921c1660c082015290565b61170260405180608001604052805f81526020015f81526020015f81526020015f81525090565b5060408051608081018252613fff8381168252600e84901c166020820152601c83901c620fffff169181019190915260309190911c6401ffffffff16606082015290565b61176d60405180608001604052805f81526020015f81526020015f81526020015f81525090565b5060408051608081018252607f8381168252600784901c166020820152600e83901c620fffff169181019190915260229190911c6401ffffffff16606082015290565b604080516060810182525f808252602080830182905282840182905283516001818301528451808203830181529085019094528351930192909220909173ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e4611834866003612d18565b61183e90856130a9565b60405160e083901b7fffffffff000000000000000000000000000000000000000000000000000000001681526004810191909152602401602060405180830381865afa158015611890573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906118b49190612e72565b90505f73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e46118fe876003612d18565b61190890866130a9565b6119139060016130a9565b60405160e083901b7fffffffff000000000000000000000000000000000000000000000000000000001681526004810191909152602401602060405180830381865afa158015611965573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906119899190612e72565b90505f73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e46119d3886003612d18565b6119dd90876130a9565b6119e89060026130a9565b60405160e083901b7fffffffff000000000000000000000000000000000000000000000000000000001681526004810191909152602401602060405180830381865afa158015611a3a573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611a5e9190612e72565b6040805160608101825273ffffffffffffffffffffffffffffffffffffffff958616815293909416602084015292820192909252949350505050565b604080517fffffffffffffffff000000000000000000000000000000000000000000000000841660208201529081018290525f906060016040516020818303038152906040528051906020012090505b92915050565b5f6060825f03611b03575f915050611aea565b607f8311611bcc576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b6040516020818303038152906040529050611f48565b60ff8311611ca9576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801611bb6565b61ffff8311611d87576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901611bb6565b62ffffff8311611e66576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01611bb6565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b80516020909101209392505050565b5f601f83901c63ffffffff16601784901c60ff161b6401ffffffff609984901c8116908416818111611f895781611f8b565b805b9050611fc07f00000000000000000000000000000000000000000000000000000000000000006207ffff603f89901c16611af0565b875160208901516040517f02c59a6800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff928316600482015290821660248201529116906302c59a68906044016020604051808303815f875af115801561203a573d5f5f3e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061205e9190612e72565b93505f620f4240620fffff608588901c1602824203620fffff607189901c168602028161208d5761208d612cb3565b049050838511156120b15792830192838511156120ac578394506120d0565b6120d0565b8084116120be575f6120c2565b8084035b9350838510156120d0578394505b505050509392505050565b5f80601c83901c620fffff16603084901c6401ffffffff168242828401101561210c5787879450945050505061213d565b504281900361212188613fff881683866122c8565b61213588613fff600e8a901c1684876122c8565b945094505050505b935093915050565b5f80600e83901c620fffff16602284901c6401ffffffff16824282840110156121765787879450945050505061213d565b504281900361218a88607f881683866122c8565b61213588607f60078a901c1684876122c8565b60b5817101000000000000000000000000000000000081106121c45760409190911b9060801c5b690100000000000000000081106121e05760209190911b9060401c5b6501000000000081106121f85760109190911b9060201c5b6301000000811061220e5760089190911b9060101c5b62010000010260121c80820401600190811c80830401811c80830401811c80830401811c80830401811c80830401811c80830401901c908190048111900390565b5f8085850381600282028689026b033b2e3c9fd0803ce80000008702018161227957612279612cb3565b0490506122a8818202836b033b2e3c9fd0803ce8000000888a0202816122a1576122a1612cb3565b040161219d565b01976b033b2e3c9fd0803ce8000000978902979097049695505050505050565b5f838511156122ee57818385870302816122e4576122e4612cb3565b0484019050612307565b8183868603028161230157612301612cb3565b04840390505b949350505050565b60405180608001604052806123a66040518061020001604052805f81526020015f81526020015f81526020015f151581526020015f81526020015f73ffffffffffffffffffffffffffffffffffffffff1681526020015f151581526020015f81526020015f81526020015f151581526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b81526020016123e46040518060e001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b815260200161241060405180608001604052805f81526020015f81526020015f81526020015f81525090565b815260200161243c60405180608001604052805f81526020015f81526020015f81526020015f81525090565b905290565b6040805160c0810182525f80825282516060810184528181526020808201839052818501839052808401919091528351808501855282815290810191909152909182019081526020016124bd6040518060c001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b81526020016124e960405180608001604052805f81526020015f81526020015f81526020015f81525090565b815260200161243c61230f565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b803573ffffffffffffffffffffffffffffffffffffffff81168114612546575f5ffd5b919050565b5f606082840312801561255c575f5ffd5b506040516060810167ffffffffffffffff811182821017156125a5577f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b6040526125b183612523565b81526125bf60208401612523565b60208201526040928301359281019290925250919050565b610140810161261b8285805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a08301525050565b825160c0830152602083015160e08301526040830151610100830152606083015161012083015261081a565b80518051835260208101516020840152604081015160408401526060810151612674606085018215159052565b506080810151608084015260a08101516126a660a085018273ffffffffffffffffffffffffffffffffffffffff169052565b5060c08101516126ba60c085018215159052565b5060e081015160e08401526101008101516101008401526101208101516126e661012085018215159052565b506101408101516101408401526101608101516101608401526101808101516101808401526101a08101516101a08401526101c08101516101c08401526101e08101516101e0840152506020810151612782610200840182805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015160c08301525050565b5060408181015180516102e08501526020810151610300850152908101516103208401526060810151610340840152506060908101518051610360840152602081015161038084015260408101516103a084015201516103c090910152565b505050565b6103e08101611aea8284612647565b7fffffffffffffffff00000000000000000000000000000000000000000000000081511682526020810151612870602084018273ffffffffffffffffffffffffffffffffffffffff815116825273ffffffffffffffffffffffffffffffffffffffff6020820151166020830152604081015160408301525050565b50604081015173ffffffffffffffffffffffffffffffffffffffff815116608084015273ffffffffffffffffffffffffffffffffffffffff60208201511660a08401525060608101516128fb60c0840182805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a08301525050565b506080810151805161018084015260208101516101a084015260408101516101c0840152606001516101e083015260a08101516127e1610200840182612647565b6105e08101611aea82846127f5565b602080825282518282018190525f918401906040840190835b8181101561298e576129778385516127f5565b602093909301926105e09290920191600101612964565b509095945050505050565b5f5f5f83850360a08112156129ac575f5ffd5b60608112156129b9575f5ffd5b50839250606084013580151581146129cf575f5ffd5b929592945050506080919091013590565b5f5f83601f8401126129f0575f5ffd5b50813567ffffffffffffffff811115612a07575f5ffd5b602083019150836020606083028501011115612a21575f5ffd5b9250929050565b5f5f5f5f5f60608688031215612a3c575f5ffd5b853567ffffffffffffffff811115612a52575f5ffd5b8601601f81018813612a62575f5ffd5b803567ffffffffffffffff811115612a78575f5ffd5b8860208260051b8401011115612a8c575f5ffd5b60209182019650945086013567ffffffffffffffff811115612aac575f5ffd5b612ab8888289016129e0565b96999598509660400135949350505050565b602080825282518282018190525f918401906040840190835b8181101561298e57612b3983855173ffffffffffffffffffffffffffffffffffffffff815116825273ffffffffffffffffffffffffffffffffffffffff6020820151166020830152604081015160408301525050565b6020939093019260609290920191600101612ae3565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b81810381811115611aea57611aea612b4f565b6001815b600184111561213d57808504811115612bae57612bae612b4f565b6001841615612bbc57908102905b60019390931c928002612b93565b5f82612bd857506001611aea565b81612be457505f611aea565b8160018114612bfa5760028114612c0457612c20565b6001915050611aea565b60ff841115612c1557612c15612b4f565b50506001821b611aea565b5060208310610133831016604e8410600b8410161715612c43575081810a611aea565b612c6e7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8484612b8f565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115612ca057612ca0612b4f565b029392505050565b5f61081a8383612bca565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f82612d13577f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b500490565b8082028115828204841417611aea57611aea612b4f565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b73ffffffffffffffffffffffffffffffffffffffff612d7a82612523565b16825273ffffffffffffffffffffffffffffffffffffffff612d9e60208301612523565b166020830152604090810135910152565b5f81518084528060208401602086015e5f6020828601015260207fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f83011685010191505092915050565b612e058189612d5c565b86151560608201528560808201528460a082015273ffffffffffffffffffffffffffffffffffffffff841660c082015282151560e08201526101406101008201525f6101408201526101606101208201525f612e65610160830184612daf565b9998505050505050505050565b5f60208284031215612e82575f5ffd5b5051919050565b805160208201517fffffffff00000000000000000000000000000000000000000000000000000000811691906004821015612eee577fffffffff00000000000000000000000000000000000000000000000000000000808360040360031b1b82161692505b5050919050565b5f8151808452602084019350602083015f5b82811015612f25578151865260209586019590910190600101612f07565b5093949350505050565b73ffffffffffffffffffffffffffffffffffffffff81511682526020810151151560208301525f604082015160806040850152612f6f6080850182612daf565b905060608301518482036060860152612f888282612daf565b95945050505050565b60a080825281018790525f8860c08301825b8a811015612fde5773ffffffffffffffffffffffffffffffffffffffff612fc984612523565b16825260209283019290910190600101612fa3565b50838103602080860191909152888252019050875f805b8981101561301a576130078484612d5c565b6060938401939290920191600101612ff5565b5050506040830186905282810360608401526130368186612ef5565b9050828103608084015261304a8185612f2f565b9a9950505050505050505050565b60608101611aea828473ffffffffffffffffffffffffffffffffffffffff815116825273ffffffffffffffffffffffffffffffffffffffff6020820151166020830152604081015160408301525050565b80820180821115611aea57611aea612b4f56fea2646970667358221220d49a1a3d403c834abfb93b135d3c02da722e8d7878f06d36377c30340e2c78c864736f6c634300081d0033",
+  "deployedBytecode": "0x608060405234801561000f575f5ffd5b506004361061007a575f3560e01c8063b20b0dbc11610058578063b20b0dbc146100e8578063b7ce6036146100fd578063cfd5fd3b1461011e578063f315742b14610131575f5ffd5b806369c815541461007e57806386606501146100a85780639f78a96a146100c8575b5f5ffd5b61009161008c36600461254b565b610146565b60405161009f9291906125d7565b60405180910390f35b6100bb6100b636600461254b565b6102ae565b60405161009f91906127e6565b6100db6100d636600461254b565b610322565b60405161009f919061293c565b6100f06103f4565b60405161009f919061294b565b61011061010b366004612999565b6104ae565b60405190815260200161009f565b61011061012c366004612a28565b610821565b610139610ac3565b60405161009f9190612aca565b6101796040518060c001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b6101a060405180608001604052805f81526020015f81526020015f81526020015f81525090565b5f6101aa84610c3b565b90505f5f5f5f6101b985610c6a565b92965090945092509050601f607e85901c811690608386901c16670fffffffffffffff608887901c1660c487901c6009841115610217576101fb600985612b7c565b61020690600a612ca8565b6102109083612ce0565b915061023a565b610222846009612b7c565b61022d90600a612ca8565b6102379083612d18565b91505b600983111561026a5761024e600984612b7c565b61025990600a612ca8565b6102639082612ce0565b905061028d565b610275836009612b7c565b61028090600a612ca8565b61028a9082612d18565b90505b61029c8c898989898787610f0f565b9a509a50505050505050505050915091565b6102b661230f565b5f6102c083610c3b565b90505f5f5f5f6102cf85610c6a565b935093509350935060405180608001604052806102eb86611453565b81526020016102f98561161e565b8152602001610307846116db565b815260200161031583611746565b9052979650505050505050565b61032a612441565b602080820183905260408051808201825273ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000811682527f000000000000000000000000000000000000000000000000000000000000000016928101929092528201526103aa82610c3b565b7fffffffffffffffff0000000000000000000000000000000000000000000000001681526103d7826102ae565b60a08201526103e582610146565b60808301526060820152919050565b60605f6103ff610ac3565b9050805167ffffffffffffffff81111561041b5761041b6124f6565b60405190808252806020026020018201604052801561045457816020015b610441612441565b8152602001906001900390816104395790505b5091505f5b81518110156104a95761048482828151811061047757610477612d2f565b6020026020010151610322565b83828151811061049657610496612d2f565b6020908102919091010152600101610459565b505090565b5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff16637fc9d4ad8585855f871361051b577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff61051d565b5f5b604080518082018252600d81527f455354494d4154455f535741500000000000000000000000000000000000000060209182015281517f9fbe8fb0ae8f68c4e90aaac8dee895c5ba9596470c68a601101c9d65a103a9438183015282518082039092018252808301928390527fffffffff0000000000000000000000000000000000000000000000000000000060e089901b169092526105c795949392915f918291604401612dfb565b6020604051808303815f875af192505050801561061f575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016820190925261061c91810190612e72565b60015b6107b7573d80801561064c576040519150601f19603f3d011682016040523d82523d5f602084013e610651565b606091505b506024815110610729575f61066582612e89565b90507fa015fc37000000000000000000000000000000000000000000000000000000007fffffffff000000000000000000000000000000000000000000000000000000008216016106bc5760248201519250610723565b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f457374696d6174696f6e204661696c6564202d2057726f6e67204572726f720060448201526064015b60405180910390fd5b506107b1565b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602260248201527f457374696d6174696f6e204661696c6564202d20496e76616c6964205265617360448201527f6f6e000000000000000000000000000000000000000000000000000000000000606482015260840161071a565b5061081a565b506040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f457374696d6174696f6e204661696c6564000000000000000000000000000000604482015260640161071a565b9392505050565b5f808367ffffffffffffffff81111561083c5761083c6124f6565b604051908082528060200260200182016040528015610865578160200160208202803683370190505b5090505f8312156108c2575f5b848110156108c0577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8282815181106108ad576108ad612d2f565b6020908102919091010152600101610872565b505b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a3c779fd88888888888760405180608001604052805f73ffffffffffffffffffffffffffffffffffffffff1681526020015f1515815260200160405180602001604052805f81525081526020016040518060400160405280600d81526020017f455354494d4154455f53574150000000000000000000000000000000000000008152508051906020012060405160200161099691815260200190565b6040516020818303038152906040528152506040518863ffffffff1660e01b81526004016109ca9796959493929190612f91565b6020604051808303815f875af1925050508015610a22575060408051601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201909252610a1f91810190612e72565b60015b6107b7573d808015610a4f576040519150601f19603f3d011682016040523d82523d5f602084013e610a54565b606091505b506024815110610729575f610a6882612e89565b90507fa015fc37000000000000000000000000000000000000000000000000000000007fffffffff000000000000000000000000000000000000000000000000000000008216016106bc575060240151979650505050505050565b6040517fb5c736e4000000000000000000000000000000000000000000000000000000008152600160048201526060905f907f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff169063b5c736e490602401602060405180830381865afa158015610b51573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610b759190612e72565b90505f8167ffffffffffffffff811115610b9157610b916124f6565b604051908082528060200260200182016040528015610bf957816020015b604080516060810182525f80825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff909201910181610baf5790505b5090505f5b82811015610c3457610c0f816117b0565b828281518110610c2157610c21612d2f565b6020908102919091010152600101610bfe565b5092915050565b5f81604051602001610c4d9190613058565b604051602081830303815290604052805190602001209050919050565b5f5f5f5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663b5c736e4610cb5876002611a9a565b6040518263ffffffff1660e01b8152600401610cd391815260200190565b602060405180830381865afa158015610cee573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610d129190612e72565b935073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e4610d5b876003611a9a565b6040518263ffffffff1660e01b8152600401610d7991815260200190565b602060405180830381865afa158015610d94573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610db89190612e72565b925073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e4610e01876004611a9a565b6040518263ffffffff1660e01b8152600401610e1f91815260200190565b602060405180830381865afa158015610e3a573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610e5e9190612e72565b915073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e4610ea7876005611a9a565b6040518263ffffffff1660e01b8152600401610ec591815260200190565b602060405180830381865afa158015610ee0573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610f049190612e72565b5f1c90509193509193565b610f426040518060c001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b610f6960405180608001604052805f81526020015f81526020015f81526020015f81525090565b6001601689901c165f0361108257603f88901c6207ffff16602083018190525f03610fac5763ffffffff601f89901c1660ff60178a901c161b6020830152611093565b610fda7f00000000000000000000000000000000000000000000000000000000000000008360200151611af0565b895160208b01516040517f02c59a6800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff928316600482015290821660248201529116906302c59a68906044016020604051808303815f875af1158015611054573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906110789190612e72565b6020830152611093565b61108d898989611f57565b60208301525b613fff605389901c81169060618a901c16600160528b901c811690036110c4576110be82828a6120db565b90925090505b8161271003612710856020015102816110df576110df612cb3565b0460408501526020840151612710908282030204606085015260148a901c6003165f60018211156112675781600203611172575089602181901c62ffffff166401ffffffff821642038181101561116057818189602001518a6040015103028161114b5761114b612cb3565b0488602001510188602001818152505061116b565b604088015160208901525b50506111d6565b816003036111d6575089602181901c62ffffff166401ffffffff82164203818110156111c857818189606001518a602001510302816111b3576111b3612cb3565b048860200151038860200181815250506111d3565b606088015160208901525b50505b8015611267576020860151620fffff604183901c1660ff603984901c161b92508210156112095760208601829052611232565b6020860151620fffff605d83901c1660ff605584901c161b925082111561123257602086018290525b83612710036127108760200151028161124d5761124d612cb3565b046040870152602086015161271090848203020460608701525b607f60708d901c81169060778e901c166001606f8f901c811690036112975761129182828d612145565b90925090505b60648260640389602001518a604001510302816112b6576112b6612cb3565b60208a0151919004810160808a0152606089015160649082038382030204900360a089015260408801516f4b3b4ca85a86c47a098a22400000000011156113115761130a886060015189604001510261219d565b935061135f565b611352670de0b6b3a764000089606001518161132f5761132f612cb3565b04670de0b6b3a76400008a604001518161134b5761134b612cb3565b040261219d565b670de0b6b3a76400000293505b6b033b2e3c9fd0803ce8000000841015611392576113838489604001518c8c61224f565b606089015260408801526113f9565b6113ee84760a70c3c40a64e6c51999090b65f67d9240000000000000816113bb576113bb612cb3565b048960600151760a70c3c40a64e6c51999090b65f67d9240000000000000816113e6576113e6612cb3565b048b8d61224f565b604089015260608801525b6040870180518b01908190526060880180518b01908190528b8952602089018b9052611432906b033b2e3c9fd0803ce800000090612d18565b61143c9190612ce0565b885250959d949c50939a5050505050505050505050565b6114df6040518061020001604052805f81526020015f81526020015f81526020015f151581526020015f81526020015f73ffffffffffffffffffffffffffffffffffffffff1681526020015f151581526020015f81526020015f81526020015f151581526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b6001601683901c811614601f83901c63ffffffff16601784901c60ff161b5f6115317f00000000000000000000000000000000000000000000000000000000000000006207ffff603f88901c16611af0565b6040805161020081018252611fff88168152607f600d89901c81166020830152600360148a901c16928201929092529415156060860152608085019390935273ffffffffffffffffffffffffffffffffffffffff1660a0840152506001605285901c8116811460c0840152613fff605386901c811660e0850152606186901c16610100840152606f85901c811614610120830152607084901c8116610140830152607784901c16610160820152601f607e84901c8116610180830152608384901c166101a0820152670fffffffffffffff608884901c166101c082015260c49290921c6101e08301525090565b6116576040518060e001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b506040805160e0810182526401ffffffff8084168252602184901c62ffffff166020830152620fffff604185901c811660ff603987901c81169190911b94840194909452605d85901c8116605586901c9094169390931b6060830152607184901c83166080830152608584901c90921660a082015260999290921c1660c082015290565b61170260405180608001604052805f81526020015f81526020015f81526020015f81525090565b5060408051608081018252613fff8381168252600e84901c166020820152601c83901c620fffff169181019190915260309190911c6401ffffffff16606082015290565b61176d60405180608001604052805f81526020015f81526020015f81526020015f81525090565b5060408051608081018252607f8381168252600784901c166020820152600e83901c620fffff169181019190915260229190911c6401ffffffff16606082015290565b604080516060810182525f808252602080830182905282840182905283516001818301528451808203830181529085019094528351930192909220909173ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e4611834866003612d18565b61183e90856130a9565b60405160e083901b7fffffffff000000000000000000000000000000000000000000000000000000001681526004810191909152602401602060405180830381865afa158015611890573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906118b49190612e72565b90505f73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e46118fe876003612d18565b61190890866130a9565b6119139060016130a9565b60405160e083901b7fffffffff000000000000000000000000000000000000000000000000000000001681526004810191909152602401602060405180830381865afa158015611965573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906119899190612e72565b90505f73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e46119d3886003612d18565b6119dd90876130a9565b6119e89060026130a9565b60405160e083901b7fffffffff000000000000000000000000000000000000000000000000000000001681526004810191909152602401602060405180830381865afa158015611a3a573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611a5e9190612e72565b6040805160608101825273ffffffffffffffffffffffffffffffffffffffff958616815293909416602084015292820192909252949350505050565b604080517fffffffffffffffff000000000000000000000000000000000000000000000000841660208201529081018290525f906060016040516020818303038152906040528051906020012090505b92915050565b5f6060825f03611b03575f915050611aea565b607f8311611bcc576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b6040516020818303038152906040529050611f48565b60ff8311611ca9576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801611bb6565b61ffff8311611d87576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901611bb6565b62ffffff8311611e66576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01611bb6565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b80516020909101209392505050565b5f601f83901c63ffffffff16601784901c60ff161b6401ffffffff609984901c8116908416818111611f895781611f8b565b805b9050611fc07f00000000000000000000000000000000000000000000000000000000000000006207ffff603f89901c16611af0565b875160208901516040517f02c59a6800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff928316600482015290821660248201529116906302c59a68906044016020604051808303815f875af115801561203a573d5f5f3e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061205e9190612e72565b93505f620f4240620fffff608588901c1602824203620fffff607189901c168602028161208d5761208d612cb3565b049050838511156120b15792830192838511156120ac578394506120d0565b6120d0565b8084116120be575f6120c2565b8084035b9350838510156120d0578394505b505050509392505050565b5f80601c83901c620fffff16603084901c6401ffffffff168242828401101561210c5787879450945050505061213d565b504281900361212188613fff881683866122c8565b61213588613fff600e8a901c1684876122c8565b945094505050505b935093915050565b5f80600e83901c620fffff16602284901c6401ffffffff16824282840110156121765787879450945050505061213d565b504281900361218a88607f881683866122c8565b61213588607f60078a901c1684876122c8565b60b5817101000000000000000000000000000000000081106121c45760409190911b9060801c5b690100000000000000000081106121e05760209190911b9060401c5b6501000000000081106121f85760109190911b9060201c5b6301000000811061220e5760089190911b9060101c5b62010000010260121c80820401600190811c80830401811c80830401811c80830401811c80830401811c80830401811c80830401901c908190048111900390565b5f8085850381600282028689026b033b2e3c9fd0803ce80000008702018161227957612279612cb3565b0490506122a8818202836b033b2e3c9fd0803ce8000000888a0202816122a1576122a1612cb3565b040161219d565b01976b033b2e3c9fd0803ce8000000978902979097049695505050505050565b5f838511156122ee57818385870302816122e4576122e4612cb3565b0484019050612307565b8183868603028161230157612301612cb3565b04840390505b949350505050565b60405180608001604052806123a66040518061020001604052805f81526020015f81526020015f81526020015f151581526020015f81526020015f73ffffffffffffffffffffffffffffffffffffffff1681526020015f151581526020015f81526020015f81526020015f151581526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b81526020016123e46040518060e001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b815260200161241060405180608001604052805f81526020015f81526020015f81526020015f81525090565b815260200161243c60405180608001604052805f81526020015f81526020015f81526020015f81525090565b905290565b6040805160c0810182525f80825282516060810184528181526020808201839052818501839052808401919091528351808501855282815290810191909152909182019081526020016124bd6040518060c001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b81526020016124e960405180608001604052805f81526020015f81526020015f81526020015f81525090565b815260200161243c61230f565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b803573ffffffffffffffffffffffffffffffffffffffff81168114612546575f5ffd5b919050565b5f606082840312801561255c575f5ffd5b506040516060810167ffffffffffffffff811182821017156125a5577f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b6040526125b183612523565b81526125bf60208401612523565b60208201526040928301359281019290925250919050565b610140810161261b8285805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a08301525050565b825160c0830152602083015160e08301526040830151610100830152606083015161012083015261081a565b80518051835260208101516020840152604081015160408401526060810151612674606085018215159052565b506080810151608084015260a08101516126a660a085018273ffffffffffffffffffffffffffffffffffffffff169052565b5060c08101516126ba60c085018215159052565b5060e081015160e08401526101008101516101008401526101208101516126e661012085018215159052565b506101408101516101408401526101608101516101608401526101808101516101808401526101a08101516101a08401526101c08101516101c08401526101e08101516101e0840152506020810151612782610200840182805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015160c08301525050565b5060408181015180516102e08501526020810151610300850152908101516103208401526060810151610340840152506060908101518051610360840152602081015161038084015260408101516103a084015201516103c090910152565b505050565b6103e08101611aea8284612647565b7fffffffffffffffff00000000000000000000000000000000000000000000000081511682526020810151612870602084018273ffffffffffffffffffffffffffffffffffffffff815116825273ffffffffffffffffffffffffffffffffffffffff6020820151166020830152604081015160408301525050565b50604081015173ffffffffffffffffffffffffffffffffffffffff815116608084015273ffffffffffffffffffffffffffffffffffffffff60208201511660a08401525060608101516128fb60c0840182805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a08301525050565b506080810151805161018084015260208101516101a084015260408101516101c0840152606001516101e083015260a08101516127e1610200840182612647565b6105e08101611aea82846127f5565b602080825282518282018190525f918401906040840190835b8181101561298e576129778385516127f5565b602093909301926105e09290920191600101612964565b509095945050505050565b5f5f5f83850360a08112156129ac575f5ffd5b60608112156129b9575f5ffd5b50839250606084013580151581146129cf575f5ffd5b929592945050506080919091013590565b5f5f83601f8401126129f0575f5ffd5b50813567ffffffffffffffff811115612a07575f5ffd5b602083019150836020606083028501011115612a21575f5ffd5b9250929050565b5f5f5f5f5f60608688031215612a3c575f5ffd5b853567ffffffffffffffff811115612a52575f5ffd5b8601601f81018813612a62575f5ffd5b803567ffffffffffffffff811115612a78575f5ffd5b8860208260051b8401011115612a8c575f5ffd5b60209182019650945086013567ffffffffffffffff811115612aac575f5ffd5b612ab8888289016129e0565b96999598509660400135949350505050565b602080825282518282018190525f918401906040840190835b8181101561298e57612b3983855173ffffffffffffffffffffffffffffffffffffffff815116825273ffffffffffffffffffffffffffffffffffffffff6020820151166020830152604081015160408301525050565b6020939093019260609290920191600101612ae3565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b81810381811115611aea57611aea612b4f565b6001815b600184111561213d57808504811115612bae57612bae612b4f565b6001841615612bbc57908102905b60019390931c928002612b93565b5f82612bd857506001611aea565b81612be457505f611aea565b8160018114612bfa5760028114612c0457612c20565b6001915050611aea565b60ff841115612c1557612c15612b4f565b50506001821b611aea565b5060208310610133831016604e8410600b8410161715612c43575081810a611aea565b612c6e7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8484612b8f565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115612ca057612ca0612b4f565b029392505050565b5f61081a8383612bca565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f82612d13577f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b500490565b8082028115828204841417611aea57611aea612b4f565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b73ffffffffffffffffffffffffffffffffffffffff612d7a82612523565b16825273ffffffffffffffffffffffffffffffffffffffff612d9e60208301612523565b166020830152604090810135910152565b5f81518084528060208401602086015e5f6020828601015260207fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f83011685010191505092915050565b612e058189612d5c565b86151560608201528560808201528460a082015273ffffffffffffffffffffffffffffffffffffffff841660c082015282151560e08201526101406101008201525f6101408201526101606101208201525f612e65610160830184612daf565b9998505050505050505050565b5f60208284031215612e82575f5ffd5b5051919050565b805160208201517fffffffff00000000000000000000000000000000000000000000000000000000811691906004821015612eee577fffffffff00000000000000000000000000000000000000000000000000000000808360040360031b1b82161692505b5050919050565b5f8151808452602084019350602083015f5b82811015612f25578151865260209586019590910190600101612f07565b5093949350505050565b73ffffffffffffffffffffffffffffffffffffffff81511682526020810151151560208301525f604082015160806040850152612f6f6080850182612daf565b905060608301518482036060860152612f888282612daf565b95945050505050565b60a080825281018790525f8860c08301825b8a811015612fde5773ffffffffffffffffffffffffffffffffffffffff612fc984612523565b16825260209283019290910190600101612fa3565b50838103602080860191909152888252019050875f805b8981101561301a576130078484612d5c565b6060938401939290920191600101612ff5565b5050506040830186905282810360608401526130368186612ef5565b9050828103608084015261304a8185612f2f565b9a9950505050505050505050565b60608101611aea828473ffffffffffffffffffffffffffffffffffffffff815116825273ffffffffffffffffffffffffffffffffffffffff6020820151166020830152604081015160408301525050565b80820180821115611aea57611aea612b4f56fea2646970667358221220d49a1a3d403c834abfb93b135d3c02da722e8d7878f06d36377c30340e2c78c864736f6c634300081d0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

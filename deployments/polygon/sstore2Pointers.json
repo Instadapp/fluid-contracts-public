@@ -1,0 +1,45 @@
+[
+  {
+    "pointer": "0x4a5a27901DBb1D6A976ad60692BF030d10435e08",
+    "bytecodeHash": "0x92919af8e75c6841da807aa529616e28a16154b1c571f5a06ea4946e26bb6374"
+  },
+  {
+    "pointer": "0x5aB54297FbAf4d0f00538ef53b28c12A1F9CC470",
+    "bytecodeHash": "0x54e8f38580f0263aa178e2bccd3989b86981338fcc5d52019fdff259e45f8050"
+  },
+  {
+    "pointer": "0xD029B6d3fe0d45cdcda2Bc1aB7095a0457EBFf5D",
+    "bytecodeHash": "0x2fec6c4d285fe32ada07d9450a0775230ed637074a4e2fc4e2a2e1f03fb78e6e",
+    "pointer2": "0x74563EcBA23B2399CBfC5aBBeFc16b5C5A7323eb"
+  },
+  {
+    "pointer": "0x91fA88784280a861B7854115F9749CEa0B187c56",
+    "bytecodeHash": "0x2fc7db3585c36b42049f69e4ccc7fd5a902a4b92043a916bbe83f8f15bb65917",
+    "pointer2": "0x7846f1df9a87a336Abc86997A912D8cC430716Ae"
+  },
+  {
+    "pointer": "0x81Fc5FD8A6b95414D452e0Cd8658c7F71Bd7146f",
+    "bytecodeHash": "0xbd36a8384289ab8c980f790ad6838ae68cf6742226150059d78307d42576d982"
+  },
+  {
+    "pointer": "0xc7cd1Ca8f60e54CC0d99739fF074152c585765Fe",
+    "bytecodeHash": "0x097a45add5b785c5e40fa6b5e2a1970890443cabf06ff05e657a0d0c2ab12232"
+  },
+  {
+    "pointer": "0xe9A79785BBEe698464D18B3f0D1EF84e00695438",
+    "bytecodeHash": "0xd4982e98f7d0becba06758cc78231df83eb6c0444b1e4c0307ab6aa68b923563"
+  },
+  {
+    "pointer": "0x0336895c56dDe36436B6689b3473c759f26E3a61",
+    "bytecodeHash": "0x436d6a5b17cc955c35d3f239827d7025f7f919a0420e73ab8724d591e8c0f049"
+  },
+  {
+    "pointer": "0x9B1F0847ce185487367DABdA1657B2240133F15b",
+    "bytecodeHash": "0x3740d788d05fbd2825f6435223ae6be75c633c569e79db61b1500857bcb7b834"
+  },
+  {
+    "pointer": "0xD96c2595D2f290eA73d795b71424bc1cFa99fEf4",
+    "bytecodeHash": "0xc49b588bb81c494d4057e930e58eddbd15de3256fb836904c712d79fbdb179cd",
+    "pointer2": "0x6B2A7aa04362e1D1952782258cAA349F4cB888FC"
+  }
+]
