@@ -105,7 +105,7 @@ jobs:
           echo "Set github user"
 
           git add .
-          git commit --amend --no-edit
+          git commit -m "chore: [gh-action] sync docs"
           echo "Committed changes"
 
           mkdir -p ~/.ssh
