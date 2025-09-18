@@ -112,7 +112,7 @@ jobs:
           echo -n ${{ secrets.PUBLIC_DEPLOY_KEY }} | base64 -d > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
 
-          git push origin main -f
+          git push origin main
           echo "Pushed changes to fluid-docs repo"
 
 
