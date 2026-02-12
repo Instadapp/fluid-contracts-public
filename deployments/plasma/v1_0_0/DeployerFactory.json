@@ -1,0 +1,374 @@
+{
+  "address": "0x43acE867287db88bA0c84fF775345577c62a92c5",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "FluidContractFactory__InvalidOperation",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogContractDeployed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "deployer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint16",
+          "name": "count",
+          "type": "uint16"
+        }
+      ],
+      "name": "LogUpdateDeployer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "contractCode_",
+          "type": "bytes"
+        }
+      ],
+      "name": "deployContract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "contractAddress_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "deployer",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "nonce_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getContractAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "contractAddress_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalContracts",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "deployer_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16",
+          "name": "count_",
+          "type": "uint16"
+        }
+      ],
+      "name": "updateDeployer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x237a31c5d6ba1e7b2771f6af14cbadea965b4870eaf581b267a51b0ac4e7bd97",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 0,
+    "gasUsed": "718537",
+    "logsBloom": "0x00000000000000000000000000000000004000000000000000800000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001000000000000000000000000000000000002020000000000000000000800000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000020000000000000000000100000000000000000000000000000000000000000000000",
+    "blockHash": "0x913495a88901d84cc945f57bacf8876b7739ae38ac70fe6f023eb4901cc35433",
+    "transactionHash": "0x237a31c5d6ba1e7b2771f6af14cbadea965b4870eaf581b267a51b0ac4e7bd97",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 645124,
+        "transactionHash": "0x237a31c5d6ba1e7b2771f6af14cbadea965b4870eaf581b267a51b0ac4e7bd97",
+        "address": "0x43acE867287db88bA0c84fF775345577c62a92c5",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000004f6f977acdd1177dcd81ab83074855ecb9c2d49e"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0x913495a88901d84cc945f57bacf8876b7739ae38ac70fe6f023eb4901cc35433"
+      }
+    ],
+    "blockNumber": 645124,
+    "cumulativeGasUsed": "718537",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x4F6F977aCDD1177DCD81aB83074855EcB9C2D49e"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "6c025873a9fc3a094245e39f39a9a187",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"FluidContractFactory__InvalidOperation\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"}],\"name\":\"LogContractDeployed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deployer\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint16\",\"name\":\"count\",\"type\":\"uint16\"}],\"name\":\"LogUpdateDeployer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"contractCode_\",\"type\":\"bytes\"}],\"name\":\"deployContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"deployer\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"nonce_\",\"type\":\"uint256\"}],\"name\":\"getContractAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalContracts\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"deployer_\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"count_\",\"type\":\"uint16\"}],\"name\":\"updateDeployer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"The main objective of this contract is to avoid storing contract addresses in our protocols which requires 160 bits of storage      Instead, we can just store the nonce & deployment of this address to calculate the address realtime using \\\"AddressCalcs\\\" library\",\"events\":{\"LogContractDeployed(address,uint256)\":{\"params\":{\"addr\":\"The address of the deployed contract\",\"nonce\":\"The nonce used for deployment\"}},\"LogUpdateDeployer(address,uint16)\":{\"params\":{\"count\":\"The new count for the deployer\",\"deployer\":\"The address of the deployer\"}}},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"owner_\":\"The address of the contract owner\"}},\"deployContract(bytes)\":{\"details\":\"Decrements the deployer's allowed deployments count if not the owner\",\"params\":{\"contractCode_\":\"The bytecode of the contract to deploy\"},\"returns\":{\"contractAddress_\":\"The address of the deployed contract\"}},\"getContractAddress(uint256)\":{\"params\":{\"nonce_\":\"The nonce to use for address calculation\"},\"returns\":{\"contractAddress_\":\"The calculated contract address\"}},\"updateDeployer(address,uint16)\":{\"details\":\"Only callable by the contract owner\",\"params\":{\"count_\":\"The new count for the deployer\",\"deployer_\":\"The address of the deployer\"}}},\"title\":\"FluidContractFactory\",\"version\":1},\"userdoc\":{\"errors\":{\"FluidContractFactory__InvalidOperation()\":[{\"notice\":\"Thrown when an invalid operation is attempted\"}]},\"events\":{\"LogContractDeployed(address,uint256)\":{\"notice\":\"Emitted when a new contract is deployed\"},\"LogUpdateDeployer(address,uint16)\":{\"notice\":\"Emitted when a deployer's count is updated\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Constructor to initialize the contract\"},\"deployContract(bytes)\":{\"notice\":\"Deploys a new contract\"},\"deployer(address)\":{\"notice\":\"Mapping to store the deployment count for each deployer\"},\"getContractAddress(uint256)\":{\"notice\":\"Calculates the address of a contract for a given nonce\"},\"totalContracts()\":{\"notice\":\"total number of contracts deployed\"},\"updateDeployer(address,uint16)\":{\"notice\":\"Updates the allowed deployments count for a specific deployer\"}},\"notice\":\"A contract that allows deployers to deploy any contract by passing the contract data in bytes\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/deployer/main.sol\":\"FluidContractFactory\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/deployer/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Owned } from \\\"solmate/src/auth/Owned.sol\\\";\\n\\nimport { AddressCalcs } from \\\"../libraries/addressCalcs.sol\\\";\\n\\n/// @title FluidContractFactory\\n/// @notice A contract that allows deployers to deploy any contract by passing the contract data in bytes\\n/// @dev The main objective of this contract is to avoid storing contract addresses in our protocols which requires 160 bits of storage\\n///      Instead, we can just store the nonce & deployment of this address to calculate the address realtime using \\\"AddressCalcs\\\" library\\ncontract FluidContractFactory is Owned {\\n    /// @notice Thrown when an invalid operation is attempted\\n    error FluidContractFactory__InvalidOperation();\\n\\n    /// @notice Emitted when a new contract is deployed\\n    /// @param addr The address of the deployed contract\\n    /// @param nonce The nonce used for deployment\\n    event LogContractDeployed(address indexed addr, uint256 indexed nonce);\\n\\n    /// @notice Emitted when a deployer's count is updated\\n    /// @param deployer The address of the deployer\\n    /// @param count The new count for the deployer\\n    event LogUpdateDeployer(address indexed deployer, uint16 indexed count);\\n\\n    /// @notice Mapping to store the deployment count for each deployer\\n    mapping(address => uint16) public deployer;\\n\\n    /// @notice total number of contracts deployed\\n    uint256 public totalContracts;\\n\\n    /// @notice Constructor to initialize the contract\\n    /// @param owner_ The address of the contract owner\\n    constructor(address owner_) Owned(owner_) {}\\n\\n    /// @notice Updates the allowed deployments count for a specific deployer\\n    /// @param deployer_ The address of the deployer\\n    /// @param count_ The new count for the deployer\\n    /// @dev Only callable by the contract owner\\n    function updateDeployer(address deployer_, uint16 count_) public onlyOwner {\\n        deployer[deployer_] = count_;\\n        emit LogUpdateDeployer(deployer_, count_);\\n    }\\n\\n    /// @notice Deploys a new contract\\n    /// @param contractCode_ The bytecode of the contract to deploy\\n    /// @return contractAddress_ The address of the deployed contract\\n    /// @dev Decrements the deployer's allowed deployments count if not the owner\\n    function deployContract(bytes calldata contractCode_) external returns (address contractAddress_) {\\n        if (msg.sender != owner) {\\n            // if deployer count is 0 then it'll underflow and hence solidity will throw error\\n            deployer[msg.sender] -= 1;\\n        }\\n\\n        uint256 nonce_ = ++totalContracts;\\n\\n        // compute contract address for nonce.\\n        contractAddress_ = getContractAddress(nonce_);\\n\\n        if (contractAddress_ != _deploy(contractCode_)) {\\n            revert FluidContractFactory__InvalidOperation();\\n        }\\n\\n        emit LogContractDeployed(contractAddress_, nonce_);\\n    }\\n\\n    /// @notice Calculates the address of a contract for a given nonce\\n    /// @param nonce_ The nonce to use for address calculation\\n    /// @return contractAddress_ The calculated contract address\\n    function getContractAddress(uint256 nonce_) public view returns (address contractAddress_) {\\n        return AddressCalcs.addressCalc(address(this), nonce_);\\n    }\\n\\n    /// @notice Internal function to deploy a contract\\n    /// @param bytecode_ The bytecode of the contract to deploy\\n    /// @return address_ The address of the deployed contract\\n    /// @dev Uses inline assembly for efficient deployment\\n    function _deploy(bytes memory bytecode_) internal returns (address address_) {\\n        if (bytecode_.length == 0) {\\n            revert FluidContractFactory__InvalidOperation();\\n        }\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            address_ := create(0, add(bytecode_, 0x20), mload(bytecode_))\\n        }\\n        if (address_ == address(0)) {\\n            revert FluidContractFactory__InvalidOperation();\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xc79666f77302df7c75175e95e2f3370998c9a08f56b470e5804d263f66cf23bc\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/addressCalcs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\n/// @notice implements calculation of address for contracts deployed through CREATE.\\n/// Accepts contract deployed from which address & nonce\\nlibrary AddressCalcs {\\n\\n    /// @notice                         Computes the address of a contract based\\n    /// @param deployedFrom_            Address from which the contract was deployed\\n    /// @param nonce_                   Nonce at which the contract was deployed\\n    /// @return contract_               Address of deployed contract\\n    function addressCalc(address deployedFrom_, uint nonce_) internal pure returns (address contract_) {\\n        // @dev based on https://ethereum.stackexchange.com/a/61413\\n\\n        // nonce of smart contract always starts with 1. so, with nonce 0 there won't be any deployment\\n        // hence, nonce of vault deployment starts with 1.\\n        bytes memory data;\\n        if (nonce_ == 0x00) {\\n            return address(0);\\n        } else if (nonce_ <= 0x7f) {\\n            data = abi.encodePacked(bytes1(0xd6), bytes1(0x94), deployedFrom_, uint8(nonce_));\\n        } else if (nonce_ <= 0xff) {\\n            data = abi.encodePacked(bytes1(0xd7), bytes1(0x94), deployedFrom_, bytes1(0x81), uint8(nonce_));\\n        } else if (nonce_ <= 0xffff) {\\n            data = abi.encodePacked(bytes1(0xd8), bytes1(0x94), deployedFrom_, bytes1(0x82), uint16(nonce_));\\n        } else if (nonce_ <= 0xffffff) {\\n            data = abi.encodePacked(bytes1(0xd9), bytes1(0x94), deployedFrom_, bytes1(0x83), uint24(nonce_));\\n        } else {\\n            data = abi.encodePacked(bytes1(0xda), bytes1(0x94), deployedFrom_, bytes1(0x84), uint32(nonce_));\\n        }\\n\\n        return address(uint160(uint256(keccak256(data))));\\n    }\\n\\n}\",\"keccak256\":\"0xed8e77dcf54703084c26a53b45d8139e5417488bc8f22a988c91b7813d132961\",\"license\":\"BUSL-1.1\"},\"solmate/src/auth/Owned.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\npragma solidity >=0.8.0;\\n\\n/// @notice Simple single owner authorization mixin.\\n/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Owned.sol)\\nabstract contract Owned {\\n    /*//////////////////////////////////////////////////////////////\\n                                 EVENTS\\n    //////////////////////////////////////////////////////////////*/\\n\\n    event OwnershipTransferred(address indexed user, address indexed newOwner);\\n\\n    /*//////////////////////////////////////////////////////////////\\n                            OWNERSHIP STORAGE\\n    //////////////////////////////////////////////////////////////*/\\n\\n    address public owner;\\n\\n    modifier onlyOwner() virtual {\\n        require(msg.sender == owner, \\\"UNAUTHORIZED\\\");\\n\\n        _;\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                               CONSTRUCTOR\\n    //////////////////////////////////////////////////////////////*/\\n\\n    constructor(address _owner) {\\n        owner = _owner;\\n\\n        emit OwnershipTransferred(address(0), _owner);\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                             OWNERSHIP LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        owner = newOwner;\\n\\n        emit OwnershipTransferred(msg.sender, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xfedb27d14c508342c33eb067c9a02eabcdb0f9dcf93b04ded1001f580d12d0ea\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610c72380380610c7283398101604081905261002f9161007e565b600080546001600160a01b0319166001600160a01b03831690811782556040518392907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a350506100ae565b60006020828403121561009057600080fd5b81516001600160a01b03811681146100a757600080fd5b9392505050565b610bb5806100bd6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063a7e042b31161005b578063a7e042b3146100f6578063aefa7d981461010b578063b9caf9d91461011e578063f2fde38b1461015557600080fd5b8063798133dd146100825780638da5cb5b146100bf578063a09037a9146100df575b600080fd5b6100956100903660046109e7565b610168565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b6000546100959073ffffffffffffffffffffffffffffffffffffffff1681565b6100e860025481565b6040519081526020016100b6565b610109610104366004610a7d565b6102d9565b005b610095610119366004610abb565b6103e0565b61014261012c366004610ad4565b60016020526000908152604090205461ffff1681565b60405161ffff90911681526020016100b6565b610109610163366004610ad4565b6103f2565b6000805473ffffffffffffffffffffffffffffffffffffffff1633146101c95733600090815260016020819052604082208054919290916101ae90849061ffff16610b25565b92506101000a81548161ffff021916908361ffff1602179055505b60006002600081546101da90610b47565b918290555090506101ea816103e0565b915061022b84848080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152506104e392505050565b73ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161461028f576040517fd1bf1e2d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b604051819073ffffffffffffffffffffffffffffffffffffffff8416907f511b2c8f5fa0dbd58000435f9f090fff2fea17afb6a93d4b42269e91fb8122bd90600090a35092915050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461035f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064015b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff821660008181526001602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00001661ffff861690811790915590519092917fa31a54a42cb8a0d27fbdc5b388a008e53701c95de4a199f0ff33ac6929cd4e1c91a35050565b60006103ec308361057d565b92915050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610473576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a454400000000000000000000000000000000000000006044820152606401610356565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081178255604051909133917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a350565b60008151600003610520576040517fd1bf1e2d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8151602083016000f0905073ffffffffffffffffffffffffffffffffffffffff8116610578576040517fd1bf1e2d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b919050565b60006060826000036105935760009150506103ec565b607f831161065c576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b60405160208183030381529060405290506109d8565b60ff8311610739576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801610646565b61ffff8311610817576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901610646565b62ffffff83116108f6576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01610646565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b80516020909101209392505050565b600080602083850312156109fa57600080fd5b823567ffffffffffffffff80821115610a1257600080fd5b818501915085601f830112610a2657600080fd5b813581811115610a3557600080fd5b866020828501011115610a4757600080fd5b60209290920196919550909350505050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461057857600080fd5b60008060408385031215610a9057600080fd5b610a9983610a59565b9150602083013561ffff81168114610ab057600080fd5b809150509250929050565b600060208284031215610acd57600080fd5b5035919050565b600060208284031215610ae657600080fd5b610aef82610a59565b9392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b61ffff828116828216039080821115610b4057610b40610af6565b5092915050565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203610b7857610b78610af6565b506001019056fea2646970667358221220e5d7b38acc2ddb6afd7098bda1b4a82707da7d0085aea196fa525162547d763a64736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c8063a7e042b31161005b578063a7e042b3146100f6578063aefa7d981461010b578063b9caf9d91461011e578063f2fde38b1461015557600080fd5b8063798133dd146100825780638da5cb5b146100bf578063a09037a9146100df575b600080fd5b6100956100903660046109e7565b610168565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b6000546100959073ffffffffffffffffffffffffffffffffffffffff1681565b6100e860025481565b6040519081526020016100b6565b610109610104366004610a7d565b6102d9565b005b610095610119366004610abb565b6103e0565b61014261012c366004610ad4565b60016020526000908152604090205461ffff1681565b60405161ffff90911681526020016100b6565b610109610163366004610ad4565b6103f2565b6000805473ffffffffffffffffffffffffffffffffffffffff1633146101c95733600090815260016020819052604082208054919290916101ae90849061ffff16610b25565b92506101000a81548161ffff021916908361ffff1602179055505b60006002600081546101da90610b47565b918290555090506101ea816103e0565b915061022b84848080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152506104e392505050565b73ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161461028f576040517fd1bf1e2d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b604051819073ffffffffffffffffffffffffffffffffffffffff8416907f511b2c8f5fa0dbd58000435f9f090fff2fea17afb6a93d4b42269e91fb8122bd90600090a35092915050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461035f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064015b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff821660008181526001602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00001661ffff861690811790915590519092917fa31a54a42cb8a0d27fbdc5b388a008e53701c95de4a199f0ff33ac6929cd4e1c91a35050565b60006103ec308361057d565b92915050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610473576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a454400000000000000000000000000000000000000006044820152606401610356565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081178255604051909133917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a350565b60008151600003610520576040517fd1bf1e2d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8151602083016000f0905073ffffffffffffffffffffffffffffffffffffffff8116610578576040517fd1bf1e2d00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b919050565b60006060826000036105935760009150506103ec565b607f831161065c576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b60405160208183030381529060405290506109d8565b60ff8311610739576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801610646565b61ffff8311610817576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901610646565b62ffffff83116108f6576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01610646565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b80516020909101209392505050565b600080602083850312156109fa57600080fd5b823567ffffffffffffffff80821115610a1257600080fd5b818501915085601f830112610a2657600080fd5b813581811115610a3557600080fd5b866020828501011115610a4757600080fd5b60209290920196919550909350505050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461057857600080fd5b60008060408385031215610a9057600080fd5b610a9983610a59565b9150602083013561ffff81168114610ab057600080fd5b809150509250929050565b600060208284031215610acd57600080fd5b5035919050565b600060208284031215610ae657600080fd5b610aef82610a59565b9392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b61ffff828116828216039080821115610b4057610b40610af6565b5092915050565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203610b7857610b78610af6565b506001019056fea2646970667358221220e5d7b38acc2ddb6afd7098bda1b4a82707da7d0085aea196fa525162547d763a64736f6c63430008150033",
+  "devdoc": {
+    "details": "The main objective of this contract is to avoid storing contract addresses in our protocols which requires 160 bits of storage      Instead, we can just store the nonce & deployment of this address to calculate the address realtime using \"AddressCalcs\" library",
+    "events": {
+      "LogContractDeployed(address,uint256)": {
+        "params": {
+          "addr": "The address of the deployed contract",
+          "nonce": "The nonce used for deployment"
+        }
+      },
+      "LogUpdateDeployer(address,uint16)": {
+        "params": {
+          "count": "The new count for the deployer",
+          "deployer": "The address of the deployer"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "owner_": "The address of the contract owner"
+        }
+      },
+      "deployContract(bytes)": {
+        "details": "Decrements the deployer's allowed deployments count if not the owner",
+        "params": {
+          "contractCode_": "The bytecode of the contract to deploy"
+        },
+        "returns": {
+          "contractAddress_": "The address of the deployed contract"
+        }
+      },
+      "getContractAddress(uint256)": {
+        "params": {
+          "nonce_": "The nonce to use for address calculation"
+        },
+        "returns": {
+          "contractAddress_": "The calculated contract address"
+        }
+      },
+      "updateDeployer(address,uint16)": {
+        "details": "Only callable by the contract owner",
+        "params": {
+          "count_": "The new count for the deployer",
+          "deployer_": "The address of the deployer"
+        }
+      }
+    },
+    "title": "FluidContractFactory",
+    "version": 1
+  },
+  "userdoc": {
+    "errors": {
+      "FluidContractFactory__InvalidOperation()": [
+        {
+          "notice": "Thrown when an invalid operation is attempted"
+        }
+      ]
+    },
+    "events": {
+      "LogContractDeployed(address,uint256)": {
+        "notice": "Emitted when a new contract is deployed"
+      },
+      "LogUpdateDeployer(address,uint16)": {
+        "notice": "Emitted when a deployer's count is updated"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "Constructor to initialize the contract"
+      },
+      "deployContract(bytes)": {
+        "notice": "Deploys a new contract"
+      },
+      "deployer(address)": {
+        "notice": "Mapping to store the deployment count for each deployer"
+      },
+      "getContractAddress(uint256)": {
+        "notice": "Calculates the address of a contract for a given nonce"
+      },
+      "totalContracts()": {
+        "notice": "total number of contracts deployed"
+      },
+      "updateDeployer(address,uint16)": {
+        "notice": "Updates the allowed deployments count for a specific deployer"
+      }
+    },
+    "notice": "A contract that allows deployers to deploy any contract by passing the contract data in bytes",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 133554,
+        "contract": "contracts/deployer/main.sol:FluidContractFactory",
+        "label": "owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 17482,
+        "contract": "contracts/deployer/main.sol:FluidContractFactory",
+        "label": "deployer",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_uint16)"
+      },
+      {
+        "astId": 17485,
+        "contract": "contracts/deployer/main.sol:FluidContractFactory",
+        "label": "totalContracts",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_uint16)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint16)",
+        "numberOfBytes": "32",
+        "value": "t_uint16"
+      },
+      "t_uint16": {
+        "encoding": "inplace",
+        "label": "uint16",
+        "numberOfBytes": "2"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

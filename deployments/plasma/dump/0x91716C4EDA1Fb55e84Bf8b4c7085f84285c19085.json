@@ -1,0 +1,882 @@
+{
+  "address": "0x91716C4EDA1Fb55e84Bf8b4c7085f84285c19085",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexError",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexFactoryError",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "shares_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexLiquidityOutput",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "token0Amt",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "token1Amt",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexPerfectLiquidityOutput",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "lastStoredPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "centerPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperRange",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerRange",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "geometricMean",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyToken0ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "borrowToken0ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyToken1ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "borrowToken1ExchangePrice",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.PricesAndExchangePrice",
+          "name": "pex_",
+          "type": "tuple"
+        }
+      ],
+      "name": "FluidDexPricesAndExchangeRates",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenAmt",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexSingleTokenOutput",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexSwapResult",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "dex",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "dexId",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogDexDeployed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "deployer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bool",
+          "name": "allowed",
+          "type": "bool"
+        }
+      ],
+      "name": "LogSetDeployer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "dexAuth",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bool",
+          "name": "allowed",
+          "type": "bool"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "dex",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetDexAuth",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "dexDeploymentLogic",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bool",
+          "name": "allowed",
+          "type": "bool"
+        }
+      ],
+      "name": "LogSetDexDeploymentLogic",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "globalAuth",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bool",
+          "name": "allowed",
+          "type": "bool"
+        }
+      ],
+      "name": "LogSetGlobalAuth",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dexDeploymentLogic_",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "dexDeploymentData_",
+          "type": "bytes"
+        }
+      ],
+      "name": "deployDex",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "dexId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getDexAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "deployer_",
+          "type": "address"
+        }
+      ],
+      "name": "isDeployer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "name": "isDex",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "dexAuth_",
+          "type": "address"
+        }
+      ],
+      "name": "isDexAuth",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dexDeploymentLogic_",
+          "type": "address"
+        }
+      ],
+      "name": "isDexDeploymentLogic",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "globalAuth_",
+          "type": "address"
+        }
+      ],
+      "name": "isGlobalAuth",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "slot_",
+          "type": "bytes32"
+        }
+      ],
+      "name": "readFromStorage",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "result_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "deployer_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowed_",
+          "type": "bool"
+        }
+      ],
+      "name": "setDeployer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "dexAuth_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowed_",
+          "type": "bool"
+        }
+      ],
+      "name": "setDexAuth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "deploymentLogic_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowed_",
+          "type": "bool"
+        }
+      ],
+      "name": "setDexDeploymentLogic",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "globalAuth_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowed_",
+          "type": "bool"
+        }
+      ],
+      "name": "setGlobalAuth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target_",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data_",
+          "type": "bytes"
+        }
+      ],
+      "name": "spell",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "response_",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalDexes",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x3492fc655650d4114ac0513b957ca5691ee82767a402e780e7064618410cce25",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 0,
+    "gasUsed": "1379141",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000002020000000000000000000800000000000000000000000000000000400000000080000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000001000000000000000020000000000000000000100000000000000000000000000000000000000000000000",
+    "blockHash": "0x3b70817451b580295c7d089f887c574c6a49bb901a48429dbc25b6a336734fa1",
+    "transactionHash": "0x3492fc655650d4114ac0513b957ca5691ee82767a402e780e7064618410cce25",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 646099,
+        "transactionHash": "0x3492fc655650d4114ac0513b957ca5691ee82767a402e780e7064618410cce25",
+        "address": "0x91716C4EDA1Fb55e84Bf8b4c7085f84285c19085",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000004f6f977acdd1177dcd81ab83074855ecb9c2d49e"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0x3b70817451b580295c7d089f887c574c6a49bb901a48429dbc25b6a336734fa1"
+      }
+    ],
+    "blockNumber": 646099,
+    "cumulativeGasUsed": "1379141",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x4F6F977aCDD1177DCD81aB83074855EcB9C2D49e"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "c1d22caa51af6df12085ad748647dbfb",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidDexError\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId\",\"type\":\"uint256\"}],\"name\":\"FluidDexFactoryError\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares_\",\"type\":\"uint256\"}],\"name\":\"FluidDexLiquidityOutput\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"token0Amt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Amt\",\"type\":\"uint256\"}],\"name\":\"FluidDexPerfectLiquidityOutput\",\"type\":\"error\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"lastStoredPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperRange\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRange\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"geometricMean\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyToken0ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"borrowToken0ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyToken1ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"borrowToken1ExchangePrice\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.PricesAndExchangePrice\",\"name\":\"pex_\",\"type\":\"tuple\"}],\"name\":\"FluidDexPricesAndExchangeRates\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenAmt\",\"type\":\"uint256\"}],\"name\":\"FluidDexSingleTokenOutput\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"name\":\"FluidDexSwapResult\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"dex\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"dexId\",\"type\":\"uint256\"}],\"name\":\"LogDexDeployed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deployer\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bool\",\"name\":\"allowed\",\"type\":\"bool\"}],\"name\":\"LogSetDeployer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"dexAuth\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bool\",\"name\":\"allowed\",\"type\":\"bool\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"dex\",\"type\":\"address\"}],\"name\":\"LogSetDexAuth\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"dexDeploymentLogic\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bool\",\"name\":\"allowed\",\"type\":\"bool\"}],\"name\":\"LogSetDexDeploymentLogic\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"globalAuth\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bool\",\"name\":\"allowed\",\"type\":\"bool\"}],\"name\":\"LogSetGlobalAuth\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dexDeploymentLogic_\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"dexDeploymentData_\",\"type\":\"bytes\"}],\"name\":\"deployDex\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"dexId_\",\"type\":\"uint256\"}],\"name\":\"getDexAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"deployer_\",\"type\":\"address\"}],\"name\":\"isDeployer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"name\":\"isDex\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"dexAuth_\",\"type\":\"address\"}],\"name\":\"isDexAuth\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dexDeploymentLogic_\",\"type\":\"address\"}],\"name\":\"isDexDeploymentLogic\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"globalAuth_\",\"type\":\"address\"}],\"name\":\"isGlobalAuth\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"slot_\",\"type\":\"bytes32\"}],\"name\":\"readFromStorage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"result_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"deployer_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"allowed_\",\"type\":\"bool\"}],\"name\":\"setDeployer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"dexAuth_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"allowed_\",\"type\":\"bool\"}],\"name\":\"setDexAuth\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"deploymentLogic_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"allowed_\",\"type\":\"bool\"}],\"name\":\"setDexDeploymentLogic\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"globalAuth_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"allowed_\",\"type\":\"bool\"}],\"name\":\"setGlobalAuth\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target_\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data_\",\"type\":\"bytes\"}],\"name\":\"spell\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"response_\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalDexes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Note the deployed dexes start out with no config at Liquidity contract. This must be done by Liquidity auths in a separate step, otherwise no deposits will be possible. This contract is not upgradeable. It supports adding new dex deployment logic contracts for new, future dexes.\",\"events\":{\"LogDexDeployed(address,uint256)\":{\"details\":\"Emitted when a new dex is deployed.\",\"params\":{\"dex\":\"The address of the newly deployed dex.\",\"dexId\":\"The id of the newly deployed dex.\"}},\"LogSetDeployer(address,bool)\":{\"details\":\"Emitted when the deployer is modified by owner.\",\"params\":{\"allowed\":\"Indicates whether the address is authorized as a deployer or not.\",\"deployer\":\"Address whose deployer status is updated.\"}},\"LogSetDexAuth(address,bool,address)\":{\"details\":\"Emitted when the dexAuth is modified by owner.\",\"params\":{\"allowed\":\"Indicates whether the address is authorized as a deployer or not.\",\"dex\":\"Address of the specific dex related to the authorization change.\",\"dexAuth\":\"Address whose dexAuth status is updated.\"}},\"LogSetDexDeploymentLogic(address,bool)\":{\"details\":\"Emitted when the dex deployment logic is modified by owner.\",\"params\":{\"allowed\":\"Indicates whether the address is authorized as a deployer or not.\",\"dexDeploymentLogic\":\"The address of the dex deployment logic contract.\"}},\"LogSetGlobalAuth(address,bool)\":{\"details\":\"Emitted when the globalAuth is modified by owner.\",\"params\":{\"allowed\":\"Indicates whether the address is authorized as a deployer or not.\",\"globalAuth\":\"Address whose globalAuth status is updated.\"}}},\"kind\":\"dev\",\"methods\":{\"deployDex(address,bytes)\":{\"params\":{\"dexDeploymentData_\":\"The data to be used for dex deployment.\",\"dexDeploymentLogic_\":\"The address of the dex deployment logic contract.\"},\"returns\":{\"dex_\":\"                 Returns the address of the newly deployed dex.\"}},\"getDexAddress(uint256)\":{\"params\":{\"dexId_\":\"The ID of the dex.\"},\"returns\":{\"dex_\":\"                 Returns the computed address of the dex.\"}},\"isDeployer(address)\":{\"params\":{\"deployer_\":\"The address to be checked for deployer authorization.\"},\"returns\":{\"_0\":\"Returns `true` if the address is a deployer, otherwise `false`.\"}},\"isDex(address)\":{\"params\":{\"dex_\":\"The dex address to check.\"},\"returns\":{\"_0\":\"Returns `true` if the given address corresponds to a valid dex, otherwise `false`.\"}},\"isDexAuth(address,address)\":{\"params\":{\"dexAuth_\":\"The address to be checked for dex authorization privileges.\",\"dex_\":\"The address of the dex to check.\"},\"returns\":{\"_0\":\"Returns `true` if the given address has dex authorization privileges for the specified dex, otherwise `false`.\"}},\"isDexDeploymentLogic(address)\":{\"params\":{\"dexDeploymentLogic_\":\"The address of the dex deploy logic to check for authorization privileges.\"},\"returns\":{\"_0\":\"Returns `true` if the given address has authorization privileges for dex deployment, otherwise `false`.\"}},\"isGlobalAuth(address)\":{\"params\":{\"globalAuth_\":\"The address to be checked for global authorization privileges.\"},\"returns\":{\"_0\":\"Returns `true` if the given address has global authorization privileges, otherwise `false`.\"}},\"setDeployer(address,bool)\":{\"params\":{\"allowed_\":\"A boolean indicating whether the specified address is allowed to deploy dexes.\",\"deployer_\":\"The address to be set as deployer.\"}},\"setDexAuth(address,address,bool)\":{\"params\":{\"allowed_\":\"A boolean indicating whether the specified address is allowed to update the specific dex config.\",\"dexAuth_\":\"The address to be set as dex authorization.\",\"dex_\":\"The address of the dex for which the authorization is being set.\"}},\"setDexDeploymentLogic(address,bool)\":{\"params\":{\"allowed_\":\"A boolean indicating whether the specified address is allowed to deploy new type of dex.\",\"deploymentLogic_\":\"The address of the dex deployment logic contract to be set.\"}},\"setGlobalAuth(address,bool)\":{\"params\":{\"allowed_\":\"A boolean indicating whether the specified address is allowed to update any dex config.\",\"globalAuth_\":\"The address to be set as global authorization.\"}},\"spell(address,bytes)\":{\"params\":{\"data_\":\"Data to execute at the delegated address\",\"target_\":\"Address to which the call needs to be delegated\"}},\"totalDexes()\":{\"returns\":{\"_0\":\"Returns the total number of dexes.\"}}},\"title\":\"Fluid DexFactory\",\"version\":1},\"userdoc\":{\"errors\":{\"FluidDexSwapResult(uint256)\":[{\"notice\":\"used to simulate swap to find the output amount\"}]},\"kind\":\"user\",\"methods\":{\"deployDex(address,bytes)\":{\"notice\":\"Deploys a new dex using the specified deployment logic `dexDeploymentLogic_` and data `dexDeploymentData_`.                               Only accounts with deployer access or the owner can deploy a new dex.\"},\"getDexAddress(uint256)\":{\"notice\":\"Computes the address of a dex based on its given ID (`dexId_`).\"},\"isDeployer(address)\":{\"notice\":\"Checks if the provided address (`deployer_`) is authorized as a deployer.\"},\"isDex(address)\":{\"notice\":\"Checks if a given address (`dex_`) corresponds to a valid dex.\"},\"isDexAuth(address,address)\":{\"notice\":\"Checks if the provided address (`dexAuth_`) has dex authorization privileges for the specified dex (`dex_`).\"},\"isDexDeploymentLogic(address)\":{\"notice\":\"Checks if the provided (`dexDeploymentLogic_`) address has authorization for dex deployment.\"},\"isGlobalAuth(address)\":{\"notice\":\"Checks if the provided address (`globalAuth_`) has global dex authorization privileges.\"},\"setDeployer(address,bool)\":{\"notice\":\"Sets an address (`deployer_`) as allowed deployer or not.                                 This function can only be called by the owner.\"},\"setDexAuth(address,address,bool)\":{\"notice\":\"Sets an address (`dexAuth_`) as allowed dex authorization or not for a specific dex (`dex_`).                                 This function can only be called by the owner.\"},\"setDexDeploymentLogic(address,bool)\":{\"notice\":\"Sets an address as allowed dex deployment logic (`deploymentLogic_`) contract or not.                                 This function can only be called by the owner.\"},\"setGlobalAuth(address,bool)\":{\"notice\":\"Sets an address (`globalAuth_`) as a global authorization or not.                                 This function can only be called by the owner.\"},\"spell(address,bytes)\":{\"notice\":\"Spell allows owner aka governance to do any arbitrary call on factory\"},\"totalDexes()\":{\"notice\":\"Returns the total number of dexes deployed by the factory.\"}},\"notice\":\"creates Fluid dex protocol dexes, which are interacting with Fluid Liquidity to deposit / borrow funds. Dexes are created at a deterministic address, given an incrementing `dexId` (see `getDexAddress()`). Dexes can only be deployed by allow-listed deployer addresses.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/protocols/dex/factory/main.sol\":\"FluidDexFactory\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/libraries/addressCalcs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @notice implements calculation of address for contracts deployed through CREATE.\\n/// Accepts contract deployed from which address & nonce\\nlibrary AddressCalcs {\\n\\n    /// @notice                         Computes the address of a contract based\\n    /// @param deployedFrom_            Address from which the contract was deployed\\n    /// @param nonce_                   Nonce at which the contract was deployed\\n    /// @return contract_               Address of deployed contract\\n    function addressCalc(address deployedFrom_, uint nonce_) internal pure returns (address contract_) {\\n        // @dev based on https://ethereum.stackexchange.com/a/61413\\n\\n        // nonce of smart contract always starts with 1. so, with nonce 0 there won't be any deployment\\n        // hence, nonce of vault deployment starts with 1.\\n        bytes memory data;\\n        if (nonce_ == 0x00) {\\n            return address(0);\\n        } else if (nonce_ <= 0x7f) {\\n            data = abi.encodePacked(bytes1(0xd6), bytes1(0x94), deployedFrom_, uint8(nonce_));\\n        } else if (nonce_ <= 0xff) {\\n            data = abi.encodePacked(bytes1(0xd7), bytes1(0x94), deployedFrom_, bytes1(0x81), uint8(nonce_));\\n        } else if (nonce_ <= 0xffff) {\\n            data = abi.encodePacked(bytes1(0xd8), bytes1(0x94), deployedFrom_, bytes1(0x82), uint16(nonce_));\\n        } else if (nonce_ <= 0xffffff) {\\n            data = abi.encodePacked(bytes1(0xd9), bytes1(0x94), deployedFrom_, bytes1(0x83), uint24(nonce_));\\n        } else {\\n            data = abi.encodePacked(bytes1(0xda), bytes1(0x94), deployedFrom_, bytes1(0x84), uint32(nonce_));\\n        }\\n\\n        return address(uint160(uint256(keccak256(data))));\\n    }\\n\\n}\",\"keccak256\":\"0xca389bcfef035463ff43939ac5eccab07ab74cbb053e201541f9bcd846b3105a\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/storageRead.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @notice implements a method to read uint256 data from storage at a bytes32 storage slot key.\\ncontract StorageRead {\\n    function readFromStorage(bytes32 slot_) public view returns (uint256 result_) {\\n        assembly {\\n            result_ := sload(slot_) // read value from the storage slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x1b03dfe294c2f0376f7e34c3960fe7088d7ff44bb2ffd9cb2ac940486bfba8c9\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/error.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Structs } from \\\"./poolT1/coreModule/structs.sol\\\";\\n\\nabstract contract Error {\\n    error FluidDexError(uint256 errorId_);\\n\\n    error FluidDexFactoryError(uint256 errorId);\\n\\n    /// @notice used to simulate swap to find the output amount\\n    error FluidDexSwapResult(uint256 amountOut);\\n\\n    error FluidDexPerfectLiquidityOutput(uint256 token0Amt, uint token1Amt);\\n\\n    error FluidDexSingleTokenOutput(uint256 tokenAmt);\\n\\n    error FluidDexLiquidityOutput(uint256 shares_);\\n\\n    error FluidDexPricesAndExchangeRates(Structs.PricesAndExchangePrice pex_);\\n}\\n\",\"keccak256\":\"0xfb70930e36c5c0d60e06fb1be8a6fffdfbc17d0ae9745582f4dda666e3b010aa\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |             DexT1                 | \\n    |__________________________________*/\\n\\n    /// @notice thrown at reentrancy\\n    uint256 internal constant DexT1__AlreadyEntered = 51001;\\n\\n    uint256 internal constant DexT1__NotAnAuth = 51002;\\n\\n    uint256 internal constant DexT1__SmartColNotEnabled = 51003;\\n\\n    uint256 internal constant DexT1__SmartDebtNotEnabled = 51004;\\n\\n    uint256 internal constant DexT1__PoolNotInitialized = 51005;\\n\\n    uint256 internal constant DexT1__TokenReservesTooLow = 51006;\\n\\n    uint256 internal constant DexT1__EthAndAmountInMisMatch = 51007;\\n\\n    uint256 internal constant DexT1__EthSentForNonNativeSwap = 51008;\\n\\n    uint256 internal constant DexT1__NoSwapRoute = 51009;\\n\\n    uint256 internal constant DexT1__NotEnoughAmountOut = 51010;\\n\\n    uint256 internal constant DexT1__LiquidityLayerTokenUtilizationCapReached = 51011;\\n\\n    uint256 internal constant DexT1__HookReturnedFalse = 51012;\\n\\n    // Either user's config are not set or user is paused\\n    uint256 internal constant DexT1__UserSupplyInNotOn = 51013;\\n\\n    // Either user's config are not set or user is paused\\n    uint256 internal constant DexT1__UserDebtInNotOn = 51014;\\n\\n    // Thrown when contract asks for more token0 or token1 than what user's wants to give on deposit\\n    uint256 internal constant DexT1__AboveDepositMax = 51015;\\n\\n    uint256 internal constant DexT1__MsgValueLowOnDepositOrPayback = 51016;\\n\\n    uint256 internal constant DexT1__WithdrawLimitReached = 51017;\\n\\n    // Thrown when contract gives less token0 or token1 than what user's wants on withdraw\\n    uint256 internal constant DexT1__BelowWithdrawMin = 51018;\\n\\n    uint256 internal constant DexT1__DebtLimitReached = 51019;\\n\\n    // Thrown when contract gives less token0 or token1 than what user's wants on borrow\\n    uint256 internal constant DexT1__BelowBorrowMin = 51020;\\n\\n    // Thrown when contract asks for more token0 or token1 than what user's wants on payback\\n    uint256 internal constant DexT1__AbovePaybackMax = 51021;\\n\\n    uint256 internal constant DexT1__InvalidDepositAmts = 51022;\\n\\n    uint256 internal constant DexT1__DepositAmtsZero = 51023;\\n\\n    uint256 internal constant DexT1__SharesMintedLess = 51024;\\n\\n    uint256 internal constant DexT1__WithdrawalNotEnough = 51025;\\n\\n    uint256 internal constant DexT1__InvalidWithdrawAmts = 51026;\\n\\n    uint256 internal constant DexT1__WithdrawAmtsZero = 51027;\\n\\n    uint256 internal constant DexT1__WithdrawExcessSharesBurn = 51028;\\n\\n    uint256 internal constant DexT1__InvalidBorrowAmts = 51029;\\n\\n    uint256 internal constant DexT1__BorrowAmtsZero = 51030;\\n\\n    uint256 internal constant DexT1__BorrowExcessSharesMinted = 51031;\\n\\n    uint256 internal constant DexT1__PaybackAmtTooHigh = 51032;\\n\\n    uint256 internal constant DexT1__InvalidPaybackAmts = 51033;\\n\\n    uint256 internal constant DexT1__PaybackAmtsZero = 51034;\\n\\n    uint256 internal constant DexT1__PaybackSharedBurnedLess = 51035;\\n\\n    uint256 internal constant DexT1__NothingToArbitrage = 51036;\\n\\n    uint256 internal constant DexT1__MsgSenderNotLiquidity = 51037;\\n\\n    // On liquidity callback reentrancy bit should be on\\n    uint256 internal constant DexT1__ReentrancyBitShouldBeOn = 51038;\\n\\n    // Thrown is reentrancy is already on and someone tries to fetch oracle price. Should not be possible to this\\n    uint256 internal constant DexT1__OraclePriceFetchAlreadyEntered = 51039;\\n\\n    // Thrown when swap changes the current price by more than 5%\\n    uint256 internal constant DexT1__OracleUpdateHugeSwapDiff = 51040;\\n\\n    uint256 internal constant DexT1__Token0ShouldBeSmallerThanToken1 = 51041;\\n\\n    uint256 internal constant DexT1__OracleMappingOverflow = 51042;\\n\\n    /// @notice thrown if governance has paused the swapping & arbitrage so only perfect functions are usable\\n    uint256 internal constant DexT1__SwapAndArbitragePaused = 51043;\\n\\n    uint256 internal constant DexT1__ExceedsAmountInMax = 51044;\\n\\n    /// @notice thrown if amount in is too high or too low\\n    uint256 internal constant DexT1__SwapInLimitingAmounts = 51045;\\n\\n    /// @notice thrown if amount out is too high or too low\\n    uint256 internal constant DexT1__SwapOutLimitingAmounts = 51046;\\n\\n    uint256 internal constant DexT1__MintAmtOverflow = 51047;\\n\\n    uint256 internal constant DexT1__BurnAmtOverflow = 51048;\\n\\n    uint256 internal constant DexT1__LimitingAmountsSwapAndNonPerfectActions = 51049;\\n\\n    uint256 internal constant DexT1__InsufficientOracleData = 51050;\\n\\n    uint256 internal constant DexT1__SharesAmountInsufficient = 51051;\\n\\n    uint256 internal constant DexT1__CenterPriceOutOfRange = 51052;\\n\\n    uint256 internal constant DexT1__DebtReservesTooLow = 51053;\\n\\n    uint256 internal constant DexT1__SwapAndDepositTooLowOrTooHigh = 51054;\\n\\n    uint256 internal constant DexT1__WithdrawAndSwapTooLowOrTooHigh = 51055;\\n\\n    uint256 internal constant DexT1__BorrowAndSwapTooLowOrTooHigh = 51056;\\n\\n    uint256 internal constant DexT1__SwapAndPaybackTooLowOrTooHigh = 51057;\\n\\n    uint256 internal constant DexT1__InvalidImplementation = 51058;\\n\\n    uint256 internal constant DexT1__OnlyDelegateCallAllowed = 51059;\\n\\n    uint256 internal constant DexT1__IncorrectDataLength = 51060;\\n\\n    uint256 internal constant DexT1__AmountToSendLessThanAmount = 51061;\\n\\n    uint256 internal constant DexT1__InvalidCollateralReserves = 51062;\\n\\n    uint256 internal constant DexT1__InvalidDebtReserves = 51063;\\n\\n    uint256 internal constant DexT1__SupplySharesOverflow = 51064;\\n\\n    uint256 internal constant DexT1__BorrowSharesOverflow = 51065;\\n\\n    uint256 internal constant DexT1__OracleNotActive = 51066;\\n\\n    /***********************************|\\n    |            DEX Admin              | \\n    |__________________________________*/\\n\\n    /// @notice thrown when pool is not initialized\\n    uint256 internal constant DexT1Admin__PoolNotInitialized = 52001;\\n\\n    uint256 internal constant DexT1Admin__SmartColIsAlreadyOn = 52002;\\n\\n    uint256 internal constant DexT1Admin__SmartDebtIsAlreadyOn = 52003;\\n\\n    /// @notice thrown when any of the configs value overflow the maximum limit\\n    uint256 internal constant DexT1Admin__ConfigOverflow = 52004;\\n\\n    uint256 internal constant DexT1Admin__AddressNotAContract = 52005;\\n\\n    uint256 internal constant DexT1Admin__InvalidParams = 52006;\\n\\n    uint256 internal constant DexT1Admin__UserNotDefined = 52007;\\n\\n    uint256 internal constant DexT1Admin__OnlyDelegateCallAllowed = 52008;\\n\\n    uint256 internal constant DexT1Admin__UnexpectedPoolState = 52009;\\n\\n    /// @notice thrown when trying to pause or unpause but user is already in the target pause state\\n    uint256 internal constant DexT1Admin__InvalidPauseToggle = 52009;\\n\\n    /***********************************|\\n    |            DEX Factory            | \\n    |__________________________________*/\\n\\n    uint256 internal constant DexFactory__InvalidOperation = 53001;\\n    uint256 internal constant DexFactory__Unauthorized = 53002;\\n    uint256 internal constant DexFactory__SameTokenNotAllowed = 53003;\\n    uint256 internal constant DexFactory__TokenConfigNotProper = 53004;\\n    uint256 internal constant DexFactory__InvalidParams = 53005;\\n    uint256 internal constant DexFactory__OnlyDelegateCallAllowed = 53006;\\n    uint256 internal constant DexFactory__InvalidDexAddress = 53007;\\n}\\n\",\"keccak256\":\"0xc1f51cbf40f6b5c904a1f3a455dc76ef6d4ab9625e1f604d11b72670a268b6fb\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/factory/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Owned } from \\\"solmate/src/auth/Owned.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { Error } from \\\"../error.sol\\\";\\nimport { AddressCalcs } from \\\"../../../libraries/addressCalcs.sol\\\";\\nimport { StorageRead } from \\\"../../../libraries/storageRead.sol\\\";\\n\\nabstract contract DexFactoryVariables is Owned, StorageRead, Error {\\n    /*//////////////////////////////////////////////////////////////\\n                          STORAGE VARIABLES\\n    //////////////////////////////////////////////////////////////*/\\n\\n    // ------------ storage variables from inherited contracts (Owned) come before vars here --------\\n\\n    // ----------------------- slot 0 ---------------------------\\n    // address public owner; // from Owned\\n\\n    // 12 bytes empty\\n\\n    // ----------------------- slot 1  ---------------------------\\n    /// @dev deployer can deploy new Dex Pool contract\\n    /// owner can add/remove deployer.\\n    /// Owner is deployer by default.\\n    mapping(address => bool) internal _deployers;\\n\\n    // ----------------------- slot 2  ---------------------------\\n    /// @dev global auths can update any dex pool config.\\n    /// owner can add/remove global auths.\\n    /// Owner is global auth by default.\\n    mapping(address => bool) internal _globalAuths;\\n\\n    // ----------------------- slot 3  ---------------------------\\n    /// @dev dex auths can update specific dex config.\\n    /// owner can add/remove dex auths.\\n    /// Owner is dex auth by default.\\n    /// dex => auth => add/remove\\n    mapping(address => mapping(address => bool)) internal _dexAuths;\\n\\n    // ----------------------- slot 4 ---------------------------\\n    /// @dev total no of dexes deployed by the factory\\n    /// only addresses that have deployer role or owner can deploy new dex pool.\\n    uint256 internal _totalDexes;\\n\\n    // ----------------------- slot 5 ---------------------------\\n    /// @dev dex deployment logics for deploying dex pool\\n    /// These logic contracts hold the deployment logics of specific dexes and are called via .delegatecall inside deployDex().\\n    /// only addresses that have owner can add/remove new dex deployment logic.\\n    mapping(address => bool) internal _dexDeploymentLogics;\\n\\n    /*//////////////////////////////////////////////////////////////\\n                          CONSTRUCTOR\\n    //////////////////////////////////////////////////////////////*/\\n    constructor(address owner_) Owned(owner_) {}\\n}\\n\\nabstract contract DexFactoryEvents {\\n    /// @dev Emitted when a new dex is deployed.\\n    /// @param dex The address of the newly deployed dex.\\n    /// @param dexId The id of the newly deployed dex.\\n    event LogDexDeployed(address indexed dex, uint256 indexed dexId);\\n\\n    /// @dev Emitted when the deployer is modified by owner.\\n    /// @param deployer Address whose deployer status is updated.\\n    /// @param allowed Indicates whether the address is authorized as a deployer or not.\\n    event LogSetDeployer(address indexed deployer, bool indexed allowed);\\n\\n    /// @dev Emitted when the globalAuth is modified by owner.\\n    /// @param globalAuth Address whose globalAuth status is updated.\\n    /// @param allowed Indicates whether the address is authorized as a deployer or not.\\n    event LogSetGlobalAuth(address indexed globalAuth, bool indexed allowed);\\n\\n    /// @dev Emitted when the dexAuth is modified by owner.\\n    /// @param dexAuth Address whose dexAuth status is updated.\\n    /// @param allowed Indicates whether the address is authorized as a deployer or not.\\n    /// @param dex Address of the specific dex related to the authorization change.\\n    event LogSetDexAuth(address indexed dexAuth, bool indexed allowed, address indexed dex);\\n\\n    /// @dev Emitted when the dex deployment logic is modified by owner.\\n    /// @param dexDeploymentLogic The address of the dex deployment logic contract.\\n    /// @param allowed  Indicates whether the address is authorized as a deployer or not.\\n    event LogSetDexDeploymentLogic(address indexed dexDeploymentLogic, bool indexed allowed);\\n}\\n\\nabstract contract DexFactoryCore is DexFactoryVariables, DexFactoryEvents {\\n    constructor(address owner_) validAddress(owner_) DexFactoryVariables(owner_) {}\\n\\n    /// @dev validates that an address is not the zero address\\n    modifier validAddress(address value_) {\\n        if (value_ == address(0)) {\\n            revert FluidDexFactoryError(ErrorTypes.DexFactory__InvalidParams);\\n        }\\n        _;\\n    }\\n}\\n\\n/// @dev Implements Dex Factory auth-only callable methods. Owner / auths can set various config values and\\n/// can define the allow-listed deployers.\\nabstract contract DexFactoryAuth is DexFactoryCore {\\n    /// @notice                         Sets an address (`deployer_`) as allowed deployer or not.\\n    ///                                 This function can only be called by the owner.\\n    /// @param deployer_                The address to be set as deployer.\\n    /// @param allowed_                 A boolean indicating whether the specified address is allowed to deploy dexes.\\n    function setDeployer(address deployer_, bool allowed_) external onlyOwner validAddress(deployer_) {\\n        _deployers[deployer_] = allowed_;\\n\\n        emit LogSetDeployer(deployer_, allowed_);\\n    }\\n\\n    /// @notice                         Sets an address (`globalAuth_`) as a global authorization or not.\\n    ///                                 This function can only be called by the owner.\\n    /// @param globalAuth_              The address to be set as global authorization.\\n    /// @param allowed_                 A boolean indicating whether the specified address is allowed to update any dex config.\\n    function setGlobalAuth(address globalAuth_, bool allowed_) external onlyOwner validAddress(globalAuth_) {\\n        _globalAuths[globalAuth_] = allowed_;\\n\\n        emit LogSetGlobalAuth(globalAuth_, allowed_);\\n    }\\n\\n    /// @notice                         Sets an address (`dexAuth_`) as allowed dex authorization or not for a specific dex (`dex_`).\\n    ///                                 This function can only be called by the owner.\\n    /// @param dex_                     The address of the dex for which the authorization is being set.\\n    /// @param dexAuth_                 The address to be set as dex authorization.\\n    /// @param allowed_                 A boolean indicating whether the specified address is allowed to update the specific dex config.\\n    function setDexAuth(address dex_, address dexAuth_, bool allowed_) external onlyOwner validAddress(dexAuth_) {\\n        _dexAuths[dex_][dexAuth_] = allowed_;\\n\\n        emit LogSetDexAuth(dexAuth_, allowed_, dex_);\\n    }\\n\\n    /// @notice                         Sets an address as allowed dex deployment logic (`deploymentLogic_`) contract or not.\\n    ///                                 This function can only be called by the owner.\\n    /// @param deploymentLogic_         The address of the dex deployment logic contract to be set.\\n    /// @param allowed_                 A boolean indicating whether the specified address is allowed to deploy new type of dex.\\n    function setDexDeploymentLogic(\\n        address deploymentLogic_,\\n        bool allowed_\\n    ) public onlyOwner validAddress(deploymentLogic_) {\\n        _dexDeploymentLogics[deploymentLogic_] = allowed_;\\n\\n        emit LogSetDexDeploymentLogic(deploymentLogic_, allowed_);\\n    }\\n\\n    /// @notice                         Spell allows owner aka governance to do any arbitrary call on factory\\n    /// @param target_                  Address to which the call needs to be delegated\\n    /// @param data_                    Data to execute at the delegated address\\n    function spell(address target_, bytes memory data_) external onlyOwner returns (bytes memory response_) {\\n        assembly {\\n            let succeeded := delegatecall(gas(), target_, add(data_, 0x20), mload(data_), 0, 0)\\n            let size := returndatasize()\\n\\n            response_ := mload(0x40)\\n            mstore(0x40, add(response_, and(add(add(size, 0x20), 0x1f), not(0x1f))))\\n            mstore(response_, size)\\n            returndatacopy(add(response_, 0x20), 0, size)\\n\\n            switch iszero(succeeded)\\n            case 1 {\\n                // throw if delegatecall failed\\n                returndatacopy(0x00, 0x00, size)\\n                revert(0x00, size)\\n            }\\n        }\\n    }\\n\\n    /// @notice                         Checks if the provided address (`deployer_`) is authorized as a deployer.\\n    /// @param deployer_                The address to be checked for deployer authorization.\\n    /// @return                         Returns `true` if the address is a deployer, otherwise `false`.\\n    function isDeployer(address deployer_) public view returns (bool) {\\n        return _deployers[deployer_] || owner == deployer_;\\n    }\\n\\n    /// @notice                         Checks if the provided address (`globalAuth_`) has global dex authorization privileges.\\n    /// @param globalAuth_              The address to be checked for global authorization privileges.\\n    /// @return                         Returns `true` if the given address has global authorization privileges, otherwise `false`.\\n    function isGlobalAuth(address globalAuth_) public view returns (bool) {\\n        return _globalAuths[globalAuth_] || owner == globalAuth_;\\n    }\\n\\n    /// @notice                         Checks if the provided address (`dexAuth_`) has dex authorization privileges for the specified dex (`dex_`).\\n    /// @param dex_                     The address of the dex to check.\\n    /// @param dexAuth_                 The address to be checked for dex authorization privileges.\\n    /// @return                         Returns `true` if the given address has dex authorization privileges for the specified dex, otherwise `false`.\\n    function isDexAuth(address dex_, address dexAuth_) public view returns (bool) {\\n        return _dexAuths[dex_][dexAuth_] || owner == dexAuth_;\\n    }\\n\\n    /// @notice                         Checks if the provided (`dexDeploymentLogic_`) address has authorization for dex deployment.\\n    /// @param dexDeploymentLogic_      The address of the dex deploy logic to check for authorization privileges.\\n    /// @return                         Returns `true` if the given address has authorization privileges for dex deployment, otherwise `false`.\\n    function isDexDeploymentLogic(address dexDeploymentLogic_) public view returns (bool) {\\n        return _dexDeploymentLogics[dexDeploymentLogic_];\\n    }\\n}\\n\\n/// @dev implements DexFactory deploy dex related methods.\\nabstract contract DexFactoryDeployment is DexFactoryCore, DexFactoryAuth {\\n    /// @dev                            Deploys a contract using the CREATE opcode with the provided bytecode (`bytecode_`).\\n    ///                                 This is an internal function, meant to be used within the contract to facilitate the deployment of other contracts.\\n    /// @param bytecode_                The bytecode of the contract to be deployed.\\n    /// @return address_                Returns the address of the deployed contract.\\n    function _deploy(bytes memory bytecode_) internal returns (address address_) {\\n        if (bytecode_.length == 0) {\\n            revert FluidDexError(ErrorTypes.DexFactory__InvalidOperation);\\n        }\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            address_ := create(0, add(bytecode_, 0x20), mload(bytecode_))\\n        }\\n        if (address_ == address(0)) {\\n            revert FluidDexError(ErrorTypes.DexFactory__InvalidOperation);\\n        }\\n    }\\n\\n    /// @notice                       Deploys a new dex using the specified deployment logic `dexDeploymentLogic_` and data `dexDeploymentData_`.\\n    ///                               Only accounts with deployer access or the owner can deploy a new dex.\\n    /// @param dexDeploymentLogic_    The address of the dex deployment logic contract.\\n    /// @param dexDeploymentData_     The data to be used for dex deployment.\\n    /// @return dex_                  Returns the address of the newly deployed dex.\\n    function deployDex(address dexDeploymentLogic_, bytes calldata dexDeploymentData_) external returns (address dex_) {\\n        // Revert if msg.sender doesn't have deployer access or is an owner.\\n        if (!isDeployer(msg.sender)) revert FluidDexError(ErrorTypes.DexFactory__Unauthorized);\\n        // Revert if dexDeploymentLogic_ is not whitelisted.\\n        if (!isDexDeploymentLogic(dexDeploymentLogic_)) revert FluidDexError(ErrorTypes.DexFactory__Unauthorized);\\n\\n        // Dex ID for the new dex and also acts as `nonce` for CREATE\\n        uint256 dexId_ = ++_totalDexes;\\n\\n        // compute dex address for dex id.\\n        dex_ = getDexAddress(dexId_);\\n\\n        // deploy the dex using dex deployment logic by making .delegatecall\\n        (bool success_, bytes memory data_) = dexDeploymentLogic_.delegatecall(dexDeploymentData_);\\n\\n        if (!(success_ && dex_ == _deploy(abi.decode(data_, (bytes))) && isDex(dex_))) {\\n            revert FluidDexError(ErrorTypes.DexFactory__InvalidDexAddress);\\n        }\\n\\n        emit LogDexDeployed(dex_, dexId_);\\n    }\\n\\n    /// @notice                       Computes the address of a dex based on its given ID (`dexId_`).\\n    /// @param dexId_                 The ID of the dex.\\n    /// @return dex_                  Returns the computed address of the dex.\\n    function getDexAddress(uint256 dexId_) public view returns (address dex_) {\\n        return AddressCalcs.addressCalc(address(this), dexId_);\\n    }\\n\\n    /// @notice                         Checks if a given address (`dex_`) corresponds to a valid dex.\\n    /// @param dex_                     The dex address to check.\\n    /// @return                         Returns `true` if the given address corresponds to a valid dex, otherwise `false`.\\n    function isDex(address dex_) public view returns (bool) {\\n        if (dex_.code.length == 0) {\\n            return false;\\n        } else {\\n            // DEX_ID() function signature is 0xf4b9a3fb\\n            (bool success_, bytes memory data_) = dex_.staticcall(hex\\\"f4b9a3fb\\\");\\n            return success_ && dex_ == getDexAddress(abi.decode(data_, (uint256)));\\n        }\\n    }\\n\\n    /// @notice                   Returns the total number of dexes deployed by the factory.\\n    /// @return                   Returns the total number of dexes.\\n    function totalDexes() external view returns (uint256) {\\n        return _totalDexes;\\n    }\\n}\\n\\n/// @title Fluid DexFactory\\n/// @notice creates Fluid dex protocol dexes, which are interacting with Fluid Liquidity to deposit / borrow funds.\\n/// Dexes are created at a deterministic address, given an incrementing `dexId` (see `getDexAddress()`).\\n/// Dexes can only be deployed by allow-listed deployer addresses.\\n/// @dev Note the deployed dexes start out with no config at Liquidity contract.\\n/// This must be done by Liquidity auths in a separate step, otherwise no deposits will be possible.\\n/// This contract is not upgradeable. It supports adding new dex deployment logic contracts for new, future dexes.\\ncontract FluidDexFactory is DexFactoryCore, DexFactoryAuth, DexFactoryDeployment {\\n    constructor(address owner_) DexFactoryCore(owner_) {}\\n}\\n\",\"keccak256\":\"0x96cbe9ceba16d29015ac95f4601b47e576b09de10acb8ca85b4245c8d4a4c3c4\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/poolT1/coreModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nabstract contract Structs {\\n    struct PricesAndExchangePrice {\\n        uint lastStoredPrice; // last stored price in 1e27 decimals\\n        uint centerPrice; // last stored price in 1e27 decimals\\n        uint upperRange; // price at upper range in 1e27 decimals\\n        uint lowerRange; // price at lower range in 1e27 decimals\\n        uint geometricMean; // geometric mean of upper range & lower range in 1e27 decimals\\n        uint supplyToken0ExchangePrice;\\n        uint borrowToken0ExchangePrice;\\n        uint supplyToken1ExchangePrice;\\n        uint borrowToken1ExchangePrice;\\n    }\\n\\n    struct ExchangePrices {\\n        uint supplyToken0ExchangePrice;\\n        uint borrowToken0ExchangePrice;\\n        uint supplyToken1ExchangePrice;\\n        uint borrowToken1ExchangePrice;\\n    }\\n\\n    struct CollateralReserves {\\n        uint token0RealReserves;\\n        uint token1RealReserves;\\n        uint token0ImaginaryReserves;\\n        uint token1ImaginaryReserves;\\n    }\\n\\n    struct CollateralReservesSwap {\\n        uint tokenInRealReserves;\\n        uint tokenOutRealReserves;\\n        uint tokenInImaginaryReserves;\\n        uint tokenOutImaginaryReserves;\\n    }\\n\\n    struct DebtReserves {\\n        uint token0Debt;\\n        uint token1Debt;\\n        uint token0RealReserves;\\n        uint token1RealReserves;\\n        uint token0ImaginaryReserves;\\n        uint token1ImaginaryReserves;\\n    }\\n\\n    struct DebtReservesSwap {\\n        uint tokenInDebt;\\n        uint tokenOutDebt;\\n        uint tokenInRealReserves;\\n        uint tokenOutRealReserves;\\n        uint tokenInImaginaryReserves;\\n        uint tokenOutImaginaryReserves;\\n    }\\n\\n    struct SwapInMemory {\\n        address tokenIn;\\n        address tokenOut;\\n        uint256 amtInAdjusted;\\n        address withdrawTo;\\n        address borrowTo;\\n        uint price; // price of pool after swap\\n        uint fee; // fee of pool\\n        uint revenueCut; // revenue cut of pool\\n        bool swap0to1;\\n        int swapRoutingAmt;\\n        bytes data; // just added to avoid stack-too-deep error\\n    }\\n\\n    struct SwapOutMemory {\\n        address tokenIn;\\n        address tokenOut;\\n        uint256 amtOutAdjusted;\\n        address withdrawTo;\\n        address borrowTo;\\n        uint price; // price of pool after swap\\n        uint fee;\\n        uint revenueCut; // revenue cut of pool\\n        bool swap0to1;\\n        int swapRoutingAmt;\\n        bytes data; // just added to avoid stack-too-deep error\\n        uint msgValue;\\n    }\\n\\n    struct DepositColMemory {\\n        uint256 token0AmtAdjusted;\\n        uint256 token1AmtAdjusted;\\n        uint256 token0ReservesInitial;\\n        uint256 token1ReservesInitial;\\n    }\\n\\n    struct WithdrawColMemory {\\n        uint256 token0AmtAdjusted;\\n        uint256 token1AmtAdjusted;\\n        uint256 token0ReservesInitial;\\n        uint256 token1ReservesInitial;\\n        address to;\\n    }\\n\\n    struct BorrowDebtMemory {\\n        uint256 token0AmtAdjusted;\\n        uint256 token1AmtAdjusted;\\n        uint256 token0DebtInitial;\\n        uint256 token1DebtInitial;\\n        address to;\\n    }\\n\\n    struct PaybackDebtMemory {\\n        uint256 token0AmtAdjusted;\\n        uint256 token1AmtAdjusted;\\n        uint256 token0DebtInitial;\\n        uint256 token1DebtInitial;\\n    }\\n\\n    struct OraclePriceMemory {\\n        uint lowestPrice1by0;\\n        uint highestPrice1by0;\\n        uint oracleSlot;\\n        uint oracleMap;\\n        uint oracle;\\n    }\\n\\n    struct Oracle {\\n        uint twap1by0; // TWAP price\\n        uint lowestPrice1by0; // lowest price point\\n        uint highestPrice1by0; // highest price point\\n        uint twap0by1; // TWAP price\\n        uint lowestPrice0by1; // lowest price point\\n        uint highestPrice0by1; // highest price point\\n    }\\n\\n    struct Implementations {\\n        address shift;\\n        address admin;\\n        address colOperations;\\n        address debtOperations;\\n        address perfectOperationsAndSwapOut;\\n    }\\n\\n    struct ConstantViews {\\n        uint256 dexId;\\n        address liquidity;\\n        address factory;\\n        Implementations implementations;\\n        address deployerContract;\\n        address token0;\\n        address token1;\\n        bytes32 supplyToken0Slot;\\n        bytes32 borrowToken0Slot;\\n        bytes32 supplyToken1Slot;\\n        bytes32 borrowToken1Slot;\\n        bytes32 exchangePriceToken0Slot;\\n        bytes32 exchangePriceToken1Slot;\\n        uint256 oracleMapping;\\n    }\\n\\n    struct ConstantViews2 {\\n        uint token0NumeratorPrecision;\\n        uint token0DenominatorPrecision;\\n        uint token1NumeratorPrecision;\\n        uint token1DenominatorPrecision;\\n    }\\n}\\n\",\"keccak256\":\"0x1cccc3a9ff4f07f159ac2aebf969c2a714a6f912ef0e86b76362bf45a5ecb8be\",\"license\":\"BUSL-1.1\"},\"solmate/src/auth/Owned.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\npragma solidity >=0.8.0;\\n\\n/// @notice Simple single owner authorization mixin.\\n/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Owned.sol)\\nabstract contract Owned {\\n    /*//////////////////////////////////////////////////////////////\\n                                 EVENTS\\n    //////////////////////////////////////////////////////////////*/\\n\\n    event OwnershipTransferred(address indexed user, address indexed newOwner);\\n\\n    /*//////////////////////////////////////////////////////////////\\n                            OWNERSHIP STORAGE\\n    //////////////////////////////////////////////////////////////*/\\n\\n    address public owner;\\n\\n    modifier onlyOwner() virtual {\\n        require(msg.sender == owner, \\\"UNAUTHORIZED\\\");\\n\\n        _;\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                               CONSTRUCTOR\\n    //////////////////////////////////////////////////////////////*/\\n\\n    constructor(address _owner) {\\n        owner = _owner;\\n\\n        emit OwnershipTransferred(address(0), _owner);\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                             OWNERSHIP LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        owner = newOwner;\\n\\n        emit OwnershipTransferred(msg.sender, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xfedb27d14c508342c33eb067c9a02eabcdb0f9dcf93b04ded1001f580d12d0ea\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516118aa3803806118aa83398101604081905261002f916100b8565b600080546001600160a01b0319166001600160a01b03831690811782556040518392839283929091907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a3508190506001600160a01b0381166100b05760405163aeae7c0d60e01b815261cf0d600482015260240160405180910390fd5b5050506100e8565b6000602082840312156100ca57600080fd5b81516001600160a01b03811681146100e157600080fd5b9392505050565b6117b3806100f76000396000f3fe608060405234801561001057600080fd5b50600436106101005760003560e01c80638f2db95d11610097578063c7acb01f11610066578063c7acb01f14610230578063f2fde38b14610250578063f4be578714610263578063fbeeca2c1461029c57600080fd5b80638f2db95d146101e657806393656c17146101f9578063a34b5ee81461020b578063b5c736e41461021e57600080fd5b80635f574d4a116100d35780635f574d4a1461018b57806378c7e138146101a057806387339817146101b35780638da5cb5b146101c657600080fd5b806312e366aa146101055780633c11e12a146101425780634502d0631461016557806350c358a414610178575b600080fd5b610118610113366004611329565b6102af565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b610155610150366004611366565b6102c1565b6040519015158152602001610139565b610155610173366004611366565b6103d4565b610155610186366004611366565b610425565b61019e610199366004611391565b610476565b005b61019e6101ae3660046113c4565b6105ce565b6101186101c1366004611407565b610735565b6000546101189073ffffffffffffffffffffffffffffffffffffffff1681565b61019e6101f4366004611391565b610959565b6004545b604051908152602001610139565b61019e610219366004611391565b610aac565b6101fd61022c366004611329565b5490565b61024361023e36600461154e565b610bff565b6040516101399190611603565b61019e61025e366004611366565b610ccd565b610155610271366004611366565b73ffffffffffffffffffffffffffffffffffffffff1660009081526005602052604090205460ff1690565b6101556102aa366004611654565b610dbe565b60006102bb3083610e22565b92915050565b60008173ffffffffffffffffffffffffffffffffffffffff163b6000036102ea57506000919050565b6000808373ffffffffffffffffffffffffffffffffffffffff16604051610334907ff4b9a3fb00000000000000000000000000000000000000000000000000000000815260040190565b600060405180830381855afa9150503d806000811461036f576040519150601f19603f3d011682016040523d82523d6000602084013e610374565b606091505b50915091508180156103c7575061039881806020019051810190610113919061167e565b73ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff16145b949350505050565b919050565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604081205460ff16806102bb57505060005473ffffffffffffffffffffffffffffffffffffffff91821691161490565b73ffffffffffffffffffffffffffffffffffffffff811660009081526001602052604081205460ff16806102bb57505060005473ffffffffffffffffffffffffffffffffffffffff91821691161490565b60005473ffffffffffffffffffffffffffffffffffffffff1633146104fc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064015b60405180910390fd5b8173ffffffffffffffffffffffffffffffffffffffff811661054e576040517faeae7c0d00000000000000000000000000000000000000000000000000000000815261cf0d60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff831660008181526005602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001686151590811790915590519092917f862a194379bf36d614b7bbc811097fc33a06ab67366fb58db1f4de91438e369f91a3505050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461064f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b8173ffffffffffffffffffffffffffffffffffffffff81166106a1576040517faeae7c0d00000000000000000000000000000000000000000000000000000000815261cf0d60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff84811660008181526003602090815260408083209488168084529490915280822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001687151590811790915590519293909290917f6dc7f25a946e48c9a5dec5f836659d8470be4b350e53b78df89037bffcdb268791a450505050565b600061074033610425565b61077a576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0a60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff841660009081526005602052604090205460ff166107dd576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0a60048201526024016104f3565b60006004600081546107ee90611697565b918290555090506107fe816102af565b91506000808673ffffffffffffffffffffffffffffffffffffffff16868660405161082a9291906116f6565b600060405180830381855af49150503d8060008114610865576040519150601f19603f3d011682016040523d82523d6000602084013e61086a565b606091505b50915091508180156108c257506108938180602001905181019061088e9190611706565b61128c565b73ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff16145b80156108d257506108d2846102c1565b61090c576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0f60048201526024016104f3565b604051839073ffffffffffffffffffffffffffffffffffffffff8616907f80d4769bbf5966f1c91cdab7c477bd8f74016bd5f5ed3ad18af6b32e29f6da7f90600090a35050509392505050565b60005473ffffffffffffffffffffffffffffffffffffffff1633146109da576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b8173ffffffffffffffffffffffffffffffffffffffff8116610a2c576040517faeae7c0d00000000000000000000000000000000000000000000000000000000815261cf0d60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff831660008181526002602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001686151590811790915590519092917f0a1c6cd77aa2e405e482adf6ee6cf190a27682b6dd1234403f7602e5203c83bb91a3505050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610b2d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b8173ffffffffffffffffffffffffffffffffffffffff8116610b7f576040517faeae7c0d00000000000000000000000000000000000000000000000000000000815261cf0d60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff831660008181526001602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001686151590811790915590519092917f48cc5b4660fae22eabe5e803ee595e63572773d114bcd54ecc118c1efa8d75af91a3505050565b60005460609073ffffffffffffffffffffffffffffffffffffffff163314610c83576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b600080835160208501865af43d6040519250601f19601f6020830101168301604052808352806000602085013e811560018103610cc457816000803e816000fd5b50505092915050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610d4e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081178255604051909133917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a350565b73ffffffffffffffffffffffffffffffffffffffff808316600090815260036020908152604080832093851683529290529081205460ff1680610e1b575060005473ffffffffffffffffffffffffffffffffffffffff8381169116145b9392505050565b6000606082600003610e385760009150506102bb565b607f8311610f01576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b604051602081830303815290604052905061127d565b60ff8311610fde576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801610eeb565b61ffff83116110bc576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901610eeb565b62ffffff831161119b576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01610eeb565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b80516020909101209392505050565b600081516000036112cd576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0960048201526024016104f3565b8151602083016000f0905073ffffffffffffffffffffffffffffffffffffffff81166103cf576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0960048201526024016104f3565b60006020828403121561133b57600080fd5b5035919050565b803573ffffffffffffffffffffffffffffffffffffffff811681146103cf57600080fd5b60006020828403121561137857600080fd5b610e1b82611342565b803580151581146103cf57600080fd5b600080604083850312156113a457600080fd5b6113ad83611342565b91506113bb60208401611381565b90509250929050565b6000806000606084860312156113d957600080fd5b6113e284611342565b92506113f060208501611342565b91506113fe60408501611381565b90509250925092565b60008060006040848603121561141c57600080fd5b61142584611342565b9250602084013567ffffffffffffffff8082111561144257600080fd5b818601915086601f83011261145657600080fd5b81358181111561146557600080fd5b87602082850101111561147757600080fd5b6020830194508093505050509250925092565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff811182821017156115005761150061148a565b604052919050565b600067ffffffffffffffff8211156115225761152261148a565b50601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01660200190565b6000806040838503121561156157600080fd5b61156a83611342565b9150602083013567ffffffffffffffff81111561158657600080fd5b8301601f8101851361159757600080fd5b80356115aa6115a582611508565b6114b9565b8181528660208385010111156115bf57600080fd5b816020840160208301376000602083830101528093505050509250929050565b60005b838110156115fa5781810151838201526020016115e2565b50506000910152565b60208152600082518060208401526116228160408501602087016115df565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169190910160400192915050565b6000806040838503121561166757600080fd5b61167083611342565b91506113bb60208401611342565b60006020828403121561169057600080fd5b5051919050565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82036116ef577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b5060010190565b8183823760009101908152919050565b60006020828403121561171857600080fd5b815167ffffffffffffffff81111561172f57600080fd5b8201601f8101841361174057600080fd5b805161174e6115a582611508565b81815285602083850101111561176357600080fd5b6117748260208301602086016115df565b9594505050505056fea264697066735822122053019f29ffa92a010959310242eea0d1c89fce0dd52ccba09fb7d8f754227c7464736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101005760003560e01c80638f2db95d11610097578063c7acb01f11610066578063c7acb01f14610230578063f2fde38b14610250578063f4be578714610263578063fbeeca2c1461029c57600080fd5b80638f2db95d146101e657806393656c17146101f9578063a34b5ee81461020b578063b5c736e41461021e57600080fd5b80635f574d4a116100d35780635f574d4a1461018b57806378c7e138146101a057806387339817146101b35780638da5cb5b146101c657600080fd5b806312e366aa146101055780633c11e12a146101425780634502d0631461016557806350c358a414610178575b600080fd5b610118610113366004611329565b6102af565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b610155610150366004611366565b6102c1565b6040519015158152602001610139565b610155610173366004611366565b6103d4565b610155610186366004611366565b610425565b61019e610199366004611391565b610476565b005b61019e6101ae3660046113c4565b6105ce565b6101186101c1366004611407565b610735565b6000546101189073ffffffffffffffffffffffffffffffffffffffff1681565b61019e6101f4366004611391565b610959565b6004545b604051908152602001610139565b61019e610219366004611391565b610aac565b6101fd61022c366004611329565b5490565b61024361023e36600461154e565b610bff565b6040516101399190611603565b61019e61025e366004611366565b610ccd565b610155610271366004611366565b73ffffffffffffffffffffffffffffffffffffffff1660009081526005602052604090205460ff1690565b6101556102aa366004611654565b610dbe565b60006102bb3083610e22565b92915050565b60008173ffffffffffffffffffffffffffffffffffffffff163b6000036102ea57506000919050565b6000808373ffffffffffffffffffffffffffffffffffffffff16604051610334907ff4b9a3fb00000000000000000000000000000000000000000000000000000000815260040190565b600060405180830381855afa9150503d806000811461036f576040519150601f19603f3d011682016040523d82523d6000602084013e610374565b606091505b50915091508180156103c7575061039881806020019051810190610113919061167e565b73ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff16145b949350505050565b919050565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604081205460ff16806102bb57505060005473ffffffffffffffffffffffffffffffffffffffff91821691161490565b73ffffffffffffffffffffffffffffffffffffffff811660009081526001602052604081205460ff16806102bb57505060005473ffffffffffffffffffffffffffffffffffffffff91821691161490565b60005473ffffffffffffffffffffffffffffffffffffffff1633146104fc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064015b60405180910390fd5b8173ffffffffffffffffffffffffffffffffffffffff811661054e576040517faeae7c0d00000000000000000000000000000000000000000000000000000000815261cf0d60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff831660008181526005602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001686151590811790915590519092917f862a194379bf36d614b7bbc811097fc33a06ab67366fb58db1f4de91438e369f91a3505050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461064f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b8173ffffffffffffffffffffffffffffffffffffffff81166106a1576040517faeae7c0d00000000000000000000000000000000000000000000000000000000815261cf0d60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff84811660008181526003602090815260408083209488168084529490915280822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001687151590811790915590519293909290917f6dc7f25a946e48c9a5dec5f836659d8470be4b350e53b78df89037bffcdb268791a450505050565b600061074033610425565b61077a576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0a60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff841660009081526005602052604090205460ff166107dd576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0a60048201526024016104f3565b60006004600081546107ee90611697565b918290555090506107fe816102af565b91506000808673ffffffffffffffffffffffffffffffffffffffff16868660405161082a9291906116f6565b600060405180830381855af49150503d8060008114610865576040519150601f19603f3d011682016040523d82523d6000602084013e61086a565b606091505b50915091508180156108c257506108938180602001905181019061088e9190611706565b61128c565b73ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff16145b80156108d257506108d2846102c1565b61090c576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0f60048201526024016104f3565b604051839073ffffffffffffffffffffffffffffffffffffffff8616907f80d4769bbf5966f1c91cdab7c477bd8f74016bd5f5ed3ad18af6b32e29f6da7f90600090a35050509392505050565b60005473ffffffffffffffffffffffffffffffffffffffff1633146109da576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b8173ffffffffffffffffffffffffffffffffffffffff8116610a2c576040517faeae7c0d00000000000000000000000000000000000000000000000000000000815261cf0d60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff831660008181526002602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001686151590811790915590519092917f0a1c6cd77aa2e405e482adf6ee6cf190a27682b6dd1234403f7602e5203c83bb91a3505050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610b2d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b8173ffffffffffffffffffffffffffffffffffffffff8116610b7f576040517faeae7c0d00000000000000000000000000000000000000000000000000000000815261cf0d60048201526024016104f3565b73ffffffffffffffffffffffffffffffffffffffff831660008181526001602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001686151590811790915590519092917f48cc5b4660fae22eabe5e803ee595e63572773d114bcd54ecc118c1efa8d75af91a3505050565b60005460609073ffffffffffffffffffffffffffffffffffffffff163314610c83576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b600080835160208501865af43d6040519250601f19601f6020830101168301604052808352806000602085013e811560018103610cc457816000803e816000fd5b50505092915050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610d4e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064016104f3565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081178255604051909133917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a350565b73ffffffffffffffffffffffffffffffffffffffff808316600090815260036020908152604080832093851683529290529081205460ff1680610e1b575060005473ffffffffffffffffffffffffffffffffffffffff8381169116145b9392505050565b6000606082600003610e385760009150506102bb565b607f8311610f01576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b604051602081830303815290604052905061127d565b60ff8311610fde576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801610eeb565b61ffff83116110bc576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901610eeb565b62ffffff831161119b576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01610eeb565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b80516020909101209392505050565b600081516000036112cd576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0960048201526024016104f3565b8151602083016000f0905073ffffffffffffffffffffffffffffffffffffffff81166103cf576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261cf0960048201526024016104f3565b60006020828403121561133b57600080fd5b5035919050565b803573ffffffffffffffffffffffffffffffffffffffff811681146103cf57600080fd5b60006020828403121561137857600080fd5b610e1b82611342565b803580151581146103cf57600080fd5b600080604083850312156113a457600080fd5b6113ad83611342565b91506113bb60208401611381565b90509250929050565b6000806000606084860312156113d957600080fd5b6113e284611342565b92506113f060208501611342565b91506113fe60408501611381565b90509250925092565b60008060006040848603121561141c57600080fd5b61142584611342565b9250602084013567ffffffffffffffff8082111561144257600080fd5b818601915086601f83011261145657600080fd5b81358181111561146557600080fd5b87602082850101111561147757600080fd5b6020830194508093505050509250925092565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff811182821017156115005761150061148a565b604052919050565b600067ffffffffffffffff8211156115225761152261148a565b50601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01660200190565b6000806040838503121561156157600080fd5b61156a83611342565b9150602083013567ffffffffffffffff81111561158657600080fd5b8301601f8101851361159757600080fd5b80356115aa6115a582611508565b6114b9565b8181528660208385010111156115bf57600080fd5b816020840160208301376000602083830101528093505050509250929050565b60005b838110156115fa5781810151838201526020016115e2565b50506000910152565b60208152600082518060208401526116228160408501602087016115df565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169190910160400192915050565b6000806040838503121561166757600080fd5b61167083611342565b91506113bb60208401611342565b60006020828403121561169057600080fd5b5051919050565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82036116ef577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b5060010190565b8183823760009101908152919050565b60006020828403121561171857600080fd5b815167ffffffffffffffff81111561172f57600080fd5b8201601f8101841361174057600080fd5b805161174e6115a582611508565b81815285602083850101111561176357600080fd5b6117748260208301602086016115df565b9594505050505056fea264697066735822122053019f29ffa92a010959310242eea0d1c89fce0dd52ccba09fb7d8f754227c7464736f6c63430008150033",
+  "devdoc": {
+    "details": "Note the deployed dexes start out with no config at Liquidity contract. This must be done by Liquidity auths in a separate step, otherwise no deposits will be possible. This contract is not upgradeable. It supports adding new dex deployment logic contracts for new, future dexes.",
+    "events": {
+      "LogDexDeployed(address,uint256)": {
+        "details": "Emitted when a new dex is deployed.",
+        "params": {
+          "dex": "The address of the newly deployed dex.",
+          "dexId": "The id of the newly deployed dex."
+        }
+      },
+      "LogSetDeployer(address,bool)": {
+        "details": "Emitted when the deployer is modified by owner.",
+        "params": {
+          "allowed": "Indicates whether the address is authorized as a deployer or not.",
+          "deployer": "Address whose deployer status is updated."
+        }
+      },
+      "LogSetDexAuth(address,bool,address)": {
+        "details": "Emitted when the dexAuth is modified by owner.",
+        "params": {
+          "allowed": "Indicates whether the address is authorized as a deployer or not.",
+          "dex": "Address of the specific dex related to the authorization change.",
+          "dexAuth": "Address whose dexAuth status is updated."
+        }
+      },
+      "LogSetDexDeploymentLogic(address,bool)": {
+        "details": "Emitted when the dex deployment logic is modified by owner.",
+        "params": {
+          "allowed": "Indicates whether the address is authorized as a deployer or not.",
+          "dexDeploymentLogic": "The address of the dex deployment logic contract."
+        }
+      },
+      "LogSetGlobalAuth(address,bool)": {
+        "details": "Emitted when the globalAuth is modified by owner.",
+        "params": {
+          "allowed": "Indicates whether the address is authorized as a deployer or not.",
+          "globalAuth": "Address whose globalAuth status is updated."
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "deployDex(address,bytes)": {
+        "params": {
+          "dexDeploymentData_": "The data to be used for dex deployment.",
+          "dexDeploymentLogic_": "The address of the dex deployment logic contract."
+        },
+        "returns": {
+          "dex_": "                 Returns the address of the newly deployed dex."
+        }
+      },
+      "getDexAddress(uint256)": {
+        "params": {
+          "dexId_": "The ID of the dex."
+        },
+        "returns": {
+          "dex_": "                 Returns the computed address of the dex."
+        }
+      },
+      "isDeployer(address)": {
+        "params": {
+          "deployer_": "The address to be checked for deployer authorization."
+        },
+        "returns": {
+          "_0": "Returns `true` if the address is a deployer, otherwise `false`."
+        }
+      },
+      "isDex(address)": {
+        "params": {
+          "dex_": "The dex address to check."
+        },
+        "returns": {
+          "_0": "Returns `true` if the given address corresponds to a valid dex, otherwise `false`."
+        }
+      },
+      "isDexAuth(address,address)": {
+        "params": {
+          "dexAuth_": "The address to be checked for dex authorization privileges.",
+          "dex_": "The address of the dex to check."
+        },
+        "returns": {
+          "_0": "Returns `true` if the given address has dex authorization privileges for the specified dex, otherwise `false`."
+        }
+      },
+      "isDexDeploymentLogic(address)": {
+        "params": {
+          "dexDeploymentLogic_": "The address of the dex deploy logic to check for authorization privileges."
+        },
+        "returns": {
+          "_0": "Returns `true` if the given address has authorization privileges for dex deployment, otherwise `false`."
+        }
+      },
+      "isGlobalAuth(address)": {
+        "params": {
+          "globalAuth_": "The address to be checked for global authorization privileges."
+        },
+        "returns": {
+          "_0": "Returns `true` if the given address has global authorization privileges, otherwise `false`."
+        }
+      },
+      "setDeployer(address,bool)": {
+        "params": {
+          "allowed_": "A boolean indicating whether the specified address is allowed to deploy dexes.",
+          "deployer_": "The address to be set as deployer."
+        }
+      },
+      "setDexAuth(address,address,bool)": {
+        "params": {
+          "allowed_": "A boolean indicating whether the specified address is allowed to update the specific dex config.",
+          "dexAuth_": "The address to be set as dex authorization.",
+          "dex_": "The address of the dex for which the authorization is being set."
+        }
+      },
+      "setDexDeploymentLogic(address,bool)": {
+        "params": {
+          "allowed_": "A boolean indicating whether the specified address is allowed to deploy new type of dex.",
+          "deploymentLogic_": "The address of the dex deployment logic contract to be set."
+        }
+      },
+      "setGlobalAuth(address,bool)": {
+        "params": {
+          "allowed_": "A boolean indicating whether the specified address is allowed to update any dex config.",
+          "globalAuth_": "The address to be set as global authorization."
+        }
+      },
+      "spell(address,bytes)": {
+        "params": {
+          "data_": "Data to execute at the delegated address",
+          "target_": "Address to which the call needs to be delegated"
+        }
+      },
+      "totalDexes()": {
+        "returns": {
+          "_0": "Returns the total number of dexes."
+        }
+      }
+    },
+    "title": "Fluid DexFactory",
+    "version": 1
+  },
+  "userdoc": {
+    "errors": {
+      "FluidDexSwapResult(uint256)": [
+        {
+          "notice": "used to simulate swap to find the output amount"
+        }
+      ]
+    },
+    "kind": "user",
+    "methods": {
+      "deployDex(address,bytes)": {
+        "notice": "Deploys a new dex using the specified deployment logic `dexDeploymentLogic_` and data `dexDeploymentData_`.                               Only accounts with deployer access or the owner can deploy a new dex."
+      },
+      "getDexAddress(uint256)": {
+        "notice": "Computes the address of a dex based on its given ID (`dexId_`)."
+      },
+      "isDeployer(address)": {
+        "notice": "Checks if the provided address (`deployer_`) is authorized as a deployer."
+      },
+      "isDex(address)": {
+        "notice": "Checks if a given address (`dex_`) corresponds to a valid dex."
+      },
+      "isDexAuth(address,address)": {
+        "notice": "Checks if the provided address (`dexAuth_`) has dex authorization privileges for the specified dex (`dex_`)."
+      },
+      "isDexDeploymentLogic(address)": {
+        "notice": "Checks if the provided (`dexDeploymentLogic_`) address has authorization for dex deployment."
+      },
+      "isGlobalAuth(address)": {
+        "notice": "Checks if the provided address (`globalAuth_`) has global dex authorization privileges."
+      },
+      "setDeployer(address,bool)": {
+        "notice": "Sets an address (`deployer_`) as allowed deployer or not.                                 This function can only be called by the owner."
+      },
+      "setDexAuth(address,address,bool)": {
+        "notice": "Sets an address (`dexAuth_`) as allowed dex authorization or not for a specific dex (`dex_`).                                 This function can only be called by the owner."
+      },
+      "setDexDeploymentLogic(address,bool)": {
+        "notice": "Sets an address as allowed dex deployment logic (`deploymentLogic_`) contract or not.                                 This function can only be called by the owner."
+      },
+      "setGlobalAuth(address,bool)": {
+        "notice": "Sets an address (`globalAuth_`) as a global authorization or not.                                 This function can only be called by the owner."
+      },
+      "spell(address,bytes)": {
+        "notice": "Spell allows owner aka governance to do any arbitrary call on factory"
+      },
+      "totalDexes()": {
+        "notice": "Returns the total number of dexes deployed by the factory."
+      }
+    },
+    "notice": "creates Fluid dex protocol dexes, which are interacting with Fluid Liquidity to deposit / borrow funds. Dexes are created at a deterministic address, given an incrementing `dexId` (see `getDexAddress()`). Dexes can only be deployed by allow-listed deployer addresses.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 116012,
+        "contract": "contracts/protocols/dex/factory/main.sol:FluidDexFactory",
+        "label": "owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 56417,
+        "contract": "contracts/protocols/dex/factory/main.sol:FluidDexFactory",
+        "label": "_deployers",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 56422,
+        "contract": "contracts/protocols/dex/factory/main.sol:FluidDexFactory",
+        "label": "_globalAuths",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 56429,
+        "contract": "contracts/protocols/dex/factory/main.sol:FluidDexFactory",
+        "label": "_dexAuths",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_bool))"
+      },
+      {
+        "astId": 56432,
+        "contract": "contracts/protocols/dex/factory/main.sol:FluidDexFactory",
+        "label": "_totalDexes",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 56437,
+        "contract": "contracts/protocols/dex/factory/main.sol:FluidDexFactory",
+        "label": "_dexDeploymentLogics",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_mapping(t_address,t_bool)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_bool))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(address => bool))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_bool)"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
