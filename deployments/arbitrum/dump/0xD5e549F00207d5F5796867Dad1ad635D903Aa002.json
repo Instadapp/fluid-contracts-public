@@ -1,0 +1,771 @@
+{
+  "address": "0xD5e549F00207d5F5796867Dad1ad635D903Aa002",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dexFactory_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "liquidity_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "owner_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexError",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexFactoryError",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "shares_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexLiquidityOutput",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "token0Amt",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "token1Amt",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexPerfectLiquidityOutput",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "lastStoredPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "centerPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperRange",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerRange",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "geometricMean",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyToken0ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "borrowToken0ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyToken1ExchangePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "borrowToken1ExchangePrice",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.PricesAndExchangePrice",
+          "name": "pex_",
+          "type": "tuple"
+        }
+      ],
+      "name": "FluidDexPricesAndExchangeRates",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenAmt",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexSingleTokenOutput",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidDexSwapResult",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidSmartLendingError",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidSmartLendingFactoryError",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "smartLending",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "auth",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "allowed",
+          "type": "bool"
+        }
+      ],
+      "name": "LogAuthUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "deployer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "allowed",
+          "type": "bool"
+        }
+      ],
+      "name": "LogDeployerUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "creationCodePointer",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetCreationCode",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "dexId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "smartLending",
+          "type": "address"
+        }
+      ],
+      "name": "LogSmartLendingDeployed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DEX_FACTORY",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "LIQUIDITY",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "allTokens",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "createdTokens",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "dexId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "deploy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "smartLending_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "deployer_",
+          "type": "address"
+        }
+      ],
+      "name": "isDeployer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "smartLending_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "auth_",
+          "type": "address"
+        }
+      ],
+      "name": "isSmartLendingAuth",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "creationCode_",
+          "type": "bytes"
+        }
+      ],
+      "name": "setSmartLendingCreationCode",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "dexId",
+          "type": "uint256"
+        }
+      ],
+      "name": "smartLendingAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "smartLendingCreationCode",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target_",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data_",
+          "type": "bytes"
+        }
+      ],
+      "name": "spell",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "response_",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "deployer_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowed_",
+          "type": "bool"
+        }
+      ],
+      "name": "updateDeployer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "smartLending_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "auth_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowed_",
+          "type": "bool"
+        }
+      ],
+      "name": "updateSmartLendingAuth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xb253969cb013df80da80217ed13a8cc177b64a900d56cfe0354ddad1eeb79894",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 1,
+    "gasUsed": "1967427",
+    "logsBloom": "0x00000000000000000000000010000200000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000001000000000000000000000000000000000002020000000000000000000800000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000020000000000000000000100000000000000000000000000000000000000000000000",
+    "blockHash": "0xbc4ab84266dfe3096ec40aef2ca71ef406192a30b1306203dd903ad927c6999b",
+    "transactionHash": "0xb253969cb013df80da80217ed13a8cc177b64a900d56cfe0354ddad1eeb79894",
+    "logs": [
+      {
+        "transactionIndex": 1,
+        "blockNumber": 296861777,
+        "transactionHash": "0xb253969cb013df80da80217ed13a8cc177b64a900d56cfe0354ddad1eeb79894",
+        "address": "0xD5e549F00207d5F5796867Dad1ad635D903Aa002",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000004f6f977acdd1177dcd81ab83074855ecb9c2d49e"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0xbc4ab84266dfe3096ec40aef2ca71ef406192a30b1306203dd903ad927c6999b"
+      }
+    ],
+    "blockNumber": 296861777,
+    "cumulativeGasUsed": "1967427",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x91716C4EDA1Fb55e84Bf8b4c7085f84285c19085",
+    "0x52Aa899454998Be5b000Ad077a46Bbe360F4e497",
+    "0x4F6F977aCDD1177DCD81aB83074855EcB9C2D49e"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "3e0a7006c2c4eba4de771e00ab58877f",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dexFactory_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"liquidity_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"owner_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidDexError\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId\",\"type\":\"uint256\"}],\"name\":\"FluidDexFactoryError\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares_\",\"type\":\"uint256\"}],\"name\":\"FluidDexLiquidityOutput\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"token0Amt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Amt\",\"type\":\"uint256\"}],\"name\":\"FluidDexPerfectLiquidityOutput\",\"type\":\"error\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"lastStoredPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperRange\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRange\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"geometricMean\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyToken0ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"borrowToken0ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyToken1ExchangePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"borrowToken1ExchangePrice\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.PricesAndExchangePrice\",\"name\":\"pex_\",\"type\":\"tuple\"}],\"name\":\"FluidDexPricesAndExchangeRates\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenAmt\",\"type\":\"uint256\"}],\"name\":\"FluidDexSingleTokenOutput\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"name\":\"FluidDexSwapResult\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidSmartLendingError\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidSmartLendingFactoryError\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"smartLending\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"auth\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"allowed\",\"type\":\"bool\"}],\"name\":\"LogAuthUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"deployer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"allowed\",\"type\":\"bool\"}],\"name\":\"LogDeployerUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"creationCodePointer\",\"type\":\"address\"}],\"name\":\"LogSetCreationCode\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"dexId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"smartLending\",\"type\":\"address\"}],\"name\":\"LogSmartLendingDeployed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEX_FACTORY\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"LIQUIDITY\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"allTokens\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"createdTokens\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"dexId_\",\"type\":\"uint256\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"smartLending_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"deployer_\",\"type\":\"address\"}],\"name\":\"isDeployer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"smartLending_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"auth_\",\"type\":\"address\"}],\"name\":\"isSmartLendingAuth\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"creationCode_\",\"type\":\"bytes\"}],\"name\":\"setSmartLendingCreationCode\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"dexId\",\"type\":\"uint256\"}],\"name\":\"smartLendingAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"smartLendingCreationCode\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target_\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data_\",\"type\":\"bytes\"}],\"name\":\"spell\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"response_\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"deployer_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"allowed_\",\"type\":\"bool\"}],\"name\":\"updateDeployer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"smartLending_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"auth_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"allowed_\",\"type\":\"bool\"}],\"name\":\"updateSmartLendingAuth\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"LogAuthUpdated(address,address,bool)\":{\"details\":\"Emitted when a SmartLending auth is updated\",\"params\":{\"allowed\":\"updated status of auth\",\"auth\":\"address of auth whose status is being updated\",\"smartLending\":\"address of SmartLending\"}},\"LogDeployerUpdated(address,bool)\":{\"details\":\"Emitted when a deployer is modified by owner\",\"params\":{\"allowed\":\"updated status of deployer\",\"deployer\":\"address of deployer\"}},\"LogSetCreationCode(address)\":{\"details\":\"Emitted when the smart lending creation code is modified by owner\",\"params\":{\"creationCodePointer\":\"address of the creation code pointer\"}},\"LogSmartLendingDeployed(uint256,address)\":{\"details\":\"Emitted when a new smart lending is deployed\",\"params\":{\"dexId\":\"The ID of the deployed DEX\",\"smartLending\":\"The address of the deployed smart lending\"}}},\"kind\":\"dev\",\"methods\":{\"deploy(uint256)\":{\"params\":{\"dexId_\":\"The ID of the DEX for which the smart lending wrapper is being deployed\"},\"returns\":{\"smartLending_\":\"The newly deployed SmartLending contract\"}},\"setSmartLendingCreationCode(bytes)\":{\"params\":{\"creationCode_\":\"New SmartLending contract creation code.\"}},\"smartLendingCreationCode()\":{\"details\":\"Retrieves the creation code for the SmartLending contract\"},\"spell(address,bytes)\":{\"params\":{\"data_\":\"Data to execute at the delegated address\",\"target_\":\"Address to which the call needs to be delegated\"}},\"updateDeployer(address,bool)\":{\"params\":{\"allowed_\":\"Bool flag for whether address is allowed as deployer or not\",\"deployer_\":\"Address to set deployer value for\"}},\"updateSmartLendingAuth(address,address,bool)\":{\"params\":{\"allowed_\":\"The new authorization status\",\"auth_\":\"The address to be updated\",\"smartLending_\":\"The address of the SmartLending contract\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"FluidDexSwapResult(uint256)\":[{\"notice\":\"used to simulate swap to find the output amount\"}]},\"kind\":\"user\",\"methods\":{\"allTokens()\":{\"notice\":\"List of all created tokens\"},\"createdTokens(uint256)\":{\"notice\":\"list of all created tokens.\"},\"deploy(uint256)\":{\"notice\":\"Deploys a new SmartLending contract. Only callable by deployers.\"},\"isDeployer(address)\":{\"notice\":\"Reads if a certain `deployer_` address is an allowed deployer or not. Owner is deployer by default.\"},\"isSmartLendingAuth(address,address)\":{\"notice\":\"Reads if a certain `auth_` address is an allowed auth for `smartLending_` or not. Owner is auth by default.\"},\"setSmartLendingCreationCode(bytes)\":{\"notice\":\"Sets the `creationCode_` bytecode for new SmartLending contracts. Only callable by owner.\"},\"spell(address,bytes)\":{\"notice\":\"Spell allows owner aka governance to do any arbitrary call on factory\"},\"updateDeployer(address,bool)\":{\"notice\":\"Sets an address as allowed deployer or not. Only callable by owner.\"},\"updateSmartLendingAuth(address,address,bool)\":{\"notice\":\"Updates the authorization status of an address for a SmartLending contract. Only callable by owner.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/protocols/dex/smartLending/factory/main.sol\":\"FluidSmartLendingFactory\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/protocols/dex/error.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Structs } from \\\"./poolT1/coreModule/structs.sol\\\";\\n\\nabstract contract Error {\\n    error FluidDexError(uint256 errorId_);\\n\\n    error FluidDexFactoryError(uint256 errorId);\\n\\n    /// @notice used to simulate swap to find the output amount\\n    error FluidDexSwapResult(uint256 amountOut);\\n\\n    error FluidDexPerfectLiquidityOutput(uint256 token0Amt, uint token1Amt);\\n\\n    error FluidDexSingleTokenOutput(uint256 tokenAmt);\\n\\n    error FluidDexLiquidityOutput(uint256 shares_);\\n\\n    error FluidDexPricesAndExchangeRates(Structs.PricesAndExchangePrice pex_);\\n\\n    error FluidSmartLendingError(uint256 errorId_);\\n\\n    error FluidSmartLendingFactoryError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0xd202c2cd2ca431bf8dd745a11f771573a480f92cddfce492202e2b21b248ff50\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |             DexT1                 | \\n    |__________________________________*/\\n\\n    /// @notice thrown at reentrancy\\n    uint256 internal constant DexT1__AlreadyEntered = 51001;\\n\\n    uint256 internal constant DexT1__NotAnAuth = 51002;\\n\\n    uint256 internal constant DexT1__SmartColNotEnabled = 51003;\\n\\n    uint256 internal constant DexT1__SmartDebtNotEnabled = 51004;\\n\\n    uint256 internal constant DexT1__PoolNotInitialized = 51005;\\n\\n    uint256 internal constant DexT1__TokenReservesTooLow = 51006;\\n\\n    uint256 internal constant DexT1__EthAndAmountInMisMatch = 51007;\\n\\n    uint256 internal constant DexT1__EthSentForNonNativeSwap = 51008;\\n\\n    uint256 internal constant DexT1__NoSwapRoute = 51009;\\n\\n    uint256 internal constant DexT1__NotEnoughAmountOut = 51010;\\n\\n    uint256 internal constant DexT1__LiquidityLayerTokenUtilizationCapReached = 51011;\\n\\n    uint256 internal constant DexT1__HookReturnedFalse = 51012;\\n\\n    // Either user's config are not set or user is paused\\n    uint256 internal constant DexT1__UserSupplyInNotOn = 51013;\\n\\n    // Either user's config are not set or user is paused\\n    uint256 internal constant DexT1__UserDebtInNotOn = 51014;\\n\\n    // Thrown when contract asks for more token0 or token1 than what user's wants to give on deposit\\n    uint256 internal constant DexT1__AboveDepositMax = 51015;\\n\\n    uint256 internal constant DexT1__MsgValueLowOnDepositOrPayback = 51016;\\n\\n    uint256 internal constant DexT1__WithdrawLimitReached = 51017;\\n\\n    // Thrown when contract gives less token0 or token1 than what user's wants on withdraw\\n    uint256 internal constant DexT1__BelowWithdrawMin = 51018;\\n\\n    uint256 internal constant DexT1__DebtLimitReached = 51019;\\n\\n    // Thrown when contract gives less token0 or token1 than what user's wants on borrow\\n    uint256 internal constant DexT1__BelowBorrowMin = 51020;\\n\\n    // Thrown when contract asks for more token0 or token1 than what user's wants on payback\\n    uint256 internal constant DexT1__AbovePaybackMax = 51021;\\n\\n    uint256 internal constant DexT1__InvalidDepositAmts = 51022;\\n\\n    uint256 internal constant DexT1__DepositAmtsZero = 51023;\\n\\n    uint256 internal constant DexT1__SharesMintedLess = 51024;\\n\\n    uint256 internal constant DexT1__WithdrawalNotEnough = 51025;\\n\\n    uint256 internal constant DexT1__InvalidWithdrawAmts = 51026;\\n\\n    uint256 internal constant DexT1__WithdrawAmtsZero = 51027;\\n\\n    uint256 internal constant DexT1__WithdrawExcessSharesBurn = 51028;\\n\\n    uint256 internal constant DexT1__InvalidBorrowAmts = 51029;\\n\\n    uint256 internal constant DexT1__BorrowAmtsZero = 51030;\\n\\n    uint256 internal constant DexT1__BorrowExcessSharesMinted = 51031;\\n\\n    uint256 internal constant DexT1__PaybackAmtTooHigh = 51032;\\n\\n    uint256 internal constant DexT1__InvalidPaybackAmts = 51033;\\n\\n    uint256 internal constant DexT1__PaybackAmtsZero = 51034;\\n\\n    uint256 internal constant DexT1__PaybackSharedBurnedLess = 51035;\\n\\n    uint256 internal constant DexT1__NothingToArbitrage = 51036;\\n\\n    uint256 internal constant DexT1__MsgSenderNotLiquidity = 51037;\\n\\n    // On liquidity callback reentrancy bit should be on\\n    uint256 internal constant DexT1__ReentrancyBitShouldBeOn = 51038;\\n\\n    // Thrown is reentrancy is already on and someone tries to fetch oracle price. Should not be possible to this\\n    uint256 internal constant DexT1__OraclePriceFetchAlreadyEntered = 51039;\\n\\n    // Thrown when swap changes the current price by more than 5%\\n    uint256 internal constant DexT1__OracleUpdateHugeSwapDiff = 51040;\\n\\n    uint256 internal constant DexT1__Token0ShouldBeSmallerThanToken1 = 51041;\\n\\n    uint256 internal constant DexT1__OracleMappingOverflow = 51042;\\n\\n    /// @notice thrown if governance has paused the swapping & arbitrage so only perfect functions are usable\\n    uint256 internal constant DexT1__SwapAndArbitragePaused = 51043;\\n\\n    uint256 internal constant DexT1__ExceedsAmountInMax = 51044;\\n\\n    /// @notice thrown if amount in is too high or too low\\n    uint256 internal constant DexT1__SwapInLimitingAmounts = 51045;\\n\\n    /// @notice thrown if amount out is too high or too low\\n    uint256 internal constant DexT1__SwapOutLimitingAmounts = 51046;\\n\\n    uint256 internal constant DexT1__MintAmtOverflow = 51047;\\n\\n    uint256 internal constant DexT1__BurnAmtOverflow = 51048;\\n\\n    uint256 internal constant DexT1__LimitingAmountsSwapAndNonPerfectActions = 51049;\\n\\n    uint256 internal constant DexT1__InsufficientOracleData = 51050;\\n\\n    uint256 internal constant DexT1__SharesAmountInsufficient = 51051;\\n\\n    uint256 internal constant DexT1__CenterPriceOutOfRange = 51052;\\n\\n    uint256 internal constant DexT1__DebtReservesTooLow = 51053;\\n\\n    uint256 internal constant DexT1__SwapAndDepositTooLowOrTooHigh = 51054;\\n\\n    uint256 internal constant DexT1__WithdrawAndSwapTooLowOrTooHigh = 51055;\\n\\n    uint256 internal constant DexT1__BorrowAndSwapTooLowOrTooHigh = 51056;\\n\\n    uint256 internal constant DexT1__SwapAndPaybackTooLowOrTooHigh = 51057;\\n\\n    uint256 internal constant DexT1__InvalidImplementation = 51058;\\n\\n    uint256 internal constant DexT1__OnlyDelegateCallAllowed = 51059;\\n\\n    uint256 internal constant DexT1__IncorrectDataLength = 51060;\\n\\n    uint256 internal constant DexT1__AmountToSendLessThanAmount = 51061;\\n\\n    uint256 internal constant DexT1__InvalidCollateralReserves = 51062;\\n\\n    uint256 internal constant DexT1__InvalidDebtReserves = 51063;\\n\\n    uint256 internal constant DexT1__SupplySharesOverflow = 51064;\\n\\n    uint256 internal constant DexT1__BorrowSharesOverflow = 51065;\\n\\n    uint256 internal constant DexT1__OracleNotActive = 51066;\\n\\n    /***********************************|\\n    |            DEX Admin              | \\n    |__________________________________*/\\n\\n    /// @notice thrown when pool is not initialized\\n    uint256 internal constant DexT1Admin__PoolNotInitialized = 52001;\\n\\n    uint256 internal constant DexT1Admin__SmartColIsAlreadyOn = 52002;\\n\\n    uint256 internal constant DexT1Admin__SmartDebtIsAlreadyOn = 52003;\\n\\n    /// @notice thrown when any of the configs value overflow the maximum limit\\n    uint256 internal constant DexT1Admin__ConfigOverflow = 52004;\\n\\n    uint256 internal constant DexT1Admin__AddressNotAContract = 52005;\\n\\n    uint256 internal constant DexT1Admin__InvalidParams = 52006;\\n\\n    uint256 internal constant DexT1Admin__UserNotDefined = 52007;\\n\\n    uint256 internal constant DexT1Admin__OnlyDelegateCallAllowed = 52008;\\n\\n    uint256 internal constant DexT1Admin__UnexpectedPoolState = 52009;\\n\\n    /// @notice thrown when trying to pause or unpause but user is already in the target pause state\\n    uint256 internal constant DexT1Admin__InvalidPauseToggle = 52009;\\n\\n    /***********************************|\\n    |            DEX Factory            | \\n    |__________________________________*/\\n\\n    uint256 internal constant DexFactory__InvalidOperation = 53001;\\n    uint256 internal constant DexFactory__Unauthorized = 53002;\\n    uint256 internal constant DexFactory__SameTokenNotAllowed = 53003;\\n    uint256 internal constant DexFactory__TokenConfigNotProper = 53004;\\n    uint256 internal constant DexFactory__InvalidParams = 53005;\\n    uint256 internal constant DexFactory__OnlyDelegateCallAllowed = 53006;\\n    uint256 internal constant DexFactory__InvalidDexAddress = 53007;\\n\\n    /***********************************|\\n    |            Smart Lending          | \\n    |__________________________________*/\\n\\n    uint256 internal constant SmartLending__ZeroAddress = 54001;\\n    uint256 internal constant SmartLending__Unauthorized = 54002;\\n    uint256 internal constant SmartLending__InvalidMsgValue = 54003;\\n    uint256 internal constant SmartLending__OutOfRange = 54004;\\n    uint256 internal constant SmartLending__InvalidRebalancer = 54005;\\n    uint256 internal constant SmartLending__Reentrancy = 54006;\\n\\n    /***********************************|\\n    |        Smart Lending Factory       | \\n    |__________________________________*/\\n\\n    uint256 internal constant SmartLendingFactory__ZeroAddress = 55001;\\n    uint256 internal constant SmartLendingFactory__Unauthorized = 55002;\\n    uint256 internal constant SmartLendingFactory__AlreadyDeployed = 55003;\\n    uint256 internal constant SmartLendingFactory__InvalidParams = 55004;\\n    uint256 internal constant SmartLendingFactory__InvalidOperation = 55005;\\n}\\n\",\"keccak256\":\"0x45d5bc02ef6927f0196d150ca9ffe61753aa6b07ed46e5c5a3ffc212744050cb\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/poolT1/coreModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nabstract contract Structs {\\n    struct PricesAndExchangePrice {\\n        uint lastStoredPrice; // last stored price in 1e27 decimals\\n        uint centerPrice; // last stored price in 1e27 decimals\\n        uint upperRange; // price at upper range in 1e27 decimals\\n        uint lowerRange; // price at lower range in 1e27 decimals\\n        uint geometricMean; // geometric mean of upper range & lower range in 1e27 decimals\\n        uint supplyToken0ExchangePrice;\\n        uint borrowToken0ExchangePrice;\\n        uint supplyToken1ExchangePrice;\\n        uint borrowToken1ExchangePrice;\\n    }\\n\\n    struct ExchangePrices {\\n        uint supplyToken0ExchangePrice;\\n        uint borrowToken0ExchangePrice;\\n        uint supplyToken1ExchangePrice;\\n        uint borrowToken1ExchangePrice;\\n    }\\n\\n    struct CollateralReserves {\\n        uint token0RealReserves;\\n        uint token1RealReserves;\\n        uint token0ImaginaryReserves;\\n        uint token1ImaginaryReserves;\\n    }\\n\\n    struct CollateralReservesSwap {\\n        uint tokenInRealReserves;\\n        uint tokenOutRealReserves;\\n        uint tokenInImaginaryReserves;\\n        uint tokenOutImaginaryReserves;\\n    }\\n\\n    struct DebtReserves {\\n        uint token0Debt;\\n        uint token1Debt;\\n        uint token0RealReserves;\\n        uint token1RealReserves;\\n        uint token0ImaginaryReserves;\\n        uint token1ImaginaryReserves;\\n    }\\n\\n    struct DebtReservesSwap {\\n        uint tokenInDebt;\\n        uint tokenOutDebt;\\n        uint tokenInRealReserves;\\n        uint tokenOutRealReserves;\\n        uint tokenInImaginaryReserves;\\n        uint tokenOutImaginaryReserves;\\n    }\\n\\n    struct SwapInMemory {\\n        address tokenIn;\\n        address tokenOut;\\n        uint256 amtInAdjusted;\\n        address withdrawTo;\\n        address borrowTo;\\n        uint price; // price of pool after swap\\n        uint fee; // fee of pool\\n        uint revenueCut; // revenue cut of pool\\n        bool swap0to1;\\n        int swapRoutingAmt;\\n        bytes data; // just added to avoid stack-too-deep error\\n    }\\n\\n    struct SwapOutMemory {\\n        address tokenIn;\\n        address tokenOut;\\n        uint256 amtOutAdjusted;\\n        address withdrawTo;\\n        address borrowTo;\\n        uint price; // price of pool after swap\\n        uint fee;\\n        uint revenueCut; // revenue cut of pool\\n        bool swap0to1;\\n        int swapRoutingAmt;\\n        bytes data; // just added to avoid stack-too-deep error\\n        uint msgValue;\\n    }\\n\\n    struct DepositColMemory {\\n        uint256 token0AmtAdjusted;\\n        uint256 token1AmtAdjusted;\\n        uint256 token0ReservesInitial;\\n        uint256 token1ReservesInitial;\\n    }\\n\\n    struct WithdrawColMemory {\\n        uint256 token0AmtAdjusted;\\n        uint256 token1AmtAdjusted;\\n        uint256 token0ReservesInitial;\\n        uint256 token1ReservesInitial;\\n        address to;\\n    }\\n\\n    struct BorrowDebtMemory {\\n        uint256 token0AmtAdjusted;\\n        uint256 token1AmtAdjusted;\\n        uint256 token0DebtInitial;\\n        uint256 token1DebtInitial;\\n        address to;\\n    }\\n\\n    struct PaybackDebtMemory {\\n        uint256 token0AmtAdjusted;\\n        uint256 token1AmtAdjusted;\\n        uint256 token0DebtInitial;\\n        uint256 token1DebtInitial;\\n    }\\n\\n    struct OraclePriceMemory {\\n        uint lowestPrice1by0;\\n        uint highestPrice1by0;\\n        uint oracleSlot;\\n        uint oracleMap;\\n        uint oracle;\\n    }\\n\\n    struct Oracle {\\n        uint twap1by0; // TWAP price\\n        uint lowestPrice1by0; // lowest price point\\n        uint highestPrice1by0; // highest price point\\n        uint twap0by1; // TWAP price\\n        uint lowestPrice0by1; // lowest price point\\n        uint highestPrice0by1; // highest price point\\n    }\\n\\n    struct Implementations {\\n        address shift;\\n        address admin;\\n        address colOperations;\\n        address debtOperations;\\n        address perfectOperationsAndSwapOut;\\n    }\\n\\n    struct ConstantViews {\\n        uint256 dexId;\\n        address liquidity;\\n        address factory;\\n        Implementations implementations;\\n        address deployerContract;\\n        address token0;\\n        address token1;\\n        bytes32 supplyToken0Slot;\\n        bytes32 borrowToken0Slot;\\n        bytes32 supplyToken1Slot;\\n        bytes32 borrowToken1Slot;\\n        bytes32 exchangePriceToken0Slot;\\n        bytes32 exchangePriceToken1Slot;\\n        uint256 oracleMapping;\\n    }\\n\\n    struct ConstantViews2 {\\n        uint token0NumeratorPrecision;\\n        uint token0DenominatorPrecision;\\n        uint token1NumeratorPrecision;\\n        uint token1DenominatorPrecision;\\n    }\\n}\\n\",\"keccak256\":\"0x1cccc3a9ff4f07f159ac2aebf969c2a714a6f912ef0e86b76362bf45a5ecb8be\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/smartLending/factory/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Owned } from \\\"solmate/src/auth/Owned.sol\\\";\\nimport { SSTORE2 } from \\\"solmate/src/utils/SSTORE2.sol\\\";\\n\\nimport { ErrorTypes } from \\\"../../errorTypes.sol\\\";\\nimport { Error } from \\\"../../error.sol\\\";\\n\\nabstract contract Constants {\\n    address public immutable DEX_FACTORY;\\n    address public immutable LIQUIDITY;\\n}\\n\\nabstract contract Variables is Owned {\\n    // ------------ storage variables from inherited contracts (Owned) come before vars here --------\\n\\n    // ----------------------- slot 0 ---------------------------\\n    // address public owner;\\n\\n    // 12 bytes empty\\n\\n    // ----------------------- slot 1 ---------------------------\\n    /// @dev Maps the DEX ID to the corresponding SmartLending contract address\\n    mapping(uint256 dexId => address) public smartLendingAddress;\\n\\n    // ----------------------- slot 2  ---------------------------\\n    /// @dev smart lending auths can update specific configs.\\n    /// owner can add/remove auths.\\n    /// Owner is auth by default.\\n    mapping(address => mapping(address => uint256)) internal _smartLendingAuths;\\n\\n    // ----------------------- slot 3 ---------------------------\\n    /// @dev deployers can deploy new smartLendings.\\n    /// owner can add/remove deployers.\\n    /// Owner is deployer by default.\\n    mapping(address => uint256) internal _deployers;\\n\\n    // ----------------------- slot 4 ---------------------------\\n    /// @notice list of all created tokens.\\n    /// @dev Solidity creates an automatic getter only to fetch at a certain position, so explicitly define a getter that returns all.\\n    address[] public createdTokens;\\n\\n    // ----------------------- slot 5 ---------------------------\\n\\n    /// @dev smart lending creation code, accessed via SSTORE2.\\n    address internal _smartLendingCreationCodePointer;\\n\\n    /*//////////////////////////////////////////////////////////////\\n                          CONSTRUCTOR\\n    //////////////////////////////////////////////////////////////*/\\n\\n    constructor(address owner_) Owned(owner_) {}\\n}\\n\\nabstract contract Events {\\n    /// @dev Emitted when a new smart lending is deployed\\n    /// @param dexId The ID of the deployed DEX\\n    /// @param smartLending The address of the deployed smart lending\\n    event LogSmartLendingDeployed(uint256 dexId, address smartLending);\\n\\n    /// @dev Emitted when a SmartLending auth is updated\\n    /// @param smartLending address of SmartLending\\n    /// @param auth address of auth whose status is being updated\\n    /// @param allowed updated status of auth\\n    event LogAuthUpdated(address smartLending, address auth, bool allowed);\\n\\n    /// @dev Emitted when a deployer is modified by owner\\n    /// @param deployer address of deployer\\n    /// @param allowed updated status of deployer\\n    event LogDeployerUpdated(address deployer, bool allowed);\\n\\n    /// @dev Emitted when the smart lending creation code is modified by owner\\n    /// @param creationCodePointer address of the creation code pointer\\n    event LogSetCreationCode(address creationCodePointer);\\n}\\n\\ncontract FluidSmartLendingFactory is Constants, Variables, Events, Error {\\n    /// @dev Validates that an address is not the zero address\\n    modifier validAddress(address value_) {\\n        if (value_ == address(0)) {\\n            revert FluidSmartLendingFactoryError(ErrorTypes.SmartLendingFactory__ZeroAddress);\\n        }\\n        _;\\n    }\\n\\n    constructor(\\n        address dexFactory_,\\n        address liquidity_,\\n        address owner_\\n    ) validAddress(dexFactory_) validAddress(liquidity_) validAddress(owner_) Variables(owner_) {\\n        LIQUIDITY = liquidity_;\\n        DEX_FACTORY = dexFactory_;\\n    }\\n\\n    /// @dev Validates that msg.sender is deployer or owner\\n    modifier onlyDeployers() {\\n        if (!isDeployer(msg.sender)) {\\n            revert FluidSmartLendingFactoryError(ErrorTypes.SmartLendingFactory__Unauthorized);\\n        }\\n        _;\\n    }\\n\\n    /// @notice List of all created tokens\\n    function allTokens() public view returns (address[] memory) {\\n        return createdTokens;\\n    }\\n\\n    /// @notice Reads if a certain `auth_` address is an allowed auth for `smartLending_` or not. Owner is auth by default.\\n    function isSmartLendingAuth(address smartLending_, address auth_) public view returns (bool) {\\n        return auth_ == owner || _smartLendingAuths[smartLending_][auth_] == 1;\\n    }\\n\\n    /// @notice Reads if a certain `deployer_` address is an allowed deployer or not. Owner is deployer by default.\\n    function isDeployer(address deployer_) public view returns (bool) {\\n        return deployer_ == owner || _deployers[deployer_] == 1;\\n    }\\n\\n    /// @dev Retrieves the creation code for the SmartLending contract\\n    function smartLendingCreationCode() public view returns (bytes memory) {\\n        return SSTORE2.read(_smartLendingCreationCodePointer);\\n    }\\n\\n    /// @notice Sets an address as allowed deployer or not. Only callable by owner.\\n    /// @param deployer_ Address to set deployer value for\\n    /// @param allowed_ Bool flag for whether address is allowed as deployer or not\\n    function updateDeployer(address deployer_, bool allowed_) external onlyOwner validAddress(deployer_) {\\n        _deployers[deployer_] = allowed_ ? 1 : 0;\\n\\n        emit LogDeployerUpdated(deployer_, allowed_);\\n    }\\n\\n    /// @notice Updates the authorization status of an address for a SmartLending contract. Only callable by owner.\\n    /// @param smartLending_ The address of the SmartLending contract\\n    /// @param auth_ The address to be updated\\n    /// @param allowed_ The new authorization status\\n    function updateSmartLendingAuth(\\n        address smartLending_,\\n        address auth_,\\n        bool allowed_\\n    ) external validAddress(smartLending_) validAddress(auth_) onlyOwner {\\n        _smartLendingAuths[smartLending_][auth_] = allowed_ ? 1 : 0;\\n\\n        emit LogAuthUpdated(smartLending_, auth_, allowed_);\\n    }\\n\\n    /// @notice Sets the `creationCode_` bytecode for new SmartLending contracts. Only callable by owner.\\n    /// @param creationCode_ New SmartLending contract creation code.\\n    function setSmartLendingCreationCode(bytes calldata creationCode_) external onlyOwner {\\n        if (creationCode_.length == 0) {\\n            revert FluidSmartLendingFactoryError(ErrorTypes.SmartLendingFactory__InvalidParams);\\n        }\\n\\n        // write creation code to SSTORE2 pointer and set in mapping\\n        address creationCodePointer_ = SSTORE2.write(creationCode_);\\n        _smartLendingCreationCodePointer = creationCodePointer_;\\n\\n        emit LogSetCreationCode(creationCodePointer_);\\n    }\\n\\n    /// @notice Spell allows owner aka governance to do any arbitrary call on factory\\n    /// @param target_ Address to which the call needs to be delegated\\n    /// @param data_ Data to execute at the delegated address\\n    function spell(address target_, bytes memory data_) external onlyOwner returns (bytes memory response_) {\\n        assembly {\\n            let succeeded := delegatecall(gas(), target_, add(data_, 0x20), mload(data_), 0, 0)\\n            let size := returndatasize()\\n\\n            response_ := mload(0x40)\\n            mstore(0x40, add(response_, and(add(add(size, 0x20), 0x1f), not(0x1f))))\\n            mstore(response_, size)\\n            returndatacopy(add(response_, 0x20), 0, size)\\n\\n            switch iszero(succeeded)\\n            case 1 {\\n                // throw if delegatecall failed\\n                returndatacopy(0x00, 0x00, size)\\n                revert(0x00, size)\\n            }\\n        }\\n    }\\n\\n    /// @notice Deploys a new SmartLending contract. Only callable by deployers.\\n    /// @param dexId_ The ID of the DEX for which the smart lending wrapper is being deployed\\n    /// @return smartLending_ The newly deployed SmartLending contract\\n    function deploy(uint256 dexId_) public onlyDeployers returns (address smartLending_) {\\n        if (smartLendingAddress[dexId_] != address(0)) {\\n            revert FluidSmartLendingFactoryError(ErrorTypes.SmartLendingFactory__AlreadyDeployed);\\n        }\\n\\n        smartLending_ = _deploy(\\n            abi.encodePacked(\\n                SSTORE2.read(_smartLendingCreationCodePointer), // creation code\\n                abi.encode(dexId_, LIQUIDITY, DEX_FACTORY, address(this)) // constructor params\\n            )\\n        );\\n\\n        createdTokens.push(smartLending_); // Add the created token to the allTokens array\\n        smartLendingAddress[dexId_] = smartLending_;\\n\\n        emit LogSmartLendingDeployed(dexId_, smartLending_);\\n    }\\n\\n    /// @dev Deploys a contract using the CREATE opcode with the provided bytecode (`bytecode_`).\\n    /// This is an internal function, meant to be used within the contract to facilitate the deployment of other contracts.\\n    /// @param bytecode_ The bytecode of the contract to be deployed.\\n    /// @return address_ Returns the address of the deployed contract.\\n    function _deploy(bytes memory bytecode_) internal returns (address address_) {\\n        if (bytecode_.length == 0) {\\n            revert FluidDexError(ErrorTypes.SmartLendingFactory__InvalidOperation);\\n        }\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            address_ := create(0, add(bytecode_, 0x20), mload(bytecode_))\\n        }\\n        if (address_ == address(0)) {\\n            revert FluidDexError(ErrorTypes.SmartLendingFactory__InvalidOperation);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x2f89e315f043d0adf403fc3901db780a617f553334bcd74aa948834adb8ae156\",\"license\":\"BUSL-1.1\"},\"solmate/src/auth/Owned.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\npragma solidity >=0.8.0;\\n\\n/// @notice Simple single owner authorization mixin.\\n/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Owned.sol)\\nabstract contract Owned {\\n    /*//////////////////////////////////////////////////////////////\\n                                 EVENTS\\n    //////////////////////////////////////////////////////////////*/\\n\\n    event OwnershipTransferred(address indexed user, address indexed newOwner);\\n\\n    /*//////////////////////////////////////////////////////////////\\n                            OWNERSHIP STORAGE\\n    //////////////////////////////////////////////////////////////*/\\n\\n    address public owner;\\n\\n    modifier onlyOwner() virtual {\\n        require(msg.sender == owner, \\\"UNAUTHORIZED\\\");\\n\\n        _;\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                               CONSTRUCTOR\\n    //////////////////////////////////////////////////////////////*/\\n\\n    constructor(address _owner) {\\n        owner = _owner;\\n\\n        emit OwnershipTransferred(address(0), _owner);\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                             OWNERSHIP LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        owner = newOwner;\\n\\n        emit OwnershipTransferred(msg.sender, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xfedb27d14c508342c33eb067c9a02eabcdb0f9dcf93b04ded1001f580d12d0ea\",\"license\":\"AGPL-3.0-only\"},\"solmate/src/utils/SSTORE2.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\npragma solidity >=0.8.0;\\n\\n/// @notice Read and write to persistent storage at a fraction of the cost.\\n/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SSTORE2.sol)\\n/// @author Modified from 0xSequence (https://github.com/0xSequence/sstore2/blob/master/contracts/SSTORE2.sol)\\nlibrary SSTORE2 {\\n    uint256 internal constant DATA_OFFSET = 1; // We skip the first byte as it's a STOP opcode to ensure the contract can't be called.\\n\\n    /*//////////////////////////////////////////////////////////////\\n                               WRITE LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function write(bytes memory data) internal returns (address pointer) {\\n        // Prefix the bytecode with a STOP opcode to ensure it cannot be called.\\n        bytes memory runtimeCode = abi.encodePacked(hex\\\"00\\\", data);\\n\\n        bytes memory creationCode = abi.encodePacked(\\n            //---------------------------------------------------------------------------------------------------------------//\\n            // Opcode  | Opcode + Arguments  | Description  | Stack View                                                     //\\n            //---------------------------------------------------------------------------------------------------------------//\\n            // 0x60    |  0x600B             | PUSH1 11     | codeOffset                                                     //\\n            // 0x59    |  0x59               | MSIZE        | 0 codeOffset                                                   //\\n            // 0x81    |  0x81               | DUP2         | codeOffset 0 codeOffset                                        //\\n            // 0x38    |  0x38               | CODESIZE     | codeSize codeOffset 0 codeOffset                               //\\n            // 0x03    |  0x03               | SUB          | (codeSize - codeOffset) 0 codeOffset                           //\\n            // 0x80    |  0x80               | DUP          | (codeSize - codeOffset) (codeSize - codeOffset) 0 codeOffset   //\\n            // 0x92    |  0x92               | SWAP3        | codeOffset (codeSize - codeOffset) 0 (codeSize - codeOffset)   //\\n            // 0x59    |  0x59               | MSIZE        | 0 codeOffset (codeSize - codeOffset) 0 (codeSize - codeOffset) //\\n            // 0x39    |  0x39               | CODECOPY     | 0 (codeSize - codeOffset)                                      //\\n            // 0xf3    |  0xf3               | RETURN       |                                                                //\\n            //---------------------------------------------------------------------------------------------------------------//\\n            hex\\\"60_0B_59_81_38_03_80_92_59_39_F3\\\", // Returns all code in the contract except for the first 11 (0B in hex) bytes.\\n            runtimeCode // The bytecode we want the contract to have after deployment. Capped at 1 byte less than the code size limit.\\n        );\\n\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Deploy a new contract with the generated creation code.\\n            // We start 32 bytes into the code to avoid copying the byte length.\\n            pointer := create(0, add(creationCode, 32), mload(creationCode))\\n        }\\n\\n        require(pointer != address(0), \\\"DEPLOYMENT_FAILED\\\");\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                               READ LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function read(address pointer) internal view returns (bytes memory) {\\n        return readBytecode(pointer, DATA_OFFSET, pointer.code.length - DATA_OFFSET);\\n    }\\n\\n    function read(address pointer, uint256 start) internal view returns (bytes memory) {\\n        start += DATA_OFFSET;\\n\\n        return readBytecode(pointer, start, pointer.code.length - start);\\n    }\\n\\n    function read(\\n        address pointer,\\n        uint256 start,\\n        uint256 end\\n    ) internal view returns (bytes memory) {\\n        start += DATA_OFFSET;\\n        end += DATA_OFFSET;\\n\\n        require(pointer.code.length >= end, \\\"OUT_OF_BOUNDS\\\");\\n\\n        return readBytecode(pointer, start, end - start);\\n    }\\n\\n    /*//////////////////////////////////////////////////////////////\\n                          INTERNAL HELPER LOGIC\\n    //////////////////////////////////////////////////////////////*/\\n\\n    function readBytecode(\\n        address pointer,\\n        uint256 start,\\n        uint256 size\\n    ) private view returns (bytes memory data) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Get a pointer to some free memory.\\n            data := mload(0x40)\\n\\n            // Update the free memory pointer to prevent overriding our data.\\n            // We use and(x, not(31)) as a cheaper equivalent to sub(x, mod(x, 32)).\\n            // Adding 31 to size and running the result through the logic above ensures\\n            // the memory pointer remains word-aligned, following the Solidity convention.\\n            mstore(0x40, add(data, and(add(add(size, 32), 31), not(31))))\\n\\n            // Store the size of the data in the first 32 byte chunk of free memory.\\n            mstore(data, size)\\n\\n            // Copy the code into memory right after the 32 bytes we used to store the size.\\n            extcodecopy(pointer, add(data, 32), start, size)\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xc5359c92365c550c418725fc534a538426ea8f6e7f6c06c0a9d66647d864469d\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x60c06040523480156200001157600080fd5b50604051620014f1380380620014f1833981016040819052620000349162000148565b600080546001600160a01b0319166001600160a01b038316908117825560405183928392917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a3508390506001600160a01b038116620000b357604051630ffe228f60e31b815261d6d960048201526024015b60405180910390fd5b826001600160a01b038116620000e157604051630ffe228f60e31b815261d6d96004820152602401620000aa565b826001600160a01b0381166200010f57604051630ffe228f60e31b815261d6d96004820152602401620000aa565b5050506001600160a01b0391821660a052501660805262000192565b80516001600160a01b03811681146200014357600080fd5b919050565b6000806000606084860312156200015e57600080fd5b62000169846200012b565b925062000179602085016200012b565b915062000189604085016200012b565b90509250925092565b60805160a05161132b620001c66000396000818161011401526107930152600081816101e301526107bd015261132b6000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c806397b87b4a11610097578063c7acb01f11610066578063c7acb01f14610261578063d782d64714610281578063d7f67bc614610294578063f2fde38b1461029c57600080fd5b806397b87b4a146101de578063a5e3875114610205578063bb60604914610218578063bc69438b1461024e57600080fd5b80635449c62f116100d35780635449c62f146101835780636ff97f1d1461019657806373f15642146101ab5780638da5cb5b146101be57600080fd5b8063105125ae146100fa5780632861c7d11461010f57806350c358a414610160575b600080fd5b61010d610108366004610ec9565b6102af565b005b6101367f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b61017361016e366004610f5f565b610434565b6040519015158152602001610157565b61010d610191366004610f8a565b610489565b61019e6105d4565b6040516101579190610fbd565b6101736101b9366004611017565b610643565b6000546101369073ffffffffffffffffffffffffffffffffffffffff1681565b6101367f000000000000000000000000000000000000000000000000000000000000000081565b610136610213366004611041565b6106a6565b610136610226366004611041565b60016020526000908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b61010d61025c36600461105a565b610907565b61027461026f3660046110cc565b610ac0565b60405161015791906111d0565b61013661028f366004611041565b610b8e565b610274610bc5565b61010d6102aa366004610f5f565b610bef565b60005473ffffffffffffffffffffffffffffffffffffffff163314610335576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064015b60405180910390fd5b6000819003610374576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6dc600482015260240161032c565b60006103b583838080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250610ce092505050565b600580547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081529091507f902b62f4e405f95c1b616d8cc33a5452122cd5d5a341f1242ce5da8dab3c2bca906020015b60405180910390a1505050565b6000805473ffffffffffffffffffffffffffffffffffffffff83811691161480610483575073ffffffffffffffffffffffffffffffffffffffff82166000908152600360205260409020546001145b92915050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461050a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a45440000000000000000000000000000000000000000604482015260640161032c565b8173ffffffffffffffffffffffffffffffffffffffff811661055c576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6d9600482015260240161032c565b8161056857600061056b565b60015b73ffffffffffffffffffffffffffffffffffffffff841660008181526003602090815260409182902060ff949094169093558051918252841515928201929092527f0a880b2891083d90efa91172b497e53eb2faad86633c299100717a57f50c71379101610427565b6060600480548060200260200160405190810160405280929190818152602001828054801561063957602002820191906000526020600020905b815473ffffffffffffffffffffffffffffffffffffffff16815260019091019060200180831161060e575b5050505050905090565b6000805473ffffffffffffffffffffffffffffffffffffffff8381169116148061069f575073ffffffffffffffffffffffffffffffffffffffff8084166000908152600260209081526040808320938616835292905220546001145b9392505050565b60006106b133610434565b6106eb576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6da600482015260240161032c565b60008281526001602052604090205473ffffffffffffffffffffffffffffffffffffffff161561074b576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6db600482015260240161032c565b60055461083e906107719073ffffffffffffffffffffffffffffffffffffffff16610db8565b604080516020810186905273ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000008116928201929092527f000000000000000000000000000000000000000000000000000000000000000091909116606082015230608082015260a001604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08184030181529082905261082a9291602001611221565b604051602081830303815290604052610de6565b6004805460018082019092557f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b01805473ffffffffffffffffffffffffffffffffffffffff84167fffffffffffffffffffffffff0000000000000000000000000000000000000000918216811790925560008681526020938452604090819020805490921683179091558051868152928301919091529192507f270f50d287b972e1c708a5af88990bb4a1a5aa84c2ab6d05e0c388698497500e910160405180910390a1919050565b8273ffffffffffffffffffffffffffffffffffffffff8116610959576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6d9600482015260240161032c565b8273ffffffffffffffffffffffffffffffffffffffff81166109ab576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6d9600482015260240161032c565b60005473ffffffffffffffffffffffffffffffffffffffff163314610a2c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a45440000000000000000000000000000000000000000604482015260640161032c565b82610a38576000610a3b565b60015b73ffffffffffffffffffffffffffffffffffffffff8681166000818152600260209081526040808320948a168084529482529182902060ff959095169094558051918252928101919091528415158183015290517fdb3c942df90b64cd34f82d72c916f3c55496a8380b9babeb0bd0d64ccb8a6e339181900360600190a15050505050565b60005460609073ffffffffffffffffffffffffffffffffffffffff163314610b44576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a45440000000000000000000000000000000000000000604482015260640161032c565b600080835160208501865af43d6040519250601f19601f6020830101168301604052808352806000602085013e811560018103610b8557816000803e816000fd5b50505092915050565b60048181548110610b9e57600080fd5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b600554606090610bea9073ffffffffffffffffffffffffffffffffffffffff16610db8565b905090565b60005473ffffffffffffffffffffffffffffffffffffffff163314610c70576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a45440000000000000000000000000000000000000000604482015260640161032c565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081178255604051909133917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a350565b60008082604051602001610cf49190611250565b6040516020818303038152906040529050600081604051602001610d189190611276565b60405160208183030381529060405290508051602082016000f0925073ffffffffffffffffffffffffffffffffffffffff8316610db1576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f4445504c4f594d454e545f4641494c4544000000000000000000000000000000604482015260640161032c565b5050919050565b6060610483826001610de18173ffffffffffffffffffffffffffffffffffffffff84163b6112bb565b610e88565b60008151600003610e27576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261d6dd600482015260240161032c565b8151602083016000f0905073ffffffffffffffffffffffffffffffffffffffff8116610e83576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261d6dd600482015260240161032c565b919050565b60408051603f83017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168101909152818152818360208301863c9392505050565b60008060208385031215610edc57600080fd5b823567ffffffffffffffff80821115610ef457600080fd5b818501915085601f830112610f0857600080fd5b813581811115610f1757600080fd5b866020828501011115610f2957600080fd5b60209290920196919550909350505050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610e8357600080fd5b600060208284031215610f7157600080fd5b61069f82610f3b565b80358015158114610e8357600080fd5b60008060408385031215610f9d57600080fd5b610fa683610f3b565b9150610fb460208401610f7a565b90509250929050565b6020808252825182820181905260009190848201906040850190845b8181101561100b57835173ffffffffffffffffffffffffffffffffffffffff1683529284019291840191600101610fd9565b50909695505050505050565b6000806040838503121561102a57600080fd5b61103383610f3b565b9150610fb460208401610f3b565b60006020828403121561105357600080fd5b5035919050565b60008060006060848603121561106f57600080fd5b61107884610f3b565b925061108660208501610f3b565b915061109460408501610f7a565b90509250925092565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b600080604083850312156110df57600080fd5b6110e883610f3b565b9150602083013567ffffffffffffffff8082111561110557600080fd5b818501915085601f83011261111957600080fd5b81358181111561112b5761112b61109d565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0908116603f011681019083821181831017156111715761117161109d565b8160405282815288602084870101111561118a57600080fd5b8260208601602083013760006020848301015280955050505050509250929050565b60005b838110156111c75781810151838201526020016111af565b50506000910152565b60208152600082518060208401526111ef8160408501602087016111ac565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169190910160400192915050565b600083516112338184602088016111ac565b8351908301906112478183602088016111ac565b01949350505050565b60008152600082516112698160018501602087016111ac565b9190910160010192915050565b7f600b5981380380925939f30000000000000000000000000000000000000000008152600082516112ae81600b8501602087016111ac565b91909101600b0192915050565b81810381811115610483577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fdfea2646970667358221220ee2ffab7d24cf39a94ff47671b9cd2b747cc0e33cb98565f13d0d44ba03ae8b764736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100f55760003560e01c806397b87b4a11610097578063c7acb01f11610066578063c7acb01f14610261578063d782d64714610281578063d7f67bc614610294578063f2fde38b1461029c57600080fd5b806397b87b4a146101de578063a5e3875114610205578063bb60604914610218578063bc69438b1461024e57600080fd5b80635449c62f116100d35780635449c62f146101835780636ff97f1d1461019657806373f15642146101ab5780638da5cb5b146101be57600080fd5b8063105125ae146100fa5780632861c7d11461010f57806350c358a414610160575b600080fd5b61010d610108366004610ec9565b6102af565b005b6101367f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b61017361016e366004610f5f565b610434565b6040519015158152602001610157565b61010d610191366004610f8a565b610489565b61019e6105d4565b6040516101579190610fbd565b6101736101b9366004611017565b610643565b6000546101369073ffffffffffffffffffffffffffffffffffffffff1681565b6101367f000000000000000000000000000000000000000000000000000000000000000081565b610136610213366004611041565b6106a6565b610136610226366004611041565b60016020526000908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b61010d61025c36600461105a565b610907565b61027461026f3660046110cc565b610ac0565b60405161015791906111d0565b61013661028f366004611041565b610b8e565b610274610bc5565b61010d6102aa366004610f5f565b610bef565b60005473ffffffffffffffffffffffffffffffffffffffff163314610335576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a4544000000000000000000000000000000000000000060448201526064015b60405180910390fd5b6000819003610374576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6dc600482015260240161032c565b60006103b583838080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250610ce092505050565b600580547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081179091556040519081529091507f902b62f4e405f95c1b616d8cc33a5452122cd5d5a341f1242ce5da8dab3c2bca906020015b60405180910390a1505050565b6000805473ffffffffffffffffffffffffffffffffffffffff83811691161480610483575073ffffffffffffffffffffffffffffffffffffffff82166000908152600360205260409020546001145b92915050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461050a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a45440000000000000000000000000000000000000000604482015260640161032c565b8173ffffffffffffffffffffffffffffffffffffffff811661055c576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6d9600482015260240161032c565b8161056857600061056b565b60015b73ffffffffffffffffffffffffffffffffffffffff841660008181526003602090815260409182902060ff949094169093558051918252841515928201929092527f0a880b2891083d90efa91172b497e53eb2faad86633c299100717a57f50c71379101610427565b6060600480548060200260200160405190810160405280929190818152602001828054801561063957602002820191906000526020600020905b815473ffffffffffffffffffffffffffffffffffffffff16815260019091019060200180831161060e575b5050505050905090565b6000805473ffffffffffffffffffffffffffffffffffffffff8381169116148061069f575073ffffffffffffffffffffffffffffffffffffffff8084166000908152600260209081526040808320938616835292905220546001145b9392505050565b60006106b133610434565b6106eb576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6da600482015260240161032c565b60008281526001602052604090205473ffffffffffffffffffffffffffffffffffffffff161561074b576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6db600482015260240161032c565b60055461083e906107719073ffffffffffffffffffffffffffffffffffffffff16610db8565b604080516020810186905273ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000008116928201929092527f000000000000000000000000000000000000000000000000000000000000000091909116606082015230608082015260a001604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08184030181529082905261082a9291602001611221565b604051602081830303815290604052610de6565b6004805460018082019092557f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b01805473ffffffffffffffffffffffffffffffffffffffff84167fffffffffffffffffffffffff0000000000000000000000000000000000000000918216811790925560008681526020938452604090819020805490921683179091558051868152928301919091529192507f270f50d287b972e1c708a5af88990bb4a1a5aa84c2ab6d05e0c388698497500e910160405180910390a1919050565b8273ffffffffffffffffffffffffffffffffffffffff8116610959576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6d9600482015260240161032c565b8273ffffffffffffffffffffffffffffffffffffffff81166109ab576040517f7ff1147800000000000000000000000000000000000000000000000000000000815261d6d9600482015260240161032c565b60005473ffffffffffffffffffffffffffffffffffffffff163314610a2c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a45440000000000000000000000000000000000000000604482015260640161032c565b82610a38576000610a3b565b60015b73ffffffffffffffffffffffffffffffffffffffff8681166000818152600260209081526040808320948a168084529482529182902060ff959095169094558051918252928101919091528415158183015290517fdb3c942df90b64cd34f82d72c916f3c55496a8380b9babeb0bd0d64ccb8a6e339181900360600190a15050505050565b60005460609073ffffffffffffffffffffffffffffffffffffffff163314610b44576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a45440000000000000000000000000000000000000000604482015260640161032c565b600080835160208501865af43d6040519250601f19601f6020830101168301604052808352806000602085013e811560018103610b8557816000803e816000fd5b50505092915050565b60048181548110610b9e57600080fd5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b600554606090610bea9073ffffffffffffffffffffffffffffffffffffffff16610db8565b905090565b60005473ffffffffffffffffffffffffffffffffffffffff163314610c70576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600c60248201527f554e415554484f52495a45440000000000000000000000000000000000000000604482015260640161032c565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83169081178255604051909133917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a350565b60008082604051602001610cf49190611250565b6040516020818303038152906040529050600081604051602001610d189190611276565b60405160208183030381529060405290508051602082016000f0925073ffffffffffffffffffffffffffffffffffffffff8316610db1576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f4445504c4f594d454e545f4641494c4544000000000000000000000000000000604482015260640161032c565b5050919050565b6060610483826001610de18173ffffffffffffffffffffffffffffffffffffffff84163b6112bb565b610e88565b60008151600003610e27576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261d6dd600482015260240161032c565b8151602083016000f0905073ffffffffffffffffffffffffffffffffffffffff8116610e83576040517f2fee3e0e00000000000000000000000000000000000000000000000000000000815261d6dd600482015260240161032c565b919050565b60408051603f83017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168101909152818152818360208301863c9392505050565b60008060208385031215610edc57600080fd5b823567ffffffffffffffff80821115610ef457600080fd5b818501915085601f830112610f0857600080fd5b813581811115610f1757600080fd5b866020828501011115610f2957600080fd5b60209290920196919550909350505050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610e8357600080fd5b600060208284031215610f7157600080fd5b61069f82610f3b565b80358015158114610e8357600080fd5b60008060408385031215610f9d57600080fd5b610fa683610f3b565b9150610fb460208401610f7a565b90509250929050565b6020808252825182820181905260009190848201906040850190845b8181101561100b57835173ffffffffffffffffffffffffffffffffffffffff1683529284019291840191600101610fd9565b50909695505050505050565b6000806040838503121561102a57600080fd5b61103383610f3b565b9150610fb460208401610f3b565b60006020828403121561105357600080fd5b5035919050565b60008060006060848603121561106f57600080fd5b61107884610f3b565b925061108660208501610f3b565b915061109460408501610f7a565b90509250925092565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b600080604083850312156110df57600080fd5b6110e883610f3b565b9150602083013567ffffffffffffffff8082111561110557600080fd5b818501915085601f83011261111957600080fd5b81358181111561112b5761112b61109d565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0908116603f011681019083821181831017156111715761117161109d565b8160405282815288602084870101111561118a57600080fd5b8260208601602083013760006020848301015280955050505050509250929050565b60005b838110156111c75781810151838201526020016111af565b50506000910152565b60208152600082518060208401526111ef8160408501602087016111ac565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169190910160400192915050565b600083516112338184602088016111ac565b8351908301906112478183602088016111ac565b01949350505050565b60008152600082516112698160018501602087016111ac565b9190910160010192915050565b7f600b5981380380925939f30000000000000000000000000000000000000000008152600082516112ae81600b8501602087016111ac565b91909101600b0192915050565b81810381811115610483577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fdfea2646970667358221220ee2ffab7d24cf39a94ff47671b9cd2b747cc0e33cb98565f13d0d44ba03ae8b764736f6c63430008150033",
+  "devdoc": {
+    "events": {
+      "LogAuthUpdated(address,address,bool)": {
+        "details": "Emitted when a SmartLending auth is updated",
+        "params": {
+          "allowed": "updated status of auth",
+          "auth": "address of auth whose status is being updated",
+          "smartLending": "address of SmartLending"
+        }
+      },
+      "LogDeployerUpdated(address,bool)": {
+        "details": "Emitted when a deployer is modified by owner",
+        "params": {
+          "allowed": "updated status of deployer",
+          "deployer": "address of deployer"
+        }
+      },
+      "LogSetCreationCode(address)": {
+        "details": "Emitted when the smart lending creation code is modified by owner",
+        "params": {
+          "creationCodePointer": "address of the creation code pointer"
+        }
+      },
+      "LogSmartLendingDeployed(uint256,address)": {
+        "details": "Emitted when a new smart lending is deployed",
+        "params": {
+          "dexId": "The ID of the deployed DEX",
+          "smartLending": "The address of the deployed smart lending"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "deploy(uint256)": {
+        "params": {
+          "dexId_": "The ID of the DEX for which the smart lending wrapper is being deployed"
+        },
+        "returns": {
+          "smartLending_": "The newly deployed SmartLending contract"
+        }
+      },
+      "setSmartLendingCreationCode(bytes)": {
+        "params": {
+          "creationCode_": "New SmartLending contract creation code."
+        }
+      },
+      "smartLendingCreationCode()": {
+        "details": "Retrieves the creation code for the SmartLending contract"
+      },
+      "spell(address,bytes)": {
+        "params": {
+          "data_": "Data to execute at the delegated address",
+          "target_": "Address to which the call needs to be delegated"
+        }
+      },
+      "updateDeployer(address,bool)": {
+        "params": {
+          "allowed_": "Bool flag for whether address is allowed as deployer or not",
+          "deployer_": "Address to set deployer value for"
+        }
+      },
+      "updateSmartLendingAuth(address,address,bool)": {
+        "params": {
+          "allowed_": "The new authorization status",
+          "auth_": "The address to be updated",
+          "smartLending_": "The address of the SmartLending contract"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "errors": {
+      "FluidDexSwapResult(uint256)": [
+        {
+          "notice": "used to simulate swap to find the output amount"
+        }
+      ]
+    },
+    "kind": "user",
+    "methods": {
+      "allTokens()": {
+        "notice": "List of all created tokens"
+      },
+      "createdTokens(uint256)": {
+        "notice": "list of all created tokens."
+      },
+      "deploy(uint256)": {
+        "notice": "Deploys a new SmartLending contract. Only callable by deployers."
+      },
+      "isDeployer(address)": {
+        "notice": "Reads if a certain `deployer_` address is an allowed deployer or not. Owner is deployer by default."
+      },
+      "isSmartLendingAuth(address,address)": {
+        "notice": "Reads if a certain `auth_` address is an allowed auth for `smartLending_` or not. Owner is auth by default."
+      },
+      "setSmartLendingCreationCode(bytes)": {
+        "notice": "Sets the `creationCode_` bytecode for new SmartLending contracts. Only callable by owner."
+      },
+      "spell(address,bytes)": {
+        "notice": "Spell allows owner aka governance to do any arbitrary call on factory"
+      },
+      "updateDeployer(address,bool)": {
+        "notice": "Sets an address as allowed deployer or not. Only callable by owner."
+      },
+      "updateSmartLendingAuth(address,address,bool)": {
+        "notice": "Updates the authorization status of an address for a SmartLending contract. Only callable by owner."
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 4975,
+        "contract": "contracts/protocols/dex/smartLending/factory/main.sol:FluidSmartLendingFactory",
+        "label": "owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 3193,
+        "contract": "contracts/protocols/dex/smartLending/factory/main.sol:FluidSmartLendingFactory",
+        "label": "smartLendingAddress",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_uint256,t_address)"
+      },
+      {
+        "astId": 3200,
+        "contract": "contracts/protocols/dex/smartLending/factory/main.sol:FluidSmartLendingFactory",
+        "label": "_smartLendingAuths",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+      },
+      {
+        "astId": 3205,
+        "contract": "contracts/protocols/dex/smartLending/factory/main.sol:FluidSmartLendingFactory",
+        "label": "_deployers",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 3209,
+        "contract": "contracts/protocols/dex/smartLending/factory/main.sol:FluidSmartLendingFactory",
+        "label": "createdTokens",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 3212,
+        "contract": "contracts/protocols/dex/smartLending/factory/main.sol:FluidSmartLendingFactory",
+        "label": "_smartLendingCreationCodePointer",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(address => uint256))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_uint256)"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_uint256,t_address)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => address)",
+        "numberOfBytes": "32",
+        "value": "t_address"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
