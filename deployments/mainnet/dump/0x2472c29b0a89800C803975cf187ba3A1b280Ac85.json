@@ -1,0 +1,567 @@
+{
+  "address": "0x2472c29b0a89800C803975cf187ba3A1b280Ac85",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFluidVaultResolver",
+          "name": "vaultResolver_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "FluidVaultLiquidationsResolver__AddressZero",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "FluidVaultLiquidationsResolver__InvalidParams",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "VAULT_RESOLVER",
+      "outputs": [
+        {
+          "internalType": "contract IFluidVaultResolver",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenIn_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "tokenOut_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "inAmt_",
+          "type": "uint256"
+        }
+      ],
+      "name": "exactInput",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "vault_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "actualInAmt_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "outAmt_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "withAbsorb_",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenIn_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "tokenOut_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "outAmt_",
+          "type": "uint256"
+        }
+      ],
+      "name": "exactOutput",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "vault_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "inAmt_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "actualOutAmt_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "withAbsorb_",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllSwapPairs",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct Structs.VaultData[]",
+          "name": "vaultDatas_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenIn_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "tokenOut_",
+          "type": "address"
+        }
+      ],
+      "name": "getSwapAvailable",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "inAmt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "outAmt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "inAmtWithAbsorb",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "outAmtWithAbsorb",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.SwapData",
+          "name": "swapData_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "vault_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "receiver_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenInAmt_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenOutAmt_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "slippage_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "withAbsorb_",
+          "type": "bool"
+        }
+      ],
+      "name": "getSwapCalldata",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "calldata_",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "vault_",
+          "type": "address"
+        }
+      ],
+      "name": "getSwapDataForVault",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "inAmt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "outAmt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "inAmtWithAbsorb",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "outAmtWithAbsorb",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.SwapData",
+          "name": "swapData_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokensIn_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "tokensOut_",
+          "type": "address[]"
+        }
+      ],
+      "name": "getSwapsAvailable",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "inAmt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "outAmt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "inAmtWithAbsorb",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "outAmtWithAbsorb",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.SwapData[]",
+          "name": "swapDatas_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenIn_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "tokenOut_",
+          "type": "address"
+        }
+      ],
+      "name": "getVaultForSwap",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "vault_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokensIn_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "tokensOut_",
+          "type": "address[]"
+        }
+      ],
+      "name": "getVaultsForSwap",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct Structs.VaultData[]",
+          "name": "vaultDatas_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x70aecd1ae7c88b67965e96f072d8138381f87de6dda578345f7835e4530bec42",
+  "receipt": {
+    "to": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "from": "0x588ee487e23eF3F5291A2F238e26A4846887B4ee",
+    "contractAddress": null,
+    "transactionIndex": 0,
+    "gasUsed": "30404",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000002000000080000000000000000000000000000000000000000000000000000000800000000400000000000000000000000000000000000000000000000000000000000000000040000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000200000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xa16a4ccab52aa5ba4d14486ceb996123538fa1c5892f2dbdf557e67a57bd917a",
+    "transactionHash": "0x70aecd1ae7c88b67965e96f072d8138381f87de6dda578345f7835e4530bec42",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 15380655,
+        "transactionHash": "0x228eb378dd973949e28777fb5fd147aa90a2950b6caf2925b510521a520ca731",
+        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "topics": [
+          "0x7fcf532c15f0a6db0bd6d0e038bea71d30d808c7d98cb3bf7268a95bf5081b65",
+          "0x000000000000000000000000588ee487e23ef3f5291a2f238e26a4846887b4ee"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000001f161421c8e000",
+        "logIndex": 0,
+        "blockHash": "0xa16a4ccab52aa5ba4d14486ceb996123538fa1c5892f2dbdf557e67a57bd917a"
+      }
+    ],
+    "blockNumber": 15380655,
+    "cumulativeGasUsed": "30404",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x8DD65DaDb217f73A94Efb903EB2dc7B49D97ECca"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "b8c8b43989e7e1436bbea395bae67e9e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IFluidVaultResolver\",\"name\":\"vaultResolver_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"FluidVaultLiquidationsResolver__AddressZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FluidVaultLiquidationsResolver__InvalidParams\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VAULT_RESOLVER\",\"outputs\":[{\"internalType\":\"contract IFluidVaultResolver\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenIn_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenOut_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"inAmt_\",\"type\":\"uint256\"}],\"name\":\"exactInput\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"vault_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"actualInAmt_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"outAmt_\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"withAbsorb_\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenIn_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenOut_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"outAmt_\",\"type\":\"uint256\"}],\"name\":\"exactOutput\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"vault_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"inAmt_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"actualOutAmt_\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"withAbsorb_\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllSwapPairs\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenIn\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenOut\",\"type\":\"address\"}],\"internalType\":\"struct Structs.VaultData[]\",\"name\":\"vaultDatas_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenIn_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenOut_\",\"type\":\"address\"}],\"name\":\"getSwapAvailable\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"inAmt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"outAmt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"inAmtWithAbsorb\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"outAmtWithAbsorb\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.SwapData\",\"name\":\"swapData_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiver_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenInAmt_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tokenOutAmt_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"slippage_\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"withAbsorb_\",\"type\":\"bool\"}],\"name\":\"getSwapCalldata\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"calldata_\",\"type\":\"bytes\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault_\",\"type\":\"address\"}],\"name\":\"getSwapDataForVault\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"inAmt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"outAmt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"inAmtWithAbsorb\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"outAmtWithAbsorb\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.SwapData\",\"name\":\"swapData_\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tokensIn_\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"tokensOut_\",\"type\":\"address[]\"}],\"name\":\"getSwapsAvailable\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"inAmt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"outAmt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"inAmtWithAbsorb\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"outAmtWithAbsorb\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.SwapData[]\",\"name\":\"swapDatas_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenIn_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenOut_\",\"type\":\"address\"}],\"name\":\"getVaultForSwap\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"vault_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tokensIn_\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"tokensOut_\",\"type\":\"address[]\"}],\"name\":\"getVaultsForSwap\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenIn\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenOut\",\"type\":\"address\"}],\"internalType\":\"struct Structs.VaultData[]\",\"name\":\"vaultDatas_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"exactInput(address,address,uint256)\":{\"details\":\"returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.\",\"params\":{\"inAmt_\":\"exact input token amount that should be swapped to output token\",\"tokenIn_\":\"input token (debt token at vault)\",\"tokenOut_\":\"output token (collateral token at vault)\"},\"returns\":{\"actualInAmt_\":\"actual input token amount. Equals `inAmt_`, but if less then the desired swap amount is                      available, then the available amount is returned instead.\",\"outAmt_\":\"received output token amount for `actualInAmt_` of input token\",\"vault_\":\"vault address at which the swap is available.\",\"withAbsorb_\":\"flag for using mode \\\"withAbsorb\\\". Is set to true if a) liquidity without absorb would not                     cover the desired `inAmt_` or if b) the rate of with absorb is better than without absorb.\"}},\"exactOutput(address,address,uint256)\":{\"details\":\"returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.\",\"params\":{\"outAmt_\":\"exact output token amount that should be received as a result of the swap\",\"tokenIn_\":\"input token (debt token at vault)\",\"tokenOut_\":\"output token (collateral token at vault)\"},\"returns\":{\"actualOutAmt_\":\"actual output token amount. Equals `outAmt_`, but if less then the desired swap amount is                      available, then the available amount is returned instead\",\"inAmt_\":\"required input token amount to receive `actualOutAmt_` of output token\",\"vault_\":\"vault address at which the swap is available.\",\"withAbsorb_\":\"flag for using mode \\\"withAbsorb\\\". Is set to true if a) liquidity without absorb would not                     cover the desired `outAmt_` or if b) the rate of with absorb is better than without absorb.\"}},\"getSwapAvailable(address,address)\":{\"details\":\"returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.expected to be called with callStatic, although this method does not do any actual state changes anyway.for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE.\"},\"getSwapCalldata(address,address,uint256,uint256,uint256,bool)\":{\"params\":{\"receiver_\":\"receiver address that the output token is sent to\",\"slippage_\":\"maximum allowed slippage for the expected output token amount. Reverts iIf received token out                   amount is lower than this. in 1e4 percentage, e.g. 1% = 10000, 0.3% = 3000, 0.01% = 100, 0.0001% = 1.\",\"tokenInAmt_\":\"input token amount (debt token at vault)\",\"tokenOutAmt_\":\"expected output token amount (collateral token at vault)\",\"vault_\":\"vault address at which the liquidation is executed\",\"withAbsorb_\":\"set to true to trigger liquidation with executing `absorb()` first. Liquidity is >= when this                    is set to true. Rate can be better with or without, check before via other methods.\"},\"returns\":{\"calldata_\":\"the calldata that can be used to trigger the liquidation call, resulting in the desired swap.\"}},\"getSwapDataForVault(address)\":{\"details\":\"returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.expected to be called with callStatic, although this method does not do any actual state changes anyway.\"},\"getSwapsAvailable(address[],address[])\":{\"details\":\"returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.expected to be called with callStatic, although this method does not do any actual state changes anyway.for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE.\"},\"getVaultForSwap(address,address)\":{\"details\":\"for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE.\"},\"getVaultsForSwap(address[],address[])\":{\"details\":\"for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE.\"}},\"version\":1},\"userdoc\":{\"errors\":{\"FluidVaultLiquidationsResolver__AddressZero()\":[{\"notice\":\"thrown if an input param address is zero\"}],\"FluidVaultLiquidationsResolver__InvalidParams()\":[{\"notice\":\"thrown if an invalid param is given to a method\"}]},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"constructor sets the immutable vault resolver address\"},\"exactInput(address,address,uint256)\":{\"notice\":\"finds a swap from `tokenIn_` to `tokenOut_` for an exact input amount `inAmt_`. If available amount is         less then the desired input amount, it returns the available amount. Considers the best rate available         for mode with absorb and mode without absorb.\"},\"exactOutput(address,address,uint256)\":{\"notice\":\"finds a swap from `tokenIn_` to `tokenOut_` for an exact output amount `outAmt_`. If available amount is         less then the desired output amount, it returns the available amount. Considers the best rate available         for mode with absorb and mode without absorb.\"},\"getAllSwapPairs()\":{\"notice\":\"returns all token swap pairs available through Fluid Vault Liquidations\"},\"getSwapAvailable(address,address)\":{\"notice\":\"finds the total available swappable amount for a `tokenIn_` to `tokenOut_` swap, considering both a swap         that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,         sometimes without absorb can provide better swaps. But available liquidity for \\\"withAbsorb\\\" amounts will         always be >= normal amounts.\"},\"getSwapCalldata(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"returns the calldata to execute a swap as found through this contract by triggering a vault liquidation.         `tokenInAmt_` must come from msg.sender, `tokenOutAmt_` goes to `receiver_`. If the input token is the         native token, msg.value must be sent along when triggering the actual call with the returned calldata.\"},\"getSwapDataForVault(address)\":{\"notice\":\"returns the available swap (liquidation) amounts at a certain `vault_`, considering both         a swap that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,         sometimes without absorb can provide better swaps. But available liquidity for \\\"withAbsorb\\\" amounts will         always be >= normal amounts.\"},\"getSwapsAvailable(address[],address[])\":{\"notice\":\"finds the total available swappable amount for any `tokensIn_` to any `tokesnOut_` swap, considering both         a swap that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,         sometimes without absorb can provide better swaps. But available liquidity for \\\"withAbsorb\\\" amounts will         always be >= normal amounts. Token pairs that are not available will not be listed in returned SwapData array.         e.g. for tokensIn_: USDC & USDT and tokensOut_: ETH & wstETH, this would return any available token pair incl.         the available swappable amounts, so for USDC -> ETH, USDC -> wstETH, USDT -> ETH, USDT -> wstETH.\"},\"getVaultForSwap(address,address)\":{\"notice\":\"returns the vault address for a certain `tokenIn_` swapped to a `tokenOut_`.         returns zero address if no vault is available for a given pair.\"},\"getVaultsForSwap(address[],address[])\":{\"notice\":\"returns all available token pair swaps for any `tokensIn_` to any `tokensOut_` with the vault address.\"}},\"notice\":\"Resolver contract that helps in finding available token swaps through Fluid Vault liquidations.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/periphery/resolvers/vaultLiquidation/main.sol\":\"FluidVaultLiquidationResolver\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/liquidity/adminModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nabstract contract Structs {\\n    struct AddressBool {\\n        address addr;\\n        bool value;\\n    }\\n\\n    struct AddressUint256 {\\n        address addr;\\n        uint256 value;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 1\\n    struct RateDataV1Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink usually means slow increase in rate, once utilization is above kink borrow rate increases fast\\n        uint256 kink;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink borrow rate when utilization is at kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink;\\n        ///\\n        /// @param rateAtUtilizationMax borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 2\\n    struct RateDataV2Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink1 first kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 1 usually means slow increase in rate, once utilization is above kink 1 borrow rate increases faster\\n        uint256 kink1;\\n        ///\\n        /// @param kink2 second kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 2 usually means slow / medium increase in rate, once utilization is above kink 2 borrow rate increases fast\\n        uint256 kink2;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink1 desired borrow rate when utilization is at first kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at first kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink1;\\n        ///\\n        /// @param rateAtUtilizationKink2 desired borrow rate when utilization is at second kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at second kink then rateAtUtilizationKink would be 1_200\\n        uint256 rateAtUtilizationKink2;\\n        ///\\n        /// @param rateAtUtilizationMax desired borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set token config\\n    struct TokenConfig {\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param fee charges on borrower's interest. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 fee;\\n        ///\\n        /// @param threshold on when to update the storage slot. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 threshold;\\n    }\\n\\n    /// @notice struct to set user supply & withdrawal config\\n    struct UserSupplyConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent withdrawal limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which withdrawal limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration withdrawal limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseWithdrawalLimit base limit, below this, user can withdraw the entire amount.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseWithdrawalLimit;\\n    }\\n\\n    /// @notice struct to set user borrow & payback config\\n    struct UserBorrowConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent debt limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which debt limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration debt limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseDebtCeiling base borrow limit. until here, borrow limit remains as baseDebtCeiling\\n        /// (user can borrow until this point at once without stepped expansion). Above this, automated limit comes in place.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseDebtCeiling;\\n        ///\\n        /// @param maxDebtCeiling max borrow ceiling, maximum amount the user can borrow.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 maxDebtCeiling;\\n    }\\n}\\n\",\"keccak256\":\"0xcacc14afd7880d3179d0089d65dad6714c377df4801a9ad79a499d0d079124c0\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/liquidity/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Structs as AdminModuleStructs } from \\\"../../../liquidity/adminModule/structs.sol\\\";\\n\\nabstract contract Structs {\\n    struct RateData {\\n        uint256 version;\\n        AdminModuleStructs.RateDataV1Params rateDataV1;\\n        AdminModuleStructs.RateDataV2Params rateDataV2;\\n    }\\n\\n    struct OverallTokenData {\\n        uint256 borrowRate;\\n        uint256 supplyRate;\\n        uint256 fee; // revenue fee\\n        uint256 lastStoredUtilization;\\n        uint256 storageUpdateThreshold;\\n        uint256 lastUpdateTimestamp;\\n        uint256 supplyExchangePrice;\\n        uint256 borrowExchangePrice;\\n        uint256 supplyRawInterest;\\n        uint256 supplyInterestFree;\\n        uint256 borrowRawInterest;\\n        uint256 borrowInterestFree;\\n        uint256 totalSupply;\\n        uint256 totalBorrow;\\n        uint256 revenue;\\n        RateData rateData;\\n    }\\n\\n    // amounts are always in normal (for withInterest already multiplied with exchange price)\\n    struct UserSupplyData {\\n        bool modeWithInterest; // true if mode = with interest, false = without interest\\n        uint256 supply; // user supply amount\\n        // the withdrawal limit (e.g. if 10% is the limit, and 100M is supplied, it would be 90M)\\n        uint256 withdrawalLimit;\\n        uint256 lastUpdateTimestamp;\\n        uint256 expandPercent; // withdrawal limit expand percent in 1e2\\n        uint256 expandDuration; // withdrawal limit expand duration in seconds\\n        uint256 baseWithdrawalLimit;\\n        // the current actual max withdrawable amount (e.g. if 10% is the limit, and 100M is supplied, it would be 10M)\\n        uint256 withdrawableUntilLimit;\\n        uint256 withdrawable; // actual currently withdrawable amount (supply - withdrawal Limit) & considering balance\\n    }\\n\\n    // amounts are always in normal (for withInterest already multiplied with exchange price)\\n    struct UserBorrowData {\\n        bool modeWithInterest; // true if mode = with interest, false = without interest\\n        uint256 borrow; // user borrow amount\\n        uint256 borrowLimit;\\n        uint256 lastUpdateTimestamp;\\n        uint256 expandPercent;\\n        uint256 expandDuration;\\n        uint256 baseBorrowLimit;\\n        uint256 maxBorrowLimit;\\n        uint256 borrowableUntilLimit;\\n        uint256 borrowable; // actual currently borrowable amount (borrow limit - already borrowed) & considering balance\\n    }\\n}\\n\",\"keccak256\":\"0x4a935db0fd6fee3a9a9456b0655953ee03158a975ef77faa5d390e4066f1ee89\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/vault/iVaultResolver.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { Structs } from \\\"./structs.sol\\\";\\n\\ninterface IFluidVaultResolver {\\n    function vaultByNftId(uint nftId_) external view returns (address vault_);\\n\\n    function positionByNftId(\\n        uint nftId_\\n    ) external view returns (Structs.UserPosition memory userPosition_, Structs.VaultEntireData memory vaultData_);\\n\\n    function getVaultVariablesRaw(address vault_) external view returns (uint);\\n\\n    function getAllVaultsAddresses() external view returns (address[] memory vaults_);\\n\\n    function getVaultLiquidation(\\n        address vault_,\\n        uint tokenInAmt_\\n    ) external returns (Structs.LiquidationStruct memory liquidationData_);\\n\\n    function getVaultEntireData(address vault_) external view returns (Structs.VaultEntireData memory vaultData_);\\n}\\n\",\"keccak256\":\"0x1ef8d6c493fda847f66282417aa362f7fca9f90d6b991a6fdbe1a7ac07d88b96\",\"license\":\"MIT\"},\"contracts/periphery/resolvers/vault/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidVaultT1 } from \\\"../../../protocols/vault/interfaces/iVaultT1.sol\\\";\\nimport { Structs as FluidLiquidityResolverStructs } from \\\"../liquidity/structs.sol\\\";\\n\\ncontract Structs {\\n    struct Configs {\\n        uint16 supplyRateMagnifier;\\n        uint16 borrowRateMagnifier;\\n        uint16 collateralFactor;\\n        uint16 liquidationThreshold;\\n        uint16 liquidationMaxLimit;\\n        uint16 withdrawalGap;\\n        uint16 liquidationPenalty;\\n        uint16 borrowFee;\\n        address oracle;\\n        uint oraclePrice;\\n        address rebalancer;\\n    }\\n\\n    struct ExchangePricesAndRates {\\n        uint lastStoredLiquiditySupplyExchangePrice;\\n        uint lastStoredLiquidityBorrowExchangePrice;\\n        uint lastStoredVaultSupplyExchangePrice;\\n        uint lastStoredVaultBorrowExchangePrice;\\n        uint liquiditySupplyExchangePrice;\\n        uint liquidityBorrowExchangePrice;\\n        uint vaultSupplyExchangePrice;\\n        uint vaultBorrowExchangePrice;\\n        uint supplyRateVault;\\n        uint borrowRateVault;\\n        uint supplyRateLiquidity;\\n        uint borrowRateLiquidity;\\n        uint rewardsRate; // rewards rate in percent 1e2 precision (1% = 100, 100% = 10000)\\n    }\\n\\n    struct TotalSupplyAndBorrow {\\n        uint totalSupplyVault;\\n        uint totalBorrowVault;\\n        uint totalSupplyLiquidity;\\n        uint totalBorrowLiquidity;\\n        uint absorbedSupply;\\n        uint absorbedBorrow;\\n    }\\n\\n    struct LimitsAndAvailability {\\n        uint withdrawLimit;\\n        uint withdrawableUntilLimit;\\n        uint withdrawable;\\n        uint borrowLimit;\\n        uint borrowableUntilLimit;\\n        uint borrowable;\\n        uint minimumBorrowing;\\n    }\\n\\n    struct CurrentBranchState {\\n        uint status; // if 0 then not liquidated, if 1 then liquidated, if 2 then merged, if 3 then closed\\n        int minimaTick;\\n        uint debtFactor;\\n        uint partials;\\n        uint debtLiquidity;\\n        uint baseBranchId;\\n        int baseBranchMinima;\\n    }\\n\\n    struct VaultState {\\n        uint totalPositions;\\n        int topTick;\\n        uint currentBranch;\\n        uint totalBranch;\\n        uint totalBorrow;\\n        uint totalSupply;\\n        CurrentBranchState currentBranchState;\\n    }\\n\\n    struct VaultEntireData {\\n        address vault;\\n        IFluidVaultT1.ConstantViews constantVariables;\\n        Configs configs;\\n        ExchangePricesAndRates exchangePricesAndRates;\\n        TotalSupplyAndBorrow totalSupplyAndBorrow;\\n        LimitsAndAvailability limitsAndAvailability;\\n        VaultState vaultState;\\n        // liquidity related data such as supply amount, limits, expansion etc.\\n        FluidLiquidityResolverStructs.UserSupplyData liquidityUserSupplyData;\\n        // liquidity related data such as borrow amount, limits, expansion etc.\\n        FluidLiquidityResolverStructs.UserBorrowData liquidityUserBorrowData;\\n    }\\n\\n    struct UserPosition {\\n        uint nftId;\\n        address owner;\\n        bool isLiquidated;\\n        bool isSupplyPosition; // if true that means borrowing is 0\\n        int tick;\\n        uint tickId;\\n        uint beforeSupply;\\n        uint beforeBorrow;\\n        uint beforeDustBorrow;\\n        uint supply;\\n        uint borrow;\\n        uint dustBorrow;\\n    }\\n\\n    /// @dev liquidation related data\\n    /// @param vault address of vault\\n    /// @param tokenIn_ address of token in\\n    /// @param tokenOut_ address of token out\\n    /// @param tokenInAmtOne_ (without absorb liquidity) minimum of available liquidation & tokenInAmt_\\n    /// @param tokenOutAmtOne_ (without absorb liquidity) expected token out, collateral to withdraw\\n    /// @param tokenInAmtTwo_ (absorb liquidity included) minimum of available liquidation & tokenInAmt_. In most cases it'll be same as tokenInAmtOne_ but sometimes can be bigger.\\n    /// @param tokenOutAmtTwo_ (absorb liquidity included) expected token out, collateral to withdraw. In most cases it'll be same as tokenOutAmtOne_ but sometimes can be bigger.\\n    /// @dev Liquidity in Two will always be >= One. Sometimes One can provide better swaps, sometimes Two can provide better swaps. But available in Two will always be >= One\\n    struct LiquidationStruct {\\n        address vault;\\n        address tokenIn;\\n        address tokenOut;\\n        uint tokenInAmtOne;\\n        uint tokenOutAmtOne;\\n        uint tokenInAmtTwo;\\n        uint tokenOutAmtTwo;\\n    }\\n}\\n\",\"keccak256\":\"0x3ecc3c4e61f9135d0a5c42d4d81161a1eb95d0671264aaf4880b9e98972326c0\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/vaultLiquidation/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Variables } from \\\"./variables.sol\\\";\\nimport { Structs } from \\\"./structs.sol\\\";\\nimport { Structs as VaultResolverStructs } from \\\"../vault/structs.sol\\\";\\nimport { IFluidVaultResolver } from \\\"../vault/iVaultResolver.sol\\\";\\nimport { IFluidVaultT1 } from \\\"../../../protocols/vault/interfaces/iVaultT1.sol\\\";\\n\\n/// @notice Resolver contract that helps in finding available token swaps through Fluid Vault liquidations.\\ncontract FluidVaultLiquidationResolver is Variables, Structs {\\n    /// @notice thrown if an input param address is zero\\n    error FluidVaultLiquidationsResolver__AddressZero();\\n    /// @notice thrown if an invalid param is given to a method\\n    error FluidVaultLiquidationsResolver__InvalidParams();\\n\\n    /// @notice constructor sets the immutable vault resolver address\\n    constructor(IFluidVaultResolver vaultResolver_) Variables(vaultResolver_) {\\n        if (address(vaultResolver_) == address(0)) {\\n            revert FluidVaultLiquidationsResolver__AddressZero();\\n        }\\n    }\\n\\n    /// @notice returns all token swap pairs available through Fluid Vault Liquidations\\n    function getAllSwapPairs() public view returns (VaultData[] memory vaultDatas_) {\\n        address[] memory vaultAddresses_ = VAULT_RESOLVER.getAllVaultsAddresses();\\n        vaultDatas_ = new VaultData[](vaultAddresses_.length);\\n\\n        IFluidVaultT1.ConstantViews memory constants_;\\n        for (uint256 i; i < vaultAddresses_.length; ++i) {\\n            constants_ = IFluidVaultT1(vaultAddresses_[i]).constantsView();\\n            vaultDatas_[i] = VaultData({\\n                vault: vaultAddresses_[i],\\n                tokenIn: constants_.borrowToken,\\n                tokenOut: constants_.supplyToken\\n            });\\n        }\\n    }\\n\\n    /// @notice returns the vault address for a certain `tokenIn_` swapped to a `tokenOut_`.\\n    ///         returns zero address if no vault is available for a given pair.\\n    /// @dev    for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE.\\n    function getVaultForSwap(address tokenIn_, address tokenOut_) public view returns (address vault_) {\\n        address[] memory vaults_ = VAULT_RESOLVER.getAllVaultsAddresses();\\n\\n        IFluidVaultT1.ConstantViews memory constants_;\\n        for (uint256 i; i < vaults_.length; ++i) {\\n            constants_ = IFluidVaultT1(vaults_[i]).constantsView();\\n\\n            if (constants_.borrowToken == tokenIn_ && constants_.supplyToken == tokenOut_) {\\n                return vaults_[i];\\n            }\\n        }\\n    }\\n\\n    /// @notice returns all available token pair swaps for any `tokensIn_` to any `tokensOut_` with the vault address.\\n    /// @dev    for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE.\\n    function getVaultsForSwap(\\n        address[] calldata tokensIn_,\\n        address[] calldata tokensOut_\\n    ) public view returns (VaultData[] memory vaultDatas_) {\\n        uint256 maxCombinations_ = tokensIn_.length * tokensOut_.length;\\n\\n        VaultData[] memory allVaults_ = new VaultData[](maxCombinations_);\\n\\n        address[] memory vaultAddresses_ = VAULT_RESOLVER.getAllVaultsAddresses();\\n\\n        uint256 matches_;\\n        uint256 index_;\\n\\n        IFluidVaultT1.ConstantViews memory constants_;\\n        for (uint256 vi; vi < vaultAddresses_.length; ++vi) {\\n            constants_ = IFluidVaultT1(vaultAddresses_[vi]).constantsView();\\n\\n            index_ = 0;\\n            // for each vault, iterate over all possible input params token combinations\\n            for (uint256 i; i < tokensIn_.length; ++i) {\\n                for (uint256 j; j < tokensOut_.length; ++j) {\\n                    if (constants_.borrowToken == tokensIn_[i] && constants_.supplyToken == tokensOut_[j]) {\\n                        allVaults_[index_] = VaultData({\\n                            vault: vaultAddresses_[vi],\\n                            tokenIn: tokensIn_[i],\\n                            tokenOut: tokensOut_[j]\\n                        });\\n                        ++matches_;\\n                    }\\n                    ++index_;\\n                }\\n            }\\n        }\\n\\n        vaultDatas_ = new VaultData[](matches_);\\n        index_ = 0;\\n        for (uint256 i; i < maxCombinations_; ++i) {\\n            if (allVaults_[i].vault != address(0)) {\\n                vaultDatas_[index_] = allVaults_[i];\\n                ++index_;\\n            }\\n        }\\n    }\\n\\n    /// @notice finds the total available swappable amount for a `tokenIn_` to `tokenOut_` swap, considering both a swap\\n    ///         that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,\\n    ///         sometimes without absorb can provide better swaps. But available liquidity for \\\"withAbsorb\\\" amounts will\\n    ///         always be >= normal amounts.\\n    /// @dev    returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.\\n    /// @dev    expected to be called with callStatic, although this method does not do any actual state changes anyway.\\n    /// @dev    for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE.\\n    function getSwapAvailable(address tokenIn_, address tokenOut_) public returns (SwapData memory swapData_) {\\n        return getSwapDataForVault(getVaultForSwap(tokenIn_, tokenOut_));\\n    }\\n\\n    /// @notice finds the total available swappable amount for any `tokensIn_` to any `tokesnOut_` swap, considering both\\n    ///         a swap that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,\\n    ///         sometimes without absorb can provide better swaps. But available liquidity for \\\"withAbsorb\\\" amounts will\\n    ///         always be >= normal amounts. Token pairs that are not available will not be listed in returned SwapData array.\\n    ///         e.g. for tokensIn_: USDC & USDT and tokensOut_: ETH & wstETH, this would return any available token pair incl.\\n    ///         the available swappable amounts, so for USDC -> ETH, USDC -> wstETH, USDT -> ETH, USDT -> wstETH.\\n    /// @dev    returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.\\n    /// @dev    expected to be called with callStatic, although this method does not do any actual state changes anyway.\\n    /// @dev    for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE.\\n    function getSwapsAvailable(\\n        address[] calldata tokensIn_,\\n        address[] calldata tokensOut_\\n    ) public returns (SwapData[] memory swapDatas_) {\\n        VaultData[] memory vaults_ = getVaultsForSwap(tokensIn_, tokensOut_);\\n\\n        swapDatas_ = new SwapData[](vaults_.length);\\n\\n        for (uint256 i; i < vaults_.length; ++i) {\\n            swapDatas_[i] = getSwapDataForVault(vaults_[i].vault);\\n        }\\n    }\\n\\n    /// @notice returns the calldata to execute a swap as found through this contract by triggering a vault liquidation.\\n    ///         `tokenInAmt_` must come from msg.sender, `tokenOutAmt_` goes to `receiver_`. If the input token is the\\n    ///         native token, msg.value must be sent along when triggering the actual call with the returned calldata.\\n    /// @param vault_ vault address at which the liquidation is executed\\n    /// @param receiver_ receiver address that the output token is sent to\\n    /// @param tokenInAmt_ input token amount (debt token at vault)\\n    /// @param tokenOutAmt_ expected output token amount (collateral token at vault)\\n    /// @param slippage_ maximum allowed slippage for the expected output token amount. Reverts iIf received token out\\n    ///                   amount is lower than this. in 1e4 percentage, e.g. 1% = 10000, 0.3% = 3000, 0.01% = 100, 0.0001% = 1.\\n    /// @param withAbsorb_ set to true to trigger liquidation with executing `absorb()` first. Liquidity is >= when this\\n    ///                    is set to true. Rate can be better with or without, check before via other methods.\\n    /// @return calldata_ the calldata that can be used to trigger the liquidation call, resulting in the desired swap.\\n    function getSwapCalldata(\\n        address vault_,\\n        address receiver_,\\n        uint256 tokenInAmt_,\\n        uint256 tokenOutAmt_,\\n        uint256 slippage_,\\n        bool withAbsorb_\\n    ) public pure returns (bytes memory calldata_) {\\n        if (vault_ == address(0) || receiver_ == address(0)) {\\n            revert FluidVaultLiquidationsResolver__AddressZero();\\n        }\\n        if (slippage_ >= 1e6 || tokenInAmt_ == 0 || tokenOutAmt_ == 0) {\\n            revert FluidVaultLiquidationsResolver__InvalidParams();\\n        }\\n\\n        uint256 colPerUnitDebt_ = (tokenOutAmt_ * 1e18) / tokenInAmt_;\\n        colPerUnitDebt_ = (colPerUnitDebt_ * (1e6 - slippage_)) / 1e6; // e.g. 50 * 99% / 100% = 49.5\\n\\n        calldata_ = abi.encodeWithSelector(\\n            IFluidVaultT1(vault_).liquidate.selector,\\n            tokenInAmt_,\\n            colPerUnitDebt_,\\n            receiver_,\\n            withAbsorb_\\n        );\\n    }\\n\\n    /// @notice returns the available swap (liquidation) amounts at a certain `vault_`, considering both\\n    ///         a swap that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,\\n    ///         sometimes without absorb can provide better swaps. But available liquidity for \\\"withAbsorb\\\" amounts will\\n    ///         always be >= normal amounts.\\n    /// @dev    returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.\\n    /// @dev    expected to be called with callStatic, although this method does not do any actual state changes anyway.\\n    function getSwapDataForVault(address vault_) public returns (SwapData memory swapData_) {\\n        if (vault_ == address(0)) {\\n            return swapData_;\\n        }\\n\\n        VaultResolverStructs.LiquidationStruct memory liquidationData_ = VAULT_RESOLVER.getVaultLiquidation(vault_, 0);\\n        swapData_.vault = vault_;\\n        swapData_.inAmt = liquidationData_.tokenInAmtOne;\\n        swapData_.outAmt = liquidationData_.tokenOutAmtOne;\\n        swapData_.inAmtWithAbsorb = liquidationData_.tokenInAmtTwo;\\n        swapData_.outAmtWithAbsorb = liquidationData_.tokenOutAmtTwo;\\n    }\\n\\n    /// @notice finds a swap from `tokenIn_` to `tokenOut_` for an exact input amount `inAmt_`. If available amount is\\n    ///         less then the desired input amount, it returns the available amount. Considers the best rate available\\n    ///         for mode with absorb and mode without absorb.\\n    /// @dev    returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.\\n    /// @param tokenIn_ input token (debt token at vault)\\n    /// @param tokenOut_ output token (collateral token at vault)\\n    /// @param inAmt_ exact input token amount that should be swapped to output token\\n    /// @return vault_ vault address at which the swap is available.\\n    /// @return actualInAmt_ actual input token amount. Equals `inAmt_`, but if less then the desired swap amount is\\n    ///                      available, then the available amount is returned instead.\\n    /// @return outAmt_ received output token amount for `actualInAmt_` of input token\\n    /// @return withAbsorb_ flag for using mode \\\"withAbsorb\\\". Is set to true if a) liquidity without absorb would not\\n    ///                     cover the desired `inAmt_` or if b) the rate of with absorb is better than without absorb.\\n    function exactInput(\\n        address tokenIn_,\\n        address tokenOut_,\\n        uint256 inAmt_\\n    ) public returns (address vault_, uint256 actualInAmt_, uint256 outAmt_, bool withAbsorb_) {\\n        SwapData memory swapData_ = getSwapAvailable(tokenIn_, tokenOut_);\\n        vault_ = swapData_.vault;\\n\\n        actualInAmt_ = inAmt_; // assume inAmt_ can be covered by available amount, var is updated otherwise\\n\\n        uint256 withAbsorbRatio_ = (swapData_.outAmtWithAbsorb * 1e27) / swapData_.inAmtWithAbsorb;\\n        if (inAmt_ > swapData_.inAmt && swapData_.inAmtWithAbsorb > swapData_.inAmt) {\\n             // with absorb has more liquidity \\n            withAbsorb_ = true;\\n            if (inAmt_ > swapData_.inAmtWithAbsorb) {\\n                actualInAmt_ = swapData_.inAmtWithAbsorb; // can not cover full requested inAmt_, so set to available\\n                outAmt_ = swapData_.outAmtWithAbsorb;\\n            } else {\\n                // inAmt_ fully covered by with absorb liquidation, get out amount\\n                outAmt_ = (inAmt_ * withAbsorbRatio_) / 1e27;\\n            }\\n        } else {\\n            // inAmt_ is covered by available liquidation with or without absorb, check which one has better ratio\\n            uint256 withoutAbsorbRatio_ = (swapData_.outAmt * 1e27) / swapData_.inAmt;\\n            if (withAbsorbRatio_ > withoutAbsorbRatio_) {\\n                withAbsorb_ = true;\\n                outAmt_ = (inAmt_ * withAbsorbRatio_) / 1e27;\\n            } else {\\n                outAmt_ = (inAmt_ * withoutAbsorbRatio_) / 1e27;\\n            }\\n        }\\n    }\\n\\n    /// @notice finds a swap from `tokenIn_` to `tokenOut_` for an exact output amount `outAmt_`. If available amount is\\n    ///         less then the desired output amount, it returns the available amount. Considers the best rate available\\n    ///         for mode with absorb and mode without absorb.\\n    /// @dev    returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.\\n    /// @param tokenIn_ input token (debt token at vault)\\n    /// @param tokenOut_ output token (collateral token at vault)\\n    /// @param outAmt_ exact output token amount that should be received as a result of the swap\\n    /// @return vault_ vault address at which the swap is available.\\n    /// @return inAmt_ required input token amount to receive `actualOutAmt_` of output token\\n    /// @return actualOutAmt_ actual output token amount. Equals `outAmt_`, but if less then the desired swap amount is\\n    ///                      available, then the available amount is returned instead\\n    /// @return withAbsorb_ flag for using mode \\\"withAbsorb\\\". Is set to true if a) liquidity without absorb would not\\n    ///                     cover the desired `outAmt_` or if b) the rate of with absorb is better than without absorb.\\n    function exactOutput(\\n        address tokenIn_,\\n        address tokenOut_,\\n        uint256 outAmt_\\n    ) public returns (address vault_, uint256 inAmt_, uint256 actualOutAmt_, bool withAbsorb_) {\\n        SwapData memory swapData_ = getSwapAvailable(tokenIn_, tokenOut_);\\n        vault_ = swapData_.vault;\\n\\n        actualOutAmt_ = outAmt_; // assume outAmt_ can be covered by available amount, var is updated otherwise\\n\\n        uint256 withAbsorbRatio_ = (swapData_.inAmtWithAbsorb * 1e27) / swapData_.outAmtWithAbsorb;\\n        if (outAmt_ > swapData_.outAmt && swapData_.inAmtWithAbsorb > swapData_.inAmt) {\\n             // with absorb has more liquidity \\n            withAbsorb_ = true;\\n            if (outAmt_ > swapData_.outAmtWithAbsorb) {\\n                actualOutAmt_ = swapData_.outAmtWithAbsorb; // can not cover full requested inAmt_, so set to available\\n                inAmt_ = swapData_.inAmtWithAbsorb;\\n            } else {\\n                // outAmt_ fully covered by with absorb liquidation, get in amount\\n                inAmt_ = (outAmt_ * withAbsorbRatio_) / 1e27;\\n            }\\n        } else {\\n            // outAmt_ is covered by available liquidation with or without absorb, check which one has better ratio\\n            uint256 withoutAbsorbRatio_ = (swapData_.inAmt * 1e27) / swapData_.outAmt; // in per out\\n            if (withAbsorbRatio_ < withoutAbsorbRatio_) {\\n                withAbsorb_ = true;\\n                inAmt_ = (outAmt_ * withAbsorbRatio_) / 1e27;\\n            } else {\\n                inAmt_ = (outAmt_ * withoutAbsorbRatio_) / 1e27;\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xeb02523cc9dc212877fa30624f6d31e00db180c0c7fbb6de1e5819c04413d88c\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/vaultLiquidation/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract Structs {\\n    struct VaultData{\\n        ///\\n        /// @param vault vault address at which the token pair is available\\n        address vault;\\n        ///\\n        /// @param tokenIn input token, borrow token at the vault\\n        address tokenIn;\\n        ///\\n        /// @param tokenOut output token, collateral token at the vault\\n        address tokenOut;\\n    }\\n\\n    struct SwapData {\\n        ///\\n        /// @param vault vault address at which the token pair is available\\n        address vault;\\n        ///\\n        /// @param inAmt total input token available amount (without absorb)\\n        uint256 inAmt;\\n        ///\\n        /// @param outAmt total output token amount received for `inAmt` (without absorb)\\n        uint256 outAmt;\\n        ///\\n        /// @param inAmtWithAbsorb total input token available amount (with absorb)\\n        uint256 inAmtWithAbsorb;\\n        ///\\n        /// @param outAmtWithAbsorb total output token amount received for `inAmtWithAbsorb` (with absorb)\\n        uint256 outAmtWithAbsorb;\\n    }\\n}\\n\",\"keccak256\":\"0xdd2eb21e1e4541fbba2d626016c041639b61044cab5c92990ffb04f294626454\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/vaultLiquidation/variables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidVaultResolver } from \\\"../vault/iVaultResolver.sol\\\";\\n\\ncontract Variables {\\n    IFluidVaultResolver public immutable VAULT_RESOLVER;\\n\\n    constructor(IFluidVaultResolver vaultResolver_) {\\n        VAULT_RESOLVER = vaultResolver_;\\n    }\\n}\\n\",\"keccak256\":\"0xb95342bc4a9cad312e81216b005baa93a5aea18c3fd60715d83e14258ec51e51\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/vault/interfaces/iVaultT1.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidVaultT1 {\\n    /// @notice returns the vault id\\n    function VAULT_ID() external view returns (uint256);\\n\\n    /// @notice reads uint256 data `result_` from storage at a bytes32 storage `slot_` key.\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n\\n    struct ConstantViews {\\n        address liquidity;\\n        address factory;\\n        address adminImplementation;\\n        address secondaryImplementation;\\n        address supplyToken;\\n        address borrowToken;\\n        uint8 supplyDecimals;\\n        uint8 borrowDecimals;\\n        uint vaultId;\\n        bytes32 liquiditySupplyExchangePriceSlot;\\n        bytes32 liquidityBorrowExchangePriceSlot;\\n        bytes32 liquidityUserSupplySlot;\\n        bytes32 liquidityUserBorrowSlot;\\n    }\\n\\n    /// @notice returns all Vault constants\\n    function constantsView() external view returns (ConstantViews memory constantsView_);\\n\\n    /// @notice fetches the latest user position after a liquidation\\n    function fetchLatestPosition(\\n        int256 positionTick_,\\n        uint256 positionTickId_,\\n        uint256 positionRawDebt_,\\n        uint256 tickData_\\n    )\\n        external\\n        view\\n        returns (\\n            int256, // tick\\n            uint256, // raw debt\\n            uint256, // raw collateral\\n            uint256, // branchID_\\n            uint256 // branchData_\\n        );\\n\\n    /// @notice calculates the updated vault exchange prices\\n    function updateExchangePrices(\\n        uint256 vaultVariables2_\\n    )\\n        external\\n        view\\n        returns (\\n            uint256 liqSupplyExPrice_,\\n            uint256 liqBorrowExPrice_,\\n            uint256 vaultSupplyExPrice_,\\n            uint256 vaultBorrowExPrice_\\n        );\\n\\n    /// @notice calculates the updated vault exchange prices and writes them to storage\\n    function updateExchangePricesOnStorage()\\n        external\\n        returns (\\n            uint256 liqSupplyExPrice_,\\n            uint256 liqBorrowExPrice_,\\n            uint256 vaultSupplyExPrice_,\\n            uint256 vaultBorrowExPrice_\\n        );\\n\\n    /// @notice returns the liquidity contract address\\n    function LIQUIDITY() external view returns (address);\\n\\n    function operate(\\n        uint256 nftId_, // if 0 then new position\\n        int256 newCol_, // if negative then withdraw\\n        int256 newDebt_, // if negative then payback\\n        address to_ // address at which the borrow & withdraw amount should go to. If address(0) then it'll go to msg.sender\\n    )\\n        external\\n        payable\\n        returns (\\n            uint256, // nftId_\\n            int256, // final supply amount. if - then withdraw\\n            int256 // final borrow amount. if - then payback\\n        );\\n    \\n    function liquidate(\\n        uint256 debtAmt_,\\n        uint256 colPerUnitDebt_, // min collateral needed per unit of debt in 1e18\\n        address to_,\\n        bool absorb_\\n    ) external payable returns (uint actualDebtAmt_, uint actualColAmt_);\\n\\n    function absorb() external;\\n\\n    function rebalance() external payable returns (int supplyAmt_, int borrowAmt_);\\n\\n    error FluidLiquidateResult(uint256 colLiquidated, uint256 debtLiquidated);\\n}\\n\",\"keccak256\":\"0xe0ec40a4531ecbcd7b8db25b4cd8529e0c284bb20eb40b7cf909fb8af0e3ca8b\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b50604051611cb4380380611cb483398101604081905261002f91610061565b6001600160a01b038116608081905261005b576040516303c99f9d60e61b815260040160405180910390fd5b50610091565b60006020828403121561007357600080fd5b81516001600160a01b038116811461008a57600080fd5b9392505050565b608051611bec6100c860003960008181610159015281816104230152818161057a01528181610d6b01526110570152611bec6000f3fe608060405234801561001057600080fd5b50600436106100be5760003560e01c80639842d25711610076578063d7e8af8a1161005b578063d7e8af8a146101db578063ed01d023146101ee578063f1c6b20a1461020157600080fd5b80639842d257146101c057806398499999146101d357600080fd5b80634f91e9a5116100a75780634f91e9a5146101345780637f3e2b481461015457806389456d6f146101a057600080fd5b8063404fcab2146100c35780634edc47c814610114575b600080fd5b6100d66100d136600461144a565b610221565b6040805173ffffffffffffffffffffffffffffffffffffffff9095168552602085019390935291830152151560608201526080015b60405180910390f35b61012761012236600461148b565b61036c565b60405161010b91906114a8565b610147610142366004611543565b6104df565b60405161010b91906115af565b61017b7f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161010b565b6101b36101ae366004611624565b610a79565b60405161010b9190611690565b6100d66101ce36600461144a565b610c1c565b610147610d65565b61017b6101e93660046116fc565b611052565b6101276101fc3660046116fc565b6112b7565b61021461020f366004611543565b611313565b60405161010b9190611735565b600080600080600061023388886112b7565b9050806000015194508593506000816060015182608001516b033b2e3c9fd0803ce800000061026291906117f3565b61026c919061180a565b9050816020015187118015610288575081602001518260600151115b156102d8576001925081606001518711156102b0578160600151945081608001519350610361565b6b033b2e3c9fd0803ce80000006102c782896117f3565b6102d1919061180a565b9350610361565b6000826020015183604001516b033b2e3c9fd0803ce80000006102fb91906117f3565b610305919061180a565b90508082111561033b57600193506b033b2e3c9fd0803ce800000061032a838a6117f3565b610334919061180a565b945061035f565b6b033b2e3c9fd0803ce8000000610352828a6117f3565b61035c919061180a565b94505b505b505093509350935093565b6103b46040518060a00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081525090565b73ffffffffffffffffffffffffffffffffffffffff82166103d457919050565b6040517f1fcd364900000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8381166004830152600060248301819052917f000000000000000000000000000000000000000000000000000000000000000090911690631fcd36499060440160e0604051808303816000875af115801561046e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061049291906118fd565b73ffffffffffffffffffffffffffffffffffffffff9093168252506060808301516020830152608080840151604084015260a08401519183019190915260c0909201519181019190915290565b606060006104ed83866117f3565b905060008167ffffffffffffffff81111561050a5761050a611845565b60405190808252806020026020018201604052801561057357816020015b60408051606081018252600080825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9092019101816105285790505b50905060007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa1580156105e3573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052610629919081019061199c565b604080516101a081018252600080825260208201819052918101829052606081018290526080810182905260a0810182905260c0810182905260e081018290526101008101829052610120810182905261014081018290526101608101829052610180810182905291925090819060005b8451811015610930578481815181106106b5576106b5611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b81526004016101a060405180830381865afa158015610708573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061072c9190611a8e565b91506000925060005b8b81101561091f5760005b8a81101561090e578d8d8381811061075a5761075a611a4e565b905060200201602081019061076f919061148b565b73ffffffffffffffffffffffffffffffffffffffff168460a0015173ffffffffffffffffffffffffffffffffffffffff1614801561080257508b8b828181106107ba576107ba611a4e565b90506020020160208101906107cf919061148b565b73ffffffffffffffffffffffffffffffffffffffff16846080015173ffffffffffffffffffffffffffffffffffffffff16145b156108f357604051806060016040528088858151811061082457610824611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1681526020018f8f8581811061085957610859611a4e565b905060200201602081019061086e919061148b565b73ffffffffffffffffffffffffffffffffffffffff1681526020018d8d8481811061089b5761089b611a4e565b90506020020160208101906108b0919061148b565b73ffffffffffffffffffffffffffffffffffffffff168152508886815181106108db576108db611a4e565b6020026020010181905250856108f090611b6b565b95505b6108fc85611b6b565b945061090781611b6b565b9050610740565b5061091881611b6b565b9050610735565b5061092981611b6b565b905061069a565b508267ffffffffffffffff81111561094a5761094a611845565b6040519080825280602002602001820160405280156109b357816020015b60408051606081018252600080825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9092019101816109685790505b5096506000915060005b86811015610a6a57600073ffffffffffffffffffffffffffffffffffffffff168682815181106109ef576109ef611a4e565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff1614610a5a57858181518110610a2857610a28611a4e565b6020026020010151888481518110610a4257610a42611a4e565b602002602001018190525082610a5790611b6b565b92505b610a6381611b6b565b90506109bd565b50505050505050949350505050565b606073ffffffffffffffffffffffffffffffffffffffff87161580610ab2575073ffffffffffffffffffffffffffffffffffffffff8616155b15610ae9576040517ff267e74000000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b620f424083101580610af9575084155b80610b02575083155b15610b39576040517fb55de08000000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600085610b4e86670de0b6b3a76400006117f3565b610b58919061180a565b9050620f4240610b688582611ba3565b610b7290836117f3565b610b7c919061180a565b604080516024810198909852604488019190915273ffffffffffffffffffffffffffffffffffffffff979097166064870152505015156084808501919091528451808503909101815260a4909301909352506020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167f8433ea220000000000000000000000000000000000000000000000000000000017905292915050565b6000806000806000610c2e88886112b7565b9050806000015194508592506000816080015182606001516b033b2e3c9fd0803ce8000000610c5d91906117f3565b610c67919061180a565b9050816040015187118015610c83575081602001518260600151115b15610cd357600192508160800151871115610cab578160800151935081606001519450610361565b6b033b2e3c9fd0803ce8000000610cc282896117f3565b610ccc919061180a565b9450610361565b6000826040015183602001516b033b2e3c9fd0803ce8000000610cf691906117f3565b610d00919061180a565b905080821015610d3657600193506b033b2e3c9fd0803ce8000000610d25838a6117f3565b610d2f919061180a565b955061035f565b6b033b2e3c9fd0803ce8000000610d4d828a6117f3565b610d57919061180a565b955050505093509350935093565b606060007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa158015610dd4573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052610e1a919081019061199c565b9050805167ffffffffffffffff811115610e3657610e36611845565b604051908082528060200260200182016040528015610e9f57816020015b60408051606081018252600080825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff909201910181610e545790505b50604080516101a081018252600080825260208201819052918101829052606081018290526080810182905260a0810182905260c0810182905260e08101829052610100810182905261012081018290526101408101829052610160810182905261018081018290529193505b825181101561104c57828181518110610f2757610f27611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b81526004016101a060405180830381865afa158015610f7a573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610f9e9190611a8e565b91506040518060600160405280848381518110610fbd57610fbd611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1681526020018360a0015173ffffffffffffffffffffffffffffffffffffffff168152602001836080015173ffffffffffffffffffffffffffffffffffffffff1681525084828151811061103057611030611a4e565b60200260200101819052508061104590611b6b565b9050610f0c565b50505090565b6000807f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa1580156110c0573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052611106919081019061199c565b604080516101a081018252600080825260208201819052918101829052606081018290526080810182905260a0810182905260c0810182905260e08101829052610100810182905261012081018290526101408101829052610160810182905261018081018290529192505b82518110156112ad5782818151811061118d5761118d611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b81526004016101a060405180830381865afa1580156111e0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906112049190611a8e565b91508573ffffffffffffffffffffffffffffffffffffffff168260a0015173ffffffffffffffffffffffffffffffffffffffff1614801561127457508473ffffffffffffffffffffffffffffffffffffffff16826080015173ffffffffffffffffffffffffffffffffffffffff16145b1561129d5782818151811061128b5761128b611a4e565b602002602001015193505050506112b1565b6112a681611b6b565b9050611172565b5050505b92915050565b6112ff6040518060a00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081525090565b61130c6101228484611052565b9392505050565b60606000611323868686866104df565b9050805167ffffffffffffffff81111561133f5761133f611845565b6040519080825280602002602001820160405280156113b857816020015b6113a56040518060a00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081525090565b81526020019060019003908161135d5790505b50915060005b815181101561141b576113ed8282815181106113dc576113dc611a4e565b60200260200101516000015161036c565b8382815181106113ff576113ff611a4e565b60200260200101819052508061141490611b6b565b90506113be565b5050949350505050565b73ffffffffffffffffffffffffffffffffffffffff8116811461144757600080fd5b50565b60008060006060848603121561145f57600080fd5b833561146a81611425565b9250602084013561147a81611425565b929592945050506040919091013590565b60006020828403121561149d57600080fd5b813561130c81611425565b60a081016112b1828473ffffffffffffffffffffffffffffffffffffffff8151168252602081015160208301526040810151604083015260608101516060830152608081015160808301525050565b60008083601f84011261150957600080fd5b50813567ffffffffffffffff81111561152157600080fd5b6020830191508360208260051b850101111561153c57600080fd5b9250929050565b6000806000806040858703121561155957600080fd5b843567ffffffffffffffff8082111561157157600080fd5b61157d888389016114f7565b9096509450602087013591508082111561159657600080fd5b506115a3878288016114f7565b95989497509550505050565b602080825282518282018190526000919060409081850190868401855b82811015611617578151805173ffffffffffffffffffffffffffffffffffffffff908116865287820151811688870152908601511685850152606090930192908501906001016115cc565b5091979650505050505050565b60008060008060008060c0878903121561163d57600080fd5b863561164881611425565b9550602087013561165881611425565b945060408701359350606087013592506080870135915060a0870135801515811461168257600080fd5b809150509295509295509295565b600060208083528351808285015260005b818110156116bd578581018301518582016040015282016116a1565b5060006040828601015260407fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8301168501019250505092915050565b6000806040838503121561170f57600080fd5b823561171a81611425565b9150602083013561172a81611425565b809150509250929050565b6020808252825182820181905260009190848201906040850190845b818110156117b8576117a583855173ffffffffffffffffffffffffffffffffffffffff8151168252602081015160208301526040810151604083015260608101516060830152608081015160808301525050565b9284019260a09290920191600101611751565b50909695505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b80820281158282048414176112b1576112b16117c4565b600082611840577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6040516101a0810167ffffffffffffffff8111828210171561189857611898611845565b60405290565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff811182821017156118e5576118e5611845565b604052919050565b80516118f881611425565b919050565b600060e0828403121561190f57600080fd5b60405160e0810181811067ffffffffffffffff8211171561193257611932611845565b604052825161194081611425565b8152602083015161195081611425565b6020820152604083015161196381611425565b80604083015250606083015160608201526080830151608082015260a083015160a082015260c083015160c08201528091505092915050565b600060208083850312156119af57600080fd5b825167ffffffffffffffff808211156119c757600080fd5b818501915085601f8301126119db57600080fd5b8151818111156119ed576119ed611845565b8060051b91506119fe84830161189e565b8181529183018401918481019088841115611a1857600080fd5b938501935b83851015611a425784519250611a3283611425565b8282529385019390850190611a1d565b98975050505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b805160ff811681146118f857600080fd5b60006101a08284031215611aa157600080fd5b611aa9611874565b611ab2836118ed565b8152611ac0602084016118ed565b6020820152611ad1604084016118ed565b6040820152611ae2606084016118ed565b6060820152611af3608084016118ed565b6080820152611b0460a084016118ed565b60a0820152611b1560c08401611a7d565b60c0820152611b2660e08401611a7d565b60e08201526101008381015190820152610120808401519082015261014080840151908201526101608084015190820152610180928301519281019290925250919050565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203611b9c57611b9c6117c4565b5060010190565b818103818111156112b1576112b16117c456fea2646970667358221220ca894217ae069ee013266c30005e3ff9e1bd0c9cc7f8fe391b986f9f7c18913964736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100be5760003560e01c80639842d25711610076578063d7e8af8a1161005b578063d7e8af8a146101db578063ed01d023146101ee578063f1c6b20a1461020157600080fd5b80639842d257146101c057806398499999146101d357600080fd5b80634f91e9a5116100a75780634f91e9a5146101345780637f3e2b481461015457806389456d6f146101a057600080fd5b8063404fcab2146100c35780634edc47c814610114575b600080fd5b6100d66100d136600461144a565b610221565b6040805173ffffffffffffffffffffffffffffffffffffffff9095168552602085019390935291830152151560608201526080015b60405180910390f35b61012761012236600461148b565b61036c565b60405161010b91906114a8565b610147610142366004611543565b6104df565b60405161010b91906115af565b61017b7f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161010b565b6101b36101ae366004611624565b610a79565b60405161010b9190611690565b6100d66101ce36600461144a565b610c1c565b610147610d65565b61017b6101e93660046116fc565b611052565b6101276101fc3660046116fc565b6112b7565b61021461020f366004611543565b611313565b60405161010b9190611735565b600080600080600061023388886112b7565b9050806000015194508593506000816060015182608001516b033b2e3c9fd0803ce800000061026291906117f3565b61026c919061180a565b9050816020015187118015610288575081602001518260600151115b156102d8576001925081606001518711156102b0578160600151945081608001519350610361565b6b033b2e3c9fd0803ce80000006102c782896117f3565b6102d1919061180a565b9350610361565b6000826020015183604001516b033b2e3c9fd0803ce80000006102fb91906117f3565b610305919061180a565b90508082111561033b57600193506b033b2e3c9fd0803ce800000061032a838a6117f3565b610334919061180a565b945061035f565b6b033b2e3c9fd0803ce8000000610352828a6117f3565b61035c919061180a565b94505b505b505093509350935093565b6103b46040518060a00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081525090565b73ffffffffffffffffffffffffffffffffffffffff82166103d457919050565b6040517f1fcd364900000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8381166004830152600060248301819052917f000000000000000000000000000000000000000000000000000000000000000090911690631fcd36499060440160e0604051808303816000875af115801561046e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061049291906118fd565b73ffffffffffffffffffffffffffffffffffffffff9093168252506060808301516020830152608080840151604084015260a08401519183019190915260c0909201519181019190915290565b606060006104ed83866117f3565b905060008167ffffffffffffffff81111561050a5761050a611845565b60405190808252806020026020018201604052801561057357816020015b60408051606081018252600080825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9092019101816105285790505b50905060007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa1580156105e3573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052610629919081019061199c565b604080516101a081018252600080825260208201819052918101829052606081018290526080810182905260a0810182905260c0810182905260e081018290526101008101829052610120810182905261014081018290526101608101829052610180810182905291925090819060005b8451811015610930578481815181106106b5576106b5611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b81526004016101a060405180830381865afa158015610708573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061072c9190611a8e565b91506000925060005b8b81101561091f5760005b8a81101561090e578d8d8381811061075a5761075a611a4e565b905060200201602081019061076f919061148b565b73ffffffffffffffffffffffffffffffffffffffff168460a0015173ffffffffffffffffffffffffffffffffffffffff1614801561080257508b8b828181106107ba576107ba611a4e565b90506020020160208101906107cf919061148b565b73ffffffffffffffffffffffffffffffffffffffff16846080015173ffffffffffffffffffffffffffffffffffffffff16145b156108f357604051806060016040528088858151811061082457610824611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1681526020018f8f8581811061085957610859611a4e565b905060200201602081019061086e919061148b565b73ffffffffffffffffffffffffffffffffffffffff1681526020018d8d8481811061089b5761089b611a4e565b90506020020160208101906108b0919061148b565b73ffffffffffffffffffffffffffffffffffffffff168152508886815181106108db576108db611a4e565b6020026020010181905250856108f090611b6b565b95505b6108fc85611b6b565b945061090781611b6b565b9050610740565b5061091881611b6b565b9050610735565b5061092981611b6b565b905061069a565b508267ffffffffffffffff81111561094a5761094a611845565b6040519080825280602002602001820160405280156109b357816020015b60408051606081018252600080825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9092019101816109685790505b5096506000915060005b86811015610a6a57600073ffffffffffffffffffffffffffffffffffffffff168682815181106109ef576109ef611a4e565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff1614610a5a57858181518110610a2857610a28611a4e565b6020026020010151888481518110610a4257610a42611a4e565b602002602001018190525082610a5790611b6b565b92505b610a6381611b6b565b90506109bd565b50505050505050949350505050565b606073ffffffffffffffffffffffffffffffffffffffff87161580610ab2575073ffffffffffffffffffffffffffffffffffffffff8616155b15610ae9576040517ff267e74000000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b620f424083101580610af9575084155b80610b02575083155b15610b39576040517fb55de08000000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600085610b4e86670de0b6b3a76400006117f3565b610b58919061180a565b9050620f4240610b688582611ba3565b610b7290836117f3565b610b7c919061180a565b604080516024810198909852604488019190915273ffffffffffffffffffffffffffffffffffffffff979097166064870152505015156084808501919091528451808503909101815260a4909301909352506020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167f8433ea220000000000000000000000000000000000000000000000000000000017905292915050565b6000806000806000610c2e88886112b7565b9050806000015194508592506000816080015182606001516b033b2e3c9fd0803ce8000000610c5d91906117f3565b610c67919061180a565b9050816040015187118015610c83575081602001518260600151115b15610cd357600192508160800151871115610cab578160800151935081606001519450610361565b6b033b2e3c9fd0803ce8000000610cc282896117f3565b610ccc919061180a565b9450610361565b6000826040015183602001516b033b2e3c9fd0803ce8000000610cf691906117f3565b610d00919061180a565b905080821015610d3657600193506b033b2e3c9fd0803ce8000000610d25838a6117f3565b610d2f919061180a565b955061035f565b6b033b2e3c9fd0803ce8000000610d4d828a6117f3565b610d57919061180a565b955050505093509350935093565b606060007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa158015610dd4573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052610e1a919081019061199c565b9050805167ffffffffffffffff811115610e3657610e36611845565b604051908082528060200260200182016040528015610e9f57816020015b60408051606081018252600080825260208083018290529282015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff909201910181610e545790505b50604080516101a081018252600080825260208201819052918101829052606081018290526080810182905260a0810182905260c0810182905260e08101829052610100810182905261012081018290526101408101829052610160810182905261018081018290529193505b825181101561104c57828181518110610f2757610f27611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b81526004016101a060405180830381865afa158015610f7a573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610f9e9190611a8e565b91506040518060600160405280848381518110610fbd57610fbd611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1681526020018360a0015173ffffffffffffffffffffffffffffffffffffffff168152602001836080015173ffffffffffffffffffffffffffffffffffffffff1681525084828151811061103057611030611a4e565b60200260200101819052508061104590611b6b565b9050610f0c565b50505090565b6000807f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa1580156110c0573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052611106919081019061199c565b604080516101a081018252600080825260208201819052918101829052606081018290526080810182905260a0810182905260c0810182905260e08101829052610100810182905261012081018290526101408101829052610160810182905261018081018290529192505b82518110156112ad5782818151811061118d5761118d611a4e565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663b7791bf26040518163ffffffff1660e01b81526004016101a060405180830381865afa1580156111e0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906112049190611a8e565b91508573ffffffffffffffffffffffffffffffffffffffff168260a0015173ffffffffffffffffffffffffffffffffffffffff1614801561127457508473ffffffffffffffffffffffffffffffffffffffff16826080015173ffffffffffffffffffffffffffffffffffffffff16145b1561129d5782818151811061128b5761128b611a4e565b602002602001015193505050506112b1565b6112a681611b6b565b9050611172565b5050505b92915050565b6112ff6040518060a00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081525090565b61130c6101228484611052565b9392505050565b60606000611323868686866104df565b9050805167ffffffffffffffff81111561133f5761133f611845565b6040519080825280602002602001820160405280156113b857816020015b6113a56040518060a00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600081526020016000815260200160008152602001600081525090565b81526020019060019003908161135d5790505b50915060005b815181101561141b576113ed8282815181106113dc576113dc611a4e565b60200260200101516000015161036c565b8382815181106113ff576113ff611a4e565b60200260200101819052508061141490611b6b565b90506113be565b5050949350505050565b73ffffffffffffffffffffffffffffffffffffffff8116811461144757600080fd5b50565b60008060006060848603121561145f57600080fd5b833561146a81611425565b9250602084013561147a81611425565b929592945050506040919091013590565b60006020828403121561149d57600080fd5b813561130c81611425565b60a081016112b1828473ffffffffffffffffffffffffffffffffffffffff8151168252602081015160208301526040810151604083015260608101516060830152608081015160808301525050565b60008083601f84011261150957600080fd5b50813567ffffffffffffffff81111561152157600080fd5b6020830191508360208260051b850101111561153c57600080fd5b9250929050565b6000806000806040858703121561155957600080fd5b843567ffffffffffffffff8082111561157157600080fd5b61157d888389016114f7565b9096509450602087013591508082111561159657600080fd5b506115a3878288016114f7565b95989497509550505050565b602080825282518282018190526000919060409081850190868401855b82811015611617578151805173ffffffffffffffffffffffffffffffffffffffff908116865287820151811688870152908601511685850152606090930192908501906001016115cc565b5091979650505050505050565b60008060008060008060c0878903121561163d57600080fd5b863561164881611425565b9550602087013561165881611425565b945060408701359350606087013592506080870135915060a0870135801515811461168257600080fd5b809150509295509295509295565b600060208083528351808285015260005b818110156116bd578581018301518582016040015282016116a1565b5060006040828601015260407fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f8301168501019250505092915050565b6000806040838503121561170f57600080fd5b823561171a81611425565b9150602083013561172a81611425565b809150509250929050565b6020808252825182820181905260009190848201906040850190845b818110156117b8576117a583855173ffffffffffffffffffffffffffffffffffffffff8151168252602081015160208301526040810151604083015260608101516060830152608081015160808301525050565b9284019260a09290920191600101611751565b50909695505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b80820281158282048414176112b1576112b16117c4565b600082611840577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6040516101a0810167ffffffffffffffff8111828210171561189857611898611845565b60405290565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff811182821017156118e5576118e5611845565b604052919050565b80516118f881611425565b919050565b600060e0828403121561190f57600080fd5b60405160e0810181811067ffffffffffffffff8211171561193257611932611845565b604052825161194081611425565b8152602083015161195081611425565b6020820152604083015161196381611425565b80604083015250606083015160608201526080830151608082015260a083015160a082015260c083015160c08201528091505092915050565b600060208083850312156119af57600080fd5b825167ffffffffffffffff808211156119c757600080fd5b818501915085601f8301126119db57600080fd5b8151818111156119ed576119ed611845565b8060051b91506119fe84830161189e565b8181529183018401918481019088841115611a1857600080fd5b938501935b83851015611a425784519250611a3283611425565b8282529385019390850190611a1d565b98975050505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b805160ff811681146118f857600080fd5b60006101a08284031215611aa157600080fd5b611aa9611874565b611ab2836118ed565b8152611ac0602084016118ed565b6020820152611ad1604084016118ed565b6040820152611ae2606084016118ed565b6060820152611af3608084016118ed565b6080820152611b0460a084016118ed565b60a0820152611b1560c08401611a7d565b60c0820152611b2660e08401611a7d565b60e08201526101008381015190820152610120808401519082015261014080840151908201526101608084015190820152610180928301519281019290925250919050565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203611b9c57611b9c6117c4565b5060010190565b818103818111156112b1576112b16117c456fea2646970667358221220ca894217ae069ee013266c30005e3ff9e1bd0c9cc7f8fe391b986f9f7c18913964736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "exactInput(address,address,uint256)": {
+        "details": "returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.",
+        "params": {
+          "inAmt_": "exact input token amount that should be swapped to output token",
+          "tokenIn_": "input token (debt token at vault)",
+          "tokenOut_": "output token (collateral token at vault)"
+        },
+        "returns": {
+          "actualInAmt_": "actual input token amount. Equals `inAmt_`, but if less then the desired swap amount is                      available, then the available amount is returned instead.",
+          "outAmt_": "received output token amount for `actualInAmt_` of input token",
+          "vault_": "vault address at which the swap is available.",
+          "withAbsorb_": "flag for using mode \"withAbsorb\". Is set to true if a) liquidity without absorb would not                     cover the desired `inAmt_` or if b) the rate of with absorb is better than without absorb."
+        }
+      },
+      "exactOutput(address,address,uint256)": {
+        "details": "returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.",
+        "params": {
+          "outAmt_": "exact output token amount that should be received as a result of the swap",
+          "tokenIn_": "input token (debt token at vault)",
+          "tokenOut_": "output token (collateral token at vault)"
+        },
+        "returns": {
+          "actualOutAmt_": "actual output token amount. Equals `outAmt_`, but if less then the desired swap amount is                      available, then the available amount is returned instead",
+          "inAmt_": "required input token amount to receive `actualOutAmt_` of output token",
+          "vault_": "vault address at which the swap is available.",
+          "withAbsorb_": "flag for using mode \"withAbsorb\". Is set to true if a) liquidity without absorb would not                     cover the desired `outAmt_` or if b) the rate of with absorb is better than without absorb."
+        }
+      },
+      "getSwapAvailable(address,address)": {
+        "details": "returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.expected to be called with callStatic, although this method does not do any actual state changes anyway.for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE."
+      },
+      "getSwapCalldata(address,address,uint256,uint256,uint256,bool)": {
+        "params": {
+          "receiver_": "receiver address that the output token is sent to",
+          "slippage_": "maximum allowed slippage for the expected output token amount. Reverts iIf received token out                   amount is lower than this. in 1e4 percentage, e.g. 1% = 10000, 0.3% = 3000, 0.01% = 100, 0.0001% = 1.",
+          "tokenInAmt_": "input token amount (debt token at vault)",
+          "tokenOutAmt_": "expected output token amount (collateral token at vault)",
+          "vault_": "vault address at which the liquidation is executed",
+          "withAbsorb_": "set to true to trigger liquidation with executing `absorb()` first. Liquidity is >= when this                    is set to true. Rate can be better with or without, check before via other methods."
+        },
+        "returns": {
+          "calldata_": "the calldata that can be used to trigger the liquidation call, resulting in the desired swap."
+        }
+      },
+      "getSwapDataForVault(address)": {
+        "details": "returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.expected to be called with callStatic, although this method does not do any actual state changes anyway."
+      },
+      "getSwapsAvailable(address[],address[])": {
+        "details": "returned data can be fed into `getSwapCalldata` to prepare the tx that executes the swap.expected to be called with callStatic, although this method does not do any actual state changes anyway.for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE."
+      },
+      "getVaultForSwap(address,address)": {
+        "details": "for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE."
+      },
+      "getVaultsForSwap(address[],address[])": {
+        "details": "for native token, send 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "errors": {
+      "FluidVaultLiquidationsResolver__AddressZero()": [
+        {
+          "notice": "thrown if an input param address is zero"
+        }
+      ],
+      "FluidVaultLiquidationsResolver__InvalidParams()": [
+        {
+          "notice": "thrown if an invalid param is given to a method"
+        }
+      ]
+    },
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "constructor sets the immutable vault resolver address"
+      },
+      "exactInput(address,address,uint256)": {
+        "notice": "finds a swap from `tokenIn_` to `tokenOut_` for an exact input amount `inAmt_`. If available amount is         less then the desired input amount, it returns the available amount. Considers the best rate available         for mode with absorb and mode without absorb."
+      },
+      "exactOutput(address,address,uint256)": {
+        "notice": "finds a swap from `tokenIn_` to `tokenOut_` for an exact output amount `outAmt_`. If available amount is         less then the desired output amount, it returns the available amount. Considers the best rate available         for mode with absorb and mode without absorb."
+      },
+      "getAllSwapPairs()": {
+        "notice": "returns all token swap pairs available through Fluid Vault Liquidations"
+      },
+      "getSwapAvailable(address,address)": {
+        "notice": "finds the total available swappable amount for a `tokenIn_` to `tokenOut_` swap, considering both a swap         that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,         sometimes without absorb can provide better swaps. But available liquidity for \"withAbsorb\" amounts will         always be >= normal amounts."
+      },
+      "getSwapCalldata(address,address,uint256,uint256,uint256,bool)": {
+        "notice": "returns the calldata to execute a swap as found through this contract by triggering a vault liquidation.         `tokenInAmt_` must come from msg.sender, `tokenOutAmt_` goes to `receiver_`. If the input token is the         native token, msg.value must be sent along when triggering the actual call with the returned calldata."
+      },
+      "getSwapDataForVault(address)": {
+        "notice": "returns the available swap (liquidation) amounts at a certain `vault_`, considering both         a swap that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,         sometimes without absorb can provide better swaps. But available liquidity for \"withAbsorb\" amounts will         always be >= normal amounts."
+      },
+      "getSwapsAvailable(address[],address[])": {
+        "notice": "finds the total available swappable amount for any `tokensIn_` to any `tokesnOut_` swap, considering both         a swap that uses liquidation with absorb and without absorb. Sometimes with absorb can provide better swaps,         sometimes without absorb can provide better swaps. But available liquidity for \"withAbsorb\" amounts will         always be >= normal amounts. Token pairs that are not available will not be listed in returned SwapData array.         e.g. for tokensIn_: USDC & USDT and tokensOut_: ETH & wstETH, this would return any available token pair incl.         the available swappable amounts, so for USDC -> ETH, USDC -> wstETH, USDT -> ETH, USDT -> wstETH."
+      },
+      "getVaultForSwap(address,address)": {
+        "notice": "returns the vault address for a certain `tokenIn_` swapped to a `tokenOut_`.         returns zero address if no vault is available for a given pair."
+      },
+      "getVaultsForSwap(address[],address[])": {
+        "notice": "returns all available token pair swaps for any `tokensIn_` to any `tokensOut_` with the vault address."
+      }
+    },
+    "notice": "Resolver contract that helps in finding available token swaps through Fluid Vault liquidations.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "address": "0x52Aa899454998Be5b000Ad077a46Bbe360F4e497",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "admin_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "dummyImplementation_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidInfiniteProxyError",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "LogRemoveImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oldAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetAdmin",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oldDummyImplementation",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newDummyImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetDummyImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes4[]",
+          "name": "sigs",
+          "type": "bytes4[]"
+        }
+      ],
+      "name": "LogSetImplementation",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation_",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes4[]",
+          "name": "sigs_",
+          "type": "bytes4[]"
+        }
+      ],
+      "name": "addImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAdmin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getDummyImplementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "impl_",
+          "type": "address"
+        }
+      ],
+      "name": "getImplementationSigs",
+      "outputs": [
+        {
+          "internalType": "bytes4[]",
+          "name": "",
+          "type": "bytes4[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "sig_",
+          "type": "bytes4"
+        }
+      ],
+      "name": "getSigsImplementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "slot_",
+          "type": "bytes32"
+        }
+      ],
+      "name": "readFromStorage",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "result_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation_",
+          "type": "address"
+        }
+      ],
+      "name": "removeImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newAdmin_",
+          "type": "address"
+        }
+      ],
+      "name": "setAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newDummyImplementation_",
+          "type": "address"
+        }
+      ],
+      "name": "setDummyImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "args": [
+    "0x4F6F977aCDD1177DCD81aB83074855EcB9C2D49e",
+    "0xCA5E9219e1007931FD5d938C1815a90ef08f1584"
+  ],
+  "numDeployments": 3,
+  "solcInputHash": "e034216725a7f4540cf2c3cf19136c83",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"admin_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"dummyImplementation_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidInfiniteProxyError\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"LogRemoveImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldAdmin\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"LogSetAdmin\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldDummyImplementation\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newDummyImplementation\",\"type\":\"address\"}],\"name\":\"LogSetDummyImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes4[]\",\"name\":\"sigs\",\"type\":\"bytes4[]\"}],\"name\":\"LogSetImplementation\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation_\",\"type\":\"address\"},{\"internalType\":\"bytes4[]\",\"name\":\"sigs_\",\"type\":\"bytes4[]\"}],\"name\":\"addImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getDummyImplementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"impl_\",\"type\":\"address\"}],\"name\":\"getImplementationSigs\",\"outputs\":[{\"internalType\":\"bytes4[]\",\"name\":\"\",\"type\":\"bytes4[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"sig_\",\"type\":\"bytes4\"}],\"name\":\"getSigsImplementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"slot_\",\"type\":\"bytes32\"}],\"name\":\"readFromStorage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"result_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation_\",\"type\":\"address\"}],\"name\":\"removeImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newAdmin_\",\"type\":\"address\"}],\"name\":\"setAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newDummyImplementation_\",\"type\":\"address\"}],\"name\":\"setDummyImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addImplementation(address,bytes4[])\":{\"details\":\"Adds new implementation address.\"},\"getAdmin()\":{\"details\":\"Returns admin's address.\"},\"getDummyImplementation()\":{\"details\":\"Returns dummy-implementations's address.\"},\"getImplementationSigs(address)\":{\"details\":\"Returns bytes4[] sigs from implementation address If not registered then returns empty array.\"},\"getSigsImplementation(bytes4)\":{\"details\":\"Returns implementation address from bytes4 sig. If sig is not registered then returns address(0).\"},\"removeImplementation(address)\":{\"details\":\"Removes an existing implementation address.\"},\"setAdmin(address)\":{\"details\":\"Sets new admin.\"},\"setDummyImplementation(address)\":{\"details\":\"Sets new dummy-implementation.\"}},\"version\":1},\"userdoc\":{\"events\":{\"LogRemoveImplementation(address)\":{\"notice\":\"emitted when an implementation is removed\"},\"LogSetAdmin(address,address)\":{\"notice\":\"emitted when a new admin is set\"},\"LogSetDummyImplementation(address,address)\":{\"notice\":\"emitted when a new dummy implementation is set\"},\"LogSetImplementation(address,bytes4[])\":{\"notice\":\"emitted when a new implementation is set with certain sigs\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"Fluid Liquidity infinte proxy. Liquidity is the central point of the Instadapp Fluid architecture, it is the core interaction point for all allow-listed protocols, such as fTokens, Vault, Flashloan, StETH protocol, DEX protocol etc.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/liquidity/proxy.sol\":\"FluidLiquidityProxy\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/infiniteProxy/error.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ncontract Error {\\n    error FluidInfiniteProxyError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0x24d03cb5871d05428fa8fc4782e4dab8d5e251af066d56bb470b19bfc1e63c2f\",\"license\":\"MIT\"},\"contracts/infiniteProxy/errorTypes.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |         Infinite proxy            | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an implementation does not exist\\n    uint256 internal constant InfiniteProxy__ImplementationNotExist = 50001;\\n}\\n\",\"keccak256\":\"0x72d513734a1c6ba19463a76009071fe444871d4ef9869aa28068124e0780cba1\",\"license\":\"MIT\"},\"contracts/infiniteProxy/events.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract Events {\\n    /// @notice emitted when a new admin is set\\n    event LogSetAdmin(address indexed oldAdmin, address indexed newAdmin);\\n\\n    /// @notice emitted when a new dummy implementation is set\\n    event LogSetDummyImplementation(address indexed oldDummyImplementation, address indexed newDummyImplementation);\\n\\n    /// @notice emitted when a new implementation is set with certain sigs\\n    event LogSetImplementation(address indexed implementation, bytes4[] sigs);\\n\\n    /// @notice emitted when an implementation is removed\\n    event LogRemoveImplementation(address indexed implementation);\\n}\\n\",\"keccak256\":\"0x699f5e4b6d88084e32f6f6b14ad12b468e98fa7ec2ee2e261d20a2347bd66263\",\"license\":\"BUSL-1.1\"},\"contracts/infiniteProxy/proxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { Events } from \\\"./events.sol\\\";\\nimport { ErrorTypes } from \\\"./errorTypes.sol\\\";\\nimport { Error } from \\\"./error.sol\\\";\\nimport { StorageRead } from \\\"../libraries/storageRead.sol\\\";\\n\\ncontract CoreInternals is StorageRead, Events, Error {\\n    struct SigsSlot {\\n        bytes4[] value;\\n    }\\n\\n    /// @dev Storage slot with the admin of the contract.\\n    /// This is the keccak-256 hash of \\\"eip1967.proxy.admin\\\" subtracted by 1, and is\\n    /// validated in the constructor.\\n    bytes32 internal constant _ADMIN_SLOT = 0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103;\\n\\n    /// @dev Storage slot with the address of the current dummy-implementation.\\n    /// This is the keccak-256 hash of \\\"eip1967.proxy.implementation\\\" subtracted by 1, and is\\n    /// validated in the constructor.\\n    bytes32 internal constant _DUMMY_IMPLEMENTATION_SLOT =\\n        0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;\\n\\n    /// @dev use EIP1967 proxy slot (see _DUMMY_IMPLEMENTATION_SLOT) except for first 4 bytes,\\n    // which are set to 0. This is combined with a sig which will be set in those first 4 bytes\\n    bytes32 internal constant _SIG_SLOT_BASE = 0x000000003ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;\\n\\n    /// @dev Returns the storage slot which stores the sigs array set for the implementation.\\n    function _getSlotImplSigsSlot(address implementation_) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(\\\"eip1967.proxy.implementation\\\", implementation_));\\n    }\\n\\n    /// @dev Returns the storage slot which stores the implementation address for the function sig.\\n    function _getSlotSigsImplSlot(bytes4 sig_) internal pure returns (bytes32 result_) {\\n        assembly {\\n            // or operator sets sig_ in first 4 bytes with rest of bytes32 having default value of _SIG_SLOT_BASE\\n            result_ := or(_SIG_SLOT_BASE, sig_)\\n        }\\n    }\\n\\n    /// @dev Returns an address `data_` located at `slot_`.\\n    function _getAddressSlot(bytes32 slot_) internal view returns (address data_) {\\n        assembly {\\n            data_ := sload(slot_)\\n        }\\n    }\\n\\n    /// @dev Sets an address `data_` located at `slot_`.\\n    function _setAddressSlot(bytes32 slot_, address data_) internal {\\n        assembly {\\n            sstore(slot_, data_)\\n        }\\n    }\\n\\n    /// @dev Returns an `SigsSlot` with member `value` located at `slot`.\\n    function _getSigsSlot(bytes32 slot_) internal pure returns (SigsSlot storage _r) {\\n        assembly {\\n            _r.slot := slot_\\n        }\\n    }\\n\\n    /// @dev Sets new implementation and adds mapping from implementation to sigs and sig to implementation.\\n    function _setImplementationSigs(address implementation_, bytes4[] memory sigs_) internal {\\n        require(sigs_.length != 0, \\\"no-sigs\\\");\\n        bytes32 slot_ = _getSlotImplSigsSlot(implementation_);\\n        bytes4[] memory sigsCheck_ = _getSigsSlot(slot_).value;\\n        require(sigsCheck_.length == 0, \\\"implementation-already-exist\\\");\\n\\n        for (uint256 i; i < sigs_.length; i++) {\\n            bytes32 sigSlot_ = _getSlotSigsImplSlot(sigs_[i]);\\n            require(_getAddressSlot(sigSlot_) == address(0), \\\"sig-already-exist\\\");\\n            _setAddressSlot(sigSlot_, implementation_);\\n        }\\n\\n        _getSigsSlot(slot_).value = sigs_;\\n        emit LogSetImplementation(implementation_, sigs_);\\n    }\\n\\n    /// @dev Removes implementation and the mappings corresponding to it.\\n    function _removeImplementationSigs(address implementation_) internal {\\n        bytes32 slot_ = _getSlotImplSigsSlot(implementation_);\\n        bytes4[] memory sigs_ = _getSigsSlot(slot_).value;\\n        require(sigs_.length != 0, \\\"implementation-not-exist\\\");\\n\\n        for (uint256 i; i < sigs_.length; i++) {\\n            bytes32 sigSlot_ = _getSlotSigsImplSlot(sigs_[i]);\\n            _setAddressSlot(sigSlot_, address(0));\\n        }\\n\\n        delete _getSigsSlot(slot_).value;\\n        emit LogRemoveImplementation(implementation_);\\n    }\\n\\n    /// @dev Returns bytes4[] sigs from implementation address. If implemenatation is not registered then returns empty array.\\n    function _getImplementationSigs(address implementation_) internal view returns (bytes4[] memory) {\\n        bytes32 slot_ = _getSlotImplSigsSlot(implementation_);\\n        return _getSigsSlot(slot_).value;\\n    }\\n\\n    /// @dev Returns implementation address from bytes4 sig. If sig is not registered then returns address(0).\\n    function _getSigImplementation(bytes4 sig_) internal view returns (address implementation_) {\\n        bytes32 slot_ = _getSlotSigsImplSlot(sig_);\\n        return _getAddressSlot(slot_);\\n    }\\n\\n    /// @dev Returns the current admin.\\n    function _getAdmin() internal view returns (address) {\\n        return _getAddressSlot(_ADMIN_SLOT);\\n    }\\n\\n    /// @dev Returns the current dummy-implementation.\\n    function _getDummyImplementation() internal view returns (address) {\\n        return _getAddressSlot(_DUMMY_IMPLEMENTATION_SLOT);\\n    }\\n\\n    /// @dev Stores a new address in the EIP1967 admin slot.\\n    function _setAdmin(address newAdmin_) internal {\\n        address oldAdmin_ = _getAdmin();\\n        require(newAdmin_ != address(0), \\\"ERC1967: new admin is the zero address\\\");\\n        _setAddressSlot(_ADMIN_SLOT, newAdmin_);\\n        emit LogSetAdmin(oldAdmin_, newAdmin_);\\n    }\\n\\n    /// @dev Stores a new address in the EIP1967 implementation slot.\\n    function _setDummyImplementation(address newDummyImplementation_) internal {\\n        address oldDummyImplementation_ = _getDummyImplementation();\\n        _setAddressSlot(_DUMMY_IMPLEMENTATION_SLOT, newDummyImplementation_);\\n        emit LogSetDummyImplementation(oldDummyImplementation_, newDummyImplementation_);\\n    }\\n}\\n\\ncontract AdminInternals is CoreInternals {\\n    /// @dev Only admin guard\\n    modifier onlyAdmin() {\\n        require(msg.sender == _getAdmin(), \\\"only-admin\\\");\\n        _;\\n    }\\n\\n    constructor(address admin_, address dummyImplementation_) {\\n        _setAdmin(admin_);\\n        _setDummyImplementation(dummyImplementation_);\\n    }\\n\\n    /// @dev Sets new admin.\\n    function setAdmin(address newAdmin_) external onlyAdmin {\\n        _setAdmin(newAdmin_);\\n    }\\n\\n    /// @dev Sets new dummy-implementation.\\n    function setDummyImplementation(address newDummyImplementation_) external onlyAdmin {\\n        _setDummyImplementation(newDummyImplementation_);\\n    }\\n\\n    /// @dev Adds new implementation address.\\n    function addImplementation(address implementation_, bytes4[] calldata sigs_) external onlyAdmin {\\n        _setImplementationSigs(implementation_, sigs_);\\n    }\\n\\n    /// @dev Removes an existing implementation address.\\n    function removeImplementation(address implementation_) external onlyAdmin {\\n        _removeImplementationSigs(implementation_);\\n    }\\n}\\n\\n/// @title Proxy\\n/// @notice This abstract contract provides a fallback function that delegates all calls to another contract using the EVM.\\n/// It implements the Instadapp infinite-proxy: https://github.com/Instadapp/infinite-proxy\\nabstract contract Proxy is AdminInternals {\\n    constructor(address admin_, address dummyImplementation_) AdminInternals(admin_, dummyImplementation_) {}\\n\\n    /// @dev Returns admin's address.\\n    function getAdmin() external view returns (address) {\\n        return _getAdmin();\\n    }\\n\\n    /// @dev Returns dummy-implementations's address.\\n    function getDummyImplementation() external view returns (address) {\\n        return _getDummyImplementation();\\n    }\\n\\n    /// @dev Returns bytes4[] sigs from implementation address If not registered then returns empty array.\\n    function getImplementationSigs(address impl_) external view returns (bytes4[] memory) {\\n        return _getImplementationSigs(impl_);\\n    }\\n\\n    /// @dev Returns implementation address from bytes4 sig. If sig is not registered then returns address(0).\\n    function getSigsImplementation(bytes4 sig_) external view returns (address) {\\n        return _getSigImplementation(sig_);\\n    }\\n\\n    /// @dev Fallback function that delegates calls to the address returned by Implementations registry.\\n    fallback() external payable {\\n        address implementation_;\\n        assembly {\\n            // get slot for sig and directly SLOAD implementation address from storage at that slot\\n            implementation_ := sload(\\n                // same as in `_getSlotSigsImplSlot()` but we must also load msg.sig from calldata.\\n                // msg.sig is first 4 bytes of calldata, so we can use calldataload(0) with a mask\\n                or(\\n                    // or operator sets sig_ in first 4 bytes with rest of bytes32 having default value of _SIG_SLOT_BASE\\n                    _SIG_SLOT_BASE,\\n                    and(calldataload(0), 0xFFFFFFFF00000000000000000000000000000000000000000000000000000000)\\n                )\\n            )\\n        }\\n\\n        if (implementation_ == address(0)) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxy__ImplementationNotExist);\\n        }\\n\\n        // Delegate the current call to `implementation`.\\n        // This does not return to its internall call site, it will return directly to the external caller.\\n        // solhint-disable-next-line no-inline-assembly\\n        assembly {\\n            // Copy msg.data. We take full control of memory in this inline assembly\\n            // block because it will not return to Solidity code. We overwrite the\\n            // Solidity scratch pad at memory position 0.\\n            calldatacopy(0, 0, calldatasize())\\n\\n            // Call the implementation.\\n            // out and outsize are 0 because we don't know the size yet.\\n            let result := delegatecall(gas(), implementation_, 0, calldatasize(), 0, 0)\\n\\n            // Copy the returned data.\\n            returndatacopy(0, 0, returndatasize())\\n\\n            if eq(result, 0) {\\n                // delegatecall returns 0 on error.\\n                revert(0, returndatasize())\\n            }\\n\\n            return(0, returndatasize())\\n        }\\n    }\\n\\n    receive() external payable {\\n        // receive method can never have calldata in EVM so no need for any logic here\\n    }\\n}\\n\",\"keccak256\":\"0x5e7d241fc7520f8d9f1831ef1c6e0db81a97d46b1b95176544e46f0c22539732\",\"license\":\"MIT\"},\"contracts/libraries/storageRead.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @notice implements a method to read uint256 data from storage at a bytes32 storage slot key.\\ncontract StorageRead {\\n    function readFromStorage(bytes32 slot_) public view returns (uint256 result_) {\\n        assembly {\\n            result_ := sload(slot_) // read value from the storage slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x1b03dfe294c2f0376f7e34c3960fe7088d7ff44bb2ffd9cb2ac940486bfba8c9\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/proxy.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Proxy } from \\\"../infiniteProxy/proxy.sol\\\";\\n\\n/// @notice Fluid Liquidity infinte proxy.\\n/// Liquidity is the central point of the Instadapp Fluid architecture, it is the core interaction point\\n/// for all allow-listed protocols, such as fTokens, Vault, Flashloan, StETH protocol, DEX protocol etc.\\ncontract FluidLiquidityProxy is Proxy {\\n    constructor(address admin_, address dummyImplementation_) Proxy(admin_, dummyImplementation_) {}\\n}\\n\",\"keccak256\":\"0xc548bf6c2cba309badd3d648d9593f6df04597733e7cc79cf65f9fce80dbf024\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b50604051620013e0380380620013e08339810160408190526200003491620001ea565b8181818162000043826200005a565b6200004e816200012f565b50505050505062000222565b600062000066620001ae565b90506001600160a01b038216620000d25760405162461bcd60e51b815260206004820152602660248201527f455243313936373a206e65772061646d696e20697320746865207a65726f206160448201526564647265737360d01b606482015260840160405180910390fd5b620000eb600080516020620013a0833981519152839055565b816001600160a01b0316816001600160a01b03167fb2396a4169c0fac3eb0713eb7d54220cbe5e21e585a59578ec4de929657c073360405160405180910390a35050565b60006200014f6000620001c8600080516020620013c08339815191525490565b90506200016a600080516020620013c0833981519152839055565b816001600160a01b0316816001600160a01b03167f761380f4203cd2fcc7ee1ae32561463bc08bbf6761cb9d5caa925f99a6d5450260405160405180910390a35050565b6000620001c8600080516020620013a08339815191525490565b905090565b80516001600160a01b0381168114620001e557600080fd5b919050565b60008060408385031215620001fe57600080fd5b6200020983620001cd565b91506200021960208401620001cd565b90509250929050565b61116e80620002326000396000f3fe60806040526004361061009a5760003560e01c8063908bfe5e11610069578063b5c736e41161004e578063b5c736e414610241578063c39aa07d1461026e578063f0c01b421461028e576100a1565b8063908bfe5e1461020c578063a5fcc8bc14610221576100a1565b806322175a321461015e5780636e9960c314610180578063704b6c02146101bf57806389396dc8146101df576100a1565b366100a157005b7b3ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc6000357fffffffff0000000000000000000000000000000000000000000000000000000016175473ffffffffffffffffffffffffffffffffffffffff811661013b576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35160048201526024015b60405180910390fd5b3660008037600080366000845af43d6000803e80610158573d6000fd5b503d6000f35b34801561016a57600080fd5b5061017e610179366004610f48565b6102ae565b005b34801561018c57600080fd5b50610195610356565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b3480156101cb57600080fd5b5061017e6101da366004610f48565b610365565b3480156101eb57600080fd5b506101ff6101fa366004610f48565b61040a565b6040516101b69190610f63565b34801561021857600080fd5b5061019561041b565b34801561022d57600080fd5b5061019561023c366004610fc9565b610425565b34801561024d57600080fd5b5061026061025c36600461100b565b5490565b6040519081526020016101b6565b34801561027a57600080fd5b5061017e610289366004610f48565b610430565b34801561029a57600080fd5b5061017e6102a9366004611024565b6104d5565b6102b66105b3565b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461034a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600a60248201527f6f6e6c792d61646d696e000000000000000000000000000000000000000000006044820152606401610132565b610353816105dd565b50565b60006103606105b3565b905090565b61036d6105b3565b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610401576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600a60248201527f6f6e6c792d61646d696e000000000000000000000000000000000000000000006044820152606401610132565b610353816107ff565b606061041582610935565b92915050565b6000610360610a4f565b600061041582610a79565b6104386105b3565b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104cc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600a60248201527f6f6e6c792d61646d696e000000000000000000000000000000000000000000006044820152606401610132565b61035381610aa6565b6104dd6105b3565b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610571576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600a60248201527f6f6e6c792d61646d696e000000000000000000000000000000000000000000006044820152606401610132565b6105ae83838380806020026020016040519081016040528093929190818152602001838360200280828437600092019190915250610b3992505050565b505050565b60006103607fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d61035490565b604080516020808201839052601c60608301527f656970313936372e70726f78792e696d706c656d656e746174696f6e0000000060808084019190915273ffffffffffffffffffffffffffffffffffffffff8516838501528351808403909101815260a090920190925280519101206000818054604080516020808402820181019092528281529291908301828280156106d857602002820191906000526020600020906000905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116106855790505b50505050509050805160000361074a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f696d706c656d656e746174696f6e2d6e6f742d657869737400000000000000006044820152606401610132565b60005b81518110156107ad57600061079683838151811061076d5761076d6110aa565b60200260200101517b3ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc1790565b6000905550806107a5816110d9565b91505061074d565b506107b9826000610e39565b60405173ffffffffffffffffffffffffffffffffffffffff8416907fda53aaefabec4c3f8ba693a2e3c67fa0152fbd71c369d51f669e66b28a4a086490600090a2505050565b60006108096105b3565b905073ffffffffffffffffffffffffffffffffffffffff82166108ae576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602660248201527f455243313936373a206e65772061646d696e20697320746865207a65726f206160448201527f64647265737300000000000000000000000000000000000000000000000000006064820152608401610132565b6108d77fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103839055565b8173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167fb2396a4169c0fac3eb0713eb7d54220cbe5e21e585a59578ec4de929657c073360405160405180910390a35050565b606060006109b6836040805160208101829052601c60608201527f656970313936372e70726f78792e696d706c656d656e746174696f6e00000000608082015273ffffffffffffffffffffffffffffffffffffffff83169181019190915260009060a001604051602081830303815290604052805190602001209050919050565b905080805460408051602080840282018101909252828152929190830182828015610a4257602002820191906000526020600020906000905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116109ef5790505b5050505050915050919050565b60006103607f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc5490565b7b3ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc81178054600091905b9392505050565b6000610ab0610a4f565b9050610adb7f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc839055565b8173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f761380f4203cd2fcc7ee1ae32561463bc08bbf6761cb9d5caa925f99a6d5450260405160405180910390a35050565b8051600003610ba4576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600760248201527f6e6f2d73696773000000000000000000000000000000000000000000000000006044820152606401610132565b604080516020808201839052601c60608301527f656970313936372e70726f78792e696d706c656d656e746174696f6e0000000060808084019190915273ffffffffffffffffffffffffffffffffffffffff8616838501528351808403909101815260a09092019092528051910120600081805460408051602080840282018101909252828152929190830182828015610c9f57602002820191906000526020600020906000905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060040190602082600301049283019260010382029150808411610c4c5790505b505050505090508051600014610d11576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601c60248201527f696d706c656d656e746174696f6e2d616c72656164792d6578697374000000006044820152606401610132565b60005b8351811015610dd2576000610d3485838151811061076d5761076d6110aa565b90506000610d40825490565b73ffffffffffffffffffffffffffffffffffffffff1614610dbd576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f7369672d616c72656164792d65786973740000000000000000000000000000006044820152606401610132565b85905580610dca816110d9565b915050610d14565b5082828151610de49260200190610e5e565b508373ffffffffffffffffffffffffffffffffffffffff167fd613a4a18e567ee1f2db4d5b528a5fee09f7dff92d6fb708afd6c095070a9c6d84604051610e2b9190610f63565b60405180910390a250505050565b5080546000825560070160089004906000526020600020908101906103539190610f0a565b82805482825590600052602060002090600701600890048101928215610efa5791602002820160005b83821115610ec857835183826101000a81548163ffffffff021916908360e01c02179055509260200192600401602081600301049283019260010302610e87565b8015610ef85782816101000a81549063ffffffff0219169055600401602081600301049283019260010302610ec8565b505b50610f06929150610f0a565b5090565b5b80821115610f065760008155600101610f0b565b803573ffffffffffffffffffffffffffffffffffffffff81168114610f4357600080fd5b919050565b600060208284031215610f5a57600080fd5b610a9f82610f1f565b6020808252825182820181905260009190848201906040850190845b81811015610fbd5783517fffffffff000000000000000000000000000000000000000000000000000000001683529284019291840191600101610f7f565b50909695505050505050565b600060208284031215610fdb57600080fd5b81357fffffffff0000000000000000000000000000000000000000000000000000000081168114610a9f57600080fd5b60006020828403121561101d57600080fd5b5035919050565b60008060006040848603121561103957600080fd5b61104284610f1f565b9250602084013567ffffffffffffffff8082111561105f57600080fd5b818601915086601f83011261107357600080fd5b81358181111561108257600080fd5b8760208260051b850101111561109757600080fd5b6020830194508093505050509250925092565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203611131577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b506001019056fea2646970667358221220f0ded691978ced5e475a50bf098a14af3b604d9b88d5f7ba32221c2d31d6f40064736f6c63430008150033b53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+  "deployedBytecode": "0x60806040526004361061009a5760003560e01c8063908bfe5e11610069578063b5c736e41161004e578063b5c736e414610241578063c39aa07d1461026e578063f0c01b421461028e576100a1565b8063908bfe5e1461020c578063a5fcc8bc14610221576100a1565b806322175a321461015e5780636e9960c314610180578063704b6c02146101bf57806389396dc8146101df576100a1565b366100a157005b7b3ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc6000357fffffffff0000000000000000000000000000000000000000000000000000000016175473ffffffffffffffffffffffffffffffffffffffff811661013b576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35160048201526024015b60405180910390fd5b3660008037600080366000845af43d6000803e80610158573d6000fd5b503d6000f35b34801561016a57600080fd5b5061017e610179366004610f48565b6102ae565b005b34801561018c57600080fd5b50610195610356565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b3480156101cb57600080fd5b5061017e6101da366004610f48565b610365565b3480156101eb57600080fd5b506101ff6101fa366004610f48565b61040a565b6040516101b69190610f63565b34801561021857600080fd5b5061019561041b565b34801561022d57600080fd5b5061019561023c366004610fc9565b610425565b34801561024d57600080fd5b5061026061025c36600461100b565b5490565b6040519081526020016101b6565b34801561027a57600080fd5b5061017e610289366004610f48565b610430565b34801561029a57600080fd5b5061017e6102a9366004611024565b6104d5565b6102b66105b3565b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461034a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600a60248201527f6f6e6c792d61646d696e000000000000000000000000000000000000000000006044820152606401610132565b610353816105dd565b50565b60006103606105b3565b905090565b61036d6105b3565b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610401576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600a60248201527f6f6e6c792d61646d696e000000000000000000000000000000000000000000006044820152606401610132565b610353816107ff565b606061041582610935565b92915050565b6000610360610a4f565b600061041582610a79565b6104386105b3565b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104cc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600a60248201527f6f6e6c792d61646d696e000000000000000000000000000000000000000000006044820152606401610132565b61035381610aa6565b6104dd6105b3565b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610571576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600a60248201527f6f6e6c792d61646d696e000000000000000000000000000000000000000000006044820152606401610132565b6105ae83838380806020026020016040519081016040528093929190818152602001838360200280828437600092019190915250610b3992505050565b505050565b60006103607fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d61035490565b604080516020808201839052601c60608301527f656970313936372e70726f78792e696d706c656d656e746174696f6e0000000060808084019190915273ffffffffffffffffffffffffffffffffffffffff8516838501528351808403909101815260a090920190925280519101206000818054604080516020808402820181019092528281529291908301828280156106d857602002820191906000526020600020906000905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116106855790505b50505050509050805160000361074a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f696d706c656d656e746174696f6e2d6e6f742d657869737400000000000000006044820152606401610132565b60005b81518110156107ad57600061079683838151811061076d5761076d6110aa565b60200260200101517b3ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc1790565b6000905550806107a5816110d9565b91505061074d565b506107b9826000610e39565b60405173ffffffffffffffffffffffffffffffffffffffff8416907fda53aaefabec4c3f8ba693a2e3c67fa0152fbd71c369d51f669e66b28a4a086490600090a2505050565b60006108096105b3565b905073ffffffffffffffffffffffffffffffffffffffff82166108ae576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602660248201527f455243313936373a206e65772061646d696e20697320746865207a65726f206160448201527f64647265737300000000000000000000000000000000000000000000000000006064820152608401610132565b6108d77fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103839055565b8173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167fb2396a4169c0fac3eb0713eb7d54220cbe5e21e585a59578ec4de929657c073360405160405180910390a35050565b606060006109b6836040805160208101829052601c60608201527f656970313936372e70726f78792e696d706c656d656e746174696f6e00000000608082015273ffffffffffffffffffffffffffffffffffffffff83169181019190915260009060a001604051602081830303815290604052805190602001209050919050565b905080805460408051602080840282018101909252828152929190830182828015610a4257602002820191906000526020600020906000905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116109ef5790505b5050505050915050919050565b60006103607f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc5490565b7b3ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc81178054600091905b9392505050565b6000610ab0610a4f565b9050610adb7f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc839055565b8173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f761380f4203cd2fcc7ee1ae32561463bc08bbf6761cb9d5caa925f99a6d5450260405160405180910390a35050565b8051600003610ba4576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600760248201527f6e6f2d73696773000000000000000000000000000000000000000000000000006044820152606401610132565b604080516020808201839052601c60608301527f656970313936372e70726f78792e696d706c656d656e746174696f6e0000000060808084019190915273ffffffffffffffffffffffffffffffffffffffff8616838501528351808403909101815260a09092019092528051910120600081805460408051602080840282018101909252828152929190830182828015610c9f57602002820191906000526020600020906000905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060040190602082600301049283019260010382029150808411610c4c5790505b505050505090508051600014610d11576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601c60248201527f696d706c656d656e746174696f6e2d616c72656164792d6578697374000000006044820152606401610132565b60005b8351811015610dd2576000610d3485838151811061076d5761076d6110aa565b90506000610d40825490565b73ffffffffffffffffffffffffffffffffffffffff1614610dbd576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f7369672d616c72656164792d65786973740000000000000000000000000000006044820152606401610132565b85905580610dca816110d9565b915050610d14565b5082828151610de49260200190610e5e565b508373ffffffffffffffffffffffffffffffffffffffff167fd613a4a18e567ee1f2db4d5b528a5fee09f7dff92d6fb708afd6c095070a9c6d84604051610e2b9190610f63565b60405180910390a250505050565b5080546000825560070160089004906000526020600020908101906103539190610f0a565b82805482825590600052602060002090600701600890048101928215610efa5791602002820160005b83821115610ec857835183826101000a81548163ffffffff021916908360e01c02179055509260200192600401602081600301049283019260010302610e87565b8015610ef85782816101000a81549063ffffffff0219169055600401602081600301049283019260010302610ec8565b505b50610f06929150610f0a565b5090565b5b80821115610f065760008155600101610f0b565b803573ffffffffffffffffffffffffffffffffffffffff81168114610f4357600080fd5b919050565b600060208284031215610f5a57600080fd5b610a9f82610f1f565b6020808252825182820181905260009190848201906040850190845b81811015610fbd5783517fffffffff000000000000000000000000000000000000000000000000000000001683529284019291840191600101610f7f565b50909695505050505050565b600060208284031215610fdb57600080fd5b81357fffffffff0000000000000000000000000000000000000000000000000000000081168114610a9f57600080fd5b60006020828403121561101d57600080fd5b5035919050565b60008060006040848603121561103957600080fd5b61104284610f1f565b9250602084013567ffffffffffffffff8082111561105f57600080fd5b818601915086601f83011261107357600080fd5b81358181111561108257600080fd5b8760208260051b850101111561109757600080fd5b6020830194508093505050509250925092565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203611131577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b506001019056fea2646970667358221220f0ded691978ced5e475a50bf098a14af3b604d9b88d5f7ba32221c2d31d6f40064736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "addImplementation(address,bytes4[])": {
+        "details": "Adds new implementation address."
+      },
+      "getAdmin()": {
+        "details": "Returns admin's address."
+      },
+      "getDummyImplementation()": {
+        "details": "Returns dummy-implementations's address."
+      },
+      "getImplementationSigs(address)": {
+        "details": "Returns bytes4[] sigs from implementation address If not registered then returns empty array."
+      },
+      "getSigsImplementation(bytes4)": {
+        "details": "Returns implementation address from bytes4 sig. If sig is not registered then returns address(0)."
+      },
+      "removeImplementation(address)": {
+        "details": "Removes an existing implementation address."
+      },
+      "setAdmin(address)": {
+        "details": "Sets new admin."
+      },
+      "setDummyImplementation(address)": {
+        "details": "Sets new dummy-implementation."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "LogRemoveImplementation(address)": {
+        "notice": "emitted when an implementation is removed"
+      },
+      "LogSetAdmin(address,address)": {
+        "notice": "emitted when a new admin is set"
+      },
+      "LogSetDummyImplementation(address,address)": {
+        "notice": "emitted when a new dummy implementation is set"
+      },
+      "LogSetImplementation(address,bytes4[])": {
+        "notice": "emitted when a new implementation is set with certain sigs"
+      }
+    },
+    "kind": "user",
+    "methods": {},
+    "notice": "Fluid Liquidity infinte proxy. Liquidity is the central point of the Instadapp Fluid architecture, it is the core interaction point for all allow-listed protocols, such as fTokens, Vault, Flashloan, StETH protocol, DEX protocol etc.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

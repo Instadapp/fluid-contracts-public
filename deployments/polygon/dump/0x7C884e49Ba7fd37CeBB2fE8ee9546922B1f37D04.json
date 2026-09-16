@@ -1,0 +1,511 @@
+{
+  "address": "0x7C884e49Ba7fd37CeBB2fE8ee9546922B1f37D04",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "liquidity_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidConfigError",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseLimit",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxLimit",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetUserBorrowLimits",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseLimit",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetUserWithdrawLimit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newLimit",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetWithdrawalLimit",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "LIQUIDITY",
+      "outputs": [
+        {
+          "internalType": "contract IFluidLiquidity",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "TEAM_MULTISIG",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "TEAM_MULTISIG2",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token_",
+          "type": "address"
+        }
+      ],
+      "name": "getUserBorrowConfig",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "mode",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expandPercent",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expandDuration",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseDebtCeiling",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxDebtCeiling",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.UserBorrowConfig",
+          "name": "userBorrowConfigs_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token_",
+          "type": "address"
+        }
+      ],
+      "name": "getUserSupplyConfig",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "mode",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expandPercent",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expandDuration",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseWithdrawalLimit",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.UserSupplyConfig",
+          "name": "userSupplyConfigs_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "lastUpdateTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "baseLimit_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxLimit_",
+          "type": "uint256"
+        }
+      ],
+      "name": "setUserBorrowLimits",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "baseLimit_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "skipMaxPercentChangeCheck_",
+          "type": "bool"
+        }
+      ],
+      "name": "setUserWithdrawLimit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newLimit_",
+          "type": "uint256"
+        }
+      ],
+      "name": "setWithdrawalLimit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x71b6567acab1d0d8d313fb32053844a8e88c647461d508884e1ff76ae2e50b36",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 47,
+    "gasUsed": "1165616",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002010000008000000000000000000000000000000000000000000000000000000000800000000000000000000100000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000040000000000000000200000000000004000000000000001000000000000000000000000000000004000000000000000040001000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0xd0390aa5282fb51bb9c13c2d1bf0d0aa30bc3547402d52dc84389115c30ac0d9",
+    "transactionHash": "0x71b6567acab1d0d8d313fb32053844a8e88c647461d508884e1ff76ae2e50b36",
+    "logs": [
+      {
+        "transactionIndex": 47,
+        "blockNumber": 74384029,
+        "transactionHash": "0x71b6567acab1d0d8d313fb32053844a8e88c647461d508884e1ff76ae2e50b36",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000ed35b1609ec45c7079e80d11149a52717e4859a",
+          "0x000000000000000000000000a8b52f02108aa5f4b675bdcc973760022d7c6020"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000090f0414af008a000000000000000000000000000000000000000000000000a68754a0420bf54f30000000000000000000000000000000000000000000000c9e3cdf37f51130cf500000000000000000000000000000000000000000000000a67e459c2d5cf4c530000000000000000000000000000000000000000000000c9e45ee3c09c031595",
+        "logIndex": 208,
+        "blockHash": "0xd0390aa5282fb51bb9c13c2d1bf0d0aa30bc3547402d52dc84389115c30ac0d9"
+      }
+    ],
+    "blockNumber": 74384029,
+    "cumulativeGasUsed": "6013295",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x52Aa899454998Be5b000Ad077a46Bbe360F4e497"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "5228629dba1e4b693c7dacd40c0694f4",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"liquidity_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidConfigError\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseLimit\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxLimit\",\"type\":\"uint256\"}],\"name\":\"LogSetUserBorrowLimits\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseLimit\",\"type\":\"uint256\"}],\"name\":\"LogSetUserWithdrawLimit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newLimit\",\"type\":\"uint256\"}],\"name\":\"LogSetWithdrawalLimit\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"LIQUIDITY\",\"outputs\":[{\"internalType\":\"contract IFluidLiquidity\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TEAM_MULTISIG\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TEAM_MULTISIG2\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token_\",\"type\":\"address\"}],\"name\":\"getUserBorrowConfig\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"mode\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"expandPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseDebtCeiling\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxDebtCeiling\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserBorrowConfig\",\"name\":\"userBorrowConfigs_\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token_\",\"type\":\"address\"}],\"name\":\"getUserSupplyConfig\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"mode\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"expandPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseWithdrawalLimit\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserSupplyConfig\",\"name\":\"userSupplyConfigs_\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"lastUpdateTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"baseLimit_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxLimit_\",\"type\":\"uint256\"}],\"name\":\"setUserBorrowLimits\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"baseLimit_\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"skipMaxPercentChangeCheck_\",\"type\":\"bool\"}],\"name\":\"setUserWithdrawLimit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"newLimit_\",\"type\":\"uint256\"}],\"name\":\"setWithdrawalLimit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"setUserBorrowLimits(address,address,uint256,uint256)\":{\"details\":\"This function can only be called by team multisig\",\"params\":{\"baseLimit_\":\"The base limit for the user borrow. Set to 0 to keep current value.\",\"maxLimit_\":\"The max limit for the user borrow. Set to 0 to keep current value.\",\"token_\":\"The address of the token for which to set the user borrow limit\",\"user_\":\"The address of the user for which to set the user borrow limit\"}},\"setUserWithdrawLimit(address,address,uint256,bool)\":{\"params\":{\"baseLimit_\":\"The base limit for the user supply. Set to 0 to keep current value.\",\"skipMaxPercentChangeCheck_\":\"allow full range of limit check. Keep to false by default to have additional human error check.\",\"token_\":\"The address of the token for which to set the user withdraw limit\",\"user_\":\"The address of the user for which to set the user withdraw limit\"}},\"setWithdrawalLimit(address,address,uint256)\":{\"details\":\"This function can only be called by team multisig\",\"params\":{\"newLimit_\":\"The new withdrawal limit to be set\",\"token_\":\"The address of the token for which to set the withdrawal limit\",\"user_\":\"The address of the user for which to set the withdrawal limit\"}}},\"version\":1},\"userdoc\":{\"events\":{\"LogSetUserBorrowLimits(address,address,uint256,uint256)\":{\"notice\":\"emitted when multisig changes the borrow limit config\"},\"LogSetUserWithdrawLimit(address,address,uint256)\":{\"notice\":\"emitted when multisig changes the withdrawal limit config\"},\"LogSetWithdrawalLimit(address,address,uint256)\":{\"notice\":\"emitted when multisig successfully changes the withdrawal limit\"}},\"kind\":\"user\",\"methods\":{\"TEAM_MULTISIG()\":{\"notice\":\"Team multisigs allowed to trigger methods\"},\"getUserBorrowConfig(address,address)\":{\"notice\":\"Returns the user borrow config for a given user and token.\"},\"getUserSupplyConfig(address,address)\":{\"notice\":\"Returns the user supply config for a given user and token.\"},\"setUserBorrowLimits(address,address,uint256,uint256)\":{\"notice\":\"Sets the user borrow limits for a specific token of a user, with time and max percent change restrictions.         Can only be called by team multisig.\"},\"setUserWithdrawLimit(address,address,uint256,bool)\":{\"notice\":\"sets withdraw base limit without restrictions. Can only be called by team multisig.\"},\"setWithdrawalLimit(address,address,uint256)\":{\"notice\":\"Sets the withdrawal limit for a specific token of a user in the liquidity\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/config/limitsAuth/main.sol\":\"FluidLimitsAuth\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/config/error.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract Error {\\n    error FluidConfigError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0x7fac063d4cfeb626e3a2720595a2db1d7352353ed6c7df61e95a6c164450c9e6\",\"license\":\"BUSL-1.1\"},\"contracts/config/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |    ExpandPercentConfigHandler     | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an input address is zero\\n    uint256 internal constant ExpandPercentConfigHandler__AddressZero = 100001;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant ExpandPercentConfigHandler__Unauthorized = 100002;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant ExpandPercentConfigHandler__InvalidParams = 100003;\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant ExpandPercentConfigHandler__NoUpdate = 100004;\\n\\n    /// @notice thrown when slot is not used, e.g. when borrow token is 0 there is no borrow data\\n    uint256 internal constant ExpandPercentConfigHandler__SlotDoesNotExist = 100005;\\n\\n    /***********************************|\\n    |      EthenaRateConfigHandler      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an input address is zero\\n    uint256 internal constant EthenaRateConfigHandler__AddressZero = 100011;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant EthenaRateConfigHandler__Unauthorized = 100012;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant EthenaRateConfigHandler__InvalidParams = 100013;\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant EthenaRateConfigHandler__NoUpdate = 100014;\\n\\n    /***********************************|\\n    |       MaxBorrowConfigHandler      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an input address is zero\\n    uint256 internal constant MaxBorrowConfigHandler__AddressZero = 100021;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant MaxBorrowConfigHandler__Unauthorized = 100022;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant MaxBorrowConfigHandler__InvalidParams = 100023;\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant MaxBorrowConfigHandler__NoUpdate = 100024;\\n\\n    /***********************************|\\n    |       BufferRateConfigHandler     | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an input address is zero\\n    uint256 internal constant BufferRateConfigHandler__AddressZero = 100031;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant BufferRateConfigHandler__Unauthorized = 100032;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant BufferRateConfigHandler__InvalidParams = 100033;\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant BufferRateConfigHandler__NoUpdate = 100034;\\n\\n    /// @notice thrown when rate data version is not supported\\n    uint256 internal constant BufferRateConfigHandler__RateVersionUnsupported = 100035;\\n\\n    /***********************************|\\n    |          FluidRatesAuth           | \\n    |__________________________________*/\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant RatesAuth__NoUpdate = 100041;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant RatesAuth__Unauthorized = 100042;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant RatesAuth__InvalidParams = 100043;\\n\\n    /// @notice thrown when cooldown is not yet expired\\n    uint256 internal constant RatesAuth__CooldownLeft = 100044;\\n\\n    /// @notice thrown when version is invalid\\n    uint256 internal constant RatesAuth__InvalidVersion = 100045;\\n\\n    /***********************************|\\n    |       LiquidityTokenAuth          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant LiquidityTokenAuth__Unauthorized = 100051;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant LiquidityTokenAuth_AlreadyInitialized = 100052;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant LiquidityTokenAuth__InvalidParams = 100053;\\n\\n    /***********************************|\\n    |       CollectRevenueAuth          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant CollectRevenueAuth__Unauthorized = 100061;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant CollectRevenueAuth__InvalidParams = 100062;\\n\\n    /***********************************|\\n    |       FluidWithdrawLimitAuth      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant WithdrawLimitAuth__NoUserSupply = 100071;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant WithdrawLimitAuth__Unauthorized = 100072;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant WithdrawLimitAuth__InvalidParams = 100073;\\n\\n    /// @notice thrown when no more withdrawal limit can be set for the day\\n    uint256 internal constant WithdrawLimitAuth__DailyLimitReached = 100074;\\n\\n    /// @notice thrown when no more withdrawal limit can be set for the hour\\n    uint256 internal constant WithdrawLimitAuth__HourlyLimitReached = 100075;\\n\\n    /// @notice thrown when the withdrawal limit and userSupply difference exceeds 5%\\n    uint256 internal constant WithdrawLimitAuth__ExcessPercentageDifference = 100076;\\n\\n    /***********************************|\\n    |       DexFeeHandler               | \\n    |__________________________________*/\\n\\n    /// @notice thrown when fee update is not required\\n    uint256 internal constant DexFeeHandler__FeeUpdateNotRequired = 100081;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant DexFeeHandler__InvalidParams = 100082;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls\\n    uint256 internal constant DexFeeHandler__Unauthorized = 100083;\\n\\n    /***********************************|\\n    |           RangeAuthDex            | \\n    |__________________________________*/\\n\\n    uint256 internal constant RangeAuthDex__InvalidParams = 100091;\\n    uint256 internal constant RangeAuthDex__CooldownLeft = 100092;\\n    uint256 internal constant RangeAuthDex__Unauthorized = 100093;\\n    uint256 internal constant RangeAuthDex__ExceedAllowedPercentageChange = 100094;\\n    uint256 internal constant RangeAuthDex__InvalidShiftTime = 100095;\\n\\n    /***********************************|\\n    |           FluidLimitsAuth         | \\n    |__________________________________*/\\n\\n    uint256 internal constant LimitsAuth__InvalidParams = 100101;\\n    uint256 internal constant LimitsAuth__Unauthorized = 100102;\\n    uint256 internal constant LimitsAuth__UserNotDefinedYet = 100103;\\n    uint256 internal constant LimitsAuth__ExceedAllowedPercentageChange = 100104;\\n    uint256 internal constant LimitsAuth__CoolDownPending = 100105;\\n\\n    /***********************************|\\n    |          DexFeeAuth               | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls\\n    uint256 internal constant DexFeeAuth__Unauthorized = 100111;\\n\\n    /***********************************|\\n    |       VaultFeeRewardsAuth         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls\\n    uint256 internal constant VaultFeeRewardsAuth__Unauthorized = 100121;\\n    /// @notice thrown when magnifier or rate is being updated for a non matching vault type\\n    uint256 internal constant VaultFeeRewardsAuth__InvalidVaultType = 100122;\\n}\\n\",\"keccak256\":\"0xe243f2978050b7b4680b69c7a13a56022c0984f70852556db0eacb11523384f4\",\"license\":\"BUSL-1.1\"},\"contracts/config/limitsAuth/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Error } from \\\"../error.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { BigMathMinified } from \\\"../../libraries/bigMathMinified.sol\\\";\\nimport { LiquiditySlotsLink } from \\\"../../libraries/liquiditySlotsLink.sol\\\";\\nimport { Structs as AdminModuleStructs } from \\\"../../liquidity/adminModule/structs.sol\\\";\\nimport { IFluidLiquidity } from \\\"../../liquidity/interfaces/iLiquidity.sol\\\";\\n\\nabstract contract Events {\\n    /// @notice emitted when multisig successfully changes the withdrawal limit\\n    event LogSetWithdrawalLimit(address user, address token, uint256 newLimit);\\n\\n    /// @notice emitted when multisig changes the withdrawal limit config\\n    event LogSetUserWithdrawLimit(address user, address token, uint256 baseLimit);\\n\\n    /// @notice emitted when multisig changes the borrow limit config\\n    event LogSetUserBorrowLimits(address user, address token, uint256 baseLimit, uint256 maxLimit);\\n}\\n\\nabstract contract Constants {\\n    uint256 internal constant X14 = 0x3fff;\\n    uint256 internal constant X18 = 0x3ffff;\\n    uint256 internal constant X24 = 0xffffff;\\n\\n    uint256 internal constant DEFAULT_EXPONENT_SIZE = 8;\\n    uint256 internal constant DEFAULT_EXPONENT_MASK = 0xFF;\\n\\n    /// @dev This represents 20%.\\n    uint256 internal constant MAX_PERCENT_CHANGE = 20;\\n\\n    IFluidLiquidity public immutable LIQUIDITY;\\n    /// @notice Team multisigs allowed to trigger methods\\n    address public constant TEAM_MULTISIG = 0x4F6F977aCDD1177DCD81aB83074855EcB9C2D49e;\\n    address public constant TEAM_MULTISIG2 = 0x1e2e1aeD876f67Fe4Fd54090FD7B8F57Ce234219;\\n\\n    uint256 internal constant COOLDOWN_PERIOD = 4 days;\\n}\\n\\nabstract contract Variables is Constants {\\n    // user => token => lastUpdateTime for cooldown checks\\n    mapping(address => mapping(address => uint256)) public lastUpdateTime;\\n}\\n\\ncontract FluidLimitsAuth is Variables, Events, Error {\\n    /// @dev Validates that an address is not the zero address\\n    modifier validAddress(address value_) {\\n        if (value_ == address(0)) {\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__InvalidParams);\\n        }\\n        _;\\n    }\\n\\n    modifier onlyMultisig() {\\n        if (TEAM_MULTISIG != msg.sender && TEAM_MULTISIG2 != msg.sender) {\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__Unauthorized);\\n        }\\n        _;\\n    }\\n\\n    constructor(address liquidity_) validAddress(liquidity_) {\\n        LIQUIDITY = IFluidLiquidity(liquidity_);\\n    }\\n\\n    /// @notice Sets the withdrawal limit for a specific token of a user in the liquidity\\n    /// @dev This function can only be called by team multisig\\n    /// @param user_ The address of the user for which to set the withdrawal limit\\n    /// @param token_ The address of the token for which to set the withdrawal limit\\n    /// @param newLimit_ The new withdrawal limit to be set\\n    function setWithdrawalLimit(address user_, address token_, uint256 newLimit_) external onlyMultisig {\\n        LIQUIDITY.updateUserWithdrawalLimit(user_, token_, newLimit_);\\n        emit LogSetWithdrawalLimit(user_, token_, newLimit_);\\n    }\\n\\n    /// @notice sets withdraw base limit without restrictions. Can only be called by team multisig.\\n    /// @param user_ The address of the user for which to set the user withdraw limit\\n    /// @param token_ The address of the token for which to set the user withdraw limit\\n    /// @param baseLimit_ The base limit for the user supply. Set to 0 to keep current value.\\n    /// @param skipMaxPercentChangeCheck_ allow full range of limit check. Keep to false by default to have additional human error check.\\n    function setUserWithdrawLimit(\\n        address user_,\\n        address token_,\\n        uint256 baseLimit_,\\n        bool skipMaxPercentChangeCheck_\\n    ) external onlyMultisig {\\n        if (baseLimit_ == 0) {\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__InvalidParams);\\n        }\\n\\n        AdminModuleStructs.UserSupplyConfig[] memory userSupplyConfigs = new AdminModuleStructs.UserSupplyConfig[](1);\\n        userSupplyConfigs[0] = getUserSupplyConfig(user_, token_);\\n\\n        if (userSupplyConfigs[0].user == address(0)) {\\n            // user is not defined yet\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__UserNotDefinedYet);\\n        }\\n\\n        if (!skipMaxPercentChangeCheck_) {\\n            _validateWithinMaxPercentChange(userSupplyConfigs[0].baseWithdrawalLimit, baseLimit_);\\n        }\\n\\n        userSupplyConfigs[0].baseWithdrawalLimit = baseLimit_;\\n\\n        LIQUIDITY.updateUserSupplyConfigs(userSupplyConfigs);\\n\\n        emit LogSetUserWithdrawLimit(user_, token_, userSupplyConfigs[0].baseWithdrawalLimit);\\n    }\\n\\n    /// @notice Sets the user borrow limits for a specific token of a user, with time and max percent change restrictions.\\n    ///         Can only be called by team multisig.\\n    /// @dev This function can only be called by team multisig\\n    /// @param user_ The address of the user for which to set the user borrow limit\\n    /// @param token_ The address of the token for which to set the user borrow limit\\n    /// @param baseLimit_ The base limit for the user borrow. Set to 0 to keep current value.\\n    /// @param maxLimit_ The max limit for the user borrow. Set to 0 to keep current value.\\n    function setUserBorrowLimits(\\n        address user_,\\n        address token_,\\n        uint256 baseLimit_,\\n        uint256 maxLimit_\\n    ) external onlyMultisig {\\n        if (baseLimit_ == 0 && maxLimit_ == 0) {\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__InvalidParams);\\n        }\\n\\n        AdminModuleStructs.UserBorrowConfig[] memory userBorrowConfigs = new AdminModuleStructs.UserBorrowConfig[](1);\\n        userBorrowConfigs[0] = getUserBorrowConfig(user_, token_);\\n\\n        if (userBorrowConfigs[0].user == address(0)) {\\n            // user is not defined yet\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__UserNotDefinedYet);\\n        }\\n\\n        _validateLastUpdateTime(lastUpdateTime[user_][token_]);\\n\\n        if (baseLimit_ != 0) {\\n            _validateWithinMaxPercentChange(userBorrowConfigs[0].baseDebtCeiling, baseLimit_);\\n            userBorrowConfigs[0].baseDebtCeiling = baseLimit_;\\n        }\\n\\n        if (maxLimit_ != 0) {\\n            _validateWithinMaxPercentChange(userBorrowConfigs[0].maxDebtCeiling, maxLimit_);\\n            userBorrowConfigs[0].maxDebtCeiling = maxLimit_;\\n        }\\n\\n        lastUpdateTime[user_][token_] = block.timestamp;\\n\\n        LIQUIDITY.updateUserBorrowConfigs(userBorrowConfigs);\\n\\n        emit LogSetUserBorrowLimits(\\n            user_,\\n            token_,\\n            userBorrowConfigs[0].baseDebtCeiling,\\n            userBorrowConfigs[0].maxDebtCeiling\\n        );\\n    }\\n\\n    /// @notice Returns the user supply config for a given user and token.\\n    function getUserSupplyConfig(\\n        address user_,\\n        address token_\\n    ) public view returns (AdminModuleStructs.UserSupplyConfig memory userSupplyConfigs_) {\\n        uint256 userSupply_ = LIQUIDITY.readFromStorage(\\n            LiquiditySlotsLink.calculateDoubleMappingStorageSlot(\\n                LiquiditySlotsLink.LIQUIDITY_USER_SUPPLY_DOUBLE_MAPPING_SLOT,\\n                user_,\\n                token_\\n            )\\n        );\\n\\n        if (userSupply_ > 0) {\\n            userSupplyConfigs_ = AdminModuleStructs.UserSupplyConfig({\\n                user: user_,\\n                token: token_,\\n                mode: uint8(userSupply_ & 1),\\n                baseWithdrawalLimit: BigMathMinified.fromBigNumber(\\n                    (userSupply_ >> LiquiditySlotsLink.BITS_USER_SUPPLY_BASE_WITHDRAWAL_LIMIT) & X18,\\n                    DEFAULT_EXPONENT_SIZE,\\n                    DEFAULT_EXPONENT_MASK\\n                ),\\n                expandPercent: (userSupply_ >> LiquiditySlotsLink.BITS_USER_SUPPLY_EXPAND_PERCENT) & X14,\\n                expandDuration: (userSupply_ >> LiquiditySlotsLink.BITS_USER_SUPPLY_EXPAND_DURATION) & X24\\n            });\\n        }\\n    }\\n\\n    /// @notice Returns the user borrow config for a given user and token.\\n    function getUserBorrowConfig(\\n        address user_,\\n        address token_\\n    ) public view returns (AdminModuleStructs.UserBorrowConfig memory userBorrowConfigs_) {\\n        uint256 userBorrow_ = LIQUIDITY.readFromStorage(\\n            LiquiditySlotsLink.calculateDoubleMappingStorageSlot(\\n                LiquiditySlotsLink.LIQUIDITY_USER_BORROW_DOUBLE_MAPPING_SLOT,\\n                user_,\\n                token_\\n            )\\n        );\\n\\n        if (userBorrow_ > 0) {\\n            userBorrowConfigs_ = AdminModuleStructs.UserBorrowConfig({\\n                user: user_,\\n                token: token_,\\n                mode: uint8(userBorrow_ & 1),\\n                baseDebtCeiling: BigMathMinified.fromBigNumber(\\n                    (userBorrow_ >> LiquiditySlotsLink.BITS_USER_BORROW_BASE_BORROW_LIMIT) & X18,\\n                    DEFAULT_EXPONENT_SIZE,\\n                    DEFAULT_EXPONENT_MASK\\n                ),\\n                maxDebtCeiling: BigMathMinified.fromBigNumber(\\n                    (userBorrow_ >> LiquiditySlotsLink.BITS_USER_BORROW_MAX_BORROW_LIMIT) & X18,\\n                    DEFAULT_EXPONENT_SIZE,\\n                    DEFAULT_EXPONENT_MASK\\n                ),\\n                expandPercent: (userBorrow_ >> LiquiditySlotsLink.BITS_USER_BORROW_EXPAND_PERCENT) & X14,\\n                expandDuration: (userBorrow_ >> LiquiditySlotsLink.BITS_USER_BORROW_EXPAND_DURATION) & X24\\n            });\\n        }\\n    }\\n\\n    /// @dev Validates that the new limit is within the allowed max percent change.\\n    function _validateWithinMaxPercentChange(uint256 oldLimit_, uint256 newLimit_) internal pure {\\n        uint256 maxDelta = (oldLimit_ * MAX_PERCENT_CHANGE) / 100; // 20% of oldLimit_\\n\\n        if (newLimit_ > oldLimit_ && (newLimit_ - oldLimit_) > maxDelta) {\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__ExceedAllowedPercentageChange);\\n        } else if (newLimit_ < oldLimit_ && (oldLimit_ - newLimit_) > maxDelta) {\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__ExceedAllowedPercentageChange);\\n        }\\n    }\\n\\n    /// @dev Validates that the cooldown period has passed since the last update.\\n    function _validateLastUpdateTime(uint256 lastUpdateTime_) internal view {\\n        if (block.timestamp - lastUpdateTime_ < COOLDOWN_PERIOD) {\\n            revert FluidConfigError(ErrorTypes.LimitsAuth__CoolDownPending);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x179a29f06c043be4662d0d0017e1ceca52e6d6bf53fb9ea9c284fb6907d9f985\",\"license\":\"BUSL-1.1\"},\"contracts/infiniteProxy/interfaces/iProxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IProxy {\\n    function setAdmin(address newAdmin_) external;\\n\\n    function setDummyImplementation(address newDummyImplementation_) external;\\n\\n    function addImplementation(address implementation_, bytes4[] calldata sigs_) external;\\n\\n    function removeImplementation(address implementation_) external;\\n\\n    function getAdmin() external view returns (address);\\n\\n    function getDummyImplementation() external view returns (address);\\n\\n    function getImplementationSigs(address impl_) external view returns (bytes4[] memory);\\n\\n    function getSigsImplementation(bytes4 sig_) external view returns (address);\\n\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n}\\n\",\"keccak256\":\"0xbb605491d4bac08e816248feecae7dd17cfc1877c88b2e555abece2970f5ea00\",\"license\":\"MIT\"},\"contracts/libraries/bigMathMinified.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @title library that represents a number in BigNumber(coefficient and exponent) format to store in smaller bits.\\n/// @notice the number is divided into two parts: a coefficient and an exponent. This comes at a cost of losing some precision\\n/// at the end of the number because the exponent simply fills it with zeroes. This precision is oftentimes negligible and can\\n/// result in significant gas cost reduction due to storage space reduction.\\n/// Also note, a valid big number is as follows: if the exponent is > 0, then coefficient last bits should be occupied to have max precision.\\n/// @dev roundUp is more like a increase 1, which happens everytime for the same number.\\n/// roundDown simply sets trailing digits after coefficientSize to zero (floor), only once for the same number.\\nlibrary BigMathMinified {\\n    /// @dev constants to use for `roundUp` input param to increase readability\\n    bool internal constant ROUND_DOWN = false;\\n    bool internal constant ROUND_UP = true;\\n\\n    /// @dev converts `normal` number to BigNumber with `exponent` and `coefficient` (or precision).\\n    /// e.g.:\\n    /// 5035703444687813576399599 (normal) = (coefficient[32bits], exponent[8bits])[40bits]\\n    /// 5035703444687813576399599 (decimal) => 10000101010010110100000011111011110010100110100000000011100101001101001101011101111 (binary)\\n    ///                                     => 10000101010010110100000011111011000000000000000000000000000000000000000000000000000\\n    ///                                                                        ^-------------------- 51(exponent) -------------- ^\\n    /// coefficient = 1000,0101,0100,1011,0100,0000,1111,1011               (2236301563)\\n    /// exponent =                                            0011,0011     (51)\\n    /// bigNumber =   1000,0101,0100,1011,0100,0000,1111,1011,0011,0011     (572493200179)\\n    ///\\n    /// @param normal number which needs to be converted into Big Number\\n    /// @param coefficientSize at max how many bits of precision there should be (64 = uint64 (64 bits precision))\\n    /// @param exponentSize at max how many bits of exponent there should be (8 = uint8 (8 bits exponent))\\n    /// @param roundUp signals if result should be rounded down or up\\n    /// @return bigNumber converted bigNumber (coefficient << exponent)\\n    function toBigNumber(\\n        uint256 normal,\\n        uint256 coefficientSize,\\n        uint256 exponentSize,\\n        bool roundUp\\n    ) internal pure returns (uint256 bigNumber) {\\n        assembly {\\n            let lastBit_\\n            let number_ := normal\\n            if gt(number_, 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x80, number_)\\n                lastBit_ := 0x80\\n            }\\n            if gt(number_, 0xFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x40, number_)\\n                lastBit_ := add(lastBit_, 0x40)\\n            }\\n            if gt(number_, 0xFFFFFFFF) {\\n                number_ := shr(0x20, number_)\\n                lastBit_ := add(lastBit_, 0x20)\\n            }\\n            if gt(number_, 0xFFFF) {\\n                number_ := shr(0x10, number_)\\n                lastBit_ := add(lastBit_, 0x10)\\n            }\\n            if gt(number_, 0xFF) {\\n                number_ := shr(0x8, number_)\\n                lastBit_ := add(lastBit_, 0x8)\\n            }\\n            if gt(number_, 0xF) {\\n                number_ := shr(0x4, number_)\\n                lastBit_ := add(lastBit_, 0x4)\\n            }\\n            if gt(number_, 0x3) {\\n                number_ := shr(0x2, number_)\\n                lastBit_ := add(lastBit_, 0x2)\\n            }\\n            if gt(number_, 0x1) {\\n                lastBit_ := add(lastBit_, 1)\\n            }\\n            if gt(number_, 0) {\\n                lastBit_ := add(lastBit_, 1)\\n            }\\n            if lt(lastBit_, coefficientSize) {\\n                // for throw exception\\n                lastBit_ := coefficientSize\\n            }\\n            let exponent := sub(lastBit_, coefficientSize)\\n            let coefficient := shr(exponent, normal)\\n            if and(roundUp, gt(exponent, 0)) {\\n                // rounding up is only needed if exponent is > 0, as otherwise the coefficient fully holds the original number\\n                coefficient := add(coefficient, 1)\\n                if eq(shl(coefficientSize, 1), coefficient) {\\n                    // case were coefficient was e.g. 111, with adding 1 it became 1000 (in binary) and coefficientSize 3 bits\\n                    // final coefficient would exceed it's size. -> reduce coefficent to 100 and increase exponent by 1.\\n                    coefficient := shl(sub(coefficientSize, 1), 1)\\n                    exponent := add(exponent, 1)\\n                }\\n            }\\n            if iszero(lt(exponent, shl(exponentSize, 1))) {\\n                // if exponent is >= exponentSize, the normal number is too big to fit within\\n                // BigNumber with too small sizes for coefficient and exponent\\n                revert(0, 0)\\n            }\\n            bigNumber := shl(exponentSize, coefficient)\\n            bigNumber := add(bigNumber, exponent)\\n        }\\n    }\\n\\n    /// @dev get `normal` number from `bigNumber`, `exponentSize` and `exponentMask`\\n    function fromBigNumber(\\n        uint256 bigNumber,\\n        uint256 exponentSize,\\n        uint256 exponentMask\\n    ) internal pure returns (uint256 normal) {\\n        assembly {\\n            let coefficient := shr(exponentSize, bigNumber)\\n            let exponent := and(bigNumber, exponentMask)\\n            normal := shl(exponent, coefficient)\\n        }\\n    }\\n\\n    /// @dev gets the most significant bit `lastBit` of a `normal` number (length of given number of binary format).\\n    /// e.g.\\n    /// 5035703444687813576399599 = 10000101010010110100000011111011110010100110100000000011100101001101001101011101111\\n    /// lastBit =                   ^---------------------------------   83   ----------------------------------------^\\n    function mostSignificantBit(uint256 normal) internal pure returns (uint lastBit) {\\n        assembly {\\n            let number_ := normal\\n            if gt(normal, 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x80, number_)\\n                lastBit := 0x80\\n            }\\n            if gt(number_, 0xFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x40, number_)\\n                lastBit := add(lastBit, 0x40)\\n            }\\n            if gt(number_, 0xFFFFFFFF) {\\n                number_ := shr(0x20, number_)\\n                lastBit := add(lastBit, 0x20)\\n            }\\n            if gt(number_, 0xFFFF) {\\n                number_ := shr(0x10, number_)\\n                lastBit := add(lastBit, 0x10)\\n            }\\n            if gt(number_, 0xFF) {\\n                number_ := shr(0x8, number_)\\n                lastBit := add(lastBit, 0x8)\\n            }\\n            if gt(number_, 0xF) {\\n                number_ := shr(0x4, number_)\\n                lastBit := add(lastBit, 0x4)\\n            }\\n            if gt(number_, 0x3) {\\n                number_ := shr(0x2, number_)\\n                lastBit := add(lastBit, 0x2)\\n            }\\n            if gt(number_, 0x1) {\\n                lastBit := add(lastBit, 1)\\n            }\\n            if gt(number_, 0) {\\n                lastBit := add(lastBit, 1)\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xf0be1002909edf30aec3dc6623c2bd2407ed94064b62674c01032b844dec206a\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/liquiditySlotsLink.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @notice library that helps in reading / working with storage slot data of Fluid Liquidity.\\n/// @dev as all data for Fluid Liquidity is internal, any data must be fetched directly through manual\\n/// slot reading through this library or, if gas usage is less important, through the FluidLiquidityResolver.\\nlibrary LiquiditySlotsLink {\\n    /// @dev storage slot for status at Liquidity\\n    uint256 internal constant LIQUIDITY_STATUS_SLOT = 1;\\n    /// @dev storage slot for auths mapping at Liquidity\\n    uint256 internal constant LIQUIDITY_AUTHS_MAPPING_SLOT = 2;\\n    /// @dev storage slot for guardians mapping at Liquidity\\n    uint256 internal constant LIQUIDITY_GUARDIANS_MAPPING_SLOT = 3;\\n    /// @dev storage slot for user class mapping at Liquidity\\n    uint256 internal constant LIQUIDITY_USER_CLASS_MAPPING_SLOT = 4;\\n    /// @dev storage slot for exchangePricesAndConfig mapping at Liquidity\\n    uint256 internal constant LIQUIDITY_EXCHANGE_PRICES_MAPPING_SLOT = 5;\\n    /// @dev storage slot for rateData mapping at Liquidity\\n    uint256 internal constant LIQUIDITY_RATE_DATA_MAPPING_SLOT = 6;\\n    /// @dev storage slot for totalAmounts mapping at Liquidity\\n    uint256 internal constant LIQUIDITY_TOTAL_AMOUNTS_MAPPING_SLOT = 7;\\n    /// @dev storage slot for user supply double mapping at Liquidity\\n    uint256 internal constant LIQUIDITY_USER_SUPPLY_DOUBLE_MAPPING_SLOT = 8;\\n    /// @dev storage slot for user borrow double mapping at Liquidity\\n    uint256 internal constant LIQUIDITY_USER_BORROW_DOUBLE_MAPPING_SLOT = 9;\\n    /// @dev storage slot for listed tokens array at Liquidity\\n    uint256 internal constant LIQUIDITY_LISTED_TOKENS_ARRAY_SLOT = 10;\\n    /// @dev storage slot for listed tokens array at Liquidity\\n    uint256 internal constant LIQUIDITY_CONFIGS2_MAPPING_SLOT = 11;\\n\\n    // --------------------------------\\n    // @dev stacked uint256 storage slots bits position data for each:\\n\\n    // ExchangePricesAndConfig\\n    uint256 internal constant BITS_EXCHANGE_PRICES_BORROW_RATE = 0;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_FEE = 16;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_UTILIZATION = 30;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_UPDATE_THRESHOLD = 44;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_LAST_TIMESTAMP = 58;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_SUPPLY_EXCHANGE_PRICE = 91;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_BORROW_EXCHANGE_PRICE = 155;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_SUPPLY_RATIO = 219;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_BORROW_RATIO = 234;\\n    uint256 internal constant BITS_EXCHANGE_PRICES_USES_CONFIGS2 = 249;\\n\\n    // RateData:\\n    uint256 internal constant BITS_RATE_DATA_VERSION = 0;\\n    // RateData: V1\\n    uint256 internal constant BITS_RATE_DATA_V1_RATE_AT_UTILIZATION_ZERO = 4;\\n    uint256 internal constant BITS_RATE_DATA_V1_UTILIZATION_AT_KINK = 20;\\n    uint256 internal constant BITS_RATE_DATA_V1_RATE_AT_UTILIZATION_KINK = 36;\\n    uint256 internal constant BITS_RATE_DATA_V1_RATE_AT_UTILIZATION_MAX = 52;\\n    // RateData: V2\\n    uint256 internal constant BITS_RATE_DATA_V2_RATE_AT_UTILIZATION_ZERO = 4;\\n    uint256 internal constant BITS_RATE_DATA_V2_UTILIZATION_AT_KINK1 = 20;\\n    uint256 internal constant BITS_RATE_DATA_V2_RATE_AT_UTILIZATION_KINK1 = 36;\\n    uint256 internal constant BITS_RATE_DATA_V2_UTILIZATION_AT_KINK2 = 52;\\n    uint256 internal constant BITS_RATE_DATA_V2_RATE_AT_UTILIZATION_KINK2 = 68;\\n    uint256 internal constant BITS_RATE_DATA_V2_RATE_AT_UTILIZATION_MAX = 84;\\n\\n    // TotalAmounts\\n    uint256 internal constant BITS_TOTAL_AMOUNTS_SUPPLY_WITH_INTEREST = 0;\\n    uint256 internal constant BITS_TOTAL_AMOUNTS_SUPPLY_INTEREST_FREE = 64;\\n    uint256 internal constant BITS_TOTAL_AMOUNTS_BORROW_WITH_INTEREST = 128;\\n    uint256 internal constant BITS_TOTAL_AMOUNTS_BORROW_INTEREST_FREE = 192;\\n\\n    // UserSupplyData\\n    uint256 internal constant BITS_USER_SUPPLY_MODE = 0;\\n    uint256 internal constant BITS_USER_SUPPLY_AMOUNT = 1;\\n    uint256 internal constant BITS_USER_SUPPLY_PREVIOUS_WITHDRAWAL_LIMIT = 65;\\n    uint256 internal constant BITS_USER_SUPPLY_LAST_UPDATE_TIMESTAMP = 129;\\n    uint256 internal constant BITS_USER_SUPPLY_EXPAND_PERCENT = 162;\\n    uint256 internal constant BITS_USER_SUPPLY_EXPAND_DURATION = 176;\\n    uint256 internal constant BITS_USER_SUPPLY_BASE_WITHDRAWAL_LIMIT = 200;\\n    uint256 internal constant BITS_USER_SUPPLY_IS_PAUSED = 255;\\n\\n    // UserBorrowData\\n    uint256 internal constant BITS_USER_BORROW_MODE = 0;\\n    uint256 internal constant BITS_USER_BORROW_AMOUNT = 1;\\n    uint256 internal constant BITS_USER_BORROW_PREVIOUS_BORROW_LIMIT = 65;\\n    uint256 internal constant BITS_USER_BORROW_LAST_UPDATE_TIMESTAMP = 129;\\n    uint256 internal constant BITS_USER_BORROW_EXPAND_PERCENT = 162;\\n    uint256 internal constant BITS_USER_BORROW_EXPAND_DURATION = 176;\\n    uint256 internal constant BITS_USER_BORROW_BASE_BORROW_LIMIT = 200;\\n    uint256 internal constant BITS_USER_BORROW_MAX_BORROW_LIMIT = 218;\\n    uint256 internal constant BITS_USER_BORROW_IS_PAUSED = 255;\\n\\n    // Configs2\\n    uint256 internal constant BITS_CONFIGS2_MAX_UTILIZATION = 0;\\n\\n    // --------------------------------\\n\\n    /// @notice Calculating the slot ID for Liquidity contract for single mapping at `slot_` for `key_`\\n    function calculateMappingStorageSlot(uint256 slot_, address key_) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(key_, slot_));\\n    }\\n\\n    /// @notice Calculating the slot ID for Liquidity contract for double mapping at `slot_` for `key1_` and `key2_`\\n    function calculateDoubleMappingStorageSlot(\\n        uint256 slot_,\\n        address key1_,\\n        address key2_\\n    ) internal pure returns (bytes32) {\\n        bytes32 intermediateSlot_ = keccak256(abi.encode(key1_, slot_));\\n        return keccak256(abi.encode(key2_, intermediateSlot_));\\n    }\\n}\\n\",\"keccak256\":\"0x0ae3e1d231bb6c14b54fc1f5ffa306edc0ac827a6a92279c77c0c09627fe08ae\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/adminModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nabstract contract Structs {\\n    struct AddressBool {\\n        address addr;\\n        bool value;\\n    }\\n\\n    struct AddressUint256 {\\n        address addr;\\n        uint256 value;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 1\\n    struct RateDataV1Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink usually means slow increase in rate, once utilization is above kink borrow rate increases fast\\n        uint256 kink;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink borrow rate when utilization is at kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink;\\n        ///\\n        /// @param rateAtUtilizationMax borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 2\\n    struct RateDataV2Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink1 first kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 1 usually means slow increase in rate, once utilization is above kink 1 borrow rate increases faster\\n        uint256 kink1;\\n        ///\\n        /// @param kink2 second kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 2 usually means slow / medium increase in rate, once utilization is above kink 2 borrow rate increases fast\\n        uint256 kink2;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink1 desired borrow rate when utilization is at first kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at first kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink1;\\n        ///\\n        /// @param rateAtUtilizationKink2 desired borrow rate when utilization is at second kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at second kink then rateAtUtilizationKink would be 1_200\\n        uint256 rateAtUtilizationKink2;\\n        ///\\n        /// @param rateAtUtilizationMax desired borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set token config\\n    struct TokenConfig {\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param fee charges on borrower's interest. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 fee;\\n        ///\\n        /// @param threshold on when to update the storage slot. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 threshold;\\n        ///\\n        /// @param maxUtilization maximum allowed utilization. in 1e2: 100% = 10_000; 1% = 100\\n        ///                       set to 100% to disable and have default limit of 100% (avoiding SLOAD).\\n        uint256 maxUtilization;\\n    }\\n\\n    /// @notice struct to set user supply & withdrawal config\\n    struct UserSupplyConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent withdrawal limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which withdrawal limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration withdrawal limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseWithdrawalLimit base limit, below this, user can withdraw the entire amount.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseWithdrawalLimit;\\n    }\\n\\n    /// @notice struct to set user borrow & payback config\\n    struct UserBorrowConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent debt limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which debt limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration debt limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseDebtCeiling base borrow limit. until here, borrow limit remains as baseDebtCeiling\\n        /// (user can borrow until this point at once without stepped expansion). Above this, automated limit comes in place.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseDebtCeiling;\\n        ///\\n        /// @param maxDebtCeiling max borrow ceiling, maximum amount the user can borrow.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 maxDebtCeiling;\\n    }\\n}\\n\",\"keccak256\":\"0x10353c70015f27b880125cefab806dbed24a4458f187da66964f3ef60488f757\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/interfaces/iLiquidity.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { IProxy } from \\\"../../infiniteProxy/interfaces/iProxy.sol\\\";\\nimport { Structs as AdminModuleStructs } from \\\"../adminModule/structs.sol\\\";\\n\\ninterface IFluidLiquidityAdmin {\\n    /// @notice adds/removes auths. Auths generally could be contracts which can have restricted actions defined on contract.\\n    ///         auths can be helpful in reducing governance overhead where it's not needed.\\n    /// @param authsStatus_ array of structs setting allowed status for an address.\\n    ///                     status true => add auth, false => remove auth\\n    function updateAuths(AdminModuleStructs.AddressBool[] calldata authsStatus_) external;\\n\\n    /// @notice adds/removes guardians. Only callable by Governance.\\n    /// @param guardiansStatus_ array of structs setting allowed status for an address.\\n    ///                         status true => add guardian, false => remove guardian\\n    function updateGuardians(AdminModuleStructs.AddressBool[] calldata guardiansStatus_) external;\\n\\n    /// @notice changes the revenue collector address (contract that is sent revenue). Only callable by Governance.\\n    /// @param revenueCollector_  new revenue collector address\\n    function updateRevenueCollector(address revenueCollector_) external;\\n\\n    /// @notice changes current status, e.g. for pausing or unpausing all user operations. Only callable by Auths.\\n    /// @param newStatus_ new status\\n    ///        status = 2 -> pause, status = 1 -> resume.\\n    function changeStatus(uint256 newStatus_) external;\\n\\n    /// @notice                  update tokens rate data version 1. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV1Params with rate data to set for each token\\n    function updateRateDataV1s(AdminModuleStructs.RateDataV1Params[] calldata tokensRateData_) external;\\n\\n    /// @notice                  update tokens rate data version 2. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV2Params with rate data to set for each token\\n    function updateRateDataV2s(AdminModuleStructs.RateDataV2Params[] calldata tokensRateData_) external;\\n\\n    /// @notice updates token configs: fee charge on borrowers interest & storage update utilization threshold.\\n    ///         Only callable by Auths.\\n    /// @param tokenConfigs_ contains token address, fee & utilization threshold\\n    function updateTokenConfigs(AdminModuleStructs.TokenConfig[] calldata tokenConfigs_) external;\\n\\n    /// @notice updates user classes: 0 is for new protocols, 1 is for established protocols.\\n    ///         Only callable by Auths.\\n    /// @param userClasses_ struct array of uint256 value to assign for each user address\\n    function updateUserClasses(AdminModuleStructs.AddressUint256[] calldata userClasses_) external;\\n\\n    /// @notice sets user supply configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userSupplyConfigs_ struct array containing user supply config, see `UserSupplyConfig` struct for more info\\n    function updateUserSupplyConfigs(AdminModuleStructs.UserSupplyConfig[] memory userSupplyConfigs_) external;\\n\\n    /// @notice sets a new withdrawal limit as the current limit for a certain user\\n    /// @param user_ user address for which to update the withdrawal limit\\n    /// @param token_ token address for which to update the withdrawal limit\\n    /// @param newLimit_ new limit until which user supply can decrease to.\\n    ///                  Important: input in raw. Must account for exchange price in input param calculation.\\n    ///                  Note any limit that is < max expansion or > current user supply will set max expansion limit or\\n    ///                  current user supply as limit respectively.\\n    ///                  - set 0 to make maximum possible withdrawable: instant full expansion, and if that goes\\n    ///                  below base limit then fully down to 0.\\n    ///                  - set type(uint256).max to make current withdrawable 0 (sets current user supply as limit).\\n    function updateUserWithdrawalLimit(address user_, address token_, uint256 newLimit_) external;\\n\\n    /// @notice setting user borrow configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userBorrowConfigs_ struct array containing user borrow config, see `UserBorrowConfig` struct for more info\\n    function updateUserBorrowConfigs(AdminModuleStructs.UserBorrowConfig[] memory userBorrowConfigs_) external;\\n\\n    /// @notice pause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to pause operations for\\n    /// @param supplyTokens_  token addresses to pause withdrawals for\\n    /// @param borrowTokens_  token addresses to pause borrowings for\\n    function pauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice unpause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to unpause operations for\\n    /// @param supplyTokens_  token addresses to unpause withdrawals for\\n    /// @param borrowTokens_  token addresses to unpause borrowings for\\n    function unpauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice         collects revenue for tokens to configured revenueCollector address.\\n    /// @param tokens_  array of tokens to collect revenue for\\n    /// @dev            Note that this can revert if token balance is < revenueAmount (utilization > 100%)\\n    function collectRevenue(address[] calldata tokens_) external;\\n\\n    /// @notice gets the current updated exchange prices for n tokens and updates all prices, rates related data in storage.\\n    /// @param tokens_ tokens to update exchange prices for\\n    /// @return supplyExchangePrices_ new supply rates of overall system for each token\\n    /// @return borrowExchangePrices_ new borrow rates of overall system for each token\\n    function updateExchangePrices(\\n        address[] calldata tokens_\\n    ) external returns (uint256[] memory supplyExchangePrices_, uint256[] memory borrowExchangePrices_);\\n}\\n\\ninterface IFluidLiquidityLogic is IFluidLiquidityAdmin {\\n    /// @notice Single function which handles supply, withdraw, borrow & payback\\n    /// @param token_ address of token (0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE for native)\\n    /// @param supplyAmount_ if +ve then supply, if -ve then withdraw, if 0 then nothing\\n    /// @param borrowAmount_ if +ve then borrow, if -ve then payback, if 0 then nothing\\n    /// @param withdrawTo_ if withdrawal then to which address\\n    /// @param borrowTo_ if borrow then to which address\\n    /// @param callbackData_ callback data passed to `liquidityCallback` method of protocol\\n    /// @return memVar3_ updated supplyExchangePrice\\n    /// @return memVar4_ updated borrowExchangePrice\\n    /// @dev to trigger skipping in / out transfers (gas optimization):\\n    /// -  ` callbackData_` MUST be encoded so that \\\"from\\\" address is the last 20 bytes in the last 32 bytes slot,\\n    ///     also for native token operations where liquidityCallback is not triggered!\\n    ///     from address must come at last position if there is more data. I.e. encode like:\\n    ///     abi.encode(otherVar1, otherVar2, FROM_ADDRESS). Note dynamic types used with abi.encode come at the end\\n    ///     so if dynamic types are needed, you must use abi.encodePacked to ensure the from address is at the end.\\n    /// -   this \\\"from\\\" address must match withdrawTo_ or borrowTo_ and must be == `msg.sender`\\n    /// -   `callbackData_` must in addition to the from address as described above include bytes32 SKIP_TRANSFERS\\n    ///     in the slot before (bytes 32 to 63)\\n    /// -   `msg.value` must be 0.\\n    /// -   Amounts must be either:\\n    ///     -  supply(+) == borrow(+), withdraw(-) == payback(-).\\n    ///     -  Liquidity must be on the winning side (deposit < borrow OR payback < withdraw).\\n    function operate(\\n        address token_,\\n        int256 supplyAmount_,\\n        int256 borrowAmount_,\\n        address withdrawTo_,\\n        address borrowTo_,\\n        bytes calldata callbackData_\\n    ) external payable returns (uint256 memVar3_, uint256 memVar4_);\\n}\\n\\ninterface IFluidLiquidity is IProxy, IFluidLiquidityLogic {}\\n\",\"keccak256\":\"0x4aa83e84baa7c2f4d58b07a3eca4ab7fe7d6fc660898daaac338dc3f129c4123\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b5060405161150538038061150583398101604081905261002f91610072565b806001600160a01b03811661006057604051636801712d60e11b815262018705600482015260240160405180910390fd5b506001600160a01b03166080526100a2565b60006020828403121561008457600080fd5b81516001600160a01b038116811461009b57600080fd5b9392505050565b6080516114266100df6000396000818160d60152818161022d015281816104700152818161063201528181610a6e0152610de001526114266000f3fe608060405234801561001057600080fd5b50600436106100a35760003560e01c8063360bec8f1161007657806395ae47e11161005b57806395ae47e11461019b578063b788f3a1146101b6578063e09a9637146101d157600080fd5b8063360bec8f146101685780637aa4e2551461018857600080fd5b806325fca0ad146100a85780632861c7d1146100d15780632f88b48d1461011d57806335b0b50214610153575b600080fd5b6100bb6100b6366004611001565b6101e4565b6040516100c89190611034565b60405180910390f35b6100f87f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020016100c8565b61014561012b366004611001565b600060208181529281526040808220909352908152205481565b6040519081526020016100c8565b61016661016136600461109a565b6103a3565b005b61017b610176366004611001565b61052a565b6040516100c891906110d6565b610166610196366004611140565b61072a565b6100f8731e2e1aed876f67fe4fd54090fd7b8f57ce23421981565b6100f8734f6f977acdd1177dcd81ab83074855ecb9c2d49e81565b6101666101df366004611182565b610b88565b6040805160c081018252600080825260208201819052918101829052606081018290526080810182905260a081018290529073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e46102c6600887876040805173ffffffffffffffffffffffffffffffffffffffff9384166020808301919091528183019590955281518082038301815260608201835280519086012092909316608084015260a0808401929092528051808403909201825260c0909201909152805191012090565b6040518263ffffffff1660e01b81526004016102e491815260200190565b602060405180830381865afa158015610301573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061032591906111d6565b9050801561039c576040805160c08101825273ffffffffffffffffffffffffffffffffffffffff808716825285166020820152600183169181019190915260a282901c613fff16606082015260b082901c62ffffff16608082015260a081016103ff60d084901c1660c884901c60ff161b5b905291505b5092915050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e33148015906103db5750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b1561041c576040517fd002e25a0000000000000000000000000000000000000000000000000000000081526201870660048201526024015b60405180910390fd5b6040517f8f0c291600000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84811660048301528381166024830152604482018390527f00000000000000000000000000000000000000000000000000000000000000001690638f0c291690606401600060405180830381600087803b1580156104b457600080fd5b505af11580156104c8573d6000803e3d6000fd5b50506040805173ffffffffffffffffffffffffffffffffffffffff8088168252861660208201529081018490527f627d8790671c69ca7f016ebefbb435d3078c4b06334dc1869b1f9747cc1966689250606001905060405180910390a1505050565b6105996040518060e00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600060ff168152602001600081526020016000815260200160008152602001600081525090565b6040805173ffffffffffffffffffffffffffffffffffffffff858116602080840191909152600983850152835180840385018152606084018552805190820120868316608085015260a0808501919091528451808503909101815260c084019485905280519101207fb5c736e40000000000000000000000000000000000000000000000000000000090935260c48201929092526000917f0000000000000000000000000000000000000000000000000000000000000000169063b5c736e49060e401602060405180830381865afa158015610679573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061069d91906111d6565b9050801561039c576040805160e08101825273ffffffffffffffffffffffffffffffffffffffff808716825285166020820152600183169181019190915260a282901c613fff16606082015260b082901c62ffffff16608082015260a081016103ff60d084901c1660c884901c60ff161b81526020016103ff60e284901c1660ff60da85901c161b610397565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e33148015906107625750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b1561079e576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187066004820152602401610413565b811580156107aa575080155b156107e6576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187056004820152602401610413565b604080516001808252818301909252600091816020015b61086c6040518060e00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600060ff168152602001600081526020016000815260200160008152602001600081525090565b8152602001906001900390816107fd57905050905061088b858561052a565b8160008151811061089e5761089e6111ef565b6020026020010181905250600073ffffffffffffffffffffffffffffffffffffffff16816000815181106108d4576108d46111ef565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff1603610932576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187076004820152602401610413565b73ffffffffffffffffffffffffffffffffffffffff8086166000908152602081815260408083209388168352929052205461096c90610ec4565b82156109bf5761099a81600081518110610988576109886111ef565b602002602001015160a0015184610f12565b82816000815181106109ae576109ae6111ef565b602002602001015160a00181815250505b8115610a12576109ed816000815181106109db576109db6111ef565b602002602001015160c0015183610f12565b8181600081518110610a0157610a016111ef565b602002602001015160c00181815250505b73ffffffffffffffffffffffffffffffffffffffff808616600090815260208181526040808320888516845290915290819020429055517f01b88f860000000000000000000000000000000000000000000000000000000081527f0000000000000000000000000000000000000000000000000000000000000000909116906301b88f8690610aa590849060040161121e565b600060405180830381600087803b158015610abf57600080fd5b505af1158015610ad3573d6000803e3d6000fd5b505050507f9993e5e4e33e5e81424d8d78e624c9af32a38af8b3b3ad22481dd34bdff97ba3858583600081518110610b0d57610b0d6111ef565b602002602001015160a0015184600081518110610b2c57610b2c6111ef565b602002602001015160c00151604051610b79949392919073ffffffffffffffffffffffffffffffffffffffff94851681529290931660208301526040820152606081019190915260800190565b60405180910390a15050505050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e3314801590610bc05750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b15610bfc576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187066004820152602401610413565b81600003610c3b576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187056004820152602401610413565b604080516001808252818301909252600091816020015b6040805160c08101825260008082526020808301829052928201819052606082018190526080820181905260a082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff909201910181610c52579050509050610cbe85856101e4565b81600081518110610cd157610cd16111ef565b6020026020010181905250600073ffffffffffffffffffffffffffffffffffffffff1681600081518110610d0757610d076111ef565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff1603610d65576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187076004820152602401610413565b81610d8057610d8081600081518110610988576109886111ef565b8281600081518110610d9457610d946111ef565b602090810291909101015160a001526040517f02c6bb6a00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016906302c6bb6a90610e159084906004016112c8565b600060405180830381600087803b158015610e2f57600080fd5b505af1158015610e43573d6000803e3d6000fd5b505050507ffd796b6ed10015d0712f76347f9fe70b0e270efa667a977a24e096530291b416858583600081518110610e7d57610e7d6111ef565b602002602001015160a00151604051610b799392919073ffffffffffffffffffffffffffffffffffffffff9384168152919092166020820152604081019190915260600190565b62054600610ed2824261138b565b1015610f0f576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187096004820152602401610413565b50565b60006064610f2160148561139e565b610f2b91906113b5565b90508282118015610f44575080610f42848461138b565b115b15610f80576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187086004820152602401610413565b8282108015610f97575080610f95838561138b565b115b15610fd3576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187086004820152602401610413565b505050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610ffc57600080fd5b919050565b6000806040838503121561101457600080fd5b61101d83610fd8565b915061102b60208401610fd8565b90509250929050565b60c08101611094828473ffffffffffffffffffffffffffffffffffffffff8082511683528060208301511660208401525060ff6040820151166040830152606081015160608301526080810151608083015260a081015160a08301525050565b92915050565b6000806000606084860312156110af57600080fd5b6110b884610fd8565b92506110c660208501610fd8565b9150604084013590509250925092565b60e08101611094828473ffffffffffffffffffffffffffffffffffffffff8082511683528060208301511660208401525060ff6040820151166040830152606081015160608301526080810151608083015260a081015160a083015260c081015160c08301525050565b6000806000806080858703121561115657600080fd5b61115f85610fd8565b935061116d60208601610fd8565b93969395505050506040820135916060013590565b6000806000806080858703121561119857600080fd5b6111a185610fd8565b93506111af60208601610fd8565b925060408501359150606085013580151581146111cb57600080fd5b939692955090935050565b6000602082840312156111e857600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b6020808252825182820181905260009190848201906040850190845b818110156112bc576112a983855173ffffffffffffffffffffffffffffffffffffffff8082511683528060208301511660208401525060ff6040820151166040830152606081015160608301526080810151608083015260a081015160a083015260c081015160c08301525050565b9284019260e0929092019160010161123a565b50909695505050505050565b6020808252825182820181905260009190848201906040850190845b818110156112bc5761134983855173ffffffffffffffffffffffffffffffffffffffff8082511683528060208301511660208401525060ff6040820151166040830152606081015160608301526080810151608083015260a081015160a08301525050565b9284019260c092909201916001016112e4565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b818103818111156110945761109461135c565b80820281158282048414176110945761109461135c565b6000826113eb577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b50049056fea26469706673582212204885830a030c7c3f845307b3f38393dd1894573ea3de4becef2beedb96e2801364736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a35760003560e01c8063360bec8f1161007657806395ae47e11161005b57806395ae47e11461019b578063b788f3a1146101b6578063e09a9637146101d157600080fd5b8063360bec8f146101685780637aa4e2551461018857600080fd5b806325fca0ad146100a85780632861c7d1146100d15780632f88b48d1461011d57806335b0b50214610153575b600080fd5b6100bb6100b6366004611001565b6101e4565b6040516100c89190611034565b60405180910390f35b6100f87f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020016100c8565b61014561012b366004611001565b600060208181529281526040808220909352908152205481565b6040519081526020016100c8565b61016661016136600461109a565b6103a3565b005b61017b610176366004611001565b61052a565b6040516100c891906110d6565b610166610196366004611140565b61072a565b6100f8731e2e1aed876f67fe4fd54090fd7b8f57ce23421981565b6100f8734f6f977acdd1177dcd81ab83074855ecb9c2d49e81565b6101666101df366004611182565b610b88565b6040805160c081018252600080825260208201819052918101829052606081018290526080810182905260a081018290529073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001663b5c736e46102c6600887876040805173ffffffffffffffffffffffffffffffffffffffff9384166020808301919091528183019590955281518082038301815260608201835280519086012092909316608084015260a0808401929092528051808403909201825260c0909201909152805191012090565b6040518263ffffffff1660e01b81526004016102e491815260200190565b602060405180830381865afa158015610301573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061032591906111d6565b9050801561039c576040805160c08101825273ffffffffffffffffffffffffffffffffffffffff808716825285166020820152600183169181019190915260a282901c613fff16606082015260b082901c62ffffff16608082015260a081016103ff60d084901c1660c884901c60ff161b5b905291505b5092915050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e33148015906103db5750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b1561041c576040517fd002e25a0000000000000000000000000000000000000000000000000000000081526201870660048201526024015b60405180910390fd5b6040517f8f0c291600000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84811660048301528381166024830152604482018390527f00000000000000000000000000000000000000000000000000000000000000001690638f0c291690606401600060405180830381600087803b1580156104b457600080fd5b505af11580156104c8573d6000803e3d6000fd5b50506040805173ffffffffffffffffffffffffffffffffffffffff8088168252861660208201529081018490527f627d8790671c69ca7f016ebefbb435d3078c4b06334dc1869b1f9747cc1966689250606001905060405180910390a1505050565b6105996040518060e00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600060ff168152602001600081526020016000815260200160008152602001600081525090565b6040805173ffffffffffffffffffffffffffffffffffffffff858116602080840191909152600983850152835180840385018152606084018552805190820120868316608085015260a0808501919091528451808503909101815260c084019485905280519101207fb5c736e40000000000000000000000000000000000000000000000000000000090935260c48201929092526000917f0000000000000000000000000000000000000000000000000000000000000000169063b5c736e49060e401602060405180830381865afa158015610679573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061069d91906111d6565b9050801561039c576040805160e08101825273ffffffffffffffffffffffffffffffffffffffff808716825285166020820152600183169181019190915260a282901c613fff16606082015260b082901c62ffffff16608082015260a081016103ff60d084901c1660c884901c60ff161b81526020016103ff60e284901c1660ff60da85901c161b610397565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e33148015906107625750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b1561079e576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187066004820152602401610413565b811580156107aa575080155b156107e6576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187056004820152602401610413565b604080516001808252818301909252600091816020015b61086c6040518060e00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600060ff168152602001600081526020016000815260200160008152602001600081525090565b8152602001906001900390816107fd57905050905061088b858561052a565b8160008151811061089e5761089e6111ef565b6020026020010181905250600073ffffffffffffffffffffffffffffffffffffffff16816000815181106108d4576108d46111ef565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff1603610932576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187076004820152602401610413565b73ffffffffffffffffffffffffffffffffffffffff8086166000908152602081815260408083209388168352929052205461096c90610ec4565b82156109bf5761099a81600081518110610988576109886111ef565b602002602001015160a0015184610f12565b82816000815181106109ae576109ae6111ef565b602002602001015160a00181815250505b8115610a12576109ed816000815181106109db576109db6111ef565b602002602001015160c0015183610f12565b8181600081518110610a0157610a016111ef565b602002602001015160c00181815250505b73ffffffffffffffffffffffffffffffffffffffff808616600090815260208181526040808320888516845290915290819020429055517f01b88f860000000000000000000000000000000000000000000000000000000081527f0000000000000000000000000000000000000000000000000000000000000000909116906301b88f8690610aa590849060040161121e565b600060405180830381600087803b158015610abf57600080fd5b505af1158015610ad3573d6000803e3d6000fd5b505050507f9993e5e4e33e5e81424d8d78e624c9af32a38af8b3b3ad22481dd34bdff97ba3858583600081518110610b0d57610b0d6111ef565b602002602001015160a0015184600081518110610b2c57610b2c6111ef565b602002602001015160c00151604051610b79949392919073ffffffffffffffffffffffffffffffffffffffff94851681529290931660208301526040820152606081019190915260800190565b60405180910390a15050505050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e3314801590610bc05750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b15610bfc576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187066004820152602401610413565b81600003610c3b576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187056004820152602401610413565b604080516001808252818301909252600091816020015b6040805160c08101825260008082526020808301829052928201819052606082018190526080820181905260a082015282527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff909201910181610c52579050509050610cbe85856101e4565b81600081518110610cd157610cd16111ef565b6020026020010181905250600073ffffffffffffffffffffffffffffffffffffffff1681600081518110610d0757610d076111ef565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff1603610d65576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187076004820152602401610413565b81610d8057610d8081600081518110610988576109886111ef565b8281600081518110610d9457610d946111ef565b602090810291909101015160a001526040517f02c6bb6a00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016906302c6bb6a90610e159084906004016112c8565b600060405180830381600087803b158015610e2f57600080fd5b505af1158015610e43573d6000803e3d6000fd5b505050507ffd796b6ed10015d0712f76347f9fe70b0e270efa667a977a24e096530291b416858583600081518110610e7d57610e7d6111ef565b602002602001015160a00151604051610b799392919073ffffffffffffffffffffffffffffffffffffffff9384168152919092166020820152604081019190915260600190565b62054600610ed2824261138b565b1015610f0f576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187096004820152602401610413565b50565b60006064610f2160148561139e565b610f2b91906113b5565b90508282118015610f44575080610f42848461138b565b115b15610f80576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187086004820152602401610413565b8282108015610f97575080610f95838561138b565b115b15610fd3576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620187086004820152602401610413565b505050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610ffc57600080fd5b919050565b6000806040838503121561101457600080fd5b61101d83610fd8565b915061102b60208401610fd8565b90509250929050565b60c08101611094828473ffffffffffffffffffffffffffffffffffffffff8082511683528060208301511660208401525060ff6040820151166040830152606081015160608301526080810151608083015260a081015160a08301525050565b92915050565b6000806000606084860312156110af57600080fd5b6110b884610fd8565b92506110c660208501610fd8565b9150604084013590509250925092565b60e08101611094828473ffffffffffffffffffffffffffffffffffffffff8082511683528060208301511660208401525060ff6040820151166040830152606081015160608301526080810151608083015260a081015160a083015260c081015160c08301525050565b6000806000806080858703121561115657600080fd5b61115f85610fd8565b935061116d60208601610fd8565b93969395505050506040820135916060013590565b6000806000806080858703121561119857600080fd5b6111a185610fd8565b93506111af60208601610fd8565b925060408501359150606085013580151581146111cb57600080fd5b939692955090935050565b6000602082840312156111e857600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b6020808252825182820181905260009190848201906040850190845b818110156112bc576112a983855173ffffffffffffffffffffffffffffffffffffffff8082511683528060208301511660208401525060ff6040820151166040830152606081015160608301526080810151608083015260a081015160a083015260c081015160c08301525050565b9284019260e0929092019160010161123a565b50909695505050505050565b6020808252825182820181905260009190848201906040850190845b818110156112bc5761134983855173ffffffffffffffffffffffffffffffffffffffff8082511683528060208301511660208401525060ff6040820151166040830152606081015160608301526080810151608083015260a081015160a08301525050565b9284019260c092909201916001016112e4565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b818103818111156110945761109461135c565b80820281158282048414176110945761109461135c565b6000826113eb577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b50049056fea26469706673582212204885830a030c7c3f845307b3f38393dd1894573ea3de4becef2beedb96e2801364736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "setUserBorrowLimits(address,address,uint256,uint256)": {
+        "details": "This function can only be called by team multisig",
+        "params": {
+          "baseLimit_": "The base limit for the user borrow. Set to 0 to keep current value.",
+          "maxLimit_": "The max limit for the user borrow. Set to 0 to keep current value.",
+          "token_": "The address of the token for which to set the user borrow limit",
+          "user_": "The address of the user for which to set the user borrow limit"
+        }
+      },
+      "setUserWithdrawLimit(address,address,uint256,bool)": {
+        "params": {
+          "baseLimit_": "The base limit for the user supply. Set to 0 to keep current value.",
+          "skipMaxPercentChangeCheck_": "allow full range of limit check. Keep to false by default to have additional human error check.",
+          "token_": "The address of the token for which to set the user withdraw limit",
+          "user_": "The address of the user for which to set the user withdraw limit"
+        }
+      },
+      "setWithdrawalLimit(address,address,uint256)": {
+        "details": "This function can only be called by team multisig",
+        "params": {
+          "newLimit_": "The new withdrawal limit to be set",
+          "token_": "The address of the token for which to set the withdrawal limit",
+          "user_": "The address of the user for which to set the withdrawal limit"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "LogSetUserBorrowLimits(address,address,uint256,uint256)": {
+        "notice": "emitted when multisig changes the borrow limit config"
+      },
+      "LogSetUserWithdrawLimit(address,address,uint256)": {
+        "notice": "emitted when multisig changes the withdrawal limit config"
+      },
+      "LogSetWithdrawalLimit(address,address,uint256)": {
+        "notice": "emitted when multisig successfully changes the withdrawal limit"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "TEAM_MULTISIG()": {
+        "notice": "Team multisigs allowed to trigger methods"
+      },
+      "getUserBorrowConfig(address,address)": {
+        "notice": "Returns the user borrow config for a given user and token."
+      },
+      "getUserSupplyConfig(address,address)": {
+        "notice": "Returns the user supply config for a given user and token."
+      },
+      "setUserBorrowLimits(address,address,uint256,uint256)": {
+        "notice": "Sets the user borrow limits for a specific token of a user, with time and max percent change restrictions.         Can only be called by team multisig."
+      },
+      "setUserWithdrawLimit(address,address,uint256,bool)": {
+        "notice": "sets withdraw base limit without restrictions. Can only be called by team multisig."
+      },
+      "setWithdrawalLimit(address,address,uint256)": {
+        "notice": "Sets the withdrawal limit for a specific token of a user in the liquidity"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 4567,
+        "contract": "contracts/config/limitsAuth/main.sol:FluidLimitsAuth",
+        "label": "lastUpdateTime",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(address => uint256))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_uint256)"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

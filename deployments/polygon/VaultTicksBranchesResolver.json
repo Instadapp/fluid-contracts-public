@@ -1,0 +1,789 @@
+{
+  "address": "0x479b7e86348Aec58715CfdB914DE85CE2e7bbD9d",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IFluidVaultResolver",
+          "name": "vaultResolver_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "FluidVaultTicksBranchesResolver__AddressZero",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "VAULT_RESOLVER",
+      "outputs": [
+        {
+          "internalType": "contract IFluidVaultResolver",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllVaultsBranchesDebt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "debtRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "branchId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "status",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "tick",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "partials",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "ratio",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtFactor",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "baseBranchId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "baseBranchTick",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Structs.BranchDebt[]",
+              "name": "branchDebt",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultId",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.BranchesDebt[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalTicks_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAllVaultsTicksDebt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "debtRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "ratio",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "tick",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Structs.TickDebt[]",
+              "name": "tickDebt",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "int256",
+              "name": "toTick",
+              "type": "int256"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultId",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.VaultsTickDebt[]",
+          "name": "vaultsTickDebt_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "vault_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fromBranchId_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "toBranchId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getBranchesDebt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "debtRaw",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "collateralRaw",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "debtNormal",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "collateralNormal",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "branchId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "status",
+              "type": "uint256"
+            },
+            {
+              "internalType": "int256",
+              "name": "tick",
+              "type": "int256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "partials",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ratio",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "debtFactor",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseBranchId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "int256",
+              "name": "baseBranchTick",
+              "type": "int256"
+            }
+          ],
+          "internalType": "struct Structs.BranchDebt[]",
+          "name": "branchesDebt_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "vaults_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "fromBranchIds_",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "toBranchIds_",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "getMultipleVaultsBranchesDebt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "debtRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "branchId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "status",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "tick",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "partials",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "ratio",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtFactor",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "baseBranchId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "baseBranchTick",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Structs.BranchDebt[]",
+              "name": "branchDebt",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultId",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.BranchesDebt[]",
+          "name": "branchesDebt_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "vaults_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "int256[]",
+          "name": "fromTicks_",
+          "type": "int256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "totalTicks_",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "getMultipleVaultsTicksDebt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "debtRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "ratio",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "tick",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Structs.TickDebt[]",
+              "name": "tickDebt",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "int256",
+              "name": "toTick",
+              "type": "int256"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultId",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.VaultsTickDebt[]",
+          "name": "vaultsTickDebt_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "vault_",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "fromTick_",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalTicks_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getTicksDebt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "debtRaw",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "collateralRaw",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "debtNormal",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "collateralNormal",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ratio",
+              "type": "uint256"
+            },
+            {
+              "internalType": "int256",
+              "name": "tick",
+              "type": "int256"
+            }
+          ],
+          "internalType": "struct Structs.TickDebt[]",
+          "name": "ticksDebt_",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "int256",
+          "name": "toTick_",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "vaults_",
+          "type": "address[]"
+        }
+      ],
+      "name": "getVaultsBranchesDebt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "debtRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "branchId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "status",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "tick",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "partials",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "ratio",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtFactor",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "baseBranchId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "baseBranchTick",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Structs.BranchDebt[]",
+              "name": "branchDebt",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultId",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.BranchesDebt[]",
+          "name": "branchesDebt_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "vaults_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "totalTicks_",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "getVaultsTicksDebt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "debtRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralRaw",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "debtNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralNormal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "ratio",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "tick",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Structs.TickDebt[]",
+              "name": "tickDebt",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "int256",
+              "name": "toTick",
+              "type": "int256"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultId",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.VaultsTickDebt[]",
+          "name": "vaultsTickDebt_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x2ed80d9aacc27dbb1e2839787f80f29a208995ad6a0b70906a818a22d75811eb",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 94,
+    "gasUsed": "2591891",
+    "logsBloom": "0x00000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000010000008000000000000000000000000000000000000000000000000000000000800000000000000000000100000000000000000000000000000002000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000001000000000000000000000000000000004000000000000000040001000000000000000000000000000000100000000000000000000002000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0xc97056d4d72c011f35c863adec9a0057a1156404f45ef69abcffe57155964603",
+    "transactionHash": "0x2ed80d9aacc27dbb1e2839787f80f29a208995ad6a0b70906a818a22d75811eb",
+    "logs": [
+      {
+        "transactionIndex": 94,
+        "blockNumber": 68520316,
+        "transactionHash": "0x2ed80d9aacc27dbb1e2839787f80f29a208995ad6a0b70906a818a22d75811eb",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000ed35b1609ec45c7079e80d11149a52717e4859a",
+          "0x000000000000000000000000ec20607aa654d823dd01beb8780a44863c57ed07"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000001143f557e8bc400000000000000000000000000000000000000000000000000b5efd2d2d49e9a540000000000000000000000000000000000000000000001d0e57db494848257ce000000000000000000000000000000000000000000000000b4db937d5612d6540000000000000000000000000000000000000000000001d0e691f3ea030e1bce",
+        "logIndex": 275,
+        "blockHash": "0xc97056d4d72c011f35c863adec9a0057a1156404f45ef69abcffe57155964603"
+      }
+    ],
+    "blockNumber": 68520316,
+    "cumulativeGasUsed": "8777683",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x3c64Ec468D7f0998cB6dea05d4D8AB847573fE4D"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "4f63da12d66a256eeca1b26617ce10fe",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IFluidVaultResolver\",\"name\":\"vaultResolver_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"FluidVaultTicksBranchesResolver__AddressZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VAULT_RESOLVER\",\"outputs\":[{\"internalType\":\"contract IFluidVaultResolver\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllVaultsBranchesDebt\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"debtRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"branchId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"status\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"tick\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"partials\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ratio\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtFactor\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseBranchId\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"baseBranchTick\",\"type\":\"int256\"}],\"internalType\":\"struct Structs.BranchDebt[]\",\"name\":\"branchDebt\",\"type\":\"tuple[]\"},{\"internalType\":\"address\",\"name\":\"vaultAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"vaultId\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.BranchesDebt[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalTicks_\",\"type\":\"uint256\"}],\"name\":\"getAllVaultsTicksDebt\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"debtRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ratio\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"tick\",\"type\":\"int256\"}],\"internalType\":\"struct Structs.TickDebt[]\",\"name\":\"tickDebt\",\"type\":\"tuple[]\"},{\"internalType\":\"int256\",\"name\":\"toTick\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"vaultAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"vaultId\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.VaultsTickDebt[]\",\"name\":\"vaultsTickDebt_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fromBranchId_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"toBranchId_\",\"type\":\"uint256\"}],\"name\":\"getBranchesDebt\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"debtRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"branchId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"status\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"tick\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"partials\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ratio\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtFactor\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseBranchId\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"baseBranchTick\",\"type\":\"int256\"}],\"internalType\":\"struct Structs.BranchDebt[]\",\"name\":\"branchesDebt_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"vaults_\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"fromBranchIds_\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"toBranchIds_\",\"type\":\"uint256[]\"}],\"name\":\"getMultipleVaultsBranchesDebt\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"debtRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"branchId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"status\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"tick\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"partials\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ratio\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtFactor\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseBranchId\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"baseBranchTick\",\"type\":\"int256\"}],\"internalType\":\"struct Structs.BranchDebt[]\",\"name\":\"branchDebt\",\"type\":\"tuple[]\"},{\"internalType\":\"address\",\"name\":\"vaultAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"vaultId\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.BranchesDebt[]\",\"name\":\"branchesDebt_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"vaults_\",\"type\":\"address[]\"},{\"internalType\":\"int256[]\",\"name\":\"fromTicks_\",\"type\":\"int256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"totalTicks_\",\"type\":\"uint256[]\"}],\"name\":\"getMultipleVaultsTicksDebt\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"debtRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ratio\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"tick\",\"type\":\"int256\"}],\"internalType\":\"struct Structs.TickDebt[]\",\"name\":\"tickDebt\",\"type\":\"tuple[]\"},{\"internalType\":\"int256\",\"name\":\"toTick\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"vaultAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"vaultId\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.VaultsTickDebt[]\",\"name\":\"vaultsTickDebt_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault_\",\"type\":\"address\"},{\"internalType\":\"int256\",\"name\":\"fromTick_\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"totalTicks_\",\"type\":\"uint256\"}],\"name\":\"getTicksDebt\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"debtRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ratio\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"tick\",\"type\":\"int256\"}],\"internalType\":\"struct Structs.TickDebt[]\",\"name\":\"ticksDebt_\",\"type\":\"tuple[]\"},{\"internalType\":\"int256\",\"name\":\"toTick_\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"vaults_\",\"type\":\"address[]\"}],\"name\":\"getVaultsBranchesDebt\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"debtRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"branchId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"status\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"tick\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"partials\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ratio\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtFactor\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseBranchId\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"baseBranchTick\",\"type\":\"int256\"}],\"internalType\":\"struct Structs.BranchDebt[]\",\"name\":\"branchDebt\",\"type\":\"tuple[]\"},{\"internalType\":\"address\",\"name\":\"vaultAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"vaultId\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.BranchesDebt[]\",\"name\":\"branchesDebt_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"vaults_\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"totalTicks_\",\"type\":\"uint256[]\"}],\"name\":\"getVaultsTicksDebt\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"debtRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralRaw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"debtNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralNormal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ratio\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"tick\",\"type\":\"int256\"}],\"internalType\":\"struct Structs.TickDebt[]\",\"name\":\"tickDebt\",\"type\":\"tuple[]\"},{\"internalType\":\"int256\",\"name\":\"toTick\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"vaultAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"vaultId\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.VaultsTickDebt[]\",\"name\":\"vaultsTickDebt_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"FluidVaultTicksBranchesResolver__AddressZero()\":[{\"notice\":\"thrown if an input param address is zero\"}]},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"constructor sets the immutable vault resolver address\"}},\"notice\":\"Fluid Vault protocol ticks & branches resolver for all vault types.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/periphery/resolvers/vaultTicksBranches/main.sol\":\"FluidVaultTicksBranchesResolver\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/libraries/bigMathMinified.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @title library that represents a number in BigNumber(coefficient and exponent) format to store in smaller bits.\\n/// @notice the number is divided into two parts: a coefficient and an exponent. This comes at a cost of losing some precision\\n/// at the end of the number because the exponent simply fills it with zeroes. This precision is oftentimes negligible and can\\n/// result in significant gas cost reduction due to storage space reduction.\\n/// Also note, a valid big number is as follows: if the exponent is > 0, then coefficient last bits should be occupied to have max precision.\\n/// @dev roundUp is more like a increase 1, which happens everytime for the same number.\\n/// roundDown simply sets trailing digits after coefficientSize to zero (floor), only once for the same number.\\nlibrary BigMathMinified {\\n    /// @dev constants to use for `roundUp` input param to increase readability\\n    bool internal constant ROUND_DOWN = false;\\n    bool internal constant ROUND_UP = true;\\n\\n    /// @dev converts `normal` number to BigNumber with `exponent` and `coefficient` (or precision).\\n    /// e.g.:\\n    /// 5035703444687813576399599 (normal) = (coefficient[32bits], exponent[8bits])[40bits]\\n    /// 5035703444687813576399599 (decimal) => 10000101010010110100000011111011110010100110100000000011100101001101001101011101111 (binary)\\n    ///                                     => 10000101010010110100000011111011000000000000000000000000000000000000000000000000000\\n    ///                                                                        ^-------------------- 51(exponent) -------------- ^\\n    /// coefficient = 1000,0101,0100,1011,0100,0000,1111,1011               (2236301563)\\n    /// exponent =                                            0011,0011     (51)\\n    /// bigNumber =   1000,0101,0100,1011,0100,0000,1111,1011,0011,0011     (572493200179)\\n    ///\\n    /// @param normal number which needs to be converted into Big Number\\n    /// @param coefficientSize at max how many bits of precision there should be (64 = uint64 (64 bits precision))\\n    /// @param exponentSize at max how many bits of exponent there should be (8 = uint8 (8 bits exponent))\\n    /// @param roundUp signals if result should be rounded down or up\\n    /// @return bigNumber converted bigNumber (coefficient << exponent)\\n    function toBigNumber(\\n        uint256 normal,\\n        uint256 coefficientSize,\\n        uint256 exponentSize,\\n        bool roundUp\\n    ) internal pure returns (uint256 bigNumber) {\\n        assembly {\\n            let lastBit_\\n            let number_ := normal\\n            if gt(number_, 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x80, number_)\\n                lastBit_ := 0x80\\n            }\\n            if gt(number_, 0xFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x40, number_)\\n                lastBit_ := add(lastBit_, 0x40)\\n            }\\n            if gt(number_, 0xFFFFFFFF) {\\n                number_ := shr(0x20, number_)\\n                lastBit_ := add(lastBit_, 0x20)\\n            }\\n            if gt(number_, 0xFFFF) {\\n                number_ := shr(0x10, number_)\\n                lastBit_ := add(lastBit_, 0x10)\\n            }\\n            if gt(number_, 0xFF) {\\n                number_ := shr(0x8, number_)\\n                lastBit_ := add(lastBit_, 0x8)\\n            }\\n            if gt(number_, 0xF) {\\n                number_ := shr(0x4, number_)\\n                lastBit_ := add(lastBit_, 0x4)\\n            }\\n            if gt(number_, 0x3) {\\n                number_ := shr(0x2, number_)\\n                lastBit_ := add(lastBit_, 0x2)\\n            }\\n            if gt(number_, 0x1) {\\n                lastBit_ := add(lastBit_, 1)\\n            }\\n            if gt(number_, 0) {\\n                lastBit_ := add(lastBit_, 1)\\n            }\\n            if lt(lastBit_, coefficientSize) {\\n                // for throw exception\\n                lastBit_ := coefficientSize\\n            }\\n            let exponent := sub(lastBit_, coefficientSize)\\n            let coefficient := shr(exponent, normal)\\n            if and(roundUp, gt(exponent, 0)) {\\n                // rounding up is only needed if exponent is > 0, as otherwise the coefficient fully holds the original number\\n                coefficient := add(coefficient, 1)\\n                if eq(shl(coefficientSize, 1), coefficient) {\\n                    // case were coefficient was e.g. 111, with adding 1 it became 1000 (in binary) and coefficientSize 3 bits\\n                    // final coefficient would exceed it's size. -> reduce coefficent to 100 and increase exponent by 1.\\n                    coefficient := shl(sub(coefficientSize, 1), 1)\\n                    exponent := add(exponent, 1)\\n                }\\n            }\\n            if iszero(lt(exponent, shl(exponentSize, 1))) {\\n                // if exponent is >= exponentSize, the normal number is too big to fit within\\n                // BigNumber with too small sizes for coefficient and exponent\\n                revert(0, 0)\\n            }\\n            bigNumber := shl(exponentSize, coefficient)\\n            bigNumber := add(bigNumber, exponent)\\n        }\\n    }\\n\\n    /// @dev get `normal` number from `bigNumber`, `exponentSize` and `exponentMask`\\n    function fromBigNumber(\\n        uint256 bigNumber,\\n        uint256 exponentSize,\\n        uint256 exponentMask\\n    ) internal pure returns (uint256 normal) {\\n        assembly {\\n            let coefficient := shr(exponentSize, bigNumber)\\n            let exponent := and(bigNumber, exponentMask)\\n            normal := shl(exponent, coefficient)\\n        }\\n    }\\n\\n    /// @dev gets the most significant bit `lastBit` of a `normal` number (length of given number of binary format).\\n    /// e.g.\\n    /// 5035703444687813576399599 = 10000101010010110100000011111011110010100110100000000011100101001101001101011101111\\n    /// lastBit =                   ^---------------------------------   83   ----------------------------------------^\\n    function mostSignificantBit(uint256 normal) internal pure returns (uint lastBit) {\\n        assembly {\\n            let number_ := normal\\n            if gt(normal, 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x80, number_)\\n                lastBit := 0x80\\n            }\\n            if gt(number_, 0xFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x40, number_)\\n                lastBit := add(lastBit, 0x40)\\n            }\\n            if gt(number_, 0xFFFFFFFF) {\\n                number_ := shr(0x20, number_)\\n                lastBit := add(lastBit, 0x20)\\n            }\\n            if gt(number_, 0xFFFF) {\\n                number_ := shr(0x10, number_)\\n                lastBit := add(lastBit, 0x10)\\n            }\\n            if gt(number_, 0xFF) {\\n                number_ := shr(0x8, number_)\\n                lastBit := add(lastBit, 0x8)\\n            }\\n            if gt(number_, 0xF) {\\n                number_ := shr(0x4, number_)\\n                lastBit := add(lastBit, 0x4)\\n            }\\n            if gt(number_, 0x3) {\\n                number_ := shr(0x2, number_)\\n                lastBit := add(lastBit, 0x2)\\n            }\\n            if gt(number_, 0x1) {\\n                lastBit := add(lastBit, 1)\\n            }\\n            if gt(number_, 0) {\\n                lastBit := add(lastBit, 1)\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xf0be1002909edf30aec3dc6623c2bd2407ed94064b62674c01032b844dec206a\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/tickMath.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @title library that calculates number \\\"tick\\\" and \\\"ratioX96\\\" from this: ratioX96 = (1.0015^tick) * 2^96\\n/// @notice this library is used in Fluid Vault protocol for optimiziation.\\n/// @dev \\\"tick\\\" supports between -32767 and 32767. \\\"ratioX96\\\" supports between 37075072 and 169307877264527972847801929085841449095838922544595\\nlibrary TickMath {\\n    /// The minimum tick that can be passed in getRatioAtTick. 1.0015**-32767\\n    int24 internal constant MIN_TICK = -32767;\\n    /// The maximum tick that can be passed in getRatioAtTick. 1.0015**32767\\n    int24 internal constant MAX_TICK = 32767;\\n\\n    uint256 internal constant FACTOR00 = 0x100000000000000000000000000000000;\\n    uint256 internal constant FACTOR01 = 0xff9dd7de423466c20352b1246ce4856f; // 2^128/1.0015**1 = 339772707859149738855091969477551883631\\n    uint256 internal constant FACTOR02 = 0xff3bd55f4488ad277531fa1c725a66d0; // 2^128/1.0015**2 = 339263812140938331358054887146831636176\\n    uint256 internal constant FACTOR03 = 0xfe78410fd6498b73cb96a6917f853259; // 2^128/1.0015**4 = 338248306163758188337119769319392490073\\n    uint256 internal constant FACTOR04 = 0xfcf2d9987c9be178ad5bfeffaa123273; // 2^128/1.0015**8 = 336226404141693512316971918999264834163\\n    uint256 internal constant FACTOR05 = 0xf9ef02c4529258b057769680fc6601b3; // 2^128/1.0015**16 = 332218786018727629051611634067491389875\\n    uint256 internal constant FACTOR06 = 0xf402d288133a85a17784a411f7aba082; // 2^128/1.0015**32 = 324346285652234375371948336458280706178\\n    uint256 internal constant FACTOR07 = 0xe895615b5beb6386553757b0352bda90; // 2^128/1.0015**64 = 309156521885964218294057947947195947664\\n    uint256 internal constant FACTOR08 = 0xd34f17a00ffa00a8309940a15930391a; // 2^128/1.0015**128 = 280877777739312896540849703637713172762 \\n    uint256 internal constant FACTOR09 = 0xae6b7961714e20548d88ea5123f9a0ff; // 2^128/1.0015**256 = 231843708922198649176471782639349113087\\n    uint256 internal constant FACTOR10 = 0x76d6461f27082d74e0feed3b388c0ca1; // 2^128/1.0015**512 = 157961477267171621126394973980180876449\\n    uint256 internal constant FACTOR11 = 0x372a3bfe0745d8b6b19d985d9a8b85bb; // 2^128/1.0015**1024 = 73326833024599564193373530205717235131\\n    uint256 internal constant FACTOR12 = 0x0be32cbee48979763cf7247dd7bb539d; // 2^128/1.0015**2048 = 15801066890623697521348224657638773661\\n    uint256 internal constant FACTOR13 = 0x8d4f70c9ff4924dac37612d1e2921e;   // 2^128/1.0015**4096 = 733725103481409245883800626999235102\\n    uint256 internal constant FACTOR14 = 0x4e009ae5519380809a02ca7aec77;     // 2^128/1.0015**8192 = 1582075887005588088019997442108535\\n    uint256 internal constant FACTOR15 = 0x17c45e641b6e95dee056ff10;         // 2^128/1.0015**16384 = 7355550435635883087458926352\\n\\n    /// The minimum value that can be returned from getRatioAtTick. Equivalent to getRatioAtTick(MIN_TICK). ~ Equivalent to `(1 << 96) * (1.0015**-32767)`\\n    uint256 internal constant MIN_RATIOX96 = 37075072;\\n    /// The maximum value that can be returned from getRatioAtTick. Equivalent to getRatioAtTick(MAX_TICK).\\n    /// ~ Equivalent to `(1 << 96) * (1.0015**32767)`, rounding etc. leading to minor difference\\n    uint256 internal constant MAX_RATIOX96 = 169307877264527972847801929085841449095838922544595;\\n\\n    uint256 internal constant ZERO_TICK_SCALED_RATIO = 0x1000000000000000000000000; // 1 << 96 // 79228162514264337593543950336\\n    uint256 internal constant _1E26 = 1e26;\\n\\n    /// @notice ratioX96 = (1.0015^tick) * 2^96\\n    /// @dev Throws if |tick| > max tick\\n    /// @param tick The input tick for the above formula\\n    /// @return ratioX96 ratio = (debt amount/collateral amount)\\n    function getRatioAtTick(int tick) internal pure returns (uint256 ratioX96) {\\n        assembly {\\n            let absTick_ := sub(xor(tick, sar(255, tick)), sar(255, tick))\\n\\n            if gt(absTick_, MAX_TICK) {\\n                revert(0, 0)\\n            }\\n            let factor_ := FACTOR00\\n            if and(absTick_, 0x1) {\\n                factor_ := FACTOR01\\n            }\\n            if and(absTick_, 0x2) {\\n                factor_ := shr(128, mul(factor_, FACTOR02))\\n            }\\n            if and(absTick_, 0x4) {\\n                factor_ := shr(128, mul(factor_, FACTOR03))\\n            }\\n            if and(absTick_, 0x8) {\\n                factor_ := shr(128, mul(factor_, FACTOR04))\\n            }\\n            if and(absTick_, 0x10) {\\n                factor_ := shr(128, mul(factor_, FACTOR05))\\n            }\\n            if and(absTick_, 0x20) {\\n                factor_ := shr(128, mul(factor_, FACTOR06))\\n            }\\n            if and(absTick_, 0x40) {\\n                factor_ := shr(128, mul(factor_, FACTOR07))\\n            }\\n            if and(absTick_, 0x80) {\\n                factor_ := shr(128, mul(factor_, FACTOR08))\\n            }\\n            if and(absTick_, 0x100) {\\n                factor_ := shr(128, mul(factor_, FACTOR09))\\n            }\\n            if and(absTick_, 0x200) {\\n                factor_ := shr(128, mul(factor_, FACTOR10))\\n            }\\n            if and(absTick_, 0x400) {\\n                factor_ := shr(128, mul(factor_, FACTOR11))\\n            }\\n            if and(absTick_, 0x800) {\\n                factor_ := shr(128, mul(factor_, FACTOR12))\\n            }\\n            if and(absTick_, 0x1000) {\\n                factor_ := shr(128, mul(factor_, FACTOR13))\\n            }\\n            if and(absTick_, 0x2000) {\\n                factor_ := shr(128, mul(factor_, FACTOR14))\\n            }\\n            if and(absTick_, 0x4000) {\\n                factor_ := shr(128, mul(factor_, FACTOR15))\\n            }\\n\\n            let precision_ := 0\\n            if iszero(and(tick, 0x8000000000000000000000000000000000000000000000000000000000000000)) {\\n                factor_ := div(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, factor_)\\n                // we round up in the division so getTickAtRatio of the output price is always consistent\\n                if mod(factor_, 0x100000000) {\\n                    precision_ := 1\\n                }\\n            }\\n            ratioX96 := add(shr(32, factor_), precision_)\\n        }\\n    }\\n\\n    /// @notice ratioX96 = (1.0015^tick) * 2^96\\n    /// @dev Throws if ratioX96 > max ratio || ratioX96 < min ratio\\n    /// @param ratioX96 The input ratio; ratio = (debt amount/collateral amount)\\n    /// @return tick The output tick for the above formula. Returns in round down form. if tick is 123.23 then 123, if tick is -123.23 then returns -124\\n    /// @return perfectRatioX96 perfect ratio for the above tick\\n    function getTickAtRatio(uint256 ratioX96) internal pure returns (int tick, uint perfectRatioX96) {\\n        assembly {\\n            if or(gt(ratioX96, MAX_RATIOX96), lt(ratioX96, MIN_RATIOX96)) {\\n                revert(0, 0)\\n            }\\n\\n            let cond := lt(ratioX96, ZERO_TICK_SCALED_RATIO)\\n            let factor_\\n\\n            if iszero(cond) {\\n                // if ratioX96 >= ZERO_TICK_SCALED_RATIO\\n                factor_ := div(mul(ratioX96, _1E26), ZERO_TICK_SCALED_RATIO)\\n            }\\n            if cond {\\n                // ratioX96 < ZERO_TICK_SCALED_RATIO\\n                factor_ := div(mul(ZERO_TICK_SCALED_RATIO, _1E26), ratioX96)\\n            }\\n\\n            // put in https://www.wolframalpha.com/ whole equation: (1.0015^tick) * 2^96 * 10^26 / 79228162514264337593543950336\\n\\n            // for tick = 16384\\n            // ratioX96 = (1.0015^16384) * 2^96 = 3665252098134783297721995888537077351735\\n            // 3665252098134783297721995888537077351735 * 10^26 / 79228162514264337593543950336 =\\n            // 4626198540796508716348404308345255985.06131964639489434655721\\n            if iszero(lt(factor_, 4626198540796508716348404308345255985)) {\\n                tick := or(tick, 0x4000)\\n                factor_ := div(mul(factor_, _1E26), 4626198540796508716348404308345255985)\\n            }\\n            // for tick = 8192\\n            // ratioX96 = (1.0015^8192) * 2^96 = 17040868196391020479062776466509865\\n            // 17040868196391020479062776466509865 * 10^26 / 79228162514264337593543950336 =\\n            // 21508599537851153911767490449162.3037648642153898377655505172\\n            if iszero(lt(factor_, 21508599537851153911767490449162)) {\\n                tick := or(tick, 0x2000)\\n                factor_ := div(mul(factor_, _1E26), 21508599537851153911767490449162)\\n            }\\n            // for tick = 4096\\n            // ratioX96 = (1.0015^4096) * 2^96 = 36743933851015821532611831851150\\n            // 36743933851015821532611831851150 * 10^26 / 79228162514264337593543950336 =\\n            // 46377364670549310883002866648.9777607649742626173648716941385\\n            if iszero(lt(factor_, 46377364670549310883002866649)) {\\n                tick := or(tick, 0x1000)\\n                factor_ := div(mul(factor_, _1E26), 46377364670549310883002866649)\\n            }\\n            // for tick = 2048\\n            // ratioX96 = (1.0015^2048) * 2^96 = 1706210527034005899209104452335\\n            // 1706210527034005899209104452335 * 10^26 / 79228162514264337593543950336 =\\n            // 2153540449365864845468344760.06357108484096046743300420319322\\n            if iszero(lt(factor_, 2153540449365864845468344760)) {\\n                tick := or(tick, 0x800)\\n                factor_ := div(mul(factor_, _1E26), 2153540449365864845468344760)\\n            }\\n            // for tick = 1024\\n            // ratioX96 = (1.0015^1024) * 2^96 = 367668226692760093024536487236\\n            // 367668226692760093024536487236 * 10^26 / 79228162514264337593543950336 =\\n            // 464062544207767844008185024.950588990554136265212906454481127\\n            if iszero(lt(factor_, 464062544207767844008185025)) {\\n                tick := or(tick, 0x400)\\n                factor_ := div(mul(factor_, _1E26), 464062544207767844008185025)\\n            }\\n            // for tick = 512\\n            // ratioX96 = (1.0015^512) * 2^96 = 170674186729409605620119663668\\n            // 170674186729409605620119663668 * 10^26 / 79228162514264337593543950336 =\\n            // 215421109505955298802281577.031879604792139232258508172947569\\n            if iszero(lt(factor_, 215421109505955298802281577)) {\\n                tick := or(tick, 0x200)\\n                factor_ := div(mul(factor_, _1E26), 215421109505955298802281577)\\n            }\\n            // for tick = 256\\n            // ratioX96 = (1.0015^256) * 2^96 = 116285004205991934861656513301\\n            // 116285004205991934861656513301 * 10^26 / 79228162514264337593543950336 =\\n            // 146772309890508740607270614.667650899656438875541505058062410\\n            if iszero(lt(factor_, 146772309890508740607270615)) {\\n                tick := or(tick, 0x100)\\n                factor_ := div(mul(factor_, _1E26), 146772309890508740607270615)\\n            }\\n            // for tick = 128\\n            // ratioX96 = (1.0015^128) * 2^96 = 95984619659632141743747099590\\n            // 95984619659632141743747099590 * 10^26 / 79228162514264337593543950336 =\\n            // 121149622323187099817270416.157248837742741760456796835775887\\n            if iszero(lt(factor_, 121149622323187099817270416)) {\\n                tick := or(tick, 0x80)\\n                factor_ := div(mul(factor_, _1E26), 121149622323187099817270416)\\n            }\\n            // for tick = 64\\n            // ratioX96 = (1.0015^64) * 2^96 = 87204845308406958006717891124\\n            // 87204845308406958006717891124 * 10^26 / 79228162514264337593543950336 =\\n            // 110067989135437147685980801.568068573422377364214113968609839\\n            if iszero(lt(factor_, 110067989135437147685980801)) {\\n                tick := or(tick, 0x40)\\n                factor_ := div(mul(factor_, _1E26), 110067989135437147685980801)\\n            }\\n            // for tick = 32\\n            // ratioX96 = (1.0015^32) * 2^96 = 83120873769022354029916374475\\n            // 83120873769022354029916374475 * 10^26 / 79228162514264337593543950336 =\\n            // 104913292358707887270979599.831816586773651266562785765558183\\n            if iszero(lt(factor_, 104913292358707887270979600)) {\\n                tick := or(tick, 0x20)\\n                factor_ := div(mul(factor_, _1E26), 104913292358707887270979600)\\n            }\\n            // for tick = 16\\n            // ratioX96 = (1.0015^16) * 2^96 = 81151180492336368327184716176\\n            // 81151180492336368327184716176 * 10^26 / 79228162514264337593543950336 =\\n            // 102427189924701091191840927.762844039579442328381455567932128\\n            if iszero(lt(factor_, 102427189924701091191840928)) {\\n                tick := or(tick, 0x10)\\n                factor_ := div(mul(factor_, _1E26), 102427189924701091191840928)\\n            }\\n            // for tick = 8\\n            // ratioX96 = (1.0015^8) * 2^96 = 80183906840906820640659903620\\n            // 80183906840906820640659903620 * 10^26 / 79228162514264337593543950336 =\\n            // 101206318935480056907421312.890625\\n            if iszero(lt(factor_, 101206318935480056907421313)) {\\n                tick := or(tick, 0x8)\\n                factor_ := div(mul(factor_, _1E26), 101206318935480056907421313)\\n            }\\n            // for tick = 4\\n            // ratioX96 = (1.0015^4) * 2^96 = 79704602139525152702959747603\\n            // 79704602139525152702959747603 * 10^26 / 79228162514264337593543950336 =\\n            // 100601351350506250000000000\\n            if iszero(lt(factor_, 100601351350506250000000000)) {\\n                tick := or(tick, 0x4)\\n                factor_ := div(mul(factor_, _1E26), 100601351350506250000000000)\\n            }\\n            // for tick = 2\\n            // ratioX96 = (1.0015^2) * 2^96 = 79466025265172787701084167660\\n            // 79466025265172787701084167660 * 10^26 / 79228162514264337593543950336 =\\n            // 100300225000000000000000000\\n            if iszero(lt(factor_, 100300225000000000000000000)) {\\n                tick := or(tick, 0x2)\\n                factor_ := div(mul(factor_, _1E26), 100300225000000000000000000)\\n            }\\n            // for tick = 1\\n            // ratioX96 = (1.0015^1) * 2^96 = 79347004758035734099934266261\\n            // 79347004758035734099934266261 * 10^26 / 79228162514264337593543950336 =\\n            // 100150000000000000000000000\\n            if iszero(lt(factor_, 100150000000000000000000000)) {\\n                tick := or(tick, 0x1)\\n                factor_ := div(mul(factor_, _1E26), 100150000000000000000000000)\\n            }\\n            if iszero(cond) {\\n                // if ratioX96 >= ZERO_TICK_SCALED_RATIO\\n                perfectRatioX96 := div(mul(ratioX96, _1E26), factor_)\\n            }\\n            if cond {\\n                // ratioX96 < ZERO_TICK_SCALED_RATIO\\n                tick := not(tick)\\n                perfectRatioX96 := div(mul(ratioX96, factor_), 100150000000000000000000000)\\n            }\\n            // perfect ratio should always be <= ratioX96\\n            // not sure if it can ever be bigger but better to have extra checks\\n            if gt(perfectRatioX96, ratioX96) {\\n                revert(0, 0)\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xc5c13deaa16bb036a4370c0e38c33445712e8e7da1c792018dd3dc4a641ea0c0\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/adminModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nabstract contract Structs {\\n    struct AddressBool {\\n        address addr;\\n        bool value;\\n    }\\n\\n    struct AddressUint256 {\\n        address addr;\\n        uint256 value;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 1\\n    struct RateDataV1Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink usually means slow increase in rate, once utilization is above kink borrow rate increases fast\\n        uint256 kink;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink borrow rate when utilization is at kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink;\\n        ///\\n        /// @param rateAtUtilizationMax borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 2\\n    struct RateDataV2Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink1 first kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 1 usually means slow increase in rate, once utilization is above kink 1 borrow rate increases faster\\n        uint256 kink1;\\n        ///\\n        /// @param kink2 second kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 2 usually means slow / medium increase in rate, once utilization is above kink 2 borrow rate increases fast\\n        uint256 kink2;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink1 desired borrow rate when utilization is at first kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at first kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink1;\\n        ///\\n        /// @param rateAtUtilizationKink2 desired borrow rate when utilization is at second kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at second kink then rateAtUtilizationKink would be 1_200\\n        uint256 rateAtUtilizationKink2;\\n        ///\\n        /// @param rateAtUtilizationMax desired borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set token config\\n    struct TokenConfig {\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param fee charges on borrower's interest. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 fee;\\n        ///\\n        /// @param threshold on when to update the storage slot. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 threshold;\\n        ///\\n        /// @param maxUtilization maximum allowed utilization. in 1e2: 100% = 10_000; 1% = 100\\n        ///                       set to 100% to disable and have default limit of 100% (avoiding SLOAD).\\n        uint256 maxUtilization;\\n    }\\n\\n    /// @notice struct to set user supply & withdrawal config\\n    struct UserSupplyConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent withdrawal limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which withdrawal limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration withdrawal limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseWithdrawalLimit base limit, below this, user can withdraw the entire amount.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseWithdrawalLimit;\\n    }\\n\\n    /// @notice struct to set user borrow & payback config\\n    struct UserBorrowConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent debt limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which debt limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration debt limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseDebtCeiling base borrow limit. until here, borrow limit remains as baseDebtCeiling\\n        /// (user can borrow until this point at once without stepped expansion). Above this, automated limit comes in place.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseDebtCeiling;\\n        ///\\n        /// @param maxDebtCeiling max borrow ceiling, maximum amount the user can borrow.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 maxDebtCeiling;\\n    }\\n}\\n\",\"keccak256\":\"0x10353c70015f27b880125cefab806dbed24a4458f187da66964f3ef60488f757\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/liquidity/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Structs as AdminModuleStructs } from \\\"../../../liquidity/adminModule/structs.sol\\\";\\n\\nabstract contract Structs {\\n    struct RateData {\\n        uint256 version;\\n        AdminModuleStructs.RateDataV1Params rateDataV1;\\n        AdminModuleStructs.RateDataV2Params rateDataV2;\\n    }\\n\\n    struct OverallTokenData {\\n        uint256 borrowRate;\\n        uint256 supplyRate;\\n        uint256 fee; // revenue fee\\n        uint256 lastStoredUtilization;\\n        uint256 storageUpdateThreshold;\\n        uint256 lastUpdateTimestamp;\\n        uint256 supplyExchangePrice;\\n        uint256 borrowExchangePrice;\\n        uint256 supplyRawInterest;\\n        uint256 supplyInterestFree;\\n        uint256 borrowRawInterest;\\n        uint256 borrowInterestFree;\\n        uint256 totalSupply;\\n        uint256 totalBorrow;\\n        uint256 revenue;\\n        uint256 maxUtilization; // maximum allowed utilization\\n        RateData rateData;\\n    }\\n\\n    // amounts are always in normal (for withInterest already multiplied with exchange price)\\n    struct UserSupplyData {\\n        bool modeWithInterest; // true if mode = with interest, false = without interest\\n        uint256 supply; // user supply amount\\n        // the withdrawal limit (e.g. if 10% is the limit, and 100M is supplied, it would be 90M)\\n        uint256 withdrawalLimit;\\n        uint256 lastUpdateTimestamp;\\n        uint256 expandPercent; // withdrawal limit expand percent in 1e2\\n        uint256 expandDuration; // withdrawal limit expand duration in seconds\\n        uint256 baseWithdrawalLimit;\\n        // the current actual max withdrawable amount (e.g. if 10% is the limit, and 100M is supplied, it would be 10M)\\n        uint256 withdrawableUntilLimit;\\n        uint256 withdrawable; // actual currently withdrawable amount (supply - withdrawal Limit) & considering balance\\n    }\\n\\n    // amounts are always in normal (for withInterest already multiplied with exchange price)\\n    struct UserBorrowData {\\n        bool modeWithInterest; // true if mode = with interest, false = without interest\\n        uint256 borrow; // user borrow amount\\n        uint256 borrowLimit;\\n        uint256 lastUpdateTimestamp;\\n        uint256 expandPercent;\\n        uint256 expandDuration;\\n        uint256 baseBorrowLimit;\\n        uint256 maxBorrowLimit;\\n        uint256 borrowableUntilLimit; // borrowable amount until any borrow limit (incl. max utilization limit)\\n        uint256 borrowable; // actual currently borrowable amount (borrow limit - already borrowed) & considering balance, max utilization\\n        uint256 borrowLimitUtilization; // borrow limit for `maxUtilization`\\n    }\\n}\\n\",\"keccak256\":\"0xf8a59b6c7963d0bd43be07db0c594e278f97e6dfa498dee8436e3707dd9f574e\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/vault/iVaultResolver.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { Structs } from \\\"./structs.sol\\\";\\n\\ninterface IFluidVaultResolver {\\n    function vaultByNftId(uint nftId_) external view returns (address vault_);\\n\\n    function positionByNftId(\\n        uint nftId_\\n    ) external view returns (Structs.UserPosition memory userPosition_, Structs.VaultEntireData memory vaultData_);\\n\\n    function getVaultVariablesRaw(address vault_) external view returns (uint);\\n\\n    function getVaultVariables2Raw(address vault_) external view returns (uint);\\n\\n    function getTickHasDebtRaw(address vault_, int key_) external view returns (uint);\\n\\n    function getTickDataRaw(address vault_, int tick_) external view returns (uint);\\n\\n    function getBranchDataRaw(address vault_, uint branch_) external view returns (uint);\\n\\n    function getPositionDataRaw(address vault_, uint positionId_) external view returns (uint);\\n\\n    function getAllVaultsAddresses() external view returns (address[] memory vaults_);\\n\\n    function getVaultLiquidation(\\n        address vault_,\\n        uint tokenInAmt_\\n    ) external returns (Structs.LiquidationStruct memory liquidationData_);\\n\\n    function getVaultEntireData(address vault_) external view returns (Structs.VaultEntireData memory vaultData_);\\n}\\n\",\"keccak256\":\"0x8db2ba8c10b3f2a624ad2924ec5b59dbb805b42357eb98e9df6835963fff0634\",\"license\":\"MIT\"},\"contracts/periphery/resolvers/vault/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidVault } from \\\"../../../protocols/vault/interfaces/iVault.sol\\\";\\nimport { Structs as FluidLiquidityResolverStructs } from \\\"../liquidity/structs.sol\\\";\\n\\n// @dev Amounts are always in token amount for normal col / normal debt or in\\n// shares for Dex smart col / smart debt.\\ncontract Structs {\\n    struct Configs {\\n        // can be supplyRate instead if Vault Type is smart col. in that case if 1st bit == 1 then positive else negative\\n        uint16 supplyRateMagnifier;\\n        // can be borrowRate instead if Vault Type is smart debt. in that case if 1st bit == 1 then positive else negative\\n        uint16 borrowRateMagnifier;\\n        uint16 collateralFactor;\\n        uint16 liquidationThreshold;\\n        uint16 liquidationMaxLimit;\\n        uint16 withdrawalGap;\\n        uint16 liquidationPenalty;\\n        uint16 borrowFee;\\n        address oracle;\\n        // Oracle price is always debt per col, i.e. amount of debt for 1 col.\\n        // In case of Dex this price can be used to resolve shares values w.r.t. token0 or token1:\\n        // - T2: debt token per 1 col share\\n        // - T3: debt shares per 1 col token\\n        // - T4: debt shares per 1 col share\\n        uint oraclePriceOperate;\\n        uint oraclePriceLiquidate;\\n        address rebalancer;\\n        uint lastUpdateTimestamp;\\n    }\\n\\n    struct ExchangePricesAndRates {\\n        uint lastStoredLiquiditySupplyExchangePrice; // 0 in case of smart col\\n        uint lastStoredLiquidityBorrowExchangePrice; // 0 in case of smart debt\\n        uint lastStoredVaultSupplyExchangePrice;\\n        uint lastStoredVaultBorrowExchangePrice;\\n        uint liquiditySupplyExchangePrice; // set to 1e12 in case of smart col\\n        uint liquidityBorrowExchangePrice; // set to 1e12 in case of smart debt\\n        uint vaultSupplyExchangePrice;\\n        uint vaultBorrowExchangePrice;\\n        uint supplyRateLiquidity; // set to 0 in case of smart col. Must get per token through DexEntireData\\n        uint borrowRateLiquidity; // set to 0 in case of smart debt. Must get per token through DexEntireData\\n        // supplyRateVault or borrowRateVault:\\n        // - when normal col / debt: rate at liquidity + diff rewards or fee through magnifier (rewardsOrFeeRate below)\\n        // - when smart col / debt: rewards or fee rate at the vault itself. always == rewardsOrFeeRate below.\\n        // to get the full rates for vault when smart col / debt, combine with data from DexResolver:\\n        // - rateAtLiquidity for token0 or token1 (DexResolver)\\n        // - the rewards or fee rate at the vault (VaultResolver)\\n        // - the Dex APR (currently off-chain compiled through tracking swap events at the DEX)\\n        int supplyRateVault; // can be negative in case of smart col (meaning pay to supply)\\n        int borrowRateVault; // can be negative in case of smart debt (meaning get paid to borrow)\\n        // rewardsOrFeeRateSupply: rewards or fee rate in percent 1e2 precision (1% = 100, 100% = 10000).\\n        // positive rewards, negative fee.\\n        // for smart col vaults: supplyRateVault == supplyRateLiquidity.\\n        // for normal col vaults: relative percent to supplyRateLiquidity, e.g.:\\n        // when rewards: supplyRateLiquidity = 4%, rewardsOrFeeRateSupply = 20%, supplyRateVault = 4.8%.\\n        // when fee: supplyRateLiquidity = 4%, rewardsOrFeeRateSupply = -30%, supplyRateVault = 2.8%.\\n        int rewardsOrFeeRateSupply;\\n        // rewardsOrFeeRateBorrow: rewards or fee rate in percent 1e2 precision (1% = 100, 100% = 10000).\\n        // negative rewards, positive fee.\\n        // for smart debt vaults: borrowRateVault == borrowRateLiquidity.\\n        // for normal debt vaults: relative percent to borrowRateLiquidity, e.g.:\\n        // when rewards: borrowRateLiquidity = 4%, rewardsOrFeeRateBorrow = -20%, borrowRateVault = 3.2%.\\n        // when fee: borrowRateLiquidity = 4%, rewardsOrFeeRateBorrow = 30%, borrowRateVault = 5.2%.\\n        int rewardsOrFeeRateBorrow;\\n    }\\n\\n    struct TotalSupplyAndBorrow {\\n        uint totalSupplyVault;\\n        uint totalBorrowVault;\\n        uint totalSupplyLiquidityOrDex;\\n        uint totalBorrowLiquidityOrDex;\\n        uint absorbedSupply;\\n        uint absorbedBorrow;\\n    }\\n\\n    struct LimitsAndAvailability {\\n        // in case of DEX: withdrawable / borrowable amount of vault at DEX, BUT there could be that DEX can not withdraw\\n        // that much at Liquidity! So for DEX this must be combined with returned data in DexResolver.\\n        uint withdrawLimit;\\n        uint withdrawableUntilLimit;\\n        uint withdrawable;\\n        uint borrowLimit;\\n        uint borrowableUntilLimit; // borrowable amount until any borrow limit (incl. max utilization limit)\\n        uint borrowable; // actual currently borrowable amount (borrow limit - already borrowed) & considering balance, max utilization\\n        uint borrowLimitUtilization; // borrow limit for `maxUtilization` config at Liquidity\\n        uint minimumBorrowing;\\n    }\\n\\n    struct CurrentBranchState {\\n        uint status; // if 0 then not liquidated, if 1 then liquidated, if 2 then merged, if 3 then closed\\n        int minimaTick;\\n        uint debtFactor;\\n        uint partials;\\n        uint debtLiquidity;\\n        uint baseBranchId;\\n        int baseBranchMinima;\\n    }\\n\\n    struct VaultState {\\n        uint totalPositions;\\n        int topTick;\\n        uint currentBranch;\\n        uint totalBranch;\\n        uint totalBorrow;\\n        uint totalSupply;\\n        CurrentBranchState currentBranchState;\\n    }\\n\\n    struct VaultEntireData {\\n        address vault;\\n        bool isSmartCol; // true if col token is a Fluid Dex\\n        bool isSmartDebt; // true if debt token is a Fluid Dex\\n        IFluidVault.ConstantViews constantVariables;\\n        Configs configs;\\n        ExchangePricesAndRates exchangePricesAndRates;\\n        TotalSupplyAndBorrow totalSupplyAndBorrow;\\n        LimitsAndAvailability limitsAndAvailability;\\n        VaultState vaultState;\\n        // liquidity related data such as supply amount, limits, expansion etc.\\n        // Also set for Dex, limits are in shares and same things apply as noted for LimitsAndAvailability above!\\n        FluidLiquidityResolverStructs.UserSupplyData liquidityUserSupplyData;\\n        // liquidity related data such as borrow amount, limits, expansion etc.\\n        // Also set for Dex, limits are in shares and same things apply as noted for LimitsAndAvailability above!\\n        FluidLiquidityResolverStructs.UserBorrowData liquidityUserBorrowData;\\n    }\\n\\n    struct UserPosition {\\n        uint nftId;\\n        address owner;\\n        bool isLiquidated;\\n        bool isSupplyPosition; // if true that means borrowing is 0\\n        int tick;\\n        uint tickId;\\n        uint beforeSupply;\\n        uint beforeBorrow;\\n        uint beforeDustBorrow;\\n        uint supply;\\n        uint borrow;\\n        uint dustBorrow;\\n    }\\n\\n    /// @dev liquidation related data\\n    /// @param vault address of vault\\n    /// @param token0In address of token in\\n    /// @param token0Out address of token out\\n    /// @param token1In address of token in (if smart debt)\\n    /// @param token1Out address of token out (if smart col)\\n    /// @param inAmt (without absorb liquidity) minimum of available liquidation\\n    /// @param outAmt (without absorb liquidity) expected token out, collateral to withdraw\\n    /// @param inAmtWithAbsorb (absorb liquidity included) minimum of available liquidation. In most cases it'll be same as inAmt but sometimes can be bigger.\\n    /// @param outAmtWithAbsorb (absorb liquidity included) expected token out, collateral to withdraw. In most cases it'll be same as outAmt but sometimes can be bigger.\\n    /// @param absorbAvailable true if absorb is available\\n    /// @dev Liquidity in with absirb will always be >= without asborb. Sometimes without asborb can provide better swaps,\\n    ///      sometimes with absirb can provide better swaps. But available in with absirb will always be >= One\\n    struct LiquidationStruct {\\n        address vault;\\n        address token0In;\\n        address token0Out;\\n        address token1In;\\n        address token1Out;\\n        // amounts in case of smart debt are in shares, otherwise token amounts.\\n        // smart col can not be liquidated so to exchange inAmt always use DexResolver DexState.tokenPerDebtShare\\n        // and tokenPerColShare for outAmt when Vault is smart col.\\n        uint inAmt;\\n        uint outAmt;\\n        uint inAmtWithAbsorb;\\n        uint outAmtWithAbsorb;\\n        bool absorbAvailable;\\n    }\\n\\n    struct AbsorbStruct {\\n        address vault;\\n        bool absorbAvailable;\\n    }\\n}\\n\",\"keccak256\":\"0x9920604f31459ced4f0353e37f98082368c6696cc892825d07f19afb457ee108\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/vaultTicksBranches/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { TickMath } from \\\"../../../libraries/tickMath.sol\\\";\\nimport { BigMathMinified } from \\\"../../../libraries/bigMathMinified.sol\\\";\\nimport { IFluidVaultResolver } from \\\"../vault/iVaultResolver.sol\\\";\\nimport { IFluidVault } from \\\"../../../protocols/vault/interfaces/iVault.sol\\\";\\nimport { IFluidVaultT1 } from \\\"../../../protocols/vault/interfaces/iVaultT1.sol\\\";\\n\\nimport { Structs } from \\\"./structs.sol\\\";\\nimport { Variables } from \\\"./variables.sol\\\";\\n\\n/// @notice Fluid Vault protocol ticks & branches resolver for all vault types.\\ncontract FluidVaultTicksBranchesResolver is Variables, Structs {\\n    /// @notice thrown if an input param address is zero\\n    error FluidVaultTicksBranchesResolver__AddressZero();\\n\\n    /// @notice constructor sets the immutable vault resolver address\\n    constructor(IFluidVaultResolver vaultResolver_) Variables(vaultResolver_) {\\n        if (address(vaultResolver_) == address(0)) {\\n            revert FluidVaultTicksBranchesResolver__AddressZero();\\n        }\\n    }\\n\\n    function getTicksDebt(\\n        address vault_,\\n        int fromTick_,\\n        uint totalTicks_\\n    ) public view returns (TickDebt[] memory ticksDebt_, int toTick_) {\\n        int topTick_ = _tickHelper(((VAULT_RESOLVER.getVaultVariablesRaw(vault_) >> 2) & X20));\\n\\n        fromTick_ = topTick_ < fromTick_ ? topTick_ : fromTick_;\\n        if (fromTick_ > type(int).min) {\\n            // if fromTick_ == tpye(int).min means top tick is not set, meaning no positions exist\\n            int startMapId_ = fromTick_ < 0 ? ((fromTick_ + 1) / 256) - 1 : fromTick_ / 256;\\n            // Removing all other after fromTick\\n            uint tickHasDebt_;\\n            {\\n                uint tickHasDebtRaw_ = VAULT_RESOLVER.getTickHasDebtRaw(vault_, startMapId_);\\n\\n                uint bitsToRemove_ = uint(-fromTick_ + (startMapId_ * 256 + 255));\\n                tickHasDebt_ = (tickHasDebtRaw_ << bitsToRemove_) >> bitsToRemove_;\\n            }\\n\\n            // Adding 1 here as toTick_ is inclusive in the data so if totalTicks_ = 400 then it'll only check 400\\n            toTick_ = fromTick_ - int(totalTicks_) + 1;\\n\\n            uint count_ = _countTicksWithDebt(vault_, toTick_, startMapId_, tickHasDebt_);\\n\\n            (, , uint vaultSupplyExchangePrice_, uint vaultBorrowExchangePrice_) = IFluidVault(vault_)\\n                .updateExchangePrices(VAULT_RESOLVER.getVaultVariables2Raw(vault_));\\n\\n            ticksDebt_ = _populateTicksDebt(\\n                vault_,\\n                toTick_,\\n                startMapId_,\\n                tickHasDebt_,\\n                count_,\\n                vaultSupplyExchangePrice_,\\n                vaultBorrowExchangePrice_\\n            );\\n        }\\n    }\\n\\n    function getMultipleVaultsTicksDebt(\\n        address[] memory vaults_,\\n        int[] memory fromTicks_,\\n        uint[] memory totalTicks_\\n    ) public view returns (VaultsTickDebt[] memory vaultsTickDebt_) {\\n        uint length_ = vaults_.length;\\n\\n        vaultsTickDebt_ = new VaultsTickDebt[](length_);\\n        for (uint i = 0; i < length_; i++) {\\n            (vaultsTickDebt_[i].tickDebt, vaultsTickDebt_[i].toTick) = getTicksDebt(\\n                vaults_[i],\\n                fromTicks_[i],\\n                totalTicks_[i]\\n            );\\n            vaultsTickDebt_[i].vaultAddress = vaults_[i];\\n            vaultsTickDebt_[i].vaultId = IFluidVaultT1(vaults_[i]).VAULT_ID();\\n        }\\n    }\\n\\n    function getVaultsTicksDebt(\\n        address[] memory vaults_,\\n        uint[] memory totalTicks_\\n    ) public view returns (VaultsTickDebt[] memory vaultsTickDebt_) {\\n        uint length_ = vaults_.length;\\n\\n        vaultsTickDebt_ = new VaultsTickDebt[](length_);\\n        for (uint i = 0; i < length_; i++) {\\n            (vaultsTickDebt_[i].tickDebt, vaultsTickDebt_[i].toTick) = getTicksDebt(\\n                vaults_[i],\\n                type(int).max,\\n                totalTicks_[i]\\n            );\\n            vaultsTickDebt_[i].vaultAddress = vaults_[i];\\n            vaultsTickDebt_[i].vaultId = IFluidVaultT1(vaults_[i]).VAULT_ID();\\n        }\\n    }\\n\\n    function getAllVaultsTicksDebt(uint totalTicks_) public view returns (VaultsTickDebt[] memory vaultsTickDebt_) {\\n        address[] memory vaults_ = VAULT_RESOLVER.getAllVaultsAddresses();\\n        uint length_ = vaults_.length;\\n\\n        uint[] memory totalTicksArray_ = new uint[](length_);\\n        for (uint i = 0; i < length_; i++) totalTicksArray_[i] = totalTicks_;\\n\\n        return getVaultsTicksDebt(vaults_, totalTicksArray_);\\n    }\\n\\n    function getBranchesDebt(\\n        address vault_,\\n        uint fromBranchId_,\\n        uint toBranchId_\\n    ) public view returns (BranchDebt[] memory branchesDebt_) {\\n        uint vaultVariables_ = VAULT_RESOLVER.getVaultVariablesRaw(vault_);\\n        uint totalBranch_ = (vaultVariables_ >> 52) & X30;\\n        toBranchId_ = (toBranchId_ == 0 ? 1 : toBranchId_);\\n        fromBranchId_ = (totalBranch_ < fromBranchId_ ? totalBranch_ : fromBranchId_);\\n\\n        require(fromBranchId_ >= toBranchId_, \\\"fromBranchId_ must be greater than or equal to toBranchId_\\\");\\n\\n        branchesDebt_ = new BranchDebt[](fromBranchId_ - toBranchId_ + 1);\\n\\n        uint index_;\\n\\n        for (uint i = fromBranchId_; i >= toBranchId_; i--) {\\n            branchesDebt_[index_++] = _getBranchDebt(vault_, vaultVariables_, i);\\n        }\\n    }\\n\\n    function getMultipleVaultsBranchesDebt(\\n        address[] memory vaults_,\\n        uint[] memory fromBranchIds_,\\n        uint[] memory toBranchIds_\\n    ) external view returns (BranchesDebt[] memory branchesDebt_) {\\n        uint length_ = vaults_.length;\\n\\n        branchesDebt_ = new BranchesDebt[](length_);\\n        for (uint i = 0; i < length_; i++) {\\n            branchesDebt_[i].branchDebt = getBranchesDebt(vaults_[i], fromBranchIds_[i], toBranchIds_[i]);\\n            branchesDebt_[i].vaultAddress = vaults_[i];\\n            branchesDebt_[i].vaultId = IFluidVaultT1(vaults_[i]).VAULT_ID();\\n        }\\n    }\\n\\n    function getVaultsBranchesDebt(address[] memory vaults_) public view returns (BranchesDebt[] memory branchesDebt_) {\\n        uint length_ = vaults_.length;\\n\\n        branchesDebt_ = new BranchesDebt[](length_);\\n        for (uint i = 0; i < length_; i++) {\\n            branchesDebt_[i].branchDebt = getBranchesDebt(vaults_[i], type(uint).max, 0);\\n            branchesDebt_[i].vaultAddress = vaults_[i];\\n            branchesDebt_[i].vaultId = IFluidVaultT1(vaults_[i]).VAULT_ID();\\n        }\\n    }\\n\\n    function getAllVaultsBranchesDebt() external view returns (BranchesDebt[] memory) {\\n        return getVaultsBranchesDebt(VAULT_RESOLVER.getAllVaultsAddresses());\\n    }\\n\\n    function _populateTicksDebt(\\n        address vault_,\\n        int toTick_,\\n        int mapId_,\\n        uint tickHasDebt_,\\n        uint count_,\\n        uint vaultSupplyExchangePrice_,\\n        uint vaultBorrowExchangePrice_\\n    ) internal view returns (TickDebt[] memory ticksDebt_) {\\n        ticksDebt_ = new TickDebt[](count_);\\n\\n        count_ = 0; // reuse var for loop index counter\\n        int nextTick_;\\n        uint tickExistingRawDebt_;\\n        uint ratio_;\\n        uint collateralRaw_;\\n\\n        while (true) {\\n            while (tickHasDebt_ > 0) {\\n                {\\n                    uint msb_ = BigMathMinified.mostSignificantBit(tickHasDebt_);\\n                    // removing next tick from tickHasDebt\\n                    tickHasDebt_ = (tickHasDebt_ << (257 - msb_)) >> (257 - msb_);\\n                    nextTick_ = mapId_ * 256 + int(msb_ - 1);\\n                }\\n                if (nextTick_ < toTick_) {\\n                    return ticksDebt_;\\n                }\\n                tickExistingRawDebt_ = (VAULT_RESOLVER.getTickDataRaw(vault_, nextTick_) >> 25) & X64;\\n                tickExistingRawDebt_ = (tickExistingRawDebt_ >> 8) << (tickExistingRawDebt_ & X8);\\n                ratio_ = TickMath.getRatioAtTick(nextTick_);\\n                collateralRaw_ = (tickExistingRawDebt_ * (1 << 96)) / ratio_;\\n                ticksDebt_[count_++] = TickDebt({\\n                    debtRaw: tickExistingRawDebt_,\\n                    collateralRaw: collateralRaw_,\\n                    debtNormal: (tickExistingRawDebt_ * vaultBorrowExchangePrice_) / 1e12,\\n                    collateralNormal: (collateralRaw_ * vaultSupplyExchangePrice_) / 1e12,\\n                    ratio: ratio_,\\n                    tick: nextTick_\\n                });\\n            }\\n\\n            if (--mapId_ == -129) {\\n                break;\\n            }\\n\\n            tickHasDebt_ = VAULT_RESOLVER.getTickHasDebtRaw(vault_, mapId_);\\n        }\\n    }\\n\\n    function _tickHelper(uint tickRaw_) internal pure returns (int tick) {\\n        require(tickRaw_ < X20, \\\"invalid-number\\\");\\n        if (tickRaw_ > 0) {\\n            tick = tickRaw_ & 1 == 1 ? int((tickRaw_ >> 1) & X19) : -int((tickRaw_ >> 1) & X19);\\n        } else {\\n            tick = type(int).min;\\n        }\\n    }\\n\\n    function _countTicksWithDebt(\\n        address vault_,\\n        int toTick_,\\n        int mapId_,\\n        uint tickHasDebt_\\n    ) internal view returns (uint count_) {\\n        uint msb_;\\n        int nextTick_;\\n        while (true) {\\n            while (tickHasDebt_ > 0) {\\n                msb_ = BigMathMinified.mostSignificantBit(tickHasDebt_);\\n                // removing next tick from tickHasDebt\\n                tickHasDebt_ = (tickHasDebt_ << (257 - msb_)) >> (257 - msb_);\\n                nextTick_ = mapId_ * 256 + int(msb_ - 1);\\n                if (nextTick_ < toTick_) {\\n                    return count_;\\n                }\\n                count_++;\\n            }\\n\\n            if (--mapId_ == -129) {\\n                break;\\n            }\\n            tickHasDebt_ = VAULT_RESOLVER.getTickHasDebtRaw(vault_, mapId_);\\n        }\\n        return count_;\\n    }\\n\\n    function _getBranchDebt(\\n        address vault_,\\n        uint vaultVariables_,\\n        uint branchId_\\n    ) internal view returns (BranchDebt memory) {\\n        uint currentBranchData_ = VAULT_RESOLVER.getBranchDataRaw(vault_, branchId_);\\n\\n        int minimaTick_ = _tickHelper((currentBranchData_ >> 2) & X20);\\n        uint status_ = currentBranchData_ & 3;\\n\\n        if (status_ == 0) {\\n            // not liquidated status == 0\\n            // only current branch can be non-liquidated branch\\n            return _getActiveBranchDebt(vaultVariables_, currentBranchData_, branchId_, status_);\\n        } else if (status_ == 1) {\\n            // liquidated status == 1\\n            return _getLiquidatedBranchDebt(vault_, currentBranchData_, branchId_, status_, minimaTick_);\\n        } else {\\n            // merged status == 2\\n            // absorbed status == 3\\n            return _getClosedOrMergedBranchDebt(currentBranchData_, branchId_, status_);\\n        }\\n    }\\n\\n    function _getActiveBranchDebt(\\n        uint vaultVariables_,\\n        uint currentBranchData_,\\n        uint branchId_,\\n        uint status_\\n    ) internal pure returns (BranchDebt memory branchDebt_) {\\n        int topTick_ = _tickHelper((vaultVariables_ >> 2) & X20);\\n\\n        uint ratio_ = topTick_ > type(int).min ? TickMath.getRatioAtTick(topTick_) : 0;\\n\\n        branchDebt_ = BranchDebt({\\n            debtRaw: 0,\\n            collateralRaw: 0,\\n            debtNormal: 0,\\n            collateralNormal: 0,\\n            branchId: branchId_,\\n            status: status_, // active status\\n            tick: topTick_, // as branch is not liquidated, just returning topTick for now, as whenever liquidation starts it'll start from topTick\\n            partials: 0,\\n            ratio: ratio_,\\n            debtFactor: (currentBranchData_ >> 116) & X50,\\n            baseBranchId: ((currentBranchData_ >> 166) & X30),\\n            baseBranchTick: _tickHelper((currentBranchData_ >> 196) & X20) // if == type(int).min, then current branch is master branch\\n        });\\n    }\\n\\n    function _getClosedOrMergedBranchDebt(\\n        uint currentBranchData_,\\n        uint branchId_,\\n        uint status_\\n    ) internal pure returns (BranchDebt memory branchDebt_) {\\n        int baseBranchTick_ = _tickHelper((currentBranchData_ >> 196) & X20);\\n        uint ratio_ = baseBranchTick_ > type(int).min ? TickMath.getRatioAtTick(baseBranchTick_) : 0;\\n\\n        branchDebt_ = BranchDebt({\\n            debtRaw: 0,\\n            collateralRaw: 0,\\n            debtNormal: 0,\\n            collateralNormal: 0,\\n            branchId: branchId_,\\n            status: status_,\\n            tick: baseBranchTick_, // as branch is merged/closed, so adding baseBranchTick_ as this is where it went out of existance\\n            partials: 0,\\n            ratio: ratio_,\\n            debtFactor: (currentBranchData_ >> 116) & X50,\\n            baseBranchId: ((currentBranchData_ >> 166) & X30),\\n            baseBranchTick: baseBranchTick_ // if == type(int).min, then current branch is master branch\\n        });\\n    }\\n\\n    function _getLiquidatedBranchDebt(\\n        address vault_,\\n        uint currentBranchData_,\\n        uint branchId_,\\n        uint status_,\\n        int minimaTick_\\n    ) internal view returns (BranchDebt memory branchDebt_) {\\n        uint debtLiquidity_ = BigMathMinified.fromBigNumber((currentBranchData_ >> 52) & X64, 8, X8);\\n        (uint collateralRaw_, uint ratio_) = _getCollateralRaw(currentBranchData_, debtLiquidity_, minimaTick_);\\n\\n        (, , uint256 vaultSupplyExchangePrice_, uint256 vaultBorrowExchangePrice_) = IFluidVault(vault_)\\n            .updateExchangePrices(VAULT_RESOLVER.getVaultVariables2Raw(vault_));\\n\\n        branchDebt_ = BranchDebt({\\n            debtRaw: debtLiquidity_,\\n            collateralRaw: collateralRaw_,\\n            debtNormal: (debtLiquidity_ * vaultBorrowExchangePrice_) / 1e12,\\n            collateralNormal: (collateralRaw_ * vaultSupplyExchangePrice_) / 1e12,\\n            branchId: branchId_,\\n            status: status_,\\n            tick: minimaTick_, // as branch is merged/closed, so adding baseBranchTick_ as this is where it went out of existance\\n            partials: 0,\\n            ratio: ratio_,\\n            debtFactor: (currentBranchData_ >> 116) & X50,\\n            baseBranchId: ((currentBranchData_ >> 166) & X30),\\n            baseBranchTick: _tickHelper((currentBranchData_ >> 196) & X20) // if == type(int).min, then current branch is master branch,\\n        });\\n    }\\n\\n    function _getCollateralRaw(\\n        uint currentBranchData_,\\n        uint debtLiquidity_,\\n        int minimaTick_\\n    ) internal pure returns (uint collateralRaw_, uint ratio_) {\\n        ratio_ = TickMath.getRatioAtTick(int24(minimaTick_));\\n        uint ratioOneLess_ = (ratio_ * 10000) / 10015;\\n        uint length_ = ratio_ - ratioOneLess_;\\n        uint partials_ = (currentBranchData_ >> 22) & X30;\\n        uint currentRatio_ = ratioOneLess_ + ((length_ * partials_) / X30);\\n        collateralRaw_ = (debtLiquidity_ * TickMath.ZERO_TICK_SCALED_RATIO) / currentRatio_;\\n    }\\n}\\n\",\"keccak256\":\"0x8772ec25a6c1831797b5dd51f0c059895dd7155f73da86c1be4278b279d40418\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/vaultTicksBranches/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract Structs {\\n    struct TickDebt {\\n        uint256 debtRaw;\\n        uint256 collateralRaw;\\n        uint256 debtNormal; // debtRaw * exchange price\\n        uint256 collateralNormal; // collateralRaw * exchange price\\n        uint256 ratio;\\n        int256 tick;\\n    }\\n\\n    struct VaultsTickDebt {\\n        TickDebt[] tickDebt;\\n        int toTick;\\n        address vaultAddress;\\n        uint256 vaultId;\\n    }\\n\\n    struct BranchDebt {\\n        uint256 debtRaw;\\n        uint256 collateralRaw;\\n        uint256 debtNormal; // debtRaw * exchange price\\n        uint256 collateralNormal; // collateralRaw * exchange price\\n        uint256 branchId;\\n        uint256 status; // if 0 then not liquidated, if 1 then liquidated, if 2 then merged, if 3 then closed\\n        int256 tick;\\n        uint256 partials;\\n        uint256 ratio;\\n        uint debtFactor; // debt factor or connection factor\\n        uint baseBranchId;\\n        int baseBranchTick;\\n    }\\n\\n    struct BranchesDebt {\\n        BranchDebt[] branchDebt;\\n        address vaultAddress;\\n        uint256 vaultId;\\n    }\\n}\\n\",\"keccak256\":\"0xa7511e4b670a4a2a042f1478f5ba1a66cc370b4795377d1f5bf7930abf6463ab\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/vaultTicksBranches/variables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidVaultResolver } from \\\"../vault/iVaultResolver.sol\\\";\\n\\ncontract Variables {\\n    IFluidVaultResolver public immutable VAULT_RESOLVER;\\n\\n    uint internal constant X8 = 0xff;\\n    uint internal constant X19 = 0x7ffff;\\n    uint internal constant X20 = 0xfffff;\\n    uint internal constant X30 = 0x3fffffff;\\n    uint internal constant X50 = 0x3ffffffffffff;\\n    uint internal constant X64 = 0xffffffffffffffff;\\n\\n    constructor(IFluidVaultResolver vaultResolver_) {\\n        VAULT_RESOLVER = vaultResolver_;\\n    }\\n}\\n\",\"keccak256\":\"0xd9553795490f4dce2f5da52d6356a76b05853c7729a647c38377fedcf906c1cf\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/vault/interfaces/iVault.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\n/// @notice common Fluid vaults interface, some methods only available for vaults > T1 (type, simulateLiquidate, rebalance is different)\\ninterface IFluidVault {\\n    /// @notice returns the vault id\\n    function VAULT_ID() external view returns (uint256);\\n\\n    /// @notice returns the vault id\\n    function TYPE() external view returns (uint256);\\n\\n    /// @notice reads uint256 data `result_` from storage at a bytes32 storage `slot_` key.\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n\\n    struct Tokens {\\n        address token0;\\n        address token1;\\n    }\\n\\n    struct ConstantViews {\\n        address liquidity;\\n        address factory;\\n        address operateImplementation;\\n        address adminImplementation;\\n        address secondaryImplementation;\\n        address deployer; // address which deploys oracle\\n        address supply; // either liquidity layer or DEX protocol\\n        address borrow; // either liquidity layer or DEX protocol\\n        Tokens supplyToken; // if smart collateral then address of token0 & token1 else just supply token address at token0 and token1 as empty\\n        Tokens borrowToken; // if smart debt then address of token0 & token1 else just borrow token address at token0 and token1 as empty\\n        uint256 vaultId;\\n        uint256 vaultType;\\n        bytes32 supplyExchangePriceSlot; // if smart collateral then slot is from DEX protocol else from liquidity layer\\n        bytes32 borrowExchangePriceSlot; // if smart debt then slot is from DEX protocol else from liquidity layer\\n        bytes32 userSupplySlot; // if smart collateral then slot is from DEX protocol else from liquidity layer\\n        bytes32 userBorrowSlot; // if smart debt then slot is from DEX protocol else from liquidity layer\\n    }\\n\\n    /// @notice returns all Vault constants\\n    function constantsView() external view returns (ConstantViews memory constantsView_);\\n\\n    /// @notice fetches the latest user position after a liquidation\\n    function fetchLatestPosition(\\n        int256 positionTick_,\\n        uint256 positionTickId_,\\n        uint256 positionRawDebt_,\\n        uint256 tickData_\\n    )\\n        external\\n        view\\n        returns (\\n            int256, // tick\\n            uint256, // raw debt\\n            uint256, // raw collateral\\n            uint256, // branchID_\\n            uint256 // branchData_\\n        );\\n\\n    /// @notice calculates the updated vault exchange prices\\n    function updateExchangePrices(\\n        uint256 vaultVariables2_\\n    )\\n        external\\n        view\\n        returns (\\n            uint256 liqSupplyExPrice_,\\n            uint256 liqBorrowExPrice_,\\n            uint256 vaultSupplyExPrice_,\\n            uint256 vaultBorrowExPrice_\\n        );\\n\\n    /// @notice calculates the updated vault exchange prices and writes them to storage\\n    function updateExchangePricesOnStorage()\\n        external\\n        returns (\\n            uint256 liqSupplyExPrice_,\\n            uint256 liqBorrowExPrice_,\\n            uint256 vaultSupplyExPrice_,\\n            uint256 vaultBorrowExPrice_\\n        );\\n\\n    /// @notice returns the liquidity contract address\\n    function LIQUIDITY() external view returns (address);\\n\\n    error FluidLiquidateResult(uint256 colLiquidated, uint256 debtLiquidated);\\n\\n    function rebalance(\\n        int colToken0MinMax_,\\n        int colToken1MinMax_,\\n        int debtToken0MinMax_,\\n        int debtToken1MinMax_\\n    ) external payable returns (int supplyAmt_, int borrowAmt_);\\n\\n    /// @notice reverts with FluidLiquidateResult\\n    function simulateLiquidate(uint debtAmt_, bool absorb_) external;\\n}\\n\",\"keccak256\":\"0xdd764652f8451a71d2f2006b2572fccd9c21f1d64196869bfc291d10f151f0c6\",\"license\":\"MIT\"},\"contracts/protocols/vault/interfaces/iVaultT1.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidVaultT1 {\\n    /// @notice returns the vault id\\n    function VAULT_ID() external view returns (uint256);\\n\\n    /// @notice returns the vault factory address\\n    function VAULT_FACTORY() external view returns (address);\\n\\n    /// @notice reads uint256 data `result_` from storage at a bytes32 storage `slot_` key.\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n\\n    struct ConstantViews {\\n        address liquidity;\\n        address factory;\\n        address adminImplementation;\\n        address secondaryImplementation;\\n        address supplyToken;\\n        address borrowToken;\\n        uint8 supplyDecimals;\\n        uint8 borrowDecimals;\\n        uint vaultId;\\n        bytes32 liquiditySupplyExchangePriceSlot;\\n        bytes32 liquidityBorrowExchangePriceSlot;\\n        bytes32 liquidityUserSupplySlot;\\n        bytes32 liquidityUserBorrowSlot;\\n    }\\n\\n    /// @notice returns all Vault constants\\n    function constantsView() external view returns (ConstantViews memory constantsView_);\\n\\n    /// @notice fetches the latest user position after a liquidation\\n    function fetchLatestPosition(\\n        int256 positionTick_,\\n        uint256 positionTickId_,\\n        uint256 positionRawDebt_,\\n        uint256 tickData_\\n    )\\n        external\\n        view\\n        returns (\\n            int256, // tick\\n            uint256, // raw debt\\n            uint256, // raw collateral\\n            uint256, // branchID_\\n            uint256 // branchData_\\n        );\\n\\n    /// @notice calculates the updated vault exchange prices\\n    function updateExchangePrices(\\n        uint256 vaultVariables2_\\n    )\\n        external\\n        view\\n        returns (\\n            uint256 liqSupplyExPrice_,\\n            uint256 liqBorrowExPrice_,\\n            uint256 vaultSupplyExPrice_,\\n            uint256 vaultBorrowExPrice_\\n        );\\n\\n    /// @notice calculates the updated vault exchange prices and writes them to storage\\n    function updateExchangePricesOnStorage()\\n        external\\n        returns (\\n            uint256 liqSupplyExPrice_,\\n            uint256 liqBorrowExPrice_,\\n            uint256 vaultSupplyExPrice_,\\n            uint256 vaultBorrowExPrice_\\n        );\\n\\n    /// @notice returns the liquidity contract address\\n    function LIQUIDITY() external view returns (address);\\n\\n    function operate(\\n        uint256 nftId_, // if 0 then new position\\n        int256 newCol_, // if negative then withdraw\\n        int256 newDebt_, // if negative then payback\\n        address to_ // address at which the borrow & withdraw amount should go to. If address(0) then it'll go to msg.sender\\n    )\\n        external\\n        payable\\n        returns (\\n            uint256, // nftId_\\n            int256, // final supply amount. if - then withdraw\\n            int256 // final borrow amount. if - then payback\\n        );\\n\\n    function liquidate(\\n        uint256 debtAmt_,\\n        uint256 colPerUnitDebt_, // min collateral needed per unit of debt in 1e18\\n        address to_,\\n        bool absorb_\\n    ) external payable returns (uint actualDebtAmt_, uint actualColAmt_);\\n\\n    function absorb() payable external;\\n\\n    function rebalance() external payable returns (int supplyAmt_, int borrowAmt_);\\n\\n    error FluidLiquidateResult(uint256 colLiquidated, uint256 debtLiquidated);\\n}\\n\",\"keccak256\":\"0x1d81c36ec35f5929975a91401a3ee00d08f2a7b3d5cf3adc2a3ac1ea02facfd3\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a06040523480156200001157600080fd5b5060405162002f0138038062002f01833981016040819052620000349162000068565b6001600160a01b038116608081905262000061576040516365b1d2ef60e11b815260040160405180910390fd5b506200009a565b6000602082840312156200007b57600080fd5b81516001600160a01b03811681146200009357600080fd5b9392505050565b608051612dfe620001036000396000818161012a01528181610653015281816107f60152818161093501528181610a56015281816110240152818161127b015281816114f6015281816116c70152818161187d015281816119b20152611fba0152612dfe6000f3fe608060405234801561001057600080fd5b50600436106100a35760003560e01c80637f3e2b4811610076578063a12a377a1161005b578063a12a377a14610184578063d17ac4a814610197578063f2c8e542146101b757600080fd5b80637f3e2b481461012557806385094bb11461017157600080fd5b806306077b2d146100a85780633009c6ba146100d15780636791522f146100f15780637cec086614610104575b600080fd5b6100bb6100b636600461244c565b6101bf565b6040516100c89190612481565b60405180910390f35b6100e46100df366004612631565b6103e8565b6040516100c8919061277c565b6100e46100ff36600461283b565b61064d565b610117610112366004612854565b61079d565b6040516100c8929190612889565b61014c7f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020016100c8565b6100e461017f3660046128ab565b610b48565b6100bb61019236600461290f565b610da6565b6101aa6101a5366004612854565b610fd9565b6040516100c89190612980565b6100bb611274565b80516060908067ffffffffffffffff8111156101dd576101dd612311565b60405190808252806020026020018201604052801561024857816020015b610235604051806060016040528060608152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b8152602001906001900390816101fb5790505b50915060005b818110156103e15761029b84828151811061026b5761026b612a3b565b60200260200101517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6000610fd9565b8382815181106102ad576102ad612a3b565b6020026020010151600001819052508381815181106102ce576102ce612a3b565b60200260200101518382815181106102e8576102e8612a3b565b60200260200101516020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505083818151811061033857610338612a3b565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663540acabc6040518163ffffffff1660e01b8152600401602060405180830381865afa15801561038a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103ae9190612a6a565b8382815181106103c0576103c0612a3b565b602090810291909101015160400152806103d981612ab2565b91505061024e565b5050919050565b82516060908067ffffffffffffffff81111561040657610406612311565b60405190808252806020026020018201604052801561047857816020015b61046560405180608001604052806060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b8152602001906001900390816104245790505b50915060005b81811015610644576104dc86828151811061049b5761049b612a3b565b60200260200101518683815181106104b5576104b5612a3b565b60200260200101518684815181106104cf576104cf612a3b565b602002602001015161079d565b8483815181106104ee576104ee612a3b565b602002602001015160000185848151811061050b5761050b612a3b565b602002602001015160200182815250829052505085818151811061053157610531612a3b565b602002602001015183828151811061054b5761054b612a3b565b60200260200101516040019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505085818151811061059b5761059b612a3b565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663540acabc6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156105ed573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106119190612a6a565b83828151811061062357610623612a3b565b6020908102919091010151606001528061063c81612ab2565b91505061047e565b50509392505050565b606060007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa1580156106bc573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01682016040526107029190810190612aea565b805190915060008167ffffffffffffffff81111561072257610722612311565b60405190808252806020026020018201604052801561074b578160200160208202803683370190505b50905060005b82811015610789578582828151811061076c5761076c612a3b565b60209081029190910101528061078181612ab2565b915050610751565b506107948382610b48565b95945050505050565b6040517f03e883e000000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8481166004830152606091600091829161086991620fffff916002917f000000000000000000000000000000000000000000000000000000000000000016906303e883e090602401602060405180830381865afa15801561083d573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108619190612a6a565b901c1661132f565b9050848112610878578461087a565b805b94507f8000000000000000000000000000000000000000000000000000000000000000851315610b3f5760008086126108be576108b961010087612ba8565b6108e1565b60016101006108cd8883612c10565b6108d79190612ba8565b6108e19190612c30565b6040517fa8bc069300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff89811660048301526024820183905291925060009182917f00000000000000000000000000000000000000000000000000000000000000009091169063a8bc069390604401602060405180830381865afa15801561097e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109a29190612a6a565b905060006109b284610100612c57565b6109bd9060ff612c10565b6109c68a612ca3565b6109d09190612c10565b91821b90911c91506109e490508688612c30565b6109ef906001612c10565b935060006109ff898685856113fd565b6040517feb1db01800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff808c1660048301819052929350600092839290916309f0d8cb917f00000000000000000000000000000000000000000000000000000000000000009091169063eb1db01890602401602060405180830381865afa158015610a9f573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ac39190612a6a565b6040518263ffffffff1660e01b8152600401610ae191815260200190565b608060405180830381865afa158015610afe573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b229190612cdb565b935093505050610b378b888787878787611573565b975050505050505b50935093915050565b81516060908067ffffffffffffffff811115610b6657610b66612311565b604051908082528060200260200182016040528015610bd857816020015b610bc560405180608001604052806060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b815260200190600190039081610b845790505b50915060005b81811015610d9e57610c36858281518110610bfb57610bfb612a3b565b60200260200101517f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8684815181106104cf576104cf612a3b565b848381518110610c4857610c48612a3b565b6020026020010151600001858481518110610c6557610c65612a3b565b6020026020010151602001828152508290525050848181518110610c8b57610c8b612a3b565b6020026020010151838281518110610ca557610ca5612a3b565b60200260200101516040019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050848181518110610cf557610cf5612a3b565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663540acabc6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610d47573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d6b9190612a6a565b838281518110610d7d57610d7d612a3b565b60209081029190910101516060015280610d9681612ab2565b915050610bde565b505092915050565b82516060908067ffffffffffffffff811115610dc457610dc4612311565b604051908082528060200260200182016040528015610e2f57816020015b610e1c604051806060016040528060608152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b815260200190600190039081610de25790505b50915060005b8181101561064457610e93868281518110610e5257610e52612a3b565b6020026020010151868381518110610e6c57610e6c612a3b565b6020026020010151868481518110610e8657610e86612a3b565b6020026020010151610fd9565b838281518110610ea557610ea5612a3b565b602002602001015160000181905250858181518110610ec657610ec6612a3b565b6020026020010151838281518110610ee057610ee0612a3b565b60200260200101516020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050858181518110610f3057610f30612a3b565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663540acabc6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610f82573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610fa69190612a6a565b838281518110610fb857610fb8612a3b565b60209081029190910101516040015280610fd181612ab2565b915050610e35565b6040517f03e883e000000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84811660048301526060916000917f000000000000000000000000000000000000000000000000000000000000000016906303e883e090602401602060405180830381865afa15801561106b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061108f9190612a6a565b9050603481901c633fffffff1683156110a857836110ab565b60015b93508481106110ba57846110bc565b805b945083851015611153576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603a60248201527f66726f6d4272616e636849645f206d757374206265206772656174657220746860448201527f616e206f7220657175616c20746f20746f4272616e636849645f00000000000060648201526084015b60405180910390fd5b61115d8486612d11565b611168906001612d24565b67ffffffffffffffff81111561118057611180612311565b60405190808252806020026020018201604052801561121557816020015b6112026040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b81526020019060019003908161119e5790505b5092506000855b8581106112695761122e8885836118ff565b858361123981612ab2565b94508151811061124b5761124b612a3b565b6020026020010181905250808061126190612d37565b91505061121c565b505050509392505050565b606061132a7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa1580156112e4573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01682016040526100b69190810190612aea565b905090565b6000620fffff821061139d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f696e76616c69642d6e756d626572000000000000000000000000000000000000604482015260640161114a565b81156113d657816001166001146113c5576113c0600183901c6207ffff16612ca3565b6113d0565b6207ffff600183901c165b92915050565b507f8000000000000000000000000000000000000000000000000000000000000000919050565b60008060005b83156114785761141284611a81565b915061142082610101612d11565b61142c83610101612d11565b9490941b90931c9261143f600183612d11565b61144b86610100612c57565b6114559190612c10565b90508581121561146657505061156b565b8261147081612ab2565b935050611403565b61148185612d6c565b94507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff7f8514611568576040517fa8bc069300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8881166004830152602482018790527f0000000000000000000000000000000000000000000000000000000000000000169063a8bc069390604401602060405180830381865afa15801561153d573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906115619190612a6a565b9350611403565b50505b949350505050565b60608367ffffffffffffffff81111561158e5761158e612311565b6040519080825280602002602001820160405280156115f857816020015b6115e56040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b8152602001906001900390816115ac5790505b509050600093506000806000805b88156117ff5760006116178a611a81565b905061162581610101612d11565b61163182610101612d11565b9a909a1b90991c98611644600182612d11565b6116508c610100612c57565b61165a9190612c10565b9450508a84121561166e57505050506118f4565b6040517f168a11c200000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8d811660048301526024820186905267ffffffffffffffff916019917f0000000000000000000000000000000000000000000000000000000000000000169063168a11c290604401602060405180830381865afa15801561170e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906117329190612a6a565b901c16600881901c60ff9091161b925061174b84611b37565b915081611765846c01000000000000000000000000612d9d565b61176f9190612db4565b90506040518060c0016040528084815260200182815260200164e8d4a51000888661179a9190612d9d565b6117a49190612db4565b815260200164e8d4a510006117b98a85612d9d565b6117c39190612db4565b81526020810184905260400185905285896117dd81612ab2565b9a50815181106117ef576117ef612a3b565b6020026020010181905250611606565b6118088a612d6c565b99507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff7f8a146118ef576040517fa8bc069300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8d81166004830152602482018c90527f0000000000000000000000000000000000000000000000000000000000000000169063a8bc069390604401602060405180830381865afa1580156118c4573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906118e89190612a6a565b9850611606565b505050505b979650505050505050565b6119636040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040517fbf518f5f00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8581166004830152602482018490526000917f00000000000000000000000000000000000000000000000000000000000000009091169063bf518f5f90604401602060405180830381865afa1580156119fb573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190611a1f9190612a6a565b90506000611a35620fffff600284901c1661132f565b9050600382166000819003611a5a57611a5086848784611d99565b9350505050611a7a565b80600103611a6f57611a508784878486611ed7565b611a50838683612147565b9392505050565b6000816fffffffffffffffffffffffffffffffff831115611aa35760809150811c5b67ffffffffffffffff811115611abb576040918201911c5b63ffffffff811115611acf576020918201911c5b61ffff811115611ae1576010918201911c5b60ff811115611af2576008918201911c5b600f811115611b03576004918201911c5b6003811115611b14576002918201911c5b6001811115611b24576001820191505b8015611b31576001820191505b50919050565b600060ff82901d80831803617fff811115611b5157600080fd5b7001000000000000000000000000000000006001821615611b7f57506fff9dd7de423466c20352b1246ce4856f5b6002821615611b9e576fff3bd55f4488ad277531fa1c725a66d00260801c5b6004821615611bbd576ffe78410fd6498b73cb96a6917f8532590260801c5b6008821615611bdc576ffcf2d9987c9be178ad5bfeffaa1232730260801c5b6010821615611bfb576ff9ef02c4529258b057769680fc6601b30260801c5b6020821615611c1a576ff402d288133a85a17784a411f7aba0820260801c5b6040821615611c39576fe895615b5beb6386553757b0352bda900260801c5b6080821615611c58576fd34f17a00ffa00a8309940a15930391a0260801c5b610100821615611c78576fae6b7961714e20548d88ea5123f9a0ff0260801c5b610200821615611c98576f76d6461f27082d74e0feed3b388c0ca10260801c5b610400821615611cb8576f372a3bfe0745d8b6b19d985d9a8b85bb0260801c5b610800821615611cd8576f0be32cbee48979763cf7247dd7bb539d0260801c5b611000821615611cf7576e8d4f70c9ff4924dac37612d1e2921e0260801c5b612000821615611d15576d4e009ae5519380809a02ca7aec770260801c5b614000821615611d31576b17c45e641b6e95dee056ff100260801c5b600091507f80000000000000000000000000000000000000000000000000000000000000008416611d8f577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0463ffffffff811615611d8f57600191505b60201c0192915050565b611dfd6040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6000611e11620fffff600288901c1661132f565b905060007f80000000000000000000000000000000000000000000000000000000000000008213611e43576000611e4c565b611e4c82611b37565b905060405180610180016040528060008152602001600081526020016000815260200160008152602001868152602001858152602001838152602001600081526020018281526020016603ffffffffffff607489901c168152602001633fffffff60a689901c168152602001611eca620fffff60c48a901c1661132f565b9052979650505050505050565b611f3b6040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b603c85901c66ffffffffffffff16603486901c60ff161b600080611f60888487612275565b6040517feb1db01800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff808d1660048301819052939550919350600092839290916309f0d8cb917f0000000000000000000000000000000000000000000000000000000000000000169063eb1db01890602401602060405180830381865afa158015612001573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906120259190612a6a565b6040518263ffffffff1660e01b815260040161204391815260200190565b608060405180830381865afa158015612060573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906120849190612cdb565b93509350505060405180610180016040528086815260200185815260200164e8d4a5100083886120b49190612d9d565b6120be9190612db4565b815260200164e8d4a510006120d38588612d9d565b6120dd9190612db4565b81526020018a8152602001898152602001888152602001600081526020018481526020016603ffffffffffff60748d901c168152602001633fffffff60a68d901c168152602001612136620fffff60c48e901c1661132f565b90529b9a5050505050505050505050565b6121ab6040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b60006121bf620fffff60c487901c1661132f565b905060007f800000000000000000000000000000000000000000000000000000000000000082136121f15760006121fa565b6121fa82611b37565b905060405180610180016040528060008152602001600081526020016000815260200160008152602001868152602001858152602001838152602001600081526020018281526020016603ffffffffffff607489901c168152602001633fffffff60a689901c16815260200183815250925050509392505050565b6000806122848360020b611b37565b9050600061271f61229783612710612d9d565b6122a19190612db4565b905060006122af8284612d11565b9050633fffffff601688901c8116906000906122cb8385612d9d565b6122d59190612db4565b6122df9085612d24565b9050806122f96c010000000000000000000000008a612d9d565b6123039190612db4565b955050505050935093915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561238757612387612311565b604052919050565b600067ffffffffffffffff8211156123a9576123a9612311565b5060051b60200190565b73ffffffffffffffffffffffffffffffffffffffff811681146123d557600080fd5b50565b600082601f8301126123e957600080fd5b813560206123fe6123f98361238f565b612340565b82815260059290921b8401810191818101908684111561241d57600080fd5b8286015b84811015612441578035612434816123b3565b8352918301918301612421565b509695505050505050565b60006020828403121561245e57600080fd5b813567ffffffffffffffff81111561247557600080fd5b61156b848285016123d8565b60006020808301818452808551808352604092508286019150828160051b8701018488016000805b848110156125c7578984037fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0018652825180516060808752815190870181905260808701918b019085905b8082101561258b578251805185526020808201519086015260408082015190860152606080820151908601526080808201519086015260a0808201519086015260c0808201519086015260e080820151908601526101008082015190860152610120808201519086015261014080820151908601526101609081015190850152610180840193508c830192506001820191506124f4565b505050818a015173ffffffffffffffffffffffffffffffffffffffff16868b0152908801519488019490945294870194918701916001016124a9565b50919998505050505050505050565b600082601f8301126125e757600080fd5b813560206125f76123f98361238f565b82815260059290921b8401810191818101908684111561261657600080fd5b8286015b84811015612441578035835291830191830161261a565b60008060006060848603121561264657600080fd5b833567ffffffffffffffff8082111561265e57600080fd5b61266a878388016123d8565b945060209150818601358181111561268157600080fd5b8601601f8101881361269257600080fd5b80356126a06123f98261238f565b81815260059190911b8201840190848101908a8311156126bf57600080fd5b928501925b828410156126dd578335825292850192908501906126c4565b965050505060408601359150808211156126f657600080fd5b50612703868287016125d6565b9150509250925092565b600081518084526020808501945080840160005b8381101561277157815180518852838101518489015260408082015190890152606080820151908901526080808201519089015260a0908101519088015260c09096019590820190600101612721565b509495945050505050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b8381101561282d577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc08984030185528151608081518186526127e78287018261270d565b838b0151878c01528984015173ffffffffffffffffffffffffffffffffffffffff168a8801526060938401519390960192909252505093860193908601906001016127a3565b509098975050505050505050565b60006020828403121561284d57600080fd5b5035919050565b60008060006060848603121561286957600080fd5b8335612874816123b3565b95602085013595506040909401359392505050565b60408152600061289c604083018561270d565b90508260208301529392505050565b600080604083850312156128be57600080fd5b823567ffffffffffffffff808211156128d657600080fd5b6128e2868387016123d8565b935060208501359150808211156128f857600080fd5b50612905858286016125d6565b9150509250929050565b60008060006060848603121561292457600080fd5b833567ffffffffffffffff8082111561293c57600080fd5b612948878388016123d8565b9450602086013591508082111561295e57600080fd5b61296a878388016125d6565b935060408601359150808211156126f657600080fd5b6020808252825182820181905260009190848201906040850190845b81811015612a2f578351805184526020808201519085015260408082015190850152606080820151908501526080808201519085015260a0808201519085015260c0808201519085015260e080820151908501526101008082015190850152610120808201519085015261014080820151908501526101609081015190840152610180830193850193925060010161299c565b50909695505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600060208284031215612a7c57600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203612ae357612ae3612a83565b5060010190565b60006020808385031215612afd57600080fd5b825167ffffffffffffffff811115612b1457600080fd5b8301601f81018513612b2557600080fd5b8051612b336123f98261238f565b81815260059190911b82018301908381019087831115612b5257600080fd5b928401925b828410156118f4578351612b6a816123b3565b82529284019290840190612b57565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b600082612bb757612bb7612b79565b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff83147f800000000000000000000000000000000000000000000000000000000000000083141615612c0b57612c0b612a83565b500590565b8082018281126000831280158216821582161715610d9e57610d9e612a83565b8181036000831280158383131683831282161715612c5057612c50612a83565b5092915050565b808202600082127f800000000000000000000000000000000000000000000000000000000000000084141615612c8f57612c8f612a83565b81810583148215176113d0576113d0612a83565b60007f80000000000000000000000000000000000000000000000000000000000000008203612cd457612cd4612a83565b5060000390565b60008060008060808587031215612cf157600080fd5b505082516020840151604085015160609095015191969095509092509050565b818103818111156113d0576113d0612a83565b808201808211156113d0576113d0612a83565b600081612d4657612d46612a83565b507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0190565b60007f80000000000000000000000000000000000000000000000000000000000000008203612d4657612d46612a83565b80820281158282048414176113d0576113d0612a83565b600082612dc357612dc3612b79565b50049056fea264697066735822122086c34290494d122bdcc4958ade73f20a0fc4dd19f1c0709b679dbdcae5e0eeb864736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a35760003560e01c80637f3e2b4811610076578063a12a377a1161005b578063a12a377a14610184578063d17ac4a814610197578063f2c8e542146101b757600080fd5b80637f3e2b481461012557806385094bb11461017157600080fd5b806306077b2d146100a85780633009c6ba146100d15780636791522f146100f15780637cec086614610104575b600080fd5b6100bb6100b636600461244c565b6101bf565b6040516100c89190612481565b60405180910390f35b6100e46100df366004612631565b6103e8565b6040516100c8919061277c565b6100e46100ff36600461283b565b61064d565b610117610112366004612854565b61079d565b6040516100c8929190612889565b61014c7f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020016100c8565b6100e461017f3660046128ab565b610b48565b6100bb61019236600461290f565b610da6565b6101aa6101a5366004612854565b610fd9565b6040516100c89190612980565b6100bb611274565b80516060908067ffffffffffffffff8111156101dd576101dd612311565b60405190808252806020026020018201604052801561024857816020015b610235604051806060016040528060608152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b8152602001906001900390816101fb5790505b50915060005b818110156103e15761029b84828151811061026b5761026b612a3b565b60200260200101517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6000610fd9565b8382815181106102ad576102ad612a3b565b6020026020010151600001819052508381815181106102ce576102ce612a3b565b60200260200101518382815181106102e8576102e8612a3b565b60200260200101516020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505083818151811061033857610338612a3b565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663540acabc6040518163ffffffff1660e01b8152600401602060405180830381865afa15801561038a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103ae9190612a6a565b8382815181106103c0576103c0612a3b565b602090810291909101015160400152806103d981612ab2565b91505061024e565b5050919050565b82516060908067ffffffffffffffff81111561040657610406612311565b60405190808252806020026020018201604052801561047857816020015b61046560405180608001604052806060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b8152602001906001900390816104245790505b50915060005b81811015610644576104dc86828151811061049b5761049b612a3b565b60200260200101518683815181106104b5576104b5612a3b565b60200260200101518684815181106104cf576104cf612a3b565b602002602001015161079d565b8483815181106104ee576104ee612a3b565b602002602001015160000185848151811061050b5761050b612a3b565b602002602001015160200182815250829052505085818151811061053157610531612a3b565b602002602001015183828151811061054b5761054b612a3b565b60200260200101516040019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505085818151811061059b5761059b612a3b565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663540acabc6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156105ed573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106119190612a6a565b83828151811061062357610623612a3b565b6020908102919091010151606001528061063c81612ab2565b91505061047e565b50509392505050565b606060007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa1580156106bc573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01682016040526107029190810190612aea565b805190915060008167ffffffffffffffff81111561072257610722612311565b60405190808252806020026020018201604052801561074b578160200160208202803683370190505b50905060005b82811015610789578582828151811061076c5761076c612a3b565b60209081029190910101528061078181612ab2565b915050610751565b506107948382610b48565b95945050505050565b6040517f03e883e000000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8481166004830152606091600091829161086991620fffff916002917f000000000000000000000000000000000000000000000000000000000000000016906303e883e090602401602060405180830381865afa15801561083d573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108619190612a6a565b901c1661132f565b9050848112610878578461087a565b805b94507f8000000000000000000000000000000000000000000000000000000000000000851315610b3f5760008086126108be576108b961010087612ba8565b6108e1565b60016101006108cd8883612c10565b6108d79190612ba8565b6108e19190612c30565b6040517fa8bc069300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff89811660048301526024820183905291925060009182917f00000000000000000000000000000000000000000000000000000000000000009091169063a8bc069390604401602060405180830381865afa15801561097e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109a29190612a6a565b905060006109b284610100612c57565b6109bd9060ff612c10565b6109c68a612ca3565b6109d09190612c10565b91821b90911c91506109e490508688612c30565b6109ef906001612c10565b935060006109ff898685856113fd565b6040517feb1db01800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff808c1660048301819052929350600092839290916309f0d8cb917f00000000000000000000000000000000000000000000000000000000000000009091169063eb1db01890602401602060405180830381865afa158015610a9f573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ac39190612a6a565b6040518263ffffffff1660e01b8152600401610ae191815260200190565b608060405180830381865afa158015610afe573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b229190612cdb565b935093505050610b378b888787878787611573565b975050505050505b50935093915050565b81516060908067ffffffffffffffff811115610b6657610b66612311565b604051908082528060200260200182016040528015610bd857816020015b610bc560405180608001604052806060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b815260200190600190039081610b845790505b50915060005b81811015610d9e57610c36858281518110610bfb57610bfb612a3b565b60200260200101517f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8684815181106104cf576104cf612a3b565b848381518110610c4857610c48612a3b565b6020026020010151600001858481518110610c6557610c65612a3b565b6020026020010151602001828152508290525050848181518110610c8b57610c8b612a3b565b6020026020010151838281518110610ca557610ca5612a3b565b60200260200101516040019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050848181518110610cf557610cf5612a3b565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663540acabc6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610d47573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d6b9190612a6a565b838281518110610d7d57610d7d612a3b565b60209081029190910101516060015280610d9681612ab2565b915050610bde565b505092915050565b82516060908067ffffffffffffffff811115610dc457610dc4612311565b604051908082528060200260200182016040528015610e2f57816020015b610e1c604051806060016040528060608152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b815260200190600190039081610de25790505b50915060005b8181101561064457610e93868281518110610e5257610e52612a3b565b6020026020010151868381518110610e6c57610e6c612a3b565b6020026020010151868481518110610e8657610e86612a3b565b6020026020010151610fd9565b838281518110610ea557610ea5612a3b565b602002602001015160000181905250858181518110610ec657610ec6612a3b565b6020026020010151838281518110610ee057610ee0612a3b565b60200260200101516020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050858181518110610f3057610f30612a3b565b602002602001015173ffffffffffffffffffffffffffffffffffffffff1663540acabc6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610f82573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610fa69190612a6a565b838281518110610fb857610fb8612a3b565b60209081029190910101516040015280610fd181612ab2565b915050610e35565b6040517f03e883e000000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84811660048301526060916000917f000000000000000000000000000000000000000000000000000000000000000016906303e883e090602401602060405180830381865afa15801561106b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061108f9190612a6a565b9050603481901c633fffffff1683156110a857836110ab565b60015b93508481106110ba57846110bc565b805b945083851015611153576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603a60248201527f66726f6d4272616e636849645f206d757374206265206772656174657220746860448201527f616e206f7220657175616c20746f20746f4272616e636849645f00000000000060648201526084015b60405180910390fd5b61115d8486612d11565b611168906001612d24565b67ffffffffffffffff81111561118057611180612311565b60405190808252806020026020018201604052801561121557816020015b6112026040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b81526020019060019003908161119e5790505b5092506000855b8581106112695761122e8885836118ff565b858361123981612ab2565b94508151811061124b5761124b612a3b565b6020026020010181905250808061126190612d37565b91505061121c565b505050509392505050565b606061132a7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663a8d9f4936040518163ffffffff1660e01b8152600401600060405180830381865afa1580156112e4573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01682016040526100b69190810190612aea565b905090565b6000620fffff821061139d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f696e76616c69642d6e756d626572000000000000000000000000000000000000604482015260640161114a565b81156113d657816001166001146113c5576113c0600183901c6207ffff16612ca3565b6113d0565b6207ffff600183901c165b92915050565b507f8000000000000000000000000000000000000000000000000000000000000000919050565b60008060005b83156114785761141284611a81565b915061142082610101612d11565b61142c83610101612d11565b9490941b90931c9261143f600183612d11565b61144b86610100612c57565b6114559190612c10565b90508581121561146657505061156b565b8261147081612ab2565b935050611403565b61148185612d6c565b94507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff7f8514611568576040517fa8bc069300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8881166004830152602482018790527f0000000000000000000000000000000000000000000000000000000000000000169063a8bc069390604401602060405180830381865afa15801561153d573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906115619190612a6a565b9350611403565b50505b949350505050565b60608367ffffffffffffffff81111561158e5761158e612311565b6040519080825280602002602001820160405280156115f857816020015b6115e56040518060c001604052806000815260200160008152602001600081526020016000815260200160008152602001600081525090565b8152602001906001900390816115ac5790505b509050600093506000806000805b88156117ff5760006116178a611a81565b905061162581610101612d11565b61163182610101612d11565b9a909a1b90991c98611644600182612d11565b6116508c610100612c57565b61165a9190612c10565b9450508a84121561166e57505050506118f4565b6040517f168a11c200000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8d811660048301526024820186905267ffffffffffffffff916019917f0000000000000000000000000000000000000000000000000000000000000000169063168a11c290604401602060405180830381865afa15801561170e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906117329190612a6a565b901c16600881901c60ff9091161b925061174b84611b37565b915081611765846c01000000000000000000000000612d9d565b61176f9190612db4565b90506040518060c0016040528084815260200182815260200164e8d4a51000888661179a9190612d9d565b6117a49190612db4565b815260200164e8d4a510006117b98a85612d9d565b6117c39190612db4565b81526020810184905260400185905285896117dd81612ab2565b9a50815181106117ef576117ef612a3b565b6020026020010181905250611606565b6118088a612d6c565b99507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff7f8a146118ef576040517fa8bc069300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8d81166004830152602482018c90527f0000000000000000000000000000000000000000000000000000000000000000169063a8bc069390604401602060405180830381865afa1580156118c4573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906118e89190612a6a565b9850611606565b505050505b979650505050505050565b6119636040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040517fbf518f5f00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8581166004830152602482018490526000917f00000000000000000000000000000000000000000000000000000000000000009091169063bf518f5f90604401602060405180830381865afa1580156119fb573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190611a1f9190612a6a565b90506000611a35620fffff600284901c1661132f565b9050600382166000819003611a5a57611a5086848784611d99565b9350505050611a7a565b80600103611a6f57611a508784878486611ed7565b611a50838683612147565b9392505050565b6000816fffffffffffffffffffffffffffffffff831115611aa35760809150811c5b67ffffffffffffffff811115611abb576040918201911c5b63ffffffff811115611acf576020918201911c5b61ffff811115611ae1576010918201911c5b60ff811115611af2576008918201911c5b600f811115611b03576004918201911c5b6003811115611b14576002918201911c5b6001811115611b24576001820191505b8015611b31576001820191505b50919050565b600060ff82901d80831803617fff811115611b5157600080fd5b7001000000000000000000000000000000006001821615611b7f57506fff9dd7de423466c20352b1246ce4856f5b6002821615611b9e576fff3bd55f4488ad277531fa1c725a66d00260801c5b6004821615611bbd576ffe78410fd6498b73cb96a6917f8532590260801c5b6008821615611bdc576ffcf2d9987c9be178ad5bfeffaa1232730260801c5b6010821615611bfb576ff9ef02c4529258b057769680fc6601b30260801c5b6020821615611c1a576ff402d288133a85a17784a411f7aba0820260801c5b6040821615611c39576fe895615b5beb6386553757b0352bda900260801c5b6080821615611c58576fd34f17a00ffa00a8309940a15930391a0260801c5b610100821615611c78576fae6b7961714e20548d88ea5123f9a0ff0260801c5b610200821615611c98576f76d6461f27082d74e0feed3b388c0ca10260801c5b610400821615611cb8576f372a3bfe0745d8b6b19d985d9a8b85bb0260801c5b610800821615611cd8576f0be32cbee48979763cf7247dd7bb539d0260801c5b611000821615611cf7576e8d4f70c9ff4924dac37612d1e2921e0260801c5b612000821615611d15576d4e009ae5519380809a02ca7aec770260801c5b614000821615611d31576b17c45e641b6e95dee056ff100260801c5b600091507f80000000000000000000000000000000000000000000000000000000000000008416611d8f577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0463ffffffff811615611d8f57600191505b60201c0192915050565b611dfd6040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6000611e11620fffff600288901c1661132f565b905060007f80000000000000000000000000000000000000000000000000000000000000008213611e43576000611e4c565b611e4c82611b37565b905060405180610180016040528060008152602001600081526020016000815260200160008152602001868152602001858152602001838152602001600081526020018281526020016603ffffffffffff607489901c168152602001633fffffff60a689901c168152602001611eca620fffff60c48a901c1661132f565b9052979650505050505050565b611f3b6040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b603c85901c66ffffffffffffff16603486901c60ff161b600080611f60888487612275565b6040517feb1db01800000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff808d1660048301819052939550919350600092839290916309f0d8cb917f0000000000000000000000000000000000000000000000000000000000000000169063eb1db01890602401602060405180830381865afa158015612001573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906120259190612a6a565b6040518263ffffffff1660e01b815260040161204391815260200190565b608060405180830381865afa158015612060573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906120849190612cdb565b93509350505060405180610180016040528086815260200185815260200164e8d4a5100083886120b49190612d9d565b6120be9190612db4565b815260200164e8d4a510006120d38588612d9d565b6120dd9190612db4565b81526020018a8152602001898152602001888152602001600081526020018481526020016603ffffffffffff60748d901c168152602001633fffffff60a68d901c168152602001612136620fffff60c48e901c1661132f565b90529b9a5050505050505050505050565b6121ab6040518061018001604052806000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b60006121bf620fffff60c487901c1661132f565b905060007f800000000000000000000000000000000000000000000000000000000000000082136121f15760006121fa565b6121fa82611b37565b905060405180610180016040528060008152602001600081526020016000815260200160008152602001868152602001858152602001838152602001600081526020018281526020016603ffffffffffff607489901c168152602001633fffffff60a689901c16815260200183815250925050509392505050565b6000806122848360020b611b37565b9050600061271f61229783612710612d9d565b6122a19190612db4565b905060006122af8284612d11565b9050633fffffff601688901c8116906000906122cb8385612d9d565b6122d59190612db4565b6122df9085612d24565b9050806122f96c010000000000000000000000008a612d9d565b6123039190612db4565b955050505050935093915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561238757612387612311565b604052919050565b600067ffffffffffffffff8211156123a9576123a9612311565b5060051b60200190565b73ffffffffffffffffffffffffffffffffffffffff811681146123d557600080fd5b50565b600082601f8301126123e957600080fd5b813560206123fe6123f98361238f565b612340565b82815260059290921b8401810191818101908684111561241d57600080fd5b8286015b84811015612441578035612434816123b3565b8352918301918301612421565b509695505050505050565b60006020828403121561245e57600080fd5b813567ffffffffffffffff81111561247557600080fd5b61156b848285016123d8565b60006020808301818452808551808352604092508286019150828160051b8701018488016000805b848110156125c7578984037fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0018652825180516060808752815190870181905260808701918b019085905b8082101561258b578251805185526020808201519086015260408082015190860152606080820151908601526080808201519086015260a0808201519086015260c0808201519086015260e080820151908601526101008082015190860152610120808201519086015261014080820151908601526101609081015190850152610180840193508c830192506001820191506124f4565b505050818a015173ffffffffffffffffffffffffffffffffffffffff16868b0152908801519488019490945294870194918701916001016124a9565b50919998505050505050505050565b600082601f8301126125e757600080fd5b813560206125f76123f98361238f565b82815260059290921b8401810191818101908684111561261657600080fd5b8286015b84811015612441578035835291830191830161261a565b60008060006060848603121561264657600080fd5b833567ffffffffffffffff8082111561265e57600080fd5b61266a878388016123d8565b945060209150818601358181111561268157600080fd5b8601601f8101881361269257600080fd5b80356126a06123f98261238f565b81815260059190911b8201840190848101908a8311156126bf57600080fd5b928501925b828410156126dd578335825292850192908501906126c4565b965050505060408601359150808211156126f657600080fd5b50612703868287016125d6565b9150509250925092565b600081518084526020808501945080840160005b8381101561277157815180518852838101518489015260408082015190890152606080820151908901526080808201519089015260a0908101519088015260c09096019590820190600101612721565b509495945050505050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b8381101561282d577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc08984030185528151608081518186526127e78287018261270d565b838b0151878c01528984015173ffffffffffffffffffffffffffffffffffffffff168a8801526060938401519390960192909252505093860193908601906001016127a3565b509098975050505050505050565b60006020828403121561284d57600080fd5b5035919050565b60008060006060848603121561286957600080fd5b8335612874816123b3565b95602085013595506040909401359392505050565b60408152600061289c604083018561270d565b90508260208301529392505050565b600080604083850312156128be57600080fd5b823567ffffffffffffffff808211156128d657600080fd5b6128e2868387016123d8565b935060208501359150808211156128f857600080fd5b50612905858286016125d6565b9150509250929050565b60008060006060848603121561292457600080fd5b833567ffffffffffffffff8082111561293c57600080fd5b612948878388016123d8565b9450602086013591508082111561295e57600080fd5b61296a878388016125d6565b935060408601359150808211156126f657600080fd5b6020808252825182820181905260009190848201906040850190845b81811015612a2f578351805184526020808201519085015260408082015190850152606080820151908501526080808201519085015260a0808201519085015260c0808201519085015260e080820151908501526101008082015190850152610120808201519085015261014080820151908501526101609081015190840152610180830193850193925060010161299c565b50909695505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600060208284031215612a7c57600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203612ae357612ae3612a83565b5060010190565b60006020808385031215612afd57600080fd5b825167ffffffffffffffff811115612b1457600080fd5b8301601f81018513612b2557600080fd5b8051612b336123f98261238f565b81815260059190911b82018301908381019087831115612b5257600080fd5b928401925b828410156118f4578351612b6a816123b3565b82529284019290840190612b57565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b600082612bb757612bb7612b79565b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff83147f800000000000000000000000000000000000000000000000000000000000000083141615612c0b57612c0b612a83565b500590565b8082018281126000831280158216821582161715610d9e57610d9e612a83565b8181036000831280158383131683831282161715612c5057612c50612a83565b5092915050565b808202600082127f800000000000000000000000000000000000000000000000000000000000000084141615612c8f57612c8f612a83565b81810583148215176113d0576113d0612a83565b60007f80000000000000000000000000000000000000000000000000000000000000008203612cd457612cd4612a83565b5060000390565b60008060008060808587031215612cf157600080fd5b505082516020840151604085015160609095015191969095509092509050565b818103818111156113d0576113d0612a83565b808201808211156113d0576113d0612a83565b600081612d4657612d46612a83565b507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0190565b60007f80000000000000000000000000000000000000000000000000000000000000008203612d4657612d46612a83565b80820281158282048414176113d0576113d0612a83565b600082612dc357612dc3612b79565b50049056fea264697066735822122086c34290494d122bdcc4958ade73f20a0fc4dd19f1c0709b679dbdcae5e0eeb864736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "errors": {
+      "FluidVaultTicksBranchesResolver__AddressZero()": [
+        {
+          "notice": "thrown if an input param address is zero"
+        }
+      ]
+    },
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "constructor sets the immutable vault resolver address"
+      }
+    },
+    "notice": "Fluid Vault protocol ticks & branches resolver for all vault types.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

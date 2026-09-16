@@ -1,0 +1,26 @@
+# Generated or vendored trees. Leading `/` anchors to the repo root: bare `cache/` would also
+# swallow a real `contracts/cache/`, since these are gitignore-style patterns.
+/lib/
+/out/
+/forge-cache/
+/cache/
+/artifacts/
+/typechain/
+/typechain-types/
+/coverage/
+/docs/contracts/
+/txs-batches/
+
+# hardhat-deploy artifacts
+deployments/**/*.json
+
+# Deployment log: do not auto-format (structure and line length must be preserved)
+deployments/deployments.md
+deployments/AGI3/deployments.md
+
+# prettier-plugin-solidity 1.1.1 cannot parse these: `transient` state variables (Solidity 0.8.24+)
+# and file-level `event` declarations (0.8.22+). Reformatting them needs the plugin upgrade
+# described in .cursor/rules/solidity-formatting.mdc.
+contracts/oracleV2/usdOracle/variables.sol
+contracts/protocols/dexLite/adminModule/events.sol
+contracts/protocols/dexLite/other/events.sol
