@@ -1,0 +1,836 @@
+{
+  "address": "0x83fB87c8E85AD854f1B2D030f925211C6ae71D6d",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "lendingResolver_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "FluidStakingRewardsResolver__AddressZero",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "LENDING_RESOLVER",
+      "outputs": [
+        {
+          "internalType": "contract IFluidLendingResolver",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "reward_",
+          "type": "address"
+        }
+      ],
+      "name": "getFTokenStakingRewardsEntireData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "rewardPerToken",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "getRewardForDuration",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalSupply",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "periodFinish",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rewardRate",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rewardsDuration",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "rewardsToken",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "fToken",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct Structs.FTokenStakingRewardsDetails",
+          "name": "r_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "rewards_",
+          "type": "address[]"
+        }
+      ],
+      "name": "getFTokensStakingRewardsEntireData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "rewardPerToken",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "getRewardForDuration",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalSupply",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "periodFinish",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rewardRate",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rewardsDuration",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "rewardsToken",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "fToken",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct Structs.FTokenStakingRewardsDetails[]",
+          "name": "r_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "rewards_",
+          "type": "address[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "tokenAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "eip2612Deposits",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isNativeUnderlying",
+              "type": "bool"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "symbol",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "decimals",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "asset",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalAssets",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalSupply",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "convertToShares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "convertToAssets",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rewardsRate",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyRate",
+              "type": "uint256"
+            },
+            {
+              "internalType": "int256",
+              "name": "rebalanceDifference",
+              "type": "int256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bool",
+                  "name": "modeWithInterest",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "supply",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "withdrawalLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lastUpdateTimestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "expandPercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "expandDuration",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "baseWithdrawalLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "withdrawableUntilLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "withdrawable",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Structs.UserSupplyData",
+              "name": "liquidityUserSupplyData",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.FTokenDetails[]",
+          "name": "fTokensDetails_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "getUserAllRewardsData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "earned",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fTokenShares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "underlyingAssets",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ftokenAllowance",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.UserRewardDetails[]",
+          "name": "u_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "underlyingToken",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "rewardContract",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct FluidStakingRewardsResolver.underlyingTokenToRewardsMap[]",
+          "name": "rewardsMap_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "getUserPositions",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "tokenAddress",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "eip2612Deposits",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isNativeUnderlying",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "string",
+                  "name": "name",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "symbol",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "decimals",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "asset",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "totalAssets",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "totalSupply",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "convertToShares",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "convertToAssets",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "rewardsRate",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "supplyRate",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "rebalanceDifference",
+                  "type": "int256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "bool",
+                      "name": "modeWithInterest",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "supply",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "withdrawalLimit",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "lastUpdateTimestamp",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "expandPercent",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "expandDuration",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "baseWithdrawalLimit",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "withdrawableUntilLimit",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "withdrawable",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct Structs.UserSupplyData",
+                  "name": "liquidityUserSupplyData",
+                  "type": "tuple"
+                }
+              ],
+              "internalType": "struct Structs.FTokenDetails",
+              "name": "fTokenDetails",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "fTokenShares",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "underlyingAssets",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "underlyingBalance",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "allowance",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Structs.UserPosition",
+              "name": "userPosition",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "rewardPerToken",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "getRewardForDuration",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "totalSupply",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "periodFinish",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "rewardRate",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "rewardsDuration",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "rewardsToken",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "fToken",
+                  "type": "address"
+                }
+              ],
+              "internalType": "struct Structs.FTokenStakingRewardsDetails",
+              "name": "fTokenRewardsDetails",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "earned",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "fTokenShares",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "underlyingAssets",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "ftokenAllowance",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Structs.UserRewardDetails",
+              "name": "userRewardsDetails",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.UserFTokenRewardsEntireData[]",
+          "name": "u_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "reward_",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "tokenAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "eip2612Deposits",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isNativeUnderlying",
+              "type": "bool"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "symbol",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "decimals",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "asset",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalAssets",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalSupply",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "convertToShares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "convertToAssets",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rewardsRate",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyRate",
+              "type": "uint256"
+            },
+            {
+              "internalType": "int256",
+              "name": "rebalanceDifference",
+              "type": "int256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bool",
+                  "name": "modeWithInterest",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "supply",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "withdrawalLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "lastUpdateTimestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "expandPercent",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "expandDuration",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "baseWithdrawalLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "withdrawableUntilLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "withdrawable",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Structs.UserSupplyData",
+              "name": "liquidityUserSupplyData",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Structs.FTokenDetails",
+          "name": "fTokenDetails_",
+          "type": "tuple"
+        }
+      ],
+      "name": "getUserRewardsData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "earned",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fTokenShares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "underlyingAssets",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ftokenAllowance",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.UserRewardDetails",
+          "name": "u_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa2484640f93056d7d2cbfacfdd4aff8133535b8c64652ea822ab87ec35287427",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 130,
+    "gasUsed": "1876909",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000008000000000000000000000000000000000000000000000000000000000800000000000000000000100000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000001000000000000000000000000000000004000800000000000040001000000008000000000000000000000100000000000000000020000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0x35448986eece231e5608ff4124a6978ec9867418f5a26cdedfafab0a085af8fc",
+    "transactionHash": "0xa2484640f93056d7d2cbfacfdd4aff8133535b8c64652ea822ab87ec35287427",
+    "logs": [
+      {
+        "transactionIndex": 130,
+        "blockNumber": 68518529,
+        "transactionHash": "0xa2484640f93056d7d2cbfacfdd4aff8133535b8c64652ea822ab87ec35287427",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000ed35b1609ec45c7079e80d11149a52717e4859a",
+          "0x00000000000000000000000067b94473d81d0cd00849d563c94d0432ac988b49"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000db6836777af580000000000000000000000000000000000000000000000000be48f53804493095000000000000000000000000000000000000000000000433089e7a6cd675db5a000000000000000000000000000000000000000000000000bd6d8d018cce3b150000000000000000000000000000000000000000000004330979e2a34df0d0da",
+        "logIndex": 644,
+        "blockHash": "0x35448986eece231e5608ff4124a6978ec9867418f5a26cdedfafab0a085af8fc"
+      }
+    ],
+    "blockNumber": 68518529,
+    "cumulativeGasUsed": "18694004",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x8e72291D5e6f4AAB552cc827fB857a931Fc5CAC1"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "4f63da12d66a256eeca1b26617ce10fe",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"lendingResolver_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"FluidStakingRewardsResolver__AddressZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LENDING_RESOLVER\",\"outputs\":[{\"internalType\":\"contract IFluidLendingResolver\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"reward_\",\"type\":\"address\"}],\"name\":\"getFTokenStakingRewardsEntireData\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"rewardPerToken\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"getRewardForDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"periodFinish\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardsDuration\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"rewardsToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"fToken\",\"type\":\"address\"}],\"internalType\":\"struct Structs.FTokenStakingRewardsDetails\",\"name\":\"r_\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"rewards_\",\"type\":\"address[]\"}],\"name\":\"getFTokensStakingRewardsEntireData\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"rewardPerToken\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"getRewardForDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"periodFinish\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardsDuration\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"rewardsToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"fToken\",\"type\":\"address\"}],\"internalType\":\"struct Structs.FTokenStakingRewardsDetails[]\",\"name\":\"r_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"rewards_\",\"type\":\"address[]\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"eip2612Deposits\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isNativeUnderlying\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"symbol\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"decimals\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"asset\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"convertToShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"convertToAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardsRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyRate\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"rebalanceDifference\",\"type\":\"int256\"},{\"components\":[{\"internalType\":\"bool\",\"name\":\"modeWithInterest\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"supply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdateTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseWithdrawalLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawableUntilLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawable\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserSupplyData\",\"name\":\"liquidityUserSupplyData\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.FTokenDetails[]\",\"name\":\"fTokensDetails_\",\"type\":\"tuple[]\"}],\"name\":\"getUserAllRewardsData\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"earned\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"fTokenShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"underlyingAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ftokenAllowance\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserRewardDetails[]\",\"name\":\"u_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"underlyingToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"rewardContract\",\"type\":\"address\"}],\"internalType\":\"struct FluidStakingRewardsResolver.underlyingTokenToRewardsMap[]\",\"name\":\"rewardsMap_\",\"type\":\"tuple[]\"}],\"name\":\"getUserPositions\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"eip2612Deposits\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isNativeUnderlying\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"symbol\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"decimals\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"asset\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"convertToShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"convertToAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardsRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyRate\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"rebalanceDifference\",\"type\":\"int256\"},{\"components\":[{\"internalType\":\"bool\",\"name\":\"modeWithInterest\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"supply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdateTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseWithdrawalLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawableUntilLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawable\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserSupplyData\",\"name\":\"liquidityUserSupplyData\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.FTokenDetails\",\"name\":\"fTokenDetails\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"fTokenShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"underlyingAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"underlyingBalance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"allowance\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserPosition\",\"name\":\"userPosition\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"rewardPerToken\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"getRewardForDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"periodFinish\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardsDuration\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"rewardsToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"fToken\",\"type\":\"address\"}],\"internalType\":\"struct Structs.FTokenStakingRewardsDetails\",\"name\":\"fTokenRewardsDetails\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"earned\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"fTokenShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"underlyingAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ftokenAllowance\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserRewardDetails\",\"name\":\"userRewardsDetails\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.UserFTokenRewardsEntireData[]\",\"name\":\"u_\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"reward_\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"eip2612Deposits\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isNativeUnderlying\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"symbol\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"decimals\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"asset\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"convertToShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"convertToAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rewardsRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"supplyRate\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"rebalanceDifference\",\"type\":\"int256\"},{\"components\":[{\"internalType\":\"bool\",\"name\":\"modeWithInterest\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"supply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastUpdateTimestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseWithdrawalLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawableUntilLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawable\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserSupplyData\",\"name\":\"liquidityUserSupplyData\",\"type\":\"tuple\"}],\"internalType\":\"struct Structs.FTokenDetails\",\"name\":\"fTokenDetails_\",\"type\":\"tuple\"}],\"name\":\"getUserRewardsData\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"earned\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"fTokenShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"underlyingAssets\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ftokenAllowance\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserRewardDetails\",\"name\":\"u_\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"FluidStakingRewardsResolver__AddressZero()\":[{\"notice\":\"thrown if an input param address is zero\"}]},\"kind\":\"user\",\"methods\":{},\"notice\":\"Fluid Lending protocol Staking Rewards (for fTokens) resolver Implements various view-only methods to give easy access to Lending protocol staked fToken rewards data.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/periphery/resolvers/stakingRewards/main.sol\":\"FluidStakingRewardsResolver\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/interfaces/IERC4626.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (interfaces/IERC4626.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../token/ERC20/IERC20.sol\\\";\\nimport \\\"../token/ERC20/extensions/IERC20Metadata.sol\\\";\\n\\n/**\\n * @dev Interface of the ERC4626 \\\"Tokenized Vault Standard\\\", as defined in\\n * https://eips.ethereum.org/EIPS/eip-4626[ERC-4626].\\n *\\n * _Available since v4.7._\\n */\\ninterface IERC4626 is IERC20, IERC20Metadata {\\n    event Deposit(address indexed sender, address indexed owner, uint256 assets, uint256 shares);\\n\\n    event Withdraw(\\n        address indexed sender,\\n        address indexed receiver,\\n        address indexed owner,\\n        uint256 assets,\\n        uint256 shares\\n    );\\n\\n    /**\\n     * @dev Returns the address of the underlying token used for the Vault for accounting, depositing, and withdrawing.\\n     *\\n     * - MUST be an ERC-20 token contract.\\n     * - MUST NOT revert.\\n     */\\n    function asset() external view returns (address assetTokenAddress);\\n\\n    /**\\n     * @dev Returns the total amount of the underlying asset that is \\u201cmanaged\\u201d by Vault.\\n     *\\n     * - SHOULD include any compounding that occurs from yield.\\n     * - MUST be inclusive of any fees that are charged against assets in the Vault.\\n     * - MUST NOT revert.\\n     */\\n    function totalAssets() external view returns (uint256 totalManagedAssets);\\n\\n    /**\\n     * @dev Returns the amount of shares that the Vault would exchange for the amount of assets provided, in an ideal\\n     * scenario where all the conditions are met.\\n     *\\n     * - MUST NOT be inclusive of any fees that are charged against assets in the Vault.\\n     * - MUST NOT show any variations depending on the caller.\\n     * - MUST NOT reflect slippage or other on-chain conditions, when performing the actual exchange.\\n     * - MUST NOT revert.\\n     *\\n     * NOTE: This calculation MAY NOT reflect the \\u201cper-user\\u201d price-per-share, and instead should reflect the\\n     * \\u201caverage-user\\u2019s\\u201d price-per-share, meaning what the average user should expect to see when exchanging to and\\n     * from.\\n     */\\n    function convertToShares(uint256 assets) external view returns (uint256 shares);\\n\\n    /**\\n     * @dev Returns the amount of assets that the Vault would exchange for the amount of shares provided, in an ideal\\n     * scenario where all the conditions are met.\\n     *\\n     * - MUST NOT be inclusive of any fees that are charged against assets in the Vault.\\n     * - MUST NOT show any variations depending on the caller.\\n     * - MUST NOT reflect slippage or other on-chain conditions, when performing the actual exchange.\\n     * - MUST NOT revert.\\n     *\\n     * NOTE: This calculation MAY NOT reflect the \\u201cper-user\\u201d price-per-share, and instead should reflect the\\n     * \\u201caverage-user\\u2019s\\u201d price-per-share, meaning what the average user should expect to see when exchanging to and\\n     * from.\\n     */\\n    function convertToAssets(uint256 shares) external view returns (uint256 assets);\\n\\n    /**\\n     * @dev Returns the maximum amount of the underlying asset that can be deposited into the Vault for the receiver,\\n     * through a deposit call.\\n     *\\n     * - MUST return a limited value if receiver is subject to some deposit limit.\\n     * - MUST return 2 ** 256 - 1 if there is no limit on the maximum amount of assets that may be deposited.\\n     * - MUST NOT revert.\\n     */\\n    function maxDeposit(address receiver) external view returns (uint256 maxAssets);\\n\\n    /**\\n     * @dev Allows an on-chain or off-chain user to simulate the effects of their deposit at the current block, given\\n     * current on-chain conditions.\\n     *\\n     * - MUST return as close to and no more than the exact amount of Vault shares that would be minted in a deposit\\n     *   call in the same transaction. I.e. deposit should return the same or more shares as previewDeposit if called\\n     *   in the same transaction.\\n     * - MUST NOT account for deposit limits like those returned from maxDeposit and should always act as though the\\n     *   deposit would be accepted, regardless if the user has enough tokens approved, etc.\\n     * - MUST be inclusive of deposit fees. Integrators should be aware of the existence of deposit fees.\\n     * - MUST NOT revert.\\n     *\\n     * NOTE: any unfavorable discrepancy between convertToShares and previewDeposit SHOULD be considered slippage in\\n     * share price or some other type of condition, meaning the depositor will lose assets by depositing.\\n     */\\n    function previewDeposit(uint256 assets) external view returns (uint256 shares);\\n\\n    /**\\n     * @dev Mints shares Vault shares to receiver by depositing exactly amount of underlying tokens.\\n     *\\n     * - MUST emit the Deposit event.\\n     * - MAY support an additional flow in which the underlying tokens are owned by the Vault contract before the\\n     *   deposit execution, and are accounted for during deposit.\\n     * - MUST revert if all of assets cannot be deposited (due to deposit limit being reached, slippage, the user not\\n     *   approving enough underlying tokens to the Vault contract, etc).\\n     *\\n     * NOTE: most implementations will require pre-approval of the Vault with the Vault\\u2019s underlying asset token.\\n     */\\n    function deposit(uint256 assets, address receiver) external returns (uint256 shares);\\n\\n    /**\\n     * @dev Returns the maximum amount of the Vault shares that can be minted for the receiver, through a mint call.\\n     * - MUST return a limited value if receiver is subject to some mint limit.\\n     * - MUST return 2 ** 256 - 1 if there is no limit on the maximum amount of shares that may be minted.\\n     * - MUST NOT revert.\\n     */\\n    function maxMint(address receiver) external view returns (uint256 maxShares);\\n\\n    /**\\n     * @dev Allows an on-chain or off-chain user to simulate the effects of their mint at the current block, given\\n     * current on-chain conditions.\\n     *\\n     * - MUST return as close to and no fewer than the exact amount of assets that would be deposited in a mint call\\n     *   in the same transaction. I.e. mint should return the same or fewer assets as previewMint if called in the\\n     *   same transaction.\\n     * - MUST NOT account for mint limits like those returned from maxMint and should always act as though the mint\\n     *   would be accepted, regardless if the user has enough tokens approved, etc.\\n     * - MUST be inclusive of deposit fees. Integrators should be aware of the existence of deposit fees.\\n     * - MUST NOT revert.\\n     *\\n     * NOTE: any unfavorable discrepancy between convertToAssets and previewMint SHOULD be considered slippage in\\n     * share price or some other type of condition, meaning the depositor will lose assets by minting.\\n     */\\n    function previewMint(uint256 shares) external view returns (uint256 assets);\\n\\n    /**\\n     * @dev Mints exactly shares Vault shares to receiver by depositing amount of underlying tokens.\\n     *\\n     * - MUST emit the Deposit event.\\n     * - MAY support an additional flow in which the underlying tokens are owned by the Vault contract before the mint\\n     *   execution, and are accounted for during mint.\\n     * - MUST revert if all of shares cannot be minted (due to deposit limit being reached, slippage, the user not\\n     *   approving enough underlying tokens to the Vault contract, etc).\\n     *\\n     * NOTE: most implementations will require pre-approval of the Vault with the Vault\\u2019s underlying asset token.\\n     */\\n    function mint(uint256 shares, address receiver) external returns (uint256 assets);\\n\\n    /**\\n     * @dev Returns the maximum amount of the underlying asset that can be withdrawn from the owner balance in the\\n     * Vault, through a withdraw call.\\n     *\\n     * - MUST return a limited value if owner is subject to some withdrawal limit or timelock.\\n     * - MUST NOT revert.\\n     */\\n    function maxWithdraw(address owner) external view returns (uint256 maxAssets);\\n\\n    /**\\n     * @dev Allows an on-chain or off-chain user to simulate the effects of their withdrawal at the current block,\\n     * given current on-chain conditions.\\n     *\\n     * - MUST return as close to and no fewer than the exact amount of Vault shares that would be burned in a withdraw\\n     *   call in the same transaction. I.e. withdraw should return the same or fewer shares as previewWithdraw if\\n     *   called\\n     *   in the same transaction.\\n     * - MUST NOT account for withdrawal limits like those returned from maxWithdraw and should always act as though\\n     *   the withdrawal would be accepted, regardless if the user has enough shares, etc.\\n     * - MUST be inclusive of withdrawal fees. Integrators should be aware of the existence of withdrawal fees.\\n     * - MUST NOT revert.\\n     *\\n     * NOTE: any unfavorable discrepancy between convertToShares and previewWithdraw SHOULD be considered slippage in\\n     * share price or some other type of condition, meaning the depositor will lose assets by depositing.\\n     */\\n    function previewWithdraw(uint256 assets) external view returns (uint256 shares);\\n\\n    /**\\n     * @dev Burns shares from owner and sends exactly assets of underlying tokens to receiver.\\n     *\\n     * - MUST emit the Withdraw event.\\n     * - MAY support an additional flow in which the underlying tokens are owned by the Vault contract before the\\n     *   withdraw execution, and are accounted for during withdraw.\\n     * - MUST revert if all of assets cannot be withdrawn (due to withdrawal limit being reached, slippage, the owner\\n     *   not having enough shares, etc).\\n     *\\n     * Note that some implementations will require pre-requesting to the Vault before a withdrawal may be performed.\\n     * Those methods should be performed separately.\\n     */\\n    function withdraw(\\n        uint256 assets,\\n        address receiver,\\n        address owner\\n    ) external returns (uint256 shares);\\n\\n    /**\\n     * @dev Returns the maximum amount of Vault shares that can be redeemed from the owner balance in the Vault,\\n     * through a redeem call.\\n     *\\n     * - MUST return a limited value if owner is subject to some withdrawal limit or timelock.\\n     * - MUST return balanceOf(owner) if owner is not subject to any withdrawal limit or timelock.\\n     * - MUST NOT revert.\\n     */\\n    function maxRedeem(address owner) external view returns (uint256 maxShares);\\n\\n    /**\\n     * @dev Allows an on-chain or off-chain user to simulate the effects of their redeemption at the current block,\\n     * given current on-chain conditions.\\n     *\\n     * - MUST return as close to and no more than the exact amount of assets that would be withdrawn in a redeem call\\n     *   in the same transaction. I.e. redeem should return the same or more assets as previewRedeem if called in the\\n     *   same transaction.\\n     * - MUST NOT account for redemption limits like those returned from maxRedeem and should always act as though the\\n     *   redemption would be accepted, regardless if the user has enough shares, etc.\\n     * - MUST be inclusive of withdrawal fees. Integrators should be aware of the existence of withdrawal fees.\\n     * - MUST NOT revert.\\n     *\\n     * NOTE: any unfavorable discrepancy between convertToAssets and previewRedeem SHOULD be considered slippage in\\n     * share price or some other type of condition, meaning the depositor will lose assets by redeeming.\\n     */\\n    function previewRedeem(uint256 shares) external view returns (uint256 assets);\\n\\n    /**\\n     * @dev Burns exactly shares from owner and sends assets of underlying tokens to receiver.\\n     *\\n     * - MUST emit the Withdraw event.\\n     * - MAY support an additional flow in which the underlying tokens are owned by the Vault contract before the\\n     *   redeem execution, and are accounted for during redeem.\\n     * - MUST revert if all of shares cannot be redeemed (due to withdrawal limit being reached, slippage, the owner\\n     *   not having enough shares, etc).\\n     *\\n     * NOTE: some implementations will require pre-requesting to the Vault before a withdrawal may be performed.\\n     * Those methods should be performed separately.\\n     */\\n    function redeem(\\n        uint256 shares,\\n        address receiver,\\n        address owner\\n    ) external returns (uint256 assets);\\n}\\n\",\"keccak256\":\"0xd82776ed6975a5939668e068f995acb1394c2f60a12a9ef3f14cacb91b5a8fd4\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) external returns (bool);\\n}\\n\",\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/IERC20Metadata.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../IERC20.sol\\\";\\n\\n/**\\n * @dev Interface for the optional metadata functions from the ERC20 standard.\\n *\\n * _Available since v4.1._\\n */\\ninterface IERC20Metadata is IERC20 {\\n    /**\\n     * @dev Returns the name of the token.\\n     */\\n    function name() external view returns (string memory);\\n\\n    /**\\n     * @dev Returns the symbol of the token.\\n     */\\n    function symbol() external view returns (string memory);\\n\\n    /**\\n     * @dev Returns the decimals places of the token.\\n     */\\n    function decimals() external view returns (uint8);\\n}\\n\",\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/draft-IERC20Permit.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 Permit extension allowing approvals to be made via signatures, as defined in\\n * https://eips.ethereum.org/EIPS/eip-2612[EIP-2612].\\n *\\n * Adds the {permit} method, which can be used to change an account's ERC20 allowance (see {IERC20-allowance}) by\\n * presenting a message signed by the account. By not relying on {IERC20-approve}, the token holder account doesn't\\n * need to send a transaction, and thus is not required to hold Ether at all.\\n */\\ninterface IERC20Permit {\\n    /**\\n     * @dev Sets `value` as the allowance of `spender` over ``owner``'s tokens,\\n     * given ``owner``'s signed approval.\\n     *\\n     * IMPORTANT: The same issues {IERC20-approve} has related to transaction\\n     * ordering also apply here.\\n     *\\n     * Emits an {Approval} event.\\n     *\\n     * Requirements:\\n     *\\n     * - `spender` cannot be the zero address.\\n     * - `deadline` must be a timestamp in the future.\\n     * - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`\\n     * over the EIP712-formatted function arguments.\\n     * - the signature must use ``owner``'s current nonce (see {nonces}).\\n     *\\n     * For more information on the signature format, see the\\n     * https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP\\n     * section].\\n     */\\n    function permit(\\n        address owner,\\n        address spender,\\n        uint256 value,\\n        uint256 deadline,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) external;\\n\\n    /**\\n     * @dev Returns the current nonce for `owner`. This value must be\\n     * included whenever a signature is generated for {permit}.\\n     *\\n     * Every successful call to {permit} increases ``owner``'s nonce by one. This\\n     * prevents a signature from being used multiple times.\\n     */\\n    function nonces(address owner) external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.\\n     */\\n    // solhint-disable-next-line func-name-mixedcase\\n    function DOMAIN_SEPARATOR() external view returns (bytes32);\\n}\\n\",\"keccak256\":\"0xf41ca991f30855bf80ffd11e9347856a517b977f0a6c2d52e6421a99b7840329\",\"license\":\"MIT\"},\"contracts/infiniteProxy/interfaces/iProxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IProxy {\\n    function setAdmin(address newAdmin_) external;\\n\\n    function setDummyImplementation(address newDummyImplementation_) external;\\n\\n    function addImplementation(address implementation_, bytes4[] calldata sigs_) external;\\n\\n    function removeImplementation(address implementation_) external;\\n\\n    function getAdmin() external view returns (address);\\n\\n    function getDummyImplementation() external view returns (address);\\n\\n    function getImplementationSigs(address impl_) external view returns (bytes4[] memory);\\n\\n    function getSigsImplementation(bytes4 sig_) external view returns (address);\\n\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n}\\n\",\"keccak256\":\"0xbb605491d4bac08e816248feecae7dd17cfc1877c88b2e555abece2970f5ea00\",\"license\":\"MIT\"},\"contracts/liquidity/adminModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nabstract contract Structs {\\n    struct AddressBool {\\n        address addr;\\n        bool value;\\n    }\\n\\n    struct AddressUint256 {\\n        address addr;\\n        uint256 value;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 1\\n    struct RateDataV1Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink usually means slow increase in rate, once utilization is above kink borrow rate increases fast\\n        uint256 kink;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink borrow rate when utilization is at kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink;\\n        ///\\n        /// @param rateAtUtilizationMax borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 2\\n    struct RateDataV2Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink1 first kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 1 usually means slow increase in rate, once utilization is above kink 1 borrow rate increases faster\\n        uint256 kink1;\\n        ///\\n        /// @param kink2 second kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 2 usually means slow / medium increase in rate, once utilization is above kink 2 borrow rate increases fast\\n        uint256 kink2;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink1 desired borrow rate when utilization is at first kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at first kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink1;\\n        ///\\n        /// @param rateAtUtilizationKink2 desired borrow rate when utilization is at second kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at second kink then rateAtUtilizationKink would be 1_200\\n        uint256 rateAtUtilizationKink2;\\n        ///\\n        /// @param rateAtUtilizationMax desired borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set token config\\n    struct TokenConfig {\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param fee charges on borrower's interest. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 fee;\\n        ///\\n        /// @param threshold on when to update the storage slot. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 threshold;\\n        ///\\n        /// @param maxUtilization maximum allowed utilization. in 1e2: 100% = 10_000; 1% = 100\\n        ///                       set to 100% to disable and have default limit of 100% (avoiding SLOAD).\\n        uint256 maxUtilization;\\n    }\\n\\n    /// @notice struct to set user supply & withdrawal config\\n    struct UserSupplyConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent withdrawal limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which withdrawal limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration withdrawal limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseWithdrawalLimit base limit, below this, user can withdraw the entire amount.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseWithdrawalLimit;\\n    }\\n\\n    /// @notice struct to set user borrow & payback config\\n    struct UserBorrowConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent debt limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which debt limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration debt limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseDebtCeiling base borrow limit. until here, borrow limit remains as baseDebtCeiling\\n        /// (user can borrow until this point at once without stepped expansion). Above this, automated limit comes in place.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseDebtCeiling;\\n        ///\\n        /// @param maxDebtCeiling max borrow ceiling, maximum amount the user can borrow.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 maxDebtCeiling;\\n    }\\n}\\n\",\"keccak256\":\"0x10353c70015f27b880125cefab806dbed24a4458f187da66964f3ef60488f757\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/interfaces/iLiquidity.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { IProxy } from \\\"../../infiniteProxy/interfaces/iProxy.sol\\\";\\nimport { Structs as AdminModuleStructs } from \\\"../adminModule/structs.sol\\\";\\n\\ninterface IFluidLiquidityAdmin {\\n    /// @notice adds/removes auths. Auths generally could be contracts which can have restricted actions defined on contract.\\n    ///         auths can be helpful in reducing governance overhead where it's not needed.\\n    /// @param authsStatus_ array of structs setting allowed status for an address.\\n    ///                     status true => add auth, false => remove auth\\n    function updateAuths(AdminModuleStructs.AddressBool[] calldata authsStatus_) external;\\n\\n    /// @notice adds/removes guardians. Only callable by Governance.\\n    /// @param guardiansStatus_ array of structs setting allowed status for an address.\\n    ///                         status true => add guardian, false => remove guardian\\n    function updateGuardians(AdminModuleStructs.AddressBool[] calldata guardiansStatus_) external;\\n\\n    /// @notice changes the revenue collector address (contract that is sent revenue). Only callable by Governance.\\n    /// @param revenueCollector_  new revenue collector address\\n    function updateRevenueCollector(address revenueCollector_) external;\\n\\n    /// @notice changes current status, e.g. for pausing or unpausing all user operations. Only callable by Auths.\\n    /// @param newStatus_ new status\\n    ///        status = 2 -> pause, status = 1 -> resume.\\n    function changeStatus(uint256 newStatus_) external;\\n\\n    /// @notice                  update tokens rate data version 1. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV1Params with rate data to set for each token\\n    function updateRateDataV1s(AdminModuleStructs.RateDataV1Params[] calldata tokensRateData_) external;\\n\\n    /// @notice                  update tokens rate data version 2. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV2Params with rate data to set for each token\\n    function updateRateDataV2s(AdminModuleStructs.RateDataV2Params[] calldata tokensRateData_) external;\\n\\n    /// @notice updates token configs: fee charge on borrowers interest & storage update utilization threshold.\\n    ///         Only callable by Auths.\\n    /// @param tokenConfigs_ contains token address, fee & utilization threshold\\n    function updateTokenConfigs(AdminModuleStructs.TokenConfig[] calldata tokenConfigs_) external;\\n\\n    /// @notice updates user classes: 0 is for new protocols, 1 is for established protocols.\\n    ///         Only callable by Auths.\\n    /// @param userClasses_ struct array of uint256 value to assign for each user address\\n    function updateUserClasses(AdminModuleStructs.AddressUint256[] calldata userClasses_) external;\\n\\n    /// @notice sets user supply configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userSupplyConfigs_ struct array containing user supply config, see `UserSupplyConfig` struct for more info\\n    function updateUserSupplyConfigs(AdminModuleStructs.UserSupplyConfig[] memory userSupplyConfigs_) external;\\n\\n    /// @notice sets a new withdrawal limit as the current limit for a certain user\\n    /// @param user_ user address for which to update the withdrawal limit\\n    /// @param token_ token address for which to update the withdrawal limit\\n    /// @param newLimit_ new limit until which user supply can decrease to.\\n    ///                  Important: input in raw. Must account for exchange price in input param calculation.\\n    ///                  Note any limit that is < max expansion or > current user supply will set max expansion limit or\\n    ///                  current user supply as limit respectively.\\n    ///                  - set 0 to make maximum possible withdrawable: instant full expansion, and if that goes\\n    ///                  below base limit then fully down to 0.\\n    ///                  - set type(uint256).max to make current withdrawable 0 (sets current user supply as limit).\\n    function updateUserWithdrawalLimit(address user_, address token_, uint256 newLimit_) external;\\n\\n    /// @notice setting user borrow configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userBorrowConfigs_ struct array containing user borrow config, see `UserBorrowConfig` struct for more info\\n    function updateUserBorrowConfigs(AdminModuleStructs.UserBorrowConfig[] memory userBorrowConfigs_) external;\\n\\n    /// @notice pause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to pause operations for\\n    /// @param supplyTokens_  token addresses to pause withdrawals for\\n    /// @param borrowTokens_  token addresses to pause borrowings for\\n    function pauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice unpause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to unpause operations for\\n    /// @param supplyTokens_  token addresses to unpause withdrawals for\\n    /// @param borrowTokens_  token addresses to unpause borrowings for\\n    function unpauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice         collects revenue for tokens to configured revenueCollector address.\\n    /// @param tokens_  array of tokens to collect revenue for\\n    /// @dev            Note that this can revert if token balance is < revenueAmount (utilization > 100%)\\n    function collectRevenue(address[] calldata tokens_) external;\\n\\n    /// @notice gets the current updated exchange prices for n tokens and updates all prices, rates related data in storage.\\n    /// @param tokens_ tokens to update exchange prices for\\n    /// @return supplyExchangePrices_ new supply rates of overall system for each token\\n    /// @return borrowExchangePrices_ new borrow rates of overall system for each token\\n    function updateExchangePrices(\\n        address[] calldata tokens_\\n    ) external returns (uint256[] memory supplyExchangePrices_, uint256[] memory borrowExchangePrices_);\\n}\\n\\ninterface IFluidLiquidityLogic is IFluidLiquidityAdmin {\\n    /// @notice Single function which handles supply, withdraw, borrow & payback\\n    /// @param token_ address of token (0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE for native)\\n    /// @param supplyAmount_ if +ve then supply, if -ve then withdraw, if 0 then nothing\\n    /// @param borrowAmount_ if +ve then borrow, if -ve then payback, if 0 then nothing\\n    /// @param withdrawTo_ if withdrawal then to which address\\n    /// @param borrowTo_ if borrow then to which address\\n    /// @param callbackData_ callback data passed to `liquidityCallback` method of protocol\\n    /// @return memVar3_ updated supplyExchangePrice\\n    /// @return memVar4_ updated borrowExchangePrice\\n    /// @dev to trigger skipping in / out transfers (gas optimization):\\n    /// -  ` callbackData_` MUST be encoded so that \\\"from\\\" address is the last 20 bytes in the last 32 bytes slot,\\n    ///     also for native token operations where liquidityCallback is not triggered!\\n    ///     from address must come at last position if there is more data. I.e. encode like:\\n    ///     abi.encode(otherVar1, otherVar2, FROM_ADDRESS). Note dynamic types used with abi.encode come at the end\\n    ///     so if dynamic types are needed, you must use abi.encodePacked to ensure the from address is at the end.\\n    /// -   this \\\"from\\\" address must match withdrawTo_ or borrowTo_ and must be == `msg.sender`\\n    /// -   `callbackData_` must in addition to the from address as described above include bytes32 SKIP_TRANSFERS\\n    ///     in the slot before (bytes 32 to 63)\\n    /// -   `msg.value` must be 0.\\n    /// -   Amounts must be either:\\n    ///     -  supply(+) == borrow(+), withdraw(-) == payback(-).\\n    ///     -  Liquidity must be on the winning side (deposit < borrow OR payback < withdraw).\\n    function operate(\\n        address token_,\\n        int256 supplyAmount_,\\n        int256 borrowAmount_,\\n        address withdrawTo_,\\n        address borrowTo_,\\n        bytes calldata callbackData_\\n    ) external payable returns (uint256 memVar3_, uint256 memVar4_);\\n}\\n\\ninterface IFluidLiquidity is IProxy, IFluidLiquidityLogic {}\\n\",\"keccak256\":\"0x4aa83e84baa7c2f4d58b07a3eca4ab7fe7d6fc660898daaac338dc3f129c4123\",\"license\":\"MIT\"},\"contracts/periphery/resolvers/lending/iLendingResolver.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { IFluidLiquidity } from \\\"../../../liquidity/interfaces/iLiquidity.sol\\\";\\nimport { IAllowanceTransfer } from \\\"../../../protocols/lending/interfaces/permit2/iAllowanceTransfer.sol\\\";\\nimport { IFluidLendingFactory } from \\\"../../../protocols/lending/interfaces/iLendingFactory.sol\\\";\\nimport { IFluidLendingRewardsRateModel } from \\\"../../../protocols/lending/interfaces/iLendingRewardsRateModel.sol\\\";\\nimport { IFToken } from \\\"../../../protocols/lending/interfaces/iFToken.sol\\\";\\nimport { Structs } from \\\"./structs.sol\\\";\\nimport { IFluidLiquidityResolver } from \\\"../../../periphery/resolvers/liquidity/iLiquidityResolver.sol\\\";\\n\\ninterface IFluidLendingResolver {\\n    /// @notice returns the lending factory address\\n    function LENDING_FACTORY() external view returns (IFluidLendingFactory);\\n\\n    /// @notice returns the liquidity resolver address\\n    function LIQUIDITY_RESOLVER() external view returns (IFluidLiquidityResolver);\\n\\n    /// @notice returns all fToken types at the `LENDING_FACTORY`\\n    function getAllFTokenTypes() external view returns (string[] memory);\\n\\n    /// @notice returns all created fTokens at the `LENDING_FACTORY`\\n    function getAllFTokens() external view returns (address[] memory);\\n\\n    /// @notice reads if a certain `auth_` address is an allowed auth or not. Owner is auth by default.\\n    function isLendingFactoryAuth(address auth_) external view returns (bool);\\n\\n    /// @notice reads if a certain `deployer_` address is an allowed deployer or not. Owner is deployer by default.\\n    function isLendingFactoryDeployer(address deployer_) external view returns (bool);\\n\\n    /// @notice computes deterministic token address for `asset_` for a lending protocol\\n    /// @param  asset_      address of the asset\\n    /// @param  fTokenType_         type of fToken:\\n    /// - if underlying asset supports EIP-2612, the fToken should be type `EIP2612Deposits`\\n    /// - otherwise it should use `Permit2Deposits`\\n    /// - if it's the native token, it should use `NativeUnderlying`\\n    /// - could be more types available, check `fTokenTypes()`\\n    /// @return token_      detemrinistic address of the computed token\\n    function computeFToken(address asset_, string calldata fTokenType_) external view returns (address);\\n\\n    /// @notice gets all public details for a certain `fToken_`, such as\\n    /// fToken type, name, symbol, decimals, underlying asset, total amounts, convertTo values, rewards.\\n    /// Note it also returns whether the fToken supports deposits / mints via EIP-2612, but it is not a 100% guarantee!\\n    /// To make sure, check for the underlying if it supports EIP-2612 manually.\\n    /// @param  fToken_     the fToken to get the details for\\n    /// @return fTokenDetails_  retrieved FTokenDetails struct\\n    function getFTokenDetails(IFToken fToken_) external view returns (Structs.FTokenDetails memory fTokenDetails_);\\n\\n    /// @notice returns config, rewards and exchange prices data of an fToken.\\n    /// @param  fToken_ the fToken to get the data for\\n    /// @return liquidity_ address of the Liquidity contract.\\n    /// @return lendingFactory_ address of the Lending factory contract.\\n    /// @return lendingRewardsRateModel_ address of the rewards rate model contract. changeable by LendingFactory auths.\\n    /// @return permit2_ address of the Permit2 contract used for deposits / mint with signature\\n    /// @return rebalancer_ address of the rebalancer allowed to execute `rebalance()`\\n    /// @return rewardsActive_ true if rewards are currently active\\n    /// @return liquidityBalance_ current Liquidity supply balance of `address(this)` for the underyling asset\\n    /// @return liquidityExchangePrice_ (updated) exchange price for the underlying assset in the liquidity protocol (without rewards)\\n    /// @return tokenExchangePrice_ (updated) exchange price between fToken and the underlying assset (with rewards)\\n    function getFTokenInternalData(\\n        IFToken fToken_\\n    )\\n        external\\n        view\\n        returns (\\n            IFluidLiquidity liquidity_,\\n            IFluidLendingFactory lendingFactory_,\\n            IFluidLendingRewardsRateModel lendingRewardsRateModel_,\\n            IAllowanceTransfer permit2_,\\n            address rebalancer_,\\n            bool rewardsActive_,\\n            uint256 liquidityBalance_,\\n            uint256 liquidityExchangePrice_,\\n            uint256 tokenExchangePrice_\\n        );\\n\\n    /// @notice gets all public details for all itokens, such as\\n    /// fToken type, name, symbol, decimals, underlying asset, total amounts, convertTo values, rewards\\n    function getFTokensEntireData() external view returns (Structs.FTokenDetails[] memory);\\n\\n    /// @notice gets all public details for all itokens, such as\\n    /// fToken type, name, symbol, decimals, underlying asset, total amounts, convertTo values, rewards\\n    /// and user position for each token\\n    function getUserPositions(address user_) external view returns (Structs.FTokenDetailsUserPosition[] memory);\\n\\n    /// @notice gets rewards related data: the `rewardsRateModel_` contract and the current `rewardsRate_` for the `fToken_`\\n    function getFTokenRewards(\\n        IFToken fToken_\\n    ) external view returns (IFluidLendingRewardsRateModel rewardsRateModel_, uint256 rewardsRate_);\\n\\n    /// @notice gets rewards rate model config constants\\n    function getFTokenRewardsRateModelConfig(\\n        IFToken fToken_\\n    )\\n        external\\n        view\\n        returns (\\n            uint256 duration_,\\n            uint256 startTime_,\\n            uint256 endTime_,\\n            uint256 startTvl_,\\n            uint256 maxRate_,\\n            uint256 rewardAmount_,\\n            address initiator_\\n        );\\n\\n    /// @notice gets a `user_` position for an `fToken_`.\\n    /// @return userPosition user position struct\\n    function getUserPosition(\\n        IFToken fToken_,\\n        address user_\\n    ) external view returns (Structs.UserPosition memory userPosition);\\n\\n    /// @notice gets `fToken_` preview amounts for `assets_` or `shares_`.\\n    /// @return previewDeposit_ preview for deposit of `assets_`\\n    /// @return previewMint_ preview for mint of `shares_`\\n    /// @return previewWithdraw_ preview for withdraw of `assets_`\\n    /// @return previewRedeem_ preview for redeem of `shares_`\\n    function getPreviews(\\n        IFToken fToken_,\\n        uint256 assets_,\\n        uint256 shares_\\n    )\\n        external\\n        view\\n        returns (uint256 previewDeposit_, uint256 previewMint_, uint256 previewWithdraw_, uint256 previewRedeem_);\\n}\\n\",\"keccak256\":\"0xcc8dc67c18ab1c79c03e5ed71fbff23f9588b4e496ed09c10dd88d346a8e9174\",\"license\":\"MIT\"},\"contracts/periphery/resolvers/lending/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidLendingFactory } from \\\"../../../protocols/lending/interfaces/iLendingFactory.sol\\\";\\nimport { Structs as FluidLiquidityResolverStructs } from \\\"../liquidity/structs.sol\\\";\\n\\nabstract contract Structs {\\n    struct FTokenDetails {\\n        address tokenAddress;\\n        bool eip2612Deposits;\\n        bool isNativeUnderlying;\\n        string name;\\n        string symbol;\\n        uint256 decimals;\\n        address asset;\\n        uint256 totalAssets;\\n        uint256 totalSupply;\\n        uint256 convertToShares;\\n        uint256 convertToAssets;\\n        // additional yield from rewards, if active\\n        uint256 rewardsRate;\\n        // yield at Liquidity\\n        uint256 supplyRate;\\n        // difference between fToken assets & actual deposit at Liquidity. (supplyAtLiquidity - totalAssets).\\n        // if negative, rewards must be funded to guarantee withdrawal is possible for all users. This happens\\n        // by executing rebalance().\\n        int256 rebalanceDifference;\\n        // liquidity related data such as supply amount, limits, expansion etc.\\n        FluidLiquidityResolverStructs.UserSupplyData liquidityUserSupplyData;\\n    }\\n\\n    struct UserPosition {\\n        uint256 fTokenShares;\\n        uint256 underlyingAssets;\\n        uint256 underlyingBalance;\\n        uint256 allowance;\\n    }\\n\\n    struct FTokenDetailsUserPosition {\\n        FTokenDetails fTokenDetails;\\n        UserPosition userPosition;\\n    }\\n}\\n\",\"keccak256\":\"0x99e73e307429f60030c7aeef2ef737ba86c67fd46cb233cbae3dcc7eb53f17bb\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/liquidity/iLiquidityResolver.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { Structs as LiquidityStructs } from \\\"../../../periphery/resolvers/liquidity/structs.sol\\\";\\n\\ninterface IFluidLiquidityResolver {\\n    /// @notice gets the `revenueAmount_` for a `token_`.\\n    function getRevenue(address token_) external view returns (uint256 revenueAmount_);\\n\\n    /// @notice address of contract that gets sent the revenue. Configurable by governance\\n    function getRevenueCollector() external view returns (address);\\n\\n    /// @notice Liquidity contract paused status: status = 1 -> normal. status = 2 -> paused.\\n    function getStatus() external view returns (uint256);\\n\\n    /// @notice checks if `auth_` is an allowed auth on Liquidity.\\n    /// Auths can set most config values. E.g. contracts that automate certain flows like e.g. adding a new fToken.\\n    /// Governance can add/remove auths. Governance is auth by default.\\n    function isAuth(address auth_) external view returns (uint256);\\n\\n    /// @notice checks if `guardian_` is an allowed Guardian on Liquidity.\\n    /// Guardians can pause lower class users.\\n    /// Governance can add/remove guardians. Governance is guardian by default.\\n    function isGuardian(address guardian_) external view returns (uint256);\\n\\n    /// @notice gets user class for `user_`. Class defines which protocols can be paused by guardians.\\n    /// Currently there are 2 classes: 0 can be paused by guardians. 1 cannot be paused by guardians.\\n    /// New protocols are added as class 0 and will be upgraded to 1 over time.\\n    function getUserClass(address user_) external view returns (uint256);\\n\\n    /// @notice gets exchangePricesAndConfig packed uint256 storage slot for `token_`.\\n    function getExchangePricesAndConfig(address token_) external view returns (uint256);\\n\\n    /// @notice gets rateConfig packed uint256 storage slot for `token_`.\\n    function getRateConfig(address token_) external view returns (uint256);\\n\\n    /// @notice gets totalAmounts packed uint256 storage slot for `token_`.\\n    function getTotalAmounts(address token_) external view returns (uint256);\\n\\n    /// @notice gets configs2 packed uint256 storage slot for `token_`.\\n    function getConfigs2(address token_) external view returns (uint256);\\n\\n    /// @notice gets userSupply data packed uint256 storage slot for `user_` and `token_`.\\n    function getUserSupply(address user_, address token_) external view returns (uint256);\\n\\n    /// @notice gets userBorrow data packed uint256 storage slot for `user_` and `token_`.\\n    function getUserBorrow(address user_, address token_) external view returns (uint256);\\n\\n    /// @notice returns all `listedTokens_` at the Liquidity contract. Once configured, a token can never be removed.\\n    function listedTokens() external view returns (address[] memory listedTokens_);\\n\\n    /// @notice get the Rate config data `rateData_` for a `token_` compiled from the packed uint256 rateConfig storage slot\\n    function getTokenRateData(address token_) external view returns (LiquidityStructs.RateData memory rateData_);\\n\\n    /// @notice get the Rate config datas `rateDatas_` for multiple `tokens_` compiled from the packed uint256 rateConfig storage slot\\n    function getTokensRateData(\\n        address[] calldata tokens_\\n    ) external view returns (LiquidityStructs.RateData[] memory rateDatas_);\\n\\n    /// @notice returns general data for `token_` such as rates, exchange prices, utilization, fee, total amounts etc.\\n    function getOverallTokenData(\\n        address token_\\n    ) external view returns (LiquidityStructs.OverallTokenData memory overallTokenData_);\\n\\n    /// @notice returns general data for multiple `tokens_` such as rates, exchange prices, utilization, fee, total amounts etc.\\n    function getOverallTokensData(\\n        address[] calldata tokens_\\n    ) external view returns (LiquidityStructs.OverallTokenData[] memory overallTokensData_);\\n\\n    /// @notice returns general data for all `listedTokens()` such as rates, exchange prices, utilization, fee, total amounts etc.\\n    function getAllOverallTokensData()\\n        external\\n        view\\n        returns (LiquidityStructs.OverallTokenData[] memory overallTokensData_);\\n\\n    /// @notice returns `user_` supply data and general data (such as rates, exchange prices, utilization, fee, total amounts etc.) for `token_`\\n    function getUserSupplyData(\\n        address user_,\\n        address token_\\n    )\\n        external\\n        view\\n        returns (\\n            LiquidityStructs.UserSupplyData memory userSupplyData_,\\n            LiquidityStructs.OverallTokenData memory overallTokenData_\\n        );\\n\\n    /// @notice returns `user_` supply data and general data (such as rates, exchange prices, utilization, fee, total amounts etc.) for multiple `tokens_`\\n    function getUserMultipleSupplyData(\\n        address user_,\\n        address[] calldata tokens_\\n    )\\n        external\\n        view\\n        returns (\\n            LiquidityStructs.UserSupplyData[] memory userSuppliesData_,\\n            LiquidityStructs.OverallTokenData[] memory overallTokensData_\\n        );\\n\\n    /// @notice returns `user_` borrow data and general data (such as rates, exchange prices, utilization, fee, total amounts etc.) for `token_`\\n    function getUserBorrowData(\\n        address user_,\\n        address token_\\n    )\\n        external\\n        view\\n        returns (\\n            LiquidityStructs.UserBorrowData memory userBorrowData_,\\n            LiquidityStructs.OverallTokenData memory overallTokenData_\\n        );\\n\\n    /// @notice returns `user_` borrow data and general data (such as rates, exchange prices, utilization, fee, total amounts etc.) for multiple `tokens_`\\n    function getUserMultipleBorrowData(\\n        address user_,\\n        address[] calldata tokens_\\n    )\\n        external\\n        view\\n        returns (\\n            LiquidityStructs.UserBorrowData[] memory userBorrowingsData_,\\n            LiquidityStructs.OverallTokenData[] memory overallTokensData_\\n        );\\n\\n    /// @notice returns `user_` supply data and general data (such as rates, exchange prices, utilization, fee, total amounts etc.) for multiple `supplyTokens_`\\n    ///     and returns `user_` borrow data and general data (such as rates, exchange prices, utilization, fee, total amounts etc.) for multiple `borrowTokens_`\\n    function getUserMultipleBorrowSupplyData(\\n        address user_,\\n        address[] calldata supplyTokens_,\\n        address[] calldata borrowTokens_\\n    )\\n        external\\n        view\\n        returns (\\n            LiquidityStructs.UserSupplyData[] memory userSuppliesData_,\\n            LiquidityStructs.OverallTokenData[] memory overallSupplyTokensData_,\\n            LiquidityStructs.UserBorrowData[] memory userBorrowingsData_,\\n            LiquidityStructs.OverallTokenData[] memory overallBorrowTokensData_\\n        );\\n}\\n\",\"keccak256\":\"0x241d94b63793c9fb2111bb4ec04035e1fa14ee7e0551683ea05460baa6000189\",\"license\":\"MIT\"},\"contracts/periphery/resolvers/liquidity/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Structs as AdminModuleStructs } from \\\"../../../liquidity/adminModule/structs.sol\\\";\\n\\nabstract contract Structs {\\n    struct RateData {\\n        uint256 version;\\n        AdminModuleStructs.RateDataV1Params rateDataV1;\\n        AdminModuleStructs.RateDataV2Params rateDataV2;\\n    }\\n\\n    struct OverallTokenData {\\n        uint256 borrowRate;\\n        uint256 supplyRate;\\n        uint256 fee; // revenue fee\\n        uint256 lastStoredUtilization;\\n        uint256 storageUpdateThreshold;\\n        uint256 lastUpdateTimestamp;\\n        uint256 supplyExchangePrice;\\n        uint256 borrowExchangePrice;\\n        uint256 supplyRawInterest;\\n        uint256 supplyInterestFree;\\n        uint256 borrowRawInterest;\\n        uint256 borrowInterestFree;\\n        uint256 totalSupply;\\n        uint256 totalBorrow;\\n        uint256 revenue;\\n        uint256 maxUtilization; // maximum allowed utilization\\n        RateData rateData;\\n    }\\n\\n    // amounts are always in normal (for withInterest already multiplied with exchange price)\\n    struct UserSupplyData {\\n        bool modeWithInterest; // true if mode = with interest, false = without interest\\n        uint256 supply; // user supply amount\\n        // the withdrawal limit (e.g. if 10% is the limit, and 100M is supplied, it would be 90M)\\n        uint256 withdrawalLimit;\\n        uint256 lastUpdateTimestamp;\\n        uint256 expandPercent; // withdrawal limit expand percent in 1e2\\n        uint256 expandDuration; // withdrawal limit expand duration in seconds\\n        uint256 baseWithdrawalLimit;\\n        // the current actual max withdrawable amount (e.g. if 10% is the limit, and 100M is supplied, it would be 10M)\\n        uint256 withdrawableUntilLimit;\\n        uint256 withdrawable; // actual currently withdrawable amount (supply - withdrawal Limit) & considering balance\\n    }\\n\\n    // amounts are always in normal (for withInterest already multiplied with exchange price)\\n    struct UserBorrowData {\\n        bool modeWithInterest; // true if mode = with interest, false = without interest\\n        uint256 borrow; // user borrow amount\\n        uint256 borrowLimit;\\n        uint256 lastUpdateTimestamp;\\n        uint256 expandPercent;\\n        uint256 expandDuration;\\n        uint256 baseBorrowLimit;\\n        uint256 maxBorrowLimit;\\n        uint256 borrowableUntilLimit; // borrowable amount until any borrow limit (incl. max utilization limit)\\n        uint256 borrowable; // actual currently borrowable amount (borrow limit - already borrowed) & considering balance, max utilization\\n        uint256 borrowLimitUtilization; // borrow limit for `maxUtilization`\\n    }\\n}\\n\",\"keccak256\":\"0xf8a59b6c7963d0bd43be07db0c594e278f97e6dfa498dee8436e3707dd9f574e\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/stakingRewards/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IERC20Permit } from \\\"@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol\\\";\\nimport { IERC20 } from \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\nimport { IFluidLendingResolver } from \\\"../lending/iLendingResolver.sol\\\";\\nimport { Structs as FluidLendingResolverStructs } from \\\"../lending/structs.sol\\\";\\nimport { IFluidLendingStakingRewards } from \\\"../../../protocols/lending/interfaces/iStakingRewards.sol\\\";\\nimport { Structs } from \\\"./structs.sol\\\";\\n\\n\\n/// @notice Fluid Lending protocol Staking Rewards (for fTokens) resolver\\n/// Implements various view-only methods to give easy access to Lending protocol staked fToken rewards data.\\ncontract FluidStakingRewardsResolver is Structs {\\n    IFluidLendingResolver immutable public LENDING_RESOLVER;\\n\\n    /// @notice thrown if an input param address is zero\\n    error FluidStakingRewardsResolver__AddressZero();\\n\\n    constructor(address lendingResolver_) {\\n        if(lendingResolver_ == address(0)){\\n            revert FluidStakingRewardsResolver__AddressZero();\\n        }\\n        LENDING_RESOLVER = IFluidLendingResolver(lendingResolver_);\\n    }\\n\\n    function getFTokenStakingRewardsEntireData(address reward_) public view returns (FTokenStakingRewardsDetails memory r_) {\\n        // if address is 0 then data will be returned as 0\\n        if (reward_ != address(0)) {\\n            IFluidLendingStakingRewards rewardContract_ = IFluidLendingStakingRewards(reward_);\\n            \\n            r_.rewardPerToken = rewardContract_.rewardPerToken();\\n            r_.getRewardForDuration = rewardContract_.getRewardForDuration();\\n            r_.totalSupply = rewardContract_.totalSupply();\\n            r_.periodFinish = rewardContract_.periodFinish();\\n            r_.rewardRate = rewardContract_.rewardRate();\\n            r_.rewardsDuration = rewardContract_.rewardsDuration();\\n            r_.rewardsToken = address(rewardContract_.rewardsToken());\\n            r_.fToken = address(rewardContract_.stakingToken());\\n        }\\n    }\\n\\n    function getFTokensStakingRewardsEntireData(address[] memory rewards_) public view returns (FTokenStakingRewardsDetails[] memory r_) {\\n        r_ = new FTokenStakingRewardsDetails[](rewards_.length);\\n        for (uint i = 0; i < rewards_.length; i++) {\\n            r_[i] = getFTokenStakingRewardsEntireData(rewards_[i]);\\n        }\\n    }\\n\\n    function getUserRewardsData(\\n        address user_,\\n        address reward_,\\n        FluidLendingResolverStructs.FTokenDetails memory fTokenDetails_\\n    ) public view returns (UserRewardDetails memory u_) {\\n        if (reward_ != address(0)) {\\n            IFluidLendingStakingRewards rewardContract_ = IFluidLendingStakingRewards(reward_);\\n            \\n            u_.earned = rewardContract_.earned(user_);\\n            u_.fTokenShares = rewardContract_.balanceOf(user_);\\n            u_.underlyingAssets = (u_.fTokenShares * fTokenDetails_.convertToAssets) / (10**fTokenDetails_.decimals);\\n            u_.ftokenAllowance = IERC20(fTokenDetails_.tokenAddress).allowance(user_, reward_);\\n        }\\n    }\\n\\n    function getUserAllRewardsData(\\n        address user_,\\n        address[] memory rewards_,\\n        FluidLendingResolverStructs.FTokenDetails[] memory fTokensDetails_\\n    ) public view returns (UserRewardDetails[] memory u_) {\\n        u_ = new UserRewardDetails[](rewards_.length);\\n        for (uint i = 0; i < rewards_.length; i++) {\\n            u_[i] = getUserRewardsData(user_, rewards_[i], fTokensDetails_[i]);\\n        }\\n    }\\n\\n    struct underlyingTokenToRewardsMap {\\n        address underlyingToken;\\n        address rewardContract;\\n    }\\n\\n    function getUserPositions(\\n        address user_,\\n        underlyingTokenToRewardsMap[] memory rewardsMap_\\n    ) public view returns (UserFTokenRewardsEntireData[] memory u_) {\\n        FluidLendingResolverStructs.FTokenDetailsUserPosition[] memory e_  = LENDING_RESOLVER.getUserPositions(user_);\\n        uint length_ = e_.length;\\n        u_ = new UserFTokenRewardsEntireData[](length_);\\n\\n        address rewardToken_;\\n        for (uint i = 0; i < length_; i++) {\\n            u_[i].fTokenDetails = e_[i].fTokenDetails;\\n            u_[i].userPosition = e_[i].userPosition;\\n            for (uint j = 0; j < rewardsMap_.length; j++) {\\n                if (u_[i].fTokenDetails.asset == rewardsMap_[j].underlyingToken) {\\n                    rewardToken_ = rewardsMap_[j].rewardContract;\\n                    break;\\n                }\\n            }\\n            u_[i].fTokenRewardsDetails = getFTokenStakingRewardsEntireData(rewardToken_);\\n            u_[i].userRewardsDetails = getUserRewardsData(user_, rewardToken_, u_[i].fTokenDetails);\\n            rewardToken_ = address(0);\\n        }\\n    }\\n\\n\\n}\\n\",\"keccak256\":\"0xc0475d9a6f633ec0fb3768ab5d4546e2ba694f60fdb9cea22d126d3c7c1dd186\",\"license\":\"BUSL-1.1\"},\"contracts/periphery/resolvers/stakingRewards/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Structs as FluidLendingResolverStructs } from \\\"../lending/structs.sol\\\";\\n\\nabstract contract Structs {\\n    struct FTokenStakingRewardsDetails {\\n        uint rewardPerToken; // how much rewards have distributed per token since start\\n        uint getRewardForDuration; // total rewards being distributed\\n        uint totalSupply; // total fToken deposited\\n        uint periodFinish; // when rewards will get over\\n        uint rewardRate; // total rewards / duration\\n        uint rewardsDuration; // how long rewards are for since start to end\\n        address rewardsToken; // which token are we distributing as rewards\\n        address fToken; // which token are we distributing as rewards\\n    }\\n\\n    struct UserRewardDetails {\\n        uint earned;\\n        uint fTokenShares; // user fToken balance deposited\\n        uint underlyingAssets; // user fToken balance converted into underlying token\\n        uint ftokenAllowance; // allowance of fToken to rewards contract\\n    }\\n\\n    struct UserFTokenRewardsEntireData {\\n        FluidLendingResolverStructs.FTokenDetails fTokenDetails;\\n        FluidLendingResolverStructs.UserPosition userPosition;\\n        FTokenStakingRewardsDetails fTokenRewardsDetails;\\n        UserRewardDetails userRewardsDetails;\\n    }\\n}\\n\",\"keccak256\":\"0x49ebae7bedf5d835d1c653a361193ae35bec6f8bc26e5687210f3475ad54a085\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/lending/interfaces/iFToken.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { IERC4626 } from \\\"@openzeppelin/contracts/interfaces/IERC4626.sol\\\";\\n\\nimport { IAllowanceTransfer } from \\\"./permit2/iAllowanceTransfer.sol\\\";\\nimport { IFluidLendingRewardsRateModel } from \\\"./iLendingRewardsRateModel.sol\\\";\\nimport { IFluidLendingFactory } from \\\"./iLendingFactory.sol\\\";\\nimport { IFluidLiquidity } from \\\"../../../liquidity/interfaces/iLiquidity.sol\\\";\\n\\ninterface IFTokenAdmin {\\n    /// @notice updates the rewards rate model contract.\\n    ///         Only callable by LendingFactory auths.\\n    /// @param rewardsRateModel_  the new rewards rate model contract address.\\n    ///                           can be set to address(0) to set no rewards (to save gas)\\n    function updateRewards(IFluidLendingRewardsRateModel rewardsRateModel_) external;\\n\\n    /// @notice Balances out the difference between fToken supply at Liquidity vs totalAssets().\\n    ///         Deposits underlying from rebalancer address into Liquidity but doesn't mint any shares\\n    ///         -> thus making deposit available as rewards.\\n    ///         Only callable by rebalancer.\\n    /// @return assets_ amount deposited to Liquidity\\n    function rebalance() external payable returns (uint256 assets_);\\n\\n    /// @notice gets the liquidity exchange price of the underlying asset, calculates the updated exchange price (with reward rates)\\n    ///         and writes those values to storage.\\n    ///         Callable by anyone.\\n    /// @return tokenExchangePrice_ exchange price of fToken share to underlying asset\\n    /// @return liquidityExchangePrice_ exchange price at Liquidity for the underlying asset\\n    function updateRates() external returns (uint256 tokenExchangePrice_, uint256 liquidityExchangePrice_);\\n\\n    /// @notice sends any potentially stuck funds to Liquidity contract. Only callable by LendingFactory auths.\\n    function rescueFunds(address token_) external;\\n\\n    /// @notice Updates the rebalancer address (ReserveContract). Only callable by LendingFactory auths.\\n    function updateRebalancer(address rebalancer_) external;\\n}\\n\\ninterface IFToken is IERC4626, IFTokenAdmin {\\n    /// @notice returns minimum amount required for deposit (rounded up)\\n    function minDeposit() external view returns (uint256);\\n\\n    /// @notice returns config, rewards and exchange prices data in a single view method.\\n    /// @return liquidity_ address of the Liquidity contract.\\n    /// @return lendingFactory_ address of the Lending factory contract.\\n    /// @return lendingRewardsRateModel_ address of the rewards rate model contract. changeable by LendingFactory auths.\\n    /// @return permit2_ address of the Permit2 contract used for deposits / mint with signature\\n    /// @return rebalancer_ address of the rebalancer allowed to execute `rebalance()`\\n    /// @return rewardsActive_ true if rewards are currently active\\n    /// @return liquidityBalance_ current Liquidity supply balance of `address(this)` for the underyling asset\\n    /// @return liquidityExchangePrice_ (updated) exchange price for the underlying assset in the liquidity protocol (without rewards)\\n    /// @return tokenExchangePrice_ (updated) exchange price between fToken and the underlying assset (with rewards)\\n    function getData()\\n        external\\n        view\\n        returns (\\n            IFluidLiquidity liquidity_,\\n            IFluidLendingFactory lendingFactory_,\\n            IFluidLendingRewardsRateModel lendingRewardsRateModel_,\\n            IAllowanceTransfer permit2_,\\n            address rebalancer_,\\n            bool rewardsActive_,\\n            uint256 liquidityBalance_,\\n            uint256 liquidityExchangePrice_,\\n            uint256 tokenExchangePrice_\\n        );\\n\\n    /// @notice transfers `amount_` of `token_` to liquidity. Only callable by liquidity contract.\\n    /// @dev this callback is used to optimize gas consumption (reducing necessary token transfers).\\n    function liquidityCallback(address token_, uint256 amount_, bytes calldata data_) external;\\n\\n    /// @notice deposit `assets_` amount with Permit2 signature for underlying asset approval.\\n    ///         reverts with `fToken__MinAmountOut()` if `minAmountOut_` of shares is not reached.\\n    ///         `assets_` must at least be `minDeposit()` amount; reverts otherwise.\\n    /// @param assets_ amount of assets to deposit\\n    /// @param receiver_ receiver of minted fToken shares\\n    /// @param minAmountOut_ minimum accepted amount of shares minted\\n    /// @param permit_ Permit2 permit message\\n    /// @param signature_  packed signature of signing the EIP712 hash of `permit_`\\n    /// @return shares_ amount of minted shares\\n    function depositWithSignature(\\n        uint256 assets_,\\n        address receiver_,\\n        uint256 minAmountOut_,\\n        IAllowanceTransfer.PermitSingle calldata permit_,\\n        bytes calldata signature_\\n    ) external returns (uint256 shares_);\\n\\n    /// @notice mint amount of `shares_` with Permit2 signature for underlying asset approval.\\n    ///         Signature should approve a little bit more than expected assets amount (`previewMint()`) to avoid reverts.\\n    ///         `shares_` must at least be `minMint()` amount; reverts otherwise.\\n    ///         Note there might be tiny inaccuracies between requested `shares_` and actually received shares amount.\\n    ///         Recommended to use `deposit()` over mint because it is more gas efficient and less likely to revert.\\n    /// @param shares_ amount of shares to mint\\n    /// @param receiver_ receiver of minted fToken shares\\n    /// @param maxAssets_ maximum accepted amount of assets used as input to mint `shares_`\\n    /// @param permit_ Permit2 permit message\\n    /// @param signature_  packed signature of signing the EIP712 hash of `permit_`\\n    /// @return assets_ deposited assets amount\\n    function mintWithSignature(\\n        uint256 shares_,\\n        address receiver_,\\n        uint256 maxAssets_,\\n        IAllowanceTransfer.PermitSingle calldata permit_,\\n        bytes calldata signature_\\n    ) external returns (uint256 assets_);\\n}\\n\\ninterface IFTokenNativeUnderlying is IFToken {\\n    /// @notice address that is mapped to the chain native token at Liquidity\\n    function NATIVE_TOKEN_ADDRESS() external view returns (address);\\n\\n    /// @notice deposits `msg.value` amount of native token for `receiver_`.\\n    ///         `msg.value` must be at least `minDeposit()` amount; reverts otherwise.\\n    ///         Recommended to use `depositNative()` with a `minAmountOut_` param instead to set acceptable limit.\\n    /// @return shares_ actually minted shares\\n    function depositNative(address receiver_) external payable returns (uint256 shares_);\\n\\n    /// @notice same as {depositNative} but with an additional setting for minimum output amount.\\n    /// reverts with `fToken__MinAmountOut()` if `minAmountOut_` of shares is not reached\\n    function depositNative(address receiver_, uint256 minAmountOut_) external payable returns (uint256 shares_);\\n\\n    /// @notice mints `shares_` for `receiver_`, paying with underlying native token.\\n    ///         `shares_` must at least be `minMint()` amount; reverts otherwise.\\n    ///         `shares_` set to type(uint256).max not supported.\\n    ///         Note there might be tiny inaccuracies between requested `shares_` and actually received shares amount.\\n    ///         Recommended to use `depositNative()` over mint because it is more gas efficient and less likely to revert.\\n    ///         Recommended to use `mintNative()` with a `minAmountOut_` param instead to set acceptable limit.\\n    /// @return assets_ deposited assets amount\\n    function mintNative(uint256 shares_, address receiver_) external payable returns (uint256 assets_);\\n\\n    /// @notice same as {mintNative} but with an additional setting for minimum output amount.\\n    /// reverts with `fToken__MaxAmount()` if `maxAssets_` of assets is surpassed to mint `shares_`.\\n    function mintNative(\\n        uint256 shares_,\\n        address receiver_,\\n        uint256 maxAssets_\\n    ) external payable returns (uint256 assets_);\\n\\n    /// @notice withdraws `assets_` amount in native underlying to `receiver_`, burning shares of `owner_`.\\n    ///         If `assets_` equals uint256.max then the whole fToken balance of `owner_` is withdrawn.This does not\\n    ///         consider withdrawal limit at liquidity so best to check with `maxWithdraw()` before.\\n    ///         Note there might be tiny inaccuracies between requested `assets_` and actually received assets amount.\\n    ///         Recommended to use `withdrawNative()` with a `maxSharesBurn_` param instead to set acceptable limit.\\n    /// @return shares_ burned shares\\n    function withdrawNative(uint256 assets_, address receiver_, address owner_) external returns (uint256 shares_);\\n\\n    /// @notice same as {withdrawNative} but with an additional setting for minimum output amount.\\n    /// reverts with `fToken__MaxAmount()` if `maxSharesBurn_` of shares burned is surpassed.\\n    function withdrawNative(\\n        uint256 assets_,\\n        address receiver_,\\n        address owner_,\\n        uint256 maxSharesBurn_\\n    ) external returns (uint256 shares_);\\n\\n    /// @notice redeems `shares_` to native underlying to `receiver_`, burning shares of `owner_`.\\n    ///         If `shares_` equals uint256.max then the whole balance of `owner_` is withdrawn.This does not\\n    ///         consider withdrawal limit at liquidity so best to check with `maxRedeem()` before.\\n    ///         Recommended to use `withdrawNative()` over redeem because it is more gas efficient and can set specific amount.\\n    ///         Recommended to use `redeemNative()` with a `minAmountOut_` param instead to set acceptable limit.\\n    /// @return assets_ withdrawn assets amount\\n    function redeemNative(uint256 shares_, address receiver_, address owner_) external returns (uint256 assets_);\\n\\n    /// @notice same as {redeemNative} but with an additional setting for minimum output amount.\\n    /// reverts with `fToken__MinAmountOut()` if `minAmountOut_` of assets is not reached.\\n    function redeemNative(\\n        uint256 shares_,\\n        address receiver_,\\n        address owner_,\\n        uint256 minAmountOut_\\n    ) external returns (uint256 assets_);\\n\\n    /// @notice withdraw amount of `assets_` in native token with ERC-2612 permit signature for fToken approval.\\n    /// `owner_` signs ERC-2612 permit `signature_` to give allowance of fTokens to `msg.sender`.\\n    /// Note there might be tiny inaccuracies between requested `assets_` and actually received assets amount.\\n    /// allowance via signature should cover `previewWithdraw(assets_)` plus a little buffer to avoid revert.\\n    /// Inherent trust assumption that `msg.sender` will set `receiver_` and `minAmountOut_` as `owner_` intends\\n    /// (which is always the case when giving allowance to some spender).\\n    /// @param sharesToPermit_ shares amount to use for EIP2612 permit(). Should cover `previewWithdraw(assets_)` + small buffer.\\n    /// @param assets_ amount of assets to withdraw\\n    /// @param receiver_ receiver of withdrawn assets\\n    /// @param owner_ owner to withdraw from (must be signature signer)\\n    /// @param maxSharesBurn_ maximum accepted amount of shares burned\\n    /// @param deadline_ deadline for signature validity\\n    /// @param signature_  packed signature of signing the EIP712 hash for ERC-2612 permit\\n    /// @return shares_ burned shares amount\\n    function withdrawWithSignatureNative(\\n        uint256 sharesToPermit_,\\n        uint256 assets_,\\n        address receiver_,\\n        address owner_,\\n        uint256 maxSharesBurn_,\\n        uint256 deadline_,\\n        bytes calldata signature_\\n    ) external returns (uint256 shares_);\\n\\n    /// @notice redeem amount of `shares_` as native token with ERC-2612 permit signature for fToken approval.\\n    /// `owner_` signs ERC-2612 permit `signature_` to give allowance of fTokens to `msg.sender`.\\n    /// Note there might be tiny inaccuracies between requested `shares_` to redeem and actually burned shares.\\n    /// allowance via signature must cover `shares_` plus a tiny buffer.\\n    /// Inherent trust assumption that `msg.sender` will set `receiver_` and `minAmountOut_` as `owner_` intends\\n    ///       (which is always the case when giving allowance to some spender).\\n    /// Recommended to use `withdrawNative()` over redeem because it is more gas efficient and can set specific amount.\\n    /// @param shares_ amount of shares to redeem\\n    /// @param receiver_ receiver of withdrawn assets\\n    /// @param owner_ owner to withdraw from (must be signature signer)\\n    /// @param minAmountOut_ minimum accepted amount of assets withdrawn\\n    /// @param deadline_ deadline for signature validity\\n    /// @param signature_  packed signature of signing the EIP712 hash for ERC-2612 permit\\n    /// @return assets_ withdrawn assets amount\\n    function redeemWithSignatureNative(\\n        uint256 shares_,\\n        address receiver_,\\n        address owner_,\\n        uint256 minAmountOut_,\\n        uint256 deadline_,\\n        bytes calldata signature_\\n    ) external returns (uint256 assets_);\\n}\\n\",\"keccak256\":\"0xe3e26f6aa9bba6b8fd2d4f299e03843b237ab7a47e1a00249a1214abda02d064\",\"license\":\"MIT\"},\"contracts/protocols/lending/interfaces/iLendingFactory.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { IFluidLiquidity } from \\\"../../../liquidity/interfaces/iLiquidity.sol\\\";\\n\\ninterface IFluidLendingFactoryAdmin {\\n    /// @notice reads if a certain `auth_` address is an allowed auth or not. Owner is auth by default.\\n    function isAuth(address auth_) external view returns (bool);\\n\\n    /// @notice              Sets an address as allowed auth or not. Only callable by owner.\\n    /// @param auth_         address to set auth value for\\n    /// @param allowed_      bool flag for whether address is allowed as auth or not\\n    function setAuth(address auth_, bool allowed_) external;\\n\\n    /// @notice reads if a certain `deployer_` address is an allowed deployer or not. Owner is deployer by default.\\n    function isDeployer(address deployer_) external view returns (bool);\\n\\n    /// @notice              Sets an address as allowed deployer or not. Only callable by owner.\\n    /// @param deployer_     address to set deployer value for\\n    /// @param allowed_      bool flag for whether address is allowed as deployer or not\\n    function setDeployer(address deployer_, bool allowed_) external;\\n\\n    /// @notice              Sets the `creationCode_` bytecode for a certain `fTokenType_`. Only callable by auths.\\n    /// @param fTokenType_   the fToken Type used to refer the creation code\\n    /// @param creationCode_ contract creation code. can be set to bytes(0) to remove a previously available `fTokenType_`\\n    function setFTokenCreationCode(string memory fTokenType_, bytes calldata creationCode_) external;\\n\\n    /// @notice creates token for `asset_` for a lending protocol with interest. Only callable by deployers.\\n    /// @param  asset_              address of the asset\\n    /// @param  fTokenType_         type of fToken:\\n    /// - if it's the native token, it should use `NativeUnderlying`\\n    /// - otherwise it should use `fToken`\\n    /// - could be more types available, check `fTokenTypes()`\\n    /// @param  isNativeUnderlying_ flag to signal fToken type that uses native underlying at Liquidity\\n    /// @return token_              address of the created token\\n    function createToken(\\n        address asset_,\\n        string calldata fTokenType_,\\n        bool isNativeUnderlying_\\n    ) external returns (address token_);\\n}\\n\\ninterface IFluidLendingFactory is IFluidLendingFactoryAdmin {\\n    /// @notice list of all created tokens\\n    function allTokens() external view returns (address[] memory);\\n\\n    /// @notice list of all fToken types that can be deployed\\n    function fTokenTypes() external view returns (string[] memory);\\n\\n    /// @notice returns the creation code for a certain `fTokenType_`\\n    function fTokenCreationCode(string memory fTokenType_) external view returns (bytes memory);\\n\\n    /// @notice address of the Liquidity contract.\\n    function LIQUIDITY() external view returns (IFluidLiquidity);\\n\\n    /// @notice computes deterministic token address for `asset_` for a lending protocol\\n    /// @param  asset_      address of the asset\\n    /// @param  fTokenType_         type of fToken:\\n    /// - if it's the native token, it should use `NativeUnderlying`\\n    /// - otherwise it should use `fToken`\\n    /// - could be more types available, check `fTokenTypes()`\\n    /// @return token_      detemrinistic address of the computed token\\n    function computeToken(address asset_, string calldata fTokenType_) external view returns (address token_);\\n}\\n\",\"keccak256\":\"0x90cc641714853b9ad77c2bf0653d8e558b670cbcc646dbce96d26f92842dbc66\",\"license\":\"MIT\"},\"contracts/protocols/lending/interfaces/iLendingRewardsRateModel.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidLendingRewardsRateModel {\\n    /// @notice Calculates the current rewards rate (APR)\\n    /// @param totalAssets_ amount of assets in the lending\\n    /// @return rate_ rewards rate percentage per year with 1e12 RATE_PRECISION, e.g. 1e12 = 1%, 1e14 = 100%\\n    /// @return ended_ flag to signal that rewards have ended (always 0 going forward)\\n    /// @return startTime_ start time of rewards to compare against last update timestamp\\n    function getRate(uint256 totalAssets_) external view returns (uint256 rate_, bool ended_, uint256 startTime_);\\n\\n    /// @notice Returns config constants for rewards rate model\\n    function getConfig()\\n        external\\n        view\\n        returns (\\n            uint256 duration_,\\n            uint256 startTime_,\\n            uint256 endTime_,\\n            uint256 startTvl_,\\n            uint256 maxRate_,\\n            uint256 rewardAmount_,\\n            address initiator_\\n        );\\n}\\n\",\"keccak256\":\"0x04a6f1df74f55ba643f27ff08cd5bb9722c31d16b4782d1b090335845359196d\",\"license\":\"MIT\"},\"contracts/protocols/lending/interfaces/iStakingRewards.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { IERC20 } from \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\ninterface IFluidLendingStakingRewards {\\n    // Views\\n    function lastTimeRewardApplicable() external view returns (uint256);\\n\\n    function rewardPerToken() external view returns (uint256);\\n\\n    function earned(address account) external view returns (uint256);\\n\\n    function getRewardForDuration() external view returns (uint256);\\n\\n    function totalSupply() external view returns (uint256);\\n\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    function periodFinish() external view returns (uint256);\\n\\n    function rewardRate() external view returns (uint256);\\n\\n    function lastUpdateTime() external view returns (uint256);\\n\\n    function rewardPerTokenStored() external view returns (uint256);\\n\\n    function rewardsDuration() external view returns (uint256);\\n\\n    function rewardsToken() external view returns (IERC20);\\n\\n    function stakingToken() external view returns (IERC20);\\n\\n    // Mutative\\n\\n    function stake(uint256 amount) external;\\n\\n    function withdraw(uint256 amount) external;\\n\\n    function getReward() external;\\n\\n    function exit() external;\\n}\\n\",\"keccak256\":\"0x11332678f8cefae11205be4f4817ef0918c99384681842f552c85cf3742af9cf\",\"license\":\"MIT\"},\"contracts/protocols/lending/interfaces/permit2/iAllowanceTransfer.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\n/// @title AllowanceTransfer\\n/// @notice Handles ERC20 token permissions through signature based allowance setting and ERC20 token transfers by checking allowed amounts\\n/// @dev Requires user's token approval on the Permit2 contract\\n/// from https://github.com/Uniswap/permit2/blob/main/src/interfaces/ISignatureTransfer.sol.\\n/// Copyright (c) 2022 Uniswap Labs\\ninterface IAllowanceTransfer {\\n    function DOMAIN_SEPARATOR() external view returns (bytes32);\\n\\n    /// @notice Thrown when an allowance on a token has expired.\\n    /// @param deadline The timestamp at which the allowed amount is no longer valid\\n    error AllowanceExpired(uint256 deadline);\\n\\n    /// @notice Thrown when an allowance on a token has been depleted.\\n    /// @param amount The maximum amount allowed\\n    error InsufficientAllowance(uint256 amount);\\n\\n    /// @notice Thrown when too many nonces are invalidated.\\n    error ExcessiveInvalidation();\\n\\n    /// @notice Emits an event when the owner successfully invalidates an ordered nonce.\\n    event NonceInvalidation(\\n        address indexed owner,\\n        address indexed token,\\n        address indexed spender,\\n        uint48 newNonce,\\n        uint48 oldNonce\\n    );\\n\\n    /// @notice Emits an event when the owner successfully sets permissions on a token for the spender.\\n    event Approval(\\n        address indexed owner,\\n        address indexed token,\\n        address indexed spender,\\n        uint160 amount,\\n        uint48 expiration\\n    );\\n\\n    /// @notice Emits an event when the owner successfully sets permissions using a permit signature on a token for the spender.\\n    event Permit(\\n        address indexed owner,\\n        address indexed token,\\n        address indexed spender,\\n        uint160 amount,\\n        uint48 expiration,\\n        uint48 nonce\\n    );\\n\\n    /// @notice Emits an event when the owner sets the allowance back to 0 with the lockdown function.\\n    event Lockdown(address indexed owner, address token, address spender);\\n\\n    /// @notice The permit data for a token\\n    struct PermitDetails {\\n        // ERC20 token address\\n        address token;\\n        // the maximum amount allowed to spend\\n        uint160 amount;\\n        // timestamp at which a spender's token allowances become invalid\\n        uint48 expiration;\\n        // an incrementing value indexed per owner,token,and spender for each signature\\n        uint48 nonce;\\n    }\\n\\n    /// @notice The permit message signed for a single token allownce\\n    struct PermitSingle {\\n        // the permit data for a single token alownce\\n        PermitDetails details;\\n        // address permissioned on the allowed tokens\\n        address spender;\\n        // deadline on the permit signature\\n        uint256 sigDeadline;\\n    }\\n\\n    /// @notice The permit message signed for multiple token allowances\\n    struct PermitBatch {\\n        // the permit data for multiple token allowances\\n        PermitDetails[] details;\\n        // address permissioned on the allowed tokens\\n        address spender;\\n        // deadline on the permit signature\\n        uint256 sigDeadline;\\n    }\\n\\n    /// @notice The saved permissions\\n    /// @dev This info is saved per owner, per token, per spender and all signed over in the permit message\\n    /// @dev Setting amount to type(uint160).max sets an unlimited approval\\n    struct PackedAllowance {\\n        // amount allowed\\n        uint160 amount;\\n        // permission expiry\\n        uint48 expiration;\\n        // an incrementing value indexed per owner,token,and spender for each signature\\n        uint48 nonce;\\n    }\\n\\n    /// @notice A token spender pair.\\n    struct TokenSpenderPair {\\n        // the token the spender is approved\\n        address token;\\n        // the spender address\\n        address spender;\\n    }\\n\\n    /// @notice Details for a token transfer.\\n    struct AllowanceTransferDetails {\\n        // the owner of the token\\n        address from;\\n        // the recipient of the token\\n        address to;\\n        // the amount of the token\\n        uint160 amount;\\n        // the token to be transferred\\n        address token;\\n    }\\n\\n    /// @notice A mapping from owner address to token address to spender address to PackedAllowance struct, which contains details and conditions of the approval.\\n    /// @notice The mapping is indexed in the above order see: allowance[ownerAddress][tokenAddress][spenderAddress]\\n    /// @dev The packed slot holds the allowed amount, expiration at which the allowed amount is no longer valid, and current nonce thats updated on any signature based approvals.\\n    function allowance(\\n        address user,\\n        address token,\\n        address spender\\n    ) external view returns (uint160 amount, uint48 expiration, uint48 nonce);\\n\\n    /// @notice Approves the spender to use up to amount of the specified token up until the expiration\\n    /// @param token The token to approve\\n    /// @param spender The spender address to approve\\n    /// @param amount The approved amount of the token\\n    /// @param expiration The timestamp at which the approval is no longer valid\\n    /// @dev The packed allowance also holds a nonce, which will stay unchanged in approve\\n    /// @dev Setting amount to type(uint160).max sets an unlimited approval\\n    function approve(address token, address spender, uint160 amount, uint48 expiration) external;\\n\\n    /// @notice Permit a spender to a given amount of the owners token via the owner's EIP-712 signature\\n    /// @dev May fail if the owner's nonce was invalidated in-flight by invalidateNonce\\n    /// @param owner The owner of the tokens being approved\\n    /// @param permitSingle Data signed over by the owner specifying the terms of approval\\n    /// @param signature The owner's signature over the permit data\\n    function permit(address owner, PermitSingle memory permitSingle, bytes calldata signature) external;\\n\\n    /// @notice Permit a spender to the signed amounts of the owners tokens via the owner's EIP-712 signature\\n    /// @dev May fail if the owner's nonce was invalidated in-flight by invalidateNonce\\n    /// @param owner The owner of the tokens being approved\\n    /// @param permitBatch Data signed over by the owner specifying the terms of approval\\n    /// @param signature The owner's signature over the permit data\\n    function permit(address owner, PermitBatch memory permitBatch, bytes calldata signature) external;\\n\\n    /// @notice Transfer approved tokens from one address to another\\n    /// @param from The address to transfer from\\n    /// @param to The address of the recipient\\n    /// @param amount The amount of the token to transfer\\n    /// @param token The token address to transfer\\n    /// @dev Requires the from address to have approved at least the desired amount\\n    /// of tokens to msg.sender.\\n    function transferFrom(address from, address to, uint160 amount, address token) external;\\n\\n    /// @notice Transfer approved tokens in a batch\\n    /// @param transferDetails Array of owners, recipients, amounts, and tokens for the transfers\\n    /// @dev Requires the from addresses to have approved at least the desired amount\\n    /// of tokens to msg.sender.\\n    function transferFrom(AllowanceTransferDetails[] calldata transferDetails) external;\\n\\n    /// @notice Enables performing a \\\"lockdown\\\" of the sender's Permit2 identity\\n    /// by batch revoking approvals\\n    /// @param approvals Array of approvals to revoke.\\n    function lockdown(TokenSpenderPair[] calldata approvals) external;\\n\\n    /// @notice Invalidate nonces for a given (token, spender) pair\\n    /// @param token The token to invalidate nonces for\\n    /// @param spender The spender to invalidate nonces for\\n    /// @param newNonce The new nonce to set. Invalidates all nonces less than it.\\n    /// @dev Can't invalidate more than 2**16 nonces per transaction.\\n    function invalidateNonces(address token, address spender, uint48 newNonce) external;\\n}\\n\",\"keccak256\":\"0x7153c4959bea79f52322c8d0a934614b11a56b65c85701f7f6656284afbd85b2\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a06040523480156200001157600080fd5b50604051620021b0380380620021b083398101604081905262000034916200006e565b6001600160a01b0381166200005c5760405163f3b8782960e01b815260040160405180910390fd5b6001600160a01b0316608052620000a0565b6000602082840312156200008157600080fd5b81516001600160a01b03811681146200009957600080fd5b9392505050565b6080516120ed620000c3600039600081816101250152610ac601526120ed6000f3fe608060405234801561001057600080fd5b50600436106100725760003560e01c8063da5f9a0b11610050578063da5f9a0b146100e0578063e2467bb814610100578063e6d355041461012057600080fd5b806328012427146100775780636e20931a146100a0578063ad2fa26d146100c0575b600080fd5b61008a610085366004611364565b61016c565b604051610097919061144e565b60405180910390f35b6100b36100ae3660046114bd565b610268565b604051610097919061151f565b6100d36100ce36600461154c565b6104b7565b6040516100979190611589565b6100f36100ee366004611631565b6105df565b604051610097919061164e565b61011361010e3660046116c2565b610a7b565b604051610097919061180c565b6101477f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610097565b6060825167ffffffffffffffff81111561018857610188610f90565b6040519080825280602002602001820160405280156101e457816020015b6101d16040518060800160405280600081526020016000815260200160008152602001600081525090565b8152602001906001900390816101a65790505b50905060005b8351811015610260576102308585838151811061020957610209611afb565b602002602001015185848151811061022357610223611afb565b6020026020010151610268565b82828151811061024257610242611afb565b6020026020010181905250808061025890611b59565b9150506101ea565b509392505050565b6102936040518060800160405280600081526020016000815260200160008152602001600081525090565b73ffffffffffffffffffffffffffffffffffffffff8316156104b0576040517e8cc26200000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8581166004830152849190821690628cc26290602401602060405180830381865afa15801561031c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103409190611b91565b82526040517f70a0823100000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff86811660048301528216906370a0823190602401602060405180830381865afa1580156103ae573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103d29190611b91565b602083015260a08301516103e790600a611cca565b83610140015183602001516103fc9190611cd6565b6104069190611ced565b604083810191909152835190517fdd62ed3e00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff878116600483015286811660248301529091169063dd62ed3e90604401602060405180830381865afa158015610485573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104a99190611b91565b6060830152505b9392505050565b6060815167ffffffffffffffff8111156104d3576104d3610f90565b60405190808252806020026020018201604052801561057857816020015b610565604051806101000160405280600081526020016000815260200160008152602001600081526020016000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b8152602001906001900390816104f15790505b50905060005b82518110156105d9576105a983828151811061059c5761059c611afb565b60200260200101516105df565b8282815181106105bb576105bb611afb565b602002602001018190525080806105d190611b59565b91505061057e565b50919050565b610653604051806101000160405280600081526020016000815260200160008152602001600081526020016000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b73ffffffffffffffffffffffffffffffffffffffff821615610a765760008290508073ffffffffffffffffffffffffffffffffffffffff1663cd3daf9d6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156106bf573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106e39190611b91565b8260000181815250508073ffffffffffffffffffffffffffffffffffffffff16631c1f78eb6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610737573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061075b9190611b91565b8260200181815250508073ffffffffffffffffffffffffffffffffffffffff166318160ddd6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156107af573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107d39190611b91565b8260400181815250508073ffffffffffffffffffffffffffffffffffffffff1663ebe2b12b6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610827573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061084b9190611b91565b8260600181815250508073ffffffffffffffffffffffffffffffffffffffff16637b0a47ee6040518163ffffffff1660e01b8152600401602060405180830381865afa15801561089f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108c39190611b91565b8260800181815250508073ffffffffffffffffffffffffffffffffffffffff1663386a95256040518163ffffffff1660e01b8152600401602060405180830381865afa158015610917573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061093b9190611b91565b8260a00181815250508073ffffffffffffffffffffffffffffffffffffffff1663d1af0c7d6040518163ffffffff1660e01b8152600401602060405180830381865afa15801561098f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109b39190611d28565b8260c0019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508073ffffffffffffffffffffffffffffffffffffffff166372f702f36040518163ffffffff1660e01b8152600401602060405180830381865afa158015610a35573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a599190611d28565b73ffffffffffffffffffffffffffffffffffffffff1660e0830152505b919050565b6040517f2a6bc2dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83811660048301526060916000917f00000000000000000000000000000000000000000000000000000000000000001690632a6bc2dd90602401600060405180830381865afa158015610b0d573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052610b539190810190611e86565b80519091508067ffffffffffffffff811115610b7157610b71610f90565b604051908082528060200260200182016040528015610baa57816020015b610b97610d80565b815260200190600190039081610b8f5790505b5092506000805b82811015610d7657838181518110610bcb57610bcb611afb565b602002602001015160000151858281518110610be957610be9611afb565b602002602001015160000181905250838181518110610c0a57610c0a611afb565b602002602001015160200151858281518110610c2857610c28611afb565b60200260200101516020018190525060005b8651811015610ceb57868181518110610c5557610c55611afb565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff16868381518110610c8957610c89611afb565b60200260200101516000015160c0015173ffffffffffffffffffffffffffffffffffffffff1603610cd957868181518110610cc657610cc6611afb565b6020026020010151602001519250610ceb565b80610ce381611b59565b915050610c3a565b50610cf5826105df565b858281518110610d0757610d07611afb565b602002602001015160400181905250610d3e8783878481518110610d2d57610d2d611afb565b602002602001015160000151610268565b858281518110610d5057610d50611afb565b602002602001015160600181905250600091508080610d6e90611b59565b915050610bb1565b5050505092915050565b6040518060800160405280610d93610e71565b8152602001610dc36040518060800160405280600081526020016000815260200160008152602001600081525090565b8152602001610e3c604051806101000160405280600081526020016000815260200160008152602001600081526020016000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b8152602001610e6c6040518060800160405280600081526020016000815260200160008152602001600081525090565b905290565b604051806101e00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600015158152602001600015158152602001606081526020016060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001610e6c60405180610120016040528060001515815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b73ffffffffffffffffffffffffffffffffffffffff81168114610f8257600080fd5b50565b8035610a7681610f60565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051610120810167ffffffffffffffff81118282101715610fe357610fe3610f90565b60405290565b6040516101e0810167ffffffffffffffff81118282101715610fe357610fe3610f90565b6040805190810167ffffffffffffffff81118282101715610fe357610fe3610f90565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561107757611077610f90565b604052919050565b600067ffffffffffffffff82111561109957611099610f90565b5060051b60200190565b600082601f8301126110b457600080fd5b813560206110c96110c48361107f565b611030565b82815260059290921b840181019181810190868411156110e857600080fd5b8286015b8481101561110c5780356110ff81610f60565b83529183019183016110ec565b509695505050505050565b8015158114610f8257600080fd5b8035610a7681611117565b600067ffffffffffffffff82111561114a5761114a610f90565b50601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01660200190565b600082601f83011261118757600080fd5b81356111956110c482611130565b8181528460208386010111156111aa57600080fd5b816020850160208301376000918101602001919091529392505050565b600061012082840312156111da57600080fd5b6111e2610fbf565b90506111ed82611125565b81526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525092915050565b60006102e0828403121561125a57600080fd5b611262610fe9565b905061126d82610f85565b815261127b60208301611125565b602082015261128c60408301611125565b6040820152606082013567ffffffffffffffff808211156112ac57600080fd5b6112b885838601611176565b606084015260808401359150808211156112d157600080fd5b506112de84828501611176565b60808301525060a082013560a08201526112fa60c08301610f85565b60c082015260e08281013590820152610100808301359082015261012080830135908201526101408083013590820152610160808301359082015261018080830135908201526101a080830135908201526101c061135a848285016111c7565b9082015292915050565b60008060006060848603121561137957600080fd5b833561138481610f60565b925060208481013567ffffffffffffffff808211156113a257600080fd5b6113ae888389016110a3565b945060408701359150808211156113c457600080fd5b818701915087601f8301126113d857600080fd5b81356113e66110c48261107f565b81815260059190911b8301840190848101908a83111561140557600080fd5b8585015b8381101561143d578035858111156114215760008081fd5b61142f8d89838a0101611247565b845250918601918601611409565b508096505050505050509250925092565b6020808252825182820181905260009190848201906040850190845b818110156114b15761149e838551805182526020810151602083015260408101516040830152606081015160608301525050565b928401926080929092019160010161146a565b50909695505050505050565b6000806000606084860312156114d257600080fd5b83356114dd81610f60565b925060208401356114ed81610f60565b9150604084013567ffffffffffffffff81111561150957600080fd5b61151586828701611247565b9150509250925092565b81518152602080830151908201526040808301519082015260608083015190820152608081015b92915050565b60006020828403121561155e57600080fd5b813567ffffffffffffffff81111561157557600080fd5b611581848285016110a3565b949350505050565b6020808252825182820181905260009190848201906040850190845b818110156114b15761161d838551805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015173ffffffffffffffffffffffffffffffffffffffff80821660c08501528060e08401511660e085015250505050565b9284019261010092909201916001016115a5565b60006020828403121561164357600080fd5b81356104b081610f60565b61010081016115468284805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015173ffffffffffffffffffffffffffffffffffffffff80821660c08501528060e08401511660e085015250505050565b60008060408084860312156116d657600080fd5b83356116e181610f60565b925060208481013567ffffffffffffffff8111156116fe57600080fd5b8501601f8101871361170f57600080fd5b803561171d6110c48261107f565b81815260069190911b8201830190838101908983111561173c57600080fd5b928401925b8284101561178e5785848b0312156117595760008081fd5b61176161100d565b843561176c81610f60565b81528486013561177b81610f60565b8187015282529285019290840190611741565b8096505050505050509250929050565b60005b838110156117b95781810151838201526020016117a1565b50506000910152565b600081518084526117da81602086016020860161179e565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169290920160200192915050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b83811015611aed577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc08984030185528151610220815181865261188e828701825173ffffffffffffffffffffffffffffffffffffffff169052565b8981015115156102408701528881015115156102608701526060808201516102e06102808901819052919350906118c96105008901836117c2565b915060808301517ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffde0898403016102a08a015261190583826117c2565b92505060a0808401516102c08a015260c084015161193a838b018273ffffffffffffffffffffffffffffffffffffffff169052565b5060e0848101516103008b0152610100808601516103208c01526101208601516103408c01526101408601516103608c01526101608601516103808c01526101808601516103a08c01526101a0808701516103c08d01526101c090960151805115156103e08d015260208101516104008d015260408101516104208d015260608101516104408d015260808101516104608d015260a08101516104808d015260c08101516104a08d0152918201516104c08c01528101516104e08b01529391508c8601519350611a2d8d8a0185805182526020810151602083015260408101516040830152606081015160608301525050565b8b8601519350611aa4818a0185805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015173ffffffffffffffffffffffffffffffffffffffff80821660c08501528060e08401511660e085015250505050565b509383015193611ad788820186805182526020810151602083015260408101516040830152606081015160608301525050565b50978a0197955050509187019150600101611833565b509098975050505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203611b8a57611b8a611b2a565b5060010190565b600060208284031215611ba357600080fd5b5051919050565b600181815b80851115611c0357817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115611be957611be9611b2a565b80851615611bf657918102915b93841c9390800290611baf565b509250929050565b600082611c1a57506001611546565b81611c2757506000611546565b8160018114611c3d5760028114611c4757611c63565b6001915050611546565b60ff841115611c5857611c58611b2a565b50506001821b611546565b5060208310610133831016604e8410600b8410161715611c86575081810a611546565b611c908383611baa565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115611cc257611cc2611b2a565b029392505050565b60006104b08383611c0b565b808202811582820484141761154657611546611b2a565b600082611d23577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b600060208284031215611d3a57600080fd5b81516104b081610f60565b8051610a7681610f60565b8051610a7681611117565b600082601f830112611d6c57600080fd5b8151611d7a6110c482611130565b818152846020838601011115611d8f57600080fd5b61158182602083016020870161179e565b60006101208284031215611db357600080fd5b611dbb610fbf565b9050611dc682611d50565b81526020820151602082015260408201516040820152606082015160608201526080820151608082015260a082015160a082015260c082015160c082015260e082015160e082015261010080830151818301525092915050565b600060808284031215611e3257600080fd5b6040516080810181811067ffffffffffffffff82111715611e5557611e55610f90565b8060405250809150825181526020830151602082015260408301516040820152606083015160608201525092915050565b600060208284031215611e9857600080fd5b815167ffffffffffffffff80821115611eb057600080fd5b818401915084601f830112611ec457600080fd5b8151611ed26110c48261107f565b8082825260208201915060208360051b860101925087831115611ef457600080fd5b602085015b838110156120ab57805185811115611f1057600080fd5b86017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe060a0828c0382011215611f4557600080fd5b611f4d61100d565b602083015188811115611f5f57600080fd5b83016102e0818e0384011215611f7457600080fd5b611f7c610fe9565b9250611f8a60208201611d45565b8352611f9860408201611d50565b6020840152611fa960608201611d50565b6040840152608081015189811115611fc057600080fd5b611fcf8e602083850101611d5b565b60608501525060a081015189811115611fe757600080fd5b611ff68e602083850101611d5b565b60808501525060c081015160a084015261201260e08201611d45565b60c084015261010081015160e08401526101208101516101008401526101408101516101208401526101608101516101408401526101808101516101608401526101a08101516101808401526101c08101516101a08401526120788d6101e08301611da0565b6101c08401525081815261208f8c60408501611e20565b6020820152808652505050602083019250602081019050611ef9565b5097965050505050505056fea2646970667358221220e8e75fed585dee05a617fe42774174b690077bc45effd6c56f54296ff558858164736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100725760003560e01c8063da5f9a0b11610050578063da5f9a0b146100e0578063e2467bb814610100578063e6d355041461012057600080fd5b806328012427146100775780636e20931a146100a0578063ad2fa26d146100c0575b600080fd5b61008a610085366004611364565b61016c565b604051610097919061144e565b60405180910390f35b6100b36100ae3660046114bd565b610268565b604051610097919061151f565b6100d36100ce36600461154c565b6104b7565b6040516100979190611589565b6100f36100ee366004611631565b6105df565b604051610097919061164e565b61011361010e3660046116c2565b610a7b565b604051610097919061180c565b6101477f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610097565b6060825167ffffffffffffffff81111561018857610188610f90565b6040519080825280602002602001820160405280156101e457816020015b6101d16040518060800160405280600081526020016000815260200160008152602001600081525090565b8152602001906001900390816101a65790505b50905060005b8351811015610260576102308585838151811061020957610209611afb565b602002602001015185848151811061022357610223611afb565b6020026020010151610268565b82828151811061024257610242611afb565b6020026020010181905250808061025890611b59565b9150506101ea565b509392505050565b6102936040518060800160405280600081526020016000815260200160008152602001600081525090565b73ffffffffffffffffffffffffffffffffffffffff8316156104b0576040517e8cc26200000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8581166004830152849190821690628cc26290602401602060405180830381865afa15801561031c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103409190611b91565b82526040517f70a0823100000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff86811660048301528216906370a0823190602401602060405180830381865afa1580156103ae573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103d29190611b91565b602083015260a08301516103e790600a611cca565b83610140015183602001516103fc9190611cd6565b6104069190611ced565b604083810191909152835190517fdd62ed3e00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff878116600483015286811660248301529091169063dd62ed3e90604401602060405180830381865afa158015610485573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104a99190611b91565b6060830152505b9392505050565b6060815167ffffffffffffffff8111156104d3576104d3610f90565b60405190808252806020026020018201604052801561057857816020015b610565604051806101000160405280600081526020016000815260200160008152602001600081526020016000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b8152602001906001900390816104f15790505b50905060005b82518110156105d9576105a983828151811061059c5761059c611afb565b60200260200101516105df565b8282815181106105bb576105bb611afb565b602002602001018190525080806105d190611b59565b91505061057e565b50919050565b610653604051806101000160405280600081526020016000815260200160008152602001600081526020016000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b73ffffffffffffffffffffffffffffffffffffffff821615610a765760008290508073ffffffffffffffffffffffffffffffffffffffff1663cd3daf9d6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156106bf573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106e39190611b91565b8260000181815250508073ffffffffffffffffffffffffffffffffffffffff16631c1f78eb6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610737573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061075b9190611b91565b8260200181815250508073ffffffffffffffffffffffffffffffffffffffff166318160ddd6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156107af573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107d39190611b91565b8260400181815250508073ffffffffffffffffffffffffffffffffffffffff1663ebe2b12b6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610827573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061084b9190611b91565b8260600181815250508073ffffffffffffffffffffffffffffffffffffffff16637b0a47ee6040518163ffffffff1660e01b8152600401602060405180830381865afa15801561089f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108c39190611b91565b8260800181815250508073ffffffffffffffffffffffffffffffffffffffff1663386a95256040518163ffffffff1660e01b8152600401602060405180830381865afa158015610917573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061093b9190611b91565b8260a00181815250508073ffffffffffffffffffffffffffffffffffffffff1663d1af0c7d6040518163ffffffff1660e01b8152600401602060405180830381865afa15801561098f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109b39190611d28565b8260c0019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508073ffffffffffffffffffffffffffffffffffffffff166372f702f36040518163ffffffff1660e01b8152600401602060405180830381865afa158015610a35573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a599190611d28565b73ffffffffffffffffffffffffffffffffffffffff1660e0830152505b919050565b6040517f2a6bc2dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83811660048301526060916000917f00000000000000000000000000000000000000000000000000000000000000001690632a6bc2dd90602401600060405180830381865afa158015610b0d573d6000803e3d6000fd5b505050506040513d6000823e601f3d9081017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0168201604052610b539190810190611e86565b80519091508067ffffffffffffffff811115610b7157610b71610f90565b604051908082528060200260200182016040528015610baa57816020015b610b97610d80565b815260200190600190039081610b8f5790505b5092506000805b82811015610d7657838181518110610bcb57610bcb611afb565b602002602001015160000151858281518110610be957610be9611afb565b602002602001015160000181905250838181518110610c0a57610c0a611afb565b602002602001015160200151858281518110610c2857610c28611afb565b60200260200101516020018190525060005b8651811015610ceb57868181518110610c5557610c55611afb565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff16868381518110610c8957610c89611afb565b60200260200101516000015160c0015173ffffffffffffffffffffffffffffffffffffffff1603610cd957868181518110610cc657610cc6611afb565b6020026020010151602001519250610ceb565b80610ce381611b59565b915050610c3a565b50610cf5826105df565b858281518110610d0757610d07611afb565b602002602001015160400181905250610d3e8783878481518110610d2d57610d2d611afb565b602002602001015160000151610268565b858281518110610d5057610d50611afb565b602002602001015160600181905250600091508080610d6e90611b59565b915050610bb1565b5050505092915050565b6040518060800160405280610d93610e71565b8152602001610dc36040518060800160405280600081526020016000815260200160008152602001600081525090565b8152602001610e3c604051806101000160405280600081526020016000815260200160008152602001600081526020016000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b8152602001610e6c6040518060800160405280600081526020016000815260200160008152602001600081525090565b905290565b604051806101e00160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600015158152602001600015158152602001606081526020016060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001610e6c60405180610120016040528060001515815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b73ffffffffffffffffffffffffffffffffffffffff81168114610f8257600080fd5b50565b8035610a7681610f60565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b604051610120810167ffffffffffffffff81118282101715610fe357610fe3610f90565b60405290565b6040516101e0810167ffffffffffffffff81118282101715610fe357610fe3610f90565b6040805190810167ffffffffffffffff81118282101715610fe357610fe3610f90565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561107757611077610f90565b604052919050565b600067ffffffffffffffff82111561109957611099610f90565b5060051b60200190565b600082601f8301126110b457600080fd5b813560206110c96110c48361107f565b611030565b82815260059290921b840181019181810190868411156110e857600080fd5b8286015b8481101561110c5780356110ff81610f60565b83529183019183016110ec565b509695505050505050565b8015158114610f8257600080fd5b8035610a7681611117565b600067ffffffffffffffff82111561114a5761114a610f90565b50601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01660200190565b600082601f83011261118757600080fd5b81356111956110c482611130565b8181528460208386010111156111aa57600080fd5b816020850160208301376000918101602001919091529392505050565b600061012082840312156111da57600080fd5b6111e2610fbf565b90506111ed82611125565b81526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525092915050565b60006102e0828403121561125a57600080fd5b611262610fe9565b905061126d82610f85565b815261127b60208301611125565b602082015261128c60408301611125565b6040820152606082013567ffffffffffffffff808211156112ac57600080fd5b6112b885838601611176565b606084015260808401359150808211156112d157600080fd5b506112de84828501611176565b60808301525060a082013560a08201526112fa60c08301610f85565b60c082015260e08281013590820152610100808301359082015261012080830135908201526101408083013590820152610160808301359082015261018080830135908201526101a080830135908201526101c061135a848285016111c7565b9082015292915050565b60008060006060848603121561137957600080fd5b833561138481610f60565b925060208481013567ffffffffffffffff808211156113a257600080fd5b6113ae888389016110a3565b945060408701359150808211156113c457600080fd5b818701915087601f8301126113d857600080fd5b81356113e66110c48261107f565b81815260059190911b8301840190848101908a83111561140557600080fd5b8585015b8381101561143d578035858111156114215760008081fd5b61142f8d89838a0101611247565b845250918601918601611409565b508096505050505050509250925092565b6020808252825182820181905260009190848201906040850190845b818110156114b15761149e838551805182526020810151602083015260408101516040830152606081015160608301525050565b928401926080929092019160010161146a565b50909695505050505050565b6000806000606084860312156114d257600080fd5b83356114dd81610f60565b925060208401356114ed81610f60565b9150604084013567ffffffffffffffff81111561150957600080fd5b61151586828701611247565b9150509250925092565b81518152602080830151908201526040808301519082015260608083015190820152608081015b92915050565b60006020828403121561155e57600080fd5b813567ffffffffffffffff81111561157557600080fd5b611581848285016110a3565b949350505050565b6020808252825182820181905260009190848201906040850190845b818110156114b15761161d838551805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015173ffffffffffffffffffffffffffffffffffffffff80821660c08501528060e08401511660e085015250505050565b9284019261010092909201916001016115a5565b60006020828403121561164357600080fd5b81356104b081610f60565b61010081016115468284805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015173ffffffffffffffffffffffffffffffffffffffff80821660c08501528060e08401511660e085015250505050565b60008060408084860312156116d657600080fd5b83356116e181610f60565b925060208481013567ffffffffffffffff8111156116fe57600080fd5b8501601f8101871361170f57600080fd5b803561171d6110c48261107f565b81815260069190911b8201830190838101908983111561173c57600080fd5b928401925b8284101561178e5785848b0312156117595760008081fd5b61176161100d565b843561176c81610f60565b81528486013561177b81610f60565b8187015282529285019290840190611741565b8096505050505050509250929050565b60005b838110156117b95781810151838201526020016117a1565b50506000910152565b600081518084526117da81602086016020860161179e565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169290920160200192915050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b83811015611aed577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc08984030185528151610220815181865261188e828701825173ffffffffffffffffffffffffffffffffffffffff169052565b8981015115156102408701528881015115156102608701526060808201516102e06102808901819052919350906118c96105008901836117c2565b915060808301517ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffde0898403016102a08a015261190583826117c2565b92505060a0808401516102c08a015260c084015161193a838b018273ffffffffffffffffffffffffffffffffffffffff169052565b5060e0848101516103008b0152610100808601516103208c01526101208601516103408c01526101408601516103608c01526101608601516103808c01526101808601516103a08c01526101a0808701516103c08d01526101c090960151805115156103e08d015260208101516104008d015260408101516104208d015260608101516104408d015260808101516104608d015260a08101516104808d015260c08101516104a08d0152918201516104c08c01528101516104e08b01529391508c8601519350611a2d8d8a0185805182526020810151602083015260408101516040830152606081015160608301525050565b8b8601519350611aa4818a0185805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015173ffffffffffffffffffffffffffffffffffffffff80821660c08501528060e08401511660e085015250505050565b509383015193611ad788820186805182526020810151602083015260408101516040830152606081015160608301525050565b50978a0197955050509187019150600101611833565b509098975050505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203611b8a57611b8a611b2a565b5060010190565b600060208284031215611ba357600080fd5b5051919050565b600181815b80851115611c0357817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115611be957611be9611b2a565b80851615611bf657918102915b93841c9390800290611baf565b509250929050565b600082611c1a57506001611546565b81611c2757506000611546565b8160018114611c3d5760028114611c4757611c63565b6001915050611546565b60ff841115611c5857611c58611b2a565b50506001821b611546565b5060208310610133831016604e8410600b8410161715611c86575081810a611546565b611c908383611baa565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115611cc257611cc2611b2a565b029392505050565b60006104b08383611c0b565b808202811582820484141761154657611546611b2a565b600082611d23577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b600060208284031215611d3a57600080fd5b81516104b081610f60565b8051610a7681610f60565b8051610a7681611117565b600082601f830112611d6c57600080fd5b8151611d7a6110c482611130565b818152846020838601011115611d8f57600080fd5b61158182602083016020870161179e565b60006101208284031215611db357600080fd5b611dbb610fbf565b9050611dc682611d50565b81526020820151602082015260408201516040820152606082015160608201526080820151608082015260a082015160a082015260c082015160c082015260e082015160e082015261010080830151818301525092915050565b600060808284031215611e3257600080fd5b6040516080810181811067ffffffffffffffff82111715611e5557611e55610f90565b8060405250809150825181526020830151602082015260408301516040820152606083015160608201525092915050565b600060208284031215611e9857600080fd5b815167ffffffffffffffff80821115611eb057600080fd5b818401915084601f830112611ec457600080fd5b8151611ed26110c48261107f565b8082825260208201915060208360051b860101925087831115611ef457600080fd5b602085015b838110156120ab57805185811115611f1057600080fd5b86017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe060a0828c0382011215611f4557600080fd5b611f4d61100d565b602083015188811115611f5f57600080fd5b83016102e0818e0384011215611f7457600080fd5b611f7c610fe9565b9250611f8a60208201611d45565b8352611f9860408201611d50565b6020840152611fa960608201611d50565b6040840152608081015189811115611fc057600080fd5b611fcf8e602083850101611d5b565b60608501525060a081015189811115611fe757600080fd5b611ff68e602083850101611d5b565b60808501525060c081015160a084015261201260e08201611d45565b60c084015261010081015160e08401526101208101516101008401526101408101516101208401526101608101516101408401526101808101516101608401526101a08101516101808401526101c08101516101a08401526120788d6101e08301611da0565b6101c08401525081815261208f8c60408501611e20565b6020820152808652505050602083019250602081019050611ef9565b5097965050505050505056fea2646970667358221220e8e75fed585dee05a617fe42774174b690077bc45effd6c56f54296ff558858164736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "errors": {
+      "FluidStakingRewardsResolver__AddressZero()": [
+        {
+          "notice": "thrown if an input param address is zero"
+        }
+      ]
+    },
+    "kind": "user",
+    "methods": {},
+    "notice": "Fluid Lending protocol Staking Rewards (for fTokens) resolver Implements various view-only methods to give easy access to Lending protocol staked fToken rewards data.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

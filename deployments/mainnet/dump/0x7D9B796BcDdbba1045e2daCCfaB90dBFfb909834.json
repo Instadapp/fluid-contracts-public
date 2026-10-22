@@ -1,0 +1,675 @@
+{
+  "address": "0x7D9B796BcDdbba1045e2daCCfaB90dBFfb909834",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newStatus_",
+          "type": "uint256"
+        }
+      ],
+      "name": "changeStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokens_",
+          "type": "address[]"
+        }
+      ],
+      "name": "collectRevenue",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token_",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "supplyAmount_",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "borrowAmount_",
+          "type": "int256"
+        },
+        {
+          "internalType": "address",
+          "name": "withdrawTo_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "borrowTo_",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "callbackData_",
+          "type": "bytes"
+        }
+      ],
+      "name": "operate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "memVar3_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "memVar4_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "supplyTokens_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "borrowTokens_",
+          "type": "address[]"
+        }
+      ],
+      "name": "pauseUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "supplyTokens_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "borrowTokens_",
+          "type": "address[]"
+        }
+      ],
+      "name": "unpauseUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "value",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct Structs.AddressBool[]",
+          "name": "authsStatus_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateAuths",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokens_",
+          "type": "address[]"
+        }
+      ],
+      "name": "updateExchangePrices",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "supplyExchangePrices_",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "borrowExchangePrices_",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "value",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct Structs.AddressBool[]",
+          "name": "guardiansStatus_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateGuardians",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "kink",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rateAtUtilizationZero",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rateAtUtilizationKink",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rateAtUtilizationMax",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.RateDataV1Params[]",
+          "name": "tokensRateData_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateRateDataV1s",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "kink1",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "kink2",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rateAtUtilizationZero",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rateAtUtilizationKink1",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rateAtUtilizationKink2",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rateAtUtilizationMax",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.RateDataV2Params[]",
+          "name": "tokensRateData_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateRateDataV2s",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "revenueCollector_",
+          "type": "address"
+        }
+      ],
+      "name": "updateRevenueCollector",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "threshold",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.TokenConfig[]",
+          "name": "tokenConfigs_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateTokenConfigs",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "mode",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expandPercent",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expandDuration",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseDebtCeiling",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxDebtCeiling",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.UserBorrowConfig[]",
+          "name": "userBorrowConfigs_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateUserBorrowConfigs",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.AddressUint256[]",
+          "name": "userClasses_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateUserClasses",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "mode",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expandPercent",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expandDuration",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseWithdrawalLimit",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Structs.UserSupplyConfig[]",
+          "name": "userSupplyConfigs_",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateUserSupplyConfigs",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x5c9b4f95a9dce73fee147fba136ce0b97a534f270fa8d445c75d3bbec72b8b11",
+  "receipt": {
+    "to": "0x5050e08626c499411B5D0E0b5AF0E83d3fD82EDF",
+    "from": "0xe9F82f15910E161999777036e20CB4108F4Df800",
+    "contractAddress": null,
+    "transactionIndex": 0,
+    "gasUsed": "122692",
+    "logsBloom": "0x00000000010000000010000000000000000000000000000000000000040000000000000000000000000008000000400002000000080020000000000000000000000000000000000808000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000800000000000000000000000000000000000000000000010000000000000000000000000000000000200000000000000000000000000000000000002000000008000000000002000000000000000000000000000000000000008000000000000000000000200000000000000010000000000000000000000000000000000000000000",
+    "blockHash": "0x1827bd050f97d6246aa6a3feaff9b016b1e770bd48ba79d65104684043512dcd",
+    "transactionHash": "0x5c9b4f95a9dce73fee147fba136ce0b97a534f270fa8d445c75d3bbec72b8b11",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 18593471,
+        "transactionHash": "0x967b10c3129a56accbb4b70a89780c189142a4998e79dbea69a19e20b3d1d5e1",
+        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000088e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "0x0000000000000000000000005050e08626c499411b5d0e0b5af0e83d3fd82edf"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000029eb93aaa5",
+        "logIndex": 0,
+        "blockHash": "0x1827bd050f97d6246aa6a3feaff9b016b1e770bd48ba79d65104684043512dcd"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 18593471,
+        "transactionHash": "0x967b10c3129a56accbb4b70a89780c189142a4998e79dbea69a19e20b3d1d5e1",
+        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000005050e08626c499411b5d0e0b5af0e83d3fd82edf",
+          "0x00000000000000000000000088e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000506096819a08313b8",
+        "logIndex": 1,
+        "blockHash": "0x1827bd050f97d6246aa6a3feaff9b016b1e770bd48ba79d65104684043512dcd"
+      },
+      {
+        "transactionIndex": 0,
+        "blockNumber": 18593471,
+        "transactionHash": "0x967b10c3129a56accbb4b70a89780c189142a4998e79dbea69a19e20b3d1d5e1",
+        "address": "0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640",
+        "topics": [
+          "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67",
+          "0x0000000000000000000000005050e08626c499411b5d0e0b5af0e83d3fd82edf",
+          "0x0000000000000000000000005050e08626c499411b5d0e0b5af0e83d3fd82edf"
+        ],
+        "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffd6146c555b00000000000000000000000000000000000000000000000506096819a08313b8000000000000000000000000000000000000589b18b27cd33d4cabdbdb893f7d00000000000000000000000000000000000000000000000154facfcff903582b0000000000000000000000000000000000000000000000000000000000030f95",
+        "logIndex": 2,
+        "blockHash": "0x1827bd050f97d6246aa6a3feaff9b016b1e770bd48ba79d65104684043512dcd"
+      }
+    ],
+    "blockNumber": 18593471,
+    "cumulativeGasUsed": "122692",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "41b28469fcc9ae33c199e00da453e123",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newStatus_\",\"type\":\"uint256\"}],\"name\":\"changeStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tokens_\",\"type\":\"address[]\"}],\"name\":\"collectRevenue\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token_\",\"type\":\"address\"},{\"internalType\":\"int256\",\"name\":\"supplyAmount_\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"borrowAmount_\",\"type\":\"int256\"},{\"internalType\":\"address\",\"name\":\"withdrawTo_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"borrowTo_\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"callbackData_\",\"type\":\"bytes\"}],\"name\":\"operate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"memVar3_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"memVar4_\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"supplyTokens_\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"borrowTokens_\",\"type\":\"address[]\"}],\"name\":\"pauseUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"supplyTokens_\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"borrowTokens_\",\"type\":\"address[]\"}],\"name\":\"unpauseUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"internalType\":\"struct Structs.AddressBool[]\",\"name\":\"authsStatus_\",\"type\":\"tuple[]\"}],\"name\":\"updateAuths\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tokens_\",\"type\":\"address[]\"}],\"name\":\"updateExchangePrices\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"supplyExchangePrices_\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"borrowExchangePrices_\",\"type\":\"uint256[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"internalType\":\"struct Structs.AddressBool[]\",\"name\":\"guardiansStatus_\",\"type\":\"tuple[]\"}],\"name\":\"updateGuardians\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"kink\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rateAtUtilizationZero\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rateAtUtilizationKink\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rateAtUtilizationMax\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.RateDataV1Params[]\",\"name\":\"tokensRateData_\",\"type\":\"tuple[]\"}],\"name\":\"updateRateDataV1s\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"kink1\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"kink2\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rateAtUtilizationZero\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rateAtUtilizationKink1\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rateAtUtilizationKink2\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rateAtUtilizationMax\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.RateDataV2Params[]\",\"name\":\"tokensRateData_\",\"type\":\"tuple[]\"}],\"name\":\"updateRateDataV2s\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"revenueCollector_\",\"type\":\"address\"}],\"name\":\"updateRevenueCollector\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"threshold\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.TokenConfig[]\",\"name\":\"tokenConfigs_\",\"type\":\"tuple[]\"}],\"name\":\"updateTokenConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"mode\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"expandPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseDebtCeiling\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxDebtCeiling\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserBorrowConfig[]\",\"name\":\"userBorrowConfigs_\",\"type\":\"tuple[]\"}],\"name\":\"updateUserBorrowConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.AddressUint256[]\",\"name\":\"userClasses_\",\"type\":\"tuple[]\"}],\"name\":\"updateUserClasses\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"mode\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"expandPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expandDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseWithdrawalLimit\",\"type\":\"uint256\"}],\"internalType\":\"struct Structs.UserSupplyConfig[]\",\"name\":\"userSupplyConfigs_\",\"type\":\"tuple[]\"}],\"name\":\"updateUserSupplyConfigs\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"see https://github.com/Instadapp/infinite-proxy?tab=readme-ov-file#dummy-implementation\",\"kind\":\"dev\",\"methods\":{\"changeStatus(uint256)\":{\"params\":{\"newStatus_\":\"new status        status = 2 -> pause, status = 1 -> resume.\"}},\"collectRevenue(address[])\":{\"details\":\"Note that this can revert if token balance is < revenueAmount (utilization > 100%)\",\"params\":{\"tokens_\":\"array of tokens to collect revenue for\"}},\"operate(address,int256,int256,address,address,bytes)\":{\"details\":\"to trigger skipping in / out transfers when in&out amounts balance themselves out (gas optimization): -   supply(+) == borrow(+), withdraw(-) == payback(-). -   `withdrawTo_` / `borrowTo_` must be msg.sender (protocol) -   `callbackData_` MUST be encoded so that \\\"from\\\" address is at last 20 bytes (if this optimization is desired),     also for native token operations where liquidityCallback is not triggered!     from address must come at last position if there is more data. I.e. encode like:     abi.encode(otherVar1, otherVar2, FROM_ADDRESS). Note dynamic types used with abi.encode come at the end     so if dynamic types are needed, you must use abi.encodePacked to ensure the from address is at the end.\",\"params\":{\"borrowAmount_\":\"if +ve then borrow, if -ve then payback, if 0 then nothing\",\"borrowTo_\":\"if borrow then to which address\",\"callbackData_\":\"callback data passed to `liquidityCallback` method of protocol\",\"supplyAmount_\":\"if +ve then supply, if -ve then withdraw, if 0 then nothing\",\"token_\":\"address of token (0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE for native)\",\"withdrawTo_\":\"if withdrawal then to which address\"},\"returns\":{\"memVar3_\":\"updated supplyExchangePrice\",\"memVar4_\":\"updated borrowExchangePrice\"}},\"pauseUser(address,address[],address[])\":{\"params\":{\"borrowTokens_\":\"token addresses to pause borrowings for\",\"supplyTokens_\":\"token addresses to pause withdrawals for\",\"user_\":\"address of user to pause operations for\"}},\"unpauseUser(address,address[],address[])\":{\"params\":{\"borrowTokens_\":\"token addresses to unpause borrowings for\",\"supplyTokens_\":\"token addresses to unpause withdrawals for\",\"user_\":\"address of user to unpause operations for\"}},\"updateAuths((address,bool)[])\":{\"params\":{\"authsStatus_\":\"array of structs setting allowed status for an address.                     status true => add auth, false => remove auth\"}},\"updateExchangePrices(address[])\":{\"params\":{\"tokens_\":\"tokens to update exchange prices for\"},\"returns\":{\"borrowExchangePrices_\":\"new borrow rates of overall system for each token\",\"supplyExchangePrices_\":\"new supply rates of overall system for each token\"}},\"updateGuardians((address,bool)[])\":{\"params\":{\"guardiansStatus_\":\"array of structs setting allowed status for an address.                         status true => add guardian, false => remove guardian\"}},\"updateRateDataV1s((address,uint256,uint256,uint256,uint256)[])\":{\"params\":{\"tokensRateData_\":\"array of RateDataV1Params with rate data to set for each token\"}},\"updateRateDataV2s((address,uint256,uint256,uint256,uint256,uint256,uint256)[])\":{\"params\":{\"tokensRateData_\":\"array of RateDataV2Params with rate data to set for each token\"}},\"updateRevenueCollector(address)\":{\"params\":{\"revenueCollector_\":\"new revenue collector address\"}},\"updateTokenConfigs((address,uint256,uint256)[])\":{\"params\":{\"tokenConfigs_\":\"contains token address, fee & utilization threshold\"}},\"updateUserBorrowConfigs((address,address,uint8,uint256,uint256,uint256,uint256)[])\":{\"params\":{\"userBorrowConfigs_\":\"struct array containing user borrow config, see `UserBorrowConfig` struct for more info\"}},\"updateUserClasses((address,uint256)[])\":{\"params\":{\"userClasses_\":\"struct array of uint256 value to assign for each user address\"}},\"updateUserSupplyConfigs((address,address,uint8,uint256,uint256,uint256)[])\":{\"params\":{\"userSupplyConfigs_\":\"struct array containing user supply config, see `UserSupplyConfig` struct for more info\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"changeStatus(uint256)\":{\"notice\":\"changes current status, e.g. for pausing or unpausing all user operations. Only callable by Auths.\"},\"collectRevenue(address[])\":{\"notice\":\"collects revenue for tokens to configured revenueCollector address.\"},\"operate(address,int256,int256,address,address,bytes)\":{\"notice\":\"Single function which handles supply, withdraw, borrow & payback\"},\"pauseUser(address,address[],address[])\":{\"notice\":\"pause operations for a particular user in class 0 (class 1 users can't be paused by guardians). Only callable by Guardians.\"},\"unpauseUser(address,address[],address[])\":{\"notice\":\"unpause operations for a particular user in class 0 (class 1 users can't be paused by guardians). Only callable by Guardians.\"},\"updateAuths((address,bool)[])\":{\"notice\":\"adds/removes auths. Auths generally could be contracts which can have restricted actions defined on contract.         auths can be helpful in reducing governance overhead where it's not needed.\"},\"updateExchangePrices(address[])\":{\"notice\":\"gets the current updated exchange prices for n tokens and updates all prices, rates related data in storage.\"},\"updateGuardians((address,bool)[])\":{\"notice\":\"adds/removes guardians. Only callable by Governance.\"},\"updateRateDataV1s((address,uint256,uint256,uint256,uint256)[])\":{\"notice\":\"update tokens rate data version 1. Only callable by Auths.\"},\"updateRateDataV2s((address,uint256,uint256,uint256,uint256,uint256,uint256)[])\":{\"notice\":\"update tokens rate data version 2. Only callable by Auths.\"},\"updateRevenueCollector(address)\":{\"notice\":\"changes the revenue collector address (contract that is sent revenue). Only callable by Governance.\"},\"updateTokenConfigs((address,uint256,uint256)[])\":{\"notice\":\"updates token configs: fee charge on borrowers interest & storage update utilization threshold.         Only callable by Auths.\"},\"updateUserBorrowConfigs((address,address,uint8,uint256,uint256,uint256,uint256)[])\":{\"notice\":\"setting user borrow configs per token basis. Eg: with interest or interest-free and automated limits.         Only callable by Auths.\"},\"updateUserClasses((address,uint256)[])\":{\"notice\":\"updates user classes: 0 is for new protocols, 1 is for established protocols.         Only callable by Auths.\"},\"updateUserSupplyConfigs((address,address,uint8,uint256,uint256,uint256)[])\":{\"notice\":\"sets user supply configs per token basis. Eg: with interest or interest-free and automated limits.         Only callable by Auths.\"}},\"notice\":\"Liquidity dummy implementation used for Fluid Liquidity infinite proxy.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/liquidity/dummyImpl.sol\":\"FluidLiquidityDummyImpl\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/infiniteProxy/interfaces/iProxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IProxy {\\n    function setAdmin(address newAdmin_) external;\\n\\n    function setDummyImplementation(address newDummyImplementation_) external;\\n\\n    function addImplementation(address implementation_, bytes4[] calldata sigs_) external;\\n\\n    function removeImplementation(address implementation_) external;\\n\\n    function getAdmin() external view returns (address);\\n\\n    function getDummyImplementation() external view returns (address);\\n\\n    function getImplementationSigs(address impl_) external view returns (bytes4[] memory);\\n\\n    function getSigsImplementation(bytes4 sig_) external view returns (address);\\n\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n}\\n\",\"keccak256\":\"0xbb605491d4bac08e816248feecae7dd17cfc1877c88b2e555abece2970f5ea00\",\"license\":\"MIT\"},\"contracts/liquidity/adminModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nabstract contract Structs {\\n    struct AddressBool {\\n        address addr;\\n        bool value;\\n    }\\n\\n    struct AddressUint256 {\\n        address addr;\\n        uint256 value;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 1\\n    struct RateDataV1Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink usually means slow increase in rate, once utilization is above kink borrow rate increases fast\\n        uint256 kink;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink borrow rate when utilization is at kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink;\\n        ///\\n        /// @param rateAtUtilizationMax borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 2\\n    struct RateDataV2Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink1 first kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 1 usually means slow increase in rate, once utilization is above kink 1 borrow rate increases faster\\n        uint256 kink1;\\n        ///\\n        /// @param kink2 second kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 2 usually means slow / medium increase in rate, once utilization is above kink 2 borrow rate increases fast\\n        uint256 kink2;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink1 desired borrow rate when utilization is at first kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at first kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink1;\\n        ///\\n        /// @param rateAtUtilizationKink2 desired borrow rate when utilization is at second kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at second kink then rateAtUtilizationKink would be 1_200\\n        uint256 rateAtUtilizationKink2;\\n        ///\\n        /// @param rateAtUtilizationMax desired borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set token config\\n    struct TokenConfig {\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param fee charges on borrower's interest. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 fee;\\n        ///\\n        /// @param threshold on when to update the storage slot. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 threshold;\\n    }\\n\\n    /// @notice struct to set user supply & withdrawal config\\n    struct UserSupplyConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent withdrawal limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which withdrawal limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration withdrawal limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseWithdrawalLimit base limit, below this, user can withdraw the entire amount.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseWithdrawalLimit;\\n    }\\n\\n    /// @notice struct to set user borrow & payback config\\n    struct UserBorrowConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent debt limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which debt limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration debt limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseDebtCeiling base borrow limit. until here, borrow limit remains as baseDebtCeiling\\n        /// (user can borrow until this point at once without stepped expansion). Above this, automated limit comes in place.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseDebtCeiling;\\n        ///\\n        /// @param maxDebtCeiling max borrow ceiling, maximum amount the user can borrow.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 maxDebtCeiling;\\n    }\\n}\\n\",\"keccak256\":\"0xcacc14afd7880d3179d0089d65dad6714c377df4801a9ad79a499d0d079124c0\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/dummyImpl.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidLiquidityLogic, IFluidLiquidityAdmin } from \\\"./interfaces/iLiquidity.sol\\\";\\nimport { Structs as AdminModuleStructs } from \\\"./adminModule/structs.sol\\\";\\n\\n/// @notice Liquidity dummy implementation used for Fluid Liquidity infinite proxy.\\n/// @dev see https://github.com/Instadapp/infinite-proxy?tab=readme-ov-file#dummy-implementation\\ncontract FluidLiquidityDummyImpl is IFluidLiquidityLogic {\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateAuths(AdminModuleStructs.AddressBool[] calldata authsStatus_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateGuardians(AdminModuleStructs.AddressBool[] calldata guardiansStatus_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateRevenueCollector(address revenueCollector_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function changeStatus(uint256 newStatus_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateRateDataV1s(AdminModuleStructs.RateDataV1Params[] calldata tokensRateData_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateRateDataV2s(AdminModuleStructs.RateDataV2Params[] calldata tokensRateData_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateTokenConfigs(AdminModuleStructs.TokenConfig[] calldata tokenConfigs_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateUserClasses(AdminModuleStructs.AddressUint256[] calldata userClasses_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateUserSupplyConfigs(AdminModuleStructs.UserSupplyConfig[] memory userSupplyConfigs_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateUserBorrowConfigs(AdminModuleStructs.UserBorrowConfig[] memory userBorrowConfigs_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function pauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function unpauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function collectRevenue(address[] calldata tokens_) external {}\\n\\n    /// @inheritdoc IFluidLiquidityAdmin\\n    function updateExchangePrices(\\n        address[] calldata tokens_\\n    ) external returns (uint256[] memory supplyExchangePrices_, uint256[] memory borrowExchangePrices_) {}\\n\\n    /// @inheritdoc IFluidLiquidityLogic\\n    function operate(\\n        address token_,\\n        int256 supplyAmount_,\\n        int256 borrowAmount_,\\n        address withdrawTo_,\\n        address borrowTo_,\\n        bytes calldata callbackData_\\n    ) external payable returns (uint256 memVar3_, uint256 memVar4_) {}\\n}\\n\",\"keccak256\":\"0x17c280e18aae0f7e6e6906c1c83715033f0d87674e9bb8852bf9e879e6f750b3\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/interfaces/iLiquidity.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\nimport { IProxy } from \\\"../../infiniteProxy/interfaces/iProxy.sol\\\";\\nimport { Structs as AdminModuleStructs } from \\\"../adminModule/structs.sol\\\";\\n\\ninterface IFluidLiquidityAdmin {\\n    /// @notice adds/removes auths. Auths generally could be contracts which can have restricted actions defined on contract.\\n    ///         auths can be helpful in reducing governance overhead where it's not needed.\\n    /// @param authsStatus_ array of structs setting allowed status for an address.\\n    ///                     status true => add auth, false => remove auth\\n    function updateAuths(AdminModuleStructs.AddressBool[] calldata authsStatus_) external;\\n\\n    /// @notice adds/removes guardians. Only callable by Governance.\\n    /// @param guardiansStatus_ array of structs setting allowed status for an address.\\n    ///                         status true => add guardian, false => remove guardian\\n    function updateGuardians(AdminModuleStructs.AddressBool[] calldata guardiansStatus_) external;\\n\\n    /// @notice changes the revenue collector address (contract that is sent revenue). Only callable by Governance.\\n    /// @param revenueCollector_  new revenue collector address\\n    function updateRevenueCollector(address revenueCollector_) external;\\n\\n    /// @notice changes current status, e.g. for pausing or unpausing all user operations. Only callable by Auths.\\n    /// @param newStatus_ new status\\n    ///        status = 2 -> pause, status = 1 -> resume.\\n    function changeStatus(uint256 newStatus_) external;\\n\\n    /// @notice                  update tokens rate data version 1. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV1Params with rate data to set for each token\\n    function updateRateDataV1s(AdminModuleStructs.RateDataV1Params[] calldata tokensRateData_) external;\\n\\n    /// @notice                  update tokens rate data version 2. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV2Params with rate data to set for each token\\n    function updateRateDataV2s(AdminModuleStructs.RateDataV2Params[] calldata tokensRateData_) external;\\n\\n    /// @notice updates token configs: fee charge on borrowers interest & storage update utilization threshold.\\n    ///         Only callable by Auths.\\n    /// @param tokenConfigs_ contains token address, fee & utilization threshold\\n    function updateTokenConfigs(AdminModuleStructs.TokenConfig[] calldata tokenConfigs_) external;\\n\\n    /// @notice updates user classes: 0 is for new protocols, 1 is for established protocols.\\n    ///         Only callable by Auths.\\n    /// @param userClasses_ struct array of uint256 value to assign for each user address\\n    function updateUserClasses(AdminModuleStructs.AddressUint256[] calldata userClasses_) external;\\n\\n    /// @notice sets user supply configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userSupplyConfigs_ struct array containing user supply config, see `UserSupplyConfig` struct for more info\\n    function updateUserSupplyConfigs(AdminModuleStructs.UserSupplyConfig[] memory userSupplyConfigs_) external;\\n\\n    /// @notice setting user borrow configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userBorrowConfigs_ struct array containing user borrow config, see `UserBorrowConfig` struct for more info\\n    function updateUserBorrowConfigs(AdminModuleStructs.UserBorrowConfig[] memory userBorrowConfigs_) external;\\n\\n    /// @notice pause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to pause operations for\\n    /// @param supplyTokens_  token addresses to pause withdrawals for\\n    /// @param borrowTokens_  token addresses to pause borrowings for\\n    function pauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice unpause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to unpause operations for\\n    /// @param supplyTokens_  token addresses to unpause withdrawals for\\n    /// @param borrowTokens_  token addresses to unpause borrowings for\\n    function unpauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice         collects revenue for tokens to configured revenueCollector address.\\n    /// @param tokens_  array of tokens to collect revenue for\\n    /// @dev            Note that this can revert if token balance is < revenueAmount (utilization > 100%)\\n    function collectRevenue(address[] calldata tokens_) external;\\n\\n    /// @notice gets the current updated exchange prices for n tokens and updates all prices, rates related data in storage.\\n    /// @param tokens_ tokens to update exchange prices for\\n    /// @return supplyExchangePrices_ new supply rates of overall system for each token\\n    /// @return borrowExchangePrices_ new borrow rates of overall system for each token\\n    function updateExchangePrices(\\n        address[] calldata tokens_\\n    ) external returns (uint256[] memory supplyExchangePrices_, uint256[] memory borrowExchangePrices_);\\n}\\n\\ninterface IFluidLiquidityLogic is IFluidLiquidityAdmin {\\n    /// @notice Single function which handles supply, withdraw, borrow & payback\\n    /// @param token_ address of token (0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE for native)\\n    /// @param supplyAmount_ if +ve then supply, if -ve then withdraw, if 0 then nothing\\n    /// @param borrowAmount_ if +ve then borrow, if -ve then payback, if 0 then nothing\\n    /// @param withdrawTo_ if withdrawal then to which address\\n    /// @param borrowTo_ if borrow then to which address\\n    /// @param callbackData_ callback data passed to `liquidityCallback` method of protocol\\n    /// @return memVar3_ updated supplyExchangePrice\\n    /// @return memVar4_ updated borrowExchangePrice\\n    /// @dev to trigger skipping in / out transfers when in&out amounts balance themselves out (gas optimization):\\n    /// -   supply(+) == borrow(+), withdraw(-) == payback(-).\\n    /// -   `withdrawTo_` / `borrowTo_` must be msg.sender (protocol)\\n    /// -   `callbackData_` MUST be encoded so that \\\"from\\\" address is at last 20 bytes (if this optimization is desired),\\n    ///     also for native token operations where liquidityCallback is not triggered!\\n    ///     from address must come at last position if there is more data. I.e. encode like:\\n    ///     abi.encode(otherVar1, otherVar2, FROM_ADDRESS). Note dynamic types used with abi.encode come at the end\\n    ///     so if dynamic types are needed, you must use abi.encodePacked to ensure the from address is at the end.\\n    function operate(\\n        address token_,\\n        int256 supplyAmount_,\\n        int256 borrowAmount_,\\n        address withdrawTo_,\\n        address borrowTo_,\\n        bytes calldata callbackData_\\n    ) external payable returns (uint256 memVar3_, uint256 memVar4_);\\n}\\n\\ninterface IFluidLiquidity is IProxy, IFluidLiquidityLogic {}\\n\",\"keccak256\":\"0xc81ac0cfc8183ec57ec4e488b07a4f6d1ecd79787e0aaf0dcfdd0b9b7ac0fc84\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506109d8806100206000396000f3fe6080604052600436106100e85760003560e01c8063a5eb43ef1161008a578063dd4cbf6b11610059578063dd4cbf6b14610205578063e8025d7714610227578063ec04840114610205578063f4bfa0001461024257600080fd5b8063a5eb43ef14610147578063ac862bfa146101b3578063ad967e15146101ce578063c2da75f01461014757600080fd5b80633f66feff116100c65780633f66feff146101475780633fad77fc1461016257806354bb0c1d1461017d5780639dde59771461019857600080fd5b806301b88f86146100ed57806302c6bb6a1461010d57806338b7e8e714610128575b600080fd5b3480156100f957600080fd5b5061010b61010836600461039c565b50565b005b34801561011957600080fd5b5061010b61010836600461049c565b34801561013457600080fd5b5061010b610143366004610581565b5050565b34801561015357600080fd5b5061010b610143366004610642565b34801561016e57600080fd5b5061010b610143366004610684565b34801561018957600080fd5b5061010b6101083660046106e7565b3480156101a457600080fd5b5061010b610143366004610709565b3480156101bf57600080fd5b5061010b6101433660046107b1565b6101eb6101dc3660046107e7565b60008097509795505050505050565b604080519283526020830191909152015b60405180910390f35b34801561021157600080fd5b5061010b61022036600461089f565b5050505050565b34801561023357600080fd5b5061010b610108366004610920565b34801561024e57600080fd5b5061026661025d3660046107b1565b50606091829150565b6040516101fc929190610974565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b60405160e0810167ffffffffffffffff811182821017156102c6576102c6610274565b60405290565b60405160c0810167ffffffffffffffff811182821017156102c6576102c6610274565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561033657610336610274565b604052919050565b600067ffffffffffffffff82111561035857610358610274565b5060051b60200190565b803573ffffffffffffffffffffffffffffffffffffffff8116811461038657600080fd5b919050565b803560ff8116811461038657600080fd5b600060208083850312156103af57600080fd5b823567ffffffffffffffff8111156103c657600080fd5b8301601f810185136103d757600080fd5b80356103ea6103e58261033e565b6102ef565b81815260e0918202830184019184820191908884111561040957600080fd5b938501935b838510156104905780858a0312156104265760008081fd5b61042e6102a3565b61043786610362565b8152610444878701610362565b87820152604061045581880161038b565b90820152606086810135908201526080808701359082015260a0808701359082015260c080870135908201528352938401939185019161040e565b50979650505050505050565b600060208083850312156104af57600080fd5b823567ffffffffffffffff8111156104c657600080fd5b8301601f810185136104d757600080fd5b80356104e56103e58261033e565b81815260c0918202830184019184820191908884111561050457600080fd5b938501935b838510156104905780858a0312156105215760008081fd5b6105296102cc565b61053286610362565b815261053f878701610362565b87820152604061055081880161038b565b90820152606086810135908201526080808701359082015260a0808701359082015283529384019391850191610509565b6000806020838503121561059457600080fd5b823567ffffffffffffffff808211156105ac57600080fd5b818501915085601f8301126105c057600080fd5b8135818111156105cf57600080fd5b8660206060830285010111156105e457600080fd5b60209290920196919550909350505050565b60008083601f84011261060857600080fd5b50813567ffffffffffffffff81111561062057600080fd5b6020830191508360208260061b850101111561063b57600080fd5b9250929050565b6000806020838503121561065557600080fd5b823567ffffffffffffffff81111561066c57600080fd5b610678858286016105f6565b90969095509350505050565b6000806020838503121561069757600080fd5b823567ffffffffffffffff808211156106af57600080fd5b818501915085601f8301126106c357600080fd5b8135818111156106d257600080fd5b86602060a0830285010111156105e457600080fd5b6000602082840312156106f957600080fd5b61070282610362565b9392505050565b6000806020838503121561071c57600080fd5b823567ffffffffffffffff8082111561073457600080fd5b818501915085601f83011261074857600080fd5b81358181111561075757600080fd5b86602060e0830285010111156105e457600080fd5b60008083601f84011261077e57600080fd5b50813567ffffffffffffffff81111561079657600080fd5b6020830191508360208260051b850101111561063b57600080fd5b600080602083850312156107c457600080fd5b823567ffffffffffffffff8111156107db57600080fd5b6106788582860161076c565b600080600080600080600060c0888a03121561080257600080fd5b61080b88610362565b9650602088013595506040880135945061082760608901610362565b935061083560808901610362565b925060a088013567ffffffffffffffff8082111561085257600080fd5b818a0191508a601f83011261086657600080fd5b81358181111561087557600080fd5b8b602082850101111561088757600080fd5b60208301945080935050505092959891949750929550565b6000806000806000606086880312156108b757600080fd5b6108c086610362565b9450602086013567ffffffffffffffff808211156108dd57600080fd5b6108e989838a0161076c565b9096509450604088013591508082111561090257600080fd5b5061090f8882890161076c565b969995985093965092949392505050565b60006020828403121561093257600080fd5b5035919050565b600081518084526020808501945080840160005b838110156109695781518752958201959082019060010161094d565b509495945050505050565b6040815260006109876040830185610939565b82810360208401526109998185610939565b9594505050505056fea264697066735822122000ace4babe0b9ec2236e7e00f071b5f8e9b1e8e92c92fcd312a4eb86fb5737d964736f6c63430008150033",
+  "deployedBytecode": "0x6080604052600436106100e85760003560e01c8063a5eb43ef1161008a578063dd4cbf6b11610059578063dd4cbf6b14610205578063e8025d7714610227578063ec04840114610205578063f4bfa0001461024257600080fd5b8063a5eb43ef14610147578063ac862bfa146101b3578063ad967e15146101ce578063c2da75f01461014757600080fd5b80633f66feff116100c65780633f66feff146101475780633fad77fc1461016257806354bb0c1d1461017d5780639dde59771461019857600080fd5b806301b88f86146100ed57806302c6bb6a1461010d57806338b7e8e714610128575b600080fd5b3480156100f957600080fd5b5061010b61010836600461039c565b50565b005b34801561011957600080fd5b5061010b61010836600461049c565b34801561013457600080fd5b5061010b610143366004610581565b5050565b34801561015357600080fd5b5061010b610143366004610642565b34801561016e57600080fd5b5061010b610143366004610684565b34801561018957600080fd5b5061010b6101083660046106e7565b3480156101a457600080fd5b5061010b610143366004610709565b3480156101bf57600080fd5b5061010b6101433660046107b1565b6101eb6101dc3660046107e7565b60008097509795505050505050565b604080519283526020830191909152015b60405180910390f35b34801561021157600080fd5b5061010b61022036600461089f565b5050505050565b34801561023357600080fd5b5061010b610108366004610920565b34801561024e57600080fd5b5061026661025d3660046107b1565b50606091829150565b6040516101fc929190610974565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b60405160e0810167ffffffffffffffff811182821017156102c6576102c6610274565b60405290565b60405160c0810167ffffffffffffffff811182821017156102c6576102c6610274565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff8111828210171561033657610336610274565b604052919050565b600067ffffffffffffffff82111561035857610358610274565b5060051b60200190565b803573ffffffffffffffffffffffffffffffffffffffff8116811461038657600080fd5b919050565b803560ff8116811461038657600080fd5b600060208083850312156103af57600080fd5b823567ffffffffffffffff8111156103c657600080fd5b8301601f810185136103d757600080fd5b80356103ea6103e58261033e565b6102ef565b81815260e0918202830184019184820191908884111561040957600080fd5b938501935b838510156104905780858a0312156104265760008081fd5b61042e6102a3565b61043786610362565b8152610444878701610362565b87820152604061045581880161038b565b90820152606086810135908201526080808701359082015260a0808701359082015260c080870135908201528352938401939185019161040e565b50979650505050505050565b600060208083850312156104af57600080fd5b823567ffffffffffffffff8111156104c657600080fd5b8301601f810185136104d757600080fd5b80356104e56103e58261033e565b81815260c0918202830184019184820191908884111561050457600080fd5b938501935b838510156104905780858a0312156105215760008081fd5b6105296102cc565b61053286610362565b815261053f878701610362565b87820152604061055081880161038b565b90820152606086810135908201526080808701359082015260a0808701359082015283529384019391850191610509565b6000806020838503121561059457600080fd5b823567ffffffffffffffff808211156105ac57600080fd5b818501915085601f8301126105c057600080fd5b8135818111156105cf57600080fd5b8660206060830285010111156105e457600080fd5b60209290920196919550909350505050565b60008083601f84011261060857600080fd5b50813567ffffffffffffffff81111561062057600080fd5b6020830191508360208260061b850101111561063b57600080fd5b9250929050565b6000806020838503121561065557600080fd5b823567ffffffffffffffff81111561066c57600080fd5b610678858286016105f6565b90969095509350505050565b6000806020838503121561069757600080fd5b823567ffffffffffffffff808211156106af57600080fd5b818501915085601f8301126106c357600080fd5b8135818111156106d257600080fd5b86602060a0830285010111156105e457600080fd5b6000602082840312156106f957600080fd5b61070282610362565b9392505050565b6000806020838503121561071c57600080fd5b823567ffffffffffffffff8082111561073457600080fd5b818501915085601f83011261074857600080fd5b81358181111561075757600080fd5b86602060e0830285010111156105e457600080fd5b60008083601f84011261077e57600080fd5b50813567ffffffffffffffff81111561079657600080fd5b6020830191508360208260051b850101111561063b57600080fd5b600080602083850312156107c457600080fd5b823567ffffffffffffffff8111156107db57600080fd5b6106788582860161076c565b600080600080600080600060c0888a03121561080257600080fd5b61080b88610362565b9650602088013595506040880135945061082760608901610362565b935061083560808901610362565b925060a088013567ffffffffffffffff8082111561085257600080fd5b818a0191508a601f83011261086657600080fd5b81358181111561087557600080fd5b8b602082850101111561088757600080fd5b60208301945080935050505092959891949750929550565b6000806000806000606086880312156108b757600080fd5b6108c086610362565b9450602086013567ffffffffffffffff808211156108dd57600080fd5b6108e989838a0161076c565b9096509450604088013591508082111561090257600080fd5b5061090f8882890161076c565b969995985093965092949392505050565b60006020828403121561093257600080fd5b5035919050565b600081518084526020808501945080840160005b838110156109695781518752958201959082019060010161094d565b509495945050505050565b6040815260006109876040830185610939565b82810360208401526109998185610939565b9594505050505056fea264697066735822122000ace4babe0b9ec2236e7e00f071b5f8e9b1e8e92c92fcd312a4eb86fb5737d964736f6c63430008150033",
+  "devdoc": {
+    "details": "see https://github.com/Instadapp/infinite-proxy?tab=readme-ov-file#dummy-implementation",
+    "kind": "dev",
+    "methods": {
+      "changeStatus(uint256)": {
+        "params": {
+          "newStatus_": "new status        status = 2 -> pause, status = 1 -> resume."
+        }
+      },
+      "collectRevenue(address[])": {
+        "details": "Note that this can revert if token balance is < revenueAmount (utilization > 100%)",
+        "params": {
+          "tokens_": "array of tokens to collect revenue for"
+        }
+      },
+      "operate(address,int256,int256,address,address,bytes)": {
+        "details": "to trigger skipping in / out transfers when in&out amounts balance themselves out (gas optimization): -   supply(+) == borrow(+), withdraw(-) == payback(-). -   `withdrawTo_` / `borrowTo_` must be msg.sender (protocol) -   `callbackData_` MUST be encoded so that \"from\" address is at last 20 bytes (if this optimization is desired),     also for native token operations where liquidityCallback is not triggered!     from address must come at last position if there is more data. I.e. encode like:     abi.encode(otherVar1, otherVar2, FROM_ADDRESS). Note dynamic types used with abi.encode come at the end     so if dynamic types are needed, you must use abi.encodePacked to ensure the from address is at the end.",
+        "params": {
+          "borrowAmount_": "if +ve then borrow, if -ve then payback, if 0 then nothing",
+          "borrowTo_": "if borrow then to which address",
+          "callbackData_": "callback data passed to `liquidityCallback` method of protocol",
+          "supplyAmount_": "if +ve then supply, if -ve then withdraw, if 0 then nothing",
+          "token_": "address of token (0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE for native)",
+          "withdrawTo_": "if withdrawal then to which address"
+        },
+        "returns": {
+          "memVar3_": "updated supplyExchangePrice",
+          "memVar4_": "updated borrowExchangePrice"
+        }
+      },
+      "pauseUser(address,address[],address[])": {
+        "params": {
+          "borrowTokens_": "token addresses to pause borrowings for",
+          "supplyTokens_": "token addresses to pause withdrawals for",
+          "user_": "address of user to pause operations for"
+        }
+      },
+      "unpauseUser(address,address[],address[])": {
+        "params": {
+          "borrowTokens_": "token addresses to unpause borrowings for",
+          "supplyTokens_": "token addresses to unpause withdrawals for",
+          "user_": "address of user to unpause operations for"
+        }
+      },
+      "updateAuths((address,bool)[])": {
+        "params": {
+          "authsStatus_": "array of structs setting allowed status for an address.                     status true => add auth, false => remove auth"
+        }
+      },
+      "updateExchangePrices(address[])": {
+        "params": {
+          "tokens_": "tokens to update exchange prices for"
+        },
+        "returns": {
+          "borrowExchangePrices_": "new borrow rates of overall system for each token",
+          "supplyExchangePrices_": "new supply rates of overall system for each token"
+        }
+      },
+      "updateGuardians((address,bool)[])": {
+        "params": {
+          "guardiansStatus_": "array of structs setting allowed status for an address.                         status true => add guardian, false => remove guardian"
+        }
+      },
+      "updateRateDataV1s((address,uint256,uint256,uint256,uint256)[])": {
+        "params": {
+          "tokensRateData_": "array of RateDataV1Params with rate data to set for each token"
+        }
+      },
+      "updateRateDataV2s((address,uint256,uint256,uint256,uint256,uint256,uint256)[])": {
+        "params": {
+          "tokensRateData_": "array of RateDataV2Params with rate data to set for each token"
+        }
+      },
+      "updateRevenueCollector(address)": {
+        "params": {
+          "revenueCollector_": "new revenue collector address"
+        }
+      },
+      "updateTokenConfigs((address,uint256,uint256)[])": {
+        "params": {
+          "tokenConfigs_": "contains token address, fee & utilization threshold"
+        }
+      },
+      "updateUserBorrowConfigs((address,address,uint8,uint256,uint256,uint256,uint256)[])": {
+        "params": {
+          "userBorrowConfigs_": "struct array containing user borrow config, see `UserBorrowConfig` struct for more info"
+        }
+      },
+      "updateUserClasses((address,uint256)[])": {
+        "params": {
+          "userClasses_": "struct array of uint256 value to assign for each user address"
+        }
+      },
+      "updateUserSupplyConfigs((address,address,uint8,uint256,uint256,uint256)[])": {
+        "params": {
+          "userSupplyConfigs_": "struct array containing user supply config, see `UserSupplyConfig` struct for more info"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "changeStatus(uint256)": {
+        "notice": "changes current status, e.g. for pausing or unpausing all user operations. Only callable by Auths."
+      },
+      "collectRevenue(address[])": {
+        "notice": "collects revenue for tokens to configured revenueCollector address."
+      },
+      "operate(address,int256,int256,address,address,bytes)": {
+        "notice": "Single function which handles supply, withdraw, borrow & payback"
+      },
+      "pauseUser(address,address[],address[])": {
+        "notice": "pause operations for a particular user in class 0 (class 1 users can't be paused by guardians). Only callable by Guardians."
+      },
+      "unpauseUser(address,address[],address[])": {
+        "notice": "unpause operations for a particular user in class 0 (class 1 users can't be paused by guardians). Only callable by Guardians."
+      },
+      "updateAuths((address,bool)[])": {
+        "notice": "adds/removes auths. Auths generally could be contracts which can have restricted actions defined on contract.         auths can be helpful in reducing governance overhead where it's not needed."
+      },
+      "updateExchangePrices(address[])": {
+        "notice": "gets the current updated exchange prices for n tokens and updates all prices, rates related data in storage."
+      },
+      "updateGuardians((address,bool)[])": {
+        "notice": "adds/removes guardians. Only callable by Governance."
+      },
+      "updateRateDataV1s((address,uint256,uint256,uint256,uint256)[])": {
+        "notice": "update tokens rate data version 1. Only callable by Auths."
+      },
+      "updateRateDataV2s((address,uint256,uint256,uint256,uint256,uint256,uint256)[])": {
+        "notice": "update tokens rate data version 2. Only callable by Auths."
+      },
+      "updateRevenueCollector(address)": {
+        "notice": "changes the revenue collector address (contract that is sent revenue). Only callable by Governance."
+      },
+      "updateTokenConfigs((address,uint256,uint256)[])": {
+        "notice": "updates token configs: fee charge on borrowers interest & storage update utilization threshold.         Only callable by Auths."
+      },
+      "updateUserBorrowConfigs((address,address,uint8,uint256,uint256,uint256,uint256)[])": {
+        "notice": "setting user borrow configs per token basis. Eg: with interest or interest-free and automated limits.         Only callable by Auths."
+      },
+      "updateUserClasses((address,uint256)[])": {
+        "notice": "updates user classes: 0 is for new protocols, 1 is for established protocols.         Only callable by Auths."
+      },
+      "updateUserSupplyConfigs((address,address,uint8,uint256,uint256,uint256)[])": {
+        "notice": "sets user supply configs per token basis. Eg: with interest or interest-free and automated limits.         Only callable by Auths."
+      }
+    },
+    "notice": "Liquidity dummy implementation used for Fluid Liquidity infinite proxy.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

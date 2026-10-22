@@ -1,0 +1,138 @@
+{
+  "address": "0x322F7FCEA001bEBB63413f42B0028E5A81b933EF",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IWstETH",
+          "name": "wstETH",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IWeETH",
+          "name": "weETH",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidOracleError",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "getExchangeRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "exchangeRate_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "weETHOracleData",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "weETHExchangeRate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IWeETH",
+          "name": "weETH_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "wstETHOracleData",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "wstETHExchangeRate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IWstETH",
+          "name": "wstETH_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd9d2b4a6b0b31346c934e9eb5dfa75b8da9f22b20f9ba5a4522fc69b2f058e31",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 88,
+    "gasUsed": "388611",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x52749c0ceace7a40ffe8aee10f0a6bb2c04e650a793de9c65c2687677312109c",
+    "transactionHash": "0xd9d2b4a6b0b31346c934e9eb5dfa75b8da9f22b20f9ba5a4522fc69b2f058e31",
+    "logs": [],
+    "blockNumber": 19470519,
+    "cumulativeGasUsed": "3784886",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+    "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "a605f185856c2f85f1bc8c8916011745",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IWstETH\",\"name\":\"wstETH\",\"type\":\"address\"},{\"internalType\":\"contract IWeETH\",\"name\":\"weETH\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidOracleError\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"getExchangeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"exchangeRate_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"weETHOracleData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"weETHExchangeRate_\",\"type\":\"uint256\"},{\"internalType\":\"contract IWeETH\",\"name\":\"weETH_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"wstETHOracleData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"wstETHExchangeRate_\",\"type\":\"uint256\"},{\"internalType\":\"contract IWstETH\",\"name\":\"wstETH_\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"weETH\":\"address of the weETH contract\",\"wstETH\":\"address of the wstETH contract\"}}},\"title\":\"Oracle for weETH (Etherfi's wrapped eETH) to wstETH. wstETH is the debt token here (get amount of wstETH for 1 weETH)\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getExchangeRate()\":{\"notice\":\"Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27\"},\"weETHOracleData()\":{\"notice\":\"returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method\"},\"wstETHOracleData()\":{\"notice\":\"returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/oracle/oracles/weETHwstETHOracle.sol\":\"WeETHWstETHOracle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/oracle/error.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract Error {\\n    error FluidOracleError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0xc7b7e945238168d216c480e9dd4fbaaf8780645d58c47f9abdaa4f29910568fe\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |     UniV3CheckCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the delta between main price source and check rate source is exceeding the allowed delta\\n    uint256 internal constant UniV3CheckCLRSOracle__InvalidPrice = 60001;\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant UniV3CheckCLRSOracle__InvalidParams = 60002;\\n\\n    /// @notice thrown when the exchange rate is zero, even after all possible fallbacks depending on config\\n    uint256 internal constant UniV3CheckCLRSOracle__ExchangeRateZero = 60003;\\n\\n    /***********************************|\\n    |          Chainlink Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant ChainlinkOracle__InvalidParams = 61001;\\n\\n    /***********************************|\\n    |          UniswapV3 Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant UniV3Oracle__InvalidParams = 62001;\\n\\n    /// @notice thrown when constructor is called with invalid ordered seconds agos values\\n    uint256 internal constant UniV3Oracle__InvalidSecondsAgos = 62002;\\n\\n    /// @notice thrown when constructor is called with invalid delta values > 100%\\n    uint256 internal constant UniV3Oracle__InvalidDeltas = 62003;\\n\\n    /***********************************|\\n    |            WstETh Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant WstETHOracle__InvalidParams = 63001;\\n\\n    /***********************************|\\n    |           Redstone Oracle         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant RedstoneOracle__InvalidParams = 64001;\\n\\n    /***********************************|\\n    |          Fallback Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant FallbackOracle__InvalidParams = 65001;\\n\\n    /***********************************|\\n    |       FallbackCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the fallback oracle source (if enabled)\\n    uint256 internal constant FallbackCLRSOracle__ExchangeRateZero = 66001;\\n\\n    /***********************************|\\n    |         WstETHCLRSOracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the fallback oracle source (if enabled)\\n    uint256 internal constant WstETHCLRSOracle__ExchangeRateZero = 67001;\\n\\n    /***********************************|\\n    |        CLFallbackUniV3Oracle      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the uniV3 rate\\n    uint256 internal constant CLFallbackUniV3Oracle__ExchangeRateZero = 68001;\\n\\n    /***********************************|\\n    |  WstETHCLRS2UniV3CheckCLRSOracle  | \\n    |__________________________________*/\\n\\n    /// @notice thrown when the exchange rate is zero, even for the uniV3 rate\\n    uint256 internal constant WstETHCLRS2UniV3CheckCLRSOracle__ExchangeRateZero = 69001;\\n\\n    /***********************************|\\n    |             WeETh Oracle          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an invalid parameter is passed to a method\\n    uint256 internal constant WeETHOracle__InvalidParams = 70001;\\n}\\n\",\"keccak256\":\"0x1ded5c23e6495b163358627a0cd513e292408cb2a034d5447bbdf90166a24324\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/fluidOracle.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IFluidOracle } from \\\"./interfaces/iFluidOracle.sol\\\";\\n\\n/// @title   FluidOracle\\n/// @notice  Base contract that any Fluid Oracle must implement\\nabstract contract FluidOracle is IFluidOracle {\\n    /// @inheritdoc IFluidOracle\\n    function getExchangeRate() external view virtual returns (uint256 exchangeRate_);\\n}\\n\",\"keccak256\":\"0xdb26c5b753d614b855566682b0bb2ae14ef26d25b7b2cb3c5ba7fe79c42c079b\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/implementations/weETHOracleImpl.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IWeETH } from \\\"../interfaces/external/IWeETH.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { Error as OracleError } from \\\"../error.sol\\\";\\nimport { OracleUtils } from \\\"../libraries/oracleUtils.sol\\\";\\n\\n/// @title   weETH Oracle Implementation\\n/// @notice  This contract is used to get the exchange rate between weETH and eETH\\nabstract contract WeETHOracleImpl is OracleError {\\n    /// @notice constant value for price scaling to reduce gas usage\\n    uint256 internal immutable _WEETH_PRICE_SCALER_MULTIPLIER;\\n\\n    /// @notice WEETH contract, e.g. on mainnet 0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee\\n    IWeETH internal immutable _WEETH;\\n\\n    /// @notice constructor sets the weETH (Etherfi's wrapped eETH) `weETH_` token address.\\n    constructor(IWeETH weETH_) {\\n        if (address(weETH_) == address(0)) {\\n            revert FluidOracleError(ErrorTypes.WeETHOracle__InvalidParams);\\n        }\\n\\n        _WEETH = weETH_;\\n\\n        _WEETH_PRICE_SCALER_MULTIPLIER = 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS - 18); // e.g. 1e9\\n    }\\n\\n    /// @notice         Get the exchange rate from weETH contract\\n    /// @return rate_   The exchange rate in `WEETH_OUTPUT_DECIMALS`\\n    function _getWeETHExchangeRate() internal view returns (uint256 rate_) {\\n        return _WEETH.getEETHByWeETH(1e18) * _WEETH_PRICE_SCALER_MULTIPLIER;\\n    }\\n\\n    /// @notice returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method\\n    function weETHOracleData() public view returns (uint256 weETHExchangeRate_, IWeETH weETH_) {\\n        return (_getWeETHExchangeRate(), _WEETH);\\n    }\\n}\\n\",\"keccak256\":\"0x0130dbcb798d20586246f657119d84a95fcb2ab945f0b09bed5ba443b1d84b36\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/implementations/wstETHOracleImpl.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { IWstETH } from \\\"../interfaces/external/IWstETH.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { Error as OracleError } from \\\"../error.sol\\\";\\nimport { OracleUtils } from \\\"../libraries/oracleUtils.sol\\\";\\n\\n/// @title   wstETH Oracle Implementation\\n/// @notice  This contract is used to get the exchange rate between wstETH and stETH\\nabstract contract WstETHOracleImpl is OracleError {\\n    /// @notice constant value for price scaling to reduce gas usage\\n    uint256 internal immutable _WSTETH_PRICE_SCALER_MULTIPLIER;\\n\\n    /// @notice WSTETH contract, e.g. on mainnet 0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0\\n    IWstETH internal immutable _WSTETH;\\n\\n    /// @notice constructor sets the wstETH `wstETH_` token address.\\n    constructor(IWstETH wstETH_) {\\n        if (address(wstETH_) == address(0)) {\\n            revert FluidOracleError(ErrorTypes.WstETHOracle__InvalidParams);\\n        }\\n\\n        _WSTETH = wstETH_;\\n\\n        _WSTETH_PRICE_SCALER_MULTIPLIER = 10 ** (OracleUtils.RATE_OUTPUT_DECIMALS - 18); // e.g. 1e9\\n    }\\n\\n    /// @notice         Get the exchange rate from wstETH contract\\n    /// @return rate_   The exchange rate in `WSTETH_OUTPUT_DECIMALS`\\n    function _getWstETHExchangeRate() internal view returns (uint256 rate_) {\\n        return _WSTETH.stEthPerToken() * _WSTETH_PRICE_SCALER_MULTIPLIER;\\n    }\\n\\n    /// @notice returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method\\n    function wstETHOracleData() public view returns (uint256 wstETHExchangeRate_, IWstETH wstETH_) {\\n        return (_getWstETHExchangeRate(), _WSTETH);\\n    }\\n}\\n\",\"keccak256\":\"0xd30d0a771c31cca1597753bfc38d35ec1e6a401de9f98426ca36e7f795d625f0\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/interfaces/external/IWeETH.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IWeETH {\\n    /**\\n     * @notice Get amount of eETH for {_weETHAmount} weETH\\n     * @return Amount of eETH for {_weETHAmount} weETH\\n     */\\n    function getEETHByWeETH(uint256 _weETHAmount) external view returns (uint256);\\n\\n    /**\\n     * @notice Get amount of weETH for {_eETHAmount} eETH\\n     * @return Amount of weETH for {_eETHAmount} eETH\\n     */\\n    function getWeETHByeETH(uint256 _eETHAmount) external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x88db56795f04ab655f6fd917a73f2308ab7da726e5b04b91e0b6a88f4d7b9d09\",\"license\":\"MIT\"},\"contracts/oracle/interfaces/external/IWstETH.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IWstETH {\\n    /**\\n     * @notice Get amount of stETH for 1 wstETH\\n     * @return Amount of stETH for 1 wstETH\\n     */\\n    function stEthPerToken() external view returns (uint256);\\n\\n    /**\\n     * @notice Get amount of wstETH for 1 stETH\\n     * @return Amount of wstETH for 1 stETH\\n     */\\n    function tokensPerStEth() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0xfe6c8477bea4b01e693d5a8ca635e795e203fe53ddee0fb30f3dcf9a0e5f4f61\",\"license\":\"MIT\"},\"contracts/oracle/interfaces/iFluidOracle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidOracle {\\n    /// @notice Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27\\n    function getExchangeRate() external view returns (uint256 exchangeRate_);\\n}\\n\",\"keccak256\":\"0xcbdd2f8aa2dc30ef9865e9d8505705254fd106ecd239c59b39bdbf6801526497\",\"license\":\"MIT\"},\"contracts/oracle/libraries/oracleUtils.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @title Oracle utils library\\n/// @notice implements common utility methods for Fluid Oracles\\nlibrary OracleUtils {\\n    /// @dev The scaler for max delta point math (100%)\\n    uint256 internal constant HUNDRED_PERCENT_DELTA_SCALER = 10_000;\\n    /// @dev output precision of rates\\n    uint256 internal constant RATE_OUTPUT_DECIMALS = 27;\\n\\n    /// @dev checks if `mainSourceRate_` is within a `maxDeltaPercent_` of `checkSourceRate_`. Returns true if so.\\n    function isRateOutsideDelta(\\n        uint256 mainSourceRate_,\\n        uint256 checkSourceRate_,\\n        uint256 maxDeltaPercent_\\n    ) internal pure returns (bool) {\\n        uint256 offset_ = (checkSourceRate_ * maxDeltaPercent_) / HUNDRED_PERCENT_DELTA_SCALER;\\n        return (mainSourceRate_ > (checkSourceRate_ + offset_) || mainSourceRate_ < (checkSourceRate_ - offset_));\\n    }\\n}\\n\",\"keccak256\":\"0x968b1a0606875abd523895c5075cf6c34c296919e77b0da7dd952374398e2a4c\",\"license\":\"BUSL-1.1\"},\"contracts/oracle/oracles/weETHwstETHOracle.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { FluidOracle } from \\\"../fluidOracle.sol\\\";\\nimport { WstETHOracleImpl } from \\\"../implementations/wstETHOracleImpl.sol\\\";\\nimport { WeETHOracleImpl } from \\\"../implementations/weETHOracleImpl.sol\\\";\\nimport { IWstETH } from \\\"../interfaces/external/IWstETH.sol\\\";\\nimport { IWeETH } from \\\"../interfaces/external/IWeETH.sol\\\";\\nimport { OracleUtils } from \\\"../libraries/oracleUtils.sol\\\";\\n\\n/// @title   Oracle for weETH (Etherfi's wrapped eETH) to wstETH. wstETH is the debt token here (get amount of wstETH for 1 weETH)\\ncontract WeETHWstETHOracle is FluidOracle, WstETHOracleImpl, WeETHOracleImpl {\\n    /// @param  wstETH   address of the wstETH contract\\n    /// @param  weETH    address of the weETH contract\\n    constructor(IWstETH wstETH, IWeETH weETH) WstETHOracleImpl(wstETH) WeETHOracleImpl(weETH) {}\\n\\n    /// @inheritdoc FluidOracle\\n    function getExchangeRate() public view override returns (uint256 exchangeRate_) {\\n        // weEth -> wstETH\\n        exchangeRate_ =\\n            (_WEETH.getEETHByWeETH(1e18) * (10 ** OracleUtils.RATE_OUTPUT_DECIMALS)) /\\n            _WSTETH.stEthPerToken();\\n    }\\n}\\n\",\"keccak256\":\"0x32dd863b417893438b7836d9728e613cdbb821e058f7b89154a8d94d18d8c243\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x6101006040523480156200001257600080fd5b50604051620008cc380380620008cc833981016040819052620000359162000110565b80826001600160a01b038116620000685760405163c82fc46560e01b815261f61960048201526024015b60405180910390fd5b6001600160a01b03811660a052620000836012601b62000165565b6200009090600a6200027e565b608052506001600160a01b038116620000c25760405163c82fc46560e01b81526201117160048201526024016200005f565b6001600160a01b03811660e052620000dd6012601b62000165565b620000ea90600a6200027e565b60c0525062000293915050565b6001600160a01b03811681146200010d57600080fd5b50565b600080604083850312156200012457600080fd5b82516200013181620000f7565b60208401519092506200014481620000f7565b809150509250929050565b634e487b7160e01b600052601160045260246000fd5b818103818111156200017b576200017b6200014f565b92915050565b600181815b80851115620001c2578160001904821115620001a657620001a66200014f565b80851615620001b457918102915b93841c939080029062000186565b509250929050565b600082620001db575060016200017b565b81620001ea575060006200017b565b81600181146200020357600281146200020e576200022e565b60019150506200017b565b60ff8411156200022257620002226200014f565b50506001821b6200017b565b5060208310610133831016604e8410600b841016171562000253575081810a6200017b565b6200025f838362000181565b80600019048211156200027657620002766200014f565b029392505050565b60006200028c8383620001ca565b9392505050565b60805160a05160c05160e0516105e5620002e76000396000818160a9015281816101d401526102dd015260006102a601526000818160dc0152818161010501526103770152600061035601526105e56000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80631b3904f214610046578063dfaba9b51461007d578063e6aa216c14610085575b600080fd5b61004e61009b565b6040805192835273ffffffffffffffffffffffffffffffffffffffff9091166020830152015b60405180910390f35b61004e6100ce565b61008d610101565b604051908152602001610074565b6000806100a661026d565b927f000000000000000000000000000000000000000000000000000000000000000092509050565b6000806100d9610352565b927f000000000000000000000000000000000000000000000000000000000000000092509050565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663035faf826040518163ffffffff1660e01b8152600401602060405180830381865afa15801561016e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061019291906103e0565b61019e601b600a61054a565b6040517f94626044000000000000000000000000000000000000000000000000000000008152670de0b6b3a764000060048201527f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1690639462604490602401602060405180830381865afa158015610230573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061025491906103e0565b61025e919061055d565b6102689190610574565b905090565b6040517f94626044000000000000000000000000000000000000000000000000000000008152670de0b6b3a764000060048201526000907f00000000000000000000000000000000000000000000000000000000000000009073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001690639462604490602401602060405180830381865afa158015610324573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061034891906103e0565b610268919061055d565b60007f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663035faf826040518163ffffffff1660e01b8152600401602060405180830381865afa158015610324573d6000803e3d6000fd5b6000602082840312156103f257600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b600181815b8085111561048157817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115610467576104676103f9565b8085161561047457918102915b93841c939080029061042d565b509250929050565b60008261049857506001610544565b816104a557506000610544565b81600181146104bb57600281146104c5576104e1565b6001915050610544565b60ff8411156104d6576104d66103f9565b50506001821b610544565b5060208310610133831016604e8410600b8410161715610504575081810a610544565b61050e8383610428565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115610540576105406103f9565b0290505b92915050565b60006105568383610489565b9392505050565b8082028115828204841417610544576105446103f9565b6000826105aa577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b50049056fea26469706673582212205b4f7f9a84f9d049b3271e24c8b7fd5cda1696414bb6969adbdf8619ec1dbf3064736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80631b3904f214610046578063dfaba9b51461007d578063e6aa216c14610085575b600080fd5b61004e61009b565b6040805192835273ffffffffffffffffffffffffffffffffffffffff9091166020830152015b60405180910390f35b61004e6100ce565b61008d610101565b604051908152602001610074565b6000806100a661026d565b927f000000000000000000000000000000000000000000000000000000000000000092509050565b6000806100d9610352565b927f000000000000000000000000000000000000000000000000000000000000000092509050565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663035faf826040518163ffffffff1660e01b8152600401602060405180830381865afa15801561016e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061019291906103e0565b61019e601b600a61054a565b6040517f94626044000000000000000000000000000000000000000000000000000000008152670de0b6b3a764000060048201527f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1690639462604490602401602060405180830381865afa158015610230573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061025491906103e0565b61025e919061055d565b6102689190610574565b905090565b6040517f94626044000000000000000000000000000000000000000000000000000000008152670de0b6b3a764000060048201526000907f00000000000000000000000000000000000000000000000000000000000000009073ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001690639462604490602401602060405180830381865afa158015610324573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061034891906103e0565b610268919061055d565b60007f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663035faf826040518163ffffffff1660e01b8152600401602060405180830381865afa158015610324573d6000803e3d6000fd5b6000602082840312156103f257600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b600181815b8085111561048157817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115610467576104676103f9565b8085161561047457918102915b93841c939080029061042d565b509250929050565b60008261049857506001610544565b816104a557506000610544565b81600181146104bb57600281146104c5576104e1565b6001915050610544565b60ff8411156104d6576104d66103f9565b50506001821b610544565b5060208310610133831016604e8410600b8410161715610504575081810a610544565b61050e8383610428565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115610540576105406103f9565b0290505b92915050565b60006105568383610489565b9392505050565b8082028115828204841417610544576105446103f9565b6000826105aa577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b50049056fea26469706673582212205b4f7f9a84f9d049b3271e24c8b7fd5cda1696414bb6969adbdf8619ec1dbf3064736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "weETH": "address of the weETH contract",
+          "wstETH": "address of the wstETH contract"
+        }
+      }
+    },
+    "title": "Oracle for weETH (Etherfi's wrapped eETH) to wstETH. wstETH is the debt token here (get amount of wstETH for 1 weETH)",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getExchangeRate()": {
+        "notice": "Get the `exchangeRate_` between the underlying asset and the peg asset in 1e27"
+      },
+      "weETHOracleData()": {
+        "notice": "returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method"
+      },
+      "wstETHOracleData()": {
+        "notice": "returns all wWtETH oracle related data as utility for easy off-chain use / block explorer in a single view method"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

@@ -1,0 +1,498 @@
+{
+  "address": "0x88F0c4be7f66069de8dDCD5A1903EFe220BDC986",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "wstethEthDex_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "weethEthDex_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidConfigError",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "dex",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "upperPercent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lowerPercent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "shiftTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetRanges",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "dex",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "upperPercent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lowerPercent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "thresholdShiftTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "shiftTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSetThresholdConfig",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "COOLDOWN",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_PERCENT_RANGE_CHANGE_ALLOWED",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_SHIFT_TIME",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_SHIFT_TIME",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "TEAM_MULTISIG",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "TEAM_MULTISIG2",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "WEETH_ETH_DEX",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "WSTETH_ETH_DEX",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "enum Variables.UpdateType",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "name": "dexLastUpdateTimestamp",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "name": "getRanges",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "upperRangePercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lowerRangePercent_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        }
+      ],
+      "name": "getThresholdConfig",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "upperThresholdPercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lowerThresholdPercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "thresholdShiftTime_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "upperRangePercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lowerRangePercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shiftTime_",
+          "type": "uint256"
+        }
+      ],
+      "name": "setRanges",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        },
+        {
+          "internalType": "int256",
+          "name": "newUpperRangePercentage_",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "newLowerRangePercentage_",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shiftTime_",
+          "type": "uint256"
+        }
+      ],
+      "name": "setRangesByPercentage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dex_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "upperThresholdPercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lowerThresholdPercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "thresholdShiftTime_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shiftTime_",
+          "type": "uint256"
+        }
+      ],
+      "name": "setThresholdConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x51313a78e26b0b63b404919b0c936132098407759c59733c86b199bb6217392a",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x0Ed35B1609Ec45c7079E80d11149a52717e4859A",
+    "contractAddress": null,
+    "transactionIndex": 125,
+    "gasUsed": "885174",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x58f5580850bad775da78dd51297a67363a78f43361a0b5f3042988397643504e",
+    "transactionHash": "0x51313a78e26b0b63b404919b0c936132098407759c59733c86b199bb6217392a",
+    "logs": [],
+    "blockNumber": 33317696,
+    "cumulativeGasUsed": "32032972",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x0000000000000000000000000000000000000000",
+    "0x0000000000000000000000000000000000000000"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "5228629dba1e4b693c7dacd40c0694f4",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"wstethEthDex_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"weethEthDex_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidConfigError\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"dex\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"upperPercent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lowerPercent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shiftTime\",\"type\":\"uint256\"}],\"name\":\"LogSetRanges\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"dex\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"upperPercent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lowerPercent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"thresholdShiftTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shiftTime\",\"type\":\"uint256\"}],\"name\":\"LogSetThresholdConfig\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"COOLDOWN\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MAX_PERCENT_RANGE_CHANGE_ALLOWED\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MAX_SHIFT_TIME\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MIN_SHIFT_TIME\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TEAM_MULTISIG\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TEAM_MULTISIG2\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"WEETH_ETH_DEX\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"WSTETH_ETH_DEX\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"enum Variables.UpdateType\",\"name\":\"\",\"type\":\"uint8\"}],\"name\":\"dexLastUpdateTimestamp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"name\":\"getRanges\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"upperRangePercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRangePercent_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"}],\"name\":\"getThresholdConfig\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"upperThresholdPercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerThresholdPercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"thresholdShiftTime_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"upperRangePercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerRangePercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftTime_\",\"type\":\"uint256\"}],\"name\":\"setRanges\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"},{\"internalType\":\"int256\",\"name\":\"newUpperRangePercentage_\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"newLowerRangePercentage_\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"shiftTime_\",\"type\":\"uint256\"}],\"name\":\"setRangesByPercentage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dex_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"upperThresholdPercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerThresholdPercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"thresholdShiftTime_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftTime_\",\"type\":\"uint256\"}],\"name\":\"setThresholdConfig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"setRanges(address,uint256,uint256,uint256)\":{\"details\":\"This function can only be called by team multisig\",\"params\":{\"dex_\":\"The address of the dex\",\"lowerRangePercent_\":\"The new lower range to be set\",\"upperRangePercent_\":\"The new upper range to be set\"}},\"setRangesByPercentage(address,int256,int256,uint256)\":{\"details\":\"This function can only be called by team multisig\",\"params\":{\"dex_\":\"The address of the dex\",\"newLowerRangePercentage_\":\"The new lower range percentage change, 10000 = 1%. Positive to increase, negative to decrease\",\"newUpperRangePercentage_\":\"The new upper range percentage change, 10000 = 1%. Positive to increase, negative to decrease\"}},\"setThresholdConfig(address,uint256,uint256,uint256,uint256)\":{\"details\":\"This function can only be called by team multisig\",\"params\":{\"dex_\":\"The address of the dex\",\"lowerThresholdPercent_\":\"The new lower threshold percent, 10000 = 1%\",\"thresholdShiftTime_\":\"The new threshold shift time\",\"upperThresholdPercent_\":\"The new upper threshold percent, 10000 = 1%\"}}},\"version\":1},\"userdoc\":{\"events\":{\"LogSetRanges(address,uint256,uint256,uint256)\":{\"notice\":\"emitted when multisig successfully changes the upper and lower range percent configs\"},\"LogSetThresholdConfig(address,uint256,uint256,uint256,uint256)\":{\"notice\":\"emitted when multisig successfully changes threshold configs\"}},\"kind\":\"user\",\"methods\":{\"TEAM_MULTISIG()\":{\"notice\":\"Team multisigs allowed to trigger methods\"},\"dexLastUpdateTimestamp(address,uint8)\":{\"notice\":\"dex => UpdateType => last update time when a Dex config was updated\"},\"setRanges(address,uint256,uint256,uint256)\":{\"notice\":\"Sets the upper and lower range for a dex\"},\"setRangesByPercentage(address,int256,int256,uint256)\":{\"notice\":\"Sets the upper and lower range for a dex by percentage to change from current config\"},\"setThresholdConfig(address,uint256,uint256,uint256,uint256)\":{\"notice\":\"Sets the upper and lower threshold percent for a dex\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/config/rangeAuthDex/main.sol\":\"FluidRangeAuthDex\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/config/error.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\ncontract Error {\\n    error FluidConfigError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0x7fac063d4cfeb626e3a2720595a2db1d7352353ed6c7df61e95a6c164450c9e6\",\"license\":\"BUSL-1.1\"},\"contracts/config/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |    ExpandPercentConfigHandler     | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an input address is zero\\n    uint256 internal constant ExpandPercentConfigHandler__AddressZero = 100001;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant ExpandPercentConfigHandler__Unauthorized = 100002;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant ExpandPercentConfigHandler__InvalidParams = 100003;\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant ExpandPercentConfigHandler__NoUpdate = 100004;\\n\\n    /// @notice thrown when slot is not used, e.g. when borrow token is 0 there is no borrow data\\n    uint256 internal constant ExpandPercentConfigHandler__SlotDoesNotExist = 100005;\\n\\n    /***********************************|\\n    |      EthenaRateConfigHandler      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an input address is zero\\n    uint256 internal constant EthenaRateConfigHandler__AddressZero = 100011;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant EthenaRateConfigHandler__Unauthorized = 100012;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant EthenaRateConfigHandler__InvalidParams = 100013;\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant EthenaRateConfigHandler__NoUpdate = 100014;\\n\\n    /***********************************|\\n    |       MaxBorrowConfigHandler      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an input address is zero\\n    uint256 internal constant MaxBorrowConfigHandler__AddressZero = 100021;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant MaxBorrowConfigHandler__Unauthorized = 100022;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant MaxBorrowConfigHandler__InvalidParams = 100023;\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant MaxBorrowConfigHandler__NoUpdate = 100024;\\n\\n    /***********************************|\\n    |       BufferRateConfigHandler     | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an input address is zero\\n    uint256 internal constant BufferRateConfigHandler__AddressZero = 100031;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant BufferRateConfigHandler__Unauthorized = 100032;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant BufferRateConfigHandler__InvalidParams = 100033;\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant BufferRateConfigHandler__NoUpdate = 100034;\\n\\n    /// @notice thrown when rate data version is not supported\\n    uint256 internal constant BufferRateConfigHandler__RateVersionUnsupported = 100035;\\n\\n    /***********************************|\\n    |          FluidRatesAuth           | \\n    |__________________________________*/\\n\\n    /// @notice thrown when no update is currently needed\\n    uint256 internal constant RatesAuth__NoUpdate = 100041;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant RatesAuth__Unauthorized = 100042;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant RatesAuth__InvalidParams = 100043;\\n\\n    /// @notice thrown when cooldown is not yet expired\\n    uint256 internal constant RatesAuth__CooldownLeft = 100044;\\n\\n    /// @notice thrown when version is invalid\\n    uint256 internal constant RatesAuth__InvalidVersion = 100045;\\n\\n    /***********************************|\\n    |       LiquidityTokenAuth          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant LiquidityTokenAuth__Unauthorized = 100051;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant LiquidityTokenAuth_AlreadyInitialized = 100052;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant LiquidityTokenAuth__InvalidParams = 100053;\\n\\n    /***********************************|\\n    |       CollectRevenueAuth          | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant CollectRevenueAuth__Unauthorized = 100061;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant CollectRevenueAuth__InvalidParams = 100062;\\n\\n    /***********************************|\\n    |       FluidWithdrawLimitAuth      | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant WithdrawLimitAuth__NoUserSupply = 100071;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls a protected method\\n    uint256 internal constant WithdrawLimitAuth__Unauthorized = 100072;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant WithdrawLimitAuth__InvalidParams = 100073;\\n\\n    /// @notice thrown when no more withdrawal limit can be set for the day\\n    uint256 internal constant WithdrawLimitAuth__DailyLimitReached = 100074;\\n\\n    /// @notice thrown when no more withdrawal limit can be set for the hour\\n    uint256 internal constant WithdrawLimitAuth__HourlyLimitReached = 100075;\\n\\n    /// @notice thrown when the withdrawal limit and userSupply difference exceeds 5%\\n    uint256 internal constant WithdrawLimitAuth__ExcessPercentageDifference = 100076;\\n\\n    /***********************************|\\n    |       DexFeeHandler               | \\n    |__________________________________*/\\n\\n    /// @notice thrown when fee update is not required\\n    uint256 internal constant DexFeeHandler__FeeUpdateNotRequired = 100081;\\n\\n    /// @notice thrown when invalid params are passed into a method\\n    uint256 internal constant DexFeeHandler__InvalidParams = 100082;\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls\\n    uint256 internal constant DexFeeHandler__Unauthorized = 100083;\\n\\n    /***********************************|\\n    |           RangeAuthDex            | \\n    |__________________________________*/\\n\\n    uint256 internal constant RangeAuthDex__InvalidParams = 100091;\\n    uint256 internal constant RangeAuthDex__CooldownLeft = 100092;\\n    uint256 internal constant RangeAuthDex__Unauthorized = 100093;\\n    uint256 internal constant RangeAuthDex__ExceedAllowedPercentageChange = 100094;\\n    uint256 internal constant RangeAuthDex__InvalidShiftTime = 100095;\\n\\n    /***********************************|\\n    |           FluidLimitsAuth         | \\n    |__________________________________*/\\n\\n    uint256 internal constant LimitsAuth__InvalidParams = 100101;\\n    uint256 internal constant LimitsAuth__Unauthorized = 100102;\\n    uint256 internal constant LimitsAuth__UserNotDefinedYet = 100103;\\n    uint256 internal constant LimitsAuth__ExceedAllowedPercentageChange = 100104;\\n    uint256 internal constant LimitsAuth__CoolDownPending = 100105;\\n\\n    /***********************************|\\n    |          DexFeeAuth               | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls\\n    uint256 internal constant DexFeeAuth__Unauthorized = 100111;\\n\\n    /***********************************|\\n    |       VaultFeeRewardsAuth         | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an unauthorized `msg.sender` calls\\n    uint256 internal constant VaultFeeRewardsAuth__Unauthorized = 100121;\\n    /// @notice thrown when magnifier or rate is being updated for a non matching vault type\\n    uint256 internal constant VaultFeeRewardsAuth__InvalidVaultType = 100122;\\n}\\n\",\"keccak256\":\"0xe243f2978050b7b4680b69c7a13a56022c0984f70852556db0eacb11523384f4\",\"license\":\"BUSL-1.1\"},\"contracts/config/rangeAuthDex/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\nimport { Error } from \\\"../error.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { DexSlotsLink } from \\\"../../libraries/dexSlotsLink.sol\\\";\\nimport { IFluidDexT1 } from \\\"../../protocols/dex/interfaces/iDexT1.sol\\\";\\n\\ninterface IFluidDexT1Admin {\\n    /// @notice updates the upper and lower percent configs for a dex\\n    /// @param upperPercent_ in 4 decimals, 10000 = 1%\\n    /// @param lowerPercent_ in 4 decimals, 10000 = 1%\\n    /// @param shiftTime_ in secs, in how much time the upper percent configs change should be fully done\\n    function updateRangePercents(uint upperPercent_, uint lowerPercent_, uint shiftTime_) external;\\n\\n    /// @param upperThresholdPercent_ in 4 decimals, 10000 = 1%\\n    /// @param lowerThresholdPercent_ in 4 decimals, 10000 = 1%\\n    /// @param thresholdShiftTime_ in secs, in how much time the threshold percent should take to shift the ranges\\n    /// @param shiftTime_ in secs, in how much time the upper config changes should be fully done.\\n    function updateThresholdPercent(\\n        uint upperThresholdPercent_,\\n        uint lowerThresholdPercent_,\\n        uint thresholdShiftTime_,\\n        uint shiftTime_\\n    ) external;\\n}\\n\\nabstract contract Events {\\n    /// @notice emitted when multisig successfully changes the upper and lower range percent configs\\n    event LogSetRanges(address dex, uint upperPercent, uint lowerPercent, uint shiftTime);\\n\\n    /// @notice emitted when multisig successfully changes threshold configs\\n    event LogSetThresholdConfig(\\n        address dex,\\n        uint upperPercent,\\n        uint lowerPercent,\\n        uint thresholdShiftTime,\\n        uint shiftTime\\n    );\\n}\\n\\nabstract contract Constants {\\n    uint256 internal constant X10 = 0x3ff;\\n    uint256 internal constant X20 = 0xfffff;\\n    uint256 internal constant X24 = 0xffffff;\\n\\n    uint256 internal constant THREE_DECIMALS = 1e3;\\n\\n    /// @dev cooldown for config updates is 4 days\\n    uint256 public constant COOLDOWN = 4 days;\\n\\n    /// @dev max percent range change allowed is 20%\\n    uint256 public constant MAX_PERCENT_RANGE_CHANGE_ALLOWED = 20 * 1e4;\\n\\n    /// @dev shift time must be >= 2 days <= 12 days (except for wsteth and weeth eth dexes)\\n    uint256 public constant MIN_SHIFT_TIME = 2 days;\\n    uint256 public constant MAX_SHIFT_TIME = 12 days;\\n\\n    /// @notice Team multisigs allowed to trigger methods\\n    address public constant TEAM_MULTISIG = 0x4F6F977aCDD1177DCD81aB83074855EcB9C2D49e;\\n    address public constant TEAM_MULTISIG2 = 0x1e2e1aeD876f67Fe4Fd54090FD7B8F57Ce234219;\\n\\n    /// @dev wsteth eth dex, must shift instantly (only on mainnet)\\n    address public immutable WSTETH_ETH_DEX;\\n\\n    /// @dev weeth eth dex, must shift instantly (only on mainnet)\\n    address public immutable WEETH_ETH_DEX;\\n}\\n\\nabstract contract Variables is Constants {\\n    enum UpdateType {\\n        RANGES, // 0\\n        THRESHOLD // 1\\n    }\\n\\n    /// @notice dex => UpdateType => last update time when a Dex config was updated\\n    mapping(address => mapping(UpdateType => uint256)) public dexLastUpdateTimestamp;\\n}\\n\\ncontract FluidRangeAuthDex is Variables, Error, Events {\\n    /// @dev Validates that an address is not the zero address\\n    modifier validAddress(address value_) {\\n        if (value_ == address(0)) {\\n            revert FluidConfigError(ErrorTypes.RangeAuthDex__InvalidParams);\\n        }\\n        _;\\n    }\\n\\n    /// @dev Validates that an address is the team multisig\\n    modifier onlyMultisig() {\\n        if (TEAM_MULTISIG != msg.sender && TEAM_MULTISIG2 != msg.sender) {\\n            revert FluidConfigError(ErrorTypes.RangeAuthDex__Unauthorized);\\n        }\\n        _;\\n    }\\n\\n    constructor(address wstethEthDex_, address weethEthDex_) {\\n        if ((block.chainid == 1) && (wstethEthDex_ == address(0) || weethEthDex_ == address(0))) {\\n            revert FluidConfigError(ErrorTypes.RangeAuthDex__InvalidParams);\\n        }\\n        WSTETH_ETH_DEX = wstethEthDex_;\\n        WEETH_ETH_DEX = weethEthDex_;\\n    }\\n\\n    function getRanges(address dex_) public view returns (uint256 upperRangePercent_, uint256 lowerRangePercent_) {\\n        uint256 dexVariables2_ = IFluidDexT1(dex_).readFromStorage(bytes32(DexSlotsLink.DEX_VARIABLES2_SLOT));\\n\\n        upperRangePercent_ = (dexVariables2_ >> 27) & X20;\\n        lowerRangePercent_ = (dexVariables2_ >> 47) & X20;\\n    }\\n\\n    function getThresholdConfig(\\n        address dex_\\n    )\\n        public\\n        view\\n        returns (uint256 upperThresholdPercent_, uint256 lowerThresholdPercent_, uint256 thresholdShiftTime_)\\n    {\\n        uint256 dexVariables2_ = IFluidDexT1(dex_).readFromStorage(bytes32(DexSlotsLink.DEX_VARIABLES2_SLOT));\\n\\n        upperThresholdPercent_ = ((dexVariables2_ >> 68) & X10) * THREE_DECIMALS;\\n        lowerThresholdPercent_ = ((dexVariables2_ >> 78) & X10) * THREE_DECIMALS;\\n        thresholdShiftTime_ = (dexVariables2_ >> 88) & X24;\\n    }\\n\\n    /// @notice Sets the upper and lower range for a dex\\n    /// @dev This function can only be called by team multisig\\n    /// @param dex_ The address of the dex\\n    /// @param upperRangePercent_ The new upper range to be set\\n    /// @param lowerRangePercent_ The new lower range to be set\\n    function setRanges(\\n        address dex_,\\n        uint256 upperRangePercent_,\\n        uint256 lowerRangePercent_,\\n        uint256 shiftTime_\\n    ) external onlyMultisig {\\n        _validateLastUpdateTime(dex_, UpdateType.RANGES);\\n        _validateShiftTime(dex_, shiftTime_);\\n\\n        (uint256 currentUpperRangePercent_, uint256 currentLowerRangePercent_) = getRanges(dex_);\\n\\n        _validateChange(currentUpperRangePercent_, upperRangePercent_);\\n        _validateChange(currentLowerRangePercent_, lowerRangePercent_);\\n\\n        dexLastUpdateTimestamp[dex_][UpdateType.RANGES] = block.timestamp;\\n\\n        IFluidDexT1Admin(dex_).updateRangePercents(upperRangePercent_, lowerRangePercent_, shiftTime_);\\n\\n        emit LogSetRanges(dex_, upperRangePercent_, lowerRangePercent_, shiftTime_);\\n    }\\n\\n    /// @notice Sets the upper and lower range for a dex by percentage to change from current config\\n    /// @dev This function can only be called by team multisig\\n    /// @param dex_ The address of the dex\\n    /// @param newUpperRangePercentage_ The new upper range percentage change, 10000 = 1%. Positive to increase, negative to decrease\\n    /// @param newLowerRangePercentage_ The new lower range percentage change, 10000 = 1%. Positive to increase, negative to decrease\\n    function setRangesByPercentage(\\n        address dex_,\\n        int256 newUpperRangePercentage_,\\n        int256 newLowerRangePercentage_,\\n        uint256 shiftTime_\\n    ) external onlyMultisig {\\n        _validateLastUpdateTime(dex_, UpdateType.RANGES);\\n        _validateShiftTime(dex_, shiftTime_);\\n\\n        _validatePercentChange(_abs(newUpperRangePercentage_));\\n        _validatePercentChange(_abs(newLowerRangePercentage_));\\n\\n        (uint256 currentUpperRangePercent_, uint256 currentLowerRangePercent_) = getRanges(dex_);\\n\\n        uint256 newUpperRangePercent_ = _getNewRange(currentUpperRangePercent_, newUpperRangePercentage_);\\n        uint256 newLowerRangePercent_ = _getNewRange(currentLowerRangePercent_, newLowerRangePercentage_);\\n\\n        dexLastUpdateTimestamp[dex_][UpdateType.RANGES] = block.timestamp;\\n\\n        IFluidDexT1Admin(dex_).updateRangePercents(newUpperRangePercent_, newLowerRangePercent_, shiftTime_);\\n\\n        emit LogSetRanges(dex_, newUpperRangePercent_, newLowerRangePercent_, shiftTime_);\\n    }\\n\\n    /// @notice Sets the upper and lower threshold percent for a dex\\n    /// @dev This function can only be called by team multisig\\n    /// @param dex_ The address of the dex\\n    /// @param upperThresholdPercent_ The new upper threshold percent, 10000 = 1%\\n    /// @param lowerThresholdPercent_ The new lower threshold percent, 10000 = 1%\\n    /// @param thresholdShiftTime_ The new threshold shift time\\n    function setThresholdConfig(\\n        address dex_,\\n        uint256 upperThresholdPercent_,\\n        uint256 lowerThresholdPercent_,\\n        uint256 thresholdShiftTime_,\\n        uint256 shiftTime_\\n    ) external onlyMultisig {\\n        _validateLastUpdateTime(dex_, UpdateType.THRESHOLD);\\n        _validateShiftTime(dex_, shiftTime_);\\n\\n        (\\n            uint256 currentUpperThresholdPercent_,\\n            uint256 currentLowerThresholdPercent_,\\n            uint256 currentThresholdShiftTime_\\n        ) = getThresholdConfig(dex_);\\n\\n        _validateChange(currentUpperThresholdPercent_, upperThresholdPercent_);\\n        _validateChange(currentLowerThresholdPercent_, lowerThresholdPercent_);\\n        _validateChange(currentThresholdShiftTime_, thresholdShiftTime_);\\n\\n        dexLastUpdateTimestamp[dex_][UpdateType.THRESHOLD] = block.timestamp;\\n\\n        IFluidDexT1Admin(dex_).updateThresholdPercent(\\n            upperThresholdPercent_,\\n            lowerThresholdPercent_,\\n            thresholdShiftTime_,\\n            shiftTime_\\n        );\\n\\n        emit LogSetThresholdConfig(\\n            dex_,\\n            upperThresholdPercent_,\\n            lowerThresholdPercent_,\\n            thresholdShiftTime_,\\n            shiftTime_\\n        );\\n    }\\n\\n    function _percentDiffForValue(\\n        uint256 oldValue_,\\n        uint256 newValue_\\n    ) internal pure returns (uint256 configPercentDiff_) {\\n        if (oldValue_ == 0 || oldValue_ == newValue_) {\\n            return 0;\\n        }\\n\\n        if (oldValue_ > newValue_) {\\n            // % of how much new value would be smaller\\n            configPercentDiff_ = oldValue_ - newValue_;\\n            // e.g. 10 - 8 = 2. 2 * 10000 / 10 -> 2000 (20%)\\n        } else {\\n            // % of how much new value would be bigger\\n            configPercentDiff_ = newValue_ - oldValue_;\\n            // e.g. 10 - 8 = 2. 2 * 10000 / 8 -> 2500 (25%)\\n        }\\n\\n        configPercentDiff_ = (configPercentDiff_ * 1e6) / oldValue_;\\n    }\\n\\n    function _getNewRange(uint256 currentRange_, int256 newRangePercentage_) internal pure returns (uint256 newRange_) {\\n        if (newRangePercentage_ > 0) {\\n            /// @dev newRangePercentage_ is 10000 = 1%\\n            newRange_ = currentRange_ + (currentRange_ * uint256(newRangePercentage_)) / 1e6;\\n        } else {\\n            newRange_ = currentRange_ - (currentRange_ * uint256(-newRangePercentage_)) / 1e6;\\n        }\\n    }\\n\\n    function _validatePercentChange(uint256 percent_) internal pure {\\n        if (percent_ > MAX_PERCENT_RANGE_CHANGE_ALLOWED) {\\n            revert FluidConfigError(ErrorTypes.RangeAuthDex__ExceedAllowedPercentageChange);\\n        }\\n    }\\n\\n    function _validateChange(uint256 oldConfig_, uint256 newConfig_) internal pure {\\n        uint256 configPercentage_ = _percentDiffForValue(oldConfig_, newConfig_);\\n        _validatePercentChange(configPercentage_);\\n    }\\n\\n    function _validateShiftTime(address dex_, uint256 shiftTime_) internal view {\\n        if ((block.chainid == 1) && (dex_ == WSTETH_ETH_DEX || dex_ == WEETH_ETH_DEX)) {\\n            /// @dev wsteth eth and weeth dex has zero shift time\\n            if (shiftTime_ != 0) {\\n                revert FluidConfigError(ErrorTypes.RangeAuthDex__InvalidShiftTime);\\n            }\\n        } else {\\n            if (shiftTime_ < MIN_SHIFT_TIME || shiftTime_ > MAX_SHIFT_TIME) {\\n                revert FluidConfigError(ErrorTypes.RangeAuthDex__InvalidShiftTime);\\n            }\\n        }\\n    }\\n\\n    function _validateLastUpdateTime(address dex_, UpdateType updateType_) internal view {\\n        if (block.timestamp - dexLastUpdateTimestamp[dex_][updateType_] < COOLDOWN) {\\n            revert FluidConfigError(ErrorTypes.RangeAuthDex__CooldownLeft);\\n        }\\n    }\\n\\n    function _abs(int256 value_) internal pure returns (uint256) {\\n        return value_ > 0 ? uint256(value_) : uint256(-value_);\\n    }\\n}\\n\",\"keccak256\":\"0x10ec4609b8d9b51750bfd82a0b79ecb1a345ce0aea2c21f5aba876ed3a0eebc5\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/dexSlotsLink.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.21;\\n\\n/// @notice library that helps in reading / working with storage slot data of Fluid Dex.\\n/// @dev as all data for Fluid Dex is internal, any data must be fetched directly through manual\\n/// slot reading through this library or, if gas usage is less important, through the FluidDexResolver.\\nlibrary DexSlotsLink {\\n    /// @dev storage slot for variables at Dex\\n    uint256 internal constant DEX_VARIABLES_SLOT = 0;\\n    /// @dev storage slot for variables2 at Dex\\n    uint256 internal constant DEX_VARIABLES2_SLOT = 1;\\n    /// @dev storage slot for total supply shares at Dex\\n    uint256 internal constant DEX_TOTAL_SUPPLY_SHARES_SLOT = 2;\\n    /// @dev storage slot for user supply mapping at Dex\\n    uint256 internal constant DEX_USER_SUPPLY_MAPPING_SLOT = 3;\\n    /// @dev storage slot for total borrow shares at Dex\\n    uint256 internal constant DEX_TOTAL_BORROW_SHARES_SLOT = 4;\\n    /// @dev storage slot for user borrow mapping at Dex\\n    uint256 internal constant DEX_USER_BORROW_MAPPING_SLOT = 5;\\n    /// @dev storage slot for oracle mapping at Dex\\n    uint256 internal constant DEX_ORACLE_MAPPING_SLOT = 6;\\n    /// @dev storage slot for range and threshold shifts at Dex\\n    uint256 internal constant DEX_RANGE_THRESHOLD_SHIFTS_SLOT = 7;\\n    /// @dev storage slot for center price shift at Dex\\n    uint256 internal constant DEX_CENTER_PRICE_SHIFT_SLOT = 8;\\n\\n    // --------------------------------\\n    // @dev stacked uint256 storage slots bits position data for each:\\n\\n    // UserSupplyData\\n    uint256 internal constant BITS_USER_SUPPLY_ALLOWED = 0;\\n    uint256 internal constant BITS_USER_SUPPLY_AMOUNT = 1;\\n    uint256 internal constant BITS_USER_SUPPLY_PREVIOUS_WITHDRAWAL_LIMIT = 65;\\n    uint256 internal constant BITS_USER_SUPPLY_LAST_UPDATE_TIMESTAMP = 129;\\n    uint256 internal constant BITS_USER_SUPPLY_EXPAND_PERCENT = 162;\\n    uint256 internal constant BITS_USER_SUPPLY_EXPAND_DURATION = 176;\\n    uint256 internal constant BITS_USER_SUPPLY_BASE_WITHDRAWAL_LIMIT = 200;\\n\\n    // UserBorrowData\\n    uint256 internal constant BITS_USER_BORROW_ALLOWED = 0;\\n    uint256 internal constant BITS_USER_BORROW_AMOUNT = 1;\\n    uint256 internal constant BITS_USER_BORROW_PREVIOUS_BORROW_LIMIT = 65;\\n    uint256 internal constant BITS_USER_BORROW_LAST_UPDATE_TIMESTAMP = 129;\\n    uint256 internal constant BITS_USER_BORROW_EXPAND_PERCENT = 162;\\n    uint256 internal constant BITS_USER_BORROW_EXPAND_DURATION = 176;\\n    uint256 internal constant BITS_USER_BORROW_BASE_BORROW_LIMIT = 200;\\n    uint256 internal constant BITS_USER_BORROW_MAX_BORROW_LIMIT = 218;\\n\\n    // --------------------------------\\n\\n    /// @notice Calculating the slot ID for Dex contract for single mapping at `slot_` for `key_`\\n    function calculateMappingStorageSlot(uint256 slot_, address key_) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(key_, slot_));\\n    }\\n\\n    /// @notice Calculating the slot ID for Dex contract for double mapping at `slot_` for `key1_` and `key2_`\\n    function calculateDoubleMappingStorageSlot(\\n        uint256 slot_,\\n        address key1_,\\n        address key2_\\n    ) internal pure returns (bytes32) {\\n        bytes32 intermediateSlot_ = keccak256(abi.encode(key1_, slot_));\\n        return keccak256(abi.encode(key2_, intermediateSlot_));\\n    }\\n}\\n\",\"keccak256\":\"0xf1d6550d83fb0155a26655234922c9bdf4a1bbcf7a3ca767e9123d367a795307\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dex/interfaces/iDexT1.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.21;\\n\\ninterface IFluidDexT1 {\\n    error FluidDexError(uint256 errorId);\\n\\n    /// @notice used to simulate swap to find the output amount\\n    error FluidDexSwapResult(uint256 amountOut);\\n\\n    error FluidDexPerfectLiquidityOutput(uint256 token0Amt, uint token1Amt);\\n\\n    error FluidDexSingleTokenOutput(uint256 tokenAmt);\\n\\n    error FluidDexLiquidityOutput(uint256 shares);\\n\\n    error FluidDexPricesAndExchangeRates(PricesAndExchangePrice pex_);\\n\\n    /// @notice returns the dex id\\n    function DEX_ID() external view returns (uint256);\\n\\n    /// @notice reads uint256 data `result_` from storage at a bytes32 storage `slot_` key.\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n\\n    struct Implementations {\\n        address shift;\\n        address admin;\\n        address colOperations;\\n        address debtOperations;\\n        address perfectOperationsAndOracle;\\n    }\\n\\n    struct ConstantViews {\\n        uint256 dexId;\\n        address liquidity;\\n        address factory;\\n        Implementations implementations;\\n        address deployerContract;\\n        address token0;\\n        address token1;\\n        bytes32 supplyToken0Slot;\\n        bytes32 borrowToken0Slot;\\n        bytes32 supplyToken1Slot;\\n        bytes32 borrowToken1Slot;\\n        bytes32 exchangePriceToken0Slot;\\n        bytes32 exchangePriceToken1Slot;\\n        uint256 oracleMapping;\\n    }\\n\\n    struct ConstantViews2 {\\n        uint token0NumeratorPrecision;\\n        uint token0DenominatorPrecision;\\n        uint token1NumeratorPrecision;\\n        uint token1DenominatorPrecision;\\n    }\\n\\n    struct PricesAndExchangePrice {\\n        uint lastStoredPrice; // last stored price in 1e27 decimals\\n        uint centerPrice; // last stored price in 1e27 decimals\\n        uint upperRange; // price at upper range in 1e27 decimals\\n        uint lowerRange; // price at lower range in 1e27 decimals\\n        uint geometricMean; // geometric mean of upper range & lower range in 1e27 decimals\\n        uint supplyToken0ExchangePrice;\\n        uint borrowToken0ExchangePrice;\\n        uint supplyToken1ExchangePrice;\\n        uint borrowToken1ExchangePrice;\\n    }\\n\\n    struct CollateralReserves {\\n        uint token0RealReserves;\\n        uint token1RealReserves;\\n        uint token0ImaginaryReserves;\\n        uint token1ImaginaryReserves;\\n    }\\n\\n    struct DebtReserves {\\n        uint token0Debt;\\n        uint token1Debt;\\n        uint token0RealReserves;\\n        uint token1RealReserves;\\n        uint token0ImaginaryReserves;\\n        uint token1ImaginaryReserves;\\n    }\\n\\n    function getCollateralReserves(\\n        uint geometricMean_,\\n        uint upperRange_,\\n        uint lowerRange_,\\n        uint token0SupplyExchangePrice_,\\n        uint token1SupplyExchangePrice_\\n    ) external view returns (CollateralReserves memory c_);\\n\\n    function getDebtReserves(\\n        uint geometricMean_,\\n        uint upperRange_,\\n        uint lowerRange_,\\n        uint token0BorrowExchangePrice_,\\n        uint token1BorrowExchangePrice_\\n    ) external view returns (DebtReserves memory d_);\\n\\n    // reverts with FluidDexPricesAndExchangeRates(pex_);\\n    function getPricesAndExchangePrices() external;\\n\\n    function constantsView() external view returns (ConstantViews memory constantsView_);\\n\\n    function constantsView2() external view returns (ConstantViews2 memory constantsView2_);\\n\\n    struct Oracle {\\n        uint twap1by0; // TWAP price\\n        uint lowestPrice1by0; // lowest price point\\n        uint highestPrice1by0; // highest price point\\n        uint twap0by1; // TWAP price\\n        uint lowestPrice0by1; // lowest price point\\n        uint highestPrice0by1; // highest price point\\n    }\\n\\n    /// @dev This function allows users to swap a specific amount of input tokens for output tokens\\n    /// @param swap0to1_ Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\\n    /// @param amountIn_ The exact amount of input tokens to swap\\n    /// @param amountOutMin_ The minimum amount of output tokens the user is willing to accept\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with amountOut_\\n    /// @return amountOut_ The amount of output tokens received from the swap\\n    function swapIn(\\n        bool swap0to1_,\\n        uint256 amountIn_,\\n        uint256 amountOutMin_,\\n        address to_\\n    ) external payable returns (uint256 amountOut_);\\n\\n    /// @dev Swap tokens with perfect amount in and callback functionality\\n    /// @param swap0to1_ Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\\n    /// @param amountIn_ The exact amount of tokens to swap in\\n    /// @param amountOutMin_ The minimum amount of tokens to receive after swap\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with amountOut_\\n    /// @return amountOut_ The amount of output tokens received from the swap\\n    function swapInWithCallback(\\n        bool swap0to1_,\\n        uint256 amountIn_,\\n        uint256 amountOutMin_,\\n        address to_\\n    ) external payable returns (uint256 amountOut_);\\n\\n    /// @dev Swap tokens with perfect amount out\\n    /// @param swap0to1_ Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\\n    /// @param amountOut_ The exact amount of tokens to receive after swap\\n    /// @param amountInMax_ Maximum amount of tokens to swap in\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with amountIn_\\n    /// @return amountIn_ The amount of input tokens used for the swap\\n    function swapOut(\\n        bool swap0to1_,\\n        uint256 amountOut_,\\n        uint256 amountInMax_,\\n        address to_\\n    ) external payable returns (uint256 amountIn_);\\n\\n    /// @dev Swap tokens with perfect amount out and callback functionality\\n    /// @param swap0to1_ Direction of swap. If true, swaps token0 for token1; if false, swaps token1 for token0\\n    /// @param amountOut_ The exact amount of tokens to receive after swap\\n    /// @param amountInMax_ Maximum amount of tokens to swap in\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with amountIn_\\n    /// @return amountIn_ The amount of input tokens used for the swap\\n    function swapOutWithCallback(\\n        bool swap0to1_,\\n        uint256 amountOut_,\\n        uint256 amountInMax_,\\n        address to_\\n    ) external payable returns (uint256 amountIn_);\\n\\n    /// @dev Deposit tokens in equal proportion to the current pool ratio\\n    /// @param shares_ The number of shares to mint\\n    /// @param maxToken0Deposit_ Maximum amount of token0 to deposit\\n    /// @param maxToken1Deposit_ Maximum amount of token1 to deposit\\n    /// @param estimate_ If true, function will revert with estimated deposit amounts without executing the deposit\\n    /// @return token0Amt_ Amount of token0 deposited\\n    /// @return token1Amt_ Amount of token1 deposited\\n    function depositPerfect(\\n        uint shares_,\\n        uint maxToken0Deposit_,\\n        uint maxToken1Deposit_,\\n        bool estimate_\\n    ) external payable returns (uint token0Amt_, uint token1Amt_);\\n\\n    /// @dev This function allows users to withdraw a perfect amount of collateral liquidity\\n    /// @param shares_ The number of shares to withdraw\\n    /// @param minToken0Withdraw_ The minimum amount of token0 the user is willing to accept\\n    /// @param minToken1Withdraw_ The minimum amount of token1 the user is willing to accept\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with token0Amt_ & token1Amt_\\n    /// @return token0Amt_ The amount of token0 withdrawn\\n    /// @return token1Amt_ The amount of token1 withdrawn\\n    function withdrawPerfect(\\n        uint shares_,\\n        uint minToken0Withdraw_,\\n        uint minToken1Withdraw_,\\n        address to_\\n    ) external returns (uint token0Amt_, uint token1Amt_);\\n\\n    /// @dev This function allows users to borrow tokens in equal proportion to the current debt pool ratio\\n    /// @param shares_ The number of shares to borrow\\n    /// @param minToken0Borrow_ Minimum amount of token0 to borrow\\n    /// @param minToken1Borrow_ Minimum amount of token1 to borrow\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with token0Amt_ & token1Amt_\\n    /// @return token0Amt_ Amount of token0 borrowed\\n    /// @return token1Amt_ Amount of token1 borrowed\\n    function borrowPerfect(\\n        uint shares_,\\n        uint minToken0Borrow_,\\n        uint minToken1Borrow_,\\n        address to_\\n    ) external returns (uint token0Amt_, uint token1Amt_);\\n\\n    /// @dev This function allows users to pay back borrowed tokens in equal proportion to the current debt pool ratio\\n    /// @param shares_ The number of shares to pay back\\n    /// @param maxToken0Payback_ Maximum amount of token0 to pay back\\n    /// @param maxToken1Payback_ Maximum amount of token1 to pay back\\n    /// @param estimate_ If true, function will revert with estimated payback amounts without executing the payback\\n    /// @return token0Amt_ Amount of token0 paid back\\n    /// @return token1Amt_ Amount of token1 paid back\\n    function paybackPerfect(\\n        uint shares_,\\n        uint maxToken0Payback_,\\n        uint maxToken1Payback_,\\n        bool estimate_\\n    ) external payable returns (uint token0Amt_, uint token1Amt_);\\n\\n    /// @dev This function allows users to deposit tokens in any proportion into the col pool\\n    /// @param token0Amt_ The amount of token0 to deposit\\n    /// @param token1Amt_ The amount of token1 to deposit\\n    /// @param minSharesAmt_ The minimum amount of shares the user expects to receive\\n    /// @param estimate_ If true, function will revert with estimated shares without executing the deposit\\n    /// @return shares_ The amount of shares minted for the deposit\\n    function deposit(\\n        uint token0Amt_,\\n        uint token1Amt_,\\n        uint minSharesAmt_,\\n        bool estimate_\\n    ) external payable returns (uint shares_);\\n\\n    /// @dev This function allows users to withdraw tokens in any proportion from the col pool\\n    /// @param token0Amt_ The amount of token0 to withdraw\\n    /// @param token1Amt_ The amount of token1 to withdraw\\n    /// @param maxSharesAmt_ The maximum number of shares the user is willing to burn\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with shares_\\n    /// @return shares_ The number of shares burned for the withdrawal\\n    function withdraw(\\n        uint token0Amt_,\\n        uint token1Amt_,\\n        uint maxSharesAmt_,\\n        address to_\\n    ) external returns (uint shares_);\\n\\n    /// @dev This function allows users to borrow tokens in any proportion from the debt pool\\n    /// @param token0Amt_ The amount of token0 to borrow\\n    /// @param token1Amt_ The amount of token1 to borrow\\n    /// @param maxSharesAmt_ The maximum amount of shares the user is willing to receive\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with shares_\\n    /// @return shares_ The amount of borrow shares minted to represent the borrowed amount\\n    function borrow(uint token0Amt_, uint token1Amt_, uint maxSharesAmt_, address to_) external returns (uint shares_);\\n\\n    /// @dev This function allows users to payback tokens in any proportion to the debt pool\\n    /// @param token0Amt_ The amount of token0 to payback\\n    /// @param token1Amt_ The amount of token1 to payback\\n    /// @param minSharesAmt_ The minimum amount of shares the user expects to burn\\n    /// @param estimate_ If true, function will revert with estimated shares without executing the payback\\n    /// @return shares_ The amount of borrow shares burned for the payback\\n    function payback(\\n        uint token0Amt_,\\n        uint token1Amt_,\\n        uint minSharesAmt_,\\n        bool estimate_\\n    ) external payable returns (uint shares_);\\n\\n    /// @dev This function allows users to withdraw their collateral with perfect shares in one token\\n    /// @param shares_ The number of shares to burn for withdrawal\\n    /// @param minToken0_ The minimum amount of token0 the user expects to receive (set to 0 if withdrawing in token1)\\n    /// @param minToken1_ The minimum amount of token1 the user expects to receive (set to 0 if withdrawing in token0)\\n    /// @param to_ Recipient of swapped tokens. If to_ == address(0) then out tokens will be sent to msg.sender. If to_ == ADDRESS_DEAD then function will revert with withdrawAmt_\\n    /// @return withdrawAmt_ The amount of tokens withdrawn in the chosen token\\n    function withdrawPerfectInOneToken(\\n        uint shares_,\\n        uint minToken0_,\\n        uint minToken1_,\\n        address to_\\n    ) external returns (uint withdrawAmt_);\\n\\n    /// @dev This function allows users to payback their debt with perfect shares in one token\\n    /// @param shares_ The number of shares to burn for payback\\n    /// @param maxToken0_ The maximum amount of token0 the user is willing to pay (set to 0 if paying back in token1)\\n    /// @param maxToken1_ The maximum amount of token1 the user is willing to pay (set to 0 if paying back in token0)\\n    /// @param estimate_ If true, the function will revert with the estimated payback amount without executing the payback\\n    /// @return paybackAmt_ The amount of tokens paid back in the chosen token\\n    function paybackPerfectInOneToken(\\n        uint shares_,\\n        uint maxToken0_,\\n        uint maxToken1_,\\n        bool estimate_\\n    ) external payable returns (uint paybackAmt_);\\n\\n    /// @dev the oracle assumes last set price of pool till the next swap happens.\\n    /// There's a possibility that during that time some interest is generated hence the last stored price is not the 100% correct price for the whole duration\\n    /// but the difference due to interest will be super low so this difference is ignored\\n    /// For example 2 swaps happened 10min (600 seconds) apart and 1 token has 10% higher interest than other.\\n    /// then that token will accrue about 10% * 600 / secondsInAYear = ~0.0002%\\n    /// @param secondsAgos_ array of seconds ago for which TWAP is needed. If user sends [10, 30, 60] then twaps_ will return [10-0, 30-10, 60-30]\\n    /// @return twaps_ twap price, lowest price (aka minima) & highest price (aka maxima) between secondsAgo checkpoints\\n    /// @return currentPrice_ price of pool after the most recent swap\\n    function oraclePrice(uint[] memory secondsAgos_) external view returns (Oracle[] memory twaps_, uint currentPrice_);\\n}\\n\",\"keccak256\":\"0xd48834505ffcaa7523bf84e5c2da27e585b865f11d4fd75d6088696bfc40d47f\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60c060405234801561001057600080fd5b5060405161102438038061102483398101604081905261002f916100b1565b46600114801561005757506001600160a01b038216158061005757506001600160a01b038116155b1561007e57604051636801712d60e11b8152620186fb600482015260240160405180910390fd5b6001600160a01b039182166080521660a0526100e4565b80516001600160a01b03811681146100ac57600080fd5b919050565b600080604083850312156100c457600080fd5b6100cd83610095565b91506100db60208401610095565b90509250929050565b60805160a051610f0d6101176000396000818161019a0152610a990152600081816101360152610a440152610f0d6000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c8063a2724a4d1161008c578063e1bc93f511610066578063e1bc93f514610210578063eaf3de1614610238578063ed13e51d14610266578063f91ba3681461027957600080fd5b8063a2724a4d146101e1578063b788f3a1146101eb578063dd86903a1461020657600080fd5b80635b400f03116100c85780635b400f031461017d5780638d016f171461019557806395ae47e1146101bc57806398a2b87f146101d757600080fd5b806320c36614146100ef578063425a1eee1461011c5780634d9c564314610131575b600080fd5b6101026100fd366004610cdf565b61028c565b604080519283526020830191909152015b60405180910390f35b61012f61012a366004610cfa565b61033d565b005b6101587f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610113565b61018762030d4081565b604051908152602001610113565b6101587f000000000000000000000000000000000000000000000000000000000000000081565b610158731e2e1aed876f67fe4fd54090fd7b8f57ce23421981565b6101876202a30081565b6101876205460081565b610158734f6f977acdd1177dcd81ab83074855ecb9c2d49e81565b610187620fd20081565b61018761021e366004610d3c565b600060208181529281526040808220909352908152205481565b61024b610246366004610cdf565b610520565b60408051938452602084019290925290820152606001610113565b61012f610274366004610d77565b6105f7565b61012f610287366004610d77565b6107b5565b6040517fb5c736e4000000000000000000000000000000000000000000000000000000008152600160048201526000908190819073ffffffffffffffffffffffffffffffffffffffff85169063b5c736e490602401602060405180830381865afa1580156102fe573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103229190610db0565b620fffff601b82901c811696602f9290921c16945092505050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e33148015906103755750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b156103b6576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fd60048201526024015b60405180910390fd5b6103c185600161098f565b6103cb8582610a37565b60008060006103d988610520565b9250925092506103e98388610b78565b6103f38287610b78565b6103fd8186610b78565b73ffffffffffffffffffffffffffffffffffffffff88166000818152602081815260408083206001845290915280822042905580517fa295521c000000000000000000000000000000000000000000000000000000008152600481018b9052602481018a90526044810189905260648101889052905163a295521c9260848084019391929182900301818387803b15801561049757600080fd5b505af11580156104ab573d6000803e3d6000fd5b50506040805173ffffffffffffffffffffffffffffffffffffffff8c168152602081018b905290810189905260608101889052608081018790527f82ceba599c46eabf6de3c6ba0558feeb7dbbf9320563978379dc945fc102d6e9925060a00190505b60405180910390a15050505050505050565b6040517fb5c736e40000000000000000000000000000000000000000000000000000000081526001600482015260009081908190819073ffffffffffffffffffffffffffffffffffffffff86169063b5c736e490602401602060405180830381865afa158015610594573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105b89190610db0565b90506105ce6103e8604483901c6103ff16610e27565b93506105e46103e8604e83901c6103ff16610e27565b939593945060581c62ffffff1692915050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e331480159061062f5750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b1561066b576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fd60048201526024016103ad565b61067684600061098f565b6106808482610a37565b60008061068c8661028c565b9150915061069a8286610b78565b6106a48185610b78565b73ffffffffffffffffffffffffffffffffffffffff861660008181526020818152604080832083805290915280822042905580517fe552a1e3000000000000000000000000000000000000000000000000000000008152600481018990526024810188905260448101879052905163e552a1e39260648084019391929182900301818387803b15801561073657600080fd5b505af115801561074a573d6000803e3d6000fd5b50506040805173ffffffffffffffffffffffffffffffffffffffff8a16815260208101899052908101879052606081018690527f150653412b7ff8422744f4274725986f99e5ed162931d6bc666c49d25b2057f29250608001905060405180910390a1505050505050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e33148015906107ed5750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b15610829576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fd60048201526024016103ad565b61083484600061098f565b61083e8482610a37565b61084f61084a84610b94565b610bb3565b61085b61084a83610b94565b6000806108678661028c565b9150915060006108778387610bf8565b905060006108858387610bf8565b73ffffffffffffffffffffffffffffffffffffffff891660008181526020818152604080832083805290915280822042905580517fe552a1e30000000000000000000000000000000000000000000000000000000081526004810187905260248101859052604481018a90529051939450919263e552a1e392606480820193929182900301818387803b15801561091b57600080fd5b505af115801561092f573d6000803e3d6000fd5b50506040805173ffffffffffffffffffffffffffffffffffffffff8c16815260208101869052908101849052606081018890527f150653412b7ff8422744f4274725986f99e5ed162931d6bc666c49d25b2057f29250608001905061050e565b73ffffffffffffffffffffffffffffffffffffffff8216600090815260208190526040812062054600918360018111156109cb576109cb610dc9565b60018111156109dc576109dc610dc9565b815260200190815260200160002054426109f69190610e3e565b1015610a33576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fc60048201526024016103ad565b5050565b466001148015610ae757507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161480610ae757507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16145b15610b29578015610a33576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186ff60048201526024016103ad565b6202a300811080610b3c5750620fd20081115b15610a33576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186ff60048201526024016103ad565b6000610b848383610c5d565b9050610b8f81610bb3565b505050565b6000808213610bab57610ba682610e51565b610bad565b815b92915050565b62030d40811115610bf5576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fe60048201526024016103ad565b50565b600080821315610c2b57620f4240610c108385610e27565b610c1a9190610e89565b610c249084610ec4565b9050610bad565b620f4240610c3883610e51565b610c429085610e27565b610c4c9190610e89565b610c569084610e3e565b9392505050565b6000821580610c6b57508183145b15610c7857506000610bad565b81831115610c9157610c8a8284610e3e565b9050610c9e565b610c9b8383610e3e565b90505b82610cac82620f4240610e27565b610c569190610e89565b803573ffffffffffffffffffffffffffffffffffffffff81168114610cda57600080fd5b919050565b600060208284031215610cf157600080fd5b610c5682610cb6565b600080600080600060a08688031215610d1257600080fd5b610d1b86610cb6565b97602087013597506040870135966060810135965060800135945092505050565b60008060408385031215610d4f57600080fd5b610d5883610cb6565b9150602083013560028110610d6c57600080fd5b809150509250929050565b60008060008060808587031215610d8d57600080fd5b610d9685610cb6565b966020860135965060408601359560600135945092505050565b600060208284031215610dc257600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b8082028115828204841417610bad57610bad610df8565b81810381811115610bad57610bad610df8565b60007f80000000000000000000000000000000000000000000000000000000000000008203610e8257610e82610df8565b5060000390565b600082610ebf577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b80820180821115610bad57610bad610df856fea26469706673582212209cda791fee2c4742d8f70c2b2736e3dab6cf0096b9dfe2547a3965c2f446a48364736f6c63430008150033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100ea5760003560e01c8063a2724a4d1161008c578063e1bc93f511610066578063e1bc93f514610210578063eaf3de1614610238578063ed13e51d14610266578063f91ba3681461027957600080fd5b8063a2724a4d146101e1578063b788f3a1146101eb578063dd86903a1461020657600080fd5b80635b400f03116100c85780635b400f031461017d5780638d016f171461019557806395ae47e1146101bc57806398a2b87f146101d757600080fd5b806320c36614146100ef578063425a1eee1461011c5780634d9c564314610131575b600080fd5b6101026100fd366004610cdf565b61028c565b604080519283526020830191909152015b60405180910390f35b61012f61012a366004610cfa565b61033d565b005b6101587f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff9091168152602001610113565b61018762030d4081565b604051908152602001610113565b6101587f000000000000000000000000000000000000000000000000000000000000000081565b610158731e2e1aed876f67fe4fd54090fd7b8f57ce23421981565b6101876202a30081565b6101876205460081565b610158734f6f977acdd1177dcd81ab83074855ecb9c2d49e81565b610187620fd20081565b61018761021e366004610d3c565b600060208181529281526040808220909352908152205481565b61024b610246366004610cdf565b610520565b60408051938452602084019290925290820152606001610113565b61012f610274366004610d77565b6105f7565b61012f610287366004610d77565b6107b5565b6040517fb5c736e4000000000000000000000000000000000000000000000000000000008152600160048201526000908190819073ffffffffffffffffffffffffffffffffffffffff85169063b5c736e490602401602060405180830381865afa1580156102fe573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103229190610db0565b620fffff601b82901c811696602f9290921c16945092505050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e33148015906103755750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b156103b6576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fd60048201526024015b60405180910390fd5b6103c185600161098f565b6103cb8582610a37565b60008060006103d988610520565b9250925092506103e98388610b78565b6103f38287610b78565b6103fd8186610b78565b73ffffffffffffffffffffffffffffffffffffffff88166000818152602081815260408083206001845290915280822042905580517fa295521c000000000000000000000000000000000000000000000000000000008152600481018b9052602481018a90526044810189905260648101889052905163a295521c9260848084019391929182900301818387803b15801561049757600080fd5b505af11580156104ab573d6000803e3d6000fd5b50506040805173ffffffffffffffffffffffffffffffffffffffff8c168152602081018b905290810189905260608101889052608081018790527f82ceba599c46eabf6de3c6ba0558feeb7dbbf9320563978379dc945fc102d6e9925060a00190505b60405180910390a15050505050505050565b6040517fb5c736e40000000000000000000000000000000000000000000000000000000081526001600482015260009081908190819073ffffffffffffffffffffffffffffffffffffffff86169063b5c736e490602401602060405180830381865afa158015610594573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105b89190610db0565b90506105ce6103e8604483901c6103ff16610e27565b93506105e46103e8604e83901c6103ff16610e27565b939593945060581c62ffffff1692915050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e331480159061062f5750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b1561066b576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fd60048201526024016103ad565b61067684600061098f565b6106808482610a37565b60008061068c8661028c565b9150915061069a8286610b78565b6106a48185610b78565b73ffffffffffffffffffffffffffffffffffffffff861660008181526020818152604080832083805290915280822042905580517fe552a1e3000000000000000000000000000000000000000000000000000000008152600481018990526024810188905260448101879052905163e552a1e39260648084019391929182900301818387803b15801561073657600080fd5b505af115801561074a573d6000803e3d6000fd5b50506040805173ffffffffffffffffffffffffffffffffffffffff8a16815260208101899052908101879052606081018690527f150653412b7ff8422744f4274725986f99e5ed162931d6bc666c49d25b2057f29250608001905060405180910390a1505050505050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e33148015906107ed5750731e2e1aed876f67fe4fd54090fd7b8f57ce2342193314155b15610829576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fd60048201526024016103ad565b61083484600061098f565b61083e8482610a37565b61084f61084a84610b94565b610bb3565b61085b61084a83610b94565b6000806108678661028c565b9150915060006108778387610bf8565b905060006108858387610bf8565b73ffffffffffffffffffffffffffffffffffffffff891660008181526020818152604080832083805290915280822042905580517fe552a1e30000000000000000000000000000000000000000000000000000000081526004810187905260248101859052604481018a90529051939450919263e552a1e392606480820193929182900301818387803b15801561091b57600080fd5b505af115801561092f573d6000803e3d6000fd5b50506040805173ffffffffffffffffffffffffffffffffffffffff8c16815260208101869052908101849052606081018890527f150653412b7ff8422744f4274725986f99e5ed162931d6bc666c49d25b2057f29250608001905061050e565b73ffffffffffffffffffffffffffffffffffffffff8216600090815260208190526040812062054600918360018111156109cb576109cb610dc9565b60018111156109dc576109dc610dc9565b815260200190815260200160002054426109f69190610e3e565b1015610a33576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fc60048201526024016103ad565b5050565b466001148015610ae757507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161480610ae757507f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16145b15610b29578015610a33576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186ff60048201526024016103ad565b6202a300811080610b3c5750620fd20081115b15610a33576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186ff60048201526024016103ad565b6000610b848383610c5d565b9050610b8f81610bb3565b505050565b6000808213610bab57610ba682610e51565b610bad565b815b92915050565b62030d40811115610bf5576040517fd002e25a000000000000000000000000000000000000000000000000000000008152620186fe60048201526024016103ad565b50565b600080821315610c2b57620f4240610c108385610e27565b610c1a9190610e89565b610c249084610ec4565b9050610bad565b620f4240610c3883610e51565b610c429085610e27565b610c4c9190610e89565b610c569084610e3e565b9392505050565b6000821580610c6b57508183145b15610c7857506000610bad565b81831115610c9157610c8a8284610e3e565b9050610c9e565b610c9b8383610e3e565b90505b82610cac82620f4240610e27565b610c569190610e89565b803573ffffffffffffffffffffffffffffffffffffffff81168114610cda57600080fd5b919050565b600060208284031215610cf157600080fd5b610c5682610cb6565b600080600080600060a08688031215610d1257600080fd5b610d1b86610cb6565b97602087013597506040870135966060810135965060800135945092505050565b60008060408385031215610d4f57600080fd5b610d5883610cb6565b9150602083013560028110610d6c57600080fd5b809150509250929050565b60008060008060808587031215610d8d57600080fd5b610d9685610cb6565b966020860135965060408601359560600135945092505050565b600060208284031215610dc257600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b8082028115828204841417610bad57610bad610df8565b81810381811115610bad57610bad610df8565b60007f80000000000000000000000000000000000000000000000000000000000000008203610e8257610e82610df8565b5060000390565b600082610ebf577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b80820180821115610bad57610bad610df856fea26469706673582212209cda791fee2c4742d8f70c2b2736e3dab6cf0096b9dfe2547a3965c2f446a48364736f6c63430008150033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "setRanges(address,uint256,uint256,uint256)": {
+        "details": "This function can only be called by team multisig",
+        "params": {
+          "dex_": "The address of the dex",
+          "lowerRangePercent_": "The new lower range to be set",
+          "upperRangePercent_": "The new upper range to be set"
+        }
+      },
+      "setRangesByPercentage(address,int256,int256,uint256)": {
+        "details": "This function can only be called by team multisig",
+        "params": {
+          "dex_": "The address of the dex",
+          "newLowerRangePercentage_": "The new lower range percentage change, 10000 = 1%. Positive to increase, negative to decrease",
+          "newUpperRangePercentage_": "The new upper range percentage change, 10000 = 1%. Positive to increase, negative to decrease"
+        }
+      },
+      "setThresholdConfig(address,uint256,uint256,uint256,uint256)": {
+        "details": "This function can only be called by team multisig",
+        "params": {
+          "dex_": "The address of the dex",
+          "lowerThresholdPercent_": "The new lower threshold percent, 10000 = 1%",
+          "thresholdShiftTime_": "The new threshold shift time",
+          "upperThresholdPercent_": "The new upper threshold percent, 10000 = 1%"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "LogSetRanges(address,uint256,uint256,uint256)": {
+        "notice": "emitted when multisig successfully changes the upper and lower range percent configs"
+      },
+      "LogSetThresholdConfig(address,uint256,uint256,uint256,uint256)": {
+        "notice": "emitted when multisig successfully changes threshold configs"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "TEAM_MULTISIG()": {
+        "notice": "Team multisigs allowed to trigger methods"
+      },
+      "dexLastUpdateTimestamp(address,uint8)": {
+        "notice": "dex => UpdateType => last update time when a Dex config was updated"
+      },
+      "setRanges(address,uint256,uint256,uint256)": {
+        "notice": "Sets the upper and lower range for a dex"
+      },
+      "setRangesByPercentage(address,int256,int256,uint256)": {
+        "notice": "Sets the upper and lower range for a dex by percentage to change from current config"
+      },
+      "setThresholdConfig(address,uint256,uint256,uint256,uint256)": {
+        "notice": "Sets the upper and lower threshold percent for a dex"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 7139,
+        "contract": "contracts/config/rangeAuthDex/main.sol:FluidRangeAuthDex",
+        "label": "dexLastUpdateTimestamp",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_mapping(t_enum(UpdateType)7131,t_uint256))"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_enum(UpdateType)7131": {
+        "encoding": "inplace",
+        "label": "enum Variables.UpdateType",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_mapping(t_enum(UpdateType)7131,t_uint256))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(enum Variables.UpdateType => uint256))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_enum(UpdateType)7131,t_uint256)"
+      },
+      "t_mapping(t_enum(UpdateType)7131,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_enum(UpdateType)7131",
+        "label": "mapping(enum Variables.UpdateType => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
