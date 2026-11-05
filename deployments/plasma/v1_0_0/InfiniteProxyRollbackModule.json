@@ -1,0 +1,457 @@
+{
+  "address": "0x8E78ECb59bA8793cc99B567D31899F63284D1311",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidInfiniteProxyError",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "LogCleanupExpiredRollbackImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "rollbackDummyImplementation",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogRegisterRollbackDummyImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "rollbackImplementation",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes4[]",
+          "name": "sigs",
+          "type": "bytes4[]"
+        }
+      ],
+      "name": "LogRegisterRollbackImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "LogRemoveImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "restoredDummyImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "LogRollbackDummyImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "rollbackImplementation",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "replacedImplementation",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes4[]",
+          "name": "sigs",
+          "type": "bytes4[]"
+        }
+      ],
+      "name": "LogRollbackImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oldAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetAdmin",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oldDummyImplementation",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newDummyImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "LogSetDummyImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes4[]",
+          "name": "sigs",
+          "type": "bytes4[]"
+        }
+      ],
+      "name": "LogSetImplementation",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "ROLLBACK_PERIOD",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "TEAM_MULTISIG",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation_",
+          "type": "address"
+        }
+      ],
+      "name": "cleanupExpiredRollbackImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getRollbackDummyImplementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "rollbackDummyImplementation_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rollbackRegisterTimestamp_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "rollbackImplementation_",
+          "type": "address"
+        }
+      ],
+      "name": "getRollbackForImplementation",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint40",
+              "name": "rollbackRegisterTimestamp",
+              "type": "uint40"
+            },
+            {
+              "internalType": "address",
+              "name": "replacesImplementation",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes4[]",
+              "name": "sigs",
+              "type": "bytes4[]"
+            }
+          ],
+          "internalType": "struct RollbackCoreInternals.RollbackSigsSlot",
+          "name": "rollbackData_",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "slot_",
+          "type": "bytes32"
+        }
+      ],
+      "name": "readFromStorage",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "result_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "registerRollbackDummyImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "rollbackImplementation_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "newImplementation_",
+          "type": "address"
+        }
+      ],
+      "name": "registerRollbackImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rollbackDummyImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "rollbackImplementation_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "newImplementation_",
+          "type": "address"
+        }
+      ],
+      "name": "rollbackImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x3cf86382cec067f917a1b7709562cb4f1dfd15b838a99f3e9203d98307287d3d",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0xc1490E0489f487477A9B4e52Da19416d21fC09E0",
+    "contractAddress": null,
+    "transactionIndex": 5,
+    "gasUsed": "1497168",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x7a6a8eec663d8e068b334473bb4040babb4e3d6d4fc602f2783bf674c6be8c76",
+    "transactionHash": "0x3cf86382cec067f917a1b7709562cb4f1dfd15b838a99f3e9203d98307287d3d",
+    "logs": [],
+    "blockNumber": 20104736,
+    "cumulativeGasUsed": "13724702",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "739443579fe5699aa91e807d79d317c2",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.29+commit.ab55807c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidInfiniteProxyError\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"LogCleanupExpiredRollbackImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"rollbackDummyImplementation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"LogRegisterRollbackDummyImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"rollbackImplementation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes4[]\",\"name\":\"sigs\",\"type\":\"bytes4[]\"}],\"name\":\"LogRegisterRollbackImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"LogRemoveImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"restoredDummyImplementation\",\"type\":\"address\"}],\"name\":\"LogRollbackDummyImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"rollbackImplementation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"replacedImplementation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes4[]\",\"name\":\"sigs\",\"type\":\"bytes4[]\"}],\"name\":\"LogRollbackImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldAdmin\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"LogSetAdmin\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldDummyImplementation\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newDummyImplementation\",\"type\":\"address\"}],\"name\":\"LogSetDummyImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes4[]\",\"name\":\"sigs\",\"type\":\"bytes4[]\"}],\"name\":\"LogSetImplementation\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ROLLBACK_PERIOD\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TEAM_MULTISIG\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation_\",\"type\":\"address\"}],\"name\":\"cleanupExpiredRollbackImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRollbackDummyImplementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"rollbackDummyImplementation_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"rollbackRegisterTimestamp_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"rollbackImplementation_\",\"type\":\"address\"}],\"name\":\"getRollbackForImplementation\",\"outputs\":[{\"components\":[{\"internalType\":\"uint40\",\"name\":\"rollbackRegisterTimestamp\",\"type\":\"uint40\"},{\"internalType\":\"address\",\"name\":\"replacesImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes4[]\",\"name\":\"sigs\",\"type\":\"bytes4[]\"}],\"internalType\":\"struct RollbackCoreInternals.RollbackSigsSlot\",\"name\":\"rollbackData_\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"slot_\",\"type\":\"bytes32\"}],\"name\":\"readFromStorage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"result_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registerRollbackDummyImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"rollbackImplementation_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"newImplementation_\",\"type\":\"address\"}],\"name\":\"registerRollbackImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rollbackDummyImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"rollbackImplementation_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"newImplementation_\",\"type\":\"address\"}],\"name\":\"rollbackImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Upgrades are expected to happen infrequently (every few months).      Performing an upgrade while another upgrade is still within its active rollback window is not an expected scenario and is not supported.      The design assumes the rollback period will have elapsed before any new upgrade is performed.\",\"kind\":\"dev\",\"methods\":{\"cleanupExpiredRollbackImplementation(address)\":{\"params\":{\"implementation_\":\"The rollback implementation whose storage should be cleaned up.\"}},\"getRollbackDummyImplementation()\":{\"details\":\"Returns rollback dummy-implementations's addres and the registered rollback timestamp\"},\"getRollbackForImplementation(address)\":{\"details\":\"Returns rollback data for a certain implementation address\"},\"registerRollbackImplementation(address,address)\":{\"params\":{\"newImplementation_\":\"The new implementation being upgraded to, which is replaced by the old one in the rollback.\",\"rollbackImplementation_\":\"The currently active implementation to rollback to.\"}},\"rollbackImplementation(address,address)\":{\"params\":{\"newImplementation_\":\"The new, recently upgraded currently active implementation being replaced by the old one in the rollback.\",\"rollbackImplementation_\":\"The implementation to rollback to.\"}}},\"title\":\"InfiniteProxy rollback module\",\"version\":1},\"userdoc\":{\"events\":{\"LogCleanupExpiredRollbackImplementation(address)\":{\"notice\":\"Emitted when expired rollback implementation storage is cleaned up\"},\"LogRegisterRollbackDummyImplementation(address,uint256)\":{\"notice\":\"Emitted when dummy implementation is registered for rollback\"},\"LogRegisterRollbackImplementation(address,address,bytes4[])\":{\"notice\":\"Emitted when a rollback implementation is registered\"},\"LogRemoveImplementation(address)\":{\"notice\":\"emitted when an implementation is removed\"},\"LogRollbackDummyImplementation(address)\":{\"notice\":\"Emitted when dummy implementation rollback occurs\"},\"LogRollbackImplementation(address,address,bytes4[])\":{\"notice\":\"Emitted when a rollback occurs\"},\"LogSetAdmin(address,address)\":{\"notice\":\"emitted when a new admin is set\"},\"LogSetDummyImplementation(address,address)\":{\"notice\":\"emitted when a new dummy implementation is set\"},\"LogSetImplementation(address,bytes4[])\":{\"notice\":\"emitted when a new implementation is set with certain sigs\"}},\"kind\":\"user\",\"methods\":{\"ROLLBACK_PERIOD()\":{\"notice\":\"duration for how long team multisig is allowed to trigger a rollback after it has been registered\"},\"TEAM_MULTISIG()\":{\"notice\":\"Team multisigs allowed to trigger rollback\"},\"cleanupExpiredRollbackImplementation(address)\":{\"notice\":\"Clean up expired rollback storage for an implementation. Callable by anyone once ROLLBACK_PERIOD has elapsed.\"},\"registerRollbackDummyImplementation()\":{\"notice\":\"Register the current dummy implementation for rollback.\"},\"registerRollbackImplementation(address,address)\":{\"notice\":\"Register a currently active implementation as rollback implementation. To be triggered before upgrade.\"},\"rollbackDummyImplementation()\":{\"notice\":\"Rollback to the previously registered dummy implementation.\"},\"rollbackImplementation(address,address)\":{\"notice\":\"Rollback a currently active implementation to its' previously registered implementation.\"}},\"notice\":\"Allows the team multisig to roll back to a previously registered implementation or dummy implementation within a time window after upgrades.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/infiniteProxy/rollbackModule/main.sol\":\"InfiniteProxyRollbackModule\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/infiniteProxy/error.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity >=0.8.21 <=0.8.29;\\n\\ncontract Error {\\n    error FluidInfiniteProxyError(uint256 errorId_);\\n}\\n\",\"keccak256\":\"0x255202c1754217e3992f2a6b2fb910dae0c011c4116b169d3579f2470a0cfecd\",\"license\":\"MIT\"},\"contracts/infiniteProxy/errorTypes.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nlibrary ErrorTypes {\\n    /***********************************|\\n    |         Infinite proxy            | \\n    |__________________________________*/\\n\\n    /// @notice thrown when an implementation does not exist\\n    uint256 internal constant InfiniteProxy__ImplementationNotExist = 50001;\\n\\n    /***********************************|\\n    |          RollbackModule           | \\n    |__________________________________*/\\n\\n    uint256 internal constant InfiniteProxyRollback__Unauthorized = 50010;\\n\\n    uint256 internal constant InfiniteProxyRollback__Expired = 50011;\\n\\n    uint256 internal constant InfiniteProxyRollback__NotRegistered = 50012;\\n\\n    uint256 internal constant InfiniteProxyRollback__NoRollbackSigs = 50013;\\n\\n    uint256 internal constant InfiniteProxyRollback__AlreadyExists = 50014;\\n\\n    uint256 internal constant InfiniteProxyRollback__SigAlreadyExists = 50015;\\n\\n    uint256 internal constant InfiniteProxyRollback__SigSlotCollision = 50016;\\n\\n    uint256 internal constant InfiniteProxyRollback__NotExpired = 50017;\\n\\n    uint256 internal constant InfiniteProxyRollback__ZeroDummyImplementation = 50018;\\n\\n    uint256 internal constant InfiniteProxyRollback__NotAllowed = 50019;\\n}\\n\",\"keccak256\":\"0x0feffcf6dc5bc636f46dc671977b725549eabab33a7e0f1fa5b9cd3ed31b7c64\",\"license\":\"MIT\"},\"contracts/infiniteProxy/events.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\ncontract Events {\\n    /// @notice emitted when a new admin is set\\n    event LogSetAdmin(address indexed oldAdmin, address indexed newAdmin);\\n\\n    /// @notice emitted when a new dummy implementation is set\\n    event LogSetDummyImplementation(address indexed oldDummyImplementation, address indexed newDummyImplementation);\\n\\n    /// @notice emitted when a new implementation is set with certain sigs\\n    event LogSetImplementation(address indexed implementation, bytes4[] sigs);\\n\\n    /// @notice emitted when an implementation is removed\\n    event LogRemoveImplementation(address indexed implementation);\\n}\\n\",\"keccak256\":\"0xe25dd26793a942a47e4fc833931b54c4c09050a1beebc2955581d9a0fb577670\",\"license\":\"BUSL-1.1\"},\"contracts/infiniteProxy/proxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nimport { Events } from \\\"./events.sol\\\";\\nimport { ErrorTypes } from \\\"./errorTypes.sol\\\";\\nimport { Error } from \\\"./error.sol\\\";\\nimport { StorageRead } from \\\"../libraries/storageRead.sol\\\";\\n\\ncontract CoreInternals is StorageRead, Events, Error {\\n    struct SigsSlot {\\n        bytes4[] value;\\n    }\\n\\n    /// @dev Storage slot with the admin of the contract.\\n    /// This is the keccak-256 hash of \\\"eip1967.proxy.admin\\\" subtracted by 1, and is\\n    /// validated in the constructor.\\n    bytes32 internal constant _ADMIN_SLOT = 0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103;\\n\\n    /// @dev Storage slot with the address of the current dummy-implementation.\\n    /// This is the keccak-256 hash of \\\"eip1967.proxy.implementation\\\" subtracted by 1, and is\\n    /// validated in the constructor.\\n    bytes32 internal constant _DUMMY_IMPLEMENTATION_SLOT =\\n        0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;\\n\\n    /// @dev use EIP1967 proxy slot (see _DUMMY_IMPLEMENTATION_SLOT) except for first 4 bytes,\\n    // which are set to 0. This is combined with a sig which will be set in those first 4 bytes\\n    bytes32 internal constant _SIG_SLOT_BASE = 0x000000003ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;\\n\\n    /// @dev Returns the storage slot which stores the sigs array set for the implementation.\\n    function _getSlotImplSigsSlot(address implementation_) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(\\\"eip1967.proxy.implementation\\\", implementation_));\\n    }\\n\\n    /// @dev Returns the storage slot which stores the implementation address for the function sig.\\n    function _getSlotSigsImplSlot(bytes4 sig_) internal pure returns (bytes32 result_) {\\n        assembly {\\n            // or operator sets sig_ in first 4 bytes with rest of bytes32 having default value of _SIG_SLOT_BASE\\n            result_ := or(_SIG_SLOT_BASE, sig_)\\n        }\\n    }\\n\\n    /// @dev Returns an address `data_` located at `slot_`.\\n    function _getAddressSlot(bytes32 slot_) internal view returns (address data_) {\\n        assembly {\\n            data_ := sload(slot_)\\n        }\\n    }\\n\\n    /// @dev Sets an address `data_` located at `slot_`.\\n    function _setAddressSlot(bytes32 slot_, address data_) internal {\\n        assembly {\\n            sstore(slot_, data_)\\n        }\\n    }\\n\\n    /// @dev Returns an `SigsSlot` with member `value` located at `slot`.\\n    function _getSigsSlot(bytes32 slot_) internal pure returns (SigsSlot storage _r) {\\n        assembly {\\n            _r.slot := slot_\\n        }\\n    }\\n\\n    /// @dev Sets new implementation and adds mapping from implementation to sigs and sig to implementation.\\n    function _setImplementationSigs(address implementation_, bytes4[] memory sigs_) internal {\\n        require(sigs_.length != 0, \\\"no-sigs\\\");\\n        bytes32 slot_ = _getSlotImplSigsSlot(implementation_);\\n        bytes4[] memory sigsCheck_ = _getSigsSlot(slot_).value;\\n        require(sigsCheck_.length == 0, \\\"implementation-already-exist\\\");\\n\\n        for (uint256 i; i < sigs_.length; i++) {\\n            bytes32 sigSlot_ = _getSlotSigsImplSlot(sigs_[i]);\\n            require(_getAddressSlot(sigSlot_) == address(0), \\\"sig-already-exist\\\");\\n            _setAddressSlot(sigSlot_, implementation_);\\n        }\\n\\n        _getSigsSlot(slot_).value = sigs_;\\n        emit LogSetImplementation(implementation_, sigs_);\\n    }\\n\\n    /// @dev Removes implementation and the mappings corresponding to it.\\n    function _removeImplementationSigs(address implementation_) internal {\\n        bytes32 slot_ = _getSlotImplSigsSlot(implementation_);\\n        bytes4[] memory sigs_ = _getSigsSlot(slot_).value;\\n        require(sigs_.length != 0, \\\"implementation-not-exist\\\");\\n\\n        for (uint256 i; i < sigs_.length; i++) {\\n            bytes32 sigSlot_ = _getSlotSigsImplSlot(sigs_[i]);\\n            _setAddressSlot(sigSlot_, address(0));\\n        }\\n\\n        delete _getSigsSlot(slot_).value;\\n        emit LogRemoveImplementation(implementation_);\\n    }\\n\\n    /// @dev Returns bytes4[] sigs from implementation address. If implemenatation is not registered then returns empty array.\\n    function _getImplementationSigs(address implementation_) internal view returns (bytes4[] memory) {\\n        bytes32 slot_ = _getSlotImplSigsSlot(implementation_);\\n        return _getSigsSlot(slot_).value;\\n    }\\n\\n    /// @dev Returns implementation address from bytes4 sig. If sig is not registered then returns address(0).\\n    function _getSigImplementation(bytes4 sig_) internal view returns (address implementation_) {\\n        bytes32 slot_ = _getSlotSigsImplSlot(sig_);\\n        return _getAddressSlot(slot_);\\n    }\\n\\n    /// @dev Returns the current admin.\\n    function _getAdmin() internal view returns (address) {\\n        return _getAddressSlot(_ADMIN_SLOT);\\n    }\\n\\n    /// @dev Returns the current dummy-implementation.\\n    function _getDummyImplementation() internal view returns (address) {\\n        return _getAddressSlot(_DUMMY_IMPLEMENTATION_SLOT);\\n    }\\n\\n    /// @dev Stores a new address in the EIP1967 admin slot.\\n    function _setAdmin(address newAdmin_) internal {\\n        address oldAdmin_ = _getAdmin();\\n        require(newAdmin_ != address(0), \\\"ERC1967: new admin is the zero address\\\");\\n        _setAddressSlot(_ADMIN_SLOT, newAdmin_);\\n        emit LogSetAdmin(oldAdmin_, newAdmin_);\\n    }\\n\\n    /// @dev Stores a new address in the EIP1967 implementation slot.\\n    function _setDummyImplementation(address newDummyImplementation_) internal {\\n        require(newDummyImplementation_ != address(0), \\\"ERC1967: new implementation is the zero address\\\");\\n        address oldDummyImplementation_ = _getDummyImplementation();\\n        _setAddressSlot(_DUMMY_IMPLEMENTATION_SLOT, newDummyImplementation_);\\n        emit LogSetDummyImplementation(oldDummyImplementation_, newDummyImplementation_);\\n    }\\n}\\n\\ncontract AdminInternals is CoreInternals {\\n    /// @dev Only admin guard\\n    modifier onlyAdmin() {\\n        require(msg.sender == _getAdmin(), \\\"only-admin\\\");\\n        _;\\n    }\\n\\n    constructor(address admin_, address dummyImplementation_) {\\n        _setAdmin(admin_);\\n        _setDummyImplementation(dummyImplementation_);\\n    }\\n\\n    /// @dev Sets new admin.\\n    function setAdmin(address newAdmin_) external onlyAdmin {\\n        _setAdmin(newAdmin_);\\n    }\\n\\n    /// @dev Sets new dummy-implementation.\\n    function setDummyImplementation(address newDummyImplementation_) external onlyAdmin {\\n        _setDummyImplementation(newDummyImplementation_);\\n    }\\n\\n    /// @dev Adds new implementation address.\\n    function addImplementation(address implementation_, bytes4[] calldata sigs_) external onlyAdmin {\\n        _setImplementationSigs(implementation_, sigs_);\\n    }\\n\\n    /// @dev Removes an existing implementation address.\\n    function removeImplementation(address implementation_) external onlyAdmin {\\n        _removeImplementationSigs(implementation_);\\n    }\\n}\\n\\n/// @title Proxy\\n/// @notice This abstract contract provides a fallback function that delegates all calls to another contract using the EVM.\\n/// It implements the Instadapp infinite-proxy: https://github.com/Instadapp/infinite-proxy\\nabstract contract Proxy is AdminInternals {\\n    constructor(address admin_, address dummyImplementation_) AdminInternals(admin_, dummyImplementation_) {}\\n\\n    /// @dev Returns admin's address.\\n    function getAdmin() external view returns (address) {\\n        return _getAdmin();\\n    }\\n\\n    /// @dev Returns dummy-implementations's address.\\n    function getDummyImplementation() external view returns (address) {\\n        return _getDummyImplementation();\\n    }\\n\\n    /// @dev Returns bytes4[] sigs from implementation address If not registered then returns empty array.\\n    function getImplementationSigs(address impl_) external view returns (bytes4[] memory) {\\n        return _getImplementationSigs(impl_);\\n    }\\n\\n    /// @dev Returns implementation address from bytes4 sig. If sig is not registered then returns address(0).\\n    function getSigsImplementation(bytes4 sig_) external view returns (address) {\\n        return _getSigImplementation(sig_);\\n    }\\n\\n    /// @dev Fallback function that delegates calls to the address returned by Implementations registry.\\n    fallback() external payable {\\n        address implementation_;\\n        assembly {\\n            // get slot for sig and directly SLOAD implementation address from storage at that slot\\n            implementation_ := sload(\\n                // same as in `_getSlotSigsImplSlot()` but we must also load msg.sig from calldata.\\n                // msg.sig is first 4 bytes of calldata, so we can use calldataload(0) with a mask\\n                or(\\n                    // or operator sets sig_ in first 4 bytes with rest of bytes32 having default value of _SIG_SLOT_BASE\\n                    _SIG_SLOT_BASE,\\n                    and(calldataload(0), 0xFFFFFFFF00000000000000000000000000000000000000000000000000000000)\\n                )\\n            )\\n        }\\n\\n        if (implementation_ == address(0)) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxy__ImplementationNotExist);\\n        }\\n\\n        // Delegate the current call to `implementation`.\\n        // This does not return to its internall call site, it will return directly to the external caller.\\n        // solhint-disable-next-line no-inline-assembly\\n        assembly {\\n            // Copy msg.data. We take full control of memory in this inline assembly\\n            // block because it will not return to Solidity code. We overwrite the\\n            // Solidity scratch pad at memory position 0.\\n            calldatacopy(0, 0, calldatasize())\\n\\n            // Call the implementation.\\n            // out and outsize are 0 because we don't know the size yet.\\n            let result := delegatecall(gas(), implementation_, 0, calldatasize(), 0, 0)\\n\\n            // Copy the returned data.\\n            returndatacopy(0, 0, returndatasize())\\n\\n            if eq(result, 0) {\\n                // delegatecall returns 0 on error.\\n                revert(0, returndatasize())\\n            }\\n\\n            return(0, returndatasize())\\n        }\\n    }\\n\\n    receive() external payable {\\n        // receive method can never have calldata in EVM so no need for any logic here\\n    }\\n}\\n\",\"keccak256\":\"0xc4f4f1c10f2db23c7f55f5a7a87a80707b50d6e97066cefdb4535188e435fa18\",\"license\":\"MIT\"},\"contracts/infiniteProxy/rollbackModule/main.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nimport { Events } from \\\"../events.sol\\\";\\nimport { ErrorTypes } from \\\"../errorTypes.sol\\\";\\nimport { CoreInternals } from \\\"../proxy.sol\\\";\\n\\nabstract contract RollbackCoreInternals is CoreInternals {\\n    struct RollbackSigsSlot {\\n        uint40 rollbackRegisterTimestamp;\\n        address replacesImplementation; // address of the newly registered implementation that is supposed to be rolled back to the rollback registered one\\n        bytes4[] sigs;\\n    }\\n\\n    // This is the keccak-256 hash of \\\"eip1967.proxy.rollback\\\" subtracted by 1\\n    bytes32 internal constant _ROLLBACK_DUMMY_IMPLEMENTATION_SLOT =\\n        0x4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd9143;\\n\\n    /// @dev use EIP1967 proxy slot (see _ROLLBACK_DUMMY_IMPLEMENTATION_SLOT) except for first 4 bytes,\\n    // which are set to 0. This is combined with a sig which will be set in those first 4 bytes\\n    bytes32 internal constant _ROLLBACK_SIG_SLOT_BASE =\\n        0x0000000016fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd9143;\\n\\n    /// @notice Team multisigs allowed to trigger rollback\\n    address public constant TEAM_MULTISIG = 0x4F6F977aCDD1177DCD81aB83074855EcB9C2D49e;\\n\\n    /// @notice duration for how long team multisig is allowed to trigger a rollback after it has been registered\\n    uint256 public constant ROLLBACK_PERIOD = 7 days;\\n\\n    /// @dev Sets a uint `data_` located at `slot_`.\\n    function _setUintSlot(bytes32 slot_, uint data_) internal {\\n        assembly {\\n            sstore(slot_, data_)\\n        }\\n    }\\n\\n    /// @dev Returns a uint `data_` located at `slot_`.\\n    function _getUintSlot(bytes32 slot_) internal view returns (uint data_) {\\n        assembly {\\n            data_ := sload(slot_)\\n        }\\n    }\\n\\n    // @dev methods below are almost the same as in ./proxy.sol, just adjusted for using rollback slots instead.\\n\\n    /// @dev Returns the storage slot which stores the sigs array set for the rollback implementation.\\n    function _getRollbackSlotImplSigsSlot(address implementation_) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(\\\"eip1967.proxy.rollback\\\", implementation_));\\n    }\\n\\n    /// @dev Returns the storage slot which stores the rollback implementation address for the function sig.\\n    function _getRollbackSlotSigsImplSlot(bytes4 sig_) internal pure returns (bytes32 result_) {\\n        assembly {\\n            // or operator sets sig_ in first 4 bytes with rest of bytes32 having default value of _ROLLBACK_SIG_SLOT_BASE\\n            result_ := or(_ROLLBACK_SIG_SLOT_BASE, sig_)\\n        }\\n    }\\n\\n    /// @dev Returns an `RollbackSigsSlot` with member `value` and `rollbackRegisterTimestamp` located at `slot`.\\n    function _getRollbackSigsSlot(bytes32 slot_) internal pure returns (RollbackSigsSlot storage _r) {\\n        assembly {\\n            _r.slot := slot_\\n        }\\n    }\\n\\n    /// @dev Sets new rollback implementation and adds mapping from implementation to sigs and sig to implementation.\\n    /// this method is almost the same as _setImplementationSigs in ./proxy.sol, just adjusted for using rollback slots, no event, and custom errors\\n    function _setRollbackImplementationSigs(address implementation_, bytes4[] memory sigs_) internal {\\n        if (sigs_.length == 0) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__NoRollbackSigs);\\n        }\\n        bytes32 slot_ = _getRollbackSlotImplSigsSlot(implementation_);\\n\\n        bytes4[] memory sigsCheck_ = _getRollbackSigsSlot(slot_).sigs;\\n        if (sigsCheck_.length != 0) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__AlreadyExists);\\n        }\\n\\n        for (uint256 i; i < sigs_.length; i++) {\\n            bytes32 sigSlot_ = _getRollbackSlotSigsImplSlot(sigs_[i]);\\n            if (sigSlot_ == _ROLLBACK_DUMMY_IMPLEMENTATION_SLOT) {\\n                revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__SigSlotCollision);\\n            }\\n            if (_getAddressSlot(sigSlot_) != address(0)) {\\n                revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__SigAlreadyExists);\\n            }\\n            _setAddressSlot(sigSlot_, implementation_);\\n        }\\n    }\\n\\n    /// @dev Removes rollback implementation and the mappings corresponding to it.\\n    /// this method is similar as _removeImplementationSigs in ./proxy.sol, just only the remove sigs logic adjusted for using rollback slots\\n    function _removeRollbackImplementationSigs(bytes4[] memory sigs_) internal {\\n        for (uint256 i; i < sigs_.length; i++) {\\n            bytes32 sigSlot_ = _getRollbackSlotSigsImplSlot(sigs_[i]);\\n            if (sigSlot_ == _ROLLBACK_DUMMY_IMPLEMENTATION_SLOT) continue; // never overwrite dummy impl slot\\n            _setAddressSlot(sigSlot_, address(0));\\n        }\\n    }\\n}\\n\\n/// @notice Events for InfiniteProxy rollback operations\\nabstract contract RollbackEvents {\\n    /// @notice Emitted when dummy implementation is registered for rollback\\n    event LogRegisterRollbackDummyImplementation(address rollbackDummyImplementation, uint256 timestamp);\\n\\n    /// @notice Emitted when dummy implementation rollback occurs\\n    event LogRollbackDummyImplementation(address restoredDummyImplementation);\\n\\n    /// @notice Emitted when a rollback implementation is registered\\n    event LogRegisterRollbackImplementation(address rollbackImplementation, address newImplementation, bytes4[] sigs);\\n\\n    /// @notice Emitted when a rollback occurs\\n    event LogRollbackImplementation(address rollbackImplementation, address replacedImplementation, bytes4[] sigs);\\n\\n    /// @notice Emitted when expired rollback implementation storage is cleaned up\\n    event LogCleanupExpiredRollbackImplementation(address implementation);\\n}\\n\\n/// @title InfiniteProxy rollback module\\n/// @notice Allows the team multisig to roll back to a previously registered implementation or dummy implementation within a time window after upgrades.\\n/// @dev Upgrades are expected to happen infrequently (every few months).\\n///      Performing an upgrade while another upgrade is still within its active rollback window is not an expected scenario and is not supported.\\n///      The design assumes the rollback period will have elapsed before any new upgrade is performed.\\ncontract InfiniteProxyRollbackModule is RollbackCoreInternals, RollbackEvents {\\n    /// @dev Only admin guard\\n    modifier onlyAdmin() {\\n        if (_getAdmin() != msg.sender) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__Unauthorized);\\n        }\\n        _;\\n    }\\n\\n    /// @dev Only team multisig guard\\n    modifier onlyMultisig() {\\n        if (TEAM_MULTISIG != msg.sender) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__Unauthorized);\\n        }\\n        _;\\n    }\\n\\n    /// @notice Register the current dummy implementation for rollback.\\n    function registerRollbackDummyImplementation() external onlyAdmin {\\n        uint256 data_ = _getUintSlot(_ROLLBACK_DUMMY_IMPLEMENTATION_SLOT);\\n        if (data_ != 0) {\\n            uint256 rollbackRegisterTimestamp_ = data_ >> 160;\\n            if (block.timestamp <= rollbackRegisterTimestamp_ + ROLLBACK_PERIOD) {\\n                revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__AlreadyExists);\\n            }\\n            // Expired: delete first then write\\n            _setUintSlot(_ROLLBACK_DUMMY_IMPLEMENTATION_SLOT, 0);\\n        }\\n        address oldDummyImplementation_ = _getDummyImplementation();\\n        if (oldDummyImplementation_ == address(0)) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__ZeroDummyImplementation);\\n        }\\n        // Compose bytes32: upper 5 bytes = block.timestamp (uint40), lower 20 bytes = address, remaining 7 bytes = 0\\n        data_ = (uint160(oldDummyImplementation_)) | (uint256(uint40(block.timestamp)) << 160);\\n        _setUintSlot(_ROLLBACK_DUMMY_IMPLEMENTATION_SLOT, data_);\\n        emit LogRegisterRollbackDummyImplementation(oldDummyImplementation_, block.timestamp);\\n    }\\n\\n    /// @notice Rollback to the previously registered dummy implementation.\\n    function rollbackDummyImplementation() external onlyMultisig {\\n        uint256 data_ = _getUintSlot(_ROLLBACK_DUMMY_IMPLEMENTATION_SLOT);\\n\\n        address previousDummyImplementation_ = address(uint160(data_));\\n\\n        if (previousDummyImplementation_ == address(0)) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__NotRegistered);\\n        }\\n\\n        uint256 rollbackRegisterTimestamp_ = uint256(data_ >> 160);\\n\\n        if (block.timestamp > rollbackRegisterTimestamp_ + ROLLBACK_PERIOD) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__Expired);\\n        }\\n\\n        _setDummyImplementation(previousDummyImplementation_);\\n\\n        _setUintSlot(_ROLLBACK_DUMMY_IMPLEMENTATION_SLOT, 0); // clear out rollback dummy impl slot\\n\\n        emit LogRollbackDummyImplementation(previousDummyImplementation_);\\n    }\\n\\n    /// @notice Register a currently active implementation as rollback implementation. To be triggered before upgrade.\\n    /// @param rollbackImplementation_ The currently active implementation to rollback to.\\n    /// @param newImplementation_ The new implementation being upgraded to, which is replaced by the old one in the rollback.\\n    function registerRollbackImplementation(\\n        address rollbackImplementation_,\\n        address newImplementation_\\n    ) external onlyAdmin {\\n        bytes4[] memory sigs_ = _getImplementationSigs(rollbackImplementation_); // read currently registered sigs\\n\\n        _setRollbackImplementationSigs(rollbackImplementation_, sigs_); // store currently registered sigs for rollback\\n\\n        RollbackSigsSlot storage slotData_ = _getRollbackSigsSlot(\\n            _getRollbackSlotImplSigsSlot(rollbackImplementation_)\\n        );\\n        slotData_.sigs = sigs_;\\n        slotData_.rollbackRegisterTimestamp = uint40(block.timestamp);\\n        slotData_.replacesImplementation = newImplementation_;\\n\\n        emit LogRegisterRollbackImplementation(rollbackImplementation_, newImplementation_, sigs_);\\n    }\\n\\n    /// @notice Rollback a currently active implementation to its' previously registered implementation.\\n    /// @param rollbackImplementation_ The implementation to rollback to.\\n    /// @param newImplementation_ The new, recently upgraded currently active implementation being replaced by the old one in the rollback.\\n    function rollbackImplementation(address rollbackImplementation_, address newImplementation_) external onlyMultisig {\\n        bytes32 slot_ = _getRollbackSlotImplSigsSlot(rollbackImplementation_);\\n\\n        RollbackSigsSlot memory slotData_ = _getRollbackSigsSlot(slot_);\\n        if (slotData_.sigs.length == 0) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__NotRegistered);\\n        }\\n\\n        if (block.timestamp > slotData_.rollbackRegisterTimestamp + ROLLBACK_PERIOD) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__Expired);\\n        }\\n\\n        if (newImplementation_ != slotData_.replacesImplementation) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__NotRegistered);\\n        }\\n\\n        _removeImplementationSigs(newImplementation_); // remove the upgraded implementation currently active\\n\\n        _setImplementationSigs(rollbackImplementation_, slotData_.sigs); // register the previously active implementation registered as rollback\\n\\n        _removeRollbackImplementationSigs(slotData_.sigs); // clean up the rollback sigs\\n\\n        // clean up the rollback storage data\\n        RollbackSigsSlot storage storageSlot_ = _getRollbackSigsSlot(slot_);\\n        delete storageSlot_.sigs;\\n        delete storageSlot_.rollbackRegisterTimestamp;\\n        delete storageSlot_.replacesImplementation;\\n\\n        emit LogRollbackImplementation(rollbackImplementation_, slotData_.replacesImplementation, slotData_.sigs);\\n    }\\n\\n    /// @notice Clean up expired rollback storage for an implementation. Callable by anyone once ROLLBACK_PERIOD has elapsed.\\n    /// @param implementation_ The rollback implementation whose storage should be cleaned up.\\n    function cleanupExpiredRollbackImplementation(address implementation_) external {\\n        bytes32 slot_ = _getRollbackSlotImplSigsSlot(implementation_);\\n        RollbackSigsSlot storage storageSlot_ = _getRollbackSigsSlot(slot_);\\n\\n        if (storageSlot_.sigs.length == 0) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__NotRegistered);\\n        }\\n        if (block.timestamp <= storageSlot_.rollbackRegisterTimestamp + ROLLBACK_PERIOD) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__NotExpired);\\n        }\\n\\n        bytes4[] memory sigs_ = storageSlot_.sigs;\\n        _removeRollbackImplementationSigs(sigs_);\\n\\n        delete storageSlot_.sigs;\\n        delete storageSlot_.rollbackRegisterTimestamp;\\n        delete storageSlot_.replacesImplementation;\\n\\n        emit LogCleanupExpiredRollbackImplementation(implementation_);\\n    }\\n\\n    /// @dev Returns rollback data for a certain implementation address\\n    function getRollbackForImplementation(\\n        address rollbackImplementation_\\n    ) external view returns (RollbackSigsSlot memory rollbackData_) {\\n        address rollbackDummyImplementation_ = address(uint160(_getUintSlot(_ROLLBACK_DUMMY_IMPLEMENTATION_SLOT)));\\n        if (rollbackImplementation_ == rollbackDummyImplementation_) {\\n            revert FluidInfiniteProxyError(ErrorTypes.InfiniteProxyRollback__NotAllowed);\\n        }\\n        bytes32 slot_ = _getRollbackSlotImplSigsSlot(rollbackImplementation_);\\n        RollbackSigsSlot storage slotData_ = _getRollbackSigsSlot(slot_);\\n        rollbackData_.sigs = slotData_.sigs;\\n        rollbackData_.rollbackRegisterTimestamp = slotData_.rollbackRegisterTimestamp;\\n        rollbackData_.replacesImplementation = slotData_.replacesImplementation;\\n    }\\n\\n    /// @dev Returns rollback dummy-implementations's addres and the registered rollback timestamp\\n    function getRollbackDummyImplementation()\\n        external\\n        view\\n        returns (address rollbackDummyImplementation_, uint256 rollbackRegisterTimestamp_)\\n    {\\n        uint256 data_ = _getUintSlot(_ROLLBACK_DUMMY_IMPLEMENTATION_SLOT);\\n\\n        rollbackDummyImplementation_ = address(uint160(data_));\\n        rollbackRegisterTimestamp_ = uint256(data_ >> 160);\\n    }\\n}\\n\",\"keccak256\":\"0x815f5f21339f51ea90e5d078d22da3d9ec8df91626ca3e3d0b12bf37126a9625\",\"license\":\"MIT\"},\"contracts/libraries/storageRead.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\n/// @notice implements a method to read uint256 data from storage at a bytes32 storage slot key.\\ncontract StorageRead {\\n    function readFromStorage(bytes32 slot_) public view returns (uint256 result_) {\\n        assembly {\\n            result_ := sload(slot_) // read value from the storage slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x8b49791bbcde68a4803063ea9a44de78e8060c0b9f83b45932b8a90a1dae359a\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x6080604052348015600e575f5ffd5b50611a3d8061001c5f395ff3fe608060405234801561000f575f5ffd5b50600436106100b9575f3560e01c8063981c829f11610072578063b788f3a111610058578063b788f3a114610148578063de465d7914610188578063e7934bb51461019b575f5ffd5b8063981c829f1461012e578063b5c736e414610136575f5ffd5b80634cc44703116100a25780634cc44703146100da57806352d3667c146100ed578063553fea2514610116575f5ffd5b80633ff8b31d146100bd57806347e870e6146100d2575b5f5ffd5b6100d06100cb3660046117cc565b6101cf565b005b6100d0610300565b6100d06100e83660046117fd565b610497565b6101006100fb3660046117fd565b610651565b60405161010d919061181d565b60405180910390f35b61012062093a8081565b60405190815260200161010d565b6100d06107d9565b6101206101443660046118c4565b5490565b610163734f6f977acdd1177dcd81ab83074855ecb9c2d49e81565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161010d565b6100d06101963660046117cc565b6109e7565b6101a3610cbc565b6040805173ffffffffffffffffffffffffffffffffffffffff909316835260208301919091520161010d565b336101d8610cf4565b73ffffffffffffffffffffffffffffffffffffffff161461022e576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35a60048201526024015b60405180910390fd5b5f61023883610d22565b90506102448382610dc4565b5f61025461025185610ff6565b90565b825190915061026c90600183019060208501906116c2565b50805473ffffffffffffffffffffffffffffffffffffffff841665010000000000027fffffffffffffff0000000000000000000000000000000000000000000000000090911664ffffffffff4216171781556040517f67cccc15f250dbac4d638f5f1c271a4654c9bd02ca36479b4edb4e1f18920c3e906102f290869086908690611937565b60405180910390a150505050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e3314610351576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35a6004820152602401610225565b5f61037a7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435490565b90508073ffffffffffffffffffffffffffffffffffffffff81166103ce576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35c6004820152602401610225565b60a082901c6103e062093a808261198a565b42111561041d576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35b6004820152602401610225565b6104268261106f565b5f7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435560405173ffffffffffffffffffffffffffffffffffffffff831681527f8f5920e576b548a854e9e6e55bff919cfe3a5990067cb8445d19ebb48b21b06a9060200160405180910390a1505050565b5f6104a182610ff6565b600181015490915081905f036104e7576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35c6004820152602401610225565b80546104fe9062093a809064ffffffffff1661198a565b421161053a576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c3616004820152602401610225565b5f816001018054806020026020016040519081016040528092919081815260200182805480156105c857602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116105755790505b505050505090506105d8816111a4565b6105e5600183015f61176b565b81547fffffffffffffff0000000000000000000000000000000000000000000000000016825560405173ffffffffffffffffffffffffffffffffffffffff851681527f66e82af88a52642c060811ddd13abe5c2416df7a69394fd1badb485ee4403493906020016102f2565b60408051606080820183525f8083526020830152918101919091525f6106957f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435490565b90508073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1603610700576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c3636004820152602401610225565b5f61070a84610ff6565b90505f816001810180546040805160208084028201810190925282815293945083018282801561079857602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116107455790505b505050505060408501525464ffffffffff8116845265010000000000900473ffffffffffffffffffffffffffffffffffffffff166020840152509092915050565b336107e2610cf4565b73ffffffffffffffffffffffffffffffffffffffff1614610833576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35a6004820152602401610225565b5f61085c7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435490565b905080156108d75760a081901c61087662093a808261198a565b42116108b2576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35e6004820152602401610225565b5f7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd914355505b5f6108e0611204565b905073ffffffffffffffffffffffffffffffffffffffff8116610933576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c3626004820152602401610225565b73ffffffffffffffffffffffffffffffffffffffff811678ffffffffff00000000000000000000000000000000000000004260a01b161791506109957f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd9143839055565b6040805173ffffffffffffffffffffffffffffffffffffffff831681524260208201527fb4b0527142121725d09775c2282740a2f1fd23c0e4aaa0cfa0a5163780e6fccc910160405180910390a15050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e3314610a38576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35a6004820152602401610225565b5f610a4283610ff6565b90505f8160408051606081018252825464ffffffffff8116825265010000000000900473ffffffffffffffffffffffffffffffffffffffff16602080830191909152600184018054845181840281018401865281815293959486019392830182828015610b0d57602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060040190602082600301049283019260010382029150808411610aba5790505b50505050508152505090508060400151515f03610b5a576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35c6004820152602401610225565b8051610b719062093a809064ffffffffff1661198a565b421115610bae576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35b6004820152602401610225565b806020015173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614610c1b576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35c6004820152602401610225565b610c248361122d565b610c328482604001516113d8565b610c3f81604001516111a4565b81610c4d600182015f61176b565b80547fffffffffffffff00000000000000000000000000000000000000000000000000168155602082015160408084015190517fc05b51eaa7bd6a832f63c5bd88c901f2e0e49a170034e345a8ad5591f02b8bce92610cad928992611937565b60405180910390a15050505050565b5f8080610ce77f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435490565b9360a085901c9350915050565b5f610d1d7fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d61035490565b905090565b60605f610d2e83611662565b905080805460408051602080840282018101909252828152929190830182828015610db757602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060040190602082600301049283019260010382029150808411610d645790505b5050505050915050919050565b80515f03610e02576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35d6004820152602401610225565b5f610e0c83610ff6565b90505f81600101805480602002602001604051908101604052809291908181526020018280548015610e9c57602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060040190602082600301049283019260010382029150808411610e495790505b5050505050905080515f14610ee1576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35e6004820152602401610225565b5f5b8351811015610fef575f610f2b858381518110610f0257610f026119c8565b60200260200101517b16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91431790565b90507fb6ef0205e9012cd9f12f18eb80833925ee59fdf74a46bf92ed59ca9eb0026ebd8101610f8a576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c3606004820152602401610225565b5f610f93825490565b73ffffffffffffffffffffffffffffffffffffffff1614610fe4576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35f6004820152602401610225565b859055600101610ee3565b5050505050565b6040805160208101829052601660608201527f656970313936372e70726f78792e726f6c6c6261636b00000000000000000000608082015273ffffffffffffffffffffffffffffffffffffffff8316918101919091525f9060a0015b604051602081830303815290604052805190602001209050919050565b73ffffffffffffffffffffffffffffffffffffffff8116611112576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602f60248201527f455243313936373a206e657720696d706c656d656e746174696f6e206973207460448201527f6865207a65726f206164647265737300000000000000000000000000000000006064820152608401610225565b5f61111b611204565b90506111467f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc839055565b8173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f761380f4203cd2fcc7ee1ae32561463bc08bbf6761cb9d5caa925f99a6d5450260405160405180910390a35050565b5f5b8151811015611200575f6111c5838381518110610f0257610f026119c8565b90507fb6ef0205e9012cd9f12f18eb80833925ee59fdf74a46bf92ed59ca9eb0026ebd81016111f457506111f8565b5f90555b6001016111a6565b5050565b5f610d1d7f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc5490565b5f61123782611662565b90505f818054604080516020808402820181019092528281529291908301828280156112c157602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19168152602001906004019060208260030104928301926001038202915080841161126e5790505b5050505050905080515f03611332576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f696d706c656d656e746174696f6e2d6e6f742d657869737400000000000000006044820152606401610225565b5f5b8151811015611388575f61137c838381518110611353576113536119c8565b60200260200101517b3ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc1790565b5f905550600101611334565b50611393825f61176b565b60405173ffffffffffffffffffffffffffffffffffffffff8416907fda53aaefabec4c3f8ba693a2e3c67fa0152fbd71c369d51f669e66b28a4a0864905f90a2505050565b80515f03611442576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600760248201527f6e6f2d73696773000000000000000000000000000000000000000000000000006044820152606401610225565b5f61144c83611662565b90505f818054604080516020808402820181019092528281529291908301828280156114d657602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116114835790505b5050505050905080515f14611547576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601c60248201527f696d706c656d656e746174696f6e2d616c72656164792d6578697374000000006044820152606401610225565b5f5b83518110156115fb575f611568858381518110611353576113536119c8565b90505f611573825490565b73ffffffffffffffffffffffffffffffffffffffff16146115f0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f7369672d616c72656164792d65786973740000000000000000000000000000006044820152606401610225565b859055600101611549565b508282815161160d92602001906116c2565b508373ffffffffffffffffffffffffffffffffffffffff167fd613a4a18e567ee1f2db4d5b528a5fee09f7dff92d6fb708afd6c095070a9c6d8460405161165491906119f5565b60405180910390a250505050565b6040805160208101829052601c60608201527f656970313936372e70726f78792e696d706c656d656e746174696f6e00000000608082015273ffffffffffffffffffffffffffffffffffffffff8316918101919091525f9060a001611052565b828054828255905f5260205f209060070160089004810192821561175b579160200282015f5b8382111561172957835183826101000a81548163ffffffff021916908360e01c021790555092602001926004016020816003010492830192600103026116e8565b80156117595782816101000a81549063ffffffff0219169055600401602081600301049283019260010302611729565b505b50611767929150611790565b5090565b5080545f825560070160089004905f5260205f209081019061178d9190611790565b50565b5b80821115611767575f8155600101611791565b803573ffffffffffffffffffffffffffffffffffffffff811681146117c7575f5ffd5b919050565b5f5f604083850312156117dd575f5ffd5b6117e6836117a4565b91506117f4602084016117a4565b90509250929050565b5f6020828403121561180d575f5ffd5b611816826117a4565b9392505050565b602081525f6080820164ffffffffff845116602084015273ffffffffffffffffffffffffffffffffffffffff6020850151166040840152604084015160608085015281815180845260a0860191506020830193505f92505b808310156118ba577fffffffff000000000000000000000000000000000000000000000000000000008451168252602082019150602084019350600183019250611875565b5095945050505050565b5f602082840312156118d4575f5ffd5b5035919050565b5f8151808452602084019350602083015f5b8281101561192d5781517fffffffff00000000000000000000000000000000000000000000000000000000168652602095860195909101906001016118ed565b5093949350505050565b73ffffffffffffffffffffffffffffffffffffffff8416815273ffffffffffffffffffffffffffffffffffffffff83166020820152606060408201525f61198160608301846118db565b95945050505050565b808201808211156119c2577f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b602081525f61181660208301846118db56fea26469706673582212202a85918e57237d52d1a7ad1f9fd78d15fef33eeb277353d455f930a20677118264736f6c634300081d0033",
+  "deployedBytecode": "0x608060405234801561000f575f5ffd5b50600436106100b9575f3560e01c8063981c829f11610072578063b788f3a111610058578063b788f3a114610148578063de465d7914610188578063e7934bb51461019b575f5ffd5b8063981c829f1461012e578063b5c736e414610136575f5ffd5b80634cc44703116100a25780634cc44703146100da57806352d3667c146100ed578063553fea2514610116575f5ffd5b80633ff8b31d146100bd57806347e870e6146100d2575b5f5ffd5b6100d06100cb3660046117cc565b6101cf565b005b6100d0610300565b6100d06100e83660046117fd565b610497565b6101006100fb3660046117fd565b610651565b60405161010d919061181d565b60405180910390f35b61012062093a8081565b60405190815260200161010d565b6100d06107d9565b6101206101443660046118c4565b5490565b610163734f6f977acdd1177dcd81ab83074855ecb9c2d49e81565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161010d565b6100d06101963660046117cc565b6109e7565b6101a3610cbc565b6040805173ffffffffffffffffffffffffffffffffffffffff909316835260208301919091520161010d565b336101d8610cf4565b73ffffffffffffffffffffffffffffffffffffffff161461022e576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35a60048201526024015b60405180910390fd5b5f61023883610d22565b90506102448382610dc4565b5f61025461025185610ff6565b90565b825190915061026c90600183019060208501906116c2565b50805473ffffffffffffffffffffffffffffffffffffffff841665010000000000027fffffffffffffff0000000000000000000000000000000000000000000000000090911664ffffffffff4216171781556040517f67cccc15f250dbac4d638f5f1c271a4654c9bd02ca36479b4edb4e1f18920c3e906102f290869086908690611937565b60405180910390a150505050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e3314610351576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35a6004820152602401610225565b5f61037a7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435490565b90508073ffffffffffffffffffffffffffffffffffffffff81166103ce576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35c6004820152602401610225565b60a082901c6103e062093a808261198a565b42111561041d576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35b6004820152602401610225565b6104268261106f565b5f7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435560405173ffffffffffffffffffffffffffffffffffffffff831681527f8f5920e576b548a854e9e6e55bff919cfe3a5990067cb8445d19ebb48b21b06a9060200160405180910390a1505050565b5f6104a182610ff6565b600181015490915081905f036104e7576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35c6004820152602401610225565b80546104fe9062093a809064ffffffffff1661198a565b421161053a576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c3616004820152602401610225565b5f816001018054806020026020016040519081016040528092919081815260200182805480156105c857602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116105755790505b505050505090506105d8816111a4565b6105e5600183015f61176b565b81547fffffffffffffff0000000000000000000000000000000000000000000000000016825560405173ffffffffffffffffffffffffffffffffffffffff851681527f66e82af88a52642c060811ddd13abe5c2416df7a69394fd1badb485ee4403493906020016102f2565b60408051606080820183525f8083526020830152918101919091525f6106957f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435490565b90508073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1603610700576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c3636004820152602401610225565b5f61070a84610ff6565b90505f816001810180546040805160208084028201810190925282815293945083018282801561079857602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116107455790505b505050505060408501525464ffffffffff8116845265010000000000900473ffffffffffffffffffffffffffffffffffffffff166020840152509092915050565b336107e2610cf4565b73ffffffffffffffffffffffffffffffffffffffff1614610833576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35a6004820152602401610225565b5f61085c7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435490565b905080156108d75760a081901c61087662093a808261198a565b42116108b2576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35e6004820152602401610225565b5f7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd914355505b5f6108e0611204565b905073ffffffffffffffffffffffffffffffffffffffff8116610933576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c3626004820152602401610225565b73ffffffffffffffffffffffffffffffffffffffff811678ffffffffff00000000000000000000000000000000000000004260a01b161791506109957f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd9143839055565b6040805173ffffffffffffffffffffffffffffffffffffffff831681524260208201527fb4b0527142121725d09775c2282740a2f1fd23c0e4aaa0cfa0a5163780e6fccc910160405180910390a15050565b734f6f977acdd1177dcd81ab83074855ecb9c2d49e3314610a38576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35a6004820152602401610225565b5f610a4283610ff6565b90505f8160408051606081018252825464ffffffffff8116825265010000000000900473ffffffffffffffffffffffffffffffffffffffff16602080830191909152600184018054845181840281018401865281815293959486019392830182828015610b0d57602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060040190602082600301049283019260010382029150808411610aba5790505b50505050508152505090508060400151515f03610b5a576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35c6004820152602401610225565b8051610b719062093a809064ffffffffff1661198a565b421115610bae576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35b6004820152602401610225565b806020015173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614610c1b576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35c6004820152602401610225565b610c248361122d565b610c328482604001516113d8565b610c3f81604001516111a4565b81610c4d600182015f61176b565b80547fffffffffffffff00000000000000000000000000000000000000000000000000168155602082015160408084015190517fc05b51eaa7bd6a832f63c5bd88c901f2e0e49a170034e345a8ad5591f02b8bce92610cad928992611937565b60405180910390a15050505050565b5f8080610ce77f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435490565b9360a085901c9350915050565b5f610d1d7fb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d61035490565b905090565b60605f610d2e83611662565b905080805460408051602080840282018101909252828152929190830182828015610db757602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060040190602082600301049283019260010382029150808411610d645790505b5050505050915050919050565b80515f03610e02576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35d6004820152602401610225565b5f610e0c83610ff6565b90505f81600101805480602002602001604051908101604052809291908181526020018280548015610e9c57602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060040190602082600301049283019260010382029150808411610e495790505b5050505050905080515f14610ee1576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35e6004820152602401610225565b5f5b8351811015610fef575f610f2b858381518110610f0257610f026119c8565b60200260200101517b16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91431790565b90507fb6ef0205e9012cd9f12f18eb80833925ee59fdf74a46bf92ed59ca9eb0026ebd8101610f8a576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c3606004820152602401610225565b5f610f93825490565b73ffffffffffffffffffffffffffffffffffffffff1614610fe4576040517fc44f8d3b00000000000000000000000000000000000000000000000000000000815261c35f6004820152602401610225565b859055600101610ee3565b5050505050565b6040805160208101829052601660608201527f656970313936372e70726f78792e726f6c6c6261636b00000000000000000000608082015273ffffffffffffffffffffffffffffffffffffffff8316918101919091525f9060a0015b604051602081830303815290604052805190602001209050919050565b73ffffffffffffffffffffffffffffffffffffffff8116611112576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602f60248201527f455243313936373a206e657720696d706c656d656e746174696f6e206973207460448201527f6865207a65726f206164647265737300000000000000000000000000000000006064820152608401610225565b5f61111b611204565b90506111467f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc839055565b8173ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f761380f4203cd2fcc7ee1ae32561463bc08bbf6761cb9d5caa925f99a6d5450260405160405180910390a35050565b5f5b8151811015611200575f6111c5838381518110610f0257610f026119c8565b90507fb6ef0205e9012cd9f12f18eb80833925ee59fdf74a46bf92ed59ca9eb0026ebd81016111f457506111f8565b5f90555b6001016111a6565b5050565b5f610d1d7f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc5490565b5f61123782611662565b90505f818054604080516020808402820181019092528281529291908301828280156112c157602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19168152602001906004019060208260030104928301926001038202915080841161126e5790505b5050505050905080515f03611332576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f696d706c656d656e746174696f6e2d6e6f742d657869737400000000000000006044820152606401610225565b5f5b8151811015611388575f61137c838381518110611353576113536119c8565b60200260200101517b3ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc1790565b5f905550600101611334565b50611393825f61176b565b60405173ffffffffffffffffffffffffffffffffffffffff8416907fda53aaefabec4c3f8ba693a2e3c67fa0152fbd71c369d51f669e66b28a4a0864905f90a2505050565b80515f03611442576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600760248201527f6e6f2d73696773000000000000000000000000000000000000000000000000006044820152606401610225565b5f61144c83611662565b90505f818054604080516020808402820181019092528281529291908301828280156114d657602002820191905f5260205f20905f905b82829054906101000a900460e01b7bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200190600401906020826003010492830192600103820291508084116114835790505b5050505050905080515f14611547576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601c60248201527f696d706c656d656e746174696f6e2d616c72656164792d6578697374000000006044820152606401610225565b5f5b83518110156115fb575f611568858381518110611353576113536119c8565b90505f611573825490565b73ffffffffffffffffffffffffffffffffffffffff16146115f0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601160248201527f7369672d616c72656164792d65786973740000000000000000000000000000006044820152606401610225565b859055600101611549565b508282815161160d92602001906116c2565b508373ffffffffffffffffffffffffffffffffffffffff167fd613a4a18e567ee1f2db4d5b528a5fee09f7dff92d6fb708afd6c095070a9c6d8460405161165491906119f5565b60405180910390a250505050565b6040805160208101829052601c60608201527f656970313936372e70726f78792e696d706c656d656e746174696f6e00000000608082015273ffffffffffffffffffffffffffffffffffffffff8316918101919091525f9060a001611052565b828054828255905f5260205f209060070160089004810192821561175b579160200282015f5b8382111561172957835183826101000a81548163ffffffff021916908360e01c021790555092602001926004016020816003010492830192600103026116e8565b80156117595782816101000a81549063ffffffff0219169055600401602081600301049283019260010302611729565b505b50611767929150611790565b5090565b5080545f825560070160089004905f5260205f209081019061178d9190611790565b50565b5b80821115611767575f8155600101611791565b803573ffffffffffffffffffffffffffffffffffffffff811681146117c7575f5ffd5b919050565b5f5f604083850312156117dd575f5ffd5b6117e6836117a4565b91506117f4602084016117a4565b90509250929050565b5f6020828403121561180d575f5ffd5b611816826117a4565b9392505050565b602081525f6080820164ffffffffff845116602084015273ffffffffffffffffffffffffffffffffffffffff6020850151166040840152604084015160608085015281815180845260a0860191506020830193505f92505b808310156118ba577fffffffff000000000000000000000000000000000000000000000000000000008451168252602082019150602084019350600183019250611875565b5095945050505050565b5f602082840312156118d4575f5ffd5b5035919050565b5f8151808452602084019350602083015f5b8281101561192d5781517fffffffff00000000000000000000000000000000000000000000000000000000168652602095860195909101906001016118ed565b5093949350505050565b73ffffffffffffffffffffffffffffffffffffffff8416815273ffffffffffffffffffffffffffffffffffffffff83166020820152606060408201525f61198160608301846118db565b95945050505050565b808201808211156119c2577f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b602081525f61181660208301846118db56fea26469706673582212202a85918e57237d52d1a7ad1f9fd78d15fef33eeb277353d455f930a20677118264736f6c634300081d0033",
+  "devdoc": {
+    "details": "Upgrades are expected to happen infrequently (every few months).      Performing an upgrade while another upgrade is still within its active rollback window is not an expected scenario and is not supported.      The design assumes the rollback period will have elapsed before any new upgrade is performed.",
+    "kind": "dev",
+    "methods": {
+      "cleanupExpiredRollbackImplementation(address)": {
+        "params": {
+          "implementation_": "The rollback implementation whose storage should be cleaned up."
+        }
+      },
+      "getRollbackDummyImplementation()": {
+        "details": "Returns rollback dummy-implementations's addres and the registered rollback timestamp"
+      },
+      "getRollbackForImplementation(address)": {
+        "details": "Returns rollback data for a certain implementation address"
+      },
+      "registerRollbackImplementation(address,address)": {
+        "params": {
+          "newImplementation_": "The new implementation being upgraded to, which is replaced by the old one in the rollback.",
+          "rollbackImplementation_": "The currently active implementation to rollback to."
+        }
+      },
+      "rollbackImplementation(address,address)": {
+        "params": {
+          "newImplementation_": "The new, recently upgraded currently active implementation being replaced by the old one in the rollback.",
+          "rollbackImplementation_": "The implementation to rollback to."
+        }
+      }
+    },
+    "title": "InfiniteProxy rollback module",
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "LogCleanupExpiredRollbackImplementation(address)": {
+        "notice": "Emitted when expired rollback implementation storage is cleaned up"
+      },
+      "LogRegisterRollbackDummyImplementation(address,uint256)": {
+        "notice": "Emitted when dummy implementation is registered for rollback"
+      },
+      "LogRegisterRollbackImplementation(address,address,bytes4[])": {
+        "notice": "Emitted when a rollback implementation is registered"
+      },
+      "LogRemoveImplementation(address)": {
+        "notice": "emitted when an implementation is removed"
+      },
+      "LogRollbackDummyImplementation(address)": {
+        "notice": "Emitted when dummy implementation rollback occurs"
+      },
+      "LogRollbackImplementation(address,address,bytes4[])": {
+        "notice": "Emitted when a rollback occurs"
+      },
+      "LogSetAdmin(address,address)": {
+        "notice": "emitted when a new admin is set"
+      },
+      "LogSetDummyImplementation(address,address)": {
+        "notice": "emitted when a new dummy implementation is set"
+      },
+      "LogSetImplementation(address,bytes4[])": {
+        "notice": "emitted when a new implementation is set with certain sigs"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "ROLLBACK_PERIOD()": {
+        "notice": "duration for how long team multisig is allowed to trigger a rollback after it has been registered"
+      },
+      "TEAM_MULTISIG()": {
+        "notice": "Team multisigs allowed to trigger rollback"
+      },
+      "cleanupExpiredRollbackImplementation(address)": {
+        "notice": "Clean up expired rollback storage for an implementation. Callable by anyone once ROLLBACK_PERIOD has elapsed."
+      },
+      "registerRollbackDummyImplementation()": {
+        "notice": "Register the current dummy implementation for rollback."
+      },
+      "registerRollbackImplementation(address,address)": {
+        "notice": "Register a currently active implementation as rollback implementation. To be triggered before upgrade."
+      },
+      "rollbackDummyImplementation()": {
+        "notice": "Rollback to the previously registered dummy implementation."
+      },
+      "rollbackImplementation(address,address)": {
+        "notice": "Rollback a currently active implementation to its' previously registered implementation."
+      }
+    },
+    "notice": "Allows the team multisig to roll back to a previously registered implementation or dummy implementation within a time window after upgrades.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

@@ -1,0 +1,1323 @@
+{
+  "address": "0xc753DDd570A88905A97B1b4B0A10AfE5b6AFAd06",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "liquidity_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "deployerContract_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "errorId_",
+          "type": "uint256"
+        }
+      ],
+      "name": "FluidSafeTransferError",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "tokens",
+          "type": "address[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "amounts",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "LogCollectRevenue",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "token0Amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "token1Amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogDeposit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "token0",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "token1",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "salt",
+                  "type": "bytes32"
+                }
+              ],
+              "internalType": "struct DexKey",
+              "name": "dexKey",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "revenueCut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "rebalancingStatus",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "centerPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "centerPriceContract",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperPercent",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerPercent",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperShiftThreshold",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerShiftThreshold",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "shiftTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "minCenterPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxCenterPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0Amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1Amount",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct InitializeParams",
+          "name": "i",
+          "type": "tuple"
+        }
+      ],
+      "name": "LogInitialize",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "auth",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isAuth",
+          "type": "bool"
+        }
+      ],
+      "name": "LogUpdateAuth",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "centerPriceAddress",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "percent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogUpdateCenterPriceAddress",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxCenterPrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "minCenterPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogUpdateCenterPriceLimits",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "extraDataAddress",
+          "type": "address"
+        }
+      ],
+      "name": "LogUpdateExtraDataAddress",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "revenueCut",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogUpdateFeeAndRevenueCut",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "upperPercent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lowerPercent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "shiftTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogUpdateRangePercents",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "rebalancingStatus",
+          "type": "bool"
+        }
+      ],
+      "name": "LogUpdateRebalancingStatus",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "shiftTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogUpdateShiftTime",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "upperThresholdPercent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lowerThresholdPercent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "shiftTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogUpdateThresholdPercent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct DexKey",
+          "name": "dexKey",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "token0Amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "token1Amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogWithdraw",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokens_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "amounts_",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "address",
+          "name": "to_",
+          "type": "address"
+        }
+      ],
+      "name": "collectRevenue",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "token0Amount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "token1Amount_",
+          "type": "uint256"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "token0",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "token1",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "salt",
+                  "type": "bytes32"
+                }
+              ],
+              "internalType": "struct DexKey",
+              "name": "dexKey",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "revenueCut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "rebalancingStatus",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "centerPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "centerPriceContract",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperPercent",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerPercent",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "upperShiftThreshold",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "lowerShiftThreshold",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "shiftTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "minCenterPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxCenterPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token0Amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "token1Amount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct InitializeParams",
+          "name": "i_",
+          "type": "tuple"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "auth_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isAuth_",
+          "type": "bool"
+        }
+      ],
+      "name": "updateAuth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "centerPriceAddress_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "percent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time_",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateCenterPriceAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxCenterPrice_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minCenterPrice_",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateCenterPriceLimits",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "extraDataAddress_",
+          "type": "address"
+        }
+      ],
+      "name": "updateExtraDataAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fee_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "revenueCut_",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateFeeAndRevenueCut",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "upperPercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lowerPercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shiftTime_",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateRangePercents",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bool",
+          "name": "rebalancingStatus_",
+          "type": "bool"
+        }
+      ],
+      "name": "updateRebalancingStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shiftTime_",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateShiftTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "upperThresholdPercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lowerThresholdPercent_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "shiftTime_",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateThresholdPercent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token0",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "token1",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "salt",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct DexKey",
+          "name": "dexKey_",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "token0Amount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "token1Amount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "to_",
+          "type": "address"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x63404609df2d1b5e699177757247d8dd9abe98d833106c8649d645f7106f5a8d",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x8a5B57d047D284A2A6ec774A8BCA2BeaB2A6C955",
+    "contractAddress": null,
+    "transactionIndex": 89,
+    "gasUsed": "2479207",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x9fb46e30e551cc4b8079eeebf29cd3fb0935b7cc76d1951f2f53cfaa000dbd52",
+    "transactionHash": "0x63404609df2d1b5e699177757247d8dd9abe98d833106c8649d645f7106f5a8d",
+    "logs": [],
+    "blockNumber": 23007545,
+    "cumulativeGasUsed": "11257600",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x52Aa899454998Be5b000Ad077a46Bbe360F4e497",
+    "0x4EC7b668BAF70d4A4b0FC7941a7708A07b6d45Be"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "3ba7edb9f7e9f389c1c6909f6f8c9c8f",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.29+commit.ab55807c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"liquidity_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"deployerContract_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"errorId_\",\"type\":\"uint256\"}],\"name\":\"FluidSafeTransferError\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"tokens\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"LogCollectRevenue\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"token0Amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"token1Amount\",\"type\":\"uint256\"}],\"name\":\"LogDeposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revenueCut\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"rebalancingStatus\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPriceContract\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperShiftThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerShiftThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0Amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Amount\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct InitializeParams\",\"name\":\"i\",\"type\":\"tuple\"}],\"name\":\"LogInitialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"auth\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isAuth\",\"type\":\"bool\"}],\"name\":\"LogUpdateAuth\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"centerPriceAddress\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"percent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"LogUpdateCenterPriceAddress\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxCenterPrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"minCenterPrice\",\"type\":\"uint256\"}],\"name\":\"LogUpdateCenterPriceLimits\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"extraDataAddress\",\"type\":\"address\"}],\"name\":\"LogUpdateExtraDataAddress\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"revenueCut\",\"type\":\"uint256\"}],\"name\":\"LogUpdateFeeAndRevenueCut\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"upperPercent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lowerPercent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shiftTime\",\"type\":\"uint256\"}],\"name\":\"LogUpdateRangePercents\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"rebalancingStatus\",\"type\":\"bool\"}],\"name\":\"LogUpdateRebalancingStatus\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shiftTime\",\"type\":\"uint256\"}],\"name\":\"LogUpdateShiftTime\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"upperThresholdPercent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lowerThresholdPercent\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shiftTime\",\"type\":\"uint256\"}],\"name\":\"LogUpdateThresholdPercent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"indexed\":false,\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"token0Amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"token1Amount\",\"type\":\"uint256\"}],\"name\":\"LogWithdraw\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tokens_\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amounts_\",\"type\":\"uint256[]\"},{\"internalType\":\"address\",\"name\":\"to_\",\"type\":\"address\"}],\"name\":\"collectRevenue\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"token0Amount_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Amount_\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revenueCut\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"rebalancingStatus\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"centerPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"centerPriceContract\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerPercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"upperShiftThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerShiftThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxCenterPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token0Amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Amount\",\"type\":\"uint256\"}],\"internalType\":\"struct InitializeParams\",\"name\":\"i_\",\"type\":\"tuple\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"auth_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isAuth_\",\"type\":\"bool\"}],\"name\":\"updateAuth\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"centerPriceAddress_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"percent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"time_\",\"type\":\"uint256\"}],\"name\":\"updateCenterPriceAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"maxCenterPrice_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minCenterPrice_\",\"type\":\"uint256\"}],\"name\":\"updateCenterPriceLimits\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"extraDataAddress_\",\"type\":\"address\"}],\"name\":\"updateExtraDataAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"fee_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revenueCut_\",\"type\":\"uint256\"}],\"name\":\"updateFeeAndRevenueCut\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"upperPercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerPercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftTime_\",\"type\":\"uint256\"}],\"name\":\"updateRangePercents\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"bool\",\"name\":\"rebalancingStatus_\",\"type\":\"bool\"}],\"name\":\"updateRebalancingStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"shiftTime_\",\"type\":\"uint256\"}],\"name\":\"updateShiftTime\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"upperThresholdPercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lowerThresholdPercent_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shiftTime_\",\"type\":\"uint256\"}],\"name\":\"updateThresholdPercent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token1\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"salt\",\"type\":\"bytes32\"}],\"internalType\":\"struct DexKey\",\"name\":\"dexKey_\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"token0Amount_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Amount_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to_\",\"type\":\"address\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"collectRevenue(address[],uint256[],address)\":{\"details\":\"collect revenue from the dex\",\"params\":{\"amounts_\":\"the amounts of tokens to collect revenue from\",\"to_\":\"the address to send the tokens to\",\"tokens_\":\"the tokens to collect revenue from\"}},\"deposit((address,address,bytes32),uint256,uint256)\":{\"details\":\"deposit tokens into the dex\",\"params\":{\"dexKey_\":\"the dex key\",\"token0Amount_\":\"the token0 amount\",\"token1Amount_\":\"the token1 amount\"}},\"initialize(((address,address,bytes32),uint256,uint256,bool,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))\":{\"details\":\"initialize the dex\",\"params\":{\"i_\":\"the initialize params\"}},\"updateAuth(address,bool)\":{\"details\":\"update the auth for the dex\",\"params\":{\"auth_\":\"the address to update auth for\",\"isAuth_\":\"the auth status\\u00df\\u00df\\u00df\\u00df\\u00df\"}},\"updateCenterPriceAddress((address,address,bytes32),uint256,uint256,uint256)\":{\"details\":\"update the center price address (nonce) for the dex\",\"params\":{\"centerPriceAddress_\":\"nonce < X19, this nonce will be used to calculate contract address\",\"dexKey_\":\"the dex key\",\"percent_\":\"in 4 decimals, 10000 = 1%\",\"time_\":\"in secs, in how much time the center price should be fully shifted.\"}},\"updateCenterPriceLimits((address,address,bytes32),uint256,uint256)\":{\"details\":\"update the center price limits for the dex\",\"params\":{\"dexKey_\":\"the dex key\",\"maxCenterPrice_\":\"1:1 means 1e27 \",\"minCenterPrice_\":\"1:1 means 1e27\"}},\"updateExtraDataAddress(address)\":{\"details\":\"update the extra data address in storage slot\",\"params\":{\"extraDataAddress_\":\"the address to set in the extra data slot\"}},\"updateFeeAndRevenueCut((address,address,bytes32),uint256,uint256)\":{\"details\":\"update the fee and revenue cut for the dex\",\"params\":{\"dexKey_\":\"the dex key\",\"fee_\":\"in 4 decimals, 10000 = 1%\",\"revenueCut_\":\"in 4 decimals, 10000 = 1%\"}},\"updateRangePercents((address,address,bytes32),uint256,uint256,uint256)\":{\"details\":\"update the range percents for the dex\",\"params\":{\"dexKey_\":\"the dex key\",\"lowerPercent_\":\"in 4 decimals, 10000 = 1%\",\"shiftTime_\":\"in secs, in how much time the upper percent configs change should be fully done\",\"upperPercent_\":\"in 4 decimals, 10000 = 1%\"}},\"updateRebalancingStatus((address,address,bytes32),bool)\":{\"details\":\"update the rebalancing status for the dex\",\"params\":{\"dexKey_\":\"the dex key\",\"rebalancingStatus_\":\"the rebalancing status (true = on, false = off)\"}},\"updateShiftTime((address,address,bytes32),uint256)\":{\"details\":\"update the shift time for the dex for rebalancing\",\"params\":{\"dexKey_\":\"the dex key\",\"shiftTime_\":\"in secs, in how much time rebalancing should be fully done.\"}},\"updateThresholdPercent((address,address,bytes32),uint256,uint256,uint256)\":{\"details\":\"update the threshold percent for the dex\",\"params\":{\"dexKey_\":\"the dex key\",\"lowerThresholdPercent_\":\"in 4 decimals, 10000 = 1%\",\"shiftTime_\":\"in secs, in how much time the upper config changes should be fully done.\",\"upperThresholdPercent_\":\"in 4 decimals, 10000 = 1%\"}},\"withdraw((address,address,bytes32),uint256,uint256,address)\":{\"details\":\"withdraw tokens from the dex\",\"params\":{\"dexKey_\":\"the dex key\",\"to_\":\"the address to send the tokens to\",\"token0Amount_\":\"the token0 amount\",\"token1Amount_\":\"the token1 amount\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/protocols/dexLite/adminModule/main.sol\":\"FluidDexLiteAdminModule\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[]},\"sources\":{\"contracts/infiniteProxy/interfaces/iProxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity >=0.8.21 <=0.8.29;\\n\\ninterface IProxy {\\n    function setAdmin(address newAdmin_) external;\\n\\n    function setDummyImplementation(address newDummyImplementation_) external;\\n\\n    function addImplementation(address implementation_, bytes4[] calldata sigs_) external;\\n\\n    function removeImplementation(address implementation_) external;\\n\\n    function getAdmin() external view returns (address);\\n\\n    function getDummyImplementation() external view returns (address);\\n\\n    function getImplementationSigs(address impl_) external view returns (bytes4[] memory);\\n\\n    function getSigsImplementation(bytes4 sig_) external view returns (address);\\n\\n    function readFromStorage(bytes32 slot_) external view returns (uint256 result_);\\n}\\n\",\"keccak256\":\"0x30d8b90d077a4ab2b116788f4b47ec7009dc49e11ef76f1d7bf07bd0cc65b406\",\"license\":\"MIT\"},\"contracts/libraries/addressCalcs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\n/// @notice implements calculation of address for contracts deployed through CREATE.\\n/// Accepts contract deployed from which address & nonce\\nlibrary AddressCalcs {\\n\\n    /// @notice                         Computes the address of a contract based\\n    /// @param deployedFrom_            Address from which the contract was deployed\\n    /// @param nonce_                   Nonce at which the contract was deployed\\n    /// @return contract_               Address of deployed contract\\n    function addressCalc(address deployedFrom_, uint nonce_) internal pure returns (address contract_) {\\n        // @dev based on https://ethereum.stackexchange.com/a/61413\\n\\n        // nonce of smart contract always starts with 1. so, with nonce 0 there won't be any deployment\\n        // hence, nonce of vault deployment starts with 1.\\n        bytes memory data;\\n        if (nonce_ == 0x00) {\\n            return address(0);\\n        } else if (nonce_ <= 0x7f) {\\n            data = abi.encodePacked(bytes1(0xd6), bytes1(0x94), deployedFrom_, uint8(nonce_));\\n        } else if (nonce_ <= 0xff) {\\n            data = abi.encodePacked(bytes1(0xd7), bytes1(0x94), deployedFrom_, bytes1(0x81), uint8(nonce_));\\n        } else if (nonce_ <= 0xffff) {\\n            data = abi.encodePacked(bytes1(0xd8), bytes1(0x94), deployedFrom_, bytes1(0x82), uint16(nonce_));\\n        } else if (nonce_ <= 0xffffff) {\\n            data = abi.encodePacked(bytes1(0xd9), bytes1(0x94), deployedFrom_, bytes1(0x83), uint24(nonce_));\\n        } else {\\n            data = abi.encodePacked(bytes1(0xda), bytes1(0x94), deployedFrom_, bytes1(0x84), uint32(nonce_));\\n        }\\n\\n        return address(uint160(uint256(keccak256(data))));\\n    }\\n\\n}\",\"keccak256\":\"0xed8e77dcf54703084c26a53b45d8139e5417488bc8f22a988c91b7813d132961\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/bigMathMinified.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\n/// @title library that represents a number in BigNumber(coefficient and exponent) format to store in smaller bits.\\n/// @notice the number is divided into two parts: a coefficient and an exponent. This comes at a cost of losing some precision\\n/// at the end of the number because the exponent simply fills it with zeroes. This precision is oftentimes negligible and can\\n/// result in significant gas cost reduction due to storage space reduction.\\n/// Also note, a valid big number is as follows: if the exponent is > 0, then coefficient last bits should be occupied to have max precision.\\n/// @dev roundUp is more like a increase 1, which happens everytime for the same number.\\n/// roundDown simply sets trailing digits after coefficientSize to zero (floor), only once for the same number.\\nlibrary BigMathMinified {\\n    /// @dev constants to use for `roundUp` input param to increase readability\\n    bool internal constant ROUND_DOWN = false;\\n    bool internal constant ROUND_UP = true;\\n\\n    /// @dev converts `normal` number to BigNumber with `exponent` and `coefficient` (or precision).\\n    /// e.g.:\\n    /// 5035703444687813576399599 (normal) = (coefficient[32bits], exponent[8bits])[40bits]\\n    /// 5035703444687813576399599 (decimal) => 10000101010010110100000011111011110010100110100000000011100101001101001101011101111 (binary)\\n    ///                                     => 10000101010010110100000011111011000000000000000000000000000000000000000000000000000\\n    ///                                                                        ^-------------------- 51(exponent) -------------- ^\\n    /// coefficient = 1000,0101,0100,1011,0100,0000,1111,1011               (2236301563)\\n    /// exponent =                                            0011,0011     (51)\\n    /// bigNumber =   1000,0101,0100,1011,0100,0000,1111,1011,0011,0011     (572493200179)\\n    ///\\n    /// @param normal number which needs to be converted into Big Number\\n    /// @param coefficientSize at max how many bits of precision there should be (64 = uint64 (64 bits precision))\\n    /// @param exponentSize at max how many bits of exponent there should be (8 = uint8 (8 bits exponent))\\n    /// @param roundUp signals if result should be rounded down or up\\n    /// @return bigNumber converted bigNumber (coefficient << exponent)\\n    function toBigNumber(\\n        uint256 normal,\\n        uint256 coefficientSize,\\n        uint256 exponentSize,\\n        bool roundUp\\n    ) internal pure returns (uint256 bigNumber) {\\n        assembly {\\n            let lastBit_\\n            let number_ := normal\\n            if gt(number_, 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x80, number_)\\n                lastBit_ := 0x80\\n            }\\n            if gt(number_, 0xFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x40, number_)\\n                lastBit_ := add(lastBit_, 0x40)\\n            }\\n            if gt(number_, 0xFFFFFFFF) {\\n                number_ := shr(0x20, number_)\\n                lastBit_ := add(lastBit_, 0x20)\\n            }\\n            if gt(number_, 0xFFFF) {\\n                number_ := shr(0x10, number_)\\n                lastBit_ := add(lastBit_, 0x10)\\n            }\\n            if gt(number_, 0xFF) {\\n                number_ := shr(0x8, number_)\\n                lastBit_ := add(lastBit_, 0x8)\\n            }\\n            if gt(number_, 0xF) {\\n                number_ := shr(0x4, number_)\\n                lastBit_ := add(lastBit_, 0x4)\\n            }\\n            if gt(number_, 0x3) {\\n                number_ := shr(0x2, number_)\\n                lastBit_ := add(lastBit_, 0x2)\\n            }\\n            if gt(number_, 0x1) {\\n                lastBit_ := add(lastBit_, 1)\\n            }\\n            if gt(number_, 0) {\\n                lastBit_ := add(lastBit_, 1)\\n            }\\n            if lt(lastBit_, coefficientSize) {\\n                // for throw exception\\n                lastBit_ := coefficientSize\\n            }\\n            let exponent := sub(lastBit_, coefficientSize)\\n            let coefficient := shr(exponent, normal)\\n            if and(roundUp, gt(exponent, 0)) {\\n                // rounding up is only needed if exponent is > 0, as otherwise the coefficient fully holds the original number\\n                coefficient := add(coefficient, 1)\\n                if eq(shl(coefficientSize, 1), coefficient) {\\n                    // case were coefficient was e.g. 111, with adding 1 it became 1000 (in binary) and coefficientSize 3 bits\\n                    // final coefficient would exceed it's size. -> reduce coefficent to 100 and increase exponent by 1.\\n                    coefficient := shl(sub(coefficientSize, 1), 1)\\n                    exponent := add(exponent, 1)\\n                }\\n            }\\n            if iszero(lt(exponent, shl(exponentSize, 1))) {\\n                // if exponent is >= exponentSize, the normal number is too big to fit within\\n                // BigNumber with too small sizes for coefficient and exponent\\n                revert(0, 0)\\n            }\\n            bigNumber := shl(exponentSize, coefficient)\\n            bigNumber := add(bigNumber, exponent)\\n        }\\n    }\\n\\n    /// @dev get `normal` number from `bigNumber`, `exponentSize` and `exponentMask`\\n    function fromBigNumber(\\n        uint256 bigNumber,\\n        uint256 exponentSize,\\n        uint256 exponentMask\\n    ) internal pure returns (uint256 normal) {\\n        assembly {\\n            let coefficient := shr(exponentSize, bigNumber)\\n            let exponent := and(bigNumber, exponentMask)\\n            normal := shl(exponent, coefficient)\\n        }\\n    }\\n\\n    /// @dev gets the most significant bit `lastBit` of a `normal` number (length of given number of binary format).\\n    /// e.g.\\n    /// 5035703444687813576399584 = 10000101010010110100000011111011110010100110100000000011100101001101001101011100000\\n    /// lastBit =                   ^---------------------------------   83   ----------------------------------------^\\n    function mostSignificantBit(uint256 normal) internal pure returns (uint lastBit) {\\n        assembly {\\n            let number_ := normal\\n            if gt(normal, 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x80, number_)\\n                lastBit := 0x80\\n            }\\n            if gt(number_, 0xFFFFFFFFFFFFFFFF) {\\n                number_ := shr(0x40, number_)\\n                lastBit := add(lastBit, 0x40)\\n            }\\n            if gt(number_, 0xFFFFFFFF) {\\n                number_ := shr(0x20, number_)\\n                lastBit := add(lastBit, 0x20)\\n            }\\n            if gt(number_, 0xFFFF) {\\n                number_ := shr(0x10, number_)\\n                lastBit := add(lastBit, 0x10)\\n            }\\n            if gt(number_, 0xFF) {\\n                number_ := shr(0x8, number_)\\n                lastBit := add(lastBit, 0x8)\\n            }\\n            if gt(number_, 0xF) {\\n                number_ := shr(0x4, number_)\\n                lastBit := add(lastBit, 0x4)\\n            }\\n            if gt(number_, 0x3) {\\n                number_ := shr(0x2, number_)\\n                lastBit := add(lastBit, 0x2)\\n            }\\n            if gt(number_, 0x1) {\\n                lastBit := add(lastBit, 1)\\n            }\\n            if gt(number_, 0) {\\n                lastBit := add(lastBit, 1)\\n            }\\n        }\\n    }\\n\\n    /// @dev gets the least significant bit `firstBit` of a `normal` number (position of rightmost 1 in binary format).\\n    /// e.g.\\n    /// 5035703444687813576399584 = 10000101010010110100000011111011110010100110100000000011100101001101001101011100000\\n    /// firstBit =                                                                                               ^-6--^\\n    function leastSignificantBit(uint256 normal) internal pure returns (uint firstBit) {\\n        assembly {\\n            // If number is 0, revert as there is no least significant bit\\n            if iszero(normal) {\\n                revert(0, 0)\\n            }\\n\\n            // Find first set bit using binary search\\n            let number_ := normal\\n            firstBit := 0\\n\\n            // Check if lower 128 bits are all zero\\n            if iszero(and(number_, 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) {\\n                number_ := shr(0x80, number_)\\n                firstBit := 0x80\\n            }\\n            // Check if lower 64 bits are all zero\\n            if iszero(and(number_, 0xFFFFFFFFFFFFFFFF)) {\\n                number_ := shr(0x40, number_)\\n                firstBit := add(firstBit, 0x40)\\n            }\\n            // Check if lower 32 bits are all zero\\n            if iszero(and(number_, 0xFFFFFFFF)) {\\n                number_ := shr(0x20, number_)\\n                firstBit := add(firstBit, 0x20)\\n            }\\n            // Check if lower 16 bits are all zero\\n            if iszero(and(number_, 0xFFFF)) {\\n                number_ := shr(0x10, number_)\\n                firstBit := add(firstBit, 0x10)\\n            }\\n            // Check if lower 8 bits are all zero\\n            if iszero(and(number_, 0xFF)) {\\n                number_ := shr(0x8, number_)\\n                firstBit := add(firstBit, 0x8)\\n            }\\n            // Check if lower 4 bits are all zero\\n            if iszero(and(number_, 0xF)) {\\n                number_ := shr(0x4, number_)\\n                firstBit := add(firstBit, 0x4)\\n            }\\n            // Check if lower 2 bits are all zero\\n            if iszero(and(number_, 0x3)) {\\n                number_ := shr(0x2, number_)\\n                firstBit := add(firstBit, 0x2)\\n            }\\n            // Check if lowest bit is zero\\n            if iszero(and(number_, 0x1)) {\\n                firstBit := add(firstBit, 1)\\n            }\\n            // Add 1 to match the 1-based position counting\\n            firstBit := add(firstBit, 1)\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xa3a52426cd052e70cdfe2e69d40430a26073971b8defaa9a6f31112b4f03600e\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/dexLiteSlotsLink.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\n/// @notice library that helps in reading / working with storage slot data of Fluid Dex Lite.\\nlibrary DexLiteSlotsLink {\\n    /// @dev storage slot for is auth mapping\\n    uint256 internal constant DEX_LITE_IS_AUTH_SLOT = 0;\\n    /// @dev storage slot for is dex variables\\n    uint256 internal constant DEX_LITE_DEX_VARIABLES_SLOT = 1;\\n    /// @dev storage slot for center price shift\\n    uint256 internal constant DEX_LITE_CENTER_PRICE_SHIFT_SLOT = 2;\\n    /// @dev storage slot for range shift\\n    uint256 internal constant DEX_LITE_RANGE_SHIFT_SLOT = 3;\\n    /// @dev storage slot for threshold shift\\n    uint256 internal constant DEX_LITE_THRESHOLD_SHIFT_SLOT = 4;\\n\\n    // --------------------------------\\n    // @dev stacked uint256 storage slots bits position data for each:\\n\\n    // DexVariables\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_FEE = 0;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_REVENUE_CUT = 13;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_REBALANCING_STATUS = 20;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_SHIFT_ACTIVE = 22;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE = 23;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS = 63;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_RANGE_PERCENT_SHIFT_ACTIVE = 82;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_UPPER_PERCENT = 83;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_LOWER_PERCENT = 97;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_THRESHOLD_PERCENT_SHIFT_ACTIVE = 111;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_UPPER_SHIFT_THRESHOLD_PERCENT = 112;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_LOWER_SHIFT_THRESHOLD_PERCENT = 119;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_DECIMALS = 126;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_DECIMALS = 131;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED = 136;\\n    uint256 internal constant BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED = 196;\\n\\n    // CenterPriceShift\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_LAST_INTERACTION_TIMESTAMP = 0;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_SHIFTING_TIME = 33;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_MAX_CENTER_PRICE = 57;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_MIN_CENTER_PRICE = 85;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT = 113;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIME_TO_SHIFT = 133;\\n    uint256 internal constant BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIMESTAMP = 153;\\n\\n    // RangeShift\\n    uint256 internal constant BITS_DEX_LITE_RANGE_SHIFT_OLD_UPPER_RANGE_PERCENT = 0;\\n    uint256 internal constant BITS_DEX_LITE_RANGE_SHIFT_OLD_LOWER_RANGE_PERCENT = 14;\\n    uint256 internal constant BITS_DEX_LITE_RANGE_SHIFT_TIME_TO_SHIFT = 28;\\n    uint256 internal constant BITS_DEX_LITE_RANGE_SHIFT_TIMESTAMP = 48;\\n\\n    // ThresholdShift\\n    uint256 internal constant BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_UPPER_THRESHOLD_PERCENT = 0;\\n    uint256 internal constant BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_LOWER_THRESHOLD_PERCENT = 7;\\n    uint256 internal constant BITS_DEX_LITE_THRESHOLD_SHIFT_TIME_TO_SHIFT = 14;\\n    uint256 internal constant BITS_DEX_LITE_THRESHOLD_SHIFT_TIMESTAMP = 34;\\n\\n    // --------------------------------\\n    // @dev stacked uint256 swapData for LogSwap event\\n    uint256 internal constant BITS_DEX_LITE_SWAP_DATA_SWAP_0_TO_1 = 0;\\n    uint256 internal constant BITS_DEX_LITE_SWAP_DATA_AMOUNT_IN = 1;\\n    uint256 internal constant BITS_DEX_LITE_SWAP_DATA_AMOUNT_OUT = 61;\\n\\n    /// @notice Calculating the slot ID for Dex contract for single mapping at `slot_` for `key_`\\n    function calculateMappingStorageSlot(uint256 slot_, bytes32 key_) internal pure returns (bytes32) {\\n        return keccak256(abi.encode(key_, slot_));\\n    }\\n}\\n\",\"keccak256\":\"0x478e92e9ee3dea018bd394dc9fbf4fab04421de1546f488138cf8a3de404eba5\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/errorTypes.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nlibrary LibsErrorTypes {\\n    /***********************************|\\n    |         LiquidityCalcs            | \\n    |__________________________________*/\\n\\n    /// @notice thrown when supply or borrow exchange price is zero at calc token data (token not configured yet)\\n    uint256 internal constant LiquidityCalcs__ExchangePriceZero = 70001;\\n\\n    /// @notice thrown when rate data is set to a version that is not implemented\\n    uint256 internal constant LiquidityCalcs__UnsupportedRateVersion = 70002;\\n\\n    /// @notice thrown when the calculated borrow rate turns negative. This should never happen.\\n    uint256 internal constant LiquidityCalcs__BorrowRateNegative = 70003;\\n\\n    /***********************************|\\n    |           SafeTransfer            | \\n    |__________________________________*/\\n\\n    /// @notice thrown when safe transfer from for an ERC20 fails\\n    uint256 internal constant SafeTransfer__TransferFromFailed = 71001;\\n\\n    /// @notice thrown when safe transfer for an ERC20 fails\\n    uint256 internal constant SafeTransfer__TransferFailed = 71002;\\n\\n    /***********************************|\\n    |           SafeApprove             | \\n    |__________________________________*/\\n\\n    /// @notice thrown when safe approve from for an ERC20 fails\\n    uint256 internal constant SafeApprove__ApproveFailed = 81001;\\n}\\n\",\"keccak256\":\"0x4ae8d510a4119e20698381f323270ba219e66c03872e23073afff841e9b93a52\",\"license\":\"BUSL-1.1\"},\"contracts/libraries/safeTransfer.sol\":{\"content\":\"// SPDX-License-Identifier: MIT OR Apache-2.0\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nimport { LibsErrorTypes as ErrorTypes } from \\\"./errorTypes.sol\\\";\\n\\n/// @notice provides minimalistic methods for safe transfers, e.g. ERC20 safeTransferFrom\\nlibrary SafeTransfer {\\n    uint256 internal constant MAX_NATIVE_TRANSFER_GAS = 20000; // pass max. 20k gas for native transfers\\n\\n    error FluidSafeTransferError(uint256 errorId_);\\n\\n    /// @dev Transfer `amount_` of `token_` from `from_` to `to_`, spending the approval given by `from_` to the\\n    /// calling contract. If `token_` returns no value, non-reverting calls are assumed to be successful.\\n    /// Minimally modified from Solmate SafeTransferLib (address as input param for token, Custom Error):\\n    /// https://github.com/transmissions11/solmate/blob/50e15bb566f98b7174da9b0066126a4c3e75e0fd/src/utils/SafeTransferLib.sol#L31-L63\\n    function safeTransferFrom(address token_, address from_, address to_, uint256 amount_) internal {\\n        bool success_;\\n\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Get a pointer to some free memory.\\n            let freeMemoryPointer := mload(0x40)\\n\\n            // Write the abi-encoded calldata into memory, beginning with the function selector.\\n            mstore(freeMemoryPointer, 0x23b872dd00000000000000000000000000000000000000000000000000000000)\\n            mstore(add(freeMemoryPointer, 4), and(from_, 0xffffffffffffffffffffffffffffffffffffffff)) // Append and mask the \\\"from_\\\" argument.\\n            mstore(add(freeMemoryPointer, 36), and(to_, 0xffffffffffffffffffffffffffffffffffffffff)) // Append and mask the \\\"to_\\\" argument.\\n            mstore(add(freeMemoryPointer, 68), amount_) // Append the \\\"amount_\\\" argument. Masking not required as it's a full 32 byte type.\\n\\n            success_ := and(\\n                // Set success to whether the call reverted, if not we check it either\\n                // returned exactly 1 (can't just be non-zero data), or had no return data.\\n                or(and(eq(mload(0), 1), gt(returndatasize(), 31)), iszero(returndatasize())),\\n                // We use 100 because the length of our calldata totals up like so: 4 + 32 * 3.\\n                // We use 0 and 32 to copy up to 32 bytes of return data into the scratch space.\\n                // Counterintuitively, this call must be positioned second to the or() call in the\\n                // surrounding and() call or else returndatasize() will be zero during the computation.\\n                call(gas(), token_, 0, freeMemoryPointer, 100, 0, 32)\\n            )\\n        }\\n\\n        if (!success_) {\\n            revert FluidSafeTransferError(ErrorTypes.SafeTransfer__TransferFromFailed);\\n        }\\n    }\\n\\n    /// @dev Transfer `amount_` of `token_` to `to_`.\\n    /// If `token_` returns no value, non-reverting calls are assumed to be successful.\\n    /// Minimally modified from Solmate SafeTransferLib (address as input param for token, Custom Error):\\n    /// https://github.com/transmissions11/solmate/blob/50e15bb566f98b7174da9b0066126a4c3e75e0fd/src/utils/SafeTransferLib.sol#L65-L95\\n    function safeTransfer(address token_, address to_, uint256 amount_) internal {\\n        bool success_;\\n\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Get a pointer to some free memory.\\n            let freeMemoryPointer := mload(0x40)\\n\\n            // Write the abi-encoded calldata into memory, beginning with the function selector.\\n            mstore(freeMemoryPointer, 0xa9059cbb00000000000000000000000000000000000000000000000000000000)\\n            mstore(add(freeMemoryPointer, 4), and(to_, 0xffffffffffffffffffffffffffffffffffffffff)) // Append and mask the \\\"to_\\\" argument.\\n            mstore(add(freeMemoryPointer, 36), amount_) // Append the \\\"amount_\\\" argument. Masking not required as it's a full 32 byte type.\\n\\n            success_ := and(\\n                // Set success to whether the call reverted, if not we check it either\\n                // returned exactly 1 (can't just be non-zero data), or had no return data.\\n                or(and(eq(mload(0), 1), gt(returndatasize(), 31)), iszero(returndatasize())),\\n                // We use 68 because the length of our calldata totals up like so: 4 + 32 * 2.\\n                // We use 0 and 32 to copy up to 32 bytes of return data into the scratch space.\\n                // Counterintuitively, this call must be positioned second to the or() call in the\\n                // surrounding and() call or else returndatasize() will be zero during the computation.\\n                call(gas(), token_, 0, freeMemoryPointer, 68, 0, 32)\\n            )\\n        }\\n\\n        if (!success_) {\\n            revert FluidSafeTransferError(ErrorTypes.SafeTransfer__TransferFailed);\\n        }\\n    }\\n\\n    /// @dev Transfer `amount_` of ` native token to `to_`.\\n    /// Minimally modified from Solmate SafeTransferLib (Custom Error):\\n    /// https://github.com/transmissions11/solmate/blob/50e15bb566f98b7174da9b0066126a4c3e75e0fd/src/utils/SafeTransferLib.sol#L15-L25\\n    function safeTransferNative(address to_, uint256 amount_) internal {\\n        bool success_;\\n\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Transfer the ETH and store if it succeeded or not. Pass limited gas\\n            success_ := call(MAX_NATIVE_TRANSFER_GAS, to_, amount_, 0, 0, 0, 0)\\n        }\\n\\n        if (!success_) {\\n            revert FluidSafeTransferError(ErrorTypes.SafeTransfer__TransferFailed);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xd90c1f318d09b4d897c53e0c667bd297a55dd5317e6763499c93d20c1adf7c6d\",\"license\":\"MIT OR Apache-2.0\"},\"contracts/liquidity/adminModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nabstract contract Structs {\\n    struct AddressBool {\\n        address addr;\\n        bool value;\\n    }\\n\\n    struct AddressUint256 {\\n        address addr;\\n        uint256 value;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 1\\n    struct RateDataV1Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink usually means slow increase in rate, once utilization is above kink borrow rate increases fast\\n        uint256 kink;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink borrow rate when utilization is at kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink;\\n        ///\\n        /// @param rateAtUtilizationMax borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set borrow rate data for version 2\\n    struct RateDataV2Params {\\n        ///\\n        /// @param token for rate data\\n        address token;\\n        ///\\n        /// @param kink1 first kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 1 usually means slow increase in rate, once utilization is above kink 1 borrow rate increases faster\\n        uint256 kink1;\\n        ///\\n        /// @param kink2 second kink in borrow rate. in 1e2: 100% = 10_000; 1% = 100\\n        /// utilization below kink 2 usually means slow / medium increase in rate, once utilization is above kink 2 borrow rate increases fast\\n        uint256 kink2;\\n        ///\\n        /// @param rateAtUtilizationZero desired borrow rate when utilization is zero. in 1e2: 100% = 10_000; 1% = 100\\n        /// i.e. constant minimum borrow rate\\n        /// e.g. at utilization = 0.01% rate could still be at least 4% (rateAtUtilizationZero would be 400 then)\\n        uint256 rateAtUtilizationZero;\\n        ///\\n        /// @param rateAtUtilizationKink1 desired borrow rate when utilization is at first kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at first kink then rateAtUtilizationKink would be 700\\n        uint256 rateAtUtilizationKink1;\\n        ///\\n        /// @param rateAtUtilizationKink2 desired borrow rate when utilization is at second kink. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 7% at second kink then rateAtUtilizationKink would be 1_200\\n        uint256 rateAtUtilizationKink2;\\n        ///\\n        /// @param rateAtUtilizationMax desired borrow rate when utilization is maximum at 100%. in 1e2: 100% = 10_000; 1% = 100\\n        /// e.g. when rate should be 125% at 100% then rateAtUtilizationMax would be 12_500\\n        uint256 rateAtUtilizationMax;\\n    }\\n\\n    /// @notice struct to set token config\\n    struct TokenConfig {\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param fee charges on borrower's interest. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 fee;\\n        ///\\n        /// @param threshold on when to update the storage slot. in 1e2: 100% = 10_000; 1% = 100\\n        uint256 threshold;\\n        ///\\n        /// @param maxUtilization maximum allowed utilization. in 1e2: 100% = 10_000; 1% = 100\\n        ///                       set to 100% to disable and have default limit of 100% (avoiding SLOAD).\\n        uint256 maxUtilization;\\n    }\\n\\n    /// @notice struct to set user supply & withdrawal config\\n    struct UserSupplyConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent withdrawal limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which withdrawal limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration withdrawal limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseWithdrawalLimit base limit, below this, user can withdraw the entire amount.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseWithdrawalLimit;\\n    }\\n\\n    /// @notice struct to set user borrow & payback config\\n    struct UserBorrowConfig {\\n        ///\\n        /// @param user address\\n        address user;\\n        ///\\n        /// @param token address\\n        address token;\\n        ///\\n        /// @param mode: 0 = without interest. 1 = with interest\\n        uint8 mode;\\n        ///\\n        /// @param expandPercent debt limit expand percent. in 1e2: 100% = 10_000; 1% = 100\\n        /// Also used to calculate rate at which debt limit should decrease (instant).\\n        uint256 expandPercent;\\n        ///\\n        /// @param expandDuration debt limit expand duration in seconds.\\n        /// used to calculate rate together with expandPercent\\n        uint256 expandDuration;\\n        ///\\n        /// @param baseDebtCeiling base borrow limit. until here, borrow limit remains as baseDebtCeiling\\n        /// (user can borrow until this point at once without stepped expansion). Above this, automated limit comes in place.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 baseDebtCeiling;\\n        ///\\n        /// @param maxDebtCeiling max borrow ceiling, maximum amount the user can borrow.\\n        /// amount in raw (to be multiplied with exchange price) or normal depends on configured mode in user config for the token:\\n        /// with interest -> raw, without interest -> normal\\n        uint256 maxDebtCeiling;\\n    }\\n}\\n\",\"keccak256\":\"0xfa7cbe07b97f45acd0460deaff1ef54de9473164249e5527ee4da6efb6bf7e65\",\"license\":\"BUSL-1.1\"},\"contracts/liquidity/interfaces/iLiquidity.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity >=0.8.21 <=0.8.29;\\n\\nimport { IProxy } from \\\"../../infiniteProxy/interfaces/iProxy.sol\\\";\\nimport { Structs as AdminModuleStructs } from \\\"../adminModule/structs.sol\\\";\\n\\ninterface IFluidLiquidityAdmin {\\n    /// @notice adds/removes auths. Auths generally could be contracts which can have restricted actions defined on contract.\\n    ///         auths can be helpful in reducing governance overhead where it's not needed.\\n    /// @param authsStatus_ array of structs setting allowed status for an address.\\n    ///                     status true => add auth, false => remove auth\\n    function updateAuths(AdminModuleStructs.AddressBool[] calldata authsStatus_) external;\\n\\n    /// @notice adds/removes guardians. Only callable by Governance.\\n    /// @param guardiansStatus_ array of structs setting allowed status for an address.\\n    ///                         status true => add guardian, false => remove guardian\\n    function updateGuardians(AdminModuleStructs.AddressBool[] calldata guardiansStatus_) external;\\n\\n    /// @notice changes the revenue collector address (contract that is sent revenue). Only callable by Governance.\\n    /// @param revenueCollector_  new revenue collector address\\n    function updateRevenueCollector(address revenueCollector_) external;\\n\\n    /// @notice changes current status, e.g. for pausing or unpausing all user operations. Only callable by Auths.\\n    /// @param newStatus_ new status\\n    ///        status = 2 -> pause, status = 1 -> resume.\\n    function changeStatus(uint256 newStatus_) external;\\n\\n    /// @notice                  update tokens rate data version 1. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV1Params with rate data to set for each token\\n    function updateRateDataV1s(AdminModuleStructs.RateDataV1Params[] calldata tokensRateData_) external;\\n\\n    /// @notice                  update tokens rate data version 2. Only callable by Auths.\\n    /// @param tokensRateData_   array of RateDataV2Params with rate data to set for each token\\n    function updateRateDataV2s(AdminModuleStructs.RateDataV2Params[] calldata tokensRateData_) external;\\n\\n    /// @notice updates token configs: fee charge on borrowers interest & storage update utilization threshold.\\n    ///         Only callable by Auths.\\n    /// @param tokenConfigs_ contains token address, fee & utilization threshold\\n    function updateTokenConfigs(AdminModuleStructs.TokenConfig[] calldata tokenConfigs_) external;\\n\\n    /// @notice updates user classes: 0 is for new protocols, 1 is for established protocols.\\n    ///         Only callable by Auths.\\n    /// @param userClasses_ struct array of uint256 value to assign for each user address\\n    function updateUserClasses(AdminModuleStructs.AddressUint256[] calldata userClasses_) external;\\n\\n    /// @notice sets user supply configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userSupplyConfigs_ struct array containing user supply config, see `UserSupplyConfig` struct for more info\\n    function updateUserSupplyConfigs(AdminModuleStructs.UserSupplyConfig[] memory userSupplyConfigs_) external;\\n\\n    /// @notice sets a new withdrawal limit as the current limit for a certain user\\n    /// @param user_ user address for which to update the withdrawal limit\\n    /// @param token_ token address for which to update the withdrawal limit\\n    /// @param newLimit_ new limit until which user supply can decrease to.\\n    ///                  Important: input in raw. Must account for exchange price in input param calculation.\\n    ///                  Note any limit that is < max expansion or > current user supply will set max expansion limit or\\n    ///                  current user supply as limit respectively.\\n    ///                  - set 0 to make maximum possible withdrawable: instant full expansion, and if that goes\\n    ///                  below base limit then fully down to 0.\\n    ///                  - set type(uint256).max to make current withdrawable 0 (sets current user supply as limit).\\n    function updateUserWithdrawalLimit(address user_, address token_, uint256 newLimit_) external;\\n\\n    /// @notice setting user borrow configs per token basis. Eg: with interest or interest-free and automated limits.\\n    ///         Only callable by Auths.\\n    /// @param userBorrowConfigs_ struct array containing user borrow config, see `UserBorrowConfig` struct for more info\\n    function updateUserBorrowConfigs(AdminModuleStructs.UserBorrowConfig[] memory userBorrowConfigs_) external;\\n\\n    /// @notice pause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to pause operations for\\n    /// @param supplyTokens_  token addresses to pause withdrawals for\\n    /// @param borrowTokens_  token addresses to pause borrowings for\\n    function pauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice unpause operations for a particular user in class 0 (class 1 users can't be paused by guardians).\\n    /// Only callable by Guardians.\\n    /// @param user_          address of user to unpause operations for\\n    /// @param supplyTokens_  token addresses to unpause withdrawals for\\n    /// @param borrowTokens_  token addresses to unpause borrowings for\\n    function unpauseUser(address user_, address[] calldata supplyTokens_, address[] calldata borrowTokens_) external;\\n\\n    /// @notice         collects revenue for tokens to configured revenueCollector address.\\n    /// @param tokens_  array of tokens to collect revenue for\\n    /// @dev            Note that this can revert if token balance is < revenueAmount (utilization > 100%)\\n    function collectRevenue(address[] calldata tokens_) external;\\n\\n    /// @notice gets the current updated exchange prices for n tokens and updates all prices, rates related data in storage.\\n    /// @param tokens_ tokens to update exchange prices for\\n    /// @return supplyExchangePrices_ new supply rates of overall system for each token\\n    /// @return borrowExchangePrices_ new borrow rates of overall system for each token\\n    function updateExchangePrices(\\n        address[] calldata tokens_\\n    ) external returns (uint256[] memory supplyExchangePrices_, uint256[] memory borrowExchangePrices_);\\n}\\n\\ninterface IFluidLiquidityLogic is IFluidLiquidityAdmin {\\n    /// @notice Single function which handles supply, withdraw, borrow & payback\\n    /// @param token_ address of token (0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE for native)\\n    /// @param supplyAmount_ if +ve then supply, if -ve then withdraw, if 0 then nothing\\n    /// @param borrowAmount_ if +ve then borrow, if -ve then payback, if 0 then nothing\\n    /// @param withdrawTo_ if withdrawal then to which address\\n    /// @param borrowTo_ if borrow then to which address\\n    /// @param callbackData_ callback data passed to `liquidityCallback` method of protocol\\n    /// @return memVar3_ updated supplyExchangePrice\\n    /// @return memVar4_ updated borrowExchangePrice\\n    /// @dev to trigger skipping in / out transfers (gas optimization):\\n    /// -  ` callbackData_` MUST be encoded so that \\\"from\\\" address is the last 20 bytes in the last 32 bytes slot,\\n    ///     also for native token operations where liquidityCallback is not triggered!\\n    ///     from address must come at last position if there is more data. I.e. encode like:\\n    ///     abi.encode(otherVar1, otherVar2, FROM_ADDRESS). Note dynamic types used with abi.encode come at the end\\n    ///     so if dynamic types are needed, you must use abi.encodePacked to ensure the from address is at the end.\\n    /// -   this \\\"from\\\" address must match withdrawTo_ or borrowTo_ and must be == `msg.sender`\\n    /// -   `callbackData_` must in addition to the from address as described above include bytes32 SKIP_TRANSFERS\\n    ///     in the slot before (bytes 32 to 63)\\n    /// -   `msg.value` must be 0.\\n    /// -   Amounts must be either:\\n    ///     -  supply(+) == borrow(+), withdraw(-) == payback(-).\\n    ///     -  Liquidity must be on the winning side (deposit < borrow OR payback < withdraw).\\n    function operate(\\n        address token_,\\n        int256 supplyAmount_,\\n        int256 borrowAmount_,\\n        address withdrawTo_,\\n        address borrowTo_,\\n        bytes calldata callbackData_\\n    ) external payable returns (uint256 memVar3_, uint256 memVar4_);\\n}\\n\\ninterface IFluidLiquidity is IProxy, IFluidLiquidityLogic {}\\n\",\"keccak256\":\"0x0663d7d5d615bebc45eed1c986edff7d86e15ef15e75d2c1ce45fbf4502aaf03\",\"license\":\"MIT\"},\"contracts/protocols/dexLite/adminModule/events.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./structs.sol\\\";\\n\\nevent LogUpdateAuth(address auth, bool isAuth);\\n\\nevent LogInitialize(InitializeParams i);\\n\\nevent LogUpdateFeeAndRevenueCut(DexKey dexKey, uint256 fee, uint256 revenueCut);\\n\\nevent LogUpdateRebalancingStatus(DexKey dexKey, bool rebalancingStatus);\\n\\nevent LogUpdateRangePercents(DexKey dexKey, uint256 upperPercent, uint256 lowerPercent, uint256 shiftTime);\\n\\nevent LogUpdateShiftTime(DexKey dexKey, uint256 shiftTime);\\n\\nevent LogUpdateCenterPriceLimits(DexKey dexKey, uint256 maxCenterPrice, uint256 minCenterPrice);\\n\\nevent LogUpdateThresholdPercent(DexKey dexKey, uint256 upperThresholdPercent, uint256 lowerThresholdPercent, uint256 shiftTime);\\n\\nevent LogUpdateCenterPriceAddress(DexKey dexKey, uint256 centerPriceAddress, uint256 percent, uint256 time);\\n\\nevent LogDeposit(DexKey dexKey, uint256 token0Amount, uint256 token1Amount);\\n\\nevent LogWithdraw(DexKey dexKey, uint256 token0Amount, uint256 token1Amount);\\n\\nevent LogCollectRevenue(address[] tokens, uint256[] amounts, address to);\\n\\nevent LogUpdateExtraDataAddress(address extraDataAddress);\\n\\n\\n\\n\\n\\n\",\"keccak256\":\"0x3cca821d3c096bef61848113f7bf019497e07dc8c7ba575b82689a7dbd505c68\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/adminModule/helpers.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./immutableVariables.sol\\\";\\nimport { SafeTransfer } from \\\"../../../libraries/safeTransfer.sol\\\";\\n\\nabstract contract AdminModuleHelpers is AdminModuleImmutableVariables {\\n    modifier _onlyDelegateCall() {\\n        if (address(this) == THIS_ADDRESS) revert();\\n        _;\\n    }\\n\\n    /// @dev checks that `value_` address is a contract (which includes address zero check)\\n    function _checkIsContract(address value_) internal view {\\n        if (value_.code.length == 0) {\\n            revert(); // FluidDexError(ErrorTypes.DexT1Admin__AddressNotAContract);\\n        }\\n    }\\n\\n    function _calculateNumeratorAndDenominatorPrecisions(uint256 decimals_) internal pure returns (uint256 numerator_, uint256 denominator_) {\\n        if (decimals_ > TOKENS_DECIMALS_PRECISION) {\\n            numerator_ = 1;\\n            denominator_ = 10 ** (decimals_ - TOKENS_DECIMALS_PRECISION);\\n        } else {\\n            numerator_ = 10 ** (TOKENS_DECIMALS_PRECISION - decimals_);\\n            denominator_ = 1;\\n        }\\n    }\\n\\n    function _transferTokenIn(address token_, uint256 amount_) internal {\\n        if (amount_ == 0) return;\\n\\n        if (token_ == NATIVE_TOKEN) {\\n            if (msg.value < amount_) revert();\\n            if (msg.value > amount_) SafeTransfer.safeTransferNative(msg.sender, msg.value - amount_);\\n        } else SafeTransfer.safeTransferFrom(token_, msg.sender, address(this), amount_);\\n    }\\n\\n    function _transferTokenOut(address token_, uint256 amount_, address to_) internal {\\n        if (amount_ == 0) return;\\n\\n        if (token_ == NATIVE_TOKEN) SafeTransfer.safeTransferNative(to_, amount_);\\n        else SafeTransfer.safeTransfer(token_, to_, amount_);\\n    }\\n}\\n\",\"keccak256\":\"0x678f5846b417afea31a40e030f9cf6a75d8fd5be3c3344fef3e4c8688c60b303\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/adminModule/immutableVariables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./events.sol\\\";\\n\\nabstract contract AdminModuleImmutableVariables is CommonImport {\\n    address internal immutable THIS_ADDRESS;\\n}\\n\",\"keccak256\":\"0x06b4ee2770f8b606eb55f0d73ceb421df30a940a316b337c4de644c2fd516226\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/adminModule/main.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport { DexLiteSlotsLink as DSL } from \\\"../../../libraries/dexLiteSlotsLink.sol\\\";\\nimport { BigMathMinified as BM } from \\\"../../../libraries/bigMathMinified.sol\\\";\\nimport { AddressCalcs as AC} from \\\"../../../libraries/addressCalcs.sol\\\";\\nimport \\\"./helpers.sol\\\";\\n\\ncontract FluidDexLiteAdminModule is AdminModuleHelpers {\\n    constructor(address liquidity_, address deployerContract_) {\\n        THIS_ADDRESS = address(this);\\n        LIQUIDITY = IFluidLiquidity(liquidity_);\\n        DEPLOYER_CONTRACT = deployerContract_;\\n    }\\n\\n    /// @dev update the auth for the dex\\n    /// @param auth_ the address to update auth for\\n    /// @param isAuth_ the auth status\\u00df\\u00df\\u00df\\u00df\\u00df\\n    function updateAuth(address auth_, bool isAuth_) external {\\n        _isAuth[auth_] = isAuth_ ? 1 : 0;\\n        \\n        emit LogUpdateAuth(auth_, isAuth_);\\n    }\\n\\n    /// @dev initialize the dex\\n    /// @param i_ the initialize params\\n    function initialize(InitializeParams memory i_) external payable _onlyDelegateCall {\\n        if (i_.dexKey.token0 == address(0) || i_.dexKey.token1 == address(0) || i_.dexKey.token0 >= i_.dexKey.token1) revert();\\n\\n        InitializeVariables memory v_;\\n\\n        v_.dexId = keccak256(abi.encode(i_.dexKey));\\n        if (_dexVariables[v_.dexId] != 0) revert(); // dex already initialized\\n\\n        v_.token0Decimals = i_.dexKey.token0 == NATIVE_TOKEN ? NATIVE_TOKEN_DECIMALS : IERC20WithDecimals(i_.dexKey.token0).decimals();\\n        v_.token1Decimals = i_.dexKey.token1 == NATIVE_TOKEN ? NATIVE_TOKEN_DECIMALS : IERC20WithDecimals(i_.dexKey.token1).decimals();\\n\\n        // cut is an integer in storage slot which is more than enough\\n        // but from UI we are allowing to send in 4 decimals to maintain consistency & avoid human error in future\\n        if (i_.revenueCut != 0 && i_.revenueCut < FOUR_DECIMALS) {\\n            // human input error. should send 0 for wanting 0, not 0 because of precision reduction.\\n            revert(); // FluidDexError(ErrorTypes.DexT1Admin__InvalidParams);\\n        }\\n\\n        i_.revenueCut = i_.revenueCut / FOUR_DECIMALS;\\n\\n        i_.upperPercent = i_.upperPercent / ONE_DECIMALS;\\n        i_.lowerPercent = i_.lowerPercent / ONE_DECIMALS;\\n\\n        i_.upperShiftThreshold = i_.upperShiftThreshold / FOUR_DECIMALS;\\n        i_.lowerShiftThreshold = i_.lowerShiftThreshold / FOUR_DECIMALS;\\n\\n        if (\\n            (i_.fee > X13) || // fee cannot be more than 10%\\n            (i_.revenueCut > TWO_DECIMALS) || // revenue cut cannot be more than 50%\\n            (i_.centerPrice <= i_.minCenterPrice) ||\\n            (i_.centerPrice >= i_.maxCenterPrice) ||\\n            (i_.centerPriceContract > X19) ||\\n            (i_.upperPercent > (FIVE_DECIMALS - THREE_DECIMALS)) || // capping range to 99%.\\n            (i_.lowerPercent > (FIVE_DECIMALS - THREE_DECIMALS)) || // capping range to 99%.\\n            (i_.upperPercent == 0) ||\\n            (i_.lowerPercent == 0) ||\\n            (i_.upperShiftThreshold > TWO_DECIMALS) ||\\n            (i_.lowerShiftThreshold > TWO_DECIMALS) ||\\n            ((i_.upperShiftThreshold == 0) && (i_.lowerShiftThreshold > 0)) ||\\n            ((i_.upperShiftThreshold > 0) && (i_.lowerShiftThreshold == 0)) ||\\n            (i_.shiftTime == 0) ||\\n            (i_.shiftTime > X24) ||\\n            (i_.minCenterPrice == 0) || \\n            (v_.token0Decimals < MIN_TOKEN_DECIMALS) ||\\n            (v_.token0Decimals > MAX_TOKEN_DECIMALS) ||\\n            (v_.token1Decimals < MIN_TOKEN_DECIMALS) ||\\n            (v_.token1Decimals > MAX_TOKEN_DECIMALS)\\n        ) revert(); // FluidDexError(ErrorTypes.DexT1Admin__ConfigOverflow);\\n\\n        _transferTokenIn(i_.dexKey.token0, i_.token0Amount);\\n        _transferTokenIn(i_.dexKey.token1, i_.token1Amount);\\n\\n        (v_.token0NumeratorPrecision, v_.token0DenominatorPrecision) = _calculateNumeratorAndDenominatorPrecisions(v_.token0Decimals);\\n        (v_.token1NumeratorPrecision, v_.token1DenominatorPrecision) = _calculateNumeratorAndDenominatorPrecisions(v_.token1Decimals);\\n\\n        _dexVariables[v_.dexId] = \\n            (i_.fee << DSL.BITS_DEX_LITE_DEX_VARIABLES_FEE) |\\n            (i_.revenueCut << DSL.BITS_DEX_LITE_DEX_VARIABLES_REVENUE_CUT) |\\n            ((i_.rebalancingStatus ? uint256(1) : uint256(0)) << DSL.BITS_DEX_LITE_DEX_VARIABLES_REBALANCING_STATUS) |\\n            (BM.toBigNumber(i_.centerPrice, BIG_COEFFICIENT_SIZE, DEFAULT_EXPONENT_SIZE, BM.ROUND_DOWN) << DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE) |\\n            (i_.centerPriceContract << DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS) |\\n            (i_.upperPercent << DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_PERCENT) |\\n            (i_.lowerPercent << DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_PERCENT) |\\n            (i_.upperShiftThreshold << DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_SHIFT_THRESHOLD_PERCENT) |\\n            (i_.lowerShiftThreshold << DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_SHIFT_THRESHOLD_PERCENT) |\\n            (v_.token0Decimals << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_DECIMALS) |\\n            (v_.token1Decimals << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_DECIMALS) |\\n            (((i_.token0Amount * v_.token0NumeratorPrecision) / v_.token0DenominatorPrecision) << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED) |\\n            (((i_.token1Amount * v_.token1NumeratorPrecision) / v_.token1DenominatorPrecision) << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED);\\n\\n        _centerPriceShift[v_.dexId] = \\n            (block.timestamp << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_LAST_INTERACTION_TIMESTAMP) |\\n            (i_.shiftTime << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_SHIFTING_TIME) |\\n            (BM.toBigNumber(i_.maxCenterPrice, SMALL_COEFFICIENT_SIZE, DEFAULT_EXPONENT_SIZE, BM.ROUND_UP) << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MAX_CENTER_PRICE) |\\n            (BM.toBigNumber(i_.minCenterPrice, SMALL_COEFFICIENT_SIZE, DEFAULT_EXPONENT_SIZE, BM.ROUND_DOWN) << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MIN_CENTER_PRICE);\\n        \\n        emit LogInitialize(i_);\\n    }\\n\\n    /// @dev update the fee and revenue cut for the dex\\n    /// @param dexKey_ the dex key\\n    /// @param fee_ in 4 decimals, 10000 = 1%\\n    /// @param revenueCut_ in 4 decimals, 10000 = 1%\\n    function updateFeeAndRevenueCut(DexKey calldata dexKey_, uint256 fee_, uint256 revenueCut_) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ != 0) revert(); // dex already initialized\\n\\n        // cut is an integer in storage slot which is more than enough\\n        // but from UI we are allowing to send in 4 decimals to maintain consistency & avoid human error in future\\n        if (revenueCut_ != 0 && revenueCut_ < FOUR_DECIMALS) {\\n            // human input error. should send 0 for wanting 0, not 0 because of precision reduction.\\n            revert(); // FluidDexError(ErrorTypes.DexT1Admin__InvalidParams);\\n        }\\n\\n        revenueCut_ = revenueCut_ / FOUR_DECIMALS;\\n\\n        if (fee_ > X13 || revenueCut_ > TWO_DECIMALS) {\\n            revert(); // FluidDexError(ErrorTypes.DexT1Admin__ConfigOverflow);\\n        }\\n\\n        _dexVariables[dexId_] = (dexVariables_ & ~(X20 << DSL.BITS_DEX_LITE_DEX_VARIABLES_FEE)) | \\n            (fee_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_FEE) |\\n            (revenueCut_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_REVENUE_CUT);\\n\\n        emit LogUpdateFeeAndRevenueCut(dexKey_, fee_, revenueCut_ * FOUR_DECIMALS);\\n    }\\n\\n    /// @dev update the rebalancing status for the dex\\n    /// @param dexKey_ the dex key\\n    /// @param rebalancingStatus_ the rebalancing status (true = on, false = off)\\n    function updateRebalancingStatus(DexKey calldata dexKey_, bool rebalancingStatus_) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ == 0) revert(); // dex not initialized\\n        \\n        _dexVariables[dexId_] = (dexVariables_ & ~(X2 << DSL.BITS_DEX_LITE_DEX_VARIABLES_REBALANCING_STATUS)) |\\n            (rebalancingStatus_ ? uint256(1) : uint256(0)) << DSL.BITS_DEX_LITE_DEX_VARIABLES_REBALANCING_STATUS;\\n\\n        emit LogUpdateRebalancingStatus(dexKey_, rebalancingStatus_);\\n    }\\n\\n    /// @dev update the range percents for the dex\\n    /// @param dexKey_ the dex key\\n    /// @param upperPercent_ in 4 decimals, 10000 = 1%\\n    /// @param lowerPercent_ in 4 decimals, 10000 = 1%\\n    /// @param shiftTime_ in secs, in how much time the upper percent configs change should be fully done\\n    function updateRangePercents(\\n        DexKey calldata dexKey_,\\n        uint256 upperPercent_,\\n        uint256 lowerPercent_,\\n        uint256 shiftTime_\\n    ) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ == 0) revert(); // dex not initialized\\n\\n        upperPercent_ = upperPercent_ / ONE_DECIMALS;\\n        lowerPercent_ = lowerPercent_ / ONE_DECIMALS;\\n\\n        if (\\n            (upperPercent_ > (FIVE_DECIMALS - THREE_DECIMALS)) || // capping range to 99%.\\n            (lowerPercent_ > (FIVE_DECIMALS - THREE_DECIMALS)) || // capping range to 99%.\\n            (upperPercent_ == 0) ||\\n            (lowerPercent_ == 0) ||\\n            (shiftTime_ > X20) ||\\n            (((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_RANGE_PERCENT_SHIFT_ACTIVE) & X1) == 1) // if last shift is still active then don't allow a newer shift\\n        ) {\\n            revert(); // FluidDexError(ErrorTypes.DexT1Admin__ConfigOverflow);\\n        }\\n\\n        _dexVariables[dexId_] = (dexVariables_ & ~(X28 << DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_PERCENT)) |\\n            ((shiftTime_ > 0 ? uint256(1) : uint256(0)) << DSL.BITS_DEX_LITE_DEX_VARIABLES_RANGE_PERCENT_SHIFT_ACTIVE) |\\n            (upperPercent_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_PERCENT) |\\n            (lowerPercent_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_PERCENT);\\n\\n        uint256 oldUpperPercent_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_PERCENT) & X14;\\n        uint256 oldLowerPercent_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_PERCENT) & X14;\\n\\n        if (shiftTime_ > 0) {\\n            _rangeShift[dexId_] = \\n                (oldUpperPercent_ << DSL.BITS_DEX_LITE_RANGE_SHIFT_OLD_UPPER_RANGE_PERCENT) | \\n                (oldLowerPercent_ << DSL.BITS_DEX_LITE_RANGE_SHIFT_OLD_LOWER_RANGE_PERCENT) | \\n                (shiftTime_ << DSL.BITS_DEX_LITE_RANGE_SHIFT_TIME_TO_SHIFT) | \\n                (block.timestamp << DSL.BITS_DEX_LITE_RANGE_SHIFT_TIMESTAMP);\\n        }\\n        // Note _rangeShift is reset when the previous shift is fully completed, which is forced to have happened through if check above\\n\\n        emit LogUpdateRangePercents(dexKey_, upperPercent_, lowerPercent_, shiftTime_);\\n    }\\n\\n    /// @dev update the shift time for the dex for rebalancing\\n    /// @param dexKey_ the dex key\\n    /// @param shiftTime_ in secs, in how much time rebalancing should be fully done.\\n    function updateShiftTime(DexKey calldata dexKey_, uint256 shiftTime_) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ == 0) revert(); // dex not initialized\\n        \\n        if (shiftTime_ == 0 || shiftTime_ > X24) revert(); // FluidDexError(ErrorTypes.DexT1Admin__ConfigOverflow);\\n\\n        _centerPriceShift[dexId_] = (_centerPriceShift[dexId_] & ~(X20 << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_SHIFTING_TIME)) | \\n            (shiftTime_ << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_SHIFTING_TIME);\\n\\n        emit LogUpdateShiftTime(dexKey_, shiftTime_);\\n    }\\n\\n    /// @dev update the center price limits for the dex\\n    /// @param dexKey_ the dex key\\n    /// @param maxCenterPrice_ 1:1 means 1e27 \\n    /// @param minCenterPrice_ 1:1 means 1e27\\n    function updateCenterPriceLimits(DexKey calldata dexKey_, uint256 maxCenterPrice_, uint256 minCenterPrice_) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ == 0) revert(); // dex not initialized\\n\\n        uint256 centerPrice_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE) & X40;\\n        centerPrice_ = (centerPrice_ >> DEFAULT_EXPONENT_SIZE) << (centerPrice_ & DEFAULT_EXPONENT_MASK);\\n\\n        if (\\n            (maxCenterPrice_ <= minCenterPrice_) ||\\n            (centerPrice_ <= minCenterPrice_) ||\\n            (centerPrice_ >= maxCenterPrice_) ||\\n            (minCenterPrice_ == 0)\\n        ) {\\n            revert(); // FluidDexError(ErrorTypes.DexT1Admin__InvalidParams);\\n        }\\n\\n        _centerPriceShift[dexId_] = (_centerPriceShift[dexId_] & ~(X56 << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MAX_CENTER_PRICE)) | \\n            (BM.toBigNumber(maxCenterPrice_, SMALL_COEFFICIENT_SIZE, DEFAULT_EXPONENT_SIZE, BM.ROUND_UP) << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MAX_CENTER_PRICE) |\\n            (BM.toBigNumber(minCenterPrice_, SMALL_COEFFICIENT_SIZE, DEFAULT_EXPONENT_SIZE, BM.ROUND_DOWN) << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_MIN_CENTER_PRICE);\\n\\n        emit LogUpdateCenterPriceLimits(dexKey_, maxCenterPrice_, minCenterPrice_);\\n    }\\n\\n    /// @dev update the threshold percent for the dex\\n    /// @param dexKey_ the dex key\\n    /// @param upperThresholdPercent_ in 4 decimals, 10000 = 1%\\n    /// @param lowerThresholdPercent_ in 4 decimals, 10000 = 1%\\n    /// @param shiftTime_ in secs, in how much time the upper config changes should be fully done.\\n    function updateThresholdPercent(\\n        DexKey calldata dexKey_,\\n        uint256 upperThresholdPercent_,\\n        uint256 lowerThresholdPercent_,\\n        uint256 shiftTime_\\n    ) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ == 0) revert(); // dex not initialized\\n\\n        // thresholds are with 1% precision, hence removing last 4 decimals.\\n        // we are allowing to send in 4 decimals to maintain consistency with other params\\n        upperThresholdPercent_ = upperThresholdPercent_ / FOUR_DECIMALS;\\n        lowerThresholdPercent_ = lowerThresholdPercent_ / FOUR_DECIMALS;\\n        if (\\n            (upperThresholdPercent_ > TWO_DECIMALS) ||\\n            (lowerThresholdPercent_ > TWO_DECIMALS) ||\\n            ((upperThresholdPercent_ == 0) && (lowerThresholdPercent_ > 0)) ||\\n            ((upperThresholdPercent_ > 0) && (lowerThresholdPercent_ == 0)) ||\\n            (shiftTime_ > X20) ||\\n            (((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_THRESHOLD_PERCENT_SHIFT_ACTIVE) & X1) == 1) // if last shift is still active then don't allow a newer shift\\n        ) revert(); // FluidDexError(ErrorTypes.DexT1Admin__ConfigOverflow);\\n\\n        _dexVariables[dexId_] =\\n            (dexVariables_ & ~(X14 << DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_SHIFT_THRESHOLD_PERCENT)) |\\n            ((shiftTime_ > 0 ? uint256(1) : uint256(0)) << DSL.BITS_DEX_LITE_DEX_VARIABLES_THRESHOLD_PERCENT_SHIFT_ACTIVE) |\\n            (upperThresholdPercent_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_SHIFT_THRESHOLD_PERCENT) |\\n            (lowerThresholdPercent_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_SHIFT_THRESHOLD_PERCENT);\\n\\n        uint oldUpperThresholdPercent_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_UPPER_SHIFT_THRESHOLD_PERCENT) & X7;\\n        uint oldLowerThresholdPercent_ = (dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_LOWER_SHIFT_THRESHOLD_PERCENT) & X7;\\n\\n        if (shiftTime_ > 0) {\\n            _thresholdShift[dexId_] = \\n                (oldUpperThresholdPercent_ << DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_UPPER_THRESHOLD_PERCENT) |\\n                (oldLowerThresholdPercent_ << DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_OLD_LOWER_THRESHOLD_PERCENT) |\\n                (shiftTime_ << DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_TIME_TO_SHIFT) |\\n                (block.timestamp << DSL.BITS_DEX_LITE_THRESHOLD_SHIFT_TIMESTAMP);\\n        }\\n        // Note _thresholdShift is reset when the previous shift is fully completed, which is forced to have happened through if check above\\n\\n        emit LogUpdateThresholdPercent(dexKey_, upperThresholdPercent_ * FOUR_DECIMALS, lowerThresholdPercent_ * FOUR_DECIMALS, shiftTime_);\\n    }\\n\\n    /// @dev update the center price address (nonce) for the dex\\n    /// @param dexKey_ the dex key\\n    /// @param centerPriceAddress_ nonce < X19, this nonce will be used to calculate contract address\\n    /// @param percent_ in 4 decimals, 10000 = 1%\\n    /// @param time_ in secs, in how much time the center price should be fully shifted.\\n    function updateCenterPriceAddress(\\n        DexKey calldata dexKey_,\\n        uint256 centerPriceAddress_,\\n        uint256 percent_,\\n        uint256 time_\\n    ) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ == 0) revert(); // dex not initialized\\n\\n        if ((centerPriceAddress_ > X19) || (percent_ == 0) || (percent_ > X20) || (time_ == 0) || (time_ > X20)) {\\n            revert(); // FluidDexError(ErrorTypes.DexT1Admin__ConfigOverflow);\\n        }\\n\\n        if (centerPriceAddress_ > 0) {\\n            address centerPrice_ = AC.addressCalc(DEPLOYER_CONTRACT, centerPriceAddress_);\\n            _checkIsContract(centerPrice_);\\n            // note: if address is made 0 then as well in the last swap currentPrice is updated on storage, so code will start using that automatically\\n            _dexVariables[dexId_] =\\n                (dexVariables_ & ~(X19 << DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS)) |\\n                (centerPriceAddress_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS) |\\n                (uint256(1) << DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_SHIFT_ACTIVE);\\n\\n            _centerPriceShift[dexId_] = (_centerPriceShift[dexId_] & ~(X73 << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT)) |\\n                (percent_ << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT) |\\n                (time_ << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIME_TO_SHIFT) |\\n                (block.timestamp << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_TIMESTAMP);\\n        } else {\\n            _dexVariables[dexId_] = (_dexVariables[dexId_] & ~(X19 << DSL.BITS_DEX_LITE_DEX_VARIABLES_CENTER_PRICE_CONTRACT_ADDRESS));\\n\\n            _centerPriceShift[dexId_] = _centerPriceShift[dexId_] & ~(X73 << DSL.BITS_DEX_LITE_CENTER_PRICE_SHIFT_PERCENT);\\n        }\\n\\n        emit LogUpdateCenterPriceAddress(dexKey_, centerPriceAddress_, percent_, time_);\\n    }\\n\\n    /// @dev deposit tokens into the dex\\n    /// @param dexKey_ the dex key\\n    /// @param token0Amount_ the token0 amount\\n    /// @param token1Amount_ the token1 amount\\n    function deposit(DexKey calldata dexKey_, uint256 token0Amount_, uint256 token1Amount_) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ == 0) revert(); // dex not initialized\\n\\n        _transferTokenIn(dexKey_.token0, token0Amount_);\\n        _transferTokenIn(dexKey_.token1, token1Amount_);\\n\\n        (uint256 token0NumeratorPrecision_, uint256 token0DenominatorPrecision_) = \\n            _calculateNumeratorAndDenominatorPrecisions((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_DECIMALS) & X5);\\n        (uint256 token1NumeratorPrecision_, uint256 token1DenominatorPrecision_) = \\n            _calculateNumeratorAndDenominatorPrecisions((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_DECIMALS) & X5);\\n\\n        uint256 token0TotalSupply_ = ((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED) & X60) + \\n            ((token0Amount_ * token0NumeratorPrecision_) / token0DenominatorPrecision_);\\n        uint256 token1TotalSupply_ = ((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED) & X60) + \\n            ((token1Amount_ * token1NumeratorPrecision_) / token1DenominatorPrecision_);\\n\\n        _dexVariables[dexId_] = (dexVariables_ & ~(X120 << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED)) |\\n            (token0TotalSupply_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED) |\\n            (token1TotalSupply_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED);\\n\\n        emit LogDeposit(dexKey_, token0Amount_, token1Amount_);\\n    }\\n\\n    /// @dev withdraw tokens from the dex\\n    /// @param dexKey_ the dex key\\n    /// @param token0Amount_ the token0 amount\\n    /// @param token1Amount_ the token1 amount\\n    /// @param to_ the address to send the tokens to\\n    function withdraw(DexKey calldata dexKey_, uint256 token0Amount_, uint256 token1Amount_, address to_) public _onlyDelegateCall {\\n        bytes32 dexId_ = keccak256(abi.encode(dexKey_));\\n        uint256 dexVariables_ = _dexVariables[dexId_];\\n        if (dexVariables_ == 0) revert(); // dex not initialized\\n\\n        _transferTokenOut(dexKey_.token0, token0Amount_, to_);\\n        _transferTokenOut(dexKey_.token1, token1Amount_, to_);\\n\\n        (uint256 token0NumeratorPrecision_, uint256 token0DenominatorPrecision_) = \\n            _calculateNumeratorAndDenominatorPrecisions((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_DECIMALS) & X5);\\n        (uint256 token1NumeratorPrecision_, uint256 token1DenominatorPrecision_) = \\n            _calculateNumeratorAndDenominatorPrecisions((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_DECIMALS) & X5);\\n\\n        uint256 token0TotalSupply_ = ((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED) & X60) - \\n            ((token0Amount_ * token0NumeratorPrecision_) / token0DenominatorPrecision_);\\n        uint256 token1TotalSupply_ = ((dexVariables_ >> DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED) & X60) - \\n            ((token1Amount_ * token1NumeratorPrecision_) / token1DenominatorPrecision_);\\n\\n        _dexVariables[dexId_] = (dexVariables_ & ~(X120 << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED)) |\\n            (token0TotalSupply_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_0_TOTAL_SUPPLY_ADJUSTED) |\\n            (token1TotalSupply_ << DSL.BITS_DEX_LITE_DEX_VARIABLES_TOKEN_1_TOTAL_SUPPLY_ADJUSTED);\\n\\n        emit LogWithdraw(dexKey_, token0Amount_, token1Amount_);\\n    }\\n\\n    /// @dev update the extra data address in storage slot\\n    /// @param extraDataAddress_ the address to set in the extra data slot\\n    function updateExtraDataAddress(address extraDataAddress_) public _onlyDelegateCall {\\n        assembly {\\n            sstore(EXTRA_DATA_SLOT, extraDataAddress_)\\n        }\\n\\n        emit LogUpdateExtraDataAddress(extraDataAddress_);\\n    }\\n\\n    /// @dev collect revenue from the dex\\n    /// @param tokens_ the tokens to collect revenue from\\n    /// @param amounts_ the amounts of tokens to collect revenue from\\n    /// @param to_ the address to send the tokens to\\n    function collectRevenue(address[] calldata tokens_, uint256[] calldata amounts_, address to_) public _onlyDelegateCall {\\n        for (uint256 i = 0; i < tokens_.length; ) {\\n            _transferTokenOut(tokens_[i], amounts_[i], to_);\\n            unchecked {++i;}\\n        }\\n\\n        emit LogCollectRevenue(tokens_, amounts_, to_);\\n    }\\n}\\n\\n\",\"keccak256\":\"0xb393322268972c49e062deb7b7e7c778cc8d2ebabba8ecfbdf2de1b52c68b867\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/adminModule/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"../other/commonImport.sol\\\";\\n\\nstruct InitializeParams {\\n    DexKey dexKey;\\n    uint256 fee;\\n    uint256 revenueCut;\\n    bool rebalancingStatus;\\n    uint256 centerPrice;\\n    uint256 centerPriceContract; // nonce\\n    uint256 upperPercent;\\n    uint256 lowerPercent;\\n    uint256 upperShiftThreshold;\\n    uint256 lowerShiftThreshold;\\n    uint256 shiftTime; // in seconds // for rebalancing\\n    uint256 minCenterPrice;\\n    uint256 maxCenterPrice;\\n    uint256 token0Amount;\\n    uint256 token1Amount;\\n}\\n\\nstruct InitializeVariables {\\n    bytes32 dexId;\\n    uint256 token0Decimals;\\n    uint256 token1Decimals;\\n    uint256 token0NumeratorPrecision;\\n    uint256 token0DenominatorPrecision;\\n    uint256 token1NumeratorPrecision;\\n    uint256 token1DenominatorPrecision;\\n}\",\"keccak256\":\"0x523581205a62af36d92d58b8911ad207ff9128281b4e1dd4ce53d4be36ad70a5\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/commonImport.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./variables.sol\\\";\\n\\nabstract contract CommonImport is Variables {}\\n\",\"keccak256\":\"0x967827dfa7749bdd140e2012d69ce4fc6c57386f92a7bafa739a01955628b738\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/constantVariables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./events.sol\\\";\\n\\nabstract contract ConstantVariables {\\n    /*//////////////////////////////////////////////////////////////\\n                                CONSTANTS\\n    //////////////////////////////////////////////////////////////*/\\n\\n    /// bytes32(uint256(keccak256(\\\"FLUID_DEX_LITE_EXTRA_DATA\\\")) - 1)\\n    bytes32 internal constant EXTRA_DATA_SLOT = 0x7e8134afb5ed35d36cb65e24b9a4712a52bb77d952806c1acf50970d2107797f;\\n\\n    /// This is the keccak-256 hash of \\\"eip1967.proxy.admin\\\" subtracted by 1\\n    /// The exact slot which stored the admin address in infinite proxy of liquidity contracts\\n    bytes32 internal constant LIQUIDITY_GOVERNANCE_SLOT = 0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103;\\n\\n    bool internal constant SWAP_SINGLE = true;\\n    bool internal constant SWAP_MULTIHOP = false;\\n\\n    address internal constant NATIVE_TOKEN = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;\\n    uint256 internal constant NATIVE_TOKEN_DECIMALS = 18;\\n    uint256 internal constant TOKENS_DECIMALS_PRECISION = 9;\\n\\n    uint8 internal constant MIN_TOKEN_DECIMALS = 6;\\n    uint8 internal constant MAX_TOKEN_DECIMALS = 18;\\n\\n    uint256 internal constant SMALL_COEFFICIENT_SIZE = 20;\\n    uint256 internal constant BIG_COEFFICIENT_SIZE = 32;\\n\\n    uint256 internal constant DEFAULT_EXPONENT_SIZE = 8;\\n    uint256 internal constant DEFAULT_EXPONENT_MASK = 0xFF;\\n\\n    uint256 internal constant X1 = 0x1;\\n    uint256 internal constant X2 = 0x3;\\n    uint256 internal constant X5 = 0x1f;\\n    uint256 internal constant X7 = 0x7f;\\n    uint256 internal constant X13 = 0x1fff;\\n    uint256 internal constant X14 = 0x3fff;\\n    uint256 internal constant X19 = 0x7ffff;\\n    uint256 internal constant X20 = 0xfffff;\\n    uint256 internal constant X24 = 0xffffff;\\n    uint256 internal constant X28 = 0xfffffff;\\n    uint256 internal constant X33 = 0x1ffffffff;\\n    uint256 internal constant X40 = 0xffffffffff;\\n    uint256 internal constant X56 = 0xffffffffffffff;\\n    uint256 internal constant X60 = 0xfffffffffffffff;\\n    uint256 internal constant X73 = 0x1ffffffffffffffffff;\\n    uint256 internal constant X120 = 0xffffffffffffffffffffffffffffff;\\n    uint256 internal constant X128 = 0xffffffffffffffffffffffffffffffff;\\n\\n   \\n    uint256 internal constant ONE_DECIMALS = 1e1;\\n    uint256 internal constant TWO_DECIMALS = 1e2;\\n    uint256 internal constant THREE_DECIMALS = 1e3;\\n    uint256 internal constant FOUR_DECIMALS = 1e4;\\n    uint256 internal constant FIVE_DECIMALS = 1e5;\\n    uint256 internal constant SIX_DECIMALS = 1e6;\\n    uint256 internal constant EIGHT_DECIMALS = 1e8;\\n\\n    uint256 internal constant PRICE_PRECISION = 1e27;\\n\\n    /// after swap token0 reserves should not be less than token1InToken0 / MINIMUM_LIQUIDITY_SWAP\\n    /// after swap token1 reserves should not be less than token0InToken1 / MINIMUM_LIQUIDITY_SWAP\\n    uint256 internal constant MINIMUM_LIQUIDITY_SWAP = 1e4;\\n}\\n\",\"keccak256\":\"0x6984b65da260d305ec8102ef2b1ed80aeb1908489d93a042fddfcde5b48f89de\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/events.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./interfaces.sol\\\";\\n\\nevent LogSwap(bytes32 dexId, uint256 swapData);\\n// swapData\\n// First 1  bit  => 0        => swap 0 to 1 (1 => true, 0 => false)\\n// Next  60 bits => 1  - 60  => amountIn\\n// Next  60 bits => 61 - 120 => amountOut\",\"keccak256\":\"0xa4a4f0f80452b046a442b4f114e15daf401ffb095a5d67da241f8979461fea2d\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/immutableVariables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\nimport \\\"./constantVariables.sol\\\";\\n\\n// TODO\\n// import { IFluidDexFactory } from \\\"../../interfaces/iDexFactory.sol\\\";\\n// import { Error } from \\\"../../error.sol\\\";\\n// import { ErrorTypes } from \\\"../../errorTypes.sol\\\";\\n\\nabstract contract ImmutableVariables is ConstantVariables {\\n    /*//////////////////////////////////////////////////////////////\\n                               IMMUTABLES\\n    //////////////////////////////////////////////////////////////*/\\n\\n    /// @dev Address of liquidity contract\\n    IFluidLiquidity internal immutable LIQUIDITY;\\n\\n    /// @dev Address of contract used for deploying center price & hook related contract\\n    address internal immutable DEPLOYER_CONTRACT;\\n}\\n\",\"keccak256\":\"0x82047fd9188e20fd0fbfbd72c67f706e775760ac872cbd83f9ba89bd6b87ffec\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/interfaces.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\nimport { IERC20 } from \\\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\\\";\\nimport { IFluidLiquidity } from \\\"../../../liquidity/interfaces/iLiquidity.sol\\\";\\nimport \\\"./structs.sol\\\";\\n\\ninterface IERC20WithDecimals is IERC20 {\\n    function decimals() external view returns (uint8);\\n}\\n\\ninterface IDexLiteCallback {\\n    function dexCallback(address token_, uint256 amount_, bytes calldata data_) external;\\n}\\n\\ninterface ICenterPrice {\\n    /// @notice Retrieves the center price for the pool\\n    /// @dev This function is marked as non-constant (potentially state-changing) to allow flexibility in price fetching mechanisms.\\n    ///      While typically used as a read-only operation, this design permits write operations if needed for certain token pairs\\n    ///      (e.g., fetching up-to-date exchange rates that may require state changes).\\n    /// @return price The current price of token0 in terms of token1, expressed with 27 decimal places\\n    function centerPrice(address token0_, address token1_) external returns (uint256);\\n}\",\"keccak256\":\"0x75ce676834a3872107e04e6b2dfa0cd9666dbb91c980bb443625a7e9964f2dca\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/structs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./events.sol\\\";\\n\\nstruct DexKey {\\n    address token0;\\n    address token1;\\n    bytes32 salt;\\n}\\n\",\"keccak256\":\"0x1a49349f8dc70ee3dd1bc66763dc314d613497a167b9422f5e0f2190edb91fda\",\"license\":\"BUSL-1.1\"},\"contracts/protocols/dexLite/other/variables.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.29;\\n\\nimport \\\"./immutableVariables.sol\\\";\\n\\nabstract contract Variables is ImmutableVariables {\\n    /// @dev admin address\\n    mapping(address => uint256) internal _isAuth;\\n\\n    // First 13 bits => 0   - 12  => fee (1% = 10000, max value: 8191 = .8191%)\\n    // Next  7  bits => 13  - 19  => revenue cut (1 = 1%)\\n    // Next  2  bit  => 20  - 21  => rebalancing status (0 = off, 1 = on but not active, 2 = rebalancing active towards upper range, 3 = rebalancing active towards lower range)\\n    // Next  1  bit  => 22        => is center price shift active\\n    // Next  40 bits => 23  - 62  => center price. Center price from where the ranges will be calculated. BigNumber (32 bits precision, 8 bits exponent)\\n    // Next  19 bits => 63  - 81  => center price contract address (Deployment Factory Nonce)\\n    // Next  1  bit  => 82        => range percent shift active or not, 0 = false, 1 = true, if true than that means governance has updated the below percents and the update should happen with a specified time\\n    // Next  14 bits => 83  - 96  => upperPercent (1% = 1000) upperRange - upperRange * upperPercent = centerPrice. Hence, upperRange = centerPrice / (1 - upperPercent)\\n    // Next  14 bits => 97  - 110 => lowerPercent (1% = 1000) lowerRange = centerPrice - centerPrice * lowerPercent\\n    // Next  1  bit  => 111       => threshold percent shift active or not, 0 = false, 1 = true, if true than that means governance has updated the below percents and the update should happen with a specified time\\n    // Next  7 bits  => 112 - 118 => upper shift threshold percent, 1 = 1%. 100 = 100%. if currentPrice > (centerPrice + (upperRange - centerPrice) * (100 - upperShiftThresholdPercent) / 100) then trigger shift\\n    // Next  7 bits  => 119 - 125 => lower shift threshold percent, 1 = 1%. 100 = 100%. if currentPrice < (centerPrice - (centerPrice - lowerRange) * (100 - lowerShiftThresholdPercent) / 100) then trigger shift\\n    // Next  5  bits => 126 - 130 => token 0 decimals\\n    // Next  5  bits => 131 - 135 => token 1 decimals\\n    // Next  60 bits => 136 - 195 => total token 0 adjusted amount\\n    // Next  60 bits => 196 - 255 => total token 1 adjusted amount\\n    /// @dev dex id => dex variables\\n    mapping(bytes32 => uint256) internal _dexVariables;\\n\\n    /// NOTE: Center price shift is always fuzzy, and can shift because of rebalancing or center price shift\\n    // First 33 bits => 0   - 32  => last interaction timestamp (only stored when either rebalancing or center price shift is active)\\n    /// REBALANCING RELATED THINGS\\n    // First 24 bits => 33  - 56  => shifting time (max ~194 days)\\n    // Next  28 bits => 57  - 84  => max center price. BigNumber (20 bits precision, 8 bits exponent)\\n    // Next  28 bits => 85  - 112 => min center price. BigNumber (20 bits precision, 8 bits exponent)\\n    /// CENTER PRICE SHIFT RELATED THINGS\\n    // First 20 bits => 113 - 132 => % shift (1% = 1000)\\n    // Next  20 bits => 133 - 152 => time to shift that percent, ~12 days max\\n    // Next  33 bits => 153 - 185 => timestamp of when the shift started\\n    // Last 70 bits empty\\n    /// @dev dex id => center price shift\\n    mapping(bytes32 => uint256) internal _centerPriceShift;\\n\\n    /// Range Shift (first 128 bits)\\n    // First 14 bits => 0  - 13 => old upper range percent\\n    // Next  14 bits => 14 - 27 => old lower range percent\\n    // Next  20 bits => 28 - 47 => time to shift in seconds, ~12 days max, shift can last for max ~12 days\\n    // Next  33 bits => 48 - 80 => timestamp of when the shift has started.\\n    // Last 175 bits empty\\n    /// @dev dex id => range shift\\n    mapping(bytes32 => uint256) internal _rangeShift;\\n\\n    // First 7  bits => 0  - 6  => old upper threshold percent\\n    // Next  7  bits => 7  - 13 => old lower threshold percent\\n    // Next  20 bits => 14 - 33 => time to shift in seconds, ~12 days max, shift can last for max ~12 days\\n    // Next  33 bits => 34 - 66 => timestamp of when the shift has started\\n    // Last 189 bits empty\\n    /// @dev dex id => threshold shift\\n    mapping(bytes32 => uint256) internal _thresholdShift;\\n}\\n\",\"keccak256\":\"0x0e71dbda5cb1a02b4c96e50b9a00c594bacdb9f6736f3cdb82fbedd4a84eafbf\",\"license\":\"BUSL-1.1\"},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) external returns (bool);\\n}\\n\",\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60e060405234801561000f575f5ffd5b50604051612cfa380380612cfa83398101604081905261002e91610064565b3060c0526001600160a01b039182166080521660a052610095565b80516001600160a01b038116811461005f575f5ffd5b919050565b5f5f60408385031215610075575f5ffd5b61007e83610049565b915061008c60208401610049565b90509250929050565b60805160a05160c051612bf16101095f395f8181610272015281816103230152818161044f01528181610577015281816106e0015281816108db01528181610b2401528181610cf701528181610ef10152818161158f0152818161166301526118a701525f6109b001525f5050612bf15ff3fe6080604052600436106100ce575f3560e01c8063a2656f731161007c578063cb710d4511610057578063cb710d45146101df578063e462f211146101fe578063e9c771b21461021d578063fe0595a31461023c575f5ffd5b8063a2656f731461018e578063b2408530146101ad578063ba53454c146101cc575f5ffd5b80634f8db1ea116100ac5780634f8db1ea1461013157806354614325146101505780636f25de781461016f575f5ffd5b8063013405c1146100d25780630a3d95e5146100f3578063179bdf9c14610112575b5f5ffd5b3480156100dd575f5ffd5b506100f16100ec3660046122cc565b61025b565b005b3480156100fe575f5ffd5b506100f161010d366004612311565b61030c565b34801561011d575f5ffd5b506100f161012c366004612343565b610438565b34801561013c575f5ffd5b506100f161014b36600461236c565b610560565b34801561015b575f5ffd5b506100f161016a36600461239d565b6106c9565b34801561017a575f5ffd5b506100f161018936600461239d565b6108c4565b348015610199575f5ffd5b506100f16101a83660046123d4565b610b0d565b3480156101b8575f5ffd5b506100f16101c736600461239d565b610ce0565b6100f16101da3660046124f2565b610eda565b3480156101ea575f5ffd5b506100f16101f936600461261c565b611578565b348015610209575f5ffd5b506100f161021836600461236c565b61164c565b348015610228575f5ffd5b506100f161023736600461269c565b61181c565b348015610247575f5ffd5b506100f161025636600461236c565b611890565b73ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016300361029c575f5ffd5b7f7e8134afb5ed35d36cb65e24b9a4712a52bb77d952806c1acf50970d2107797f81905560405173ffffffffffffffffffffffffffffffffffffffff821681527f116a7728df267da3fd3e4d5a3943585553ba46e2416287dbc49e275ac20f3c269060200160405180910390a150565b73ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016300361034d575f5ffd5b5f8260405160200161035f9190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f818152600190935290822054909250908190036103b1575f5ffd5b6014836103be575f6103c1565b60015b5f84815260016020526040908190209190921b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffff8416179055517fb7acf1bec3f8086d74bea56e970157007f40221730e07e54998f93bce4cd59fe9061042a9086908690612725565b60405180910390a150505050565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610479575f5ffd5b5f8260405160200161048b9190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f818152600190935290822054909250908190036104dd575f5ffd5b8215806104ec575062ffffff83115b156104f5575f5ffd5b5f828152600260205260409081902080547fffffffffffffffffffffffffffffffffffffffffffffffffffe00001ffffffff16602186901b179055517f92bebbbb8fe9dbc4a787680198fca5ebaf16c8f721881efa14070b42157b10f99061042a9086908690612742565b73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001630036105a1575f5ffd5b5f836040516020016105b39190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529120549091508015610602575f5ffd5b8215801590610612575061271083105b1561061b575f5ffd5b6106276127108461278a565b9250611fff8411806106395750606483115b15610642575f5ffd5b5f8281526001602052604090207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000082168517600d85901b1790557fd706efc260dc24de0e5c10e90ff4541185bad312aa114c0cb500ed6fe06828f585856106ab612710876127c2565b6040516106ba939291906127d9565b60405180910390a15050505050565b73ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016300361070a575f5ffd5b5f8460405160200161071c9190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f8181526001909352908220549092509081900361076e575f5ffd5b610779600a8661278a565b9450610786600a8561278a565b93506107976103e8620186a06127f8565b8511806107b157506107ae6103e8620186a06127f8565b84115b806107ba575084155b806107c3575083155b806107d05750620fffff83115b806107e257506001605282901c166001145b156107eb575f5ffd5b606184901b605386901b60525f8611610804575f610807565b60015b5f868152600160205260409020911b7fffffffffffffffffffffffffffffffffffff80000007ffffffffffffffffffff85161791909117919091179055613fff605382901c811690606183901c16841561087d575f848152600360205260409020600e82901b8317601c87901b174260301b1790555b7f81b2e6a314a716da4f9d7b055eb77f3631ef9b606ee131e0735d4ac55625bc57888888886040516108b2949392919061280b565b60405180910390a15050505050505050565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610905575f5ffd5b5f846040516020016109179190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529082205490925090819003610969575f5ffd5b6207ffff851180610978575083155b806109855750620fffff84115b8061098e575082155b8061099b5750620fffff83115b156109a4575f5ffd5b8415610a64575f6109d57f000000000000000000000000000000000000000000000000000000000000000087611a0b565b90506109e081611e74565b505f8281526001602090815260408083207ffffffffffffffffffffffffffffffffffffffffffffc00007fffffffffffffff8516603f8a901b17624000001790556002909152902080547ffffffffffffffffffc000000000000000001ffffffffffffffffffffffffffff16607186901b17608585901b174260991b179055610ac8565b5f82815260016020908152604080832080547ffffffffffffffffffffffffffffffffffffffffffffc00007fffffffffffffff1690556002909152902080547ffffffffffffffffffc000000000000000001ffffffffffffffffffffffffffff1690555b7f20e36ad6a8bd92e4099726493cd199acd97a118144d24b4f32130b755f96583886868686604051610afd949392919061280b565b60405180910390a1505050505050565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610b4e575f5ffd5b5f84604051602001610b609190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529082205490925090819003610bb2575f5ffd5b610bc9610bc260208801886122cc565b8685611e99565b610be3610bdc60408801602089016122cc565b8585611e99565b5f5f610bf5601f607e85901c16611efc565b915091505f5f610c0b601f608387901c16611efc565b90925090505f83610c1c868c6127c2565b610c26919061278a565b610c3e90608888901c670fffffffffffffff166127f8565b90505f82610c4c858c6127c2565b610c56919061278a565b610c649060c489901c6127f8565b5f898152600160205260409081902070ffffffffffffffffffffffffffffffffff8a16608886901b1760c484901b179055519091507fac3f5d8180a6e6b14ec66bccf0984880cc08ec22c38ac0f40b5b426019bf11c990610cca908e908e908e906127d9565b60405180910390a1505050505050505050505050565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610d21575f5ffd5b5f84604051602001610d339190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529082205490925090819003610d85575f5ffd5b610d916127108661278a565b9450610d9f6127108561278a565b93506064851180610db05750606484115b80610dc3575084158015610dc357505f84115b80610dd657505f85118015610dd6575083155b80610de35750620fffff83115b80610df557506001606f82901c166001145b15610dfe575f5ffd5b607784901b607086901b606f5f8611610e17575f610e1a565b60015b5f868152600160205260409020911b7fffffffffffffffffffffffffffffffffc000ffffffffffffffffffffffffffff85161791909117919091179055607f607082901c811690607783901c168415610e8f575f848152600460205260409020600782901b8317600e87901b174260221b1790555b7f9a82ab90950777597b4fbeda75d4e4d689dc7471853a11602f1c263d2520d46288610ebd6127108a6127c2565b610ec96127108a6127c2565b886040516108b2949392919061280b565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610f1b575f5ffd5b80515173ffffffffffffffffffffffffffffffffffffffff161580610f59575080516020015173ffffffffffffffffffffffffffffffffffffffff16155b80610f85575080516020810151905173ffffffffffffffffffffffffffffffffffffffff918216911610155b15610f8e575f5ffd5b610fc76040518060e001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b8151604051610fd99190602001612834565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301208084525f908152600190925290205415611027575f5ffd5b81515173ffffffffffffffffffffffffffffffffffffffff1673eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee146110d557815f01515f015173ffffffffffffffffffffffffffffffffffffffff1663313ce5676040518163ffffffff1660e01b8152600401602060405180830381865afa1580156110a9573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906110cd9190612885565b60ff166110d8565b60125b6020808301919091528251015173ffffffffffffffffffffffffffffffffffffffff1673eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1461119157815f01516020015173ffffffffffffffffffffffffffffffffffffffff1663313ce5676040518163ffffffff1660e01b8152600401602060405180830381865afa158015611165573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906111899190612885565b60ff16611194565b60125b604080830191909152820151158015906111b357506127108260400151105b156111bc575f5ffd5b61271082604001516111ce919061278a565b604083015260c08201516111e490600a9061278a565b60c083015260e08201516111fa90600a9061278a565b60e0830152610100820151611212906127109061278a565b61010083015261012082015161122b906127109061278a565b6101208301526020820151611fff1080611249575060648260400151115b8061125d5750816101600151826080015111155b806112715750816101800151826080015110155b8061128257506207ffff8260a00151115b8061129e57506112976103e8620186a06127f8565b8260c00151115b806112ba57506112b36103e8620186a06127f8565b8260e00151115b806112c7575060c0820151155b806112d4575060e0820151155b806112e457506064826101000151115b806112f457506064826101200151115b80611311575061010082015115801561131157505f826101200151115b8061132e57505f82610100015111801561132e5750610120820151155b8061133c5750610140820151155b8061134e575062ffffff826101400151115b8061135c5750610160820151155b8061136b575060208101516006115b8061137a575060208101516012105b80611389575060408101516006115b80611398575060408101516012105b156113a1575f5ffd5b8151516101a08301516113b49190611f48565b6113ca825f015160200151836101c00151611f48565b6113d78160200151611efc565b6080830152606082015260408101516113ef90611efc565b60c0830181905260a083018290526101c084015160c49261140f916127c2565b611419919061278a565b901b608882608001518360600151856101a0015161143791906127c2565b611441919061278a565b901b60838360400151901b607e8460200151901b6077866101200151901b6070876101000151901b60618860e00151901b60538960c00151901b603f8a60a00151901b60176114988c60800151602060085f611fc7565b901b60148c606001516114ab575f6114ae565b60015b901b600d8d60400151901b5f8e60200151901b17171717171717171717171760015f835f015181526020019081526020015f208190555060556114fa836101600151601460085f611fc7565b901b6039611512846101800151601460086001611fc7565b901b6021846101400151901b5f42901b17171760025f835f015181526020019081526020015f20819055507f083abadc594d8d389117d33215bf13ad0c1c7d453617f99653d1842f92a971f98260405161156c91906128a5565b60405180910390a15050565b73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001630036115b9575f5ffd5b5f5b848110156116145761160c8686838181106115d8576115d861298b565b90506020020160208101906115ed91906122cc565b8585848181106115ff576115ff61298b565b9050602002013584611e99565b6001016115bb565b507f1d5b4b04795ebb3901db9b61da375220c34f0661b7f6068a43831ce89d14df1085858585856040516106ba9594939291906129b8565b73ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016300361168d575f5ffd5b5f8360405160200161169f9190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f818152600190935290822054909250908190036116f1575f5ffd5b61170761170160208701876122cc565b85611f48565b61172061171a60408701602088016122cc565b84611f48565b5f5f611732601f607e85901c16611efc565b915091505f5f611748601f608387901c16611efc565b90925090505f83611759868b6127c2565b611763919061278a565b61177b90608888901c670fffffffffffffff16612a7c565b90505f82611789858b6127c2565b611793919061278a565b6117a19060c489901c612a7c565b5f898152600160205260409081902070ffffffffffffffffffffffffffffffffff8a16608886901b1760c484901b179055519091507fe1a74ddf3da2989e73b9cc7d5e6689947964216c6b1b903ebc555180eceee95890611807908d908d908d906127d9565b60405180910390a15050505050505050505050565b80611827575f61182a565b60015b73ffffffffffffffffffffffffffffffffffffffff83165f818152602081815260409182902060ff949094169093558051918252831515928201929092527fb873643b3104ddd26927dec7f9a08aa22d03ac20ada0295a2de7e1a6c60f2a51910161156c565b73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001630036118d1575f5ffd5b5f836040516020016118e39190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529082205490925090819003611935575f5ffd5b63ffffffff601f82901c1660ff601783901c161b83851115806119585750838111155b806119635750848110155b8061196c575083155b15611975575f5ffd5b605561198585601460085f611fc7565b901b603961199887601460086001611fc7565b5f868152600260205260409081902080547ffffffffffffffffffffffffffffffffffffe00000000000001ffffffffffffff169290931b91909117929092179055517f8b187f9eca4bc1a8d4ad5ecd867ebf561f9b32e1a872169700dac1a79d12dad590610afd908890889088906127d9565b5f6060825f03611a1e575f915050611e6e565b607f8311611ae7576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b6040516020818303038152906040529050611e63565b60ff8311611bc4576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801611ad1565b61ffff8311611ca2576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901611ad1565b62ffffff8311611d81576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01611ad1565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b805160209091012090505b92915050565b8073ffffffffffffffffffffffffffffffffffffffff163b5f03611e96575f5ffd5b50565b815f03611ea557505050565b7fffffffffffffffffffffffff111111111111111111111111111111111111111273ffffffffffffffffffffffffffffffffffffffff841601611ef157611eec81836120ed565b505050565b611eec83828461213b565b5f5f6009831115611f285760019150611f166009846127f8565b611f2190600a612bb0565b9050915091565b611f338360096127f8565b611f3e90600a612bb0565b9360019350915050565b805f03611f53575050565b7fffffffffffffffffffffffff111111111111111111111111111111111111111273ffffffffffffffffffffffffffffffffffffffff831601611fbb5780341015611f9c575f5ffd5b80341115611fb757611fb733611fb283346127f8565b6120ed565b5050565b611fb7823330846121e1565b5f5f856fffffffffffffffffffffffffffffffff811115611fe95760809150811c5b67ffffffffffffffff811115612001576040918201911c5b63ffffffff811115612015576020918201911c5b61ffff811115612027576010918201911c5b60ff811115612038576008918201911c5b600f811115612049576004918201911c5b600381111561205a576002918201911c5b600181111561206a576001820191505b8015612077576001820191505b50848110156120835750835b848103905085811c5f82118416156120d157600181019050806001871b036120d157506001908101907fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff86011b5b6001851b82106120df575f5ffd5b90931b909201949350505050565b5f5f5f5f5f8587614e20f1905080611eec576040517fdee51a8a0000000000000000000000000000000000000000000000000000000081526201155a60048201526024015b60405180910390fd5b5f6040517fa9059cbb00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8416600482015282602482015260205f6044835f895af13d15601f3d1160015f5114161716915050806121db576040517fdee51a8a0000000000000000000000000000000000000000000000000000000081526201155a6004820152602401612132565b50505050565b5f6040517f23b872dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8516600482015273ffffffffffffffffffffffffffffffffffffffff8416602482015282604482015260205f6064835f8a5af13d15601f3d1160015f51141617169150508061229d576040517fdee51a8a000000000000000000000000000000000000000000000000000000008152620115596004820152602401612132565b5050505050565b803573ffffffffffffffffffffffffffffffffffffffff811681146122c7575f5ffd5b919050565b5f602082840312156122dc575f5ffd5b6122e5826122a4565b9392505050565b5f606082840312156122fc575f5ffd5b50919050565b803580151581146122c7575f5ffd5b5f5f60808385031215612322575f5ffd5b61232c84846122ec565b915061233a60608401612302565b90509250929050565b5f5f60808385031215612354575f5ffd5b61235e84846122ec565b946060939093013593505050565b5f5f5f60a0848603121561237e575f5ffd5b61238885856122ec565b95606085013595506080909401359392505050565b5f5f5f5f60c085870312156123b0575f5ffd5b6123ba86866122ec565b966060860135965060808601359560a00135945092505050565b5f5f5f5f60c085870312156123e7575f5ffd5b6123f186866122ec565b9350606085013592506080850135915061240d60a086016122a4565b905092959194509250565b6040516101e0810167ffffffffffffffff81118282101715612461577f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b60405290565b5f60608284031215612477575f5ffd5b6040516060810167ffffffffffffffff811182821017156124bf577f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b6040529050806124ce836122a4565b81526124dc602084016122a4565b6020820152604092830135920191909152919050565b5f610220828403128015612504575f5ffd5b5061250d612418565b6125178484612467565b8152606083013560208201526080830135604082015261253960a08401612302565b606082015260c083810135608083015260e08085013560a0840152610100808601359284019290925261012080860135918401919091526101408086013592840192909252610160808601359184019190915261018080860135928401929092526101a080860135918401919091526101c080860135928401929092526101e085013590830152610200909301359281019290925250919050565b5f5f83601f8401126125e4575f5ffd5b50813567ffffffffffffffff8111156125fb575f5ffd5b6020830191508360208260051b8501011115612615575f5ffd5b9250929050565b5f5f5f5f5f60608688031215612630575f5ffd5b853567ffffffffffffffff811115612646575f5ffd5b612652888289016125d4565b909650945050602086013567ffffffffffffffff811115612671575f5ffd5b61267d888289016125d4565b90945092506126909050604087016122a4565b90509295509295909350565b5f5f604083850312156126ad575f5ffd5b6126b6836122a4565b915061233a60208401612302565b73ffffffffffffffffffffffffffffffffffffffff6126e2826122a4565b16825273ffffffffffffffffffffffffffffffffffffffff612706602083016122a4565b166020830152604090810135910152565b60608101611e6e82846126c4565b6080810161273382856126c4565b82151560608301529392505050565b6080810161275082856126c4565b8260608301529392505050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f826127bd577f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b500490565b8082028115828204841417611e6e57611e6e61275d565b60a081016127e782866126c4565b606082019390935260800152919050565b81810381811115611e6e57611e6e61275d565b60c0810161281982876126c4565b8460608301528360808301528260a083015295945050505050565b60608101611e6e828473ffffffffffffffffffffffffffffffffffffffff815116825273ffffffffffffffffffffffffffffffffffffffff6020820151166020830152604081015160408301525050565b5f60208284031215612895575f5ffd5b815160ff811681146122e5575f5ffd5b8151805173ffffffffffffffffffffffffffffffffffffffff9081168352602080830151909116908301526040908101519082015261022081016020830151606083015260408301516080830152606083015161290660a084018215159052565b50608083015160c083015260a083015160e083015260c083015161010083015260e08301516101208301526101008301516101408301526101208301516101608301526101408301516101808301526101608301516101a08301526101808301516101c08301526101a08301516101e08301526101c083015161020083015292915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b606080825281018590525f8660808301825b88811015612a055773ffffffffffffffffffffffffffffffffffffffff6129f0846122a4565b168252602092830192909101906001016129ca565b5083810360208501528581527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff861115612a3d575f5ffd5b8560051b915081876020830137016020019050612a72604083018473ffffffffffffffffffffffffffffffffffffffff169052565b9695505050505050565b80820180821115611e6e57611e6e61275d565b6001815b6001841115612aca57808504811115612aae57612aae61275d565b6001841615612abc57908102905b60019390931c928002612a93565b935093915050565b5f82612ae057506001611e6e565b81612aec57505f611e6e565b8160018114612b025760028114612b0c57612b28565b6001915050611e6e565b60ff841115612b1d57612b1d61275d565b50506001821b611e6e565b5060208310610133831016604e8410600b8410161715612b4b575081810a611e6e565b612b767fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8484612a8f565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115612ba857612ba861275d565b029392505050565b5f6122e58383612ad256fea2646970667358221220eef08b5d404537db188ef7db207eb5934ab09702fa290d0119832bb188ae080d64736f6c634300081d0033",
+  "deployedBytecode": "0x6080604052600436106100ce575f3560e01c8063a2656f731161007c578063cb710d4511610057578063cb710d45146101df578063e462f211146101fe578063e9c771b21461021d578063fe0595a31461023c575f5ffd5b8063a2656f731461018e578063b2408530146101ad578063ba53454c146101cc575f5ffd5b80634f8db1ea116100ac5780634f8db1ea1461013157806354614325146101505780636f25de781461016f575f5ffd5b8063013405c1146100d25780630a3d95e5146100f3578063179bdf9c14610112575b5f5ffd5b3480156100dd575f5ffd5b506100f16100ec3660046122cc565b61025b565b005b3480156100fe575f5ffd5b506100f161010d366004612311565b61030c565b34801561011d575f5ffd5b506100f161012c366004612343565b610438565b34801561013c575f5ffd5b506100f161014b36600461236c565b610560565b34801561015b575f5ffd5b506100f161016a36600461239d565b6106c9565b34801561017a575f5ffd5b506100f161018936600461239d565b6108c4565b348015610199575f5ffd5b506100f16101a83660046123d4565b610b0d565b3480156101b8575f5ffd5b506100f16101c736600461239d565b610ce0565b6100f16101da3660046124f2565b610eda565b3480156101ea575f5ffd5b506100f16101f936600461261c565b611578565b348015610209575f5ffd5b506100f161021836600461236c565b61164c565b348015610228575f5ffd5b506100f161023736600461269c565b61181c565b348015610247575f5ffd5b506100f161025636600461236c565b611890565b73ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016300361029c575f5ffd5b7f7e8134afb5ed35d36cb65e24b9a4712a52bb77d952806c1acf50970d2107797f81905560405173ffffffffffffffffffffffffffffffffffffffff821681527f116a7728df267da3fd3e4d5a3943585553ba46e2416287dbc49e275ac20f3c269060200160405180910390a150565b73ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016300361034d575f5ffd5b5f8260405160200161035f9190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f818152600190935290822054909250908190036103b1575f5ffd5b6014836103be575f6103c1565b60015b5f84815260016020526040908190209190921b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffff8416179055517fb7acf1bec3f8086d74bea56e970157007f40221730e07e54998f93bce4cd59fe9061042a9086908690612725565b60405180910390a150505050565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610479575f5ffd5b5f8260405160200161048b9190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f818152600190935290822054909250908190036104dd575f5ffd5b8215806104ec575062ffffff83115b156104f5575f5ffd5b5f828152600260205260409081902080547fffffffffffffffffffffffffffffffffffffffffffffffffffe00001ffffffff16602186901b179055517f92bebbbb8fe9dbc4a787680198fca5ebaf16c8f721881efa14070b42157b10f99061042a9086908690612742565b73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001630036105a1575f5ffd5b5f836040516020016105b39190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529120549091508015610602575f5ffd5b8215801590610612575061271083105b1561061b575f5ffd5b6106276127108461278a565b9250611fff8411806106395750606483115b15610642575f5ffd5b5f8281526001602052604090207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000082168517600d85901b1790557fd706efc260dc24de0e5c10e90ff4541185bad312aa114c0cb500ed6fe06828f585856106ab612710876127c2565b6040516106ba939291906127d9565b60405180910390a15050505050565b73ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016300361070a575f5ffd5b5f8460405160200161071c9190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f8181526001909352908220549092509081900361076e575f5ffd5b610779600a8661278a565b9450610786600a8561278a565b93506107976103e8620186a06127f8565b8511806107b157506107ae6103e8620186a06127f8565b84115b806107ba575084155b806107c3575083155b806107d05750620fffff83115b806107e257506001605282901c166001145b156107eb575f5ffd5b606184901b605386901b60525f8611610804575f610807565b60015b5f868152600160205260409020911b7fffffffffffffffffffffffffffffffffffff80000007ffffffffffffffffffff85161791909117919091179055613fff605382901c811690606183901c16841561087d575f848152600360205260409020600e82901b8317601c87901b174260301b1790555b7f81b2e6a314a716da4f9d7b055eb77f3631ef9b606ee131e0735d4ac55625bc57888888886040516108b2949392919061280b565b60405180910390a15050505050505050565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610905575f5ffd5b5f846040516020016109179190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529082205490925090819003610969575f5ffd5b6207ffff851180610978575083155b806109855750620fffff84115b8061098e575082155b8061099b5750620fffff83115b156109a4575f5ffd5b8415610a64575f6109d57f000000000000000000000000000000000000000000000000000000000000000087611a0b565b90506109e081611e74565b505f8281526001602090815260408083207ffffffffffffffffffffffffffffffffffffffffffffc00007fffffffffffffff8516603f8a901b17624000001790556002909152902080547ffffffffffffffffffc000000000000000001ffffffffffffffffffffffffffff16607186901b17608585901b174260991b179055610ac8565b5f82815260016020908152604080832080547ffffffffffffffffffffffffffffffffffffffffffffc00007fffffffffffffff1690556002909152902080547ffffffffffffffffffc000000000000000001ffffffffffffffffffffffffffff1690555b7f20e36ad6a8bd92e4099726493cd199acd97a118144d24b4f32130b755f96583886868686604051610afd949392919061280b565b60405180910390a1505050505050565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610b4e575f5ffd5b5f84604051602001610b609190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529082205490925090819003610bb2575f5ffd5b610bc9610bc260208801886122cc565b8685611e99565b610be3610bdc60408801602089016122cc565b8585611e99565b5f5f610bf5601f607e85901c16611efc565b915091505f5f610c0b601f608387901c16611efc565b90925090505f83610c1c868c6127c2565b610c26919061278a565b610c3e90608888901c670fffffffffffffff166127f8565b90505f82610c4c858c6127c2565b610c56919061278a565b610c649060c489901c6127f8565b5f898152600160205260409081902070ffffffffffffffffffffffffffffffffff8a16608886901b1760c484901b179055519091507fac3f5d8180a6e6b14ec66bccf0984880cc08ec22c38ac0f40b5b426019bf11c990610cca908e908e908e906127d9565b60405180910390a1505050505050505050505050565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610d21575f5ffd5b5f84604051602001610d339190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529082205490925090819003610d85575f5ffd5b610d916127108661278a565b9450610d9f6127108561278a565b93506064851180610db05750606484115b80610dc3575084158015610dc357505f84115b80610dd657505f85118015610dd6575083155b80610de35750620fffff83115b80610df557506001606f82901c166001145b15610dfe575f5ffd5b607784901b607086901b606f5f8611610e17575f610e1a565b60015b5f868152600160205260409020911b7fffffffffffffffffffffffffffffffffc000ffffffffffffffffffffffffffff85161791909117919091179055607f607082901c811690607783901c168415610e8f575f848152600460205260409020600782901b8317600e87901b174260221b1790555b7f9a82ab90950777597b4fbeda75d4e4d689dc7471853a11602f1c263d2520d46288610ebd6127108a6127c2565b610ec96127108a6127c2565b886040516108b2949392919061280b565b73ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163003610f1b575f5ffd5b80515173ffffffffffffffffffffffffffffffffffffffff161580610f59575080516020015173ffffffffffffffffffffffffffffffffffffffff16155b80610f85575080516020810151905173ffffffffffffffffffffffffffffffffffffffff918216911610155b15610f8e575f5ffd5b610fc76040518060e001604052805f81526020015f81526020015f81526020015f81526020015f81526020015f81526020015f81525090565b8151604051610fd99190602001612834565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301208084525f908152600190925290205415611027575f5ffd5b81515173ffffffffffffffffffffffffffffffffffffffff1673eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee146110d557815f01515f015173ffffffffffffffffffffffffffffffffffffffff1663313ce5676040518163ffffffff1660e01b8152600401602060405180830381865afa1580156110a9573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906110cd9190612885565b60ff166110d8565b60125b6020808301919091528251015173ffffffffffffffffffffffffffffffffffffffff1673eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1461119157815f01516020015173ffffffffffffffffffffffffffffffffffffffff1663313ce5676040518163ffffffff1660e01b8152600401602060405180830381865afa158015611165573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906111899190612885565b60ff16611194565b60125b604080830191909152820151158015906111b357506127108260400151105b156111bc575f5ffd5b61271082604001516111ce919061278a565b604083015260c08201516111e490600a9061278a565b60c083015260e08201516111fa90600a9061278a565b60e0830152610100820151611212906127109061278a565b61010083015261012082015161122b906127109061278a565b6101208301526020820151611fff1080611249575060648260400151115b8061125d5750816101600151826080015111155b806112715750816101800151826080015110155b8061128257506207ffff8260a00151115b8061129e57506112976103e8620186a06127f8565b8260c00151115b806112ba57506112b36103e8620186a06127f8565b8260e00151115b806112c7575060c0820151155b806112d4575060e0820151155b806112e457506064826101000151115b806112f457506064826101200151115b80611311575061010082015115801561131157505f826101200151115b8061132e57505f82610100015111801561132e5750610120820151155b8061133c5750610140820151155b8061134e575062ffffff826101400151115b8061135c5750610160820151155b8061136b575060208101516006115b8061137a575060208101516012105b80611389575060408101516006115b80611398575060408101516012105b156113a1575f5ffd5b8151516101a08301516113b49190611f48565b6113ca825f015160200151836101c00151611f48565b6113d78160200151611efc565b6080830152606082015260408101516113ef90611efc565b60c0830181905260a083018290526101c084015160c49261140f916127c2565b611419919061278a565b901b608882608001518360600151856101a0015161143791906127c2565b611441919061278a565b901b60838360400151901b607e8460200151901b6077866101200151901b6070876101000151901b60618860e00151901b60538960c00151901b603f8a60a00151901b60176114988c60800151602060085f611fc7565b901b60148c606001516114ab575f6114ae565b60015b901b600d8d60400151901b5f8e60200151901b17171717171717171717171760015f835f015181526020019081526020015f208190555060556114fa836101600151601460085f611fc7565b901b6039611512846101800151601460086001611fc7565b901b6021846101400151901b5f42901b17171760025f835f015181526020019081526020015f20819055507f083abadc594d8d389117d33215bf13ad0c1c7d453617f99653d1842f92a971f98260405161156c91906128a5565b60405180910390a15050565b73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001630036115b9575f5ffd5b5f5b848110156116145761160c8686838181106115d8576115d861298b565b90506020020160208101906115ed91906122cc565b8585848181106115ff576115ff61298b565b9050602002013584611e99565b6001016115bb565b507f1d5b4b04795ebb3901db9b61da375220c34f0661b7f6068a43831ce89d14df1085858585856040516106ba9594939291906129b8565b73ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016300361168d575f5ffd5b5f8360405160200161169f9190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f818152600190935290822054909250908190036116f1575f5ffd5b61170761170160208701876122cc565b85611f48565b61172061171a60408701602088016122cc565b84611f48565b5f5f611732601f607e85901c16611efc565b915091505f5f611748601f608387901c16611efc565b90925090505f83611759868b6127c2565b611763919061278a565b61177b90608888901c670fffffffffffffff16612a7c565b90505f82611789858b6127c2565b611793919061278a565b6117a19060c489901c612a7c565b5f898152600160205260409081902070ffffffffffffffffffffffffffffffffff8a16608886901b1760c484901b179055519091507fe1a74ddf3da2989e73b9cc7d5e6689947964216c6b1b903ebc555180eceee95890611807908d908d908d906127d9565b60405180910390a15050505050505050505050565b80611827575f61182a565b60015b73ffffffffffffffffffffffffffffffffffffffff83165f818152602081815260409182902060ff949094169093558051918252831515928201929092527fb873643b3104ddd26927dec7f9a08aa22d03ac20ada0295a2de7e1a6c60f2a51910161156c565b73ffffffffffffffffffffffffffffffffffffffff7f00000000000000000000000000000000000000000000000000000000000000001630036118d1575f5ffd5b5f836040516020016118e39190612717565b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe081840301815291815281516020928301205f81815260019093529082205490925090819003611935575f5ffd5b63ffffffff601f82901c1660ff601783901c161b83851115806119585750838111155b806119635750848110155b8061196c575083155b15611975575f5ffd5b605561198585601460085f611fc7565b901b603961199887601460086001611fc7565b5f868152600260205260409081902080547ffffffffffffffffffffffffffffffffffffe00000000000001ffffffffffffff169290931b91909117929092179055517f8b187f9eca4bc1a8d4ad5ecd867ebf561f9b32e1a872169700dac1a79d12dad590610afd908890889088906127d9565b5f6060825f03611a1e575f915050611e6e565b607f8311611ae7576040517fd60000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b16602282015260f884901b7fff000000000000000000000000000000000000000000000000000000000000001660368201526037015b6040516020818303038152906040529050611e63565b60ff8311611bc4576040517fd70000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f8100000000000000000000000000000000000000000000000000000000000000603682015260f884901b7fff00000000000000000000000000000000000000000000000000000000000000166037820152603801611ad1565b61ffff8311611ca2576040517fd80000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f820000000000000000000000000000000000000000000000000000000000000060368201527fffff00000000000000000000000000000000000000000000000000000000000060f085901b166037820152603901611ad1565b62ffffff8311611d81576040517fd90000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f830000000000000000000000000000000000000000000000000000000000000060368201527fffffff000000000000000000000000000000000000000000000000000000000060e885901b166037820152603a01611ad1565b6040517fda0000000000000000000000000000000000000000000000000000000000000060208201527f940000000000000000000000000000000000000000000000000000000000000060218201527fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606086901b1660228201527f840000000000000000000000000000000000000000000000000000000000000060368201527fffffffff0000000000000000000000000000000000000000000000000000000060e085901b166037820152603b0160405160208183030381529060405290505b805160209091012090505b92915050565b8073ffffffffffffffffffffffffffffffffffffffff163b5f03611e96575f5ffd5b50565b815f03611ea557505050565b7fffffffffffffffffffffffff111111111111111111111111111111111111111273ffffffffffffffffffffffffffffffffffffffff841601611ef157611eec81836120ed565b505050565b611eec83828461213b565b5f5f6009831115611f285760019150611f166009846127f8565b611f2190600a612bb0565b9050915091565b611f338360096127f8565b611f3e90600a612bb0565b9360019350915050565b805f03611f53575050565b7fffffffffffffffffffffffff111111111111111111111111111111111111111273ffffffffffffffffffffffffffffffffffffffff831601611fbb5780341015611f9c575f5ffd5b80341115611fb757611fb733611fb283346127f8565b6120ed565b5050565b611fb7823330846121e1565b5f5f856fffffffffffffffffffffffffffffffff811115611fe95760809150811c5b67ffffffffffffffff811115612001576040918201911c5b63ffffffff811115612015576020918201911c5b61ffff811115612027576010918201911c5b60ff811115612038576008918201911c5b600f811115612049576004918201911c5b600381111561205a576002918201911c5b600181111561206a576001820191505b8015612077576001820191505b50848110156120835750835b848103905085811c5f82118416156120d157600181019050806001871b036120d157506001908101907fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff86011b5b6001851b82106120df575f5ffd5b90931b909201949350505050565b5f5f5f5f5f8587614e20f1905080611eec576040517fdee51a8a0000000000000000000000000000000000000000000000000000000081526201155a60048201526024015b60405180910390fd5b5f6040517fa9059cbb00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8416600482015282602482015260205f6044835f895af13d15601f3d1160015f5114161716915050806121db576040517fdee51a8a0000000000000000000000000000000000000000000000000000000081526201155a6004820152602401612132565b50505050565b5f6040517f23b872dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8516600482015273ffffffffffffffffffffffffffffffffffffffff8416602482015282604482015260205f6064835f8a5af13d15601f3d1160015f51141617169150508061229d576040517fdee51a8a000000000000000000000000000000000000000000000000000000008152620115596004820152602401612132565b5050505050565b803573ffffffffffffffffffffffffffffffffffffffff811681146122c7575f5ffd5b919050565b5f602082840312156122dc575f5ffd5b6122e5826122a4565b9392505050565b5f606082840312156122fc575f5ffd5b50919050565b803580151581146122c7575f5ffd5b5f5f60808385031215612322575f5ffd5b61232c84846122ec565b915061233a60608401612302565b90509250929050565b5f5f60808385031215612354575f5ffd5b61235e84846122ec565b946060939093013593505050565b5f5f5f60a0848603121561237e575f5ffd5b61238885856122ec565b95606085013595506080909401359392505050565b5f5f5f5f60c085870312156123b0575f5ffd5b6123ba86866122ec565b966060860135965060808601359560a00135945092505050565b5f5f5f5f60c085870312156123e7575f5ffd5b6123f186866122ec565b9350606085013592506080850135915061240d60a086016122a4565b905092959194509250565b6040516101e0810167ffffffffffffffff81118282101715612461577f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b60405290565b5f60608284031215612477575f5ffd5b6040516060810167ffffffffffffffff811182821017156124bf577f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b6040529050806124ce836122a4565b81526124dc602084016122a4565b6020820152604092830135920191909152919050565b5f610220828403128015612504575f5ffd5b5061250d612418565b6125178484612467565b8152606083013560208201526080830135604082015261253960a08401612302565b606082015260c083810135608083015260e08085013560a0840152610100808601359284019290925261012080860135918401919091526101408086013592840192909252610160808601359184019190915261018080860135928401929092526101a080860135918401919091526101c080860135928401929092526101e085013590830152610200909301359281019290925250919050565b5f5f83601f8401126125e4575f5ffd5b50813567ffffffffffffffff8111156125fb575f5ffd5b6020830191508360208260051b8501011115612615575f5ffd5b9250929050565b5f5f5f5f5f60608688031215612630575f5ffd5b853567ffffffffffffffff811115612646575f5ffd5b612652888289016125d4565b909650945050602086013567ffffffffffffffff811115612671575f5ffd5b61267d888289016125d4565b90945092506126909050604087016122a4565b90509295509295909350565b5f5f604083850312156126ad575f5ffd5b6126b6836122a4565b915061233a60208401612302565b73ffffffffffffffffffffffffffffffffffffffff6126e2826122a4565b16825273ffffffffffffffffffffffffffffffffffffffff612706602083016122a4565b166020830152604090810135910152565b60608101611e6e82846126c4565b6080810161273382856126c4565b82151560608301529392505050565b6080810161275082856126c4565b8260608301529392505050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f826127bd577f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b500490565b8082028115828204841417611e6e57611e6e61275d565b60a081016127e782866126c4565b606082019390935260800152919050565b81810381811115611e6e57611e6e61275d565b60c0810161281982876126c4565b8460608301528360808301528260a083015295945050505050565b60608101611e6e828473ffffffffffffffffffffffffffffffffffffffff815116825273ffffffffffffffffffffffffffffffffffffffff6020820151166020830152604081015160408301525050565b5f60208284031215612895575f5ffd5b815160ff811681146122e5575f5ffd5b8151805173ffffffffffffffffffffffffffffffffffffffff9081168352602080830151909116908301526040908101519082015261022081016020830151606083015260408301516080830152606083015161290660a084018215159052565b50608083015160c083015260a083015160e083015260c083015161010083015260e08301516101208301526101008301516101408301526101208301516101608301526101408301516101808301526101608301516101a08301526101808301516101c08301526101a08301516101e08301526101c083015161020083015292915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b606080825281018590525f8660808301825b88811015612a055773ffffffffffffffffffffffffffffffffffffffff6129f0846122a4565b168252602092830192909101906001016129ca565b5083810360208501528581527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff861115612a3d575f5ffd5b8560051b915081876020830137016020019050612a72604083018473ffffffffffffffffffffffffffffffffffffffff169052565b9695505050505050565b80820180821115611e6e57611e6e61275d565b6001815b6001841115612aca57808504811115612aae57612aae61275d565b6001841615612abc57908102905b60019390931c928002612a93565b935093915050565b5f82612ae057506001611e6e565b81612aec57505f611e6e565b8160018114612b025760028114612b0c57612b28565b6001915050611e6e565b60ff841115612b1d57612b1d61275d565b50506001821b611e6e565b5060208310610133831016604e8410600b8410161715612b4b575081810a611e6e565b612b767fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8484612a8f565b807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04821115612ba857612ba861275d565b029392505050565b5f6122e58383612ad256fea2646970667358221220eef08b5d404537db188ef7db207eb5934ab09702fa290d0119832bb188ae080d64736f6c634300081d0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "collectRevenue(address[],uint256[],address)": {
+        "details": "collect revenue from the dex",
+        "params": {
+          "amounts_": "the amounts of tokens to collect revenue from",
+          "to_": "the address to send the tokens to",
+          "tokens_": "the tokens to collect revenue from"
+        }
+      },
+      "deposit((address,address,bytes32),uint256,uint256)": {
+        "details": "deposit tokens into the dex",
+        "params": {
+          "dexKey_": "the dex key",
+          "token0Amount_": "the token0 amount",
+          "token1Amount_": "the token1 amount"
+        }
+      },
+      "initialize(((address,address,bytes32),uint256,uint256,bool,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": {
+        "details": "initialize the dex",
+        "params": {
+          "i_": "the initialize params"
+        }
+      },
+      "updateAuth(address,bool)": {
+        "details": "update the auth for the dex",
+        "params": {
+          "auth_": "the address to update auth for",
+          "isAuth_": "the auth statusßßßßß"
+        }
+      },
+      "updateCenterPriceAddress((address,address,bytes32),uint256,uint256,uint256)": {
+        "details": "update the center price address (nonce) for the dex",
+        "params": {
+          "centerPriceAddress_": "nonce < X19, this nonce will be used to calculate contract address",
+          "dexKey_": "the dex key",
+          "percent_": "in 4 decimals, 10000 = 1%",
+          "time_": "in secs, in how much time the center price should be fully shifted."
+        }
+      },
+      "updateCenterPriceLimits((address,address,bytes32),uint256,uint256)": {
+        "details": "update the center price limits for the dex",
+        "params": {
+          "dexKey_": "the dex key",
+          "maxCenterPrice_": "1:1 means 1e27 ",
+          "minCenterPrice_": "1:1 means 1e27"
+        }
+      },
+      "updateExtraDataAddress(address)": {
+        "details": "update the extra data address in storage slot",
+        "params": {
+          "extraDataAddress_": "the address to set in the extra data slot"
+        }
+      },
+      "updateFeeAndRevenueCut((address,address,bytes32),uint256,uint256)": {
+        "details": "update the fee and revenue cut for the dex",
+        "params": {
+          "dexKey_": "the dex key",
+          "fee_": "in 4 decimals, 10000 = 1%",
+          "revenueCut_": "in 4 decimals, 10000 = 1%"
+        }
+      },
+      "updateRangePercents((address,address,bytes32),uint256,uint256,uint256)": {
+        "details": "update the range percents for the dex",
+        "params": {
+          "dexKey_": "the dex key",
+          "lowerPercent_": "in 4 decimals, 10000 = 1%",
+          "shiftTime_": "in secs, in how much time the upper percent configs change should be fully done",
+          "upperPercent_": "in 4 decimals, 10000 = 1%"
+        }
+      },
+      "updateRebalancingStatus((address,address,bytes32),bool)": {
+        "details": "update the rebalancing status for the dex",
+        "params": {
+          "dexKey_": "the dex key",
+          "rebalancingStatus_": "the rebalancing status (true = on, false = off)"
+        }
+      },
+      "updateShiftTime((address,address,bytes32),uint256)": {
+        "details": "update the shift time for the dex for rebalancing",
+        "params": {
+          "dexKey_": "the dex key",
+          "shiftTime_": "in secs, in how much time rebalancing should be fully done."
+        }
+      },
+      "updateThresholdPercent((address,address,bytes32),uint256,uint256,uint256)": {
+        "details": "update the threshold percent for the dex",
+        "params": {
+          "dexKey_": "the dex key",
+          "lowerThresholdPercent_": "in 4 decimals, 10000 = 1%",
+          "shiftTime_": "in secs, in how much time the upper config changes should be fully done.",
+          "upperThresholdPercent_": "in 4 decimals, 10000 = 1%"
+        }
+      },
+      "withdraw((address,address,bytes32),uint256,uint256,address)": {
+        "details": "withdraw tokens from the dex",
+        "params": {
+          "dexKey_": "the dex key",
+          "to_": "the address to send the tokens to",
+          "token0Amount_": "the token0 amount",
+          "token1Amount_": "the token1 amount"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 7078,
+        "contract": "contracts/protocols/dexLite/adminModule/main.sol:FluidDexLiteAdminModule",
+        "label": "_isAuth",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 7083,
+        "contract": "contracts/protocols/dexLite/adminModule/main.sol:FluidDexLiteAdminModule",
+        "label": "_dexVariables",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_uint256)"
+      },
+      {
+        "astId": 7088,
+        "contract": "contracts/protocols/dexLite/adminModule/main.sol:FluidDexLiteAdminModule",
+        "label": "_centerPriceShift",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_bytes32,t_uint256)"
+      },
+      {
+        "astId": 7093,
+        "contract": "contracts/protocols/dexLite/adminModule/main.sol:FluidDexLiteAdminModule",
+        "label": "_rangeShift",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_bytes32,t_uint256)"
+      },
+      {
+        "astId": 7098,
+        "contract": "contracts/protocols/dexLite/adminModule/main.sol:FluidDexLiteAdminModule",
+        "label": "_thresholdShift",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_bytes32,t_uint256)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_bytes32,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
